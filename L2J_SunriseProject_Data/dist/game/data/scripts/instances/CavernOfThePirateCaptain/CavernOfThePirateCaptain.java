@@ -159,7 +159,7 @@ public class CavernOfThePirateCaptain extends AbstractNpcAI
 	};
 	//@formatter:on
 	
-	private CavernOfThePirateCaptain()
+	public CavernOfThePirateCaptain()
 	{
 		super(CavernOfThePirateCaptain.class.getSimpleName(), "instances");
 		addStartNpc(PATHFINDER);
@@ -582,10 +582,5 @@ public class CavernOfThePirateCaptain extends AbstractNpcAI
 				player.sendPacket(sm);
 			}
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new CavernOfThePirateCaptain();
 	}
 }
