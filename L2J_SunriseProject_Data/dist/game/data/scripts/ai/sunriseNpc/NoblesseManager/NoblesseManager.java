@@ -1,5 +1,6 @@
 package ai.sunriseNpc.NoblesseManager;
 
+import l2r.gameserver.data.xml.impl.ItemData;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.SystemMessageId;
@@ -17,6 +18,7 @@ public class NoblesseManager extends AbstractNpcAI
 	private final static int NPC = CustomNpcsConfigs.NOBLE_NPC_ID;
 	private static final int ItemId = CustomNpcsConfigs.NOBLE_ITEM_ID;
 	private static final int ItemAmount = CustomNpcsConfigs.NOBLE_ITEM_AMOUNT;
+	private static final String itemName = ItemData.getInstance().getTemplate(ItemId).getName();
 	private static final int Level = CustomNpcsConfigs.NOBLE_REQUIRED_LEVEL;
 	
 	private NoblesseManager()
@@ -80,7 +82,9 @@ public class NoblesseManager extends AbstractNpcAI
 	{
 		final NpcHtmlMessage html = getHtmlPacket(player, npc, "main.htm");
 		html.replace("%player%", player.getName());
-		
+		html.replace("%itemAmount%", ItemAmount);
+		html.replace("%itemName%", itemName);
+		html.replace("%minimumLevel%", Level);
 		player.sendPacket(html);
 	}
 	
