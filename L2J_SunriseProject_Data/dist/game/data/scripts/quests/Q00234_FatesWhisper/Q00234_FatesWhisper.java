@@ -62,14 +62,8 @@ public class Q00234_FatesWhisper extends Quest
 	{
 		super(234, Q00234_FatesWhisper.class.getSimpleName(), "");
 		addStartNpc(31002);
-		
-		for (int npc : NPCs)
-		{
-			addTalkId(npc);
-		}
-		
+		addTalkId(NPCs);
 		addAttackId(29020);
-		
 		addKillId(25035, 25054, 25126, 25220);
 		
 		questItemIds = new int[]
@@ -178,13 +172,8 @@ public class Q00234_FatesWhisper extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
+		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
-		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
-			return htmltext;
-		}
-		
 		switch (st.getState())
 		{
 			case State.CREATED:

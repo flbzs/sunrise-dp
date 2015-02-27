@@ -97,6 +97,9 @@ public final class CasinoManager extends AbstractNpcAI
 	{
 		final NpcHtmlMessage html = getHtmlPacket(player, npc, "main.htm");
 		html.replace("%chance%", String.valueOf(chance));
+		html.replace("%bet1%", bet1);
+		html.replace("%bet2%", bet2);
+		html.replace("%bet3%", bet3);
 		html.replace("%itemName%", itemName);
 		
 		player.sendPacket(html);

@@ -35,7 +35,7 @@ public class BetaManager extends AbstractNpcAI
 		}
 		
 		String htmltext = event;
-		final QuestState st = player.getQuestState(getName());
+		final QuestState st = getQuestState(player, true);
 		
 		if (event.equalsIgnoreCase("exp-sp"))
 		{
