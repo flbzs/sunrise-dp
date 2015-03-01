@@ -1,5 +1,7 @@
 package ai.sunriseNpc.BetaManager;
 
+import l2r.gameserver.ThreadPoolManager;
+import l2r.gameserver.data.xml.impl.TransformData;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.QuestState;
@@ -7,6 +9,7 @@ import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import l2r.gameserver.network.serverpackets.UserInfo;
 import ai.npc.AbstractNpcAI;
+import gr.sr.aioItem.runnable.TransformFinalizer;
 import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
 
 /**
@@ -278,10 +281,12 @@ public class BetaManager extends AbstractNpcAI
 		else if (event.equalsIgnoreCase("change_sex"))
 		{
 			player.getAppearance().setSex(player.getAppearance().getSex() ? false : true);
-			player.sendMessage("Your gender has been changed!");
+			player.sendMessage("Your gender has been changed.");
 			player.broadcastUserInfo();
-			player.decayMe();
-			player.spawnMe(player.getX(), player.getY(), player.getZ());
+			// Transform-untransorm player quickly to force the client to reload the character textures
+			TransformData.getInstance().transformPlayer(105, player);
+			TransformFinalizer ef = new TransformFinalizer(player);
+			player.setSkillCast(ThreadPoolManager.getInstance().scheduleGeneral(ef, 200));
 			return "main.htm";
 		}
 		else if (event.equalsIgnoreCase("noblesse"))
