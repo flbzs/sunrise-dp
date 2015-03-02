@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J Server
+ * Copyright (C) 2004-2015 L2J Server
  * 
  * This file is part of L2J Server.
  * 
@@ -18,12 +18,12 @@
  */
 package ai.npc.NpcBuffers;
 
-import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
-import l2r.gameserver.model.L2Party;
+import l2r.gameserver.enums.ZoneIdType;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.model.actor.instance.L2TamedBeastInstance;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.util.Util;
 
@@ -49,31 +49,33 @@ public class NpcBufferAI implements Runnable
 			return;
 		}
 		
-		final L2Skill skill = _skillData.getSkill();
 		if ((_npc.getSummoner() == null) || !_npc.getSummoner().isPlayer())
 		{
 			return;
 		}
+		
+		final L2Skill skill = _skillData.getSkill();
 		final L2PcInstance player = _npc.getSummoner().getActingPlayer();
+		
 		switch (_skillData.getAffectScope())
 		{
 			case PARTY:
 			{
-				if (!player.isInParty())
+				if (player.isInParty())
 				{
-					if (Util.checkIfInRange(Config.ALT_PARTY_RANGE, _npc, player, true))
+					for (L2PcInstance member : player.getParty().getMembers())
 					{
-						skill.getEffects(player, player);
+						if (Util.checkIfInRange(skill.getAffectRange(), _npc, member, true) && !member.isDead())
+						{
+							skill.getEffects(player, member);
+						}
 					}
 				}
 				else
 				{
-					for (L2PcInstance member : player.getParty().getMembers())
+					if (Util.checkIfInRange(skill.getAffectRange(), _npc, player, true) && !player.isDead())
 					{
-						if (Util.checkIfInRange(Config.ALT_PARTY_RANGE, _npc, member, true))
-						{
-							skill.getEffects(player, member);
-						}
+						skill.getEffects(player, player);
 					}
 				}
 				break;
@@ -86,7 +88,7 @@ public class NpcBufferAI implements Runnable
 					{
 						case FRIEND:
 						{
-							if (isFriendly(player, target))
+							if (isFriendly(player, target) && !target.isDead())
 							{
 								skill.getEffects(target, target);
 							}
@@ -94,8 +96,13 @@ public class NpcBufferAI implements Runnable
 						}
 						case NOT_FRIEND:
 						{
-							if (!isFriendly(player, target))
+							if (isEnemy(player, target) && !target.isDead())
 							{
+								// Update PvP status
+								if (target.isPlayable())
+								{
+									player.updatePvPStatus(target);
+								}
 								skill.getEffects(target, target);
 							}
 							break;
@@ -108,43 +115,99 @@ public class NpcBufferAI implements Runnable
 		ThreadPoolManager.getInstance().scheduleGeneral(this, _skillData.getDelay());
 	}
 	
+	/**
+	 * Verifies if the character is an friend and can be affected by positive effect.
+	 * @param player the player
+	 * @param target the target
+	 * @return {@code true} if target can be affected by positive effect, {@code false} otherwise
+	 */
 	private boolean isFriendly(L2PcInstance player, L2Character target)
 	{
 		if (target.isPlayable())
 		{
 			final L2PcInstance targetPlayer = target.getActingPlayer();
-			if (targetPlayer == null)
-			{
-				return false;
-			}
 			
-			if (player.isInParty())
-			{
-				final L2Party party = player.getParty();
-				
-				// Same party.
-				if (party.containsPlayer(targetPlayer))
-				{
-					return true;
-				}
-				
-				// Same command channel.
-				if (party.isInCommandChannel() && party.getCommandChannel().containsPlayer(targetPlayer))
-				{
-					return true;
-				}
-			}
-			
-			// Same clan.
-			if ((player.getClanId() > 0) && (player.getClanId() == target.getClanId()))
+			if (player == targetPlayer)
 			{
 				return true;
 			}
 			
-			// Same ally.
-			if ((player.getAllyId() > 0) && (player.getAllyId() == target.getAllyId()))
+			if (player.isInPartyWith(targetPlayer))
 			{
 				return true;
+			}
+			
+			if (player.isInCommandChannelWith(targetPlayer))
+			{
+				return true;
+			}
+			
+			if (player.isInClanWith(targetPlayer))
+			{
+				return true;
+			}
+			
+			if (player.isInAllyWith(targetPlayer))
+			{
+				return true;
+			}
+			
+			if (player.isOnSameSiegeSideWith(targetPlayer))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * Verifies if the character is an enemy and can be affected by negative effect.
+	 * @param player the player
+	 * @param target the target
+	 * @return {@code true} if target can be affected by negative effect, {@code false} otherwise
+	 */
+	private boolean isEnemy(L2PcInstance player, L2Character target)
+	{
+		if (isFriendly(player, target))
+		{
+			return false;
+		}
+		
+		if (target instanceof L2TamedBeastInstance)
+		{
+			return isEnemy(player, ((L2TamedBeastInstance) target).getOwner());
+		}
+		
+		if (target.isMonster())
+		{
+			return true;
+		}
+		
+		if (target.isPlayable())
+		{
+			final L2PcInstance targetPlayer = target.getActingPlayer();
+			
+			if (!isFriendly(player, targetPlayer))
+			{
+				if (targetPlayer.getPvpFlag() != 0)
+				{
+					return true;
+				}
+				
+				if (targetPlayer.getKarma() != 0)
+				{
+					return true;
+				}
+				
+				if (player.isAtWarWith(targetPlayer))
+				{
+					return true;
+				}
+				
+				if (targetPlayer.isInsideZone(ZoneIdType.PVP))
+				{
+					return true;
+				}
 			}
 		}
 		return false;

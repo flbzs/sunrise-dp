@@ -46,7 +46,7 @@ public class OutpostDestroy extends L2Effect
 	public boolean onStart()
 	{
 		final L2PcInstance player = getEffector().getActingPlayer();
-		if ((player.getClan() == null) || (player.getClan().getLeaderId() != player.getObjectId()))
+		if (!player.isClanLeader())
 		{
 			return false;
 		}

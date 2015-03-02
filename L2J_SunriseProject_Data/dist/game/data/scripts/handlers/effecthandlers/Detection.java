@@ -51,25 +51,21 @@ public final class Detection extends L2Effect
 		
 		final L2PcInstance player = getEffector().getActingPlayer();
 		final L2PcInstance target = getEffected().getActingPlayer();
-		final boolean hasParty = player.isInParty();
-		final boolean hasClan = player.getClanId() > 0;
-		final boolean hasAlly = player.getAllyId() > 0;
 		
 		if (target.isInvisible())
 		{
-			if (hasParty && (target.isInParty()) && (player.getParty().getLeaderObjectId() == target.getParty().getLeaderObjectId()))
+			if (player.isInPartyWith(target))
 			{
 				return false;
 			}
-			else if (hasClan && (player.getClanId() == target.getClanId()))
+			if (player.isInClanWith(target))
 			{
 				return false;
 			}
-			else if (hasAlly && (player.getAllyId() == target.getAllyId()))
+			if (player.isInAllyWith(target))
 			{
 				return false;
 			}
-			
 			// Remove Hide.
 			L2Effect eHide = target.getFirstEffect(L2EffectType.HIDE);
 			if (eHide != null)
