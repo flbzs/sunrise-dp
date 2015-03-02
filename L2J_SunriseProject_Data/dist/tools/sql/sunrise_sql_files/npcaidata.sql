@@ -51,7 +51,6 @@ CREATE TABLE `custom_npcaidata` (
 -- Records of custom_npcaidata
 -- ----------------------------
 INSERT INTO `custom_npcaidata` VALUES ('539', '7', '15', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '0', null, '0', '0', 'fighter');
-INSERT INTO `custom_npcaidata` VALUES ('540', '7', '15', '0', '1000', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'fighter');
 INSERT INTO `custom_npcaidata` VALUES ('541', '7', '15', '0', '1000', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '300', '', '0', '0', 'fighter');
 INSERT INTO `custom_npcaidata` VALUES ('542', '7', '15', '0', '1000', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'fighter');
 INSERT INTO `custom_npcaidata` VALUES ('553', '7', '15', '0', '1000', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'fighter');
