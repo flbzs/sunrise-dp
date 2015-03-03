@@ -168,6 +168,11 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 			attackPlayer((L2Attackable) guard, killer);
 		}
 		
+		if (npc.getId() == RAINBOW_FROG)
+		{
+			RAINBOW_FROG_SKILL.getSkill().getEffects(killer, killer);
+		}
+		
 		// Invisible buff npc
 		final int random = getRandom(100);
 		final L2Npc buffer = addSpawn(INVISIBLE_NPC, npc.getLocation(), false, 6000);
