@@ -129,10 +129,12 @@ import quests.Q00114_ResurrectionOfAnOldManager.Q00114_ResurrectionOfAnOldManage
 import quests.Q00115_TheOtherSideOfTruth.Q00115_TheOtherSideOfTruth;
 import quests.Q00116_BeyondTheHillsOfWinter.Q00116_BeyondTheHillsOfWinter;
 import quests.Q00117_TheOceanOfDistantStars.Q00117_TheOceanOfDistantStars;
+import quests.Q00118_ToLeadAndBeLed.Q00118_ToLeadAndBeLed;
 import quests.Q00119_LastImperialPrince.Q00119_LastImperialPrince;
 import quests.Q00120_PavelsLastResearch.Q00120_PavelsLastResearch;
 import quests.Q00121_PavelTheGiant.Q00121_PavelTheGiant;
 import quests.Q00122_OminousNews.Q00122_OminousNews;
+import quests.Q00123_TheLeaderAndTheFollower.Q00123_TheLeaderAndTheFollower;
 import quests.Q00124_MeetingTheElroki.Q00124_MeetingTheElroki;
 import quests.Q00125_TheNameOfEvil1.Q00125_TheNameOfEvil1;
 import quests.Q00126_TheNameOfEvil2.Q00126_TheNameOfEvil2;
@@ -297,6 +299,7 @@ import quests.Q00327_RecoverTheFarmland.Q00327_RecoverTheFarmland;
 import quests.Q00328_SenseForBusiness.Q00328_SenseForBusiness;
 import quests.Q00329_CuriosityOfADwarf.Q00329_CuriosityOfADwarf;
 import quests.Q00331_ArrowOfVengeance.Q00331_ArrowOfVengeance;
+import quests.Q00333_HuntOfTheBlackLion.Q00333_HuntOfTheBlackLion;
 import quests.Q00337_AudienceWithTheLandDragon.Q00337_AudienceWithTheLandDragon;
 import quests.Q00338_AlligatorHunter.Q00338_AlligatorHunter;
 import quests.Q00340_SubjugationOfLizardmen.Q00340_SubjugationOfLizardmen;
@@ -325,6 +328,7 @@ import quests.Q00368_TrespassingIntoTheHolyGround.Q00368_TrespassingIntoTheHolyG
 import quests.Q00369_CollectorOfJewels.Q00369_CollectorOfJewels;
 import quests.Q00370_AnElderSowsSeeds.Q00370_AnElderSowsSeeds;
 import quests.Q00371_ShrieksOfGhosts.Q00371_ShrieksOfGhosts;
+import quests.Q00373_SupplierOfReagents.Q00373_SupplierOfReagents;
 import quests.Q00376_ExplorationOfTheGiantsCavePart1.Q00376_ExplorationOfTheGiantsCavePart1;
 import quests.Q00377_ExplorationOfTheGiantsCavePart2.Q00377_ExplorationOfTheGiantsCavePart2;
 import quests.Q00378_GrandFeast.Q00378_GrandFeast;
@@ -355,6 +359,7 @@ import quests.Q00418_PathOfTheArtisan.Q00418_PathOfTheArtisan;
 import quests.Q00420_LittleWing.Q00420_LittleWing;
 import quests.Q00421_LittleWingsBigAdventure.Q00421_LittleWingsBigAdventure;
 import quests.Q00423_TakeYourBestShot.Q00423_TakeYourBestShot;
+import quests.Q00426_QuestForFishingShot.Q00426_QuestForFishingShot;
 import quests.Q00431_WeddingMarch.Q00431_WeddingMarch;
 import quests.Q00432_BirthdayPartySong.Q00432_BirthdayPartySong;
 import quests.Q00450_GraveRobberRescue.Q00450_GraveRobberRescue;
@@ -622,10 +627,12 @@ public class QuestLoader
 		Q00115_TheOtherSideOfTruth.class,
 		Q00116_BeyondTheHillsOfWinter.class,
 		Q00117_TheOceanOfDistantStars.class,
+		Q00118_ToLeadAndBeLed.class,
 		Q00119_LastImperialPrince.class,
 		Q00120_PavelsLastResearch.class,
 		Q00121_PavelTheGiant.class,
 		Q00122_OminousNews.class,
+		Q00123_TheLeaderAndTheFollower.class,
 		Q00124_MeetingTheElroki.class,
 		Q00125_TheNameOfEvil1.class,
 		Q00126_TheNameOfEvil2.class,
@@ -792,6 +799,7 @@ public class QuestLoader
 		Q00328_SenseForBusiness.class,
 		Q00329_CuriosityOfADwarf.class,
 		Q00331_ArrowOfVengeance.class,
+		Q00333_HuntOfTheBlackLion.class,
 		Q00337_AudienceWithTheLandDragon.class,
 		Q00338_AlligatorHunter.class,
 		Q00340_SubjugationOfLizardmen.class,
@@ -820,6 +828,7 @@ public class QuestLoader
 		Q00369_CollectorOfJewels.class,
 		Q00370_AnElderSowsSeeds.class,
 		Q00371_ShrieksOfGhosts.class,
+		Q00373_SupplierOfReagents.class,
 		Q00376_ExplorationOfTheGiantsCavePart1.class,
 		Q00377_ExplorationOfTheGiantsCavePart2.class,
 		Q00378_GrandFeast.class,
@@ -850,6 +859,7 @@ public class QuestLoader
 		Q00420_LittleWing.class,
 		Q00421_LittleWingsBigAdventure.class,
 		Q00423_TakeYourBestShot.class,
+		Q00426_QuestForFishingShot.class,
 		Q00431_WeddingMarch.class,
 		Q00432_BirthdayPartySong.class,
 		Q00450_GraveRobberRescue.class,
