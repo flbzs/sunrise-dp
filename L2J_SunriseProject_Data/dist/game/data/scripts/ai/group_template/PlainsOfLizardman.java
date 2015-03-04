@@ -91,6 +91,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		super(PlainsOfLizardman.class.getSimpleName(), "ai/group_template");
 		addAttackId(FANTASY_MUSHROOM, RAINBOW_FROG, STICKY_MUSHROOM, ENERGY_PLANT, TANTA_SUMMONER);
 		addKillId(TANTA_LIZARDMEN);
+		addKillId(RAINBOW_FROG);
 	}
 	
 	@Override
@@ -232,16 +233,6 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		{
 			npc.doCast(buffs[0].getSkill());
 		}
-	}
-	
-	@SuppressWarnings("unused")
-	private void castSkill(L2Npc npc, L2Character target, SkillHolder skill)
-	{
-		npc.doDie(target);
-		
-		final L2Npc buffer = addSpawn(INVISIBLE_NPC, npc.getLocation(), false, 6000);
-		buffer.setTarget(target);
-		buffer.doCast(skill.getSkill());
 	}
 	
 	public static void main(String[] args)
