@@ -6,7 +6,7 @@ from l2r.gameserver.model.quest import QuestState
 from l2r.gameserver.model.quest import Quest as JQuest
 from l2r.util import Rnd
 
-qn = "Q00234_FatesWhisper"
+qn = "234_FatesWhisper"
 
 PIPETTE_KNIFE = 4665
 REIRIAS_SOUL_ORB = 4666
