@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,36 +18,35 @@
  */
 package instances.JiniaGuildHideout1;
 
-import l2r.gameserver.instancemanager.InstanceManager;
+import instances.AbstractInstance;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
-import l2r.gameserver.network.SystemMessageId;
 import quests.Q10284_AcquisitionOfDivineSword.Q10284_AcquisitionOfDivineSword;
 
 /**
  * Jinia Guild Hideout instance zone.
  * @author Adry_85
  */
-public final class JiniaGuildHideout1 extends Quest
+public final class JiniaGuildHideout1 extends AbstractInstance
 {
 	protected class JGH1World extends InstanceWorld
 	{
-		long storeTime = 0;
+		
 	}
 	
-	private static final int INSTANCEID = 140;
 	// NPC
 	private static final int RAFFORTY = 32020;
 	// Location
 	private static final Location START_LOC = new Location(-23530, -8963, -5413);
+	// Misc
+	private static final int TEMPLATE_ID = 140;
 	
 	public JiniaGuildHideout1()
 	{
-		super(-1, JiniaGuildHideout1.class.getSimpleName(), "instances");
+		super(JiniaGuildHideout1.class.getSimpleName());
 		addStartNpc(RAFFORTY);
 		addTalkId(RAFFORTY);
 	}
@@ -58,37 +57,19 @@ public final class JiniaGuildHideout1 extends Quest
 		final QuestState qs = talker.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
 		if ((qs != null) && qs.isCond(1))
 		{
-			enterInstance(talker, "JiniaGuildHideout1.xml");
+			enterInstance(talker, new JGH1World(), "JiniaGuildHideout1.xml", TEMPLATE_ID);
 			qs.setCond(2, true);
 		}
 		return super.onTalk(npc, talker);
 	}
 	
-	protected void enterInstance(L2PcInstance player, String template)
+	@Override
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
 	{
-		// check for existing instances for this player
-		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-		// existing instance
-		if (world != null)
+		if (firstEntrance)
 		{
-			if (!(world instanceof JGH1World))
-			{
-				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
-				return;
-			}
-			teleportPlayer(player, START_LOC, world.getInstanceId(), false);
-			return;
+			world.addAllowed(player.getObjectId());
 		}
-		// New instance
-		world = new JGH1World();
-		world.setInstanceId(InstanceManager.getInstance().createDynamicInstance(template));
-		world.setTemplateId(INSTANCEID);
-		world.setStatus(0);
-		((JGH1World) world).storeTime = System.currentTimeMillis();
-		InstanceManager.getInstance().addWorld(world);
-		_log.info("Jinia Guild Hideout started " + template + " Instance: " + world.getInstanceId() + " created by player: " + player.getName());
-		// teleport players
 		teleportPlayer(player, START_LOC, world.getInstanceId(), false);
-		world.addAllowed(player.getObjectId());
 	}
 }

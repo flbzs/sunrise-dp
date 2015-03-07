@@ -735,7 +735,7 @@ public class HallOfSufferingDefence extends Quest
 				Calendar reenter = Calendar.getInstance();
 				reenter.add(Calendar.HOUR, INSTANCEPENALTY);
 				
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_FROM_HERE_S1_S_ENTRY_HAS_BEEN_RESTRICTED);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_BY_USING_THE_COMMAND_INSTANCEZONE);
 				sm.addString(InstanceManager.getInstance().getInstanceIdName(tmpworld.getTemplateId()));
 				
 				// set instance reenter time for all allowed players

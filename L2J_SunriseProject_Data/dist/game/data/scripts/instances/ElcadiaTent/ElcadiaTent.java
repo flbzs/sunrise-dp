@@ -14,145 +14,83 @@
  */
 package instances.ElcadiaTent;
 
-import l2r.gameserver.enums.CtrlIntention;
+import instances.AbstractInstance;
 import l2r.gameserver.instancemanager.InstanceManager;
+import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.entity.Instance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
-import l2r.gameserver.model.quest.State;
-import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.SystemMessage;
+import quests.Q10292_SevenSignsGirlofDoubt.Q10292_SevenSignsGirlofDoubt;
+import quests.Q10293_SevenSignsForbiddenBook.Q10293_SevenSignsForbiddenBook;
+import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
+import quests.Q10296_SevenSignsPowerOfTheSeal.Q10296_SevenSignsPowerOfTheSeal;
 
-public class ElcadiaTent extends Quest
+public final class ElcadiaTent extends AbstractInstance
 {
-	private static final String qn = "ElcadiaTent";
-	// Values
+	protected class ETWorld extends InstanceWorld
+	{
+		
+	}
+	
+	// NPCs
+	private static final int ELCADIA = 32784;
+	private static final int GRUFF_LOOKING_MAN = 32862;
+	// Locations
+	private static final Location START_LOC = new Location(89706, -238074, -9632, 0, 0);
+	private static final Location EXIT_LOC = new Location(43316, -87986, -2832, 0, 0);
+	// Misc
 	private static final int TEMPLATE_ID = 158;
-	// NPC's
-	private static final int Gruff_looking_Man = 32862;
-	private static final int Elcadia = 32784;
-	// Teleports
-	private static final int ENTER = 0;
-	private static final int EXIT = 1;
-	private static final int[][] TELEPORTS =
-	{
-		{
-			89706,
-			-238074,
-			-9632
-		},
-		{
-			43316,
-			-87986,
-			-2832
-		}
-	};
-	
-	private class ElcadiaTentWorld extends InstanceWorld
-	{
-		public ElcadiaTentWorld()
-		{
-		}
-	}
-	
-	private void teleportPlayer(L2PcInstance player, int[] coords, int instanceId)
-	{
-		player.stopAllEffectsExceptThoseThatLastThroughDeath();
-		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		player.setInstanceId(instanceId);
-		player.teleToLocation(coords[0], coords[1], coords[2], false);
-	}
-	
-	protected void enterInstance(L2PcInstance player)
-	{
-		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-		if (world != null)
-		{
-			if (!(world instanceof ElcadiaTentWorld))
-			{
-				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON));
-				return;
-			}
-			Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-			if (inst != null)
-			{
-				teleportPlayer(player, TELEPORTS[ENTER], world.getInstanceId());
-			}
-			return;
-		}
-		final int instanceId = InstanceManager.getInstance().createDynamicInstance("ElcadiaTent.xml");
-		
-		world = new ElcadiaTentWorld();
-		world.setInstanceId(instanceId);
-		world.setTemplateId(TEMPLATE_ID);
-		world.setStatus(0);
-		InstanceManager.getInstance().addWorld(world);
-		
-		world.addAllowed(player.getObjectId());
-		teleportPlayer(player, TELEPORTS[ENTER], instanceId);
-		_log.info("Elcadia Tent instance started: " + instanceId + " created by player: " + player.getName());
-		return;
-	}
-	
-	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
-		String htmltext = getNoQuestMsg(player);
-		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
-		
-		if (npc.getId() == Gruff_looking_Man)
-		{
-			if ((player.getQuestState("Q10292_SevenSignsGirlofDoubt") != null) && (player.getQuestState("Q10292_SevenSignsGirlofDoubt").getState() == State.STARTED))
-			{
-				enterInstance(player);
-				return null;
-			}
-			else if ((player.getQuestState("Q10292_SevenSignsGirlofDoubt") != null) && (player.getQuestState("Q10292_SevenSignsGirlofDoubt").getState() == State.COMPLETED) && (player.getQuestState("Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom") == null))
-			{
-				enterInstance(player);
-				return null;
-			}
-			else if ((player.getQuestState("Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom") != null) && (player.getQuestState("Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom").getState() != State.COMPLETED))
-			{
-				enterInstance(player);
-				return null;
-			}
-			else if ((player.getQuestState("Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom") != null) && (player.getQuestState("Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom").getState() == State.COMPLETED) && (player.getQuestState("Q10294_SevenSignsToTheMonasteryOfSilence") == null))
-			{
-				enterInstance(player);
-				return null;
-			}
-			else if ((player.getQuestState("Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal") != null) && (player.getQuestState("Q10296_SevenSignsOneWhoSeeksThePowerOfTheSeal").getInt("cond") == 3))
-			{
-				enterInstance(player);
-				return null;
-			}
-			else
-			{
-				htmltext = "32862.html";
-			}
-		}
-		if (npc.getId() == Elcadia)
-		{
-			teleportPlayer(player, TELEPORTS[EXIT], 0);
-			return null;
-		}
-		return htmltext;
-	}
 	
 	public ElcadiaTent()
 	{
-		super(-1, qn, "instances");
+		super(ElcadiaTent.class.getSimpleName());
+		addFirstTalkId(GRUFF_LOOKING_MAN, ELCADIA);
+		addStartNpc(GRUFF_LOOKING_MAN, ELCADIA);
+		addTalkId(GRUFF_LOOKING_MAN, ELCADIA);
+	}
+	
+	@Override
+	public String onTalk(L2Npc npc, L2PcInstance talker)
+	{
+		if (npc.getId() == GRUFF_LOOKING_MAN)
+		{
+			final QuestState GirlOfDoubt = talker.getQuestState(Q10292_SevenSignsGirlofDoubt.class.getSimpleName());
+			final QuestState ForbiddenBook = talker.getQuestState(Q10293_SevenSignsForbiddenBook.class.getSimpleName());
+			final QuestState Monastery = talker.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName());
+			final QuestState PowerOfTheSeal = talker.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName());
+			
+			if (((GirlOfDoubt != null) && GirlOfDoubt.isStarted()) //
+				|| ((GirlOfDoubt != null) && GirlOfDoubt.isCompleted() && (ForbiddenBook == null)) //
+				|| ((ForbiddenBook != null) && ForbiddenBook.isStarted()) //
+				|| ((ForbiddenBook != null) && ForbiddenBook.isCompleted() && (Monastery == null)) //
+				|| ((PowerOfTheSeal != null) && (PowerOfTheSeal.getCond() == 3)))
+			{
+				enterInstance(talker, new ETWorld(), "ElcadiasTent.xml", TEMPLATE_ID);
+			}
+			else
+			{
+				return "32862-01.html";
+			}
+		}
+		else
+		{
+			final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(talker);
+			world.removeAllowed(talker.getObjectId());
+			talker.setInstanceId(0);
+			talker.teleToLocation(EXIT_LOC);
+		}
 		
-		addStartNpc(Gruff_looking_Man);
-		addTalkId(Gruff_looking_Man);
-		addTalkId(Elcadia);
+		return super.onTalk(npc, talker);
+	}
+	
+	@Override
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
+	{
+		if (firstEntrance)
+		{
+			world.addAllowed(player.getObjectId());
+		}
+		teleportPlayer(player, START_LOC, world.getInstanceId(), false);
 	}
 }

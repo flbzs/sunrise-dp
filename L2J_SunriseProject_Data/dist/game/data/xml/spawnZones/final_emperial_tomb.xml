@@ -83,16 +83,16 @@
 			<point x="-89145" y="-141891" /> <!-- Up Right -->
 		</zone>
 		<zone id="10" minZ="-9184" maxZ="-8984">
-			<point x="-88455" y="-142693" />
-			<point x="-87361" y="-142677" />
-			<point x="-87645" y="-142372" />
-			<point x="-88201" y="-142374" />
+			<point x="-88412" y="-142651" /> <!-- Up Left -->
+			<point x="-87384" y="-142648" /> <!-- Up Right -->
+			<point x="-87672" y="-142385" /> <!-- Down Right -->
+			<point x="-88194" y="-142412" /> <!-- Down Left -->
 		</zone>
 		<zone id="11" minZ="-9184" maxZ="-8984">
-			<point x="-87321" y="-142651" />
-			<point x="-86557" y="-141902" />
-			<point x="-86900" y="-141818" />
-			<point x="-87412" y="-142316" />
+			<point x="-87321" y="-142651" /> <!-- Up Right -->
+			<point x="-86557" y="-141902" /> <!-- Down Right -->
+			<point x="-86912" y="-141846" /> <!-- Down Left -->
+			<point x="-87412" y="-142316" /> <!-- Up Left -->
 		</zone>
 		<zone id="12" minZ="-9184" maxZ="-8984">
 			<point x="-86857" y="-141595" />

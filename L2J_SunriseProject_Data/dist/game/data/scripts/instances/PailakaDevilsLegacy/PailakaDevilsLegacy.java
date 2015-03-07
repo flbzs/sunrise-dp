@@ -18,6 +18,8 @@
  */
 package instances.PailakaDevilsLegacy;
 
+import instances.AbstractInstance;
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -32,20 +34,18 @@ import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.zone.L2ZoneType;
-import l2r.gameserver.network.SystemMessageId;
 import quests.Q00129_PailakaDevilsLegacy.Q00129_PailakaDevilsLegacy;
-import ai.npc.AbstractNpcAI;
 
 /**
  * Pailaka Devil's Legacy Instance zone.
  * @author St3eT
  */
-public final class PailakaDevilsLegacy extends AbstractNpcAI
+public final class PailakaDevilsLegacy extends AbstractInstance
 {
 	protected class DIWorld extends InstanceWorld
 	{
-		L2Attackable _lematanNpc = null;
-		List<L2Attackable> _followerslist = new CopyOnWriteArrayList<>();
+		protected L2Attackable _lematanNpc = null;
+		protected List<L2Attackable> _followerslist = new CopyOnWriteArrayList<>();
 	}
 	
 	// NPCs
@@ -89,7 +89,7 @@ public final class PailakaDevilsLegacy extends AbstractNpcAI
 	
 	public PailakaDevilsLegacy()
 	{
-		super(PailakaDevilsLegacy.class.getSimpleName(), "instances");
+		super(PailakaDevilsLegacy.class.getSimpleName());
 		addTalkId(SURVIVOR);
 		addAttackId(POWDER_KEG, TREASURE_BOX, LEMATAN);
 		addKillId(LEMATAN);
@@ -107,7 +107,7 @@ public final class PailakaDevilsLegacy extends AbstractNpcAI
 		if (event.equals("enter"))
 		{
 			final QuestState qs = player.getQuestState(Q00129_PailakaDevilsLegacy.class.getSimpleName());
-			enterInstance(player, "PailakaDevilsLegacy.xml");
+			enterInstance(player, new DIWorld(), "PailakaDevilsLegacy.xml", TEMPLATE_ID);
 			if (qs.isCond(1))
 			{
 				qs.setCond(2, true);
@@ -303,27 +303,19 @@ public final class PailakaDevilsLegacy extends AbstractNpcAI
 		}
 	}
 	
-	private void enterInstance(L2PcInstance player, String template)
+	@Override
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
 	{
-		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-		
-		if (world != null)
+		if (firstEntrance)
 		{
-			if (world instanceof DIWorld)
-			{
-				teleportPlayer(player, TELEPORT, world.getInstanceId());
-				return;
-			}
-			player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
-			return;
+			world.addAllowed(player.getObjectId());
+			((DIWorld) world)._lematanNpc = (L2Attackable) addSpawn(LEMATAN, LEMATAN_SPAWN, false, 0, false, world.getInstanceId());
 		}
-		world = new DIWorld();
-		world.setInstanceId(InstanceManager.getInstance().createDynamicInstance(template));
-		world.setTemplateId(TEMPLATE_ID);
-		InstanceManager.getInstance().addWorld(world);
-		world.addAllowed(player.getObjectId());
 		teleportPlayer(player, TELEPORT, world.getInstanceId());
-		((DIWorld) world)._lematanNpc = (L2Attackable) addSpawn(LEMATAN, LEMATAN_SPAWN, false, 0, false, world.getInstanceId());
-		_log.info("Pailaka Devils Legacy" + template + " Instance: " + world.getInstanceId() + " created by player: " + player.getName());
+	}
+	
+	public static void main(String[] args)
+	{
+		new PailakaDevilsLegacy();
 	}
 }

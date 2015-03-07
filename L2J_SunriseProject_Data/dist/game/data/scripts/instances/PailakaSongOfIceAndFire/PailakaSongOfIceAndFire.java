@@ -18,6 +18,7 @@
  */
 package instances.PailakaSongOfIceAndFire;
 
+import instances.AbstractInstance;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Character;
@@ -26,15 +27,13 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.zone.L2ZoneType;
 import l2r.gameserver.network.NpcStringId;
-import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.clientpackets.Say2;
-import ai.npc.AbstractNpcAI;
 
 /**
  * Pailaka Song of Ice and Fire Instance zone.
  * @author Gnacik, St3eT
  */
-public final class PailakaSongOfIceAndFire extends AbstractNpcAI
+public final class PailakaSongOfIceAndFire extends AbstractInstance
 {
 	protected class PSoIWorld extends InstanceWorld
 	{
@@ -60,7 +59,7 @@ public final class PailakaSongOfIceAndFire extends AbstractNpcAI
 	
 	public PailakaSongOfIceAndFire()
 	{
-		super(PailakaSongOfIceAndFire.class.getSimpleName(), "instances");
+		super(PailakaSongOfIceAndFire.class.getSimpleName());
 		addStartNpc(ADLER1);
 		addTalkId(ADLER1);
 		addAttackId(BOTTLE, BRAZIER);
@@ -70,27 +69,14 @@ public final class PailakaSongOfIceAndFire extends AbstractNpcAI
 		addKillId(BLOOM);
 	}
 	
-	private void enterInstance(L2PcInstance player, String template)
+	@Override
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
 	{
-		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-		
-		if (world != null)
+		if (firstEntrance)
 		{
-			if (world instanceof PSoIWorld)
-			{
-				teleportPlayer(player, TELEPORT, world.getInstanceId());
-				return;
-			}
-			player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
-			return;
+			world.addAllowed(player.getObjectId());
 		}
-		world = new PSoIWorld();
-		world.setInstanceId(InstanceManager.getInstance().createDynamicInstance(template));
-		world.setTemplateId(TEMPLATE_ID);
-		InstanceManager.getInstance().addWorld(world);
-		world.addAllowed(player.getObjectId());
 		teleportPlayer(player, TELEPORT, world.getInstanceId());
-		_log.info("Pailaka Song of Ice and Fire" + template + " Instance: " + world.getInstanceId() + " created by player: " + player.getName());
 	}
 	
 	@Override
@@ -100,12 +86,12 @@ public final class PailakaSongOfIceAndFire extends AbstractNpcAI
 		{
 			case "enter":
 			{
-				enterInstance(player, "PailakaSongOfIceAndFire.xml");
+				enterInstance(player, new PSoIWorld(), "PailakaSongOfIceAndFire.xml", TEMPLATE_ID);
 				break;
 			}
 			case "GARGOS_LAUGH":
 			{
-				broadcastNpcSay(npc, Say2.NPC_SHOUT, NpcStringId.OHHOHOH);
+				broadcastNpcSay(npc, Say2.NPC_SHOUT, NpcStringId.OHH_OH_OH);
 				break;
 			}
 			case "TELEPORT":

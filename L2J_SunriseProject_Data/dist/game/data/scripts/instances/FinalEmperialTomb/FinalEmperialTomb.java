@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,8 +18,9 @@
  */
 package instances.FinalEmperialTomb;
 
+import instances.AbstractInstance;
+
 import java.io.File;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,8 +52,6 @@ import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.instancezone.InstanceWorld;
-import l2r.gameserver.model.quest.Quest;
-import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.L2SkillType;
 import l2r.gameserver.network.NpcStringId;
@@ -79,31 +78,31 @@ import org.w3c.dom.Node;
  * Use proper zone spawn system.
  * @author Gigiikun
  */
-public class FinalEmperialTomb extends Quest
+public final class FinalEmperialTomb extends AbstractInstance
 {
 	private class FETWorld extends InstanceWorld
 	{
-		public Lock lock = new ReentrantLock();
-		public FastList<L2Npc> npcList = new FastList<>();
-		public int darkChoirPlayerCount = 0;
-		public FrintezzaSong OnSong = null;
-		public ScheduledFuture<?> songTask = null;
-		public ScheduledFuture<?> songEffectTask = null;
-		public boolean isVideo = false;
-		public L2Npc frintezzaDummy = null;
-		public L2Npc overheadDummy = null;
-		public L2Npc portraitDummy1 = null;
-		public L2Npc portraitDummy3 = null;
-		public L2Npc scarletDummy = null;
-		public L2GrandBossInstance frintezza = null;
-		public L2GrandBossInstance activeScarlet = null;
-		public List<L2MonsterInstance> demons = new FastList<>();
-		public Map<L2MonsterInstance, Integer> portraits = new FastMap<>();
-		public int scarlet_x = 0;
-		public int scarlet_y = 0;
-		public int scarlet_z = 0;
-		public int scarlet_h = 0;
-		public int scarlet_a = 0;
+		protected Lock lock = new ReentrantLock();
+		protected FastList<L2Npc> npcList = new FastList<>();
+		protected int darkChoirPlayerCount = 0;
+		protected FrintezzaSong OnSong = null;
+		protected ScheduledFuture<?> songTask = null;
+		protected ScheduledFuture<?> songEffectTask = null;
+		protected boolean isVideo = false;
+		protected L2Npc frintezzaDummy = null;
+		protected L2Npc overheadDummy = null;
+		protected L2Npc portraitDummy1 = null;
+		protected L2Npc portraitDummy3 = null;
+		protected L2Npc scarletDummy = null;
+		protected L2GrandBossInstance frintezza = null;
+		protected L2GrandBossInstance activeScarlet = null;
+		protected List<L2MonsterInstance> demons = new FastList<>();
+		protected Map<L2MonsterInstance, Integer> portraits = new FastMap<>();
+		protected int scarlet_x = 0;
+		protected int scarlet_y = 0;
+		protected int scarlet_z = 0;
+		protected int scarlet_h = 0;
+		protected int scarlet_a = 0;
 		
 		protected FETWorld()
 		{
@@ -140,24 +139,9 @@ public class FinalEmperialTomb extends Quest
 		}
 	}
 	
-	private static final int TEMPLATE_ID = 136; // this is the client number
-	private static final int MIN_PLAYERS = Config.MIN_PLAYER_TO_FE;
-	private static final int MAX_PLAYERS = Config.MAX_PLAYER_TO_FE;
-	private static final boolean debug = false;
-	
-	private final Map<Integer, L2Territory> _spawnZoneList = new HashMap<>();
-	private final Map<Integer, List<FETSpawn>> _spawnList = new HashMap<>();
-	private final List<Integer> _mustKillMobsId = new FastList<>();
-	
-	// Teleports
-	private static final Location ENTER_TELEPORT = new Location(-88015, -141153, -9168);
-	
 	// NPCs
 	private static final int GUIDE = 32011;
 	private static final int CUBE = 29061;
-	// Item
-	private static final int DEWDROP_OF_DESTRUCTION_ITEM_ID = 8556;
-	// mobs
 	private static final int SCARLET1 = 29046;
 	private static final int SCARLET2 = 29047;
 	private static final int FRINTEZZA = 29045;
@@ -173,15 +157,19 @@ public class FinalEmperialTomb extends Quest
 	};
 	private static final int HALL_ALARM = 18328;
 	private static final int HALL_KEEPER_CAPTAIN = 18329;
+	// Items
 	private static final int HALL_KEEPER_SUICIDAL_SOLDIER = 18333;
 	private static final int DARK_CHOIR_PLAYER = 18339;
 	private static final int[] AI_DISABLED_MOBS =
 	{
 		18328
 	};
-	
+	private static final int DEWDROP_OF_DESTRUCTION_ITEM_ID = 8556;
 	private static final int FIRST_SCARLET_WEAPON = 8204;
 	private static final int SECOND_SCARLET_WEAPON = 7903;
+	// Skills
+	private static final int DEWDROP_OF_DESTRUCTION_SKILL_ID = 2276;
+	private static final int SOUL_BREAKING_ARROW_SKILL_ID = 2234;
 	protected static final SkillHolder INTRO_SKILL = new SkillHolder(5004, 1);
 	private static final SkillHolder FIRST_MORPH_SKILL = new SkillHolder(5017, 1);
 	
@@ -193,53 +181,81 @@ public class FinalEmperialTomb extends Quest
 		new FrintezzaSong(new SkillHolder(5007, 4), new SkillHolder(5008, 4), NpcStringId.FUGUE_OF_JUBILATION, 90),
 		new FrintezzaSong(new SkillHolder(5007, 5), new SkillHolder(5008, 5), NpcStringId.HYPNOTIC_MAZURKA, 100),
 	};
-	// Skills
-	private static final int DEWDROP_OF_DESTRUCTION_SKILL_ID = 2276;
-	private static final int SOUL_BREAKING_ARROW_SKILL_ID = 2234;
-	//@formatter:off
-	// Doors/Walls/Zones
+	// Locations
+	private static final Location ENTER_TELEPORT = new Location(-88015, -141153, -9168);
+	protected static final Location MOVE_TO_CENTER = new Location(-87904, -141296, -9168, 0);
+	// Misc
+	private static final int TEMPLATE_ID = 136; // this is the client number
+	private static final int MIN_PLAYERS = 36;
+	private static final int MAX_PLAYERS = 45;
+	private static final int TIME_BETWEEN_DEMON_SPAWNS = 20000;
+	private static final int MAX_DEMONS = 24;
+	private static final boolean debug = false;
+	private final Map<Integer, L2Territory> _spawnZoneList = new HashMap<>();
+	private final Map<Integer, List<FETSpawn>> _spawnList = new HashMap<>();
+	private final List<Integer> _mustKillMobsId = new FastList<>();
 	protected static final int[] FIRST_ROOM_DOORS =
 	{
-		17130051, 17130052, 17130053, 17130054,
-		17130055, 17130056, 17130057, 17130058
+		17130051,
+		17130052,
+		17130053,
+		17130054,
+		17130055,
+		17130056,
+		17130057,
+		17130058
 	};
 	protected static final int[] SECOND_ROOM_DOORS =
 	{
-		17130061, 17130062, 17130063, 17130064, 17130065,
-		17130066, 17130067, 17130068, 17130069, 17130070
+		17130061,
+		17130062,
+		17130063,
+		17130064,
+		17130065,
+		17130066,
+		17130067,
+		17130068,
+		17130069,
+		17130070
 	};
-	
 	protected static final int[] FIRST_ROUTE_DOORS =
 	{
-		17130042, 17130043
+		17130042,
+		17130043
 	};
 	protected static final int[] SECOND_ROUTE_DOORS =
 	{
-		17130045, 17130046
+		17130045,
+		17130046
 	};
-	protected static final Location MOVE_TO_CENTER = new Location(-87904, -141296, -9168, 0);
-	
-	// spawns
-	private static final int TIME_BETWEEN_DEMON_SPAWNS = 20000;
-	private static final int MAX_DEMONS = 24;
+	// @formatter:off
 	protected static final int[][] PORTRAIT_SPAWNS =
 	{
-		{29048,-89381,-153981,-9168,3368,-89378,-153968,-9168,3368},
-		{29048,-86234,-152467,-9168,37656,-86261,-152492,-9168,37656},
-		{29049,-89342,-152479,-9168,-5152,-89311,-152491,-9168,-5152},
-		{29049,-86189,-153968,-9168,29456,-86217,-153956,-9168,29456}
+		{29048, -89381, -153981, -9168, 3368, -89378, -153968, -9168, 3368},
+		{29048, -86234, -152467, -9168, 37656, -86261, -152492, -9168, 37656},
+		{29049, -89342, -152479, -9168, -5152, -89311, -152491, -9168, -5152},
+		{29049, -86189, -153968, -9168, 29456, -86217, -153956, -9168, 29456},
 	};
-	//@formatter:on
+	// @formatter:on
 	
-	// Initialization at 6:30 am on Wednesday and Saturday
-	private static final int RESET_HOUR = 6;
-	private static final int RESET_MIN = 30;
-	private static final int RESET_DAY_1 = 4;
-	private static final int RESET_DAY_2 = 7;
+	public FinalEmperialTomb()
+	{
+		super(FinalEmperialTomb.class.getSimpleName());
+		load();
+		addAttackId(SCARLET1, FRINTEZZA);
+		addAttackId(PORTRAITS);
+		addStartNpc(GUIDE, CUBE);
+		addTalkId(GUIDE, CUBE);
+		addKillId(HALL_ALARM, HALL_KEEPER_CAPTAIN, DARK_CHOIR_PLAYER, SCARLET2);
+		addKillId(PORTRAITS);
+		addKillId(DEMONS);
+		addKillId(_mustKillMobsId);
+		addSpellFinishedId(HALL_KEEPER_SUICIDAL_SOLDIER);
+	}
 	
-	@SuppressWarnings("unused")
 	private void load()
 	{
+		@SuppressWarnings("unused")
 		int spawnCount = 0;
 		try
 		{
@@ -250,7 +266,7 @@ public class FinalEmperialTomb extends Quest
 			File file = new File(Config.DATAPACK_ROOT + "/data/xml/spawnZones/final_emperial_tomb.xml");
 			if (!file.exists())
 			{
-				_log.error(FinalEmperialTomb.class.getSimpleName() + ": Missing final_emperial_tomb.xml. The quest wont work without it!");
+				_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing final_emperial_tomb.xml. The quest wont work without it!");
 				return;
 			}
 			
@@ -270,7 +286,7 @@ public class FinalEmperialTomb extends Quest
 								Node att = attrs.getNamedItem("npcId");
 								if (att == null)
 								{
-									_log.error(FinalEmperialTomb.class.getSimpleName() + ": Missing npcId in npc List, skipping");
+									_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing npcId in npc List, skipping");
 									continue;
 								}
 								int npcId = Integer.parseInt(attrs.getNamedItem("npcId").getNodeValue());
@@ -278,7 +294,7 @@ public class FinalEmperialTomb extends Quest
 								att = attrs.getNamedItem("flag");
 								if (att == null)
 								{
-									_log.error(FinalEmperialTomb.class.getSimpleName() + ": Missing flag in npc List npcId: " + npcId + ", skipping");
+									_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing flag in npc List npcId: " + npcId + ", skipping");
 									continue;
 								}
 								int flag = Integer.parseInt(attrs.getNamedItem("flag").getNodeValue());
@@ -394,21 +410,21 @@ public class FinalEmperialTomb extends Quest
 								Node att = attrs.getNamedItem("id");
 								if (att == null)
 								{
-									_log.error(FinalEmperialTomb.class.getSimpleName() + ": Missing id in spawnZones List, skipping");
+									_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing id in spawnZones List, skipping");
 									continue;
 								}
 								int id = Integer.parseInt(att.getNodeValue());
 								att = attrs.getNamedItem("minZ");
 								if (att == null)
 								{
-									_log.error(FinalEmperialTomb.class.getSimpleName() + ": Missing minZ in spawnZones List id: " + id + ", skipping");
+									_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing minZ in spawnZones List id: " + id + ", skipping");
 									continue;
 								}
 								int minz = Integer.parseInt(att.getNodeValue());
 								att = attrs.getNamedItem("maxZ");
 								if (att == null)
 								{
-									_log.error(FinalEmperialTomb.class.getSimpleName() + ": Missing maxZ in spawnZones List id: " + id + ", skipping");
+									_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing maxZ in spawnZones List id: " + id + ", skipping");
 									continue;
 								}
 								int maxz = Integer.parseInt(att.getNodeValue());
@@ -452,130 +468,102 @@ public class FinalEmperialTomb extends Quest
 		}
 		catch (Exception e)
 		{
-			_log.warn(FinalEmperialTomb.class.getSimpleName() + ": Could not parse final_emperial_tomb.xml file: " + e.getMessage(), e);
+			_log.warn(FinalEmperialTomb.class.getSimpleName() + " Could not parse final_emperial_tomb.xml file: " + e.getMessage(), e);
 		}
 		if (debug)
 		{
-			_log.info(FinalEmperialTomb.class.getSimpleName() + ": Loaded " + _spawnZoneList.size() + " spawn zones data.");
-			_log.info(FinalEmperialTomb.class.getSimpleName() + ": Loaded " + spawnCount + " spawns data.");
+			_log.info(FinalEmperialTomb.class.getSimpleName() + " Loaded " + _spawnZoneList.size() + " spawn zones data.");
+			_log.info(FinalEmperialTomb.class.getSimpleName() + " Loaded " + spawnCount + " spawns data.");
 		}
 	}
 	
-	private boolean checkConditions(L2PcInstance player)
+	@Override
+	protected boolean checkConditions(L2PcInstance player)
 	{
-		if (debug || player.isGM() || player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
+		if (debug || player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
 		{
 			return true;
 		}
-		L2Party party = player.getParty();
+		
+		final L2Party party = player.getParty();
 		if (party == null)
 		{
-			player.sendPacket(SystemMessageId.NOT_IN_PARTY_CANT_ENTER);
+			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 			return false;
 		}
-		L2CommandChannel channel = player.getParty().getCommandChannel();
+		
+		final L2CommandChannel channel = player.getParty().getCommandChannel();
 		if (channel == null)
 		{
-			player.sendPacket(SystemMessageId.NOT_IN_COMMAND_CHANNEL_CANT_ENTER);
+			player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_BECAUSE_YOU_ARE_NOT_ASSOCIATED_WITH_THE_CURRENT_COMMAND_CHANNEL);
 			return false;
 		}
 		else if (channel.getLeader() != player)
 		{
-			player.sendPacket(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER);
+			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
 			return false;
 		}
 		else if (player.getInventory().getItemByItemId(8073) == null)
 		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ITEM_REQUIREMENT_NOT_SUFFICIENT);
+			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_ITEM_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 			sm.addPcName(player);
 			player.sendPacket(sm);
 			return false;
 		}
 		else if ((channel.getMemberCount() < MIN_PLAYERS) || (channel.getMemberCount() > MAX_PLAYERS))
 		{
-			player.sendPacket(SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER);
+			player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_DUE_TO_THE_PARTY_HAVING_EXCEEDED_THE_LIMIT);
 			return false;
 		}
 		for (L2PcInstance channelMember : channel.getMembers())
 		{
-			if (channelMember.getLevel() < Config.MIN_LEVEL_TO_FE)
+			if (channelMember.getLevel() < 80)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
-				sm.addPcName(channelMember);
-				party.broadcastPacket(sm);
+				party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY).addPcName(channelMember));
 				return false;
 			}
 			if (!Util.checkIfInRange(1000, player, channelMember, true))
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_A_LOCATION_WHICH_CANNOT_BE_ENTERED_THEREFORE_IT_CANNOT_BE_PROCESSED);
-				sm.addPcName(channelMember);
-				party.broadcastPacket(sm);
+				party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_IS_IN_A_LOCATION_WHICH_CANNOT_BE_ENTERED_THEREFORE_IT_CANNOT_BE_PROCESSED).addPcName(channelMember));
 				return false;
 			}
-			Long reentertime = InstanceManager.getInstance().getInstanceTime(channelMember.getObjectId(), TEMPLATE_ID);
+			final Long reentertime = InstanceManager.getInstance().getInstanceTime(channelMember.getObjectId(), TEMPLATE_ID);
 			if (System.currentTimeMillis() < reentertime)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_MAY_NOT_RE_ENTER_YET);
-				sm.addPcName(channelMember);
-				party.broadcastPacket(sm);
+				party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_MAY_NOT_RE_ENTER_YET).addPcName(channelMember));
 				return false;
 			}
 		}
 		return true;
 	}
 	
-	protected int enterInstance(L2PcInstance player, String template, Location loc)
+	@Override
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
 	{
-		// check for existing instances for this player
-		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-		// existing instance
-		if (world != null)
+		if (firstEntrance)
 		{
-			if (!(world instanceof FETWorld))
+			controlStatus((FETWorld) world);
+			
+			if ((player.getParty() == null) || (player.getParty().getCommandChannel() == null))
 			{
-				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
-				return 0;
+				player.destroyItemByItemId(getName(), DEWDROP_OF_DESTRUCTION_ITEM_ID, player.getInventory().getInventoryItemCount(DEWDROP_OF_DESTRUCTION_ITEM_ID, -1), null, true);
+				world.addAllowed(player.getObjectId());
+				teleportPlayer(player, ENTER_TELEPORT, world.getInstanceId(), false);
 			}
-			teleportPlayer(player, loc, world.getInstanceId(), false);
-			return world.getInstanceId();
-		}
-		
-		// New instance
-		if (!checkConditions(player))
-		{
-			return 0;
-		}
-		if (!player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS) && !player.destroyItemByItemId("QUEST", 8073, 1, player, true))
-		{
-			return 0;
-		}
-		final int instanceId = InstanceManager.getInstance().createDynamicInstance(template);
-		// Instance ins = InstanceManager.getInstance().getInstance(instanceId);
-		// ins.setSpawnLoc(new int[]{player.getX(),player.getY(),player.getZ()});
-		world = new FETWorld();
-		world.setTemplateId(TEMPLATE_ID);
-		world.setInstanceId(instanceId);
-		world.setStatus(0);
-		InstanceManager.getInstance().addWorld(world);
-		controlStatus((FETWorld) world);
-		_log.info("Final Emperial Tomb started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
-		// teleport players
-		if ((player.getParty() == null) || (player.getParty().getCommandChannel() == null))
-		{
-			player.destroyItemByItemId(getName(), DEWDROP_OF_DESTRUCTION_ITEM_ID, player.getInventory().getInventoryItemCount(DEWDROP_OF_DESTRUCTION_ITEM_ID, -1), null, true);
-			world.addAllowed(player.getObjectId());
-			teleportPlayer(player, loc, instanceId, false);
+			else
+			{
+				for (L2PcInstance channelMember : player.getParty().getCommandChannel().getMembers())
+				{
+					channelMember.destroyItemByItemId(getName(), DEWDROP_OF_DESTRUCTION_ITEM_ID, channelMember.getInventory().getInventoryItemCount(DEWDROP_OF_DESTRUCTION_ITEM_ID, -1), null, true);
+					world.addAllowed(channelMember.getObjectId());
+					teleportPlayer(channelMember, ENTER_TELEPORT, world.getInstanceId(), false);
+				}
+			}
 		}
 		else
 		{
-			for (L2PcInstance channelMember : player.getParty().getCommandChannel().getMembers())
-			{
-				channelMember.destroyItemByItemId(getName(), DEWDROP_OF_DESTRUCTION_ITEM_ID, channelMember.getInventory().getInventoryItemCount(DEWDROP_OF_DESTRUCTION_ITEM_ID, -1), null, true);
-				world.addAllowed(channelMember.getObjectId());
-				teleportPlayer(channelMember, loc, instanceId, false);
-			}
+			teleportPlayer(player, ENTER_TELEPORT, world.getInstanceId(), false);
 		}
-		return instanceId;
 	}
 	
 	protected boolean checkKillProgress(L2Npc mob, FETWorld world)
@@ -609,7 +597,7 @@ public class FinalEmperialTomb extends Quest
 							}
 							else
 							{
-								_log.info(FinalEmperialTomb.class.getSimpleName() + ": Missing zone: " + spw.zone);
+								_log.info(FinalEmperialTomb.class.getSimpleName() + " Missing zone: " + spw.zone);
 							}
 						}
 					}
@@ -634,7 +622,7 @@ public class FinalEmperialTomb extends Quest
 			{
 				if (debug)
 				{
-					_log.info(FinalEmperialTomb.class.getSimpleName() + ": Starting " + world.getStatus() + ". status.");
+					_log.info(FinalEmperialTomb.class.getSimpleName() + " Starting " + world.getStatus() + ". status.");
 				}
 				world.npcList.clear();
 				switch (world.getStatus())
@@ -667,7 +655,7 @@ public class FinalEmperialTomb extends Quest
 						{
 							world.activeScarlet.abortCast();
 						}
-						setInstanceTimeRestrictions(world);
+						handleReenterTime(world);
 						world.activeScarlet.doCast(FIRST_MORPH_SKILL.getSkill());
 						ThreadPoolManager.getInstance().scheduleGeneral(new SongTask(world, 2), 1500);
 						break;
@@ -730,7 +718,7 @@ public class FinalEmperialTomb extends Quest
 	
 	protected void spawn(FETWorld world, int npcId, int x, int y, int z, int h, boolean addToKillTable)
 	{
-		L2Npc npc = addSpawn(npcId, x, y, z, h, false, 0, false, world.getInstanceId());
+		final L2Npc npc = addSpawn(npcId, x, y, z, h, false, 0, false, world.getInstanceId());
 		if (addToKillTable)
 		{
 			world.npcList.add(npc);
@@ -766,7 +754,7 @@ public class FinalEmperialTomb extends Quest
 			{
 				if (debug)
 				{
-					_log.info(FinalEmperialTomb.class.getSimpleName() + ": Instance is deleted or all Portraits is killed.");
+					_log.info(FinalEmperialTomb.class.getSimpleName() + " Instance is deleted or all Portraits is killed.");
 				}
 				return;
 			}
@@ -1335,46 +1323,6 @@ public class FinalEmperialTomb extends Quest
 		}
 	}
 	
-	protected void setInstanceTimeRestrictions(FETWorld world)
-	{
-		Calendar reenter = Calendar.getInstance();
-		reenter.set(Calendar.MINUTE, RESET_MIN);
-		reenter.set(Calendar.HOUR_OF_DAY, RESET_HOUR);
-		// if time is >= RESET_HOUR - roll to the next day
-		if (reenter.getTimeInMillis() <= System.currentTimeMillis())
-		{
-			reenter.add(Calendar.DAY_OF_MONTH, 1);
-		}
-		if (reenter.get(Calendar.DAY_OF_WEEK) <= RESET_DAY_1)
-		{
-			while (reenter.get(Calendar.DAY_OF_WEEK) != RESET_DAY_1)
-			{
-				reenter.add(Calendar.DAY_OF_MONTH, 1);
-			}
-		}
-		else
-		{
-			while (reenter.get(Calendar.DAY_OF_WEEK) != RESET_DAY_2)
-			{
-				reenter.add(Calendar.DAY_OF_MONTH, 1);
-			}
-		}
-		
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_FROM_HERE_S1_S_ENTRY_HAS_BEEN_RESTRICTED);
-		sm.addInstanceName(TEMPLATE_ID);
-		
-		// set instance reenter time for all allowed players
-		for (int objectId : world.getAllowed())
-		{
-			L2PcInstance player = L2World.getInstance().getPlayer(objectId);
-			InstanceManager.getInstance().setInstanceTime(objectId, TEMPLATE_ID, reenter.getTimeInMillis());
-			if ((player != null) && player.isOnline())
-			{
-				player.sendPacket(sm);
-			}
-		}
-	}
-	
 	protected void broadCastPacket(FETWorld world, L2GameServerPacket packet)
 	{
 		for (int objId : world.getAllowed())
@@ -1455,7 +1403,7 @@ public class FinalEmperialTomb extends Quest
 				ThreadPoolManager.getInstance().scheduleGeneral(new StatusTask(world, 0), 2000);
 				if (debug)
 				{
-					_log.info(FinalEmperialTomb.class.getSimpleName() + ": Hall alarm is disabled, doors will open!");
+					_log.info(FinalEmperialTomb.class.getSimpleName() + " Hall alarm is disabled, doors will open!");
 				}
 			}
 			else if (npc.getId() == DARK_CHOIR_PLAYER)
@@ -1466,7 +1414,7 @@ public class FinalEmperialTomb extends Quest
 					ThreadPoolManager.getInstance().scheduleGeneral(new StatusTask(world, 2), 2000);
 					if (debug)
 					{
-						_log.info(FinalEmperialTomb.class.getSimpleName() + ": All Dark Choir Players are killed, doors will open!");
+						_log.info(FinalEmperialTomb.class.getSimpleName() + " All Dark Choir Players are killed, doors will open!");
 					}
 				}
 			}
@@ -1505,14 +1453,10 @@ public class FinalEmperialTomb extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		int npcId = npc.getId();
-		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
+		getQuestState(player, true);
 		if (npcId == GUIDE)
 		{
-			enterInstance(player, "FinalEmperialTomb.xml", ENTER_TELEPORT);
+			enterInstance(player, new FETWorld(), "FinalEmperialTomb.xml", TEMPLATE_ID);
 		}
 		else if (npc.getId() == CUBE)
 		{
@@ -1522,21 +1466,5 @@ public class FinalEmperialTomb extends Quest
 			return null;
 		}
 		return "";
-	}
-	
-	public FinalEmperialTomb()
-	{
-		super(-1, FinalEmperialTomb.class.getSimpleName(), "instances");
-		
-		load();
-		addAttackId(SCARLET1, FRINTEZZA);
-		addAttackId(PORTRAITS);
-		addStartNpc(GUIDE, CUBE);
-		addTalkId(GUIDE, CUBE);
-		addKillId(HALL_ALARM, HALL_KEEPER_CAPTAIN, DARK_CHOIR_PLAYER, SCARLET2);
-		addKillId(PORTRAITS);
-		addKillId(DEMONS);
-		addKillId(_mustKillMobsId);
-		addSpellFinishedId(HALL_KEEPER_SUICIDAL_SOLDIER);
 	}
 }

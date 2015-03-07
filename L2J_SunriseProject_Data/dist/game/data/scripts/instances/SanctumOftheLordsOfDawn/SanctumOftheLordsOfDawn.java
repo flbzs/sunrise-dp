@@ -18,6 +18,8 @@
  */
 package instances.SanctumOftheLordsOfDawn;
 
+import instances.AbstractInstance;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,26 +30,23 @@ import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.entity.Instance;
 import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
+import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
-import l2r.gameserver.network.serverpackets.NpcSay;
 import quests.Q00195_SevenSignsSecretRitualOfThePriests.Q00195_SevenSignsSecretRitualOfThePriests;
-import ai.npc.AbstractNpcAI;
 
 /**
  * Sanctum of the Lords of Dawn instance zone.
  * @author Adry_85
  */
-public final class SanctumOftheLordsOfDawn extends AbstractNpcAI
+public final class SanctumOftheLordsOfDawn extends AbstractInstance
 {
 	protected static final class HSWorld extends InstanceWorld
 	{
-		protected long storeTime = 0;
 		protected int doorst = 0;
 		protected final static Map<Integer, List<L2Npc>> _save_point = new HashMap<>();
 		
@@ -57,8 +56,6 @@ public final class SanctumOftheLordsOfDawn extends AbstractNpcAI
 		}
 	}
 	
-	// Instance
-	private static final int TEMPLATE_ID = 111;
 	// NPCs
 	private static final int GUARDS_OF_THE_DAWN = 18834;
 	private static final int GUARDS_OF_THE_DAWN_2 = 18835;
@@ -68,10 +65,6 @@ public final class SanctumOftheLordsOfDawn extends AbstractNpcAI
 	private static final int IDENTITY_CONFIRM_DEVICE = 32578;
 	private static final int DARKNESS_OF_DAWN = 32579;
 	private static final int SHELF = 32580;
-	// Doors
-	private static int DOOR_ONE = 17240001;
-	private static int DOOR_TWO = 17240003;
-	private static int DOOR_THREE = 17240005;
 	// Item
 	private static final int IDENTITY_CARD = 13822;
 	// Skill
@@ -79,7 +72,11 @@ public final class SanctumOftheLordsOfDawn extends AbstractNpcAI
 	// Locations
 	private static final Location ENTER = new Location(-76161, 213401, -7120, 0, 0);
 	private static final Location EXIT = new Location(-12585, 122305, -2989, 0, 0);
-	
+	// Misc
+	private static final int TEMPLATE_ID = 111;
+	private static int DOOR_ONE = 17240001;
+	private static int DOOR_TWO = 17240003;
+	private static int DOOR_THREE = 17240005;
 	private static final Location[] SAVE_POINT = new Location[]
 	{
 		new Location(-75775, 213415, -7120),
@@ -90,7 +87,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractNpcAI
 	
 	public SanctumOftheLordsOfDawn()
 	{
-		super(SanctumOftheLordsOfDawn.class.getSimpleName(), "instances");
+		super(SanctumOftheLordsOfDawn.class.getSimpleName());
 		addStartNpc(LIGHT_OF_DAWN);
 		addTalkId(LIGHT_OF_DAWN, IDENTITY_CONFIRM_DEVICE, PASSWORD_ENTRY_DEVICE, DARKNESS_OF_DAWN, SHELF);
 		addAggroRangeEnterId(GUARDS_OF_THE_DAWN, GUARDS_OF_THE_DAWN_2, GUARDS_OF_THE_DAWN_3);
@@ -103,13 +100,12 @@ public final class SanctumOftheLordsOfDawn extends AbstractNpcAI
 		{
 			case "spawn":
 			{
-				InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
+				final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 				if (tmpworld instanceof HSWorld)
 				{
-					HSWorld world = (HSWorld) tmpworld;
-					Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-					inst.spawnGroup("high_priest_of_dawn");
-					player.sendPacket(SystemMessageId.SNEAK_INTO_DAWNS_DOCUMENT_STORAGE);
+					final HSWorld world = (HSWorld) tmpworld;
+					spawnGroup("high_priest_of_dawn", world.getInstanceId());
+					player.sendPacket(SystemMessageId.BY_USING_THE_INVISIBLE_SKILL_SNEAK_INTO_THE_DAWN_S_DOCUMENT_STORAGE);
 				}
 				break;
 			}
@@ -119,17 +115,17 @@ public final class SanctumOftheLordsOfDawn extends AbstractNpcAI
 				{
 					case GUARDS_OF_THE_DAWN:
 					{
-						npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.INTRUDER_PROTECT_THE_PRIESTS_OF_DAWN));
+						broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.INTRUDER_PROTECT_THE_PRIESTS_OF_DAWN);
 						break;
 					}
 					case GUARDS_OF_THE_DAWN_2:
 					{
-						npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.HOW_DARE_YOU_INTRUDE_WITH_THAT_TRANSFORMATION_GET_LOST));
+						broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.HOW_DARE_YOU_INTRUDE_WITH_THAT_TRANSFORMATION_GET_LOST);
 						break;
 					}
 					case GUARDS_OF_THE_DAWN_3:
 					{
-						npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.WHO_ARE_YOU_A_NEW_FACE_LIKE_YOU_CAN_T_APPROACH_THIS_PLACE));
+						broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.WHO_ARE_YOU_A_NEW_FACE_LIKE_YOU_CAN_T_APPROACH_THIS_PLACE);
 						break;
 					}
 				}
@@ -150,40 +146,19 @@ public final class SanctumOftheLordsOfDawn extends AbstractNpcAI
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	private void enterInstance(L2PcInstance player, String template, Location loc)
+	@Override
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
 	{
-		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-		if (world != null)
+		if (firstEntrance)
 		{
-			if (!(world instanceof HSWorld))
-			{
-				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
-			}
-			else
-			{
-				teleportPlayer(player, loc, world.getInstanceId());
-			}
-		}
-		else
-		{
-			// New instance,
-			world = new HSWorld();
-			world.setInstanceId(InstanceManager.getInstance().createDynamicInstance(template));
-			world.setTemplateId(TEMPLATE_ID);
-			world.setStatus(0);
-			((HSWorld) world).storeTime = System.currentTimeMillis();
-			InstanceManager.getInstance().addWorld(world);
-			_log.info("Sanctum of the Lords of Dawn started " + template + " Instance: " + world.getInstanceId() + " created by player: " + player.getName());
-			// Teleport players.
-			teleportPlayer(player, loc, world.getInstanceId());
 			world.addAllowed(player.getObjectId());
 			final Map<Integer, List<L2Npc>> save_point = HSWorld.getMonsters();
-			final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-			save_point.put(0, inst.spawnGroup("save_point1"));
-			save_point.put(1, inst.spawnGroup("save_point2"));
-			save_point.put(2, inst.spawnGroup("save_point3"));
-			save_point.put(3, inst.spawnGroup("save_point4"));
+			save_point.put(0, spawnGroup("save_point1", world.getInstanceId()));
+			save_point.put(1, spawnGroup("save_point2", world.getInstanceId()));
+			save_point.put(2, spawnGroup("save_point3", world.getInstanceId()));
+			save_point.put(3, spawnGroup("save_point4", world.getInstanceId()));
 		}
+		teleportPlayer(player, ENTER, world.getInstanceId());
 	}
 	
 	@Override
@@ -196,25 +171,25 @@ public final class SanctumOftheLordsOfDawn extends AbstractNpcAI
 				final QuestState qs = talker.getQuestState(Q00195_SevenSignsSecretRitualOfThePriests.class.getSimpleName());
 				if ((qs != null) && qs.isCond(3) && hasQuestItems(talker, IDENTITY_CARD) && (talker.getTransformationId() == 113))
 				{
-					enterInstance(talker, "SanctumoftheLordsofDawn.xml", ENTER);
+					enterInstance(talker, new HSWorld(), "SanctumoftheLordsofDawn.xml", TEMPLATE_ID);
 					return "32575-01.html";
 				}
 				return "32575-02.html";
 			}
 			case IDENTITY_CONFIRM_DEVICE:
 			{
-				InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
+				final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 				if (tmpworld instanceof HSWorld)
 				{
 					if (hasQuestItems(talker, IDENTITY_CARD) && (talker.getTransformationId() == 113))
 					{
-						HSWorld world = (HSWorld) tmpworld;
+						final HSWorld world = (HSWorld) tmpworld;
 						if (world.doorst == 0)
 						{
 							openDoor(DOOR_ONE, world.getInstanceId());
-							talker.sendPacket(SystemMessageId.SNEAK_INTO_DAWNS_DOCUMENT_STORAGE);
-							talker.sendPacket(SystemMessageId.MALE_GUARDS_CAN_DETECT_FEMALES_DONT);
-							talker.sendPacket(SystemMessageId.FEMALE_GUARDS_NOTICE_BETTER_THAN_MALE);
+							talker.sendPacket(SystemMessageId.BY_USING_THE_INVISIBLE_SKILL_SNEAK_INTO_THE_DAWN_S_DOCUMENT_STORAGE);
+							talker.sendPacket(SystemMessageId.MALE_GUARDS_CAN_DETECT_THE_CONCEALMENT_BUT_THE_FEMALE_GUARDS_CANNOT);
+							talker.sendPacket(SystemMessageId.FEMALE_GUARDS_NOTICE_THE_DISGUISES_FROM_FAR_AWAY_BETTER_THAN_THE_MALE_GUARDS_DO_SO_BEWARE);
 							world.doorst++;
 							npc.decayMe();
 						}
@@ -225,7 +200,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractNpcAI
 							npc.decayMe();
 							for (int objId : world.getAllowed())
 							{
-								L2PcInstance pl = L2World.getInstance().getPlayer(objId);
+								final L2PcInstance pl = L2World.getInstance().getPlayer(objId);
 								if (pl != null)
 								{
 									pl.showQuestMovie(11);
@@ -241,10 +216,10 @@ public final class SanctumOftheLordsOfDawn extends AbstractNpcAI
 			}
 			case PASSWORD_ENTRY_DEVICE:
 			{
-				InstanceWorld tmworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
+				final InstanceWorld tmworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 				if (tmworld instanceof HSWorld)
 				{
-					HSWorld world = (HSWorld) tmworld;
+					final HSWorld world = (HSWorld) tmworld;
 					openDoor(DOOR_THREE, world.getInstanceId());
 					return "32577-01.html";
 				}
@@ -259,7 +234,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractNpcAI
 			}
 			case SHELF:
 			{
-				InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
+				final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 				InstanceManager.getInstance().getInstance(world.getInstanceId()).setDuration(300000);
 				talker.teleToLocation(-75925, 213399, -7128);
 				return "32580-01.html";

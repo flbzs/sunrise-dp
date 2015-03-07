@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,6 +18,8 @@
  */
 package instances.Kamaloka;
 
+import instances.AbstractInstance;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -32,17 +34,15 @@ import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
-import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.entity.Instance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 
-public class Kamaloka extends Quest
+public final class Kamaloka extends AbstractInstance
 {
 	/*
 	 * Reset time for all kamaloka Default: 6:30AM on server time
@@ -69,41 +69,38 @@ public class Kamaloka extends Quest
 	 * If true shaman in the first room will have same npcId as other mobs, making radar useless Default: true (but not retail like)
 	 */
 	private static final boolean STEALTH_SHAMAN = true;
-	
 	// Template IDs for Kamaloka
 	// @formatter:off
 	private static final int[] TEMPLATE_IDS =
 	{
 		57, 58, 73, 60, 61, 74, 63, 64, 75, 66, 67, 76, 69, 70, 77, 72, 78, 79, 134
 	};
-	
 	// Level of the Kamaloka
 	private static final int[] LEVEL =
 	{
 		23, 26, 29, 33, 36, 39, 43, 46, 49, 53, 56, 59, 63, 66, 69, 73, 78, 81, 83
 	};
-	
 	// Duration of the instance, minutes
 	private static final int[] DURATION =
 	{
 		30, 30, 45, 30, 30, 45, 30, 30, 45, 30, 30, 45, 30, 30, 45, 30, 45, 45, 45
 	};
-	
 	// Maximum party size for the instance
 	private static final int[] MAX_PARTY_SIZE =
 	{
 		6, 6, 9, 6, 6, 9, 6, 6, 9, 6, 6, 9, 6, 6, 9, 6, 9, 9, 9
 	};
 	
-	/*
-	 * List of buffs NOT removed on enter from player and pet On retail only newbie guide buffs not removed CAUTION: array must be sorted in ascension order !
+	/**
+	 * List of buffs NOT removed on enter from player and pet<br>
+	 * On retail only newbie guide buffs not removed<br>
+	 * CAUTION: array must be sorted in ascension order!
 	 */
-	private static final int[] BUFFS_WHITELIST =
+	protected static final int[] BUFFS_WHITELIST =
 	{
 		4322, 4323, 4324, 4325, 4326, 4327, 4328, 4329, 4330, 4331, 5632, 5637, 5950
 	};
 	// @formatter:on
-	
 	// Teleport points into instances x, y, z
 	private static final Location[] TELEPORTS =
 	{
@@ -131,8 +128,11 @@ public class Kamaloka extends Quest
 	// Respawn delay for the mobs in the first room, seconds Default: 25
 	private static final int FIRST_ROOM_RESPAWN_DELAY = 25;
 	
-	/*
-	 * First room information, null if room not spawned Skill is casted on the boss when shaman is defeated and mobs respawn stopped Default: 5699 (decrease pdef) shaman npcId, minions npcId, skillId, skillLvl
+	/**
+	 * First room information, null if room not spawned.<br>
+	 * Skill is casted on the boss when shaman is defeated and mobs respawn stopped<br>
+	 * Default: 5699 (decrease pdef)<br>
+	 * shaman npcId, minions npcId, skillId, skillLvl
 	 */
 	private static final int[][] FIRST_ROOM =
 	{
@@ -1174,6 +1174,50 @@ public class Kamaloka extends Quest
 		public L2Npc boss = null; // boss
 	}
 	
+	public Kamaloka()
+	{
+		super(Kamaloka.class.getSimpleName());
+		addFirstTalkId(TELEPORTER);
+		addTalkId(TELEPORTER);
+		for (int cap : CAPTAINS)
+		{
+			addStartNpc(cap);
+			addTalkId(cap);
+		}
+		for (int[] mob : FIRST_ROOM)
+		{
+			if (mob != null)
+			{
+				if (STEALTH_SHAMAN)
+				{
+					addKillId(mob[1]);
+				}
+				else
+				{
+					addKillId(mob[0]);
+				}
+			}
+		}
+		for (int[] mob : SECOND_ROOM)
+		{
+			if (mob != null)
+			{
+				addKillId(mob[0]);
+			}
+		}
+		for (int[] mob : MINIBOSS)
+		{
+			if (mob != null)
+			{
+				addKillId(mob[0]);
+			}
+		}
+		for (int[] mob : BOSS)
+		{
+			addKillId(mob[0]);
+		}
+	}
+	
 	/**
 	 * Check if party with player as leader allowed to enter
 	 * @param player party leader
@@ -1186,19 +1230,19 @@ public class Kamaloka extends Quest
 		// player must be in party
 		if (party == null)
 		{
-			player.sendPacket(SystemMessageId.NOT_IN_PARTY_CANT_ENTER);
+			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
 			return false;
 		}
 		// ...and be party leader
 		if (party.getLeader() != player)
 		{
-			player.sendPacket(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER);
+			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
 			return false;
 		}
 		// party must not exceed max size for selected instance
 		if (party.getMemberCount() > MAX_PARTY_SIZE[index])
 		{
-			player.sendPacket(SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER);
+			player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_DUE_TO_THE_PARTY_HAVING_EXCEEDED_THE_LIMIT);
 			return false;
 		}
 		
@@ -1214,7 +1258,7 @@ public class Kamaloka extends Quest
 			// player level must be in range
 			if (Math.abs(partyMember.getLevel() - level) > MAX_LEVEL_DIFFERENCE)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY);
 				sm.addPcName(partyMember);
 				player.sendPacket(sm);
 				return false;
@@ -1329,7 +1373,7 @@ public class Kamaloka extends Quest
 			// check for level difference again on reenter
 			if (Math.abs(player.getLevel() - LEVEL[((KamaWorld) world).index]) > MAX_LEVEL_DIFFERENCE)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY);
 				sm.addPcName(player);
 				player.sendPacket(sm);
 				return;
@@ -1388,7 +1432,8 @@ public class Kamaloka extends Quest
 	 * Called on instance finish and handles reenter time for instance
 	 * @param world instanceWorld
 	 */
-	private static final void finishInstance(InstanceWorld world)
+	@Override
+	protected final void finishInstance(InstanceWorld world)
 	{
 		if (world instanceof KamaWorld)
 		{
@@ -1401,7 +1446,7 @@ public class Kamaloka extends Quest
 			}
 			reenter.set(Calendar.HOUR_OF_DAY, RESET_HOUR);
 			
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_FROM_HERE_S1_S_ENTRY_HAS_BEEN_RESTRICTED);
+			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_BY_USING_THE_COMMAND_INSTANCEZONE);
 			sm.addInstanceName(world.getTemplateId());
 			
 			// set instance reenter time for all allowed players
@@ -1426,6 +1471,7 @@ public class Kamaloka extends Quest
 	 * Spawn all NPCs in kamaloka
 	 * @param world instanceWorld
 	 */
+	@SuppressWarnings("all")
 	private final void spawnKama(KamaWorld world)
 	{
 		int[] npcs;
@@ -1438,7 +1484,7 @@ public class Kamaloka extends Quest
 		spawns = FIRST_ROOM_SPAWNS[index];
 		if (npcs != null)
 		{
-			world.firstRoom = new ArrayList<>(spawns.length - 1);
+			world.firstRoom = new ArrayList<L2Spawn>(spawns.length - 1);
 			int shaman = getRandom(spawns.length); // random position for shaman
 			
 			for (int i = 0; i < spawns.length; i++)
@@ -1467,7 +1513,7 @@ public class Kamaloka extends Quest
 		spawns = SECOND_ROOM_SPAWNS[index];
 		if (npcs != null)
 		{
-			world.secondRoom = new ArrayList<>(spawns.length);
+			world.secondRoom = new ArrayList<Integer>(spawns.length);
 			
 			for (int[] spawn : spawns)
 			{
@@ -1492,9 +1538,7 @@ public class Kamaloka extends Quest
 		}
 		
 		// boss
-		npc = addSpawn(BOSS[index][0], BOSS[index][1], BOSS[index][2], BOSS[index][3], 0, false, 0, false, world.getInstanceId());
-		((L2MonsterInstance) npc).setOnKillDelay(100);
-		world.boss = npc;
+		world.boss = addSpawn(BOSS[index][0], BOSS[index][1], BOSS[index][2], BOSS[index][3], 0, false, 0, false, world.getInstanceId());
 	}
 	
 	/**
@@ -1696,47 +1740,9 @@ public class Kamaloka extends Quest
 		return super.onKill(npc, player, isSummon);
 	}
 	
-	public Kamaloka()
+	@Override
+	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
 	{
-		super(-1, Kamaloka.class.getSimpleName(), "instances");
-		addFirstTalkId(TELEPORTER);
-		addTalkId(TELEPORTER);
-		for (int cap : CAPTAINS)
-		{
-			addStartNpc(cap);
-			addTalkId(cap);
-		}
-		for (int[] mob : FIRST_ROOM)
-		{
-			if (mob != null)
-			{
-				if (STEALTH_SHAMAN)
-				{
-					addKillId(mob[1]);
-				}
-				else
-				{
-					addKillId(mob[0]);
-				}
-			}
-		}
-		for (int[] mob : SECOND_ROOM)
-		{
-			if (mob != null)
-			{
-				addKillId(mob[0]);
-			}
-		}
-		for (int[] mob : MINIBOSS)
-		{
-			if (mob != null)
-			{
-				addKillId(mob[0]);
-			}
-		}
-		for (int[] mob : BOSS)
-		{
-			addKillId(mob[0]);
-		}
+		
 	}
 }
