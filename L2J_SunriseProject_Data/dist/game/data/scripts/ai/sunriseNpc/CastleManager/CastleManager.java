@@ -16,7 +16,7 @@ public final class CastleManager extends AbstractNpcAI
 {
 	private final int NpcId = CustomNpcsConfigs.CASTLE_NPC_ID;
 	
-	private CastleManager()
+	public CastleManager()
 	{
 		super(CastleManager.class.getSimpleName(), "ai/sunriseNpc");
 		addFirstTalkId(NpcId);

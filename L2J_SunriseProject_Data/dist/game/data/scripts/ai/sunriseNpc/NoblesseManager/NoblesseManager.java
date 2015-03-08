@@ -21,7 +21,7 @@ public class NoblesseManager extends AbstractNpcAI
 	private static final String itemName = ItemData.getInstance().getTemplate(ItemId).getName();
 	private static final int Level = CustomNpcsConfigs.NOBLE_REQUIRED_LEVEL;
 	
-	private NoblesseManager()
+	public NoblesseManager()
 	{
 		super(NoblesseManager.class.getSimpleName(), "ai/sunriseNpc");
 		addStartNpc(NPC);

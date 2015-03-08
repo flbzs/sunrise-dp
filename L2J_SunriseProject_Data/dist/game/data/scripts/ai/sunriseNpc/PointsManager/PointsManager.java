@@ -24,7 +24,7 @@ public final class PointsManager extends AbstractNpcAI
 	private static final int FAME_PRICE = CustomNpcsConfigs.POINTS_ITEM_AMOUNT_FOR_FAME;
 	private static final int FAME_SCORE = CustomNpcsConfigs.POINTS_AMOUNT_FOR_FAME;
 	
-	private PointsManager()
+	public PointsManager()
 	{
 		super(PointsManager.class.getSimpleName(), "ai/sunriseNpc");
 		addFirstTalkId(NpcId);

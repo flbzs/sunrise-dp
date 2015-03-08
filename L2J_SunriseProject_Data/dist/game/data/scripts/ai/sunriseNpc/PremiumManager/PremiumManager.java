@@ -27,7 +27,7 @@ public final class PremiumManager extends AbstractNpcAI
 	private final int ItemAmountforPremium3 = CustomNpcsConfigs.PREMIUM_ITEM_AMOUNT_3;
 	private static final String UPDATE_PREMIUMSERVICE = "UPDATE characters_premium SET premium_service=?,enddate=? WHERE account_name=?";
 	
-	private PremiumManager()
+	public PremiumManager()
 	{
 		super(PremiumManager.class.getSimpleName(), "ai/sunriseNpc");
 		addFirstTalkId(NpcId);

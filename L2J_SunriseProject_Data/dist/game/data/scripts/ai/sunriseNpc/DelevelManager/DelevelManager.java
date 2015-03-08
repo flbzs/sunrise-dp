@@ -26,7 +26,7 @@ public class DelevelManager extends AbstractNpcAI
 		return DYNAMIC_PRICES ? ITEM_COUNT_PER_LEVEL * player.getLevel() : ITEM_COUNT_PER_LEVEL;
 	}
 	
-	private DelevelManager()
+	public DelevelManager()
 	{
 		super(DelevelManager.class.getSimpleName(), "ai/sunriseNpc");
 		addStartNpc(NPC);

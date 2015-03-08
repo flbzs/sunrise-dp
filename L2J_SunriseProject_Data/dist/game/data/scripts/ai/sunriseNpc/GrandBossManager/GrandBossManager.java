@@ -25,7 +25,7 @@ public class GrandBossManager extends AbstractNpcAI
 		29028
 	};
 	
-	private GrandBossManager()
+	public GrandBossManager()
 	{
 		super(GrandBossManager.class.getSimpleName(), "ai/sunriseNpc");
 		addFirstTalkId(NpcId);

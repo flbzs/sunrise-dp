@@ -25,7 +25,7 @@ public final class CasinoManager extends AbstractNpcAI
 	private static final int bet2 = CustomNpcsConfigs.CASINO_BET2;
 	private static final int bet3 = CustomNpcsConfigs.CASINO_BET3;
 	
-	private CasinoManager()
+	public CasinoManager()
 	{
 		super(CasinoManager.class.getSimpleName(), "ai/sunriseNpc");
 		addFirstTalkId(NpcId);

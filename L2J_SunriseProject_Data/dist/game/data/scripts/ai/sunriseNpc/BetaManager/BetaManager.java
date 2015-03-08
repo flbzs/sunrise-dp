@@ -20,7 +20,7 @@ public class BetaManager extends AbstractNpcAI
 {
 	private final static int NPC = CustomNpcsConfigs.BETA_NPC_ID;
 	
-	private BetaManager()
+	public BetaManager()
 	{
 		super(BetaManager.class.getSimpleName(), "ai/sunriseNpc");
 		addStartNpc(NPC);
