@@ -69,6 +69,6 @@ public class SunriseNpcsLoader
 				_log.error(SunriseNpcsLoader.class.getSimpleName() + ": Failed loading " + instance.getSimpleName() + ":", e);
 			}
 		}
-		_log.info("Loaded " + String.valueOf(npcsCounter) + " Sunrise Npc(s).");
+		_log.info(SunriseNpcsLoader.class.getSimpleName() + ": Loaded " + String.valueOf(npcsCounter) + " Sunrise Npc(s).");
 	}
 }
