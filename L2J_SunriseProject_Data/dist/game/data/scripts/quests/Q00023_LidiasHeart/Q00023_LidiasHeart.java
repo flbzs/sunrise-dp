@@ -27,6 +27,7 @@ import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.NpcSay;
+import quests.Q00022_TragedyInVonHellmannForest.Q00022_TragedyInVonHellmannForest;
 import quests.Q00024_InhabitantsOfTheForestOfTheDead.Q00024_InhabitantsOfTheForestOfTheDead;
 
 /**
@@ -291,7 +292,7 @@ public final class Q00023_LidiasHeart extends Quest
 		{
 			if (npc.getId() == HIGH_PRIEST_INNOCENTIN)
 			{
-				final QuestState q22 = player.getQuestState("22_TragedyInVonHellmannForest");
+				final QuestState q22 = player.getQuestState(Q00022_TragedyInVonHellmannForest.class.getSimpleName());
 				if ((q22 != null) && q22.isCompleted())
 				{
 					htmltext = "31328-01.htm";

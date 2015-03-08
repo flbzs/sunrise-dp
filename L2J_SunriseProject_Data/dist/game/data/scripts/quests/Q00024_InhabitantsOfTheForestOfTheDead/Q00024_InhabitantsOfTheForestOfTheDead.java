@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -25,6 +25,7 @@ import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
 import quests.Q00023_LidiasHeart.Q00023_LidiasHeart;
+import quests.Q00025_HidingBehindTheTruth.Q00025_HidingBehindTheTruth;
 
 /**
  * Inhabitants of the Forest of the Dead (24)
@@ -62,7 +63,7 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		final QuestState st = player.getQuestState(getName());
+		final QuestState st = getQuestState(player, false);
 		if (st == null)
 		{
 			return null;
@@ -207,7 +208,7 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
 	{
-		final QuestState st = player.getQuestState(getName());
+		final QuestState st = getQuestState(player, false);
 		
 		if ((st != null) && st.isCond(9) && (getRandom(100) < 10))
 		{
@@ -284,7 +285,7 @@ public class Q00024_InhabitantsOfTheForestOfTheDead extends Quest
 				}
 				else if (st.isCompleted())
 				{
-					final QuestState qs = player.getQuestState("25_HidingBehindTheTruth");
+					final QuestState qs = player.getQuestState(Q00025_HidingBehindTheTruth.class.getSimpleName());
 					if (!((qs != null) && (qs.isStarted() || qs.isStarted())))
 					{
 						htmltext = "31522-22.html";

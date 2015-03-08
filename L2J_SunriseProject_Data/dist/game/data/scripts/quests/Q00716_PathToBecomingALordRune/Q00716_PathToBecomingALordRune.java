@@ -17,6 +17,7 @@ import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.NpcSay;
 import quests.Q00021_HiddenTruth.Q00021_HiddenTruth;
+import quests.Q00025_HidingBehindTheTruth.Q00025_HidingBehindTheTruth;
 
 public class Q00716_PathToBecomingALordRune extends Quest
 {
@@ -156,7 +157,7 @@ public class Q00716_PathToBecomingALordRune extends Quest
 			}
 			else if (cond == 1)
 			{
-				QuestState hidingBehindTheTruth = st.getPlayer().getQuestState("25_HidingBehindTheTruth");
+				QuestState hidingBehindTheTruth = st.getPlayer().getQuestState(Q00025_HidingBehindTheTruth.class.getSimpleName());
 				QuestState hiddenTruth = st.getPlayer().getQuestState(Q00021_HiddenTruth.class.getSimpleName());
 				if ((hidingBehindTheTruth != null) && hidingBehindTheTruth.isCompleted() && (hiddenTruth != null) && hiddenTruth.isCompleted())
 				{
