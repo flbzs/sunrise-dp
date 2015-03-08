@@ -42,8 +42,10 @@ import quests.Q00018_MeetingWithTheGoldenRam.Q00018_MeetingWithTheGoldenRam;
 import quests.Q00019_GoToThePastureland.Q00019_GoToThePastureland;
 import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
 import quests.Q00021_HiddenTruth.Q00021_HiddenTruth;
+import quests.Q00022_TragedyInVonHellmannForest.Q00022_TragedyInVonHellmannForest;
 import quests.Q00023_LidiasHeart.Q00023_LidiasHeart;
 import quests.Q00024_InhabitantsOfTheForestOfTheDead.Q00024_InhabitantsOfTheForestOfTheDead;
+import quests.Q00025_HidingBehindTheTruth.Q00025_HidingBehindTheTruth;
 import quests.Q00026_TiredOfWaiting.Q00026_TiredOfWaiting;
 import quests.Q00027_ChestCaughtWithABaitOfWind.Q00027_ChestCaughtWithABaitOfWind;
 import quests.Q00028_ChestCaughtWithABaitOfIcyAir.Q00028_ChestCaughtWithABaitOfIcyAir;
@@ -216,6 +218,7 @@ import quests.Q00223_TestOfTheChampion.Q00223_TestOfTheChampion;
 import quests.Q00224_TestOfSagittarius.Q00224_TestOfSagittarius;
 import quests.Q00225_TestOfTheSearcher.Q00225_TestOfTheSearcher;
 import quests.Q00226_TestOfTheHealer.Q00226_TestOfTheHealer;
+import quests.Q00227_TestOfTheReformer.Q00227_TestOfTheReformer;
 import quests.Q00228_TestOfMagus.Q00228_TestOfMagus;
 import quests.Q00229_TestOfWitchcraft.Q00229_TestOfWitchcraft;
 import quests.Q00230_TestOfSummoner.Q00230_TestOfSummoner;
@@ -539,8 +542,10 @@ public class QuestLoader
 		Q00019_GoToThePastureland.class,
 		Q00020_BringUpWithLove.class,
 		Q00021_HiddenTruth.class,
+		Q00022_TragedyInVonHellmannForest.class,
 		Q00023_LidiasHeart.class,
 		Q00024_InhabitantsOfTheForestOfTheDead.class,
+		Q00025_HidingBehindTheTruth.class,
 		Q00026_TiredOfWaiting.class,
 		Q00027_ChestCaughtWithABaitOfWind.class,
 		Q00028_ChestCaughtWithABaitOfIcyAir.class,
@@ -715,6 +720,7 @@ public class QuestLoader
 		Q00224_TestOfSagittarius.class,
 		Q00225_TestOfTheSearcher.class,
 		Q00226_TestOfTheHealer.class,
+		Q00227_TestOfTheReformer.class,
 		Q00228_TestOfMagus.class,
 		Q00229_TestOfWitchcraft.class,
 		Q00230_TestOfSummoner.class,
