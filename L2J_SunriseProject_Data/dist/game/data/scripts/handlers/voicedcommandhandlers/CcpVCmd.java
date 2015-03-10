@@ -89,28 +89,31 @@ public class CcpVCmd implements IVoicedCommandHandler
 		NpcHtmlMessage html = new NpcHtmlMessage(5);
 		
 		builder.append("<html noscrollbar><title>Character Control Panel</title><body>");
-		builder.append("<center><br>");
-		builder.append("<img src=\"l2ui.SquareGray\" width=290 height=1><br1>");
-		builder.append("<table width=\"280\" cellpadding=\"5\" bgcolor=\"151515\">");
+		builder.append("<table width=285  height=358 background=\"L2UI_CH3.refinewnd_back_Pattern\">");
+		builder.append("<tr><td valign=\"top\" align=\"center\">");
+		builder.append("<table>");
 		builder.append("<tr>");
-		builder.append("<td valign=\"top\"><center><font color=\"EBDF6C\">L2 Sunrise</font> Character Control Panel<br>You this panel to set various settings for your character! Have in mind that settings are stored after restart and log out.</center></td>");
-		builder.append("</tr>");
-		builder.append(" </table><br1>");
-		builder.append(" <img src=\"l2ui.SquareGray\" width=290 height=1><br>");
-		builder.append("</center>");
-		builder.append("<center>");
-		builder.append("<img src=\"L2UI.SquareBlank\" width=290 height=3>");
-		builder.append("<img src=\"L2UI.SquareGray\" width=290 height=2>");
-		builder.append("<img src=\"L2UI.SquareBlank\" width=290 height=3>");
-		builder.append("<table width=290 bgcolor=151515><tr>");
+		builder.append("<td><center>");
+		builder.append("<table width=280><tr><td></td><td></td><td><img src=\"L2UI_CH3.herotower_deco\" width=256 height=32></td></tr><tr><td height=10></td></tr></table>");
+		builder.append("<table width=275>");
+		builder.append("<tr><td align=center>You this panel to set <font color=\"D2B48C\">various settings</font>.</td></tr>");
+		builder.append("<tr><td align=center>Selections are stored in our database.<br></td></tr>");
+		builder.append("<tr><td align=center><img src=\"L2UI.SquareBlank\" width=274 height=3></td></tr>");
+		builder.append("<tr><td align=center><img src=\"L2UI.SquareGray\" width=274 height=2></td></tr>");
+		builder.append("<tr><td align=center><img src=\"L2UI.SquareBlank\" width=274 height=3></td></tr>");
+		builder.append("<tr><td><table width=274><tr>");
 		builder.append("<td width=110><font color=9f9f9f>Configuration Option:</font></td>");
 		builder.append("<td width=60 align=\"center\"><font color=9f9f9f>Action:</font></td>");
 		builder.append("<td width=60 align=\"center\"><font color=9f9f9f>Status:</font></td></tr>");
-		builder.append("</table>");
-		builder.append("<img src=\"L2UI.SquareBlank\" width=290 height=3>");
-		builder.append("<img src=\"L2UI.SquareGray\" width=290 height=2>");
-		builder.append("<img src=\"L2UI.SquareBlank\" width=290 height=3>");
-		builder.append("<table width=290 bgcolor=151515>");
+		builder.append("</table></td></tr>");
+		
+		builder.append("<tr><td align=center><img src=\"L2UI.SquareBlank\" width=274 height=3></td></tr>");
+		builder.append("<tr><td align=center><img src=\"L2UI.SquareGray\" width=274 height=2></td></tr>");
+		builder.append("<tr><td align=center><img src=\"L2UI.SquareBlank\" width=274 height=3></td></tr>");
+		
+		builder.append("<tr><td>");
+		
+		builder.append("<table width=274>");
 		
 		builder.append("<tr>");
 		builder.append("<td width=110><font color=898989>Trade Refusal:</font></td>");
@@ -197,10 +200,15 @@ public class CcpVCmd implements IVoicedCommandHandler
 		}
 		
 		builder.append("</table>");
-		builder.append("<img src=\"L2UI.SquareBlank\" width=290 height=3>");
-		builder.append("<img src=\"L2UI.SquareGray\" width=290 height=2>");
-		builder.append("<img src=\"L2UI.SquareBlank\" width=290 height=3>");
-		builder.append("</center></body></html>");
+		
+		builder.append("</td></tr>");
+		builder.append("</table>");
+		builder.append("<table width=280><tr><td height=5></td></tr><tr><td></td><td></td><td><img src=\"L2UI_CH3.herotower_deco\" width=256 height=32></td></tr><tr><td height=5></td></tr></table>");
+		builder.append("</center></td>	");
+		builder.append("</tr>");
+		builder.append("</table>");
+		builder.append("</td></tr><tr><td height=10></td></tr></table>");
+		builder.append("</body></html>");
 		html.setHtml(builder.toString());
 		player.sendPacket(html);
 	}
