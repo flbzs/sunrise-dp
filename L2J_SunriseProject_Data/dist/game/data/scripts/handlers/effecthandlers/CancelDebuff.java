@@ -43,6 +43,12 @@ public class CancelDebuff extends L2Effect
 	}
 	
 	@Override
+	public boolean isInstant()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean onStart()
 	{
 		return cancel(getEffector(), getEffected(), getSkill(), getEffectPower());
