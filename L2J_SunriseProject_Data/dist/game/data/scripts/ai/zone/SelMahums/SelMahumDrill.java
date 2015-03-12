@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -35,15 +35,13 @@ import ai.npc.AbstractNpcAI;
  * Sel Mahum Training Ground AI for drill groups.
  * @author GKR
  */
-
 public final class SelMahumDrill extends AbstractNpcAI
 {
 	private static final int[] MAHUM_CHIEFS =
 	{
 		22775, // Sel Mahum Drill Sergeant
 		22776, // Sel Mahum Training Officer
-		22778
-	// Sel Mahum Drill Sergeant
+		22778, // Sel Mahum Drill Sergeant
 	};
 	
 	private static final int[] MAHUM_SOLDIERS =
@@ -52,8 +50,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 		22782, // Sel Mahum Recruit
 		22783, // Sel Mahum Soldier
 		22784, // Sel Mahum Recruit
-		22785
-	// Sel Mahum Soldier
+		22785, // Sel Mahum Soldier
 	};
 	
 	private static final int[] CHIEF_SOCIAL_ACTIONS =
@@ -138,7 +135,6 @@ public final class SelMahumDrill extends AbstractNpcAI
 		addEventReceivedId(MAHUM_SOLDIERS);
 		addSpawnId(MAHUM_CHIEFS);
 		addSpawnId(MAHUM_SOLDIERS);
-		
 		// Start global return home timer
 		startQuestTimer("return_home", 120000, null, null, true);
 	}
@@ -200,8 +196,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 				break;
 			}
 		}
-		
-		return null;
+		return super.onAdvEvent(event, npc, player);
 	}
 	
 	@Override
@@ -211,7 +206,6 @@ public final class SelMahumDrill extends AbstractNpcAI
 		{
 			npc.broadcastEvent("ATTACKED", 1000, null);
 		}
-		
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
@@ -240,7 +234,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 						{
 							broadcastNpcSay(receiver, Say2.NPC_ALL, SOLDIER_FSTRINGS[getRandom(2)]);
 						}
-						if (receiver.isAttackable())
+						if (receiver.canBeAttacked())
 						{
 							((L2Attackable) receiver).clearAggroList();
 						}
@@ -262,7 +256,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 				}
 			}
 		}
-		return null;
+		return super.onEventReceived(eventName, sender, receiver, reference);
 	}
 	
 	@Override
@@ -287,8 +281,7 @@ public final class SelMahumDrill extends AbstractNpcAI
 		
 		// Restore AI handling by core
 		npc.disableCoreAI(false);
-		
-		return null;
+		return super.onSpawn(npc);
 	}
 	
 	private void handleSocialAction(L2Npc npc, Actions action, boolean firstCall)

@@ -646,19 +646,14 @@
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="speed_down" />
 		<set name="hitTime" val="1000" />
-		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="-1" /> <!-- Land Always -->
-		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="1000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Debuff" abnormalTime="300" val="0" abnormalLvl="3" abnormalType="speed_down">
+			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="3" abnormalType="speed_down">
 				<mul order="0x30" stat="pAtkSpd" val="0.7" />
 			</effect>
 		</for>
@@ -670,19 +665,14 @@
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="speed_down" />
 		<set name="hitTime" val="1000" />
-		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="84" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="-1" /> <!-- Land Always -->
-		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="1000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Debuff" abnormalTime="300" val="0" abnormalLvl="3" abnormalType="speed_down">
+			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="3" abnormalType="speed_down">
 				<mul order="0x30" stat="runSpd" val="0.7" />
 				<mul order="0x30" stat="pAtkSpd" val="0.7" />
 			</effect>
