@@ -552,10 +552,10 @@ public class PailakaInjuredDragon extends Quest
 	@Override
 	public final String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		final QuestState st = player.getQuestState(qn);
+		QuestState st = player.getQuestState(qn);
 		if (st == null)
 		{
-			return getNoQuestMsg(player);
+			st = newQuestState(player);
 		}
 		
 		final int cond = st.getInt("cond");
