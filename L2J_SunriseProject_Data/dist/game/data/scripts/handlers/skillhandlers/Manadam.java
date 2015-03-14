@@ -25,10 +25,8 @@ import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.L2SkillType;
-import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.model.stats.Formulas;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.StatusUpdate;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -50,7 +48,6 @@ public class Manadam implements ISkillHandler
 			return;
 		}
 		
-		boolean ss = skill.useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		boolean sps = skill.useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
 		boolean bss = skill.useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		
@@ -61,77 +58,62 @@ public class Manadam implements ISkillHandler
 				target = activeChar;
 			}
 			
-			boolean acted = Formulas.calcMagicAffected(activeChar, target, skill);
-			if (target.isInvul() || !acted)
+			if (target.isInvul())
 			{
-				activeChar.sendPacket(SystemMessageId.MISSED_TARGET);
+				continue;
 			}
-			else
+			
+			if (!Formulas.calcMagicAffected(activeChar, target, skill))
 			{
-				if (skill.hasEffects())
-				{
-					byte shld = Formulas.calcShldUse(activeChar, target, skill);
-					target.stopSkillEffects(skill.getId());
-					if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ss, sps, bss))
-					{
-						skill.getEffects(activeChar, target, new Env(shld, ss, sps, bss));
-					}
-					else
-					{
-						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
-						sm.addCharName(target);
-						sm.addSkillName(skill);
-						activeChar.sendPacket(sm);
-					}
-				}
-				
-				double damage = skill.isStaticDamage() ? skill.getPower() : Formulas.calcManaDam(activeChar, target, skill, ss, bss);
-				
-				if (!skill.isStaticDamage() && Formulas.calcMCrit(activeChar.getMCriticalHit(target, skill)))
-				{
-					damage *= 3.;
-					activeChar.sendPacket(SystemMessageId.CRITICAL_HIT_MAGIC);
-				}
-				
-				double mp = (damage > target.getCurrentMp() ? target.getCurrentMp() : damage);
-				target.reduceCurrentMp(mp);
-				
-				// Maybe launch chance skills on us
-				if (activeChar.getChanceSkills() != null)
-				{
-					activeChar.getChanceSkills().onSkillHit(target, skill, false, damage);
-				}
-				// Maybe launch chance skills on target
-				if (target.getChanceSkills() != null)
-				{
-					target.getChanceSkills().onSkillHit(activeChar, skill, true, damage);
-				}
-				
-				if (damage > 0)
-				{
-					target.stopEffectsOnDamage(true);
-				}
-				
-				if (target.isPlayer())
-				{
-					StatusUpdate sump = new StatusUpdate(target);
-					sump.addAttribute(StatusUpdate.CUR_MP, (int) target.getCurrentMp());
-					// [L2J_JP EDIT START - TSL]
-					target.sendPacket(sump);
-					
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_MP_HAS_BEEN_DRAINED_BY_C1);
-					sm.addCharName(activeChar);
-					sm.addInt((int) mp);
-					target.sendPacket(sm);
-				}
-				
 				if (activeChar.isPlayer())
 				{
-					SystemMessage sm2 = SystemMessage.getSystemMessage(SystemMessageId.YOUR_OPPONENTS_MP_WAS_REDUCED_BY_S1);
-					sm2.addInt((int) mp);
-					activeChar.sendPacket(sm2);
+					activeChar.sendPacket(SystemMessageId.ATTACK_FAILED);
 				}
-				// [L2J_JP EDIT END - TSL]
+				if (target.isPlayer())
+				{
+					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_C2_DRAIN2);
+					sm.addCharName(target);
+					sm.addCharName(activeChar);
+					target.sendPacket(sm);
+				}
+				continue;
+			}
+			
+			final byte shld = Formulas.calcShldUse(activeChar, target, skill);
+			final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, skill));
+			double damage = skill.isStaticDamage() ? skill.getPower() : Formulas.calcManaDam(activeChar, target, skill, shld, sps, bss, mcrit);
+			double mp = (damage > target.getCurrentMp() ? target.getCurrentMp() : damage);
+			
+			// Maybe launch chance skills on us
+			if (activeChar.getChanceSkills() != null)
+			{
+				activeChar.getChanceSkills().onSkillHit(target, skill, false, damage);
+			}
+			// Maybe launch chance skills on target
+			if (target.getChanceSkills() != null)
+			{
+				target.getChanceSkills().onSkillHit(activeChar, skill, true, damage);
+			}
+			
+			if (damage > 0)
+			{
+				target.stopEffectsOnDamage(true);
+				target.setCurrentMp(target.getCurrentMp() - mp);
+			}
+			
+			if (target.isPlayer())
+			{
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_MP_HAS_BEEN_DRAINED_BY_C1);
+				sm.addCharName(activeChar);
+				sm.addInt((int) mp);
+				target.sendPacket(sm);
+			}
+			
+			if (activeChar.isPlayer())
+			{
+				SystemMessage sm2 = SystemMessage.getSystemMessage(SystemMessageId.YOUR_OPPONENTS_MP_WAS_REDUCED_BY_S1);
+				sm2.addInt((int) mp);
+				activeChar.sendPacket(sm2);
 			}
 		}
 		
