@@ -91,12 +91,7 @@ public final class GrandBossTeleporters extends AbstractNpcAI
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = "";
-		QuestState st = player.getQuestState(getName());
-		
-		if (st == null)
-		{
-			return null;
-		}
+		final QuestState st = getQuestState(player, true);
 		
 		switch (npc.getId())
 		{
