@@ -324,9 +324,11 @@
 		<cond msgId="109">
 			<target npcType="L2TrapInstance" />
 		</cond>
-		<effect name="TrapRemove" noicon="1" val="0" >
-			<param power="78" />
-		</effect>
+		<for>
+			<effect name="TrapRemove" noicon="1" val="0" >
+				<param power="78" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="625" levels="1" name="Soul Gathering" enchantGroup1="1" enchantGroup2="1">
 		<!-- Confirmed CT2.5 -->

@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import l2r.gameserver.enums.TrapAction;
-import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.instance.L2TrapInstance;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
@@ -59,18 +58,12 @@ public final class TrapRemove extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		final L2Character target = getEffected();
-		if (!target.isTrap())
+		if (!getEffected().isTrap() || getEffected().isAlikeDead())
 		{
 			return false;
 		}
 		
-		if (target.isAlikeDead())
-		{
-			return false;
-		}
-		
-		final L2TrapInstance trap = (L2TrapInstance) target;
+		final L2TrapInstance trap = (L2TrapInstance) getEffected();
 		if (!trap.canBeSeen(getEffector()))
 		{
 			if (getEffector().isPlayer())
@@ -80,18 +73,16 @@ public final class TrapRemove extends L2Effect
 			return false;
 		}
 		
-		if (trap.getLevel() > _power)
+		if (trap.getLevel() <= _power)
 		{
-			return false;
-		}
-		
-		// Notify to scripts
-		EventDispatcher.getInstance().notifyEventAsync(new OnTrapAction(trap, getEffector(), TrapAction.TRAP_DISARMED), trap);
-		
-		trap.unSummon();
-		if (getEffector().isPlayer())
-		{
-			getEffector().sendPacket(SystemMessageId.A_TRAP_DEVICE_HAS_BEEN_STOPPED);
+			// Notify to scripts
+			EventDispatcher.getInstance().notifyEventAsync(new OnTrapAction(trap, getEffector(), TrapAction.TRAP_DISARMED), trap);
+			
+			trap.unSummon();
+			if (getEffector().isPlayer())
+			{
+				getEffector().sendPacket(SystemMessageId.A_TRAP_DEVICE_HAS_BEEN_STOPPED);
+			}
 		}
 		
 		return true;
