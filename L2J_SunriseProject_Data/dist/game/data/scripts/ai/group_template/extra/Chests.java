@@ -124,7 +124,6 @@ public class Chests extends AbstractNpcAI
 	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
 	{
-		// only trigger behavior when the npc seeing this also is in target list
 		if (!Util.contains(targets, npc))
 		{
 			return null;
@@ -135,16 +134,6 @@ public class Chests extends AbstractNpcAI
 		{
 			return null;
 		}
-		
-		// Not required, we only register valid chests
-		// @formatter:off
-/*		if ((chest.getId() < _NPCID_REWARD_CHESTS_MIN_ID) || (chest.getId() > _NPCID_REWARD_CHESTS_MAX_ID))
-		{
-			// consider this to be a trap chest
-			selfDestructChest(chest);
-			return null;
-		}*/
-		// @formatter:on
 		
 		int openChance = 0;
 		
@@ -194,7 +183,6 @@ public class Chests extends AbstractNpcAI
 	@Override
 	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
 	{
-		// after self descruction casting, chest is deleted and decayed directly
 		npc.deleteMe();
 		return null;
 	}
