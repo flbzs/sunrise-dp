@@ -45,9 +45,6 @@ import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * @author DS
  */
@@ -60,7 +57,7 @@ public class OlympiadManagerLink implements IBypassHandler
 		"olybuff",
 		"olympiad"
 	};
-	protected static final Logger _log = LoggerFactory.getLogger(OlympiadManagerLink.class);
+	
 	private static final String FEWER_THAN = "Fewer than " + String.valueOf(Config.ALT_OLY_REG_DISPLAY);
 	private static final String MORE_THAN = "More than " + String.valueOf(Config.ALT_OLY_REG_DISPLAY);
 	private static final int GATE_PASS = Config.ALT_OLY_COMP_RITEM;
@@ -229,9 +226,6 @@ public class OlympiadManagerLink implements IBypassHandler
 							sm.addLong(passes);
 							sm.addItemName(item);
 							activeChar.sendPacket(sm);
-							
-							_log.info("PlayerName - isActiveHero - isInActiveHero - passes");
-							_log.info(activeChar.getName() + " - " + String.valueOf(activeChar.isHero()) + " - " + Hero.getInstance().isInactiveHero(activeChar.getObjectId()) + " - " + String.valueOf(passes));
 						}
 						break;
 					case 11: // register team
@@ -347,10 +341,10 @@ public class OlympiadManagerLink implements IBypassHandler
 					case 4: // hero list
 						activeChar.sendPacket(new ExHeroList());
 						break;
-					case 5: // HeroCertification
-						if (Hero.getInstance().isInactiveHero(activeChar.getObjectId()))
+					case 5: // Hero Certification
+						if (Hero.getInstance().isUnclaimedHero(activeChar.getObjectId()))
 						{
-							Hero.getInstance().activateHero(activeChar);
+							Hero.getInstance().claimHero(activeChar);
 							reply.setFile(activeChar.getHtmlPrefix(), Olympiad.OLYMPIAD_HTML_PATH + "hero_receive.htm");
 						}
 						else
