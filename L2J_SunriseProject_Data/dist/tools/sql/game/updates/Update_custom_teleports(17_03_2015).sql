@@ -1,0 +1,1 @@
+ALTER TABLE `custom_teleports` ADD `onlyForNoble` TINYINT UNSIGNED DEFAULT 0;
