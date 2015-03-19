@@ -15,17 +15,9 @@
 
 package handlers.admincommandhandlers;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.Calendar;
-
-import l2r.L2DatabaseFactory;
 import l2r.gameserver.handler.IAdminCommandHandler;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import gr.sr.premiumEngine.PremiumHandler;
 
 public class AdminPremium implements IAdminCommandHandler
 {
@@ -37,9 +29,6 @@ public class AdminPremium implements IAdminCommandHandler
 		"admin_premium_add3",
 		"admin_clean_premium"
 	};
-	
-	private static final String UPDATE_PREMIUMSERVICE = "UPDATE characters_premium SET premium_service=?,enddate=? WHERE account_name=?";
-	private static final Logger _log = LoggerFactory.getLogger(AdminPremium.class);
 	
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
@@ -53,12 +42,12 @@ public class AdminPremium implements IAdminCommandHandler
 			try
 			{
 				String val = command.substring(19);
-				addPremiumServices(1, val);
+				PremiumHandler.addPremiumServices(1, val);
 				activeChar.sendMessage("Added premium status for 1 month, account: " + val + ".");
 			}
 			catch (StringIndexOutOfBoundsException e)
 			{
-				activeChar.sendMessage("Err");
+				activeChar.sendMessage("Invalid account.");
 			}
 		}
 		else if (command.startsWith("admin_premium_add2"))
@@ -66,12 +55,12 @@ public class AdminPremium implements IAdminCommandHandler
 			try
 			{
 				String val = command.substring(19);
-				addPremiumServices(2, val);
+				PremiumHandler.addPremiumServices(2, val);
 				activeChar.sendMessage("Added premium status for 2 months, account: " + val + ".");
 			}
 			catch (StringIndexOutOfBoundsException e)
 			{
-				activeChar.sendMessage("Err");
+				activeChar.sendMessage("Invalid account.");
 			}
 		}
 		else if (command.startsWith("admin_premium_add3"))
@@ -79,12 +68,12 @@ public class AdminPremium implements IAdminCommandHandler
 			try
 			{
 				String val = command.substring(19);
-				addPremiumServices(3, val);
+				PremiumHandler.addPremiumServices(3, val);
 				activeChar.sendMessage("Added premium status for 3 months, account: " + val + ".");
 			}
 			catch (StringIndexOutOfBoundsException e)
 			{
-				activeChar.sendMessage("Err");
+				activeChar.sendMessage("Invalid account.");
 			}
 		}
 		else if (command.startsWith("admin_clean_premium"))
@@ -92,52 +81,15 @@ public class AdminPremium implements IAdminCommandHandler
 			try
 			{
 				String val = command.substring(20);
-				cleanPremiumServices(val);
+				PremiumHandler.removePremiumServices(val);
 				activeChar.sendMessage("Premium successfully cleaned, account: " + val + ".");
 			}
 			catch (StringIndexOutOfBoundsException e)
 			{
-				activeChar.sendMessage("Err");
+				activeChar.sendMessage("Invalid account.");
 			}
 		}
 		return true;
-	}
-	
-	private void addPremiumServices(int Months, String AccName)
-	{
-		Calendar finishtime = Calendar.getInstance();
-		finishtime.setTimeInMillis(System.currentTimeMillis());
-		finishtime.set(13, 0);
-		finishtime.add(2, Months);
-		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement(UPDATE_PREMIUMSERVICE);
-			statement.setInt(1, 1);
-			statement.setLong(2, finishtime.getTimeInMillis());
-			statement.setString(3, AccName);
-			statement.execute();
-		}
-		catch (SQLException e)
-		{
-			_log.info("PremiumService: Could not increase data.");
-		}
-	}
-	
-	private void cleanPremiumServices(String AccName)
-	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement(UPDATE_PREMIUMSERVICE);
-			statement.setInt(1, 0);
-			statement.setLong(2, 0);
-			statement.setString(3, AccName);
-			statement.execute();
-		}
-		catch (SQLException e)
-		{
-			_log.info("PremiumService: Could not clean data.");
-		}
 	}
 	
 	@Override

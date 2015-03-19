@@ -1,11 +1,5 @@
 package ai.sunriseNpc.PremiumManager;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.Calendar;
-
-import l2r.L2DatabaseFactory;
 import l2r.gameserver.data.xml.impl.ItemData;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -13,6 +7,7 @@ import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 import ai.npc.AbstractNpcAI;
 import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
+import gr.sr.premiumEngine.PremiumHandler;
 
 /**
  * @author L2jSunrise Team
@@ -25,7 +20,6 @@ public final class PremiumManager extends AbstractNpcAI
 	private final int ItemAmountforPremium1 = CustomNpcsConfigs.PREMIUM_ITEM_AMOUNT_1;
 	private final int ItemAmountforPremium2 = CustomNpcsConfigs.PREMIUM_ITEM_AMOUNT_2;
 	private final int ItemAmountforPremium3 = CustomNpcsConfigs.PREMIUM_ITEM_AMOUNT_3;
-	private static final String UPDATE_PREMIUMSERVICE = "UPDATE characters_premium SET premium_service=?,enddate=? WHERE account_name=?";
 	
 	public PremiumManager()
 	{
@@ -65,7 +59,7 @@ public final class PremiumManager extends AbstractNpcAI
 			{
 				if (player.destroyItemByItemId("premium", ItemId, ItemAmountforPremium1, player, true))
 				{
-					addPremiumServices(1, player);
+					PremiumHandler.addPremiumServices(1, player);
 					player.setPremiumService(true);
 					player.sendMessage("Cogratulations, you are a premium user!");
 				}
@@ -79,7 +73,7 @@ public final class PremiumManager extends AbstractNpcAI
 			{
 				if (player.destroyItemByItemId("premium", ItemId, ItemAmountforPremium2, player, true))
 				{
-					addPremiumServices(2, player);
+					PremiumHandler.addPremiumServices(2, player);
 					player.setPremiumService(true);
 					player.sendMessage("Cogratulations, you are a premium user!");
 				}
@@ -93,7 +87,7 @@ public final class PremiumManager extends AbstractNpcAI
 			{
 				if (player.destroyItemByItemId("premium", ItemId, ItemAmountforPremium3, player, true))
 				{
-					addPremiumServices(3, player);
+					PremiumHandler.addPremiumServices(3, player);
 					player.setPremiumService(true);
 					player.sendMessage("Cogratulations, you are a premium user!");
 				}
@@ -132,27 +126,6 @@ public final class PremiumManager extends AbstractNpcAI
 		final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
 		packet.setHtml(getHtm(player.getHtmlPrefix(), htmlFile));
 		return packet;
-	}
-	
-	private void addPremiumServices(int Months, L2PcInstance player)
-	{
-		Calendar finishtime = Calendar.getInstance();
-		finishtime.setTimeInMillis(System.currentTimeMillis());
-		finishtime.set(13, 0);
-		finishtime.add(2, Months);
-		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement(UPDATE_PREMIUMSERVICE);
-			statement.setInt(1, 1);
-			statement.setLong(2, finishtime.getTimeInMillis());
-			statement.setString(3, player.getAccountName());
-			statement.execute();
-		}
-		catch (SQLException e)
-		{
-			_log.info("PremiumService:  Could not increase data.");
-		}
 	}
 	
 	public static void main(String args[])

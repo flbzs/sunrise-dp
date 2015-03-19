@@ -54,12 +54,11 @@ public class PremiumVCmd implements IVoicedCommandHandler
 				html3.append("<tr><td>Premium Account: <font color=\"70FFCA\">Benefits<br1></font></td></tr>");
 				html3.append("<tr><td>Rate EXP: <font color=\"LEVEL\">" + PremiumServiceConfigs.PREMIUM_RATE_XP + " (Account Premium)<br1></font></td></tr>");
 				html3.append("<tr><td>Rate SP: <font color=\"LEVEL\">" + PremiumServiceConfigs.PREMIUM_RATE_SP + " (Account Premium)<br1></font></td></tr>");
-				html3.append("<tr><td>Drop Spoil Rate: <font color=\"LEVEL\">" + PremiumServiceConfigs.PREMIUM_RATE_DROP_SPOIL + " (Account Premium)<br1></font></td></tr>");
 				html3.append("<tr><td>Item Buffer: <font color=\"LEVEL\">Unique .buffer command (Account Premium)<br1></font></td></tr>");
 				html3.append("<tr><td>Vip Buffer: <font color=\"LEVEL\">Enchanted buffs from npc buffer (Account Premium)<br1></font></td></tr>");
 				html3.append("<tr><td> <font color=\"70FFCA\">1.Premium  benefits CAN NOT BE TRANSFERED.<br1></font></td></tr><br>");
 				html3.append("<tr><td> <font color=\"70FFCA\">2.Premium benefits effect ALL characters in same account.<br1></font></td></tr><br>");
-				html3.append("<tr><td> <font color=\"70FFCA\">3.Does not effect Party members.</font></td></tr>");
+				html3.append("<tr><td> <font color=\"70FFCA\">3.Does not affect Party members.</font></td></tr>");
 				html3.append("</table>");
 				html3.append("</center></body></html>");
 				
@@ -79,7 +78,6 @@ public class PremiumVCmd implements IVoicedCommandHandler
 				html3.append("<tr><td><center>Details<br1></center></td></tr>");
 				html3.append("<tr><td>Rate EXP: <font color=\"LEVEL\"> x" + PremiumServiceConfigs.PREMIUM_RATE_XP + " <br1></font></td></tr>");
 				html3.append("<tr><td>Rate SP: <font color=\"LEVEL\"> x" + PremiumServiceConfigs.PREMIUM_RATE_SP + "  <br1></font></td></tr>");
-				html3.append("<tr><td>Rate Spoil: <font color=\"LEVEL\"> x" + PremiumServiceConfigs.PREMIUM_RATE_DROP_SPOIL + " <br1></font></td></tr>");
 				html3.append("<tr><td>Item Buffer: <font color=\"LEVEL\">Unique .buffer command<br1></font></td></tr>");
 				html3.append("<tr><td>Vip Buffer: <font color=\"LEVEL\">Enchanted buffs from npc buffer<br1></font></td></tr>");
 				html3.append("<tr><td>Expires: <font color=\"00A5FF\">" + String.valueOf(format.format(_end_prem_date)) + " (Premium added)</font></td></tr>");
@@ -87,7 +85,7 @@ public class PremiumVCmd implements IVoicedCommandHandler
 				html3.append("<tr><td><font color=\"LEVEL\"><center>Premium Info & Rules<br1></font></center></td></tr>");
 				html3.append("<tr><td><font color=\"70FFCA\">1.Premium Account CAN NOT BE TRANSFERED.<br1></font></td></tr>");
 				html3.append("<tr><td><font color=\"70FFCA\">2.Premium Account effects ALL characters in same account.<br1></font></td></tr>");
-				html3.append("<tr><td><font color=\"70FFCA\">3.Does not effect Party members.<br><br></font></td></tr>");
+				html3.append("<tr><td><font color=\"70FFCA\">3.Does not affect Party members.<br><br></font></td></tr>");
 				html3.append("</table>");
 				html3.append("</center></body></html>");
 				
