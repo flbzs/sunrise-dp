@@ -866,18 +866,22 @@ public final class Q00420_LittleWing extends Quest
 						giveItems(player, DRAGONFLUTE_OF_TWILIGHT, 1);
 					}
 				}
-				if (random < (50 + mul))
-				{
-					giveItems(player, DRAGONFLUTE_OF_WIND, 1);
-				}
-				else if (random < (85 + mul))
-				{
-					giveItems(player, DRAGONFLUTE_OF_STAR, 1);
-				}
 				else
 				{
-					giveItems(player, DRAGONFLUTE_OF_TWILIGHT, 1);
+					if (random < (50 + mul))
+					{
+						giveItems(player, DRAGONFLUTE_OF_WIND, 1);
+					}
+					else if (random < (85 + mul))
+					{
+						giveItems(player, DRAGONFLUTE_OF_STAR, 1);
+					}
+					else
+					{
+						giveItems(player, DRAGONFLUTE_OF_TWILIGHT, 1);
+					}
 				}
+				
 				takeItems(player, i, -1);
 				break;
 			}
