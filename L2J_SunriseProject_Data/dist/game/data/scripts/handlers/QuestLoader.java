@@ -502,7 +502,7 @@ import quests.Q10289_FadeToBlack.Q10289_FadeToBlack;
 import quests.Q10290_LandDragonConqueror.Q10290_LandDragonConqueror;
 import quests.Q10291_FireDragonDestroyer.Q10291_FireDragonDestroyer;
 import quests.Q10292_SevenSignsGirlofDoubt.Q10292_SevenSignsGirlofDoubt;
-import quests.Q10293_SevenSignsForbiddenBook.Q10293_SevenSignsForbiddenBook;
+import quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
 import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
 import quests.Q10295_SevenSignsSolinasTomb.Q10295_SevenSignsSolinasTomb;
 import quests.Q10296_SevenSignsPowerOfTheSeal.Q10296_SevenSignsPowerOfTheSeal;
@@ -1005,7 +1005,7 @@ public class QuestLoader
 		Q10290_LandDragonConqueror.class,
 		Q10291_FireDragonDestroyer.class,
 		Q10292_SevenSignsGirlofDoubt.class,
-		Q10293_SevenSignsForbiddenBook.class,
+		Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.class,
 		Q10294_SevenSignToTheMonastery.class,
 		Q10295_SevenSignsSolinasTomb.class,
 		Q10296_SevenSignsPowerOfTheSeal.class,

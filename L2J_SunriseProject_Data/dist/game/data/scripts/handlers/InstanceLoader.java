@@ -27,7 +27,6 @@ import instances.ChambersOfDelusion.ChamberOfDelusionTower;
 import instances.ChambersOfDelusion.ChamberOfDelusionWest;
 import instances.CrystalCaverns.CrystalCaverns;
 import instances.DarkCloudMansion.DarkCloudMansion;
-import instances.DisciplesNecropolisPast.DisciplesNecropolisPast;
 import instances.ElcadiaTent.ElcadiaTent;
 import instances.FinalEmperialTomb.FinalEmperialTomb;
 import instances.HideoutOfTheDawn.HideoutOfTheDawn;
@@ -72,7 +71,7 @@ public class InstanceLoader
 		ChamberOfDelusionWest.class,
 		CrystalCaverns.class,
 		DarkCloudMansion.class,
-		DisciplesNecropolisPast.class,
+		// DisciplesNecropolisPast.class,
 		ElcadiaTent.class,
 		FinalEmperialTomb.class,
 		HideoutOfTheDawn.class,

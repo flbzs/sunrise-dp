@@ -22,7 +22,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.quest.QuestState;
 import quests.Q10292_SevenSignsGirlofDoubt.Q10292_SevenSignsGirlofDoubt;
-import quests.Q10293_SevenSignsForbiddenBook.Q10293_SevenSignsForbiddenBook;
+import quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
 import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
 import quests.Q10296_SevenSignsPowerOfTheSeal.Q10296_SevenSignsPowerOfTheSeal;
 
@@ -56,7 +56,7 @@ public final class ElcadiaTent extends AbstractInstance
 		if (npc.getId() == GRUFF_LOOKING_MAN)
 		{
 			final QuestState GirlOfDoubt = talker.getQuestState(Q10292_SevenSignsGirlofDoubt.class.getSimpleName());
-			final QuestState ForbiddenBook = talker.getQuestState(Q10293_SevenSignsForbiddenBook.class.getSimpleName());
+			final QuestState ForbiddenBook = talker.getQuestState(Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.class.getSimpleName());
 			final QuestState Monastery = talker.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName());
 			final QuestState PowerOfTheSeal = talker.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName());
 			
