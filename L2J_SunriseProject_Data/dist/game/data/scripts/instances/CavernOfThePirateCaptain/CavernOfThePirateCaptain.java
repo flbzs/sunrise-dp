@@ -23,6 +23,7 @@ import instances.AbstractInstance;
 import java.util.ArrayList;
 import java.util.List;
 
+import l2r.Config;
 import l2r.gameserver.enums.PcCondOverride;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.L2Party;
@@ -122,12 +123,12 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		new Location(57215, 218079, -2954),
 	};
 	// Misc
-	private static final int MIN_LV_60 = 55;
-	private static final int MIN_LV_83 = 78;
-	private static final int PLAYERS_60_MIN = 9;
-	private static final int PLAYERS_60_MAX = 27;
-	private static final int PLAYERS_83_MIN = 9;
-	private static final int PLAYERS_83_MAX = 27;
+	private static final int MIN_LV_60 = Config.ZAKEN_MIN_LEVEL_DAYTIME_60;
+	private static final int MIN_LV_83 = Config.ZAKEN_MIN_LEVEL_DAYTIME_83;
+	private static final int PLAYERS_60_MIN = Config.ZAKEN_MIN_MEMBERS_DAYTIME_60;
+	private static final int PLAYERS_60_MAX = Config.ZAKEN_MAX_MEMBERS_DAYTIME_60;
+	private static final int PLAYERS_83_MIN = Config.ZAKEN_MIN_MEMBERS_DAYTIME_83;
+	private static final int PLAYERS_83_MAX = Config.ZAKEN_MAX_MEMBERS_DAYTIME_83;
 	private static final int TEMPLATE_ID_60 = 133;
 	private static final int TEMPLATE_ID_83 = 135;
 	//@formatter:off
