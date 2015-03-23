@@ -93,7 +93,7 @@ public class ThrowUp extends L2Effect
 		int y = getEffector().getY() - (int) (offset * sin);
 		int z = getEffected().getZ();
 		
-		final Location destination = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z, getEffected().getInstanceId());
+		final Location destination = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z, false);
 		getEffected().broadcastPacket(new FlyToLocation(getEffected(), destination, FlyType.THROW_UP));
 		// TODO: Review.
 		getEffected().setXYZ(destination);

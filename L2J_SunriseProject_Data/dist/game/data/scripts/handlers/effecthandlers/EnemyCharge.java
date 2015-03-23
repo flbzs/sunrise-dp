@@ -99,7 +99,7 @@ public class EnemyCharge extends L2Effect
 		_y = curY + (int) ((distance - offset) * sin);
 		_z = getEffected().getZ();
 		
-		final Location destination = GeoData.getInstance().moveCheck(getEffector().getX(), getEffector().getY(), getEffector().getZ(), _x, _y, _z, getEffector().getInstanceId());
+		final Location destination = GeoData.getInstance().moveCheck(getEffector().getX(), getEffector().getY(), getEffector().getZ(), _x, _y, _z, false);
 		
 		getEffector().broadcastPacket(new FlyToLocation(getEffector(), destination, FlyType.CHARGE));
 		

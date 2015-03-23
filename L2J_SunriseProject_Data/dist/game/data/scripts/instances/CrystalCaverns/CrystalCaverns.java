@@ -681,7 +681,7 @@ public final class CrystalCaverns extends AbstractInstance
 		int _y = effector.getY() - (int) (offset * sin);
 		int _z = effected.getZ();
 		
-		Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), _x, _y, _z, effected.getInstanceId());
+		Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), _x, _y, _z, true);
 		
 		effected.broadcastPacket(new FlyToLocation(effected, destination, FlyType.THROW_UP));
 		

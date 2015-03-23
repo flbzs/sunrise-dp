@@ -87,7 +87,7 @@ public class InstantJump implements ISkillHandler
 		y = (int) (py + (25 * Math.sin(ph)));
 		z = target.getZ();
 		
-		final Location destination = GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z, activeChar.getInstanceId());
+		final Location destination = GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z, false);
 		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		activeChar.broadcastPacket(new FlyToLocation(activeChar, destination, FlyType.DUMMY));
 		activeChar.abortAttack();

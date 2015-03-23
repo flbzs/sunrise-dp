@@ -254,7 +254,9 @@ public final class Fishing extends L2Effect
 			return Integer.MIN_VALUE;
 		}
 		
-		if (GeoData.getInstance().hasGeo(baitX, baitY))
+		// TODO: Need Check
+		if (Config.GEODATA)
+		// if (GeoData.getInstance().hasGeo(baitX, baitY))
 		{
 			if (GeoData.getInstance().getHeight(baitX, baitY, baitZ) > baitZ)
 			{

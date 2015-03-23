@@ -68,7 +68,7 @@ public class Warp extends L2Effect
 		int y = effected.getY() + y1;
 		int z = effected.getZ();
 		
-		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
+		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, false);
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effected.broadcastPacket(new FlyToLocation(effected, destination, FlyType.DUMMY));
 		effected.abortAttack();
