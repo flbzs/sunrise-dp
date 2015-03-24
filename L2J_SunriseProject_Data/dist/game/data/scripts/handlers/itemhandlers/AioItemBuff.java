@@ -34,7 +34,7 @@ public class AioItemBuff implements IItemHandler
 		int itemId = item.getId();
 		if (itemId == AioBufferConfigs.BUFF_ITEM_ID)
 		{
-			String htmFile = "data/html/ItemBuffer/main.htm";
+			String htmFile = "data/html/sunrise/ItemBuffer/main.htm";
 			NpcHtmlMessage msg = new NpcHtmlMessage(1);
 			msg.setFile(player.getHtmlPrefix(), htmFile);
 			player.sendPacket(msg);

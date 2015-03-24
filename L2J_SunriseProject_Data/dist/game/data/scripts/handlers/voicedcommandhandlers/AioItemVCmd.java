@@ -27,7 +27,7 @@ public class AioItemVCmd implements IVoicedCommandHandler
 	
 	private void sendHtml(L2PcInstance activeChar)
 	{
-		String htmFile = "data/html/AioItemNpcs/main.htm";
+		String htmFile = "data/html/sunrise/AioItemNpcs/main.htm";
 		
 		NpcHtmlMessage msg = new NpcHtmlMessage(1);
 		msg.setFile(activeChar.getHtmlPrefix(), htmFile);

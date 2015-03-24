@@ -34,7 +34,7 @@ public class AioItemNpcs implements IItemHandler
 		int itemId = item.getId();
 		if (itemId == AioItemsConfigs.AIO_ITEM_ID)
 		{
-			String htmFile = "data/html/AioItemNpcs/main.htm";
+			String htmFile = "data/html/sunrise/AioItemNpcs/main.htm";
 			NpcHtmlMessage msg = new NpcHtmlMessage(1);
 			msg.setFile(player.getHtmlPrefix(), htmFile);
 			player.sendPacket(msg);
