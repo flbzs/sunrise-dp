@@ -18,10 +18,8 @@
  */
 package handlers.effecthandlers;
 
-import l2r.gameserver.GeoData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.Location;
-import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
@@ -29,7 +27,6 @@ import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.serverpackets.FlyToLocation;
 import l2r.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2r.gameserver.network.serverpackets.ValidateLocation;
-import l2r.gameserver.util.Util;
 
 /**
  * This class handles warp effects, disappear and quickly turn up in a near location. If geodata enabled and an object is between initial and final point, flight is stopped just before colliding with object. Flight course and radius are set as skill properties (flyCourse and flyRadius): <li>Fly
@@ -56,26 +53,17 @@ public class Warp extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		final L2Character effected = getEffected();
-		final int radius = getSkill().getFlyRadius();
-		final double angle = Util.convertHeadingToDegree(effected.getHeading());
-		final double radian = Math.toRadians(angle);
-		final double course = Math.toRadians(getSkill().getFlyCourse());
-		final int x1 = (int) (Math.cos(Math.PI + radian + course) * radius);
-		final int y1 = (int) (Math.sin(Math.PI + radian + course) * radius);
-		
-		int x = effected.getX() + x1;
-		int y = effected.getY() + y1;
-		int z = effected.getZ();
-		
-		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, false);
-		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		effected.broadcastPacket(new FlyToLocation(effected, destination, FlyType.DUMMY));
-		effected.abortAttack();
-		effected.abortCast();
-		effected.setXYZ(destination);
-		effected.broadcastPacket(new ValidateLocation(effected));
-		
+		Location flyLoc = getEffector().getFlyLocation(getEffector(), getSkill());
+		if (flyLoc != null)
+		{
+			getEffector().stopMove(null);
+			getEffector().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+			getEffector().broadcastPacket(new FlyToLocation(getEffector(), flyLoc.getX(), flyLoc.getY(), flyLoc.getZ(), FlyType.DUMMY));
+			getEffector().abortAttack();
+			getEffector().abortCast();
+			getEffector().setLocation(flyLoc);
+			getEffector().broadcastPacket(new ValidateLocation(getEffector()));
+		}
 		return true;
 	}
 }

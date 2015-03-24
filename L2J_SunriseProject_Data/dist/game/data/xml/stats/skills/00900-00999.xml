@@ -1598,6 +1598,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="800" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyRadius" val="400" />
 		<set name="hitTime" val="800" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
@@ -1970,6 +1971,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="600" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyRadius" val="400" />
 		<set name="hitTime" val="800" />
 		<set name="magicLvl" val="40" />
 		<set name="mpConsume" val="38" />
@@ -2001,6 +2003,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="800" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyRadius" val="600" />
 		<set name="hitTime" val="800" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
@@ -2087,6 +2090,7 @@
 		<set name="coolTime" val="200" /> <!-- FIXME: value unconfirmed -->
 		<set name="effectRange" val="900" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyRadius" val="400" />
 		<set name="hitTime" val="800" />
 		<set name="magicLvl" val="40" />
 		<set name="mpConsume" val="38" />

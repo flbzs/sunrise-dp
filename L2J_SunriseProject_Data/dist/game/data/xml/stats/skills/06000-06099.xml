@@ -353,6 +353,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="600" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyRadius" val="400" />
 		<set name="hitTime" val="800" />
 		<set name="magicLvl" val="81" />
 		<set name="nextActionAttack" val="true" />

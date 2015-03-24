@@ -2522,6 +2522,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="600" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyRadius" val="400" />
 		<set name="hitTime" val="800" />
 		<set name="magicLvl" val="32" />
 		<set name="mpInitialConsume" val="20" />
@@ -2745,6 +2746,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="#effectRange" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyRadius" val="400" />
 		<set name="hitTime" val="800" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
@@ -2801,6 +2803,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="#effectRange" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyRadius" val="400" />
 		<set name="hitTime" val="800" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
@@ -2853,6 +2856,7 @@
 	<skill id="495" levels="10" name="Blade Rush" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">
 		<!-- Confirmed CT2.5 -->
 		<table name="#abnormalLvls"> 6 6 7 7 7 7 8 8 8 8 </table>
+		<table name="#flyRadius"> 400 500 500 500 500 500 600 600 600 600 </table>
 		<table name="#castRange"> 400 500 500 500 500 500 600 600 600 600 </table>
 		<table name="#dot"> 107 107 123 123 123 123 123 134 134 134 </table>
 		<table name="#effectRange"> 600 700 700 700 700 700 800 800 800 800 </table>
@@ -2873,6 +2877,7 @@
 		<set name="effectRange" val="#effectRange" />
 		<set name="fanRange" val="0,0,300,100" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyRadius" val="#flyRadius" />
 		<set name="hitTime" val="800" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />

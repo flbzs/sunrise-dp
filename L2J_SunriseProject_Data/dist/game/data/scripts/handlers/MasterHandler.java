@@ -226,7 +226,6 @@ import handlers.skillhandlers.Continuous;
 import handlers.skillhandlers.Disablers;
 import handlers.skillhandlers.Dummy;
 import handlers.skillhandlers.GiveReco;
-import handlers.skillhandlers.InstantJump;
 import handlers.skillhandlers.Manadam;
 import handlers.skillhandlers.Mdam;
 import handlers.skillhandlers.Pdam;
@@ -541,7 +540,6 @@ public class MasterHandler
 			Disablers.class,
 			Dummy.class,
 			GiveReco.class,
-			InstantJump.class,
 			Manadam.class,
 			Mdam.class,
 			Pdam.class,
