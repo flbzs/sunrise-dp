@@ -1635,8 +1635,6 @@
 	</skill>
 	<skill id="4671" levels="1" name="AV - Teleport">
 		<set name="castRange" val="1500" />
-		<set name="flyType" val="DUMMY" />
-		<set name="flyRadius" val="1500" />
 		<set name="effectRange" val="2000" />
 		<set name="magicLvl" val="40" />
 		<set name="offensive" val="true" />

@@ -539,7 +539,6 @@
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
 		<set name="flyType" val="CHARGE" />
-		<set name="flyRadius" val="400" />
 		<set name="hitTime" val="500" />
 		<set name="magicLvl" val="85" />
 		<set name="mpConsume" val="83" />

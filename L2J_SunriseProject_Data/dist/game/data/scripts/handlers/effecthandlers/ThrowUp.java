@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import l2r.gameserver.GeoData;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.effects.EffectFlag;
 import l2r.gameserver.model.effects.EffectTemplate;
@@ -28,9 +29,12 @@ import l2r.gameserver.network.serverpackets.FlyToLocation;
 import l2r.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2r.gameserver.network.serverpackets.ValidateLocation;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class ThrowUp extends L2Effect
 {
-	protected Location flyLoc;
+	private static final Logger _log = LoggerFactory.getLogger(ThrowUp.class);
 	
 	public ThrowUp(Env env, EffectTemplate template)
 	{
@@ -46,22 +50,55 @@ public class ThrowUp extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		flyLoc = getEffector().getFlyLocation(null, getSkill());
-		if (flyLoc != null)
+		// Get current position of the L2Character
+		final int curX = getEffected().getX();
+		final int curY = getEffected().getY();
+		final int curZ = getEffected().getZ();
+		
+		// Calculate distance between effector and effected current position
+		double dx = getEffector().getX() - curX;
+		double dy = getEffector().getY() - curY;
+		double dz = getEffector().getZ() - curZ;
+		double distance = Math.sqrt((dx * dx) + (dy * dy));
+		if (distance > 2000)
 		{
-			getEffected().setLocation(flyLoc);
-			getEffected().broadcastPacket(new FlyToLocation(getEffected(), flyLoc.getX(), flyLoc.getY(), flyLoc.getZ(), FlyType.THROW_UP));
+			_log.info("EffectThrow was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
+			return false;
 		}
-		getEffected().startStunning();
-		return true;
-	}
-	
-	@Override
-	public void onExit()
-	{
-		getEffected().stopStunning(false);
-		getEffected().setXYZ(flyLoc.getX(), flyLoc.getY(), flyLoc.getZ());
+		int offset = Math.min((int) distance + getSkill().getFlyRadius(), 1400);
+		
+		double cos;
+		double sin;
+		
+		// approximation for moving futher when z coordinates are different
+		// TODO: handle Z axis movement better
+		offset += Math.abs(dz);
+		if (offset < 5)
+		{
+			offset = 5;
+		}
+		
+		// If no distance
+		if (distance < 1)
+		{
+			return false;
+		}
+		
+		// Calculate movement angles needed
+		sin = dy / distance;
+		cos = dx / distance;
+		
+		// Calculate the new destination with offset included
+		int x = getEffector().getX() - (int) (offset * cos);
+		int y = getEffector().getY() - (int) (offset * sin);
+		int z = getEffected().getZ();
+		
+		final Location destination = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z, getEffected().getInstanceId());
+		getEffected().broadcastPacket(new FlyToLocation(getEffected(), destination, FlyType.THROW_UP));
+		// TODO: Review.
+		getEffected().setXYZ(destination);
 		getEffected().broadcastPacket(new ValidateLocation(getEffected()));
+		return true;
 	}
 	
 	@Override

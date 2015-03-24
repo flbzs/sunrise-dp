@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import l2r.gameserver.GeoData;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
@@ -27,9 +28,14 @@ import l2r.gameserver.network.serverpackets.FlyToLocation;
 import l2r.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2r.gameserver.network.serverpackets.ValidateLocation;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class EnemyCharge extends L2Effect
 {
-	protected Location _flyLoc;
+	static final Logger _log = LoggerFactory.getLogger(EnemyCharge.class);
+	
+	private int _x, _y, _z;
 	
 	public EnemyCharge(Env env, EffectTemplate template)
 	{
@@ -50,14 +56,57 @@ public class EnemyCharge extends L2Effect
 			return false;
 		}
 		
-		Location flyLoc = getEffector().getFlyLocation(getEffected(), getSkill());
-		if (flyLoc != null)
+		// Get current position of the L2Character
+		final int curX = getEffector().getX();
+		final int curY = getEffector().getY();
+		final int curZ = getEffector().getZ();
+		
+		// Calculate distance (dx,dy) between current position and destination
+		double dx = getEffected().getX() - curX;
+		double dy = getEffected().getY() - curY;
+		double dz = getEffected().getZ() - curZ;
+		double distance = Math.sqrt((dx * dx) + (dy * dy));
+		if (distance > 2000)
 		{
-			_flyLoc = flyLoc;
-			getEffector().broadcastPacket(new FlyToLocation(getEffector(), flyLoc.getX(), flyLoc.getY(), flyLoc.getZ(), FlyType.CHARGE));
-			getEffector().setXYZ(flyLoc.getX(), flyLoc.getY(), flyLoc.getZ());
-			getEffector().broadcastPacket(new ValidateLocation(getEffector()));
+			_log.info("EffectEnemyCharge was going to use invalid coordinates for characters, getEffector: " + curX + "," + curY + " and getEffected: " + getEffected().getX() + "," + getEffected().getY());
+			return false;
 		}
+		int offset = Math.max((int) distance - getSkill().getFlyRadius(), 30);
+		
+		double cos;
+		double sin;
+		
+		// approximation for moving closer when z coordinates are different
+		// TODO: handle Z axis movement better
+		offset -= Math.abs(dz);
+		if (offset < 5)
+		{
+			offset = 5;
+		}
+		
+		// If no distance
+		if ((distance < 1) || ((distance - offset) <= 0))
+		{
+			return false;
+		}
+		
+		// Calculate movement angles needed
+		sin = dy / distance;
+		cos = dx / distance;
+		
+		// Calculate the new destination with offset included
+		_x = curX + (int) ((distance - offset) * cos);
+		_y = curY + (int) ((distance - offset) * sin);
+		_z = getEffected().getZ();
+		
+		final Location destination = GeoData.getInstance().moveCheck(getEffector().getX(), getEffector().getY(), getEffector().getZ(), _x, _y, _z, getEffector().getInstanceId());
+		
+		getEffector().broadcastPacket(new FlyToLocation(getEffector(), destination, FlyType.CHARGE));
+		
+		// maybe is need force set X,Y,Z
+		getEffector().setXYZ(destination);
+		getEffector().broadcastPacket(new ValidateLocation(getEffector()));
+		
 		return true;
 	}
 }
