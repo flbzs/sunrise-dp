@@ -24,7 +24,6 @@ import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.serverpackets.FlyToLocation;
 import l2r.gameserver.network.serverpackets.FlyToLocation.FlyType;
@@ -40,17 +39,17 @@ import l2r.gameserver.util.Util;
  * <br>
  * @author House
  */
-public class Warp extends L2Effect
+public class Blink extends L2Effect
 {
-	public Warp(Env env, EffectTemplate template)
+	public Blink(Env env, EffectTemplate template)
 	{
 		super(env, template);
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
+	public boolean isInstant()
 	{
-		return L2EffectType.WARP;
+		return true;
 	}
 	
 	@Override
@@ -69,13 +68,13 @@ public class Warp extends L2Effect
 		int z = effected.getZ();
 		
 		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
+		
 		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		effected.broadcastPacket(new FlyToLocation(effected, destination, FlyType.DUMMY));
 		effected.abortAttack();
 		effected.abortCast();
 		effected.setXYZ(destination);
 		effected.broadcastPacket(new ValidateLocation(effected));
-		
 		return true;
 	}
 }

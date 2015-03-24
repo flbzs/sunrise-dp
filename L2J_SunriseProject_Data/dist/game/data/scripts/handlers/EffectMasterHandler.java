@@ -43,6 +43,7 @@ public final class EffectMasterHandler
 		RebalanceHP.class,
 		Betray.class,
 		BigHead.class,
+		Blink.class,
 		BlockAction.class,
 		BlockChat.class,
 		BlockParty.class,
@@ -165,7 +166,6 @@ public final class EffectMasterHandler
 		TrapRemove.class,
 		UnsummonAgathion.class,
 		VitalityPointUp.class,
-		Warp.class,
 	};
 	
 	public static void main(String[] args)
