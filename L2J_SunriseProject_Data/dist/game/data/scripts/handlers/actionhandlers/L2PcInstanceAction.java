@@ -98,6 +98,11 @@ public class L2PcInstanceAction implements IActionHandler
 							activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 							activeChar.onActionRequest();
 						}
+						else
+						{
+							activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), target.getX(), target.getY(), target.getZ(), activeChar.getInstanceId()));
+							activeChar.onActionRequest();
+						}
 					}
 				}
 				else
@@ -107,6 +112,10 @@ public class L2PcInstanceAction implements IActionHandler
 					if (GeoData.getInstance().canSeeTarget(activeChar, target))
 					{
 						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, target);
+					}
+					else
+					{
+						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), target.getX(), target.getY(), target.getZ(), activeChar.getInstanceId()));
 					}
 				}
 			}
