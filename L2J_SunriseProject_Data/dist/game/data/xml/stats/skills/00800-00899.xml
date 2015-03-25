@@ -1555,7 +1555,7 @@
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Stun" abnormalTime="2" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" special="airstun" />
-			<effect name="Blink" noicon="1" val="0" />
+			<effect self="1" name="Blink" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="886" levels="11" name="Air Shock Bomb">
