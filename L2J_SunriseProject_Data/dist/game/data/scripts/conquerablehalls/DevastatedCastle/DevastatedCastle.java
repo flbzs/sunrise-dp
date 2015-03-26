@@ -46,7 +46,7 @@ public final class DevastatedCastle extends ClanHallSiegeEngine
 	
 	private static Map<Integer, Integer> _damageToGustav = new HashMap<>();
 	
-	private DevastatedCastle()
+	public DevastatedCastle()
 	{
 		super(DevastatedCastle.class.getSimpleName(), "conquerablehalls", DEVASTATED_CASTLE);
 		addKillId(GUSTAV);
@@ -142,10 +142,5 @@ public final class DevastatedCastle extends ClanHallSiegeEngine
 			}
 		}
 		return ClanTable.getInstance().getClan(damagest);
-	}
-	
-	public static void main(String[] args)
-	{
-		new DevastatedCastle();
 	}
 }

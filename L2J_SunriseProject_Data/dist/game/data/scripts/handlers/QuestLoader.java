@@ -1018,6 +1018,7 @@ public class QuestLoader
 	
 	public static void main(String[] args)
 	{
+		_log.info(QuestLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> quest : QUESTS)
 		{
 			try

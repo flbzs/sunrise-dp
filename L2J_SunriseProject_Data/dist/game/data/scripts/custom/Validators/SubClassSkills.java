@@ -87,9 +87,9 @@ public final class SubClassSkills extends Quest
 		"ClassAbility80-"
 	};
 	
-	public SubClassSkills(int id, String name, String descr)
+	public SubClassSkills()
 	{
-		super(id, name, descr);
+		super(-1, "SubClassSkills", "custom");
 		setOnEnterWorld(true);
 	}
 	
@@ -366,10 +366,5 @@ public final class SubClassSkills extends Quest
 		final L2ItemInstance[] result = tmp.toArray(new L2ItemInstance[tmp.size()]);
 		FastList.recycle(tmp);
 		return result;
-	}
-	
-	public static void main(String[] args)
-	{
-		new SubClassSkills(-1, "SubClassSkills", "custom");
 	}
 }

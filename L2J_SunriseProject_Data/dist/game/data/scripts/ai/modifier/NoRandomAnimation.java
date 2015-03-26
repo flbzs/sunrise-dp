@@ -51,9 +51,4 @@ public class NoRandomAnimation extends AbstractNpcAI
 		npc.setRandomAnimationEnabled(false);
 		return super.onSpawn(npc);
 	}
-	
-	public static void main(String[] args)
-	{
-		new NoRandomAnimation();
-	}
 }

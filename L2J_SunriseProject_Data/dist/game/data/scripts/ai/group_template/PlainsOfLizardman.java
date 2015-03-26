@@ -86,7 +86,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	};
 	// @formatter:on
 	
-	private PlainsOfLizardman()
+	public PlainsOfLizardman()
 	{
 		super(PlainsOfLizardman.class.getSimpleName(), "ai/group_template");
 		addAttackId(FANTASY_MUSHROOM, RAINBOW_FROG, STICKY_MUSHROOM, ENERGY_PLANT, TANTA_SUMMONER);
@@ -233,10 +233,5 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		{
 			npc.doCast(buffs[0].getSkill());
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new PlainsOfLizardman();
 	}
 }

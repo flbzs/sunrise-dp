@@ -12,9 +12,9 @@ public class KarulBugbear extends AbstractNpcAI
 {
 	private static final int KARUL_BUGBEAR = 20600;
 	
-	public KarulBugbear(int questId, String name, String descr)
+	public KarulBugbear()
 	{
-		super(name, descr);
+		super(KarulBugbear.class.getSimpleName(), "ai");
 		addAttackId(KARUL_BUGBEAR);
 	}
 	
@@ -36,10 +36,5 @@ public class KarulBugbear extends AbstractNpcAI
 			}
 		}
 		return super.onAttack(npc, player, damage, isPet);
-	}
-	
-	public static void main(String args[])
-	{
-		new KarulBugbear(-1, KarulBugbear.class.getSimpleName(), "ai");
 	}
 }

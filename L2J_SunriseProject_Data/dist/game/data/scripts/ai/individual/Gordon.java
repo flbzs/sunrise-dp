@@ -32,9 +32,9 @@ public class Gordon extends AbstractNpcAI
 {
 	private static final int GORDON = 29095;
 	
-	private Gordon(String name, String descr)
+	public Gordon()
 	{
-		super(name, descr);
+		super(Gordon.class.getSimpleName(), "ai");
 		addSpawnId(GORDON);
 		addSeeCreatureId(GORDON);
 	}
@@ -54,10 +54,5 @@ public class Gordon extends AbstractNpcAI
 	{
 		((L2Attackable) npc).setCanReturnToSpawnPoint(false);
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Gordon(Gordon.class.getSimpleName(), "ai");
 	}
 }

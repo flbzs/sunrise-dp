@@ -43,9 +43,9 @@ public class StakatoNestTeleporter extends AbstractNpcAI
 	// NPC
 	private final static int KINTAIJIN = 32640;
 	
-	private StakatoNestTeleporter(String name, String descr)
+	public StakatoNestTeleporter()
 	{
-		super(name, descr);
+		super(StakatoNestTeleporter.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(KINTAIJIN);
 		addTalkId(KINTAIJIN);
 	}
@@ -79,10 +79,5 @@ public class StakatoNestTeleporter extends AbstractNpcAI
 	{
 		QuestState accessQuest = player.getQuestState(Q00240_ImTheOnlyOneYouCanTrust.class.getSimpleName());
 		return ((accessQuest != null) && accessQuest.isCompleted()) ? "32640.htm" : "32640-no.htm";
-	}
-	
-	public static void main(String[] args)
-	{
-		new StakatoNestTeleporter(StakatoNestTeleporter.class.getSimpleName(), "ai/npc/Teleports");
 	}
 }

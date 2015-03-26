@@ -74,7 +74,7 @@ public final class Alexandria extends AbstractNpcAI
 		AGATHIONS.put("littleDevil", Arrays.asList(LITTLE_DEVILS));
 	}
 	
-	private Alexandria()
+	public Alexandria()
 	{
 		super(Alexandria.class.getSimpleName(), "ai/npc");
 		addStartNpc(ALEXANDRIA);
@@ -121,11 +121,6 @@ public final class Alexandria extends AbstractNpcAI
 			}
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args)
-	{
-		new Alexandria();
 	}
 	
 	public static class AdditionalQuestItemHolder extends QuestItemHolder

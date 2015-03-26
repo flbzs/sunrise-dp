@@ -42,9 +42,4 @@ public class Sandstorms extends AbstractNpcAI
 		npc.doCast(SkillData.getInstance().getInfo(5435, 1));
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
-	
-	public static void main(String[] args)
-	{
-		new Sandstorms();
-	}
 }

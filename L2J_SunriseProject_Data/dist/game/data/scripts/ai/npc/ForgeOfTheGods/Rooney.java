@@ -78,7 +78,7 @@ public final class Rooney extends AbstractNpcAI
 		new Location(186074, -118154, -3312)
 	};
 	
-	private Rooney()
+	public Rooney()
 	{
 		super(Rooney.class.getSimpleName(), "ai/npc");
 		addSeeCreatureId(ROONEY);
@@ -126,10 +126,5 @@ public final class Rooney extends AbstractNpcAI
 			npc.setScriptValue(1);
 		}
 		return super.onSeeCreature(npc, creature, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Rooney();
 	}
 }

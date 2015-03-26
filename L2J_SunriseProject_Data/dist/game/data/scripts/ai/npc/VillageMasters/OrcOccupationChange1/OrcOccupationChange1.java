@@ -58,7 +58,7 @@ public class OrcOccupationChange1 extends Quest
 		}
 	};
 	
-	private OrcOccupationChange1()
+	public OrcOccupationChange1()
 	{
 		super(-1, OrcOccupationChange1.class.getSimpleName(), "ai/npc/VillageMasters");
 		addStartNpc(NPCS);
@@ -158,10 +158,5 @@ public class OrcOccupationChange1 extends Quest
 			htmltext = npc.getId() + "-23.htm";
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args)
-	{
-		new OrcOccupationChange1();
 	}
 }

@@ -465,9 +465,4 @@ public class PcBangPoint extends AbstractNpcAI
 	{
 		return "info.htm";
 	}
-	
-	public static void main(String[] args)
-	{
-		new PcBangPoint();
-	}
 }

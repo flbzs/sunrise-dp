@@ -80,7 +80,7 @@ public final class ToIVortex extends AbstractNpcAI
 		DIMENSION_TRADE.put("RED", RED_DIMENSION_STONE);
 	}
 	
-	private ToIVortex()
+	public ToIVortex()
 	{
 		super(ToIVortex.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(KEPLON, EUCLIE, PITHGON, DIMENSION_VORTEX_1, DIMENSION_VORTEX_2, DIMENSION_VORTEX_3);
@@ -135,10 +135,5 @@ public final class ToIVortex extends AbstractNpcAI
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	public static void main(String[] args)
-	{
-		new ToIVortex();
 	}
 }

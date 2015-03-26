@@ -36,6 +36,13 @@ public class TeleportWithCharm extends AbstractNpcAI
 	private final static int ORC_GATEKEEPER_CHARM = 1658;
 	private final static int DWARF_GATEKEEPER_TOKEN = 1659;
 	
+	public TeleportWithCharm()
+	{
+		super(TeleportWithCharm.class.getSimpleName(), "ai/npc/Teleports");
+		addStartNpc(WHIRPY, TAMIL);
+		addTalkId(WHIRPY, TAMIL);
+	}
+	
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
@@ -69,17 +76,5 @@ public class TeleportWithCharm extends AbstractNpcAI
 			}
 		}
 		return super.onTalk(npc, player);
-	}
-	
-	private TeleportWithCharm(String name, String descr)
-	{
-		super(name, descr);
-		addStartNpc(WHIRPY, TAMIL);
-		addTalkId(WHIRPY, TAMIL);
-	}
-	
-	public static void main(String[] args)
-	{
-		new TeleportWithCharm(TeleportWithCharm.class.getSimpleName(), "ai/npc/Teleports");
 	}
 }

@@ -50,7 +50,7 @@ public final class CastleMercenaryManager extends AbstractNpcAI
 		35557, // Kendrew
 	};
 	
-	private CastleMercenaryManager()
+	public CastleMercenaryManager()
 	{
 		super(CastleMercenaryManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCS);
@@ -142,10 +142,5 @@ public final class CastleMercenaryManager extends AbstractNpcAI
 			htmltext = "mercmanager-no.html";
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args)
-	{
-		new CastleMercenaryManager();
 	}
 }

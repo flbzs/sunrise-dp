@@ -65,6 +65,13 @@ public class SeparatedSoul extends AbstractNpcAI
 		LOCATIONS.put("DragonValleySouth", new Location(113203, 121063, -3712));
 	}
 	
+	public SeparatedSoul()
+	{
+		super(SeparatedSoul.class.getSimpleName(), "ai/npc/Teleports");
+		addStartNpc(SEPARATED_SOULS);
+		addTalkId(SEPARATED_SOULS);
+	}
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -93,17 +100,5 @@ public class SeparatedSoul extends AbstractNpcAI
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	private SeparatedSoul(String name, String descr)
-	{
-		super(name, descr);
-		addStartNpc(SEPARATED_SOULS);
-		addTalkId(SEPARATED_SOULS);
-	}
-	
-	public static void main(String[] args)
-	{
-		new SeparatedSoul(SeparatedSoul.class.getSimpleName(), "ai/npc/Teleports");
 	}
 }

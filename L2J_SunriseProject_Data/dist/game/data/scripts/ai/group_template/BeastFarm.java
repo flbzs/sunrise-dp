@@ -107,7 +107,7 @@ public class BeastFarm extends AbstractNpcAI
 	private static Map<Integer, GrowthCapableMob> _GrowthCapableMobs = new FastMap<>();
 	private static List<TamedBeast> TAMED_BEAST_DATA = new ArrayList<>();
 	
-	private BeastFarm()
+	public BeastFarm()
 	{
 		super(BeastFarm.class.getSimpleName(), "ai/group_template");
 		addSkillSeeId(FEEDABLE_BEASTS);
@@ -473,10 +473,5 @@ public class BeastFarm extends AbstractNpcAI
 		{
 			return sh;
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new BeastFarm();
 	}
 }

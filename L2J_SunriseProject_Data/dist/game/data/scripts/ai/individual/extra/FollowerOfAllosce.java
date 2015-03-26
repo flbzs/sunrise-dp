@@ -23,9 +23,9 @@ public class FollowerOfAllosce extends AbstractNpcAI
 {
 	private static final int FOFALLOSCE = 18568;
 	
-	public FollowerOfAllosce(int questId, String name, String descr)
+	public FollowerOfAllosce()
 	{
-		super(name, descr);
+		super(FollowerOfAllosce.class.getSimpleName(), "ai");
 		addAggroRangeEnterId(FOFALLOSCE);
 	}
 	
@@ -54,10 +54,5 @@ public class FollowerOfAllosce extends AbstractNpcAI
 			npc.doCast(SkillData.getInstance().getInfo(5624, 1));
 		}
 		return super.onAggroRangeEnter(npc, player, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new FollowerOfAllosce(-1, FollowerOfAllosce.class.getSimpleName(), "ai");
 	}
 }

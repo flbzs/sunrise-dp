@@ -31,9 +31,9 @@ public class BladeOtis extends AbstractNpcAI
 	private final Map<Integer, Integer> _guardSpawns = new HashMap<>();
 	private final FastMap<L2Npc, L2Npc> _guardMaster = new FastMap<>();
 	
-	public BladeOtis(int questId, String name, String descr)
+	public BladeOtis()
 	{
-		super(name, descr);
+		super(BladeOtis.class.getSimpleName(), "ai");
 		addAttackId(BLADEO);
 		addKillId(BLADEO);
 		addKillId(GUARD);
@@ -125,10 +125,5 @@ public class BladeOtis extends AbstractNpcAI
 			cancelQuestTimer("time_to_spawn", npc, killer);
 		}
 		return super.onKill(npc, killer, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new BladeOtis(-1, BladeOtis.class.getSimpleName(), "ai");
 	}
 }

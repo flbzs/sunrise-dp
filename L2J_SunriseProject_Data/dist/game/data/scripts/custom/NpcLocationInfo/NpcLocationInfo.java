@@ -261,7 +261,7 @@ public final class NpcLocationInfo extends Quest
 		32169, // Spellbook Trader Mifren
 	};
 	
-	private NpcLocationInfo()
+	public NpcLocationInfo()
 	{
 		super(-1, NpcLocationInfo.class.getSimpleName(), "custom");
 		addStartNpc(NPC);
@@ -308,10 +308,5 @@ public final class NpcLocationInfo extends Quest
 		}
 		
 		return htmltext;
-	}
-	
-	public static void main(String args[])
-	{
-		new NpcLocationInfo();
 	}
 }

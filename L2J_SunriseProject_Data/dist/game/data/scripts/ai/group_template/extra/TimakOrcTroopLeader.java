@@ -24,9 +24,9 @@ public class TimakOrcTroopLeader extends AbstractNpcAI
 {
 	private static final int TIMAK_ORC_TROOP_LEADER = 20767;
 	
-	public TimakOrcTroopLeader(int questId, String name, String descr)
+	public TimakOrcTroopLeader()
 	{
-		super(name, descr);
+		super(TimakOrcTroopLeader.class.getSimpleName(), "ai");
 		addAttackId(TIMAK_ORC_TROOP_LEADER);
 	}
 	
@@ -45,10 +45,5 @@ public class TimakOrcTroopLeader extends AbstractNpcAI
 		}
 		
 		return super.onAttack(npc, player, damage, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new TimakOrcTroopLeader(-1, TimakOrcTroopLeader.class.getSimpleName(), "ai");
 	}
 }

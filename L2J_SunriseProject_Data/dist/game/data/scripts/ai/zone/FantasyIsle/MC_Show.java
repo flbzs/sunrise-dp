@@ -168,7 +168,7 @@ public class MC_Show extends AbstractNpcAI
 	private static Map<String, ShoutInfo> talks = new FastMap<>();
 	private static Map<String, WalkInfo> walks = new FastMap<>();
 	
-	private MC_Show()
+	public MC_Show()
 	{
 		super(MC_Show.class.getSimpleName(), "ai/zone/FantasyIsle");
 		addSpawnId(32433, 32431, 32432, 32442, 32443, 32444, 32445, 32446, 32424, 32425, 32426, 32427, 32428);
@@ -507,10 +507,5 @@ public class MC_Show extends AbstractNpcAI
 			}
 		}
 		return null;
-	}
-	
-	public static void main(String[] args)
-	{
-		new MC_Show();
 	}
 }

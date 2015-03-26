@@ -5,11 +5,11 @@ import java.util.Map;
 
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.util.Util;
+import ai.npc.AbstractNpcAI;
 
-public class DwarvenOccupationChange extends Quest
+public class DwarvenOccupationChange extends AbstractNpcAI
 {
 	private static final Map<String, int[]> CLASSES1 = new HashMap<>();
 	private static final Map<String, int[]> CLASSES2 = new HashMap<>();
@@ -163,9 +163,9 @@ public class DwarvenOccupationChange extends Quest
 		});
 	}
 	
-	private DwarvenOccupationChange()
+	public DwarvenOccupationChange()
 	{
-		super(-1, DwarvenOccupationChange.class.getSimpleName(), "ai/npc/VillageMasters");
+		super(DwarvenOccupationChange.class.getSimpleName(), "ai/npc/VillageMasters");
 		addStartNpc(BH_NPCS);
 		addTalkId(BH_NPCS);
 		addStartNpc(WS_NPCS);
@@ -377,10 +377,5 @@ public class DwarvenOccupationChange extends Quest
 			st.exitQuest(true);
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args)
-	{
-		new DwarvenOccupationChange();
 	}
 }

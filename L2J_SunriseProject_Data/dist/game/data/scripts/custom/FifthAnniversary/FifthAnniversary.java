@@ -148,9 +148,9 @@ public class FifthAnniversary extends Quest
 	
 	private static boolean FifthAnniversaryEvent = false;
 	
-	public FifthAnniversary(int questId, String name, String descr)
+	public FifthAnniversary()
 	{
-		super(questId, name, descr);
+		super(-1, qn, "retail");
 		
 		EventDroplist.getInstance().addGlobalDrop(dropList, dropCount, dropChance, EVENT_DATES);
 		
@@ -455,10 +455,4 @@ public class FifthAnniversary extends Quest
 		
 		return "31854.htm";
 	}
-	
-	public static void main(String[] args)
-	{
-		new FifthAnniversary(-1, qn, "retail");
-	}
-	
 }

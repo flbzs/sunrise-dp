@@ -30,9 +30,9 @@ public class SpawnOnDeath extends AbstractNpcAI
 	private static final Map<Integer, Integer> MOBSPAWNS15 = new FastMap<>();
 	private static final Map<Integer, Integer> MOBSPAWNS100 = new FastMap<>();
 	
-	public SpawnOnDeath(int questId, String name, String descr)
+	public SpawnOnDeath()
 	{
-		super(name, descr);
+		super(SpawnOnDeath.class.getSimpleName(), "ai");
 		int[] temp =
 		{
 			22703,
@@ -84,10 +84,5 @@ public class SpawnOnDeath extends AbstractNpcAI
 		MOBSPAWNS100.put(Integer.valueOf(18812), Integer.valueOf(18813));
 		MOBSPAWNS100.put(Integer.valueOf(18813), Integer.valueOf(18814));
 		MOBSPAWNS100.put(Integer.valueOf(18814), Integer.valueOf(18812));
-	}
-	
-	public static void main(String[] args)
-	{
-		new SpawnOnDeath(-1, SpawnOnDeath.class.getSimpleName(), "ai");
 	}
 }

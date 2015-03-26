@@ -61,9 +61,9 @@ public class CabaleBuffer extends AbstractNpcAI
 	private static final int PREACHER_FIGTER = 4361;
 	private static final int PREACHER_MAGE = 4362;
 	
-	protected CabaleBuffer(String name, String descr)
+	public CabaleBuffer()
 	{
-		super(name, descr);
+		super(CabaleBuffer.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(SevenSigns.ORATOR_NPC_ID, SevenSigns.PREACHER_NPC_ID);
 		addSpawnId(SevenSigns.ORATOR_NPC_ID, SevenSigns.PREACHER_NPC_ID);
 	}
@@ -293,10 +293,5 @@ public class CabaleBuffer extends AbstractNpcAI
 	{
 		final L2Effect effect = player.getFirstEffect(skillId);
 		return (effect != null) ? effect.getSkill().getAbnormalLvl() : 0;
-	}
-	
-	public static void main(String[] args)
-	{
-		new CabaleBuffer(CabaleBuffer.class.getSimpleName(), "ai/npc");
 	}
 }

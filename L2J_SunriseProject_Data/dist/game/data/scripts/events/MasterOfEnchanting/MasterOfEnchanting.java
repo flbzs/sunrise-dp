@@ -68,9 +68,9 @@ public class MasterOfEnchanting extends LongTimeEvent
 	@SuppressWarnings("deprecation")
 	private static final Date _eventStart = new Date(2011, 7, 1);
 	
-	public MasterOfEnchanting(String name, String descr)
+	public MasterOfEnchanting()
 	{
-		super(name, descr);
+		super(MasterOfEnchanting.class.getSimpleName(), "events");
 		addStartNpc(MASTER_YOGI);
 		addFirstTalkId(MASTER_YOGI);
 		addTalkId(MASTER_YOGI);
@@ -279,10 +279,5 @@ public class MasterOfEnchanting extends LongTimeEvent
 			newQuestState(player);
 		}
 		return npc.getId() + ".htm";
-	}
-	
-	public static void main(String[] args)
-	{
-		new MasterOfEnchanting(MasterOfEnchanting.class.getSimpleName(), "events");
 	}
 }

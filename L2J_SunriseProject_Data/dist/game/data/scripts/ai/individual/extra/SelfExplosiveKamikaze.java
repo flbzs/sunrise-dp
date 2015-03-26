@@ -28,9 +28,9 @@ public class SelfExplosiveKamikaze extends AbstractNpcAI
 {
 	private static final Map<Integer, SkillHolder> MONSTERS = new FastMap<>();
 	
-	public SelfExplosiveKamikaze(int questId, String name, String descr)
+	public SelfExplosiveKamikaze()
 	{
-		super(name, descr);
+		super(SelfExplosiveKamikaze.class.getSimpleName(), "ai");
 		
 		for (Integer integer : MONSTERS.keySet())
 		{
@@ -75,10 +75,5 @@ public class SelfExplosiveKamikaze extends AbstractNpcAI
 		MONSTERS.put(Integer.valueOf(21735), new SkillHolder(4614, 6));
 		MONSTERS.put(Integer.valueOf(21758), new SkillHolder(4614, 7));
 		MONSTERS.put(Integer.valueOf(21781), new SkillHolder(4614, 9));
-	}
-	
-	public static void main(String[] args)
-	{
-		new SelfExplosiveKamikaze(-1, SelfExplosiveKamikaze.class.getSimpleName(), "ai");
 	}
 }

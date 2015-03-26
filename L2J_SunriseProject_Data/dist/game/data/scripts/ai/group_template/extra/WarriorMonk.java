@@ -27,9 +27,9 @@ public class WarriorMonk extends AbstractNpcAI
 {
 	private boolean FirstAttacked = false;
 	
-	public WarriorMonk(int questId, String name, String descr)
+	public WarriorMonk()
 	{
-		super(name, descr);
+		super(WarriorMonk.class.getSimpleName(), "ai");
 		registerMobs(new int[]
 		{
 			22129
@@ -91,10 +91,5 @@ public class WarriorMonk extends AbstractNpcAI
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null, null);
 		}
 		return super.onAggroRangeEnter(npc, player, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new WarriorMonk(-1, "WarriorMonk", "ai");
 	}
 }

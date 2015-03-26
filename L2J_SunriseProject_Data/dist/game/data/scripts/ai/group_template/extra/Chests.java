@@ -68,31 +68,26 @@ public class Chests extends AbstractNpcAI
 		chest.doCast(SkillData.getInstance().getInfo(_SKILL_SUICIDE_ID, chest.getLevel() / 10));
 	}
 	
-	public static void main(String[] args)
+	public Chests()
 	{
-		Chests chestsAi = new Chests();
+		super(Chests.class.getSimpleName(), "ai/group_template");
 		
 		for (int chestNpcId = _NPCID_REWARD_CHESTS_MIN_ID; chestNpcId <= _NPCID_REWARD_CHESTS_MAX_ID; ++chestNpcId)
 		{
-			chestsAi.addSpawnId(chestNpcId);
-			chestsAi.addAttackId(chestNpcId);
-			chestsAi.addSkillSeeId(chestNpcId);
-			chestsAi.addSpellFinishedId(chestNpcId);
+			addSpawnId(chestNpcId);
+			addAttackId(chestNpcId);
+			addSkillSeeId(chestNpcId);
+			addSpellFinishedId(chestNpcId);
 			
 			// setup already spawned chests :o
 			for (L2Spawn chestSpawn : SpawnTable.getInstance().getSpawns(chestNpcId))
 			{
 				if (chestSpawn.getLastSpawn() != null)
 				{
-					chestsAi.onSpawn(chestSpawn.getLastSpawn());
+					onSpawn(chestSpawn.getLastSpawn());
 				}
 			}
 		}
-	}
-	
-	private Chests()
-	{
-		super(Chests.class.getSimpleName(), "ai/group_template");
 	}
 	
 	@Override

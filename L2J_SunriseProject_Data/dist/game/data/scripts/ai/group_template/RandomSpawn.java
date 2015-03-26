@@ -117,9 +117,4 @@ public class RandomSpawn extends AbstractNpcAI
 			_npc.teleToLocation(_loc, false);
 		}
 	}
-	
-	public static void main(String[] args)
-	{
-		new RandomSpawn();
-	}
 }

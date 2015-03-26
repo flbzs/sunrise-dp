@@ -35,6 +35,13 @@ public class Survivor extends AbstractNpcAI
 	// Misc
 	private static final int MIN_LEVEL = 75;
 	
+	public Survivor()
+	{
+		super(Survivor.class.getSimpleName(), "ai/npc/Teleports");
+		addStartNpc(SURVIVOR);
+		addTalkId(SURVIVOR);
+	}
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -62,17 +69,5 @@ public class Survivor extends AbstractNpcAI
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		return "32632-1.htm";
-	}
-	
-	private Survivor(String name, String descr)
-	{
-		super(name, descr);
-		addStartNpc(SURVIVOR);
-		addTalkId(SURVIVOR);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Survivor(Survivor.class.getSimpleName(), "ai/npc/Teleports");
 	}
 }

@@ -26,7 +26,7 @@ import ai.npc.AbstractNpcAI;
 
 public class EkimusMouth extends AbstractNpcAI
 {
-	private EkimusMouth()
+	public EkimusMouth()
 	{
 		super(EkimusMouth.class.getSimpleName(), "ai/npc");
 		addStartNpc(32537);
@@ -84,10 +84,5 @@ public class EkimusMouth extends AbstractNpcAI
 			return "32537.htm";
 		}
 		return "";
-	}
-	
-	public static void main(String[] args)
-	{
-		new EkimusMouth();
 	}
 }

@@ -26,9 +26,9 @@ public class Gargos extends AbstractNpcAI
 	
 	boolean _isStarted = false;
 	
-	public Gargos(int questId, String name, String descr)
+	public Gargos()
 	{
-		super(name, descr);
+		super(Gargos.class.getSimpleName(), "ai");
 		addAttackId(GARGOS);
 		addKillId(GARGOS);
 	}
@@ -72,10 +72,5 @@ public class Gargos extends AbstractNpcAI
 		}
 		
 		return "";
-	}
-	
-	public static void main(String[] args)
-	{
-		new Gargos(-1, Gargos.class.getSimpleName(), "ai");
 	}
 }

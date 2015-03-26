@@ -65,7 +65,7 @@ public final class Sailren extends AbstractNpcAI
 		DEAD
 	}
 	
-	private Sailren()
+	public Sailren()
 	{
 		super(Sailren.class.getSimpleName(), "ai/grandboss");
 		addStartNpc(STATUE, CUBIC);
@@ -321,10 +321,5 @@ public final class Sailren extends AbstractNpcAI
 			notifyEvent("TIME_OUT", null, null);
 		}
 		return super.unload(removeFromList);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Sailren();
 	}
 }

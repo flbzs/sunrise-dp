@@ -38,20 +38,15 @@ public class StrongholdsTeleports extends AbstractNpcAI
 		32186
 	};
 	
+	public StrongholdsTeleports()
+	{
+		super(StrongholdsTeleports.class.getSimpleName(), "ai/npc/Teleports");
+		addFirstTalkId(NPCs);
+	}
+	
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
 		return player.getLevel() < 20 ? String.valueOf(npc.getId()) + ".htm" : String.valueOf(npc.getId()) + "-no.htm";
-	}
-	
-	private StrongholdsTeleports(String name, String descr)
-	{
-		super(name, descr);
-		addFirstTalkId(NPCs);
-	}
-	
-	public static void main(String[] args)
-	{
-		new StrongholdsTeleports(StrongholdsTeleports.class.getSimpleName(), "ai/npc/Teleports");
 	}
 }

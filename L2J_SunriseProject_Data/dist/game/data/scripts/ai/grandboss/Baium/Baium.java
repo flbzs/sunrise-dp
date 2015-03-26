@@ -101,7 +101,7 @@ public final class Baium extends AbstractNpcAI
 	private static long _lastAttack = 0;
 	private static L2PcInstance _standbyPlayer = null;
 	
-	private Baium()
+	public Baium()
 	{
 		super(Baium.class.getSimpleName(), "ai/grandboss");
 		addFirstTalkId(ANG_VORTEX);
@@ -784,10 +784,5 @@ public final class Baium extends AbstractNpcAI
 			npc.setTarget(player);
 			npc.doCast(skillToCast.getSkill());
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new Baium();
 	}
 }

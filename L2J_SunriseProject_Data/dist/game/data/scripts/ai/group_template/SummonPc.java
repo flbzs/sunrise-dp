@@ -38,7 +38,7 @@ public final class SummonPc extends AbstractNpcAI
 	// Skill
 	private static final SkillHolder SUMMON_PC = new SkillHolder(4161, 1);
 	
-	private SummonPc()
+	public SummonPc()
 	{
 		super(SummonPc.class.getSimpleName(), "ai/group_template");
 		addAttackId(PORTA, PERUM);
@@ -95,10 +95,5 @@ public final class SummonPc extends AbstractNpcAI
 			npc.getVariables().set("attacked", false);
 		}
 		return super.onSpellFinished(npc, player, skill);
-	}
-	
-	public static void main(String[] args)
-	{
-		new SummonPc();
 	}
 }

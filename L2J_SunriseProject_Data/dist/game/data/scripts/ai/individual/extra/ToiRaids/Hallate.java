@@ -24,7 +24,7 @@ public class Hallate extends AbstractNpcAI
 	private static final int z1 = -2150;
 	private static final int z2 = -1650;
 	
-	private Hallate()
+	public Hallate()
 	{
 		super(Hallate.class.getSimpleName(), "ai");
 		addAttackId(HALLATE);
@@ -44,10 +44,5 @@ public class Hallate extends AbstractNpcAI
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Hallate();
 	}
 }

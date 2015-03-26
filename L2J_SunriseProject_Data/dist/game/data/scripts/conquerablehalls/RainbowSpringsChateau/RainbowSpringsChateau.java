@@ -927,9 +927,4 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 		setRegistrationEndString(date);
 		_nextSiege = ThreadPoolManager.getInstance().scheduleGeneral(new SetFinalAttackers(), _rainbow.getNextSiegeTime());
 	}
-	
-	public static void main(String[] args)
-	{
-		new RainbowSpringsChateau();
-	}
 }

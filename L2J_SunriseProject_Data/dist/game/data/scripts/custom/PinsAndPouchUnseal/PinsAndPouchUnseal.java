@@ -157,14 +157,11 @@ public class PinsAndPouchUnseal extends Quest
 		}
 	};
 	
-	public PinsAndPouchUnseal(int questId, String name, String descr)
+	public PinsAndPouchUnseal()
 	{
-		super(questId, name, descr);
-		for (int id : NPCs)
-		{
-			addStartNpc(id);
-			addTalkId(id);
-		}
+		super(-1, PinsAndPouchUnseal.class.getSimpleName(), "custom");
+		addStartNpc(NPCs);
+		addTalkId(NPCs);
 	}
 	
 	@Override
@@ -255,10 +252,5 @@ public class PinsAndPouchUnseal extends Quest
 		htmltext = npc.getId() + "-1.htm";
 		
 		return htmltext;
-	}
-	
-	public static void main(String[] args)
-	{
-		new PinsAndPouchUnseal(-1, "PinsAndPouchUnseal", "custom");
 	}
 }

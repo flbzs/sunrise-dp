@@ -36,9 +36,9 @@ public class TheValentineEvent extends LongTimeEvent
 	// Item
 	private static final int RECIPE = 20191;
 	
-	public TheValentineEvent(String name, String descr)
+	public TheValentineEvent()
 	{
-		super(name, descr);
+		super(TheValentineEvent.class.getSimpleName(), "events");
 		addStartNpc(NPC);
 		addFirstTalkId(NPC);
 		addTalkId(NPC);
@@ -78,10 +78,5 @@ public class TheValentineEvent extends LongTimeEvent
 			newQuestState(player);
 		}
 		return npc.getId() + ".htm";
-	}
-	
-	public static void main(String[] args)
-	{
-		new TheValentineEvent(TheValentineEvent.class.getSimpleName(), "events");
 	}
 }

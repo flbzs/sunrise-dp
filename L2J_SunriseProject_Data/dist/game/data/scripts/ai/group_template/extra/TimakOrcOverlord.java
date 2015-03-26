@@ -24,9 +24,9 @@ public class TimakOrcOverlord extends AbstractNpcAI
 {
 	private static final int TIMAK_ORC_OVERLORD = 20588;
 	
-	public TimakOrcOverlord(int questId, String name, String descr)
+	public TimakOrcOverlord()
 	{
-		super(name, descr);
+		super(TimakOrcOverlord.class.getSimpleName(), "ai");
 		addAttackId(TIMAK_ORC_OVERLORD);
 	}
 	
@@ -45,10 +45,5 @@ public class TimakOrcOverlord extends AbstractNpcAI
 		}
 		
 		return super.onAttack(npc, player, damage, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new TimakOrcOverlord(-1, TimakOrcOverlord.class.getSimpleName(), "ai");
 	}
 }

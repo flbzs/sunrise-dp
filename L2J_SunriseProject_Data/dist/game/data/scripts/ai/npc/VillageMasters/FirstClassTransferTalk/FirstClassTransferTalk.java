@@ -42,9 +42,9 @@ public final class FirstClassTransferTalk extends AbstractNpcAI
 	private static final int PRANA = 32153; // Kamael Village Human Guild High Priest
 	private static final int ALDENIA = 32154; // Kamael Village Human Guild Grand Master
 	
-	private FirstClassTransferTalk(String name, String descr)
+	public FirstClassTransferTalk()
 	{
-		super(name, descr);
+		super(FirstClassTransferTalk.class.getSimpleName(), "ai/npc/VillageMasters");
 		for (int npc : new int[]
 		{
 			BITZ,
@@ -249,10 +249,5 @@ public final class FirstClassTransferTalk extends AbstractNpcAI
 			}
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args)
-	{
-		new FirstClassTransferTalk(FirstClassTransferTalk.class.getSimpleName(), "ai/npc/VillageMasters");
 	}
 }

@@ -54,7 +54,7 @@ public final class FortressOfResistance extends ClanHallSiegeEngine
 	private final Map<Integer, Long> _damageToNurka = new HashMap<>();
 	private NpcHtmlMessage _messengerMsg;
 	
-	private FortressOfResistance()
+	public FortressOfResistance()
 	{
 		super(FortressOfResistance.class.getSimpleName(), "conquerablehalls", FORTRESS_RESSISTANCE);
 		addFirstTalkId(MESSENGER);
@@ -174,10 +174,5 @@ public final class FortressOfResistance extends ClanHallSiegeEngine
 	public void onSiegeEnds()
 	{
 		buildMessengerMessage();
-	}
-	
-	public static void main(String[] args)
-	{
-		new FortressOfResistance();
 	}
 }

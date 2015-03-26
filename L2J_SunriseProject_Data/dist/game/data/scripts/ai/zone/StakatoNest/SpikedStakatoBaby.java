@@ -13,10 +13,9 @@ public class SpikedStakatoBaby extends AbstractNpcAI
 	private static final int SPIKED_STAKATO_NURSE = 22630;
 	private static final int SPIKED_STAKATO_CAPTAIN = 22629;
 	
-	public SpikedStakatoBaby(int questId, String name, String descr)
+	public SpikedStakatoBaby()
 	{
-		super(name, descr);
-		
+		super(SpikedStakatoBaby.class.getSimpleName(), "ai/zone/StakatoNest");
 		addKillId(SPIKED_STAKATO_NURSE);
 		addKillId(SPIKED_STAKATO_CAPTAIN);
 	}
@@ -45,10 +44,5 @@ public class SpikedStakatoBaby extends AbstractNpcAI
 			return ((L2MonsterInstance) couple).getMinionList().getSpawnedMinions().get(0);
 		}
 		return null;
-	}
-	
-	public static void main(String[] args)
-	{
-		new SpikedStakatoBaby(-1, "SpikedStakatoBaby", "ai/zone/StakatoNest");
 	}
 }

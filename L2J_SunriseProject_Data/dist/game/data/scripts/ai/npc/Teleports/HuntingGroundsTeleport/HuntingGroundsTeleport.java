@@ -46,7 +46,7 @@ public class HuntingGroundsTeleport extends AbstractNpcAI
 	};
 	// @formatter:on
 	
-	private HuntingGroundsTeleport()
+	public HuntingGroundsTeleport()
 	{
 		super(HuntingGroundsTeleport.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(PRIESTS);
@@ -140,10 +140,5 @@ public class HuntingGroundsTeleport extends AbstractNpcAI
 			}
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args)
-	{
-		new HuntingGroundsTeleport();
 	}
 }

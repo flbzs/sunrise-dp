@@ -29,9 +29,12 @@ public class KaimAbigore extends AbstractNpcAI
 	boolean _isAlreadySpawned = false;
 	int _isLockSpawned = 0;
 	
-	public KaimAbigore(int questId, String name, String descr)
+	public KaimAbigore()
 	{
-		super(name, descr);
+		super(KaimAbigore.class.getSimpleName(), "ai");
+		addAttackId(KAIM);
+		addKillId(KAIM);
+		addKillId(GUARD);
 	}
 	
 	@Override
@@ -106,10 +109,5 @@ public class KaimAbigore extends AbstractNpcAI
 			cancelQuestTimer("time_to_skill", npc, player);
 		}
 		return "";
-	}
-	
-	public static void main(String[] args)
-	{
-		new KaimAbigore(-1, KaimAbigore.class.getSimpleName(), "ai");
 	}
 }

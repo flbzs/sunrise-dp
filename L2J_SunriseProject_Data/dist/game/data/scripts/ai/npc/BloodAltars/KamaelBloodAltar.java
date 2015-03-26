@@ -18,13 +18,13 @@ import javolution.util.FastList;
 import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.actor.L2Npc;
-import l2r.gameserver.model.quest.Quest;
 import l2r.util.Rnd;
+import ai.npc.AbstractNpcAI;
 
 /**
- * Author: RobikBobik
+ * Author: vGodFather
  */
-public class KamaelBloodAltar extends Quest
+public class KamaelBloodAltar extends AbstractNpcAI
 {
 	private static final long delay = Config.CHANGE_STATUS * 60 * 1000;
 	
@@ -81,9 +81,9 @@ public class KamaelBloodAltar extends Quest
 		}
 	};
 	
-	public KamaelBloodAltar(int questId, String name, String descr)
+	public KamaelBloodAltar()
 	{
-		super(questId, name, descr);
+		super(KamaelBloodAltar.class.getSimpleName(), "ai/npc");
 		
 		manageNpcs(true);
 		
@@ -158,10 +158,5 @@ public class KamaelBloodAltar extends Quest
 				}
 			}
 		}, 10000);
-	}
-	
-	public static void main(String[] args)
-	{
-		new KamaelBloodAltar(-1, KamaelBloodAltar.class.getSimpleName(), "ai/npc");
 	}
 }

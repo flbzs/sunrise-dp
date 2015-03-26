@@ -103,7 +103,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 	private static final SkillHolder CREW_SKILL = new SkillHolder(6172, 1); // Presentation - Tyranno
 	private static final SkillHolder INVIN_BUFF_ON = new SkillHolder(5225, 1); // Invincible
 	
-	private PrimevalIsle()
+	public PrimevalIsle()
 	{
 		super(PrimevalIsle.class.getSimpleName(), "ai/zone/PrimevalIsle");
 		addSpawnId(TREX);
@@ -523,10 +523,5 @@ public final class PrimevalIsle extends AbstractNpcAI
 			npc.getVariables().set("SKILL_MULTIPLER", 1);
 		}
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args)
-	{
-		new PrimevalIsle();
 	}
 }

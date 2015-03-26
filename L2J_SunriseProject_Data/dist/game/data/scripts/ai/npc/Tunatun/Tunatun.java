@@ -37,6 +37,14 @@ public class Tunatun extends AbstractNpcAI
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
+	public Tunatun()
+	{
+		super(Tunatun.class.getSimpleName(), "ai/npc");
+		addStartNpc(TUNATUN);
+		addFirstTalkId(TUNATUN);
+		addTalkId(TUNATUN);
+	}
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -59,18 +67,5 @@ public class Tunatun extends AbstractNpcAI
 			}
 		}
 		return event;
-	}
-	
-	private Tunatun(String name, String descr)
-	{
-		super(name, descr);
-		addStartNpc(TUNATUN);
-		addFirstTalkId(TUNATUN);
-		addTalkId(TUNATUN);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Tunatun(Tunatun.class.getSimpleName(), "ai/npc");
 	}
 }

@@ -26,9 +26,9 @@ public class WeirdBunei extends AbstractNpcAI
 	
 	boolean _isAlreadyStarted = false;
 	
-	public WeirdBunei(int questId, String name, String descr)
+	public WeirdBunei()
 	{
-		super(name, descr);
+		super(WeirdBunei.class.getSimpleName(), "ai");
 		addAttackId(WEIRD);
 		addKillId(WEIRD);
 	}
@@ -80,10 +80,5 @@ public class WeirdBunei extends AbstractNpcAI
 			cancelQuestTimer("time_to_skill", npc, player);
 		}
 		return "";
-	}
-	
-	public static void main(String[] args)
-	{
-		new WeirdBunei(-1, WeirdBunei.class.getSimpleName(), "ai");
 	}
 }

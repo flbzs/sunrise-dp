@@ -91,7 +91,7 @@ public final class GraciaLoader
 	
 	public static void main(String[] args)
 	{
-		_log.info(GraciaLoader.class.getSimpleName() + ": Loading Gracia related scripts.");
+		_log.info(GraciaLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : SCRIPTS)
 		{
 			try

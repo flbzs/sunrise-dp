@@ -27,9 +27,9 @@ public class VenomousStorace extends AbstractNpcAI
 	boolean _isAlreadySpawned = false;
 	int _isLockSpawned = 0;
 	
-	public VenomousStorace(int questId, String name, String descr)
+	public VenomousStorace()
 	{
-		super(name, descr);
+		super(VenomousStorace.class.getSimpleName(), "ai");
 		addAttackId(VENOMOUS);
 		addKillId(GUARD);
 		addKillId(VENOMOUS);
@@ -86,10 +86,5 @@ public class VenomousStorace extends AbstractNpcAI
 			cancelQuestTimer("time_to_spawn", npc, player);
 		}
 		return "";
-	}
-	
-	public static void main(String[] args)
-	{
-		new VenomousStorace(-1, VenomousStorace.class.getSimpleName(), "ai");
 	}
 }

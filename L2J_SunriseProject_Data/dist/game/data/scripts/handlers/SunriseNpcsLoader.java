@@ -56,12 +56,11 @@ public class SunriseNpcsLoader
 	
 	public static void main(String[] args)
 	{
-		int npcsCounter = 0;
+		_log.info(SunriseNpcsLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> instance : NPCS)
 		{
 			try
 			{
-				npcsCounter++;
 				instance.newInstance();
 			}
 			catch (Exception e)
@@ -69,6 +68,5 @@ public class SunriseNpcsLoader
 				_log.error(SunriseNpcsLoader.class.getSimpleName() + ": Failed loading " + instance.getSimpleName() + ":", e);
 			}
 		}
-		_log.info(SunriseNpcsLoader.class.getSimpleName() + ": Loaded " + String.valueOf(npcsCounter) + " Sunrise Npc(s).");
 	}
 }

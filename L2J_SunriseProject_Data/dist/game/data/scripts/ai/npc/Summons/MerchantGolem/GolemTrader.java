@@ -24,9 +24,4 @@ public class GolemTrader extends AbstractNpcAI
 		npc.scheduleDespawn(180000);
 		return super.onSpawn(npc);
 	}
-	
-	public static void main(String[] args)
-	{
-		new GolemTrader();
-	}
 }

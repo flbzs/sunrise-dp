@@ -27,9 +27,9 @@ public class TomlanKamos extends AbstractNpcAI
 	private static long _LastAttack = 0;
 	private static boolean successDespawn = false;
 	
-	public TomlanKamos(int id, String name, String descr)
+	public TomlanKamos()
 	{
-		super(name, descr);
+		super(TomlanKamos.class.getSimpleName(), "ai");
 		
 		addKillId(TOMLAN);
 		addAttackId(TOMLAN);
@@ -76,10 +76,5 @@ public class TomlanKamos extends AbstractNpcAI
 	{
 		cancelQuestTimer("despawn", npc, null);
 		return null;
-	}
-	
-	public static void main(String[] args)
-	{
-		new TomlanKamos(-1, "TomlanKamos", "ai");
 	}
 }

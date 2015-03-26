@@ -26,10 +26,9 @@ public class CannibalisticStakatoFollower extends AbstractNpcAI
 {
 	private static final int CANNIBALISTIC_LEADER = 22625;
 	
-	public CannibalisticStakatoFollower(int questId, String name, String descr)
+	public CannibalisticStakatoFollower()
 	{
-		super(name, descr);
-		
+		super(CannibalisticStakatoFollower.class.getSimpleName(), "ai/zone/StakatoNest");
 		addAttackId(CANNIBALISTIC_LEADER);
 	}
 	
@@ -83,10 +82,5 @@ public class CannibalisticStakatoFollower extends AbstractNpcAI
 			_npc.broadcastPacket(new MagicSkillUse(_npc, _minion, 4484, 1, 1000, 0));
 			_minion.doDie(_minion);
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new CannibalisticStakatoFollower(-1, CannibalisticStakatoFollower.class.getSimpleName(), "ai/zone/StakatoNest");
 	}
 }

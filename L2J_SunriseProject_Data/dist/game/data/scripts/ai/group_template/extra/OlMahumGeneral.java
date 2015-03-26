@@ -26,17 +26,12 @@ public class OlMahumGeneral extends AbstractNpcAI
 	private static final int Ol_Mahum_General = 20438;
 	private static boolean _FirstAttacked;
 	
-	public OlMahumGeneral(String name, String descr)
+	public OlMahumGeneral()
 	{
-		super(name, descr);
+		super(OlMahumGeneral.class.getSimpleName(), "ai");
 		
-		int[] mobs =
-		{
-			Ol_Mahum_General
-		};
-		
-		addAttackId(mobs);
-		addKillId(mobs);
+		addAttackId(Ol_Mahum_General);
+		addKillId(Ol_Mahum_General);
 		_FirstAttacked = false;
 	}
 	
@@ -70,10 +65,5 @@ public class OlMahumGeneral extends AbstractNpcAI
 			_FirstAttacked = false;
 		}
 		return super.onKill(npc, killer, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new OlMahumGeneral(OlMahumGeneral.class.getSimpleName(), "ai");
 	}
 }

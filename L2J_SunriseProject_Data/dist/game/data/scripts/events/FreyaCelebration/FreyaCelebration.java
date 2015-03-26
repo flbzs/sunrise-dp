@@ -67,6 +67,16 @@ public class FreyaCelebration extends LongTimeEvent
 		NpcStringId.I_AM_ICE_QUEEN_FREYA_THIS_FEELING_AND_EMOTION_ARE_NOTHING_BUT_A_PART_OF_MELISSAA_MEMORIES
 	};
 	
+	public FreyaCelebration()
+	{
+		super(FreyaCelebration.class.getSimpleName(), "events");
+		
+		addStartNpc(FREYA);
+		addFirstTalkId(FREYA);
+		addTalkId(FREYA);
+		addSkillSeeId(FREYA);
+	}
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -152,20 +162,5 @@ public class FreyaCelebration extends LongTimeEvent
 			newQuestState(player);
 		}
 		return "13296.htm";
-	}
-	
-	public FreyaCelebration(String name, String descr)
-	{
-		super(name, descr);
-		
-		addStartNpc(FREYA);
-		addFirstTalkId(FREYA);
-		addTalkId(FREYA);
-		addSkillSeeId(FREYA);
-	}
-	
-	public static void main(String[] args)
-	{
-		new FreyaCelebration(FreyaCelebration.class.getSimpleName(), "events");
 	}
 }

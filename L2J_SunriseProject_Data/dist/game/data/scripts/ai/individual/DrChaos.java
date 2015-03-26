@@ -24,15 +24,15 @@ import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.SpecialCamera;
+import ai.npc.AbstractNpcAI;
 
 /**
  * DrChaos' AI.
  * @author Kerberos
  */
-public final class DrChaos extends Quest
+public final class DrChaos extends AbstractNpcAI
 {
 	private static final int DR_CHAOS = 32033;
 	private static final int STRANGE_MACHINE = 32032;
@@ -42,10 +42,10 @@ public final class DrChaos extends Quest
 	private static final Location PLAYER_TELEPORT = new Location(94832, -112624, -3304);
 	private static final Location NPC_LOCATION = new Location(-113091, -243942, -15536);
 	
-	private DrChaos()
+	public DrChaos()
 	{
 		// TODO extends AbstractNpcAI
-		super(-1, "Doctor Chaos", "ai/individual");
+		super(DrChaos.class.getSimpleName(), "ai/individual");
 		addFirstTalkId(DR_CHAOS);
 		_IsGolemSpawned = false;
 	}
@@ -125,10 +125,5 @@ public final class DrChaos extends Quest
 			this.startQuestTimer("1", 3000, npc, player);
 		}
 		return "";
-	}
-	
-	public static void main(String[] args)
-	{
-		new DrChaos();
 	}
 }

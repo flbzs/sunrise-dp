@@ -82,7 +82,7 @@ public final class Beleth extends AbstractNpcAI
 	
 	protected static final Location BELETH_SPAWN = new Location(16323, 213059, -9357, 49152);
 	
-	private Beleth()
+	public Beleth()
 	{
 		super(Beleth.class.getSimpleName(), "ai/individual");
 		ZONE = ZoneManager.getInstance().getZoneById(12018);
@@ -744,10 +744,5 @@ public final class Beleth extends AbstractNpcAI
 		MINIONS.add(addSpawn(BELETH_ID_2, new Location(xm[15], ym[15], -9357, 49152)));
 		ALLOW_OBJECT_ID = MINIONS.get(getRandom(MINIONS.size())).getObjectId();
 		ATTACKED = false;
-	}
-	
-	public static void main(String[] args)
-	{
-		new Beleth();
 	}
 }

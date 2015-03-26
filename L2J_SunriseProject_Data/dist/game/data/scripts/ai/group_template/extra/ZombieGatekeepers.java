@@ -27,14 +27,14 @@ import ai.npc.AbstractNpcAI;
 
 public class ZombieGatekeepers extends AbstractNpcAI
 {
-	public ZombieGatekeepers(int questId, String name, String descr)
-	{
-		super(name, descr);
-		super.addAttackId(22136);
-		super.addAggroRangeEnterId(22136);
-	}
-	
 	private final FastMap<Integer, FastList<L2Character>> _attackersList = new FastMap<>();
+	
+	public ZombieGatekeepers()
+	{
+		super(ZombieGatekeepers.class.getSimpleName(), "ai");
+		addAttackId(22136);
+		addAggroRangeEnterId(22136);
+	}
 	
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet, L2Skill skill)
@@ -94,10 +94,5 @@ public class ZombieGatekeepers extends AbstractNpcAI
 			_attackersList.get(npcObjId).clear();
 		}
 		return super.onKill(npc, killer, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new ZombieGatekeepers(-1, ZombieGatekeepers.class.getSimpleName(), "ai");
 	}
 }

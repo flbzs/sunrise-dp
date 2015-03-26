@@ -56,14 +56,11 @@ public class HeroWeapon extends Quest
 		9390
 	};
 	
-	public HeroWeapon(int questId, String name, String descr)
+	public HeroWeapon()
 	{
-		super(questId, name, descr);
-		for (int i : npcIds)
-		{
-			addStartNpc(i);
-			addTalkId(i);
-		}
+		super(-1, HeroWeapon.class.getSimpleName(), "custom");
+		addStartNpc(npcIds);
+		addTalkId(npcIds);
 	}
 	
 	@Override
@@ -122,10 +119,5 @@ public class HeroWeapon extends Quest
 		}
 		
 		return false;
-	}
-	
-	public static void main(String[] args)
-	{
-		new HeroWeapon(-1, "HeroWeapon", "custom");
 	}
 }

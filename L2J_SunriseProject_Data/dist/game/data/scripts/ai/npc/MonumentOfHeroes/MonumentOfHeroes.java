@@ -58,9 +58,9 @@ public class MonumentOfHeroes extends AbstractNpcAI
 		9390, // Infinity Shooter
 	};
 	
-	private MonumentOfHeroes(String name, String descr)
+	public MonumentOfHeroes()
 	{
-		super(name, descr);
+		super(MonumentOfHeroes.class.getSimpleName(), "ai/npc");
 		addStartNpc(MONUMENTS);
 		addTalkId(MONUMENTS);
 	}
@@ -108,10 +108,5 @@ public class MonumentOfHeroes extends AbstractNpcAI
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	public static void main(String[] args)
-	{
-		new MonumentOfHeroes(MonumentOfHeroes.class.getSimpleName(), "ai/npc");
 	}
 }

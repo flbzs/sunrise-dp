@@ -120,7 +120,7 @@ public final class LuckyPig extends AbstractNpcAI
 	};
 	//@formatter:on
 	
-	private LuckyPig()
+	public LuckyPig()
 	{
 		super(LuckyPig.class.getSimpleName(), "ai/npc");
 		addKillId(Wingless_Lucky_Pig);
@@ -369,10 +369,5 @@ public final class LuckyPig extends AbstractNpcAI
 	private void setLuckyPigLevel80(boolean luckyPigLevel80)
 	{
 		isLuckyPigLevel80 = luckyPigLevel80;
-	}
-	
-	public static void main(String[] args)
-	{
-		new LuckyPig();
 	}
 }

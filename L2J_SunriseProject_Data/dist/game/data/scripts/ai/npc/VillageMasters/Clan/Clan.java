@@ -23,12 +23,12 @@ import java.util.Map;
 
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.quest.Quest;
+import ai.npc.AbstractNpcAI;
 
 /**
  * @author UnAfraid
  */
-public class Clan extends Quest
+public class Clan extends AbstractNpcAI
 {
 	// @formatter:off
 	private static final int[] NPCS =
@@ -64,9 +64,9 @@ public class Clan extends Quest
 		LEADER_REQUIRED.put("9000-15.htm", "9000-07-no.htm");
 	}
 	
-	public Clan(int questId, String name, String descr)
+	public Clan()
 	{
-		super(questId, name, descr);
+		super(Clan.class.getSimpleName(), "ai/npc/VillageMasters");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
@@ -88,10 +88,5 @@ public class Clan extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance talker)
 	{
 		return "9000-01.htm";
-	}
-	
-	public static void main(String[] args)
-	{
-		new Clan(-1, Clan.class.getSimpleName(), "ai/npc/VillageMasters");
 	}
 }

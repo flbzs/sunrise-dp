@@ -19,13 +19,13 @@ import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.quest.Quest;
 import l2r.util.Rnd;
+import ai.npc.AbstractNpcAI;
 
 /**
- * Author: RobikBobik
+ * Author: vGodFather
  */
-public class SchutgartBloodAltar extends Quest
+public class SchutgartBloodAltar extends AbstractNpcAI
 {
 	private static final long delay = Config.CHANGE_STATUS * 60 * 1000;
 	protected static boolean bossesSpawned = false;
@@ -97,9 +97,9 @@ public class SchutgartBloodAltar extends Quest
 		}
 	};
 	
-	public SchutgartBloodAltar(int questId, String name, String descr)
+	public SchutgartBloodAltar()
 	{
-		super(questId, name, descr);
+		super(SchutgartBloodAltar.class.getSimpleName(), "ai/npc");
 		
 		manageNpcs(true);
 		
@@ -231,10 +231,5 @@ public class SchutgartBloodAltar extends Quest
 			}, 30000);
 		}
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new SchutgartBloodAltar(-1, SchutgartBloodAltar.class.getSimpleName(), "ai/npc");
 	}
 }

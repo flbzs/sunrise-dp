@@ -19,13 +19,13 @@ import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.quest.Quest;
 import l2r.util.Rnd;
+import ai.npc.AbstractNpcAI;
 
 /**
- * Author: RobikBobik
+ * Author: vGodFather
  */
-public class AdenBloodAltar extends Quest
+public class AdenBloodAltar extends AbstractNpcAI
 {
 	private static final long delay = Config.CHANGE_STATUS * 60 * 1000;
 	protected static boolean bossesSpawned = false;
@@ -113,9 +113,9 @@ public class AdenBloodAltar extends Quest
 		}
 	};
 	
-	public AdenBloodAltar(int questId, String name, String descr)
+	public AdenBloodAltar()
 	{
-		super(questId, name, descr);
+		super(AdenBloodAltar.class.getSimpleName(), "ai/npc");
 		
 		manageNpcs(true);
 		
@@ -261,10 +261,5 @@ public class AdenBloodAltar extends Quest
 			}, 30000);
 		}
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new AdenBloodAltar(-1, AdenBloodAltar.class.getSimpleName(), "ai/npc");
 	}
 }

@@ -349,9 +349,4 @@ public class AvantGarde extends AbstractNpcAI
 			player.sendPacket(asl);
 		}
 	}
-	
-	public static void main(String[] args)
-	{
-		new AvantGarde();
-	}
 }

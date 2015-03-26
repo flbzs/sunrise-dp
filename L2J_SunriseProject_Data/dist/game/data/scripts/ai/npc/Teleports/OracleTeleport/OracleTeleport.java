@@ -135,9 +135,9 @@ public class OracleTeleport extends AbstractNpcAI
 		new Location(12837, -248483, -9579)
 	};
 	
-	private OracleTeleport(String name, String descr)
+	public OracleTeleport()
 	{
-		super(name, descr);
+		super(OracleTeleport.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(RIFT_POSTERS);
 		addStartNpc(TELEPORTERS);
 		addStartNpc(TEMPLE_PRIEST);
@@ -387,10 +387,5 @@ public class OracleTeleport extends AbstractNpcAI
 			}
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args)
-	{
-		new OracleTeleport(OracleTeleport.class.getSimpleName(), "ai/npc/Teleports");
 	}
 }

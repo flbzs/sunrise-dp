@@ -58,9 +58,4 @@ public final class Abercrombie extends AbstractNpcAI
 		}
 		return htmltext;
 	}
-	
-	public static void main(String[] args)
-	{
-		new Abercrombie();
-	}
 }

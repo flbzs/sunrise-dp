@@ -61,7 +61,7 @@ public final class IsleOfPrayer extends AbstractNpcAI
 		MONSTERS.put(22271, new ItemChanceHolder(SPIRIT_OF_LAKE, 1000)); // Water Dragon Detractor
 	}
 	
-	private IsleOfPrayer()
+	public IsleOfPrayer()
 	{
 		super(IsleOfPrayer.class.getSimpleName(), "ai/group_template");
 		addKillId(MONSTERS.keySet());
@@ -76,10 +76,5 @@ public final class IsleOfPrayer extends AbstractNpcAI
 			npc.dropItem(killer, holder);
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new IsleOfPrayer();
 	}
 }

@@ -30,9 +30,9 @@ public final class NpcBuffers extends AbstractNpcAI
 {
 	private final NpcBuffersData _npcBuffers = new NpcBuffersData();
 	
-	private NpcBuffers(String name, String descr)
+	public NpcBuffers()
 	{
-		super(name, descr);
+		super(NpcBuffers.class.getSimpleName(), "npc");
 		
 		for (int npcId : _npcBuffers.getNpcBufferIds())
 		{
@@ -58,10 +58,5 @@ public final class NpcBuffers extends AbstractNpcAI
 			ThreadPoolManager.getInstance().scheduleAi(new NpcBufferAI(npc, skill), skill.getInitialDelay());
 		}
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args)
-	{
-		new NpcBuffers(NpcBuffers.class.getSimpleName(), "npc");
 	}
 }

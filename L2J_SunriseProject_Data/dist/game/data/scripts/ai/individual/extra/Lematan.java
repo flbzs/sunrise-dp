@@ -12,9 +12,9 @@ public class Lematan extends AbstractNpcAI
 	private static final int MINION = 18634;
 	public int status;
 	
-	public Lematan(int id, String name, String descr)
+	public Lematan()
 	{
-		super(name, descr);
+		super(Lematan.class.getSimpleName(), "ai");
 		status = 0;
 		int mob[] =
 		{
@@ -108,10 +108,5 @@ public class Lematan extends AbstractNpcAI
 			startQuestTimer("first_anim", 1000L, npc, null);
 		}
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String args[])
-	{
-		new Lematan(-1, Lematan.class.getSimpleName(), "ai");
 	}
 }

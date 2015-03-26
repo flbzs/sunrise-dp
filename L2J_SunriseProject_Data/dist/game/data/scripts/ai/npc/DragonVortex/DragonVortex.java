@@ -57,7 +57,7 @@ public class DragonVortex extends AbstractNpcAI
 	
 	private static final int DESPAWN_DELAY = 3600000;
 	
-	private DragonVortex()
+	public DragonVortex()
 	{
 		super(DragonVortex.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(VORTEX_1, VORTEX_2, VORTEX_3, VORTEX_4);
@@ -334,10 +334,5 @@ public class DragonVortex extends AbstractNpcAI
 			boss4ObjId = 0;
 			bosses4.clear();
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new DragonVortex();
 	}
 }

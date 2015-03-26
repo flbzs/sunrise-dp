@@ -98,6 +98,7 @@ public class InstanceLoader
 	
 	public static void main(String[] args)
 	{
+		_log.info(InstanceLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> instance : INSTANCES)
 		{
 			try

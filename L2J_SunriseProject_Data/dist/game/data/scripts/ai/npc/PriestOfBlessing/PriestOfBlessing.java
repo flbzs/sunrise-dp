@@ -211,9 +211,4 @@ public class PriestOfBlessing extends AbstractNpcAI
 		}
 		return index;
 	}
-	
-	public static void main(String[] args)
-	{
-		new PriestOfBlessing();
-	}
 }

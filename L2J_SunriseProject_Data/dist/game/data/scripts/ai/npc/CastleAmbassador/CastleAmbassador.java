@@ -48,7 +48,7 @@ public final class CastleAmbassador extends AbstractNpcAI
 	};
 	// @formatter:on
 	
-	private CastleAmbassador()
+	public CastleAmbassador()
 	{
 		super(CastleAmbassador.class.getSimpleName(), "ai/npc");
 		addStartNpc(CASTLE_AMBASSADOR);
@@ -168,10 +168,5 @@ public final class CastleAmbassador extends AbstractNpcAI
 			startQuestTimer("DESPAWN", 3600000, npc, null);
 		}
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args)
-	{
-		new CastleAmbassador();
 	}
 }

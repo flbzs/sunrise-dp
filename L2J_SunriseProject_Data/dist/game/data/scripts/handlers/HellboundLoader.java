@@ -123,7 +123,7 @@ public final class HellboundLoader
 	
 	public static void main(String[] args)
 	{
-		_log.info(HellboundLoader.class.getSimpleName() + ": Loading Hellbound related scripts:");
+		_log.info(HellboundLoader.class.getSimpleName() + ": Loading related scripts.");
 		// Data
 		HellboundPointData.getInstance();
 		HellboundSpawns.getInstance();

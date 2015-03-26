@@ -137,7 +137,7 @@ public class VarkaKetra extends AbstractNpcAI
 		Q00616_MagicalPowerOfFirePart2.class.getSimpleName()
 	};
 	
-	private VarkaKetra()
+	public VarkaKetra()
 	{
 		super(VarkaKetra.class.getSimpleName(), "ai/group_template");
 		addKillId(KETRA);
@@ -208,10 +208,5 @@ public class VarkaKetra extends AbstractNpcAI
 	private final boolean stopAttack(L2PcInstance player, L2Character monster)
 	{
 		return (Util.contains(KETRA, monster.getId()) && hasAtLeastOneQuestItem(player, KETRA_MARKS)) || (Util.contains(VARKA, monster.getId()) && hasAtLeastOneQuestItem(player, VARKA_MARKS));
-	}
-	
-	public static void main(String[] args)
-	{
-		new VarkaKetra();
 	}
 }

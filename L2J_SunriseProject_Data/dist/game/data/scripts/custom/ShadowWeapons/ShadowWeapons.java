@@ -80,9 +80,4 @@ public class ShadowWeapons extends Quest
 		}
 		return htmltext;
 	}
-	
-	public static void main(String args[])
-	{
-		new ShadowWeapons();
-	}
 }

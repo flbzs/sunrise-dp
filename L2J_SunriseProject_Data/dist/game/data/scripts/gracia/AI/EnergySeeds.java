@@ -28,7 +28,7 @@ import l2r.gameserver.data.sql.NpcTable;
 import l2r.gameserver.data.xml.impl.DoorData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.idfactory.IdFactory;
-import l2r.gameserver.instancemanager.GraciaSeedsManager;
+import l2r.gameserver.instancemanager.SoDManager;
 import l2r.gameserver.instancemanager.SoIManager;
 import l2r.gameserver.instancemanager.ZoneManager;
 import l2r.gameserver.model.L2Object;
@@ -1484,7 +1484,7 @@ public class EnergySeeds extends AbstractNpcAI
 			case INFINITY:
 				return false;
 			case DESTRUCTION:
-				return GraciaSeedsManager.getInstance().getSoDState() == 2;
+				return SoDManager.getInstance().getSoDState() == 2;
 			case ANNIHILATION_BISTAKON:
 			case ANNIHILATION_REPTILIKON:
 			case ANNIHILATION_COKRAKON:

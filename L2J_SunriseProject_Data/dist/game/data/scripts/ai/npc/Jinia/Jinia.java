@@ -38,7 +38,7 @@ public final class Jinia extends AbstractNpcAI
 	// Misc
 	private static final int MIN_LEVEL = 82;
 	
-	private Jinia()
+	public Jinia()
 	{
 		super(Jinia.class.getSimpleName(), "ai/npc");
 		addStartNpc(JINIA);
@@ -78,10 +78,5 @@ public final class Jinia extends AbstractNpcAI
 	{
 		final QuestState st = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
 		return ((player.getLevel() >= MIN_LEVEL) && (st != null) && st.isCompleted()) ? "32781-02.html" : "32781-01.html";
-	}
-	
-	public static void main(String[] args)
-	{
-		new Jinia();
 	}
 }

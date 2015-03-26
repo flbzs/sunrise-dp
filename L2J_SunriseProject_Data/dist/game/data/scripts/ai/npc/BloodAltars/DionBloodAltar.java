@@ -19,13 +19,13 @@ import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.quest.Quest;
 import l2r.util.Rnd;
+import ai.npc.AbstractNpcAI;
 
 /**
- * Author: RobikBobik
+ * Author: vGodFather
  */
-public class DionBloodAltar extends Quest
+public class DionBloodAltar extends AbstractNpcAI
 {
 	private static final long delay = Config.CHANGE_STATUS * 60 * 1000;
 	protected static boolean bossesSpawned = false;
@@ -113,9 +113,9 @@ public class DionBloodAltar extends Quest
 		}
 	};
 	
-	public DionBloodAltar(int questId, String name, String descr)
+	public DionBloodAltar()
 	{
-		super(questId, name, descr);
+		super(DionBloodAltar.class.getSimpleName(), "ai/npc");
 		
 		manageNpcs(true);
 		
@@ -261,10 +261,5 @@ public class DionBloodAltar extends Quest
 			}, 30000);
 		}
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new DionBloodAltar(-1, DionBloodAltar.class.getSimpleName(), "ai/npc");
 	}
 }

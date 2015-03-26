@@ -168,9 +168,4 @@ public final class FortressOfTheDead extends ClanHallSiegeEngine
 			super.startSiege();
 		}
 	}
-	
-	public static void main(String[] args)
-	{
-		new FortressOfTheDead();
-	}
 }

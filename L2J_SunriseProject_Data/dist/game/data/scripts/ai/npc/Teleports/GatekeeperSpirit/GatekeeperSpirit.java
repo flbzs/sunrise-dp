@@ -43,7 +43,7 @@ public class GatekeeperSpirit extends AbstractNpcAI
 	private static final Location TELEPORT_DAWN = new Location(184448, -10112, -5504);
 	private static final Location EXIT = new Location(182960, -11904, -4897);
 	
-	private GatekeeperSpirit()
+	public GatekeeperSpirit()
 	{
 		super(GatekeeperSpirit.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(GATEKEEPER_SPIRIT_ENTER, GATEKEEPER_SPIRIT_EXIT);
@@ -117,10 +117,5 @@ public class GatekeeperSpirit extends AbstractNpcAI
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new GatekeeperSpirit();
 	}
 }

@@ -44,9 +44,9 @@ public class CastleBlacksmith extends AbstractNpcAI
 		35553, // Blacksmith (Schuttgart)
 	};
 	
-	private CastleBlacksmith(String name, String descr)
+	public CastleBlacksmith()
 	{
-		super(name, descr);
+		super(CastleBlacksmith.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 		addFirstTalkId(NPCS);
@@ -67,10 +67,5 @@ public class CastleBlacksmith extends AbstractNpcAI
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
 		return (hasRights(player, npc)) ? npc.getId() + "-01.html" : "no.html";
-	}
-	
-	public static void main(String[] args)
-	{
-		new CastleBlacksmith(CastleBlacksmith.class.getSimpleName(), "ai/npc");
 	}
 }

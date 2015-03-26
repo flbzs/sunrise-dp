@@ -42,7 +42,7 @@ public final class SinEater extends AbstractNpcAI
 	// NPCs
 	private static final int SIN_EATER = 12564;
 	
-	private SinEater()
+	public SinEater()
 	{
 		super(SinEater.class.getSimpleName(), "ai/individual");
 		addSummonSpawnId(SIN_EATER);
@@ -168,10 +168,5 @@ public final class SinEater extends AbstractNpcAI
 	private void broadcastSummonSay(L2Summon summon, NpcStringId npcstringId)
 	{
 		summon.broadcastPacket(new NpcSay(summon.getObjectId(), Say2.NPC_ALL, summon.getId(), npcstringId));
-	}
-	
-	public static void main(String[] args)
-	{
-		new SinEater();
 	}
 }

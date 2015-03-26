@@ -23,16 +23,16 @@ import l2r.gameserver.enums.QuestSound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.util.Util;
+import ai.npc.AbstractNpcAI;
 
 /**
  * Dark Elven Change Part 2<br>
  * Original Jython script by DraX and DrLecter
  * @author nonom
  */
-public final class DarkElvenChange2 extends Quest
+public final class DarkElvenChange2 extends AbstractNpcAI
 {
 	// NPCs
 	private static int[] NPCS =
@@ -76,9 +76,10 @@ public final class DarkElvenChange2 extends Quest
 		{ 41, 39, 50, 51, 52, 53, MARK_OF_SCHOLAR, MARK_OF_FATE, MARK_OF_SUMMONER }, // PS
 	};
 	// @formatter:on
-	private DarkElvenChange2()
+	
+	public DarkElvenChange2()
 	{
-		super(-1, DarkElvenChange2.class.getSimpleName(), "ai/npc/VillageMasters");
+		super(DarkElvenChange2.class.getSimpleName(), "ai/npc/VillageMasters");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
@@ -195,10 +196,5 @@ public final class DarkElvenChange2 extends Quest
 			htmltext = "30474-56.html"; // other races
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args)
-	{
-		new DarkElvenChange2();
 	}
 }

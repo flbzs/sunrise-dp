@@ -11,14 +11,10 @@ public class Barakiel extends AbstractNpcAI
 	private static final int x2 = 0x16c10;
 	private static final int y1 = 0xfffeac02;
 	
-	public Barakiel(int questId, String name, String descr)
+	public Barakiel()
 	{
-		super(name, descr);
-		int mobs[] =
-		{
-			BARAKIEL
-		};
-		registerMobs(mobs);
+		super(Barakiel.class.getSimpleName(), "ai");
+		registerMobs(BARAKIEL);
 	}
 	
 	public String onAttack(L2NpcInstance npc, L2PcInstance attacker, int damage, boolean isPet)
@@ -35,10 +31,5 @@ public class Barakiel extends AbstractNpcAI
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isPet);
-	}
-	
-	public static void main(String args[])
-	{
-		new Barakiel(-1, Barakiel.class.getSimpleName(), "ai");
 	}
 }

@@ -26,9 +26,9 @@ public class HolyBrazier extends AbstractNpcAI
 	private L2Npc _guard = null;
 	private L2Npc _brazier = null;
 	
-	public HolyBrazier(int questId, String name, String descr)
+	public HolyBrazier()
 	{
-		super(name, descr);
+		super(HolyBrazier.class.getSimpleName(), "ai");
 		int[] mobs =
 		{
 			HolyBrazier,
@@ -98,10 +98,5 @@ public class HolyBrazier extends AbstractNpcAI
 			_brazier = null;
 		}
 		return super.onKill(npc, killer, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new HolyBrazier(-1, HolyBrazier.class.getSimpleName(), "ai");
 	}
 }

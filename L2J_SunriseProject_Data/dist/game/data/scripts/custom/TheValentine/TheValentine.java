@@ -33,7 +33,6 @@ import l2r.gameserver.script.DateRange;
  */
 public class TheValentine extends Quest
 {
-	
 	// Event Start Date
 	private static final String EVENT_DATE = "10 02 2010-17 02 2010";
 	// Id of Queen of Hearts
@@ -131,9 +130,9 @@ public class TheValentine extends Quest
 	
 	private static final DateRange EVENT_DATES = DateRange.parse(EVENT_DATE, new SimpleDateFormat("dd MM yyyy", Locale.US));
 	
-	public TheValentine(final int questId, final String name, final String descr)
+	public TheValentine()
 	{
-		super(questId, name, descr);
+		super(-1, TheValentine.class.getSimpleName(), "retail");
 		
 		EventDroplist.getInstance().addGlobalDrop(GLOBAL_DROP, GLOBAL_DROP_COUNT, (GLOBAL_DROP_CHANCE * 10000), EVENT_DATES);
 		Announcements.getInstance().addEventAnnouncement(EVENT_DATES, ON_ENTER_ANNOUNCE);
@@ -199,10 +198,5 @@ public class TheValentine extends Quest
 		}
 		
 		return htmltext;
-	}
-	
-	public static void main(final String[] args)
-	{
-		new TheValentine(-1, "TheValentine", "retail");
 	}
 }

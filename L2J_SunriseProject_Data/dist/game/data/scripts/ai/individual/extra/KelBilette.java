@@ -28,9 +28,9 @@ public class KelBilette extends AbstractNpcAI
 	boolean _isAlreadyStarted = false;
 	boolean _isAlreadySpawned = false;
 	
-	public KelBilette(int questId, String name, String descr)
+	public KelBilette()
 	{
-		super(name, descr);
+		super(KelBilette.class.getSimpleName(), "ai");
 		addAttackId(KEL);
 		addKillId(GUARD);
 		addKillId(KEL);
@@ -106,10 +106,5 @@ public class KelBilette extends AbstractNpcAI
 			cancelQuestTimer("time_to_skill", npc, player);
 		}
 		return "";
-	}
-	
-	public static void main(String[] args)
-	{
-		new KelBilette(-1, KelBilette.class.getSimpleName(), "ai");
 	}
 }

@@ -77,9 +77,9 @@ public class Orfen extends AbstractNpcAI
 	private static final byte ALIVE = 0;
 	private static final byte DEAD = 1;
 	
-	private Orfen(String name, String descr)
+	public Orfen()
 	{
-		super(name, descr);
+		super(Orfen.class.getSimpleName(), "ai");
 		int[] mobs =
 		{
 			ORFEN,
@@ -347,10 +347,5 @@ public class Orfen extends AbstractNpcAI
 			startQuestTimer("spawn_minion", 360000, npc, null);
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Orfen(Orfen.class.getSimpleName(), "ai");
 	}
 }

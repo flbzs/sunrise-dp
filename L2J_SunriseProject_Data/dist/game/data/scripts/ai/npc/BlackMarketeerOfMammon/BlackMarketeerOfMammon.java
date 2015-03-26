@@ -39,9 +39,9 @@ public class BlackMarketeerOfMammon extends AbstractNpcAI
 	// Misc
 	private static final int MIN_LEVEL = 60;
 	
-	private BlackMarketeerOfMammon(String name, String descr)
+	public BlackMarketeerOfMammon()
 	{
-		super(name, descr);
+		super(BlackMarketeerOfMammon.class.getSimpleName(), "ai/npc");
 		
 		addStartNpc(BLACK_MARKETEER);
 		addTalkId(BLACK_MARKETEER);
@@ -111,10 +111,5 @@ public class BlackMarketeerOfMammon extends AbstractNpcAI
 		maxtTime.set(Calendar.SECOND, 59);
 		
 		return (currentTime.compareTo(minTime) >= 0) && (currentTime.compareTo(maxtTime) <= 0);
-	}
-	
-	public static void main(String[] args)
-	{
-		new BlackMarketeerOfMammon(BlackMarketeerOfMammon.class.getSimpleName(), "ai/npc");
 	}
 }

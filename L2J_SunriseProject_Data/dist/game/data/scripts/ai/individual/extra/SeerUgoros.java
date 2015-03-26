@@ -388,9 +388,4 @@ public class SeerUgoros extends AbstractNpcAI
 		}
 		((L2Attackable) _ugoros).getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, _attack);
 	}
-	
-	public static void main(String[] args)
-	{
-		new SeerUgoros();
-	}
 }

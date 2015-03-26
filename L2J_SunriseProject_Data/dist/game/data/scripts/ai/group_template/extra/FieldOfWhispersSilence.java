@@ -25,9 +25,9 @@ public class FieldOfWhispersSilence extends AbstractNpcAI
 	private static final int BRAZIER_OF_PURITY = 18806;
 	private static final int GUARDIAN_SPIRITS_OF_MAGIC_FORCE = 22659;
 	
-	public FieldOfWhispersSilence(int questId, String name, String descr)
+	public FieldOfWhispersSilence()
 	{
-		super(name, descr);
+		super(FieldOfWhispersSilence.class.getSimpleName(), "ai");
 		
 		addAggroRangeEnterId(BRAZIER_OF_PURITY);
 		addAggroRangeEnterId(GUARDIAN_SPIRITS_OF_MAGIC_FORCE);
@@ -47,10 +47,5 @@ public class FieldOfWhispersSilence extends AbstractNpcAI
 		}
 		
 		return null;
-	}
-	
-	public static void main(String[] args)
-	{
-		new FieldOfWhispersSilence(-1, "FieldOfWhispersSilence", "ai");
 	}
 }

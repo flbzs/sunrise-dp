@@ -39,10 +39,9 @@ public class CannibalisticStakatoChief extends AbstractNpcAI
 	private static final int SMALL_COCOON = 14833;
 	private static Map<Integer, Integer> _captainSpawn = new HashMap<>();
 	
-	public CannibalisticStakatoChief(int questId, String name, String descr)
+	public CannibalisticStakatoChief()
 	{
-		super(name, descr);
-		
+		super(CannibalisticStakatoChief.class.getSimpleName(), "ai/zone/StakatoNest");
 		addKillId(CANNIBALISTIC_CHIEF);
 		addSkillSeeId(BIZARRE_COCOONS);
 	}
@@ -94,10 +93,5 @@ public class CannibalisticStakatoChief extends AbstractNpcAI
 		_captainSpawn.remove(npc.getObjectId());
 		
 		return super.onKill(npc, killer, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new CannibalisticStakatoChief(-1, CannibalisticStakatoChief.class.getSimpleName(), "ai/zone/StakatoNest");
 	}
 }

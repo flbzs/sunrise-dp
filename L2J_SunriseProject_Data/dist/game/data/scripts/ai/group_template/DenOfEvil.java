@@ -95,7 +95,7 @@ public class DenOfEvil extends AbstractNpcAI
 		new Location(62905, -106109, -2384, 51288)
 	};
 	
-	private DenOfEvil()
+	public DenOfEvil()
 	{
 		super(DenOfEvil.class.getSimpleName(), "ai/group_template");
 		addKillId(EYE_IDS);
@@ -228,10 +228,5 @@ public class DenOfEvil extends AbstractNpcAI
 				_zone.removeSkill(i);
 			}
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new DenOfEvil();
 	}
 }

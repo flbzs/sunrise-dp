@@ -37,14 +37,11 @@ public class HeroCirclet extends Quest
 		31772
 	};
 	
-	public HeroCirclet(int questId, String name, String descr)
+	public HeroCirclet()
 	{
-		super(questId, name, descr);
-		for (int i : npcIds)
-		{
-			addStartNpc(i);
-			addTalkId(i);
-		}
+		super(-1, HeroCirclet.class.getSimpleName(), "custom");
+		addStartNpc(npcIds);
+		addTalkId(npcIds);
 	}
 	
 	@Override
@@ -75,10 +72,5 @@ public class HeroCirclet extends Quest
 		
 		st.exitQuest(true);
 		return htmltext;
-	}
-	
-	public static void main(String[] args)
-	{
-		new HeroCirclet(-1, "HeroCirclet", "custom");
 	}
 }

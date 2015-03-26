@@ -128,9 +128,9 @@ public class EchoCrystals extends Quest
 		return "1.htm";
 	}
 	
-	public EchoCrystals(int questId, String name, String descr)
+	public EchoCrystals()
 	{
-		super(questId, name, descr);
+		super(-1, EchoCrystals.class.getSimpleName(), "custom");
 		
 		// Initialize Map
 		SCORES.put(4410, new ScoreData(4411, "01", "02", "03"));
@@ -146,10 +146,5 @@ public class EchoCrystals extends Quest
 			addStartNpc(npc);
 			addTalkId(npc);
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new EchoCrystals(-1, EchoCrystals.class.getSimpleName(), "custom");
 	}
 }

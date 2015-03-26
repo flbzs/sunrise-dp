@@ -81,6 +81,15 @@ public class ForgeOfTheGods extends AbstractNpcAI
 	
 	// private static int _npcsAlive = 0; TODO: Require zone spawn support
 	
+	public ForgeOfTheGods()
+	{
+		super(ForgeOfTheGods.class.getSimpleName(), "ai/npc");
+		addKillId(FOG_MOBS);
+		addSpawnId(LAVASAURUSES);
+		
+		startQuestTimer("refresh", REFRESH * 1000, null, null, true);
+	}
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -186,19 +195,5 @@ public class ForgeOfTheGods extends AbstractNpcAI
 			mob = addSpawn(mobs[1], npc, true);
 		}
 		return mob;
-	}
-	
-	public ForgeOfTheGods(String name, String descr)
-	{
-		super(name, descr);
-		addKillId(FOG_MOBS);
-		addSpawnId(LAVASAURUSES);
-		
-		startQuestTimer("refresh", REFRESH * 1000, null, null, true);
-	}
-	
-	public static void main(String[] args)
-	{
-		new ForgeOfTheGods(ForgeOfTheGods.class.getSimpleName(), "ai/npc");
 	}
 }

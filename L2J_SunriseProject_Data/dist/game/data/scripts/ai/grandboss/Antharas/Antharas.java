@@ -126,7 +126,7 @@ public final class Antharas extends AbstractNpcAI
 	private static int attacker_2_hate = 0;
 	private static int attacker_3_hate = 0;
 	
-	private Antharas()
+	public Antharas()
 	{
 		super(Antharas.class.getSimpleName(), "ai/grandboss");
 		addStartNpc(HEART, CUBE);
@@ -1066,10 +1066,5 @@ public final class Antharas extends AbstractNpcAI
 				npc.doCast(skillToCast.getSkill());
 			}
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new Antharas();
 	}
 }

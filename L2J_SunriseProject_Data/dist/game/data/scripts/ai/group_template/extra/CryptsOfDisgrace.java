@@ -86,14 +86,11 @@ public class CryptsOfDisgrace extends AbstractNpcAI
 		}
 	};
 	
-	public CryptsOfDisgrace(int questId, String name, String descr)
+	public CryptsOfDisgrace()
 	{
-		super(name, descr);
+		super(CryptsOfDisgrace.class.getSimpleName(), "ai");
 		
-		for (int i : MOBS)
-		{
-			addKillId(i);
-		}
+		addKillId(MOBS);
 		
 		for (int[] loc : MobSpawns)
 		{
@@ -135,10 +132,5 @@ public class CryptsOfDisgrace extends AbstractNpcAI
 		{
 			e.printStackTrace();
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new CryptsOfDisgrace(-1, CryptsOfDisgrace.class.getSimpleName(), "ai");
 	}
 }

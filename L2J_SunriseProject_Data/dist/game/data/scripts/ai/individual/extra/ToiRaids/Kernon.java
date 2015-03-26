@@ -10,7 +10,7 @@ public class Kernon extends AbstractNpcAI
 	private static final int z1 = 3900;
 	private static final int z2 = 4300;
 	
-	private Kernon()
+	public Kernon()
 	{
 		super(Kernon.class.getSimpleName(), "ai");
 		addAttackId(KERNON);
@@ -29,10 +29,5 @@ public class Kernon extends AbstractNpcAI
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isPet);
-	}
-	
-	public static void main(String args[])
-	{
-		new Kernon();
 	}
 }

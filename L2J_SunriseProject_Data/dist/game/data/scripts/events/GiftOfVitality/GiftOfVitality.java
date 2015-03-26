@@ -76,7 +76,7 @@ public final class GiftOfVitality extends LongTimeEvent
 		new SkillHolder(5636, 1), // Empower
 	};
 	
-	private GiftOfVitality()
+	public GiftOfVitality()
 	{
 		super(GiftOfVitality.class.getSimpleName(), "events");
 		addStartNpc(STEVE_SHYAGEL);
@@ -177,10 +177,5 @@ public final class GiftOfVitality extends LongTimeEvent
 			newQuestState(player);
 		}
 		return "4306.htm";
-	}
-	
-	public static void main(String[] args)
-	{
-		new GiftOfVitality();
 	}
 }

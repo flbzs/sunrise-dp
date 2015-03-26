@@ -33,6 +33,13 @@ public class ElrokiTeleporters extends AbstractNpcAI
 	private static final int ORAHOCHIN = 32111;
 	private static final int GARIACHIN = 32112;
 	
+	public ElrokiTeleporters()
+	{
+		super(ElrokiTeleporters.class.getSimpleName(), "ai/npc/Teleports");
+		addStartNpc(ORAHOCHIN, GARIACHIN);
+		addTalkId(ORAHOCHIN, GARIACHIN);
+	}
+	
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
@@ -54,17 +61,5 @@ public class ElrokiTeleporters extends AbstractNpcAI
 			}
 		}
 		return super.onTalk(npc, player);
-	}
-	
-	private ElrokiTeleporters()
-	{
-		super(ElrokiTeleporters.class.getSimpleName(), "ai/npc/Teleports");
-		addStartNpc(ORAHOCHIN, GARIACHIN);
-		addTalkId(ORAHOCHIN, GARIACHIN);
-	}
-	
-	public static void main(String[] args)
-	{
-		new ElrokiTeleporters();
 	}
 }

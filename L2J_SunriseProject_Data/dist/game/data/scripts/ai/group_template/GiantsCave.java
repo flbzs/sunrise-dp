@@ -39,7 +39,7 @@ public final class GiantsCave extends AbstractNpcAI
 		22669, // Leogul (Scout)
 	};
 	
-	private GiantsCave()
+	public GiantsCave()
 	{
 		super(GiantsCave.class.getSimpleName(), "ai/group_template");
 		addAttackId(SCOUTS);
@@ -106,10 +106,5 @@ public final class GiantsCave extends AbstractNpcAI
 			startQuestTimer("CLEAR", 120000, npc, null);
 		}
 		return super.onAggroRangeEnter(npc, player, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new GiantsCave();
 	}
 }

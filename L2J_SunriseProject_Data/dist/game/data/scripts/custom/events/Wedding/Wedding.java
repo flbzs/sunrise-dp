@@ -187,9 +187,4 @@ public final class Wedding extends AbstractNpcAI
 		}
 		return true;
 	}
-	
-	public static void main(String[] args)
-	{
-		new Wedding();
-	}
 }

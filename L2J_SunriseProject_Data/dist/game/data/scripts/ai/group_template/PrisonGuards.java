@@ -55,7 +55,7 @@ public class PrisonGuards extends AbstractNpcAI
 	
 	private final Map<L2Npc, Integer> _guards = new FastMap<>();
 	
-	private PrisonGuards()
+	public PrisonGuards()
 	{
 		super(PrisonGuards.class.getSimpleName(), "ai/group_template");
 		addAttackId(GUARD_HEAD, GUARD);
@@ -236,10 +236,5 @@ public class PrisonGuards extends AbstractNpcAI
 			npc.setTarget(isSummon ? player.getSummon() : player);
 			npc.doCast(skill);
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new PrisonGuards();
 	}
 }

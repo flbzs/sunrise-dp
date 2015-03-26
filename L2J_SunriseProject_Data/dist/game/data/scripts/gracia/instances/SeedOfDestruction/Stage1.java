@@ -34,7 +34,7 @@ import l2r.gameserver.GeoData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.enums.InstanceType;
 import l2r.gameserver.enums.TrapAction;
-import l2r.gameserver.instancemanager.GraciaSeedsManager;
+import l2r.gameserver.instancemanager.SoDManager;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.L2CommandChannel;
 import l2r.gameserver.model.L2Party;
@@ -1003,7 +1003,7 @@ public final class Stage1 extends Quest
 						mob.deleteMe();
 					}
 					
-					GraciaSeedsManager.getInstance().increaseSoDTiatKilled();
+					SoDManager.getInstance().increaseSoDTiatKilled();
 				}
 				else if (npc.getId() == TIAT_GUARD)
 				{
@@ -1026,11 +1026,11 @@ public final class Stage1 extends Quest
 		if (npcId == ALENOS)
 		{
 			InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-			if ((GraciaSeedsManager.getInstance().getSoDState() == 1) || ((world != null) && (world instanceof SOD1World)))
+			if ((SoDManager.getInstance().getSoDState() == 1) || ((world != null) && (world instanceof SOD1World)))
 			{
 				enterInstance(player, "SeedOfDestructionStage1.xml", ENTER_TELEPORT_1);
 			}
-			else if (GraciaSeedsManager.getInstance().getSoDState() == 2)
+			else if (SoDManager.getInstance().getSoDState() == 2)
 			{
 				teleportPlayer(player, ENTER_TELEPORT_2, 0, false);
 			}

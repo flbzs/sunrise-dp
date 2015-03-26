@@ -119,7 +119,7 @@ public final class CastleCourtMagician extends AbstractNpcAI
 		10419, // White Talisman - Darkness
 	};
 	
-	private CastleCourtMagician()
+	public CastleCourtMagician()
 	{
 		super(CastleCourtMagician.class.getSimpleName(), "ai/npc");
 		addStartNpc(COURT_MAGICIAN);
@@ -384,10 +384,5 @@ public final class CastleCourtMagician extends AbstractNpcAI
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
 		return ((player.getClan() != null) && (player.getClanId() == npc.getCastle().getOwnerId())) ? "courtmagician.html" : "courtmagician-01.html";
-	}
-	
-	public static void main(String[] args)
-	{
-		new CastleCourtMagician();
 	}
 }

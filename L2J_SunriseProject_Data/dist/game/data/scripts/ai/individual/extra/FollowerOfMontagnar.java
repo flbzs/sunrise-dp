@@ -22,9 +22,9 @@ public class FollowerOfMontagnar extends AbstractNpcAI
 {
 	private static final int FOFMONTAGNAR = 18569;
 	
-	public FollowerOfMontagnar(int questId, String name, String descr)
+	public FollowerOfMontagnar()
 	{
-		super(name, descr);
+		super(FollowerOfMontagnar.class.getSimpleName(), "ai");
 		addAggroRangeEnterId(FOFMONTAGNAR);
 	}
 	
@@ -39,10 +39,5 @@ public class FollowerOfMontagnar extends AbstractNpcAI
 		}
 		
 		return super.onAggroRangeEnter(npc, player, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new FollowerOfMontagnar(-1, FollowerOfMontagnar.class.getSimpleName(), "ai");
 	}
 }

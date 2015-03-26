@@ -19,13 +19,13 @@ import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.quest.Quest;
 import l2r.util.Rnd;
+import ai.npc.AbstractNpcAI;
 
 /**
- * Author: RobikBobik
+ * Author: vGodFather
  */
-public class GoddardBloodAltar extends Quest
+public class GoddardBloodAltar extends AbstractNpcAI
 {
 	private static final long delay = Config.CHANGE_STATUS * 60 * 1000;
 	protected static boolean bossesSpawned = false;
@@ -105,9 +105,9 @@ public class GoddardBloodAltar extends Quest
 		}
 	};
 	
-	public GoddardBloodAltar(int questId, String name, String descr)
+	public GoddardBloodAltar()
 	{
-		super(questId, name, descr);
+		super(GoddardBloodAltar.class.getSimpleName(), "ai/npc");
 		
 		manageNpcs(true);
 		
@@ -246,10 +246,5 @@ public class GoddardBloodAltar extends Quest
 			}, 30000);
 		}
 		return super.onKill(npc, player, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new GoddardBloodAltar(-1, GoddardBloodAltar.class.getSimpleName(), "ai/npc");
 	}
 }

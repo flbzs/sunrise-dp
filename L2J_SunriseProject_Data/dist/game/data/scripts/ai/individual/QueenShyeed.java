@@ -46,6 +46,13 @@ public class QueenShyeed extends AbstractNpcAI
 	private static final L2EffectZone MOB_BUFF_DISPLAY_ZONE = ZoneManager.getInstance().getZoneById(200104, L2EffectZone.class);
 	private static final L2EffectZone PC_BUFF_ZONE = ZoneManager.getInstance().getZoneById(200105, L2EffectZone.class);
 	
+	public QueenShyeed()
+	{
+		super(QueenShyeed.class.getSimpleName(), "ai");
+		addKillId(SHYEED);
+		spawnShyeed();
+	}
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -74,13 +81,6 @@ public class QueenShyeed extends AbstractNpcAI
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	public QueenShyeed(String name, String descr)
-	{
-		super(name, descr);
-		addKillId(SHYEED);
-		spawnShyeed();
-	}
-	
 	private void spawnShyeed()
 	{
 		String respawn = loadGlobalQuestVar("Respawn");
@@ -104,10 +104,5 @@ public class QueenShyeed extends AbstractNpcAI
 		startQuestTimer("respawn", respawnTime, null, null);
 		MOB_BUFF_ZONE.setEnabled(false);
 		MOB_BUFF_DISPLAY_ZONE.setEnabled(false);
-	}
-	
-	public static void main(String[] args)
-	{
-		new QueenShyeed(QueenShyeed.class.getSimpleName(), "ai");
 	}
 }

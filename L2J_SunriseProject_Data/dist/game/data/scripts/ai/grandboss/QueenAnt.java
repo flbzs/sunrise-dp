@@ -85,9 +85,9 @@ public class QueenAnt extends AbstractNpcAI
 	private L2MonsterInstance _larva = null;
 	private final List<L2MonsterInstance> _nurses = new FastList<>();
 	
-	private QueenAnt(String name, String descr)
+	public QueenAnt()
 	{
-		super(name, descr);
+		super(QueenAnt.class.getSimpleName(), "ai");
 		
 		addSpawnId(MOBS);
 		addKillId(MOBS);
@@ -389,10 +389,5 @@ public class QueenAnt extends AbstractNpcAI
 	private void setRespawn(long respawnTime)
 	{
 		GrandBossManager.getInstance().getStatsSet(QUEEN).set("respawn_time", (System.currentTimeMillis() + respawnTime));
-	}
-	
-	public static void main(String[] args)
-	{
-		new QueenAnt(QueenAnt.class.getSimpleName(), "ai");
 	}
 }

@@ -55,9 +55,9 @@ public class SinWardens extends AbstractNpcAI
 	
 	private final Map<Integer, Integer> killedMinionsCount = new FastMap<>();
 	
-	private SinWardens(String name, String descr)
+	public SinWardens()
 	{
-		super(name, descr);
+		super(SinWardens.class.getSimpleName(), "ai");
 		addKillId(SIN_WARDEN_MINIONS);
 	}
 	
@@ -85,10 +85,5 @@ public class SinWardens extends AbstractNpcAI
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new SinWardens(SinWardens.class.getSimpleName(), "ai");
 	}
 }

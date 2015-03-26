@@ -57,7 +57,7 @@ public final class RaidbossInfo extends AbstractNpcAI
 	// @formatter:on
 	private static final List<Integer> RAIDS = new ArrayList<>();
 	
-	private RaidbossInfo()
+	public RaidbossInfo()
 	{
 		super(RaidbossInfo.class.getSimpleName(), "custom");
 		addStartNpc(NPC);
@@ -96,10 +96,5 @@ public final class RaidbossInfo extends AbstractNpcAI
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		return "info.htm";
-	}
-	
-	public static void main(String args[])
-	{
-		new RaidbossInfo();
 	}
 }

@@ -54,7 +54,7 @@ public final class HealerTrainer extends AbstractNpcAI
 	private static final int MIN_LEVEL = 76;
 	private static final int MIN_CLASS_LEVEL = 3;
 	
-	private HealerTrainer()
+	public HealerTrainer()
 	{
 		super(HealerTrainer.class.getSimpleName(), "ai/npc/Trainers");
 		addStartNpc(HEALER_TRAINERS);
@@ -200,10 +200,5 @@ public final class HealerTrainer extends AbstractNpcAI
 			}
 		}
 		return (player.getInventory().getInventoryItemCount(itemId, -1) > 0);
-	}
-	
-	public static void main(String[] args)
-	{
-		new HealerTrainer();
 	}
 }

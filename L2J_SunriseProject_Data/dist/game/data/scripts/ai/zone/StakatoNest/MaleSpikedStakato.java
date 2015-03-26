@@ -13,10 +13,9 @@ public class MaleSpikedStakato extends AbstractNpcAI
 	private static final int FEMALE_SPIKED_STAKATO = 22620;
 	private static final int MALE_SPIKED_STAKATO_2ND_FORM = 22622;
 	
-	public MaleSpikedStakato(int questId, String name, String descr)
+	public MaleSpikedStakato()
 	{
-		super(name, descr);
-		
+		super(MaleSpikedStakato.class.getSimpleName(), "ai/zone/StakatoNest");
 		addKillId(FEMALE_SPIKED_STAKATO);
 		addKillId(MALE_SPIKED_STAKATO_2ND_FORM);
 	}
@@ -39,10 +38,5 @@ public class MaleSpikedStakato extends AbstractNpcAI
 	public L2Npc getCouple(L2Npc couple)
 	{
 		return ((L2MonsterInstance) couple).getLeader();
-	}
-	
-	public static void main(String[] args)
-	{
-		new MaleSpikedStakato(-1, "MaleSpikedStakato", "ai/zone/StakatoNest");
 	}
 }

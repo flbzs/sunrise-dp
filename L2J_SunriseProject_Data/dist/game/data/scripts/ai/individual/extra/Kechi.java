@@ -12,9 +12,9 @@ public class Kechi extends AbstractNpcAI
 	private static final int GUARD3 = 22417;
 	public int keshiStatus;
 	
-	public Kechi(String name, String descr)
+	public Kechi()
 	{
-		super(name, descr);
+		super(Kechi.class.getSimpleName(), "ai");
 		addKillId(KECHI);
 		addAttackId(KECHI);
 		addSpawnId(KECHI);
@@ -123,10 +123,5 @@ public class Kechi extends AbstractNpcAI
 		}
 		
 		return super.onKill(npc, killer, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Kechi(Kechi.class.getSimpleName(), "ai");
 	}
 }

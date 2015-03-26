@@ -374,7 +374,7 @@ public class Parade extends AbstractNpcAI
 		spawns = null;
 	}
 	
-	private Parade()
+	public Parade()
 	{
 		super(Parade.class.getSimpleName(), "ai/zone/FantasyIsle");
 		
@@ -489,10 +489,5 @@ public class Parade extends AbstractNpcAI
 			cleanTask = null;
 			clean();
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new Parade();
 	}
 }

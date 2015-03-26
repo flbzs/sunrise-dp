@@ -48,7 +48,7 @@ public final class SkillTransfer extends AbstractNpcAI
 		new ItemHolder(15309, 4)
 	};
 	
-	private SkillTransfer()
+	public SkillTransfer()
 	{
 		super(SkillTransfer.class.getSimpleName(), "features");
 		setPlayerProfessionChangeId(this::onProfessionChange);
@@ -133,10 +133,5 @@ public final class SkillTransfer extends AbstractNpcAI
 				return -1;
 			}
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new SkillTransfer();
 	}
 }

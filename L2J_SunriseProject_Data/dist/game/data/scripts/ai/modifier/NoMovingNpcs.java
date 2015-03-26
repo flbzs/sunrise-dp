@@ -71,9 +71,4 @@ public class NoMovingNpcs extends AbstractNpcAI
 		npc.setIsImmobilized(true);
 		return super.onSpawn(npc);
 	}
-	
-	public static void main(String[] args)
-	{
-		new NoMovingNpcs();
-	}
 }

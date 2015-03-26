@@ -42,7 +42,7 @@ public final class MithrilMines extends AbstractNpcAI
 		22686, // Servitor of Darkness
 	};
 	
-	private MithrilMines()
+	public MithrilMines()
 	{
 		super(MithrilMines.class.getSimpleName(), "ai/group_template");
 		addSpawnId(GRAVE_ROBBER_SUMMONER, GRAVE_ROBBER_MAGICIAN);
@@ -54,10 +54,5 @@ public final class MithrilMines extends AbstractNpcAI
 		final int[] minions = (npc.getId() == GRAVE_ROBBER_SUMMONER) ? SUMMONER_MINIONS : MAGICIAN_MINIONS;
 		addMinion((L2MonsterInstance) npc, minions[getRandom(minions.length)]);
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args)
-	{
-		new MithrilMines();
 	}
 }

@@ -42,7 +42,7 @@ public class MithrilMinesTeleporter extends AbstractNpcAI
 		new Location(175499, -181586, -904)
 	};
 	
-	private MithrilMinesTeleporter()
+	public MithrilMinesTeleporter()
 	{
 		super(MithrilMinesTeleporter.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(TELEPORT_CRYSTAL);
@@ -80,10 +80,5 @@ public class MithrilMinesTeleporter extends AbstractNpcAI
 			return "32652-03.htm";
 		}
 		return super.onFirstTalk(npc, player);
-	}
-	
-	public static void main(String[] args)
-	{
-		new MithrilMinesTeleporter();
 	}
 }

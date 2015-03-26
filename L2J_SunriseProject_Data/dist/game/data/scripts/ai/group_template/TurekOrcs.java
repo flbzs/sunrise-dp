@@ -46,7 +46,7 @@ public final class TurekOrcs extends AbstractNpcAI
 		20500, // Turek Orc Sentinel
 	};
 	
-	private TurekOrcs()
+	public TurekOrcs()
 	{
 		super(TurekOrcs.class.getSimpleName(), "ai/group_template");
 		addAttackId(MOBS);
@@ -128,10 +128,5 @@ public final class TurekOrcs extends AbstractNpcAI
 			npc.disableCoreAI(false);
 			npc.getVariables().remove("state");
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new TurekOrcs();
 	}
 }

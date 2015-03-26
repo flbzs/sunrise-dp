@@ -44,7 +44,7 @@ public final class CastleSiegeManager extends AbstractNpcAI
 		35420, // Devastated Castle
 	};
 	
-	private CastleSiegeManager()
+	public CastleSiegeManager()
 	{
 		super(CastleSiegeManager.class.getSimpleName(), "ai/npc");
 		addFirstTalkId(SIEGE_MANAGER);
@@ -94,10 +94,5 @@ public final class CastleSiegeManager extends AbstractNpcAI
 			return true;
 		}
 		return false;
-	}
-	
-	public static void main(String[] args)
-	{
-		new CastleSiegeManager();
 	}
 }

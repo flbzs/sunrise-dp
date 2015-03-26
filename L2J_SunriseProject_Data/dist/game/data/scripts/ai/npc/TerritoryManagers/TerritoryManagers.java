@@ -63,6 +63,18 @@ public class TerritoryManagers extends AbstractNpcAI
 		7593
 	};
 	
+	public TerritoryManagers()
+	{
+		super(TerritoryManagers.class.getSimpleName(), "ai/npc");
+		
+		for (int i = 0; i < 9; i++)
+		{
+			addFirstTalkId(36490 + i);
+			addTalkId(36490 + i);
+			addStartNpc(36490 + i);
+		}
+	}
+	
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
@@ -298,22 +310,5 @@ public class TerritoryManagers extends AbstractNpcAI
 		{
 			player.destroyItem(event, item, npc, true);
 		}
-	}
-	
-	public TerritoryManagers()
-	{
-		super(TerritoryManagers.class.getSimpleName(), "ai/npc");
-		
-		for (int i = 0; i < 9; i++)
-		{
-			addFirstTalkId(36490 + i);
-			addTalkId(36490 + i);
-			addStartNpc(36490 + i);
-		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new TerritoryManagers();
 	}
 }

@@ -93,7 +93,7 @@ public class SummonMinions extends AbstractNpcAI
 		NpcStringId.COME_OUT_YOU_CHILDREN_OF_DARKNESS
 	};
 	
-	private SummonMinions()
+	public SummonMinions()
 	{
 		super(SummonMinions.class.getSimpleName(), "ai/group_template");
 		addAttackId(MINIONS.keySet());
@@ -226,10 +226,5 @@ public class SummonMinions extends AbstractNpcAI
 			_attackersList.get(npcObjId).clear();
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new SummonMinions();
 	}
 }

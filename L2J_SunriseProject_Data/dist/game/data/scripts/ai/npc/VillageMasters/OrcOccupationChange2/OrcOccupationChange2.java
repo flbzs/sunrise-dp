@@ -4,11 +4,11 @@ import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.util.Util;
+import ai.npc.AbstractNpcAI;
 
-public class OrcOccupationChange2 extends Quest
+public class OrcOccupationChange2 extends AbstractNpcAI
 {
 	// NPCs
 	private static int[] NPCS =
@@ -80,9 +80,9 @@ public class OrcOccupationChange2 extends Quest
 		}
 	};
 	
-	private OrcOccupationChange2()
+	public OrcOccupationChange2()
 	{
-		super(-1, OrcOccupationChange2.class.getSimpleName(), "ai/npc/VillageMasters");
+		super(OrcOccupationChange2.class.getSimpleName(), "ai/npc/VillageMasters");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
@@ -192,10 +192,5 @@ public class OrcOccupationChange2 extends Quest
 			htmltext = "30513-34.htm";
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args)
-	{
-		new OrcOccupationChange2();
 	}
 }

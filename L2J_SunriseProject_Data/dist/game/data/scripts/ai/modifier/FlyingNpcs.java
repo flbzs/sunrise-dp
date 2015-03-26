@@ -51,9 +51,4 @@ public class FlyingNpcs extends AbstractNpcAI
 		npc.setIsFlying(true);
 		return super.onSpawn(npc);
 	}
-	
-	public static void main(String[] args)
-	{
-		new FlyingNpcs();
-	}
 }

@@ -32,9 +32,9 @@ public class OlAriosh extends AbstractNpcAI
 	private final FastSet<Integer> _lockedSpawns = new FastSet<>();
 	private final Map<Integer, Integer> _spawnedGuards = new HashMap<>();
 	
-	public OlAriosh(int questId, String name, String descr)
+	public OlAriosh()
 	{
-		super(name, descr);
+		super(OlAriosh.class.getSimpleName(), "ai");
 		
 		addAttackId(ARIOSH);
 		addKillId(ARIOSH);
@@ -90,10 +90,5 @@ public class OlAriosh extends AbstractNpcAI
 				cancelQuestTimer("time_to_spawn", npc, killer);
 		}
 		return super.onKill(npc, killer, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new OlAriosh(-1, OlAriosh.class.getSimpleName(), "ai");
 	}
 }

@@ -72,9 +72,4 @@ public class NoRandomWalkMobs extends AbstractNpcAI
 		npc.setIsNoRndWalk(true);
 		return super.onSpawn(npc);
 	}
-	
-	public static void main(String[] args)
-	{
-		new NoRandomWalkMobs();
-	}
 }

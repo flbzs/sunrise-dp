@@ -33,6 +33,13 @@ public class CrumaTower extends AbstractNpcAI
 	// Misc
 	private static final int MAX_LEVEL = 55;
 	
+	public CrumaTower()
+	{
+		super(CrumaTower.class.getSimpleName(), "ai/npc/Teleports");
+		addStartNpc(MOZELLA);
+		addTalkId(MOZELLA);
+	}
+	
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
@@ -42,17 +49,5 @@ public class CrumaTower extends AbstractNpcAI
 			return null;
 		}
 		return "30483-1.htm";
-	}
-	
-	private CrumaTower(String name, String descr)
-	{
-		super(name, descr);
-		addStartNpc(MOZELLA);
-		addTalkId(MOZELLA);
-	}
-	
-	public static void main(String[] args)
-	{
-		new CrumaTower(CrumaTower.class.getSimpleName(), "ai/npc/Teleports");
 	}
 }

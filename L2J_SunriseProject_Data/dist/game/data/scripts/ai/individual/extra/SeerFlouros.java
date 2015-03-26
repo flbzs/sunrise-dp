@@ -18,9 +18,9 @@ public class SeerFlouros extends AbstractNpcAI
 	private static boolean successDespawn = false;
 	private static boolean minion = false;
 	
-	public SeerFlouros(int questId, String name, String descr)
+	public SeerFlouros()
 	{
-		super(name, descr);
+		super(SeerFlouros.class.getSimpleName(), "ai");
 		
 		registerMobs(new int[]
 		{
@@ -97,10 +97,5 @@ public class SeerFlouros extends AbstractNpcAI
 			startQuestTimer("respMinion", 30000L, npc, null);
 		}
 		return null;
-	}
-	
-	public static void main(String[] args)
-	{
-		new SeerFlouros(-1, SeerFlouros.class.getSimpleName(), "ai");
 	}
 }

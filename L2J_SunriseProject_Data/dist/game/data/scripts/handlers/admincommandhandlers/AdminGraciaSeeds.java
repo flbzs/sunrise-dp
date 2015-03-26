@@ -22,7 +22,7 @@ import java.util.Calendar;
 import java.util.StringTokenizer;
 
 import l2r.gameserver.handler.IAdminCommandHandler;
-import l2r.gameserver.instancemanager.GraciaSeedsManager;
+import l2r.gameserver.instancemanager.SoDManager;
 import l2r.gameserver.instancemanager.SoIManager;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -51,11 +51,11 @@ public class AdminGraciaSeeds implements IAdminCommandHandler
 		
 		if (actualCommand.equalsIgnoreCase("admin_kill_tiat"))
 		{
-			GraciaSeedsManager.getInstance().increaseSoDTiatKilled();
+			SoDManager.getInstance().increaseSoDTiatKilled();
 		}
 		else if (actualCommand.equalsIgnoreCase("admin_set_sodstate"))
 		{
-			GraciaSeedsManager.getInstance().setSoDState(Integer.parseInt(val), true);
+			SoDManager.getInstance().setSoDState(Integer.parseInt(val), true);
 		}
 		else if (actualCommand.equalsIgnoreCase("admin_set_soistage"))
 		{
@@ -70,12 +70,12 @@ public class AdminGraciaSeeds implements IAdminCommandHandler
 	{
 		NpcHtmlMessage html = new NpcHtmlMessage(0);
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/graciaseeds.htm");
-		html.replace("%sodstate%", String.valueOf(GraciaSeedsManager.getInstance().getSoDState()));
-		html.replace("%sodtiatkill%", String.valueOf(GraciaSeedsManager.getInstance().getSoDTiatKilled()));
-		if (GraciaSeedsManager.getInstance().getSoDTimeForNextStateChange() > 0)
+		html.replace("%sodstate%", String.valueOf(SoDManager.getInstance().getSoDState()));
+		html.replace("%sodtiatkill%", String.valueOf(SoDManager.getInstance().getSoDTiatKilled()));
+		if (SoDManager.getInstance().getSoDTimeForNextStateChange() > 0)
 		{
 			Calendar nextChangeDate = Calendar.getInstance();
-			nextChangeDate.setTimeInMillis(System.currentTimeMillis() + GraciaSeedsManager.getInstance().getSoDTimeForNextStateChange());
+			nextChangeDate.setTimeInMillis(System.currentTimeMillis() + SoDManager.getInstance().getSoDTimeForNextStateChange());
 			html.replace("%sodtime%", nextChangeDate.getTime().toString());
 		}
 		else

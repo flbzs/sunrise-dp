@@ -130,7 +130,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 		new SkillHolder(4360, 1), // Death Whisper Lv.1
 	};
 	
-	private CastleChamberlain()
+	public CastleChamberlain()
 	{
 		super(CastleChamberlain.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPC);
@@ -1363,10 +1363,5 @@ public final class CastleChamberlain extends AbstractNpcAI
 					_log.warn(getClass().getSimpleName() + ": Player " + player.getName() + " (" + player.getObjectId() + ") send unknown request id " + evt.getRequest() + "!");
 			}
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new CastleChamberlain();
 	}
 }

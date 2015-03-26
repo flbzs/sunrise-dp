@@ -46,9 +46,9 @@ public class ClanTrader extends AbstractNpcAI
 	private static final int KNIGHTS_EPAULETTE = 9912; // Knight's Epaulette
 	private static final int KNIGHTS_EPAULETTE_COUNT = 100; // Knight's Epaulette Count
 	
-	private ClanTrader(String name, String descr)
+	public ClanTrader()
 	{
-		super(name, descr);
+		super(ClanTrader.class.getSimpleName(), "ai/npc");
 		addStartNpc(CLAN_TRADER);
 		addTalkId(CLAN_TRADER);
 		addFirstTalkId(CLAN_TRADER);
@@ -115,10 +115,5 @@ public class ClanTrader extends AbstractNpcAI
 			return npc.getId() + ".html";
 		}
 		return npc.getId() + "-01.html";
-	}
-	
-	public static void main(String[] args)
-	{
-		new ClanTrader(ClanTrader.class.getSimpleName(), "ai/npc");
 	}
 }

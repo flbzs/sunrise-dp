@@ -35,6 +35,14 @@ public class Rafforty extends AbstractNpcAI
 	private static final int BLESSED_NECKLACE = 16026;
 	private static final int BOTTLE = 16027;
 	
+	public Rafforty()
+	{
+		super(Rafforty.class.getSimpleName(), "ai/npc");
+		addStartNpc(RAFFORTY);
+		addFirstTalkId(RAFFORTY);
+		addTalkId(RAFFORTY);
+	}
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -64,18 +72,5 @@ public class Rafforty extends AbstractNpcAI
 				break;
 		}
 		return htmltext;
-	}
-	
-	private Rafforty(String name, String descr)
-	{
-		super(name, descr);
-		addStartNpc(RAFFORTY);
-		addFirstTalkId(RAFFORTY);
-		addTalkId(RAFFORTY);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Rafforty(Rafforty.class.getSimpleName(), "ai/npc");
 	}
 }

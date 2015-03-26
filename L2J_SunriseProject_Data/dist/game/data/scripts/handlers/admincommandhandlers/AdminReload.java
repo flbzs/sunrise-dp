@@ -19,6 +19,7 @@
 package handlers.admincommandhandlers;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.StringTokenizer;
 
 import javax.script.ScriptException;
@@ -233,6 +234,10 @@ public class AdminReload implements IAdminCommandHandler
 						L2ScriptEngineManager.getInstance().executeScript(file);
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Effects.");
 					}
+					catch (FileNotFoundException e)
+					{
+						activeChar.sendMessage("There was an error while loading handlers.");
+					}
 					catch (ScriptException e)
 					{
 						L2ScriptEngineManager.getInstance().reportScriptFileError(file, e);
@@ -247,6 +252,10 @@ public class AdminReload implements IAdminCommandHandler
 					{
 						L2ScriptEngineManager.getInstance().executeScript(file);
 						AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded Handlers.");
+					}
+					catch (FileNotFoundException e)
+					{
+						activeChar.sendMessage("There was an error while loading handlers.");
 					}
 					catch (ScriptException e)
 					{

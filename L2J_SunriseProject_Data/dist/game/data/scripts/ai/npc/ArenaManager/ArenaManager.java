@@ -55,7 +55,7 @@ public class ArenaManager extends AbstractNpcAI
 	private static final int HP_COST = 1000;
 	private static final int BUFF_COST = 2000;
 	
-	private ArenaManager()
+	public ArenaManager()
 	{
 		super(ArenaManager.class.getSimpleName(), "ai/npc");
 		addStartNpc(ARENA_MANAGER);
@@ -131,10 +131,5 @@ public class ArenaManager extends AbstractNpcAI
 			}
 		}
 		return null;
-	}
-	
-	public static void main(String[] args)
-	{
-		new ArenaManager();
 	}
 }

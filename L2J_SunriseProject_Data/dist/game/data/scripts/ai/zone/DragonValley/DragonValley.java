@@ -133,7 +133,7 @@ public final class DragonValley extends AbstractNpcAI
 		CLASS_POINTS.put(ClassId.windRider, 0.2);
 	}
 	
-	private DragonValley()
+	public DragonValley()
 	{
 		super(DragonValley.class.getSimpleName(), "ai/zone/DragonValley");
 		addAttackId(NECROMANCER_OF_THE_VALLEY);
@@ -290,10 +290,5 @@ public final class DragonValley extends AbstractNpcAI
 			}
 			npc.setScriptValue(val);
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new DragonValley();
 	}
 }

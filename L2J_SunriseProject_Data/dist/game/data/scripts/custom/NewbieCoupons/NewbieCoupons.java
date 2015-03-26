@@ -61,15 +61,11 @@ public class NewbieCoupons extends Quest
 	private static final int NEWBIE_WEAPON = 16;
 	private static final int NEWBIE_ACCESORY = 32;
 	
-	public NewbieCoupons(int id, String name, String descr)
+	public NewbieCoupons()
 	{
-		super(id, name, descr);
-		
-		for (int i : NPCs)
-		{
-			addStartNpc(i);
-			addTalkId(i);
-		}
+		super(-1, qn, "custom");
+		addStartNpc(NPCs);
+		addTalkId(NPCs);
 	}
 	
 	@Override
@@ -163,10 +159,5 @@ public class NewbieCoupons extends Quest
 		}
 		
 		return "30598.htm";
-	}
-	
-	public static void main(String args[])
-	{
-		new NewbieCoupons(-1, qn, "custom");
 	}
 }

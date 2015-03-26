@@ -55,9 +55,9 @@ public class Hellenark extends AbstractNpcAI
 		}
 	};
 	
-	public Hellenark(int questId, String name, String descr)
+	public Hellenark()
 	{
-		super(name, descr);
+		super(Hellenark.class.getSimpleName(), "ai");
 		status = 0;
 		spawnnaia = new ArrayList<>();
 		addAttackId(Hellenark);
@@ -143,10 +143,5 @@ public class Hellenark extends AbstractNpcAI
 			startQuestTimer("cast", 5000L, npc, null, false);
 		}
 		return htmltext;
-	}
-	
-	public static void main(String args[])
-	{
-		new Hellenark(-1, Hellenark.class.getSimpleName(), "ai");
 	}
 }

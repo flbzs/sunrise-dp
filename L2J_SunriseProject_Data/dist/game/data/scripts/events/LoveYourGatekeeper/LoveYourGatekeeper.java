@@ -121,9 +121,4 @@ public class LoveYourGatekeeper extends LongTimeEvent
 		}
 		return "32477.htm";
 	}
-	
-	public static void main(String[] args)
-	{
-		new LoveYourGatekeeper();
-	}
 }

@@ -26,9 +26,9 @@ public class WhiteAllosce extends AbstractNpcAI
 	
 	boolean _isLock = false;
 	
-	public WhiteAllosce(int questId, String name, String descr)
+	public WhiteAllosce()
 	{
-		super(name, descr);
+		super(WhiteAllosce.class.getSimpleName(), "ai");
 		addAttackId(ALLOSCE);
 		addKillId(ALLOSCE);
 	}
@@ -78,10 +78,5 @@ public class WhiteAllosce extends AbstractNpcAI
 		}
 		
 		return "";
-	}
-	
-	public static void main(String[] args)
-	{
-		new WhiteAllosce(-1, WhiteAllosce.class.getSimpleName(), "ai");
 	}
 }

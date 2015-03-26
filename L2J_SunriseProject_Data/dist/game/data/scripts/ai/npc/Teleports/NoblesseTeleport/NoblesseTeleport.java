@@ -55,6 +55,13 @@ public class NoblesseTeleport extends AbstractNpcAI
 		32163
 	};
 	
+	public NoblesseTeleport()
+	{
+		super(NoblesseTeleport.class.getSimpleName(), "ai/npc/Teleports");
+		addStartNpc(NPCs);
+		addTalkId(NPCs);
+	}
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -76,17 +83,5 @@ public class NoblesseTeleport extends AbstractNpcAI
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		return player.isNoble() ? "nobleteleporter.htm" : "nobleteleporter-no.htm";
-	}
-	
-	private NoblesseTeleport(String name, String descr)
-	{
-		super(name, descr);
-		addStartNpc(NPCs);
-		addTalkId(NPCs);
-	}
-	
-	public static void main(String[] args)
-	{
-		new NoblesseTeleport(NoblesseTeleport.class.getSimpleName(), "ai/npc/Teleports");
 	}
 }

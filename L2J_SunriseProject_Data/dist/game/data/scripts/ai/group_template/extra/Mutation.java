@@ -77,14 +77,9 @@ public class Mutation extends AbstractNpcAI
 		}
 	};
 	
-	/**
-	 * @param questId
-	 * @param name
-	 * @param descr
-	 */
-	public Mutation(int questId, String name, String descr)
+	public Mutation()
 	{
-		super(name, descr);
+		super(Mutation.class.getSimpleName(), "ai");
 		for (int npcId : MUTATION_IDS[0])
 		{
 			addAttackId(npcId);
@@ -119,10 +114,5 @@ public class Mutation extends AbstractNpcAI
 	private int getContainsId(int[] is, int npcId)
 	{
 		return 0;
-	}
-	
-	public static void main(String[] args)
-	{
-		new Mutation(-1, Mutation.class.getSimpleName(), "ai");
 	}
 }

@@ -650,8 +650,7 @@ public class MasterHandler
 	 */
 	public static void main(String[] args)
 	{
-		_log.info("Loading Handlers...");
-		
+		_log.info(MasterHandler.class.getSimpleName() + ": Loading related scripts.");
 		Object loadInstance = null;
 		Method method = null;
 		Class<?>[] interfaces = null;
@@ -714,7 +713,5 @@ public class MasterHandler
 				continue;
 			}
 		}
-		
-		_log.info("Handlers Loaded...");
 	}
 }

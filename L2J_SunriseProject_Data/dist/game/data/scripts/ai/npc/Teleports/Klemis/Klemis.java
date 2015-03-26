@@ -36,7 +36,7 @@ public class Klemis extends AbstractNpcAI
 	// Misc
 	private static final int MIN_LV = 80;
 	
-	private Klemis()
+	public Klemis()
 	{
 		super(Klemis.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(KLEMIS);
@@ -59,10 +59,5 @@ public class Klemis extends AbstractNpcAI
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Klemis();
 	}
 }

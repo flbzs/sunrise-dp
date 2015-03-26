@@ -4,11 +4,11 @@ import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.util.Util;
+import ai.npc.AbstractNpcAI;
 
-public class ElvenHumanBuffers2 extends Quest
+public class ElvenHumanBuffers2 extends AbstractNpcAI
 {
 	// NPCs
 	private static int[] NPCS =
@@ -70,9 +70,9 @@ public class ElvenHumanBuffers2 extends Quest
 		}
 	};
 	
-	private ElvenHumanBuffers2()
+	public ElvenHumanBuffers2()
 	{
-		super(-1, ElvenHumanBuffers2.class.getSimpleName(), "ai/npc/VillageMasters");
+		super(ElvenHumanBuffers2.class.getSimpleName(), "ai/npc/VillageMasters");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
@@ -177,10 +177,5 @@ public class ElvenHumanBuffers2 extends Quest
 			htmltext = "30120-26.htm";
 		}
 		return htmltext;
-	}
-	
-	public static void main(String[] args)
-	{
-		new ElvenHumanBuffers2();
 	}
 }

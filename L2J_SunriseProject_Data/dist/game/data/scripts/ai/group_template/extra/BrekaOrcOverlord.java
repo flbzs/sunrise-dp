@@ -26,15 +26,11 @@ public class BrekaOrcOverlord extends AbstractNpcAI
 	
 	private static boolean _FirstAttacked;
 	
-	public BrekaOrcOverlord(int questId, String name, String descr)
+	public BrekaOrcOverlord()
 	{
-		super(name, descr);
-		int[] mobs =
-		{
-			BREKA
-		};
-		addAttackId(mobs);
-		addKillId(mobs);
+		super(BrekaOrcOverlord.class.getSimpleName(), "ai");
+		addAttackId(BREKA);
+		addKillId(BREKA);
 		_FirstAttacked = false;
 	}
 	
@@ -72,10 +68,5 @@ public class BrekaOrcOverlord extends AbstractNpcAI
 			_FirstAttacked = false;
 		}
 		return super.onKill(npc, killer, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new BrekaOrcOverlord(-1, BrekaOrcOverlord.class.getSimpleName(), "ai");
 	}
 }

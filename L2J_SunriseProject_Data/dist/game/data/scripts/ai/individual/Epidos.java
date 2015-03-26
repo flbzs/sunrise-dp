@@ -60,9 +60,9 @@ public class Epidos extends AbstractNpcAI
 	
 	private final Map<Integer, Double> _lastHp = new ConcurrentHashMap<>();
 	
-	private Epidos(String name, String descr)
+	public Epidos()
 	{
-		super(name, descr);
+		super(Epidos.class.getSimpleName(), "ai");
 		addKillId(EPIDOSES);
 		addSpawnId(EPIDOSES);
 	}
@@ -135,10 +135,5 @@ public class Epidos extends AbstractNpcAI
 		_lastHp.put(npc.getObjectId(), (double) npc.getMaxHp());
 		
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Epidos(Epidos.class.getSimpleName(), "ai");
 	}
 }

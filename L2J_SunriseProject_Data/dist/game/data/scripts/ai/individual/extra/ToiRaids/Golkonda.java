@@ -10,7 +10,7 @@ public class Golkonda extends AbstractNpcAI
 	private static final int z1 = 6900;
 	private static final int z2 = 7500;
 	
-	private Golkonda()
+	public Golkonda()
 	{
 		super(Golkonda.class.getSimpleName(), "ai");
 		addAttackId(GOLKONDA);
@@ -29,10 +29,5 @@ public class Golkonda extends AbstractNpcAI
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isPet);
-	}
-	
-	public static void main(String args[])
-	{
-		new Golkonda();
 	}
 }

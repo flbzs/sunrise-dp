@@ -27,10 +27,9 @@ public class SpikedStakatoNurse extends AbstractNpcAI
 	private static final int SPIKED_STAKATO_BABY = 22632;
 	private static final int SPIKED_STAKATO_NURSE_2ND_FORM = 22631;
 	
-	public SpikedStakatoNurse(int questId, String name, String descr)
+	public SpikedStakatoNurse()
 	{
-		super(name, descr);
-		
+		super(SpikedStakatoNurse.class.getSimpleName(), "ai/zone/StakatoNest");
 		addKillId(SPIKED_STAKATO_BABY);
 		addKillId(SPIKED_STAKATO_NURSE_2ND_FORM);
 	}
@@ -53,10 +52,5 @@ public class SpikedStakatoNurse extends AbstractNpcAI
 	public L2Npc getNurse(L2Npc couple)
 	{
 		return ((L2MonsterInstance) couple).getLeader();
-	}
-	
-	public static void main(String[] args)
-	{
-		new SpikedStakatoNurse(-1, "SpikedStakatoNurse", "ai/zone/StakatoNest");
 	}
 }

@@ -58,9 +58,9 @@ public class CharacterBirthday extends Quest
 		32163
 	};
 	
-	public CharacterBirthday(int questId, String name, String descr)
+	public CharacterBirthday()
 	{
-		super(questId, name, descr);
+		super(-1, CharacterBirthday.class.getSimpleName(), "events");
 		addStartNpc(ALEGRIA);
 		addStartNpc(GK);
 		addTalkId(ALEGRIA);
@@ -126,10 +126,5 @@ public class CharacterBirthday extends Quest
 			return "tooclose.htm";
 		}
 		return null;
-	}
-	
-	public static void main(String[] args)
-	{
-		new CharacterBirthday(-1, CharacterBirthday.class.getSimpleName(), "events");
 	}
 }

@@ -10,9 +10,9 @@ public class ValakasMinions extends AbstractNpcAI
 	private static final int PUSTBON = 29029;
 	private int ValakasStatus;
 	
-	public ValakasMinions(int id, String name, String descr)
+	public ValakasMinions()
 	{
-		super(name, descr);
+		super(ValakasMinions.class.getSimpleName(), "ai");
 		addKillId(Valakas);
 		addAttackId(Valakas);
 		addSpawnId(Valakas);
@@ -105,10 +105,5 @@ public class ValakasMinions extends AbstractNpcAI
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isPet);
-	}
-	
-	public static void main(String args[])
-	{
-		new ValakasMinions(-1, ValakasMinions.class.getSimpleName(), "ai");
 	}
 }

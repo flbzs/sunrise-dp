@@ -34,9 +34,9 @@ public class Aenkinel extends AbstractNpcAI
 	private final int AENKINEL5 = 25694;
 	private final int AENKINEL6 = 25695;
 	
-	public Aenkinel(int questId, String name, String descr)
+	public Aenkinel()
 	{
-		super(name, descr);
+		super(Aenkinel.class.getSimpleName(), "ai");
 		addStartNpc(GK1);
 		addKillId(AENKINEL1);
 		addStartNpc(GK2);
@@ -70,10 +70,5 @@ public class Aenkinel extends AbstractNpcAI
 			st.exitQuest(true);
 		}
 		return "";
-	}
-	
-	public static void main(String[] args)
-	{
-		new Aenkinel(-1, Aenkinel.class.getSimpleName(), "ai");
 	}
 }

@@ -101,6 +101,17 @@ public class NevitsHerald extends Quest
 		}
 	};
 	
+	public NevitsHerald()
+	{
+		super(-1, NevitsHerald.class.getSimpleName(), "custom");
+		
+		addFirstTalkId(NevitsHerald);
+		addStartNpc(NevitsHerald);
+		addTalkId(NevitsHerald);
+		addKillId(Antharas);
+		addKillId(Valakas);
+	}
+	
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
@@ -203,24 +214,5 @@ public class NevitsHerald extends Quest
 			startQuestTimer("text_spam", 3000, npc, killer);
 		}
 		return null;
-	}
-	
-	public NevitsHerald()
-	{
-		super(-1, "NevitsHerald", "custom");
-		
-		addFirstTalkId(NevitsHerald);
-		addStartNpc(NevitsHerald);
-		addTalkId(NevitsHerald);
-		for (int _npc : Antharas)
-		{
-			addKillId(_npc);
-		}
-		addKillId(Valakas);
-	}
-	
-	public static void main(String[] args)
-	{
-		new NevitsHerald();
 	}
 }

@@ -51,9 +51,9 @@ public class HeavyMedal extends LongTimeEvent
 		6402
 	};
 	
-	public HeavyMedal(String name, String descr)
+	public HeavyMedal()
 	{
-		super(name, descr);
+		super(HeavyMedal.class.getSimpleName(), "events");
 		addStartNpc(CAT_ROY);
 		addStartNpc(CAT_WINNIE);
 		addTalkId(CAT_ROY);
@@ -142,10 +142,5 @@ public class HeavyMedal extends LongTimeEvent
 			_lev = 1;
 		}
 		return _lev;
-	}
-	
-	public static void main(String[] args)
-	{
-		new HeavyMedal(HeavyMedal.class.getSimpleName(), "events");
 	}
 }

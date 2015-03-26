@@ -35,9 +35,9 @@ public class NecromancerValley extends AbstractNpcAI
 	private static final int EXPLODING_ORC_GHOST = 22818;
 	private static final int WRATHFUL_ORC_GHOST = 22819;
 	
-	private NecromancerValley(String name, String descr)
+	public NecromancerValley()
 	{
-		super(name, descr);
+		super(NecromancerValley.class.getSimpleName(), "ai/zone/DragonValley");
 		addAttackId(NECROMANCER);
 		addKillId(NECROMANCER);
 	}
@@ -80,10 +80,5 @@ public class NecromancerValley extends AbstractNpcAI
 		}
 		
 		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new NecromancerValley(NecromancerValley.class.getSimpleName(), "ai/zone/DragonValley");
 	}
 }

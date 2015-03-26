@@ -45,9 +45,9 @@ public class CastleWarehouse extends AbstractNpcAI
 	private static final int BLOOD_OATH = 9910;
 	private static final int BLOOD_ALLIANCE = 9911;
 	
-	private CastleWarehouse(String name, String descr)
+	public CastleWarehouse()
 	{
-		super(name, descr);
+		super(CastleWarehouse.class.getSimpleName(), "ai/npc");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 		addFirstTalkId(NPCS);
@@ -109,10 +109,5 @@ public class CastleWarehouse extends AbstractNpcAI
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
 		return "warehouse-01.html";
-	}
-	
-	public static void main(String[] args)
-	{
-		new CastleWarehouse(CastleWarehouse.class.getSimpleName(), "ai/npc");
 	}
 }

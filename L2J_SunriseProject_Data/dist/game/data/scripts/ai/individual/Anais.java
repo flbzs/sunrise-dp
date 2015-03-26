@@ -48,7 +48,7 @@ public final class Anais extends AbstractNpcAI
 	private L2Npc _current = null;
 	private int _pot = 0;
 	
-	private Anais()
+	public Anais()
 	{
 		super(Anais.class.getSimpleName(), "ai/individual");
 		addAttackId(ANAIS);
@@ -184,10 +184,5 @@ public final class Anais extends AbstractNpcAI
 			_current = null;
 		}
 		return super.onKill(npc, killer, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new Anais();
 	}
 }

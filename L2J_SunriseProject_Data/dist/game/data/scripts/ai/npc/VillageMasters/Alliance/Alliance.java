@@ -20,12 +20,12 @@ package ai.npc.VillageMasters.Alliance;
 
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.quest.Quest;
+import ai.npc.AbstractNpcAI;
 
 /**
  * @author UnAfraid
  */
-public class Alliance extends Quest
+public class Alliance extends AbstractNpcAI
 {
 	// @formatter:off
 	private static final int[] NPCS =
@@ -45,9 +45,9 @@ public class Alliance extends Quest
 	};
 	// @formatter:on
 	
-	public Alliance(int questId, String name, String descr)
+	public Alliance()
 	{
-		super(questId, name, descr);
+		super(Alliance.class.getSimpleName(), "ai/npc/VillageMasters");
 		addStartNpc(NPCS);
 		addTalkId(NPCS);
 	}
@@ -66,10 +66,5 @@ public class Alliance extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance talker)
 	{
 		return "9001-01.htm";
-	}
-	
-	public static void main(String[] args)
-	{
-		new Alliance(-1, Alliance.class.getSimpleName(), "ai/npc/VillageMasters");
 	}
 }

@@ -65,7 +65,7 @@ public class FortressReward extends AbstractNpcAI
 	private static final int[] WIZARD_DROP    = { 2, 8, 70 };
 	// @formatter:on
 	
-	private FortressReward()
+	public FortressReward()
 	{
 		super(FortressReward.class.getSimpleName(), "ai");
 		
@@ -194,10 +194,5 @@ public class FortressReward extends AbstractNpcAI
 			st.giveItems(KE, (long) (getRandom(drop[0], drop[1]) * Config.RATE_DROP_ITEMS));
 			st.playSound("ItemSound.quest_itemget");
 		}
-	}
-	
-	public static void main(String[] args)
-	{
-		new FortressReward();
 	}
 }

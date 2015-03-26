@@ -89,9 +89,4 @@ public class NoChampionMobs extends AbstractNpcAI
 		}
 		return super.onSpawn(npc);
 	}
-	
-	public static void main(String[] args)
-	{
-		new NoChampionMobs();
-	}
 }

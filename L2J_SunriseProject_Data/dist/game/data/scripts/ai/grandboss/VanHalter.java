@@ -32,7 +32,6 @@ import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.templates.L2NpcTemplate;
 import l2r.gameserver.model.effects.L2EffectType;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.zone.type.L2BossZone;
 import l2r.gameserver.network.NpcStringId;
@@ -44,10 +43,12 @@ import l2r.gameserver.network.serverpackets.MagicSkillUse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ai.npc.AbstractNpcAI;
+
 /**
  * Updated by GodFather 03.10.2011
  */
-public class VanHalter extends Quest
+public class VanHalter extends AbstractNpcAI
 {
 	protected static final Logger _log = LoggerFactory.getLogger(VanHalter.class);
 	
@@ -119,14 +120,9 @@ public class VanHalter extends Quest
 		"ALIVE"
 	};
 	
-	public static void main(String[] args)
-	{
-		new VanHalter();
-	}
-	
 	public VanHalter()
 	{
-		super(-1, "Andreas van Halter", "ai");
+		super(VanHalter.class.getSimpleName(), "ai");
 		
 		addAttackId(ANDREAS_VAN_HALTER);
 		

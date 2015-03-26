@@ -30,9 +30,9 @@ public class EtisEtina extends AbstractNpcAI
 	private L2Npc warrior1;
 	private L2Npc warrior2;
 	
-	public EtisEtina(String name, String descr)
+	public EtisEtina()
 	{
-		super(name, descr);
+		super(EtisEtina.class.getSimpleName(), "ai");
 		addAttackId(ETIS);
 		addKillId(ETIS);
 	}
@@ -80,10 +80,5 @@ public class EtisEtina extends AbstractNpcAI
 		}
 		
 		return super.onKill(npc, killer, isPet);
-	}
-	
-	public static void main(String[] args)
-	{
-		new EtisEtina(EtisEtina.class.getSimpleName(), "ai");
 	}
 }

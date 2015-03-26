@@ -48,9 +48,9 @@ public class TownPets extends AbstractNpcAI
 		31955, // Ruby
 	};
 	
-	private TownPets(String name, String descr)
+	public TownPets()
 	{
-		super(name, descr);
+		super(TownPets.class.getSimpleName(), "ai/npc");
 		
 		if (Config.ALLOW_PET_WALKERS)
 		{
@@ -77,10 +77,5 @@ public class TownPets extends AbstractNpcAI
 	{
 		startQuestTimer("move", 3000, npc, null);
 		return super.onSpawn(npc);
-	}
-	
-	public static void main(String[] args)
-	{
-		new TownPets(TownPets.class.getSimpleName(), "ai/npc");
 	}
 }
