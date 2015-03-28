@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package handlers.actionhandlers;
+package handlers.actionhandlers.actionshifthandlers;
 
 import l2r.Config;
 import l2r.gameserver.data.xml.impl.ItemData;

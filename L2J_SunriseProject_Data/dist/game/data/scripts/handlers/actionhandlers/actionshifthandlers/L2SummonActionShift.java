@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package handlers.actionhandlers;
+package handlers.actionhandlers.actionshifthandlers;
 
 import l2r.gameserver.enums.InstanceType;
 import l2r.gameserver.handler.AdminCommandHandler;
@@ -25,24 +25,23 @@ import l2r.gameserver.handler.IAdminCommandHandler;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 
-public class L2PcInstanceActionShift implements IActionHandler
+public class L2SummonActionShift implements IActionHandler
 {
 	@Override
 	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
 	{
 		if (activeChar.isGM())
 		{
-			// Check if the gm already target this l2pcinstance
 			if (activeChar.getTarget() != target)
 			{
 				// Set the target of the L2PcInstance activeChar
 				activeChar.setTarget(target);
 			}
 			
-			IAdminCommandHandler ach = AdminCommandHandler.getInstance().getHandler("admin_character_info");
+			final IAdminCommandHandler ach = AdminCommandHandler.getInstance().getHandler("admin_summon_info");
 			if (ach != null)
 			{
-				ach.useAdminCommand("admin_character_info " + target.getName(), activeChar);
+				ach.useAdminCommand("admin_summon_info", activeChar);
 			}
 		}
 		return true;
@@ -51,6 +50,6 @@ public class L2PcInstanceActionShift implements IActionHandler
 	@Override
 	public InstanceType getInstanceType()
 	{
-		return InstanceType.L2PcInstance;
+		return InstanceType.L2Summon;
 	}
 }

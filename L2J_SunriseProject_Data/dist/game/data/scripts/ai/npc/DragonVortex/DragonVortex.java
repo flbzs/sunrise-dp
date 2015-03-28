@@ -2,37 +2,23 @@ package ai.npc.DragonVortex;
 
 import java.util.concurrent.ScheduledFuture;
 
-import javolution.util.FastList;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
 
+/**
+ * @author L2jSunrise Team
+ * @Website www.l2jsunrise.com
+ */
 public class DragonVortex extends AbstractNpcAI
 {
-	private final boolean debug = false;
+	// NPCs
 	private static final int VORTEX_1 = 32871;
 	private static final int VORTEX_2 = 32892;
 	private static final int VORTEX_3 = 32893;
 	private static final int VORTEX_4 = 32894;
-	
-	protected final FastList<L2Npc> bosses1 = new FastList<>();
-	protected final FastList<L2Npc> bosses2 = new FastList<>();
-	protected final FastList<L2Npc> bosses3 = new FastList<>();
-	protected final FastList<L2Npc> bosses4 = new FastList<>();
-	
-	private ScheduledFuture<?> _despawnTask1;
-	private ScheduledFuture<?> _despawnTask2;
-	private ScheduledFuture<?> _despawnTask3;
-	private ScheduledFuture<?> _despawnTask4;
-	
-	protected boolean progress1 = false;
-	protected boolean progress2 = false;
-	protected boolean progress3 = false;
-	protected boolean progress4 = false;
-	
-	private static final int LARGE_DRAGON_BONE = 17248;
 	
 	private static final int[] RAIDS =
 	{
@@ -45,17 +31,27 @@ public class DragonVortex extends AbstractNpcAI
 		25718, // Emerald Horn
 	};
 	
-	private L2Npc boss1;
-	private L2Npc boss2;
-	private L2Npc boss3;
-	private L2Npc boss4;
+	// ITEMs
+	private static final int LARGE_DRAGON_BONE = 17248;
+	
+	// MISCs
+	protected ScheduledFuture<?> _despawnTask1 = null;
+	protected ScheduledFuture<?> _despawnTask2 = null;
+	protected ScheduledFuture<?> _despawnTask3 = null;
+	protected ScheduledFuture<?> _despawnTask4 = null;
+	
+	protected L2Npc boss1;
+	protected L2Npc boss2;
+	protected L2Npc boss3;
+	protected L2Npc boss4;
 	
 	protected int boss1ObjId = 0;
 	protected int boss2ObjId = 0;
 	protected int boss3ObjId = 0;
 	protected int boss4ObjId = 0;
 	
-	private static final int DESPAWN_DELAY = 3600000;
+	private static final int DESPAWN_TIME = 60; // Despawn time in minutes
+	private static final int DESPAWN_DELAY = DESPAWN_TIME * 60 * 1000; // DO NOT MODIFY THIS
 	
 	public DragonVortex()
 	{
@@ -107,97 +103,55 @@ public class DragonVortex extends AbstractNpcAI
 				raid = RAIDS[6]; // Muscle Bomber 4.4%
 			}
 			
-			if (npc.getId() == VORTEX_1)
+			switch (npc.getId())
 			{
-				if (progress1)
-				{
-					if (debug)
+				case VORTEX_1:
+					if (boss1ObjId != 0)
 					{
-						_log.info("Dragon Vortex 32871 has a Raid at Loc: X: " + String.valueOf(boss1.getX()) + " Y: " + String.valueOf(boss1.getY()) + " Z: " + String.valueOf(boss1.getZ()));
+						return "32871-03.htm";
 					}
-					return "32871-03.htm";
-				}
-				
-				takeItems(player, LARGE_DRAGON_BONE, 1);
-				boss1 = addSpawn(raid, new Location(player.getX() - 300, player.getY() - 100, player.getZ() - 2, player.getHeading()), false, 0);
-				progress1 = true;
-				if (boss1 != null)
-				{
-					bosses1.add(boss1);
+					
+					takeItems(player, LARGE_DRAGON_BONE, 1);
+					boss1 = addSpawn(raid, new Location(player.getX() - 300, player.getY() - 100, player.getZ() - 2, player.getHeading()), false, 0, true);
 					boss1ObjId = boss1.getObjectId();
-					_despawnTask1 = ThreadPoolManager.getInstance().scheduleGeneral(new SpawnFirstVortexBoss(), DESPAWN_DELAY);
-				}
-				return "32871-01.htm";
-			}
-			
-			if (npc.getId() == VORTEX_2)
-			{
-				if (progress2)
-				{
-					if (debug)
+					_despawnTask1 = ThreadPoolManager.getInstance().scheduleGeneral(new SpawnVortexBoss(VORTEX_1), DESPAWN_DELAY);
+					break;
+				case VORTEX_2:
+					if (boss2ObjId != 0)
 					{
-						_log.info("Dragon Vortex 32892 has a Raid at Loc: X: " + String.valueOf(boss2.getX()) + " Y: " + String.valueOf(boss2.getY()) + " Z: " + String.valueOf(boss2.getZ()));
+						return "32871-03.htm";
 					}
-					return "32871-03.htm";
-				}
-				
-				takeItems(player, LARGE_DRAGON_BONE, 1);
-				boss2 = addSpawn(raid, new Location(player.getX() - 300, player.getY() - 100, player.getZ() - 2, player.getHeading()), false, 0);
-				progress2 = true;
-				if (boss2 != null)
-				{
-					bosses2.add(boss2);
+					
+					takeItems(player, LARGE_DRAGON_BONE, 1);
+					boss2 = addSpawn(raid, new Location(player.getX() - 300, player.getY() - 100, player.getZ() - 2, player.getHeading()), false, 0, true);
 					boss2ObjId = boss2.getObjectId();
-					_despawnTask2 = ThreadPoolManager.getInstance().scheduleGeneral(new SpawnSecondVortexBoss(), DESPAWN_DELAY);
-				}
-				return "32871-01.htm";
-			}
-			
-			if (npc.getId() == VORTEX_3)
-			{
-				if (progress3)
-				{
-					if (debug)
+					_despawnTask2 = ThreadPoolManager.getInstance().scheduleGeneral(new SpawnVortexBoss(VORTEX_2), DESPAWN_DELAY);
+					break;
+				case VORTEX_3:
+					if (boss3ObjId != 0)
 					{
-						_log.info("Dragon Vortex 32893 has a Raid at Loc: X: " + String.valueOf(boss3.getX()) + " Y: " + String.valueOf(boss3.getY()) + " Z: " + String.valueOf(boss3.getZ()));
+						return "32871-03.htm";
 					}
-					return "32871-03.htm";
-				}
-				
-				takeItems(player, LARGE_DRAGON_BONE, 1);
-				boss3 = addSpawn(raid, new Location(player.getX() - 300, player.getY() - 100, player.getZ() - 2, player.getHeading()), false, 0);
-				progress3 = true;
-				if (boss3 != null)
-				{
-					bosses3.add(boss3);
+					
+					takeItems(player, LARGE_DRAGON_BONE, 1);
+					boss3 = addSpawn(raid, new Location(player.getX() - 300, player.getY() - 100, player.getZ() - 2, player.getHeading()), false, 0, true);
 					boss3ObjId = boss3.getObjectId();
-					_despawnTask3 = ThreadPoolManager.getInstance().scheduleGeneral(new SpawnThirdVortexBoss(), DESPAWN_DELAY);
-				}
-				return "32871-01.htm";
+					_despawnTask3 = ThreadPoolManager.getInstance().scheduleGeneral(new SpawnVortexBoss(VORTEX_3), DESPAWN_DELAY);
+					break;
+				case VORTEX_4:
+					if (boss4ObjId != 0)
+					{
+						return "32871-03.htm";
+					}
+					
+					takeItems(player, LARGE_DRAGON_BONE, 1);
+					boss4 = addSpawn(raid, new Location(player.getX() - 300, player.getY() - 100, player.getZ() - 2, player.getHeading()), false, 0, true);
+					boss4ObjId = boss4.getObjectId();
+					_despawnTask4 = ThreadPoolManager.getInstance().scheduleGeneral(new SpawnVortexBoss(VORTEX_4), DESPAWN_DELAY);
+					break;
 			}
 			
-			if (npc.getId() == VORTEX_4)
-			{
-				if (progress4)
-				{
-					if (debug)
-					{
-						_log.info("Dragon Vortex 32894 has a Raid at Loc: X: " + String.valueOf(boss4.getX()) + " Y: " + String.valueOf(boss4.getY()) + " Z: " + String.valueOf(boss4.getZ()));
-					}
-					return "32871-03.htm";
-				}
-				
-				takeItems(player, LARGE_DRAGON_BONE, 1);
-				boss4 = addSpawn(raid, new Location(player.getX() - 300, player.getY() - 100, player.getZ() - 2, player.getHeading()), false, 0);
-				progress4 = true;
-				if (boss4 != null)
-				{
-					bosses4.add(boss4);
-					boss4ObjId = boss4.getObjectId();
-					_despawnTask4 = ThreadPoolManager.getInstance().scheduleGeneral(new SpawnFourthVortexBoss(), DESPAWN_DELAY);
-				}
-				return "32871-01.htm";
-			}
+			return "32871-01.htm";
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
@@ -213,126 +167,81 @@ public class DragonVortex extends AbstractNpcAI
 	{
 		int npcObjId = npc.getObjectId();
 		
-		if ((boss1ObjId != 0) && (npcObjId == boss1ObjId) && progress1)
+		if (npcObjId == boss1ObjId)
 		{
-			progress1 = false;
 			boss1ObjId = 0;
-			bosses1.clear();
 			if (_despawnTask1 != null)
 			{
 				_despawnTask1.cancel(true);
+				_despawnTask1 = null;
 			}
 		}
-		
-		if ((boss2ObjId != 0) && (npcObjId == boss2ObjId) && progress2)
+		else if (npcObjId == boss2ObjId)
 		{
-			progress2 = false;
 			boss2ObjId = 0;
-			bosses2.clear();
 			if (_despawnTask2 != null)
 			{
 				_despawnTask2.cancel(true);
+				_despawnTask2 = null;
 			}
 		}
-		
-		if ((boss3ObjId != 0) && (npcObjId == boss3ObjId) && progress3)
+		else if (npcObjId == boss3ObjId)
 		{
-			progress3 = false;
 			boss3ObjId = 0;
-			bosses3.clear();
 			if (_despawnTask3 != null)
 			{
 				_despawnTask3.cancel(true);
+				_despawnTask3 = null;
 			}
 		}
-		
-		if ((boss4ObjId != 0) && (npcObjId == boss4ObjId) && progress4)
+		else if (npcObjId == boss4ObjId)
 		{
-			progress4 = false;
 			boss4ObjId = 0;
-			bosses4.clear();
 			if (_despawnTask4 != null)
 			{
 				_despawnTask4.cancel(true);
+				_despawnTask4 = null;
 			}
 		}
 		
 		return super.onKill(npc, player, isSummon);
 	}
 	
-	protected class SpawnFirstVortexBoss implements Runnable
+	protected class SpawnVortexBoss implements Runnable
 	{
-		@Override
-		public void run()
+		int _vortex;
+		
+		protected SpawnVortexBoss(int vortex)
 		{
-			for (L2Npc boss : bosses1)
-			{
-				if (boss != null)
-				{
-					boss.deleteMe();
-					progress1 = false;
-				}
-			}
-			
-			boss1ObjId = 0;
-			bosses1.clear();
+			_vortex = vortex;
 		}
-	}
-	
-	protected class SpawnSecondVortexBoss implements Runnable
-	{
+		
 		@Override
 		public void run()
 		{
-			for (L2Npc boss : bosses2)
+			switch (_vortex)
 			{
-				if (boss != null)
-				{
-					boss.deleteMe();
-					progress2 = false;
-				}
+				case VORTEX_1:
+					boss1.deleteMe();
+					boss1ObjId = 0;
+					_despawnTask1 = null;
+					break;
+				case VORTEX_2:
+					boss2.deleteMe();
+					boss2ObjId = 0;
+					_despawnTask2 = null;
+					break;
+				case VORTEX_3:
+					boss3.deleteMe();
+					boss3ObjId = 0;
+					_despawnTask3 = null;
+					break;
+				case VORTEX_4:
+					boss4.deleteMe();
+					boss4ObjId = 0;
+					_despawnTask4 = null;
+					break;
 			}
-			
-			boss2ObjId = 0;
-			bosses2.clear();
-		}
-	}
-	
-	protected class SpawnThirdVortexBoss implements Runnable
-	{
-		@Override
-		public void run()
-		{
-			for (L2Npc boss : bosses3)
-			{
-				if (boss != null)
-				{
-					boss.deleteMe();
-					progress3 = false;
-				}
-			}
-			
-			boss3ObjId = 0;
-			bosses3.clear();
-		}
-	}
-	
-	protected class SpawnFourthVortexBoss implements Runnable
-	{
-		@Override
-		public void run()
-		{
-			for (L2Npc boss : bosses4)
-			{
-				if (boss != null)
-				{
-					boss.deleteMe();
-					progress4 = false;
-				}
-			}
-			
-			boss4ObjId = 0;
-			bosses4.clear();
 		}
 	}
 }
