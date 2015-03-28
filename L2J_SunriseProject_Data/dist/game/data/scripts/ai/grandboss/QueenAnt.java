@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -19,8 +19,8 @@
 package ai.grandboss;
 
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-import javolution.util.FastList;
 import l2r.Config;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.instancemanager.GrandBossManager;
@@ -44,9 +44,8 @@ import ai.npc.AbstractNpcAI;
  * Queen Ant's AI
  * @author Emperorc
  */
-public class QueenAnt extends AbstractNpcAI
+public final class QueenAnt extends AbstractNpcAI
 {
-	// NPC
 	private static final int QUEEN = 29001;
 	private static final int LARVA = 29002;
 	private static final int NURSE = 29003;
@@ -83,12 +82,11 @@ public class QueenAnt extends AbstractNpcAI
 	
 	private L2MonsterInstance _queen = null;
 	private L2MonsterInstance _larva = null;
-	private final List<L2MonsterInstance> _nurses = new FastList<>();
+	private final List<L2MonsterInstance> _nurses = new CopyOnWriteArrayList<>();
 	
 	public QueenAnt()
 	{
-		super(QueenAnt.class.getSimpleName(), "ai");
-		
+		super(QueenAnt.class.getSimpleName(), "ai/individual");
 		addSpawnId(MOBS);
 		addKillId(MOBS);
 		addAggroRangeEnterId(MOBS);
@@ -150,6 +148,7 @@ public class QueenAnt extends AbstractNpcAI
 		{
 			_zone.movePlayersTo(OUST_LOC_3);
 		}
+		
 		addBoss(npc);
 		startQuestTimer("action", 10000, npc, null, true);
 		startQuestTimer("heal", 1000, null, null, true);
