@@ -74,6 +74,15 @@ public final class LibraryOfSages extends AbstractInstance
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
+		if (npc.getId() == SOPHIA1)
+		{
+			if (event.equalsIgnoreCase("tele1"))
+			{
+				enterInstance(player, new LoSWorld(), "LibraryOfSages.xml", TEMPLATE_ID);
+				return null;
+			}
+		}
+		
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 		if (tmpworld instanceof LoSWorld)
 		{
@@ -111,13 +120,6 @@ public final class LibraryOfSages extends AbstractInstance
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
-	{
-		enterInstance(talker, new LoSWorld(), "LibraryOfSages.xml", TEMPLATE_ID);
-		return super.onTalk(npc, talker);
 	}
 	
 	@Override

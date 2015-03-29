@@ -37,6 +37,7 @@ import l2r.gameserver.data.xml.impl.EnchantItemData;
 import l2r.gameserver.data.xml.impl.EnchantItemGroupsData;
 import l2r.gameserver.data.xml.impl.ItemData;
 import l2r.gameserver.data.xml.impl.MultisellData;
+import l2r.gameserver.data.xml.impl.ProductItemData;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.data.xml.impl.TransformData;
 import l2r.gameserver.handler.IAdminCommandHandler;
@@ -275,6 +276,12 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					TransformData.getInstance().load();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded transform data.");
+					break;
+				}
+				case "itemmall":
+				{
+					ProductItemData.getInstance().reload();
+					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded item mall data.");
 					break;
 				}
 				default:
