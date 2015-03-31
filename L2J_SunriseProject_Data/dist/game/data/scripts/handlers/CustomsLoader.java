@@ -23,8 +23,6 @@ import org.slf4j.LoggerFactory;
 
 import custom.EchoCrystals.EchoCrystals;
 import custom.FifthAnniversary.FifthAnniversary;
-import custom.HeroCirclet.HeroCirclet;
-import custom.HeroWeapon.HeroWeapon;
 import custom.NevitsHerald.NevitsHerald;
 import custom.NewbieCoupons.NewbieCoupons;
 import custom.NpcLocationInfo.NpcLocationInfo;
@@ -47,8 +45,6 @@ public final class CustomsLoader
 	{
 		EchoCrystals.class,
 		FifthAnniversary.class,
-		HeroCirclet.class,
-		HeroWeapon.class,
 		NevitsHerald.class,
 		NewbieCoupons.class,
 		NpcLocationInfo.class,
