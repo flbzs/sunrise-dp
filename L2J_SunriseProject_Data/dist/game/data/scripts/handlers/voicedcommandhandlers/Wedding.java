@@ -279,12 +279,6 @@ public class Wedding implements IVoicedCommandHandler
 			return false;
 		}
 		
-		if (GrandBossManager.getInstance().getZone(activeChar) != null)
-		{
-			activeChar.sendMessage("You are inside a Boss Zone.");
-			return false;
-		}
-		
 		if (activeChar.isJailed())
 		{
 			activeChar.sendMessage("You are in Jail!");
