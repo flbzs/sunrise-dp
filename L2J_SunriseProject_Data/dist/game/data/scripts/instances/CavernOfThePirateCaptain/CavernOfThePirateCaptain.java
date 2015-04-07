@@ -71,8 +71,6 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	private static final int FIRE = 15280; // Transparent 1HS (for NPC)
 	private static final int RED = 15281; // Transparent 1HS (for NPC)
 	private static final int BLUE = 15302; // Transparent Bow (for NPC)
-	// Misc
-	private static boolean is83 = false;
 	// Locations
 	private static final Location[] ENTER_LOC =
 	{
@@ -207,7 +205,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	}
 	
 	@Override
-	protected boolean checkConditions(L2PcInstance player)
+	protected boolean checkConditions(L2PcInstance player, int templateId)
 	{
 		if (player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
 		{
@@ -220,9 +218,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 			return false;
 		}
 		
-		// TODO: Need fix
-		// final boolean is83 = InstanceManager.getInstance().getPlayerWorld(player).getTemplateId() == TEMPLATE_ID_83 ? true : false;
-		
+		final boolean is83 = templateId == TEMPLATE_ID_83;
 		final L2Party party = player.getParty();
 		final boolean isInCC = party.isInCommandChannel();
 		final List<L2PcInstance> members = (isInCC) ? party.getCommandChannel().getMembers() : party.getMembers();
@@ -292,12 +288,10 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	{
 		if (event.equals("enter60"))
 		{
-			is83 = false;
 			enterInstance(player, new CavernOfThePirateCaptainWorld(), "CavernOfThePirateCaptainWorldDay60.xml", TEMPLATE_ID_60);
 		}
 		else if (event.equals("enter83"))
 		{
-			is83 = true;
 			enterInstance(player, new CavernOfThePirateCaptainWorld(), "CavernOfThePirateCaptainWorldDay83.xml", TEMPLATE_ID_83);
 		}
 		else
