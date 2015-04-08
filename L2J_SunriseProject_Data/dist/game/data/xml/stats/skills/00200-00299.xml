@@ -879,6 +879,9 @@
 		<cond>
 			<player canTakeCastle="true" />
 		</cond>
+		<startEffects>
+			<effect name="TakeCastleStart" noicon="1" val="0" />
+		</startEffects>
 		<for>
 			<effect name="TakeCastle" noicon="1" val="0" />
 		</for>

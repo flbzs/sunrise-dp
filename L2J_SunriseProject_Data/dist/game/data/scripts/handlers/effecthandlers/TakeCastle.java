@@ -23,8 +23,6 @@ import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.entity.Castle;
 import l2r.gameserver.model.stats.Env;
-import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * Take Castle effect implementation.
@@ -53,7 +51,6 @@ public final class TakeCastle extends L2Effect
 		
 		Castle castle = CastleManager.getInstance().getCastle(getEffector());
 		castle.engrave(getEffector().getActingPlayer().getClan(), getEffected());
-		castle.getSiege().announceToPlayer(SystemMessage.getSystemMessage(SystemMessageId.OPPONENT_STARTED_ENGRAVING), false);
 		return true;
 	}
 }

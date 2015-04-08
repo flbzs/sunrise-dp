@@ -154,6 +154,7 @@ public final class EffectMasterHandler
 		ResistSkill.class,
 		Sweeper.class,
 		TakeCastle.class,
+		TakeCastleStart.class,
 		TakeFort.class,
 		TakeFortStart.class,
 		TakeTerritoryFlag.class,
