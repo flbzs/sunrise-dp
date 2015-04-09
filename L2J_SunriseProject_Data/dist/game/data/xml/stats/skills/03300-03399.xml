@@ -174,9 +174,6 @@
 		<cond>
 			<player canTakeFort="true" />
 		</cond>
-		<startEffects>
-			<effect name="TakeFortStart" noicon="1" val="0" />
-		</startEffects>
 		<for>
 			<effect name="TakeFort" noicon="1" val="0" />
 		</for>
