@@ -311,7 +311,6 @@ import handlers.voicedcommandhandlers.PvpZoneVCmd;
 import handlers.voicedcommandhandlers.RepairVCmd;
 import handlers.voicedcommandhandlers.TeleportsVCmd;
 import handlers.voicedcommandhandlers.VotePanelVCmd;
-import handlers.voicedcommandhandlers.VoteVCmd;
 import handlers.voicedcommandhandlers.Wedding;
 
 /**
@@ -594,7 +593,6 @@ public class MasterHandler
 			(CustomServerConfigs.ALLOW_REPAIR_COMMAND ? RepairVCmd.class : null),
 			(CustomServerConfigs.ALLOW_TELEPORTS_COMMAND ? TeleportsVCmd.class : null),
 			(IndividualVoteSystemConfigs.ENABLE_VOTE_SYSTEM ? VotePanelVCmd.class : null),
-			VoteVCmd.class,
 			PingVCmd.class,
 			(Config.L2JMOD_ALLOW_WEDDING ? Wedding.class : null),
 			(GetRewardVoteSystemConfigs.ENABLE_VOTE_SYSTEM ? RewardVote.class : null),
