@@ -70,7 +70,15 @@ public class Sweeper extends L2Effect
 			}
 			else
 			{
-				player.addItem("Sweeper", item, getEffected(), true);
+				int itemId = item.getId();
+				long itemCount = item.getCount();
+				
+				if (player.isPremium())
+				{
+					itemCount *= player.calcPremiumDropMultipliers(itemId);
+				}
+				
+				player.addItem("Sweeper", itemId, itemCount, getEffected(), true);
 			}
 		}
 		return true;
