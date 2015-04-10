@@ -107,7 +107,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<cond msgId="1518">
-			<player races="Human,Elf,DarkElf,Orc,Dwarf" />
+			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
 			<add order="0x10" stat="pDef" val="113" />
@@ -128,7 +128,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<cond msgId="1518">
-			<player races="Human,Elf,DarkElf,Orc,Dwarf" />
+			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
 			<add order="0x10" stat="pDef" val="71" />
@@ -554,7 +554,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<cond msgId="1518">
-			<player races="Kamael" />
+			<player races="KAMAEL" />
 		</cond>
 		<for>
 			<set order="0x08" stat="pAtk" val="304" />
@@ -841,7 +841,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<cond msgId="1518">
-			<player races="Kamael" />
+			<player races="KAMAEL" />
 		</cond>
 		<for>
 			<set order="0x08" stat="pAtk" val="361" />
