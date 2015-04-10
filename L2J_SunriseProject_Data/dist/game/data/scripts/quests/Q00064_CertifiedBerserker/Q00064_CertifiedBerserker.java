@@ -18,8 +18,8 @@
  */
 package quests.Q00064_CertifiedBerserker;
 
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
@@ -303,7 +303,7 @@ public final class Q00064_CertifiedBerserker extends Quest
 		{
 			if (npc.getId() == MASTER_ORKURUS)
 			{
-				if (player.getRace() == PcRace.Kamael)
+				if (player.getRace() == Race.KAMAEL)
 				{
 					if (player.getClassId() == ClassId.trooper)
 					{

@@ -21,8 +21,8 @@ package quests.Q00104_SpiritOfMirrors;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.ItemHolder;
@@ -130,7 +130,7 @@ public final class Q00104_SpiritOfMirrors extends Quest
 					{
 						case State.CREATED:
 						{
-							htmltext = (player.getRace() == PcRace.Human) ? (player.getLevel() >= MIN_LVL) ? "30017-03.htm" : "30017-02.htm" : "30017-01.htm";
+							htmltext = (player.getRace() == Race.HUMAN) ? (player.getLevel() >= MIN_LVL) ? "30017-03.htm" : "30017-02.htm" : "30017-01.htm";
 							break;
 						}
 						case State.STARTED:

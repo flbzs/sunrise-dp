@@ -18,7 +18,7 @@
  */
 package quests.Q00164_BloodFiend;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -88,7 +88,7 @@ public class Q00164_BloodFiend extends Quest
 			{
 				case State.CREATED:
 				{
-					htmltext = (player.getRace() != PcRace.DarkElf) ? player.getLevel() >= MIN_LVL ? "30149-03.htm" : "30149-02.htm" : "30149-00.htm";
+					htmltext = (player.getRace() != Race.DARK_ELF) ? player.getLevel() >= MIN_LVL ? "30149-03.htm" : "30149-02.htm" : "30149-00.htm";
 					break;
 				}
 				case State.STARTED:

@@ -5,7 +5,7 @@ import sys
 from l2r.gameserver.model.quest import State
 from l2r.gameserver.model.quest import QuestState
 from l2r.gameserver.model.quest import Quest as JQuest
-from l2r.gameserver.enums import PcRace
+from l2r.gameserver.enums import Race
 
 qn = "236_SeedsOfChaos"
 
@@ -151,7 +151,7 @@ class Quest (JQuest) :
     if npcId == KEKROPUS :
         if id == State.CREATED :
             st.set("cond","0")
-            if player.getRace() != PcRace.Kamael :
+            if player.getRace() != Race.KAMAEL :
                 st.exitQuest(1)
                 htmltext = "<html><body>I'm sorry, but I can only give this quest to Kamael. Talk to Magister Ladd.</body></html>"
             elif player.getLevel() < 75 :

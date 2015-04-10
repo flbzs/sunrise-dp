@@ -18,7 +18,7 @@
  */
 package quests.Q00320_BonesTellTheFuture;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -92,7 +92,7 @@ public final class Q00320_BonesTellTheFuture extends Quest
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getRace() == PcRace.DarkElf) ? (player.getLevel() >= MIN_LEVEL) ? "30359-03.htm" : "30359-02.htm" : "30359-00.htm";
+				htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LEVEL) ? "30359-03.htm" : "30359-02.htm" : "30359-00.htm";
 				break;
 			}
 			case State.STARTED:

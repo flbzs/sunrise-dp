@@ -21,8 +21,8 @@ package quests.Q00260_OrcHunting;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -123,7 +123,7 @@ public final class Q00260_OrcHunting extends Quest
 		{
 			case State.CREATED:
 			{
-				htmltext = (player.getRace() == PcRace.Elf) ? (player.getLevel() >= MIN_LVL) ? "30221-03.htm" : "30221-02.html" : "30221-01.html";
+				htmltext = (player.getRace() == Race.ELF) ? (player.getLevel() >= MIN_LVL) ? "30221-03.htm" : "30221-02.html" : "30221-01.html";
 				break;
 			}
 			case State.STARTED:

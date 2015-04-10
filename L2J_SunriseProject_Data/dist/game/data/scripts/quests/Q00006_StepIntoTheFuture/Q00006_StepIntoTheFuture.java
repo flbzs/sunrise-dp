@@ -18,7 +18,7 @@
  */
 package quests.Q00006_StepIntoTheFuture;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -105,7 +105,7 @@ public class Q00006_StepIntoTheFuture extends Quest
 				switch (st.getState())
 				{
 					case State.CREATED:
-						htmltext = ((player.getRace() == PcRace.Human) && (player.getLevel() >= MIN_LEVEL)) ? "30006-02.htm" : "30006-01.html";
+						htmltext = ((player.getRace() == Race.HUMAN) && (player.getLevel() >= MIN_LEVEL)) ? "30006-02.htm" : "30006-01.html";
 						break;
 					case State.STARTED:
 						if (st.isCond(1))

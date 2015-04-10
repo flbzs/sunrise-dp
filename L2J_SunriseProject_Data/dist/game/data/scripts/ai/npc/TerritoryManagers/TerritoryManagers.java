@@ -19,7 +19,7 @@
 package ai.npc.TerritoryManagers;
 
 import l2r.gameserver.data.xml.impl.MultisellData;
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.instancemanager.CastleManager;
 import l2r.gameserver.instancemanager.QuestManager;
 import l2r.gameserver.instancemanager.TerritoryWarManager;
@@ -159,7 +159,7 @@ public class TerritoryManagers extends AbstractNpcAI
 					// Complete the sub-class related quest.
 					// Complete quest Seeds of Chaos (236) for Kamael characters.
 					// Complete quest Mimir's Elixir (235) for other races characters.
-					final Quest q = QuestManager.getInstance().getQuest((player.getRace() == PcRace.Kamael) ? 236 : 235);
+					final Quest q = QuestManager.getInstance().getQuest((player.getRace() == Race.KAMAEL) ? 236 : 235);
 					if (q != null)
 					{
 						QuestState qs = player.getQuestState(q.getName());

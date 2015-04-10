@@ -21,7 +21,7 @@ package quests.Q00168_DeliverSupplies;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -90,7 +90,7 @@ public class Q00168_DeliverSupplies extends Quest
 					{
 						case State.CREATED:
 						{
-							htmltext = (player.getRace() == PcRace.DarkElf) ? (player.getLevel() >= MIN_LVL) ? "30349-02.htm" : "30349-01.htm" : "30349-00.htm";
+							htmltext = (player.getRace() == Race.DARK_ELF) ? (player.getLevel() >= MIN_LVL) ? "30349-02.htm" : "30349-01.htm" : "30349-00.htm";
 							break;
 						}
 						case State.STARTED:

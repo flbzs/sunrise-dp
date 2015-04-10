@@ -18,8 +18,8 @@
  */
 package quests.Q00233_TestOfTheWarSpirit;
 
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
@@ -368,7 +368,7 @@ public final class Q00233_TestOfTheWarSpirit extends Quest
 		{
 			if (npc.getId() == SEER_SOMAK)
 			{
-				if (player.getRace() == PcRace.Orc)
+				if (player.getRace() == Race.ORC)
 				{
 					if (player.getClassId() == ClassId.orcShaman)
 					{

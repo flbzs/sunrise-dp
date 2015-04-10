@@ -21,8 +21,8 @@ package quests.Q00102_SeaOfSporesFever;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -133,7 +133,7 @@ public class Q00102_SeaOfSporesFever extends Quest
 					{
 						case State.CREATED:
 						{
-							htmltext = player.getRace() == PcRace.Elf ? player.getLevel() >= MIN_LVL ? "30284-07.htm" : "30284-08.htm" : "30284-00.htm";
+							htmltext = player.getRace() == Race.ELF ? player.getLevel() >= MIN_LVL ? "30284-07.htm" : "30284-08.htm" : "30284-00.htm";
 							break;
 						}
 						case State.STARTED:

@@ -18,7 +18,7 @@
  */
 package quests.Q00008_AnAdventureBegins;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -105,7 +105,7 @@ public class Q00008_AnAdventureBegins extends Quest
 				switch (st.getState())
 				{
 					case State.CREATED:
-						htmltext = ((player.getRace() == PcRace.DarkElf) && (player.getLevel() >= MIN_LEVEL)) ? "30134-02.htm" : "30134-01.html";
+						htmltext = ((player.getRace() == Race.DARK_ELF) && (player.getLevel() >= MIN_LEVEL)) ? "30134-02.htm" : "30134-01.html";
 						break;
 					case State.STARTED:
 						if (st.isCond(1))

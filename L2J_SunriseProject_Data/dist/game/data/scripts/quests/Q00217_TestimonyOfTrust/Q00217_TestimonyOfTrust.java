@@ -19,8 +19,8 @@
 package quests.Q00217_TestimonyOfTrust;
 
 import l2r.gameserver.enums.CategoryType;
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -467,19 +467,19 @@ public final class Q00217_TestimonyOfTrust extends Quest
 		{
 			if (npc.getId() == HIGH_PRIEST_HOLLINT)
 			{
-				if ((player.getRace() == PcRace.Human) && (player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.HUMAN_2ND_GROUP))
+				if ((player.getRace() == Race.HUMAN) && (player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.HUMAN_2ND_GROUP))
 				{
 					htmltext = "30191-03.htm";
 				}
-				else if ((player.getRace() == PcRace.Human) && (player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.FIRST_CLASS_GROUP))
+				else if ((player.getRace() == Race.HUMAN) && (player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.FIRST_CLASS_GROUP))
 				{
 					htmltext = "30191-01a.html";
 				}
-				else if ((player.getRace() == PcRace.Human) && (player.getLevel() >= MIN_LEVEL))
+				else if ((player.getRace() == Race.HUMAN) && (player.getLevel() >= MIN_LEVEL))
 				{
 					htmltext = "30191-01b.html";
 				}
-				else if ((player.getRace() == PcRace.Human))
+				else if ((player.getRace() == Race.HUMAN))
 				{
 					htmltext = "30191-01.html";
 				}

@@ -18,7 +18,7 @@
  */
 package quests.Q00160_NerupasRequest;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -82,7 +82,7 @@ public final class Q00160_NerupasRequest extends Quest
 			{
 				if (npc.getId() == NERUPA)
 				{
-					if (player.getRace() != PcRace.Elf)
+					if (player.getRace() != Race.ELF)
 					{
 						htmltext = "30370-01.htm";
 					}

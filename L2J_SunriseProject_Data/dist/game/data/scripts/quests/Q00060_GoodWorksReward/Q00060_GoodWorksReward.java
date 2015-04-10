@@ -19,7 +19,7 @@
 package quests.Q00060_GoodWorksReward;
 
 import l2r.gameserver.enums.CategoryType;
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
@@ -1193,7 +1193,7 @@ public final class Q00060_GoodWorksReward extends Quest
 		{
 			if (npc.getId() == BLUEPRINT_SELLER_DAEGER)
 			{
-				if (player.getRace() != PcRace.Kamael)
+				if (player.getRace() != Race.KAMAEL)
 				{
 					if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP))
 					{

@@ -19,8 +19,8 @@
 package quests.Q00221_TestimonyOfProsperity;
 
 import l2r.gameserver.enums.CategoryType;
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -448,15 +448,15 @@ public final class Q00221_TestimonyOfProsperity extends Quest
 		{
 			if (npc.getId() == WAREHOUSE_KEEPER_PARMAN)
 			{
-				if ((player.getRace() == PcRace.Dwarf) && (player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.DWARF_2ND_GROUP))
+				if ((player.getRace() == Race.DWARF) && (player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.DWARF_2ND_GROUP))
 				{
 					htmltext = "30104-03.htm";
 				}
-				else if ((player.getRace() == PcRace.Dwarf) && (player.getLevel() >= MIN_LEVEL))
+				else if ((player.getRace() == Race.DWARF) && (player.getLevel() >= MIN_LEVEL))
 				{
 					htmltext = "30104-01a.html";
 				}
-				else if ((player.getRace() == PcRace.Dwarf))
+				else if ((player.getRace() == Race.DWARF))
 				{
 					htmltext = "30104-02.html";
 				}

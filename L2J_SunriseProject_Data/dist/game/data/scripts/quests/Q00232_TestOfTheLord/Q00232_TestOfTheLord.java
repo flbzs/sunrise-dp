@@ -18,8 +18,8 @@
  */
 package quests.Q00232_TestOfTheLord;
 
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -362,7 +362,7 @@ public final class Q00232_TestOfTheLord extends Quest
 		{
 			if (npc.getId() == FLAME_LORD_KAKAI)
 			{
-				if (player.getRace() != PcRace.Orc)
+				if (player.getRace() != Race.ORC)
 				{
 					htmltext = "30565-01.html";
 				}

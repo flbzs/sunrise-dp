@@ -20,7 +20,7 @@ package ai.npc.VillageMasters.KamaelChange2;
 
 import l2r.gameserver.data.xml.impl.CategoryData;
 import l2r.gameserver.enums.CategoryType;
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
@@ -292,7 +292,7 @@ public final class KamaelChange2 extends AbstractNpcAI
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = null;
-		if (player.getRace() != PcRace.Kamael)
+		if (player.getRace() != Race.KAMAEL)
 		{
 			htmltext = "32145-01.htm"; // master_all_kamael002a
 		}

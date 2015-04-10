@@ -18,7 +18,7 @@
  */
 package quests.Q00178_IconicTrinity;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
@@ -381,7 +381,7 @@ public final class Q00178_IconicTrinity extends Quest
 		{
 			if (npc.getId() == HIERARCH_KEKROPUS)
 			{
-				if (player.getRace() != PcRace.Kamael)
+				if (player.getRace() != Race.KAMAEL)
 				{
 					htmltext = "32138-03.htm";
 				}

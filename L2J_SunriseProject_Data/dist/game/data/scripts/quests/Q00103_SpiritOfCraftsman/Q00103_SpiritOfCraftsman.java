@@ -18,7 +18,7 @@
  */
 package quests.Q00103_SpiritOfCraftsman;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.ItemHolder;
@@ -119,7 +119,7 @@ public final class Q00103_SpiritOfCraftsman extends Quest
 				{
 					case State.CREATED:
 					{
-						if (talker.getRace() != PcRace.DarkElf)
+						if (talker.getRace() != Race.DARK_ELF)
 						{
 							htmltext = "30307-01.htm";
 						}

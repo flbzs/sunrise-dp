@@ -1,247 +1,176 @@
+/*
+ * Copyright (C) 2004-2015 L2J DataPack
+ * 
+ * This file is part of L2J DataPack.
+ * 
+ * L2J DataPack is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * L2J DataPack is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
 package ai.npc.DragonVortex;
 
-import java.util.concurrent.ScheduledFuture;
+import java.util.ArrayList;
+import java.util.List;
 
-import l2r.gameserver.ThreadPoolManager;
-import l2r.gameserver.model.Location;
+import l2r.gameserver.data.SpawnTable;
+import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
 
 /**
- * @author L2jSunrise Team
- * @Website www.l2jsunrise.com
+ * Dragon Vortex AI.
+ * @author UnAfraid, improved by Adry_85 & DreamStage
  */
-public class DragonVortex extends AbstractNpcAI
+public final class DragonVortex extends AbstractNpcAI
 {
-	// NPCs
-	private static final int VORTEX_1 = 32871;
-	private static final int VORTEX_2 = 32892;
-	private static final int VORTEX_3 = 32893;
-	private static final int VORTEX_4 = 32894;
-	
-	private static final int[] RAIDS =
+	// NPC
+	private static final int VORTEX = 32871;
+	// Raids
+	//@formatter:off
+	private static final int[][] RAIDS =
 	{
-		25724, // Muscle Bomber
-		25723, // Spike Slasher
-		25722, // Shadow Summoner
-		25721, // Blackdagger Wing
-		25720, // Bleeding Fly
-		25719, // Dust Rider
-		25718, // Emerald Horn
+		// Emerald Horn 29.2%
+		{ 25718, 292 },
+		// Dust Rider 22.4%
+		{ 25719, 224 },
+		// Bleeding Fly 17.6%
+		{ 25720, 176 },
+		// Blackdagger Wing 11.6%
+		{ 25721, 116 },
+		// Spike Slasher 9.2%
+		{ 25723, 92 },
+		// Shadow Summoner 5.6%
+		{ 25722, 56 },
+		// Muscle Bomber 4.4%
+		{ 25724, 44 }
 	};
-	
-	// ITEMs
+	//@formatter:on
+	// Item
 	private static final int LARGE_DRAGON_BONE = 17248;
-	
-	// MISCs
-	protected ScheduledFuture<?> _despawnTask1 = null;
-	protected ScheduledFuture<?> _despawnTask2 = null;
-	protected ScheduledFuture<?> _despawnTask3 = null;
-	protected ScheduledFuture<?> _despawnTask4 = null;
-	
-	protected L2Npc boss1;
-	protected L2Npc boss2;
-	protected L2Npc boss3;
-	protected L2Npc boss4;
-	
-	protected int boss1ObjId = 0;
-	protected int boss2ObjId = 0;
-	protected int boss3ObjId = 0;
-	protected int boss4ObjId = 0;
-	
-	private static final int DESPAWN_TIME = 60; // Despawn time in minutes
-	private static final int DESPAWN_DELAY = DESPAWN_TIME * 60 * 1000; // DO NOT MODIFY THIS
+	// Misc
+	private static final int DESPAWN_DELAY = 1800000; // 30min
 	
 	public DragonVortex()
 	{
 		super(DragonVortex.class.getSimpleName(), "ai/npc");
-		addFirstTalkId(VORTEX_1, VORTEX_2, VORTEX_3, VORTEX_4);
-		addStartNpc(VORTEX_1, VORTEX_2, VORTEX_3, VORTEX_4);
-		addTalkId(VORTEX_1, VORTEX_2, VORTEX_3, VORTEX_4);
-		addKillId(RAIDS);
-	}
-	
-	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equalsIgnoreCase("Spawn"))
-		{
-			if (!hasQuestItems(player, LARGE_DRAGON_BONE))
-			{
-				return "32871-02.htm";
-			}
-			
-			final int random = getRandom(1000);
-			int raid = 0;
-			if (random < 292)
-			{
-				raid = RAIDS[0]; // Emerald Horn 29.2%
-			}
-			else if (random < 516)
-			{
-				raid = RAIDS[1]; // Dust Rider 22.4%
-			}
-			else if (random < 692)
-			{
-				raid = RAIDS[2]; // Bleeding Fly 17.6%
-			}
-			else if (random < 808)
-			{
-				raid = RAIDS[3]; // Blackdagger Wing 11.6%
-			}
-			else if (random < 900)
-			{
-				raid = RAIDS[4]; // Spike Slasher 9.2%
-			}
-			else if (random < 956)
-			{
-				raid = RAIDS[5]; // Shadow Summoner 5.6%
-			}
-			else
-			{
-				raid = RAIDS[6]; // Muscle Bomber 4.4%
-			}
-			
-			switch (npc.getId())
-			{
-				case VORTEX_1:
-					if (boss1ObjId != 0)
-					{
-						return "32871-03.htm";
-					}
-					
-					takeItems(player, LARGE_DRAGON_BONE, 1);
-					boss1 = addSpawn(raid, new Location(player.getX() - 300, player.getY() - 100, player.getZ() - 2, player.getHeading()), false, 0, true);
-					boss1ObjId = boss1.getObjectId();
-					_despawnTask1 = ThreadPoolManager.getInstance().scheduleGeneral(new SpawnVortexBoss(VORTEX_1), DESPAWN_DELAY);
-					break;
-				case VORTEX_2:
-					if (boss2ObjId != 0)
-					{
-						return "32871-03.htm";
-					}
-					
-					takeItems(player, LARGE_DRAGON_BONE, 1);
-					boss2 = addSpawn(raid, new Location(player.getX() - 300, player.getY() - 100, player.getZ() - 2, player.getHeading()), false, 0, true);
-					boss2ObjId = boss2.getObjectId();
-					_despawnTask2 = ThreadPoolManager.getInstance().scheduleGeneral(new SpawnVortexBoss(VORTEX_2), DESPAWN_DELAY);
-					break;
-				case VORTEX_3:
-					if (boss3ObjId != 0)
-					{
-						return "32871-03.htm";
-					}
-					
-					takeItems(player, LARGE_DRAGON_BONE, 1);
-					boss3 = addSpawn(raid, new Location(player.getX() - 300, player.getY() - 100, player.getZ() - 2, player.getHeading()), false, 0, true);
-					boss3ObjId = boss3.getObjectId();
-					_despawnTask3 = ThreadPoolManager.getInstance().scheduleGeneral(new SpawnVortexBoss(VORTEX_3), DESPAWN_DELAY);
-					break;
-				case VORTEX_4:
-					if (boss4ObjId != 0)
-					{
-						return "32871-03.htm";
-					}
-					
-					takeItems(player, LARGE_DRAGON_BONE, 1);
-					boss4 = addSpawn(raid, new Location(player.getX() - 300, player.getY() - 100, player.getZ() - 2, player.getHeading()), false, 0, true);
-					boss4ObjId = boss4.getObjectId();
-					_despawnTask4 = ThreadPoolManager.getInstance().scheduleGeneral(new SpawnVortexBoss(VORTEX_4), DESPAWN_DELAY);
-					break;
-			}
-			
-			return "32871-01.htm";
-		}
-		return super.onAdvEvent(event, npc, player);
+		addStartNpc(VORTEX);
+		addFirstTalkId(VORTEX);
+		addTalkId(VORTEX);
 	}
 	
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		return "32871.htm";
+		return "32871.html";
 	}
 	
 	@Override
-	public String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		int npcObjId = npc.getObjectId();
-		
-		if (npcObjId == boss1ObjId)
+		if ("Spawn".equals(event))
 		{
-			boss1ObjId = 0;
-			if (_despawnTask1 != null)
+			if (hasQuestItems(player, LARGE_DRAGON_BONE))
 			{
-				_despawnTask1.cancel(true);
-				_despawnTask1 = null;
+				final int chance = getRandom(1000);
+				List<int[]> unspawnedRaids = new ArrayList<>();
+				List<int[]> unspawnedCandidates = new ArrayList<>();
+				int raidChanceIncrease = 0;
+				
+				// Iterate over all Raids and check which ones are currently spawned, sum spawned Raids chance for unspawnedRaids List distribution
+				for (int[] raidsList : RAIDS)
+				{
+					int raidChance = raidsList[1];
+					if (checkIfNpcSpawned(raidsList[0]))
+					{
+						raidChanceIncrease += raidChance;
+					}
+					else
+					{
+						unspawnedRaids.add(new int[]
+						{
+							raidsList[0],
+							raidChance
+						});
+					}
+				}
+				
+				// If there are unspawnedRaids onto the new List, distribute the amount of increased chances for each one and spawn a new Raid from the new chances
+				if (!unspawnedRaids.isEmpty())
+				{
+					int unspawnedRaidsSize = unspawnedRaids.size();
+					int chanceIncrease = (raidChanceIncrease / unspawnedRaidsSize);
+					int raidChanceValue = 0;
+					
+					for (int[] unspawnedRaidsList : unspawnedRaids)
+					{
+						raidChanceValue += unspawnedRaidsList[1] + chanceIncrease;
+						unspawnedCandidates.add(new int[]
+						{
+							unspawnedRaidsList[0],
+							raidChanceValue
+						});
+					}
+					
+					for (int[] unspawnedCandidatesList : unspawnedCandidates)
+					{
+						if (chance <= unspawnedCandidatesList[1])
+						{
+							spawnRaid(unspawnedCandidatesList[0], npc, player);
+							break;
+						}
+					}
+					return null;
+				}
+				return "32871-noboss.html";
 			}
+			return "32871-no.html";
 		}
-		else if (npcObjId == boss2ObjId)
-		{
-			boss2ObjId = 0;
-			if (_despawnTask2 != null)
-			{
-				_despawnTask2.cancel(true);
-				_despawnTask2 = null;
-			}
-		}
-		else if (npcObjId == boss3ObjId)
-		{
-			boss3ObjId = 0;
-			if (_despawnTask3 != null)
-			{
-				_despawnTask3.cancel(true);
-				_despawnTask3 = null;
-			}
-		}
-		else if (npcObjId == boss4ObjId)
-		{
-			boss4ObjId = 0;
-			if (_despawnTask4 != null)
-			{
-				_despawnTask4.cancel(true);
-				_despawnTask4 = null;
-			}
-		}
-		
-		return super.onKill(npc, player, isSummon);
+		return super.onAdvEvent(event, npc, player);
 	}
 	
-	protected class SpawnVortexBoss implements Runnable
+	/**
+	 * Method used for spawning a Dragon Vortex Raid and take a Large Dragon Bone from the Player
+	 * @param raidId
+	 * @param npc
+	 * @param player
+	 */
+	public void spawnRaid(int raidId, L2Npc npc, L2PcInstance player)
 	{
-		int _vortex;
-		
-		protected SpawnVortexBoss(int vortex)
+		L2Spawn spawnDat = addSpawn(raidId, npc.getX() + getRandom(-500, 500), npc.getY() + getRandom(-500, 500), npc.getZ() + 10, 0, false, DESPAWN_DELAY, true).getSpawn();
+		SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+		takeItems(player, LARGE_DRAGON_BONE, 1);
+	}
+	
+	/**
+	 * Method used for checking if npc is spawned
+	 * @param npcId
+	 * @return if npc is spawned
+	 */
+	public boolean checkIfNpcSpawned(int npcId)
+	{
+		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(npcId))
 		{
-			_vortex = vortex;
-		}
-		
-		@Override
-		public void run()
-		{
-			switch (_vortex)
+			L2Npc spawnedWarpgate = spawn.getLastSpawn();
+			if ((spawnedWarpgate != null))
 			{
-				case VORTEX_1:
-					boss1.deleteMe();
-					boss1ObjId = 0;
-					_despawnTask1 = null;
-					break;
-				case VORTEX_2:
-					boss2.deleteMe();
-					boss2ObjId = 0;
-					_despawnTask2 = null;
-					break;
-				case VORTEX_3:
-					boss3.deleteMe();
-					boss3ObjId = 0;
-					_despawnTask3 = null;
-					break;
-				case VORTEX_4:
-					boss4.deleteMe();
-					boss4ObjId = 0;
-					_despawnTask4 = null;
-					break;
+				return true;
 			}
 		}
+		return false;
+	}
+	
+	public static void main(String[] args)
+	{
+		new DragonVortex();
 	}
 }

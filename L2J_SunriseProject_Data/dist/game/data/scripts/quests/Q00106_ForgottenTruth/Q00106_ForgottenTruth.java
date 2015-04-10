@@ -18,8 +18,8 @@
  */
 package quests.Q00106_ForgottenTruth;
 
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -129,7 +129,7 @@ public final class Q00106_ForgottenTruth extends Quest
 				{
 					case State.CREATED:
 					{
-						if (talker.getRace() == PcRace.DarkElf)
+						if (talker.getRace() == Race.DARK_ELF)
 						{
 							htmltext = talker.getLevel() >= MIN_LVL ? "30358-03.htm" : "30358-02.htm";
 						}

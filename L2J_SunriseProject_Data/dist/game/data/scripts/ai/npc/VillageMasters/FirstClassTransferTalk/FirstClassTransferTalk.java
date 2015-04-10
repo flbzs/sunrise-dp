@@ -18,7 +18,7 @@
  */
 package ai.npc.VillageMasters.FirstClassTransferTalk;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import ai.npc.AbstractNpcAI;
@@ -84,7 +84,7 @@ public final class FirstClassTransferTalk extends AbstractNpcAI
 			case BITZ:
 			case ALDENIA:
 			{
-				if ((player.getRace() != PcRace.Human) || player.getClassId().isMage())
+				if ((player.getRace() != Race.HUMAN) || player.getClassId().isMage())
 				{
 					htmltext += "no.html";
 				}
@@ -105,7 +105,7 @@ public final class FirstClassTransferTalk extends AbstractNpcAI
 			case BIOTIN:
 			case PRANA:
 			{
-				if ((player.getRace() != PcRace.Human) || !player.getClassId().isMage())
+				if ((player.getRace() != Race.HUMAN) || !player.getClassId().isMage())
 				{
 					htmltext += "no.html";
 				}
@@ -126,7 +126,7 @@ public final class FirstClassTransferTalk extends AbstractNpcAI
 			case ASTERIOS:
 			case RIVIAN:
 			{
-				if (player.getRace() != PcRace.Elf)
+				if (player.getRace() != Race.ELF)
 				{
 					htmltext += "no.html";
 				}
@@ -154,7 +154,7 @@ public final class FirstClassTransferTalk extends AbstractNpcAI
 			case THIFIELL:
 			case DEVON:
 			{
-				if (player.getRace() != PcRace.DarkElf)
+				if (player.getRace() != Race.DARK_ELF)
 				{
 					htmltext += "no.html";
 				}
@@ -182,7 +182,7 @@ public final class FirstClassTransferTalk extends AbstractNpcAI
 			case KAKAI:
 			case TOOK:
 			{
-				if (player.getRace() != PcRace.Orc)
+				if (player.getRace() != Race.ORC)
 				{
 					htmltext += "no.html";
 				}
@@ -211,7 +211,7 @@ public final class FirstClassTransferTalk extends AbstractNpcAI
 			case HOFFA:
 			case FISLER: // there are 2 warehouse chiefs in kamael village
 			{
-				if (player.getRace() != PcRace.Dwarf)
+				if (player.getRace() != Race.DWARF)
 				{
 					htmltext += "no.html";
 				}

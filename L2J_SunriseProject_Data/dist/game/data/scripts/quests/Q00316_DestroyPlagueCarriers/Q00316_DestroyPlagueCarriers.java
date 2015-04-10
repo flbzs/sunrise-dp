@@ -21,7 +21,7 @@ package quests.Q00316_DestroyPlagueCarriers;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.ItemHolder;
@@ -142,7 +142,7 @@ public final class Q00316_DestroyPlagueCarriers extends Quest
 		
 		if (qs.isCreated())
 		{
-			if (player.getRace() != PcRace.Elf)
+			if (player.getRace() != Race.ELF)
 			{
 				htmltext = "30155-00.htm";
 			}

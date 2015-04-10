@@ -18,8 +18,8 @@
  */
 package ai.npc.VillageMasters.DarkElvenChange2;
 
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
@@ -97,7 +97,7 @@ public final class DarkElvenChange2 extends AbstractNpcAI
 		{
 			int i = Integer.valueOf(event);
 			final ClassId cid = player.getClassId();
-			if ((cid.getRace() == PcRace.DarkElf) && (cid.getId() == CLASSES[i][1]))
+			if ((cid.getRace() == Race.DARK_ELF) && (cid.getId() == CLASSES[i][1]))
 			{
 				int suffix;
 				final boolean item1 = st.hasQuestItems(CLASSES[i][6]);
@@ -147,7 +147,7 @@ public final class DarkElvenChange2 extends AbstractNpcAI
 		}
 		
 		final ClassId cid = player.getClassId();
-		if (cid.getRace() == PcRace.DarkElf)
+		if (cid.getRace() == Race.DARK_ELF)
 		{
 			switch (cid)
 			{

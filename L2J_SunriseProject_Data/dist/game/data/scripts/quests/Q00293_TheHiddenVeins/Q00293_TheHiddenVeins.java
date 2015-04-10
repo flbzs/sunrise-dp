@@ -18,8 +18,8 @@
  */
 package quests.Q00293_TheHiddenVeins;
 
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -145,7 +145,7 @@ public final class Q00293_TheHiddenVeins extends Quest
 				{
 					case State.CREATED:
 					{
-						htmltext = (player.getRace() == PcRace.Dwarf) ? (player.getLevel() >= MIN_LVL) ? "30535-03.htm" : "30535-02.htm" : "30535-01.htm";
+						htmltext = (player.getRace() == Race.DWARF) ? (player.getLevel() >= MIN_LVL) ? "30535-03.htm" : "30535-02.htm" : "30535-01.htm";
 						break;
 					}
 					case State.STARTED:

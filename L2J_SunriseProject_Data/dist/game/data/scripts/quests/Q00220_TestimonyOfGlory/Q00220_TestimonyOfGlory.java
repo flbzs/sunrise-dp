@@ -20,8 +20,8 @@ package quests.Q00220_TestimonyOfGlory;
 
 import l2r.gameserver.enums.CategoryType;
 import l2r.gameserver.enums.CtrlIntention;
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -675,7 +675,7 @@ public final class Q00220_TestimonyOfGlory extends Quest
 		{
 			if (npc.getId() == PREFECT_VOKIAN)
 			{
-				if (player.getRace() == PcRace.Orc)
+				if (player.getRace() == Race.ORC)
 				{
 					if ((player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.ORC_2ND_GROUP))
 					{

@@ -21,7 +21,7 @@ package quests.Q00235_MimirsElixir;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.QuestItemHolder;
@@ -259,7 +259,7 @@ public final class Q00235_MimirsElixir extends Quest
 		{
 			if (npc.getId() == LADD)
 			{
-				if (player.getRace() == PcRace.Kamael)
+				if (player.getRace() == Race.KAMAEL)
 				{
 					htmltext = "30721-09.html";
 				}

@@ -20,7 +20,7 @@ package quests.Q00065_CertifiedSoulBreaker;
 
 import l2r.gameserver.enums.CategoryType;
 import l2r.gameserver.enums.CtrlIntention;
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -360,7 +360,7 @@ public final class Q00065_CertifiedSoulBreaker extends Quest
 		{
 			if (npc.getId() == GRAND_MASTER_VITUS)
 			{
-				if (player.getRace() == PcRace.Kamael)
+				if (player.getRace() == Race.KAMAEL)
 				{
 					if ((player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.KAMAEL_SECOND_CLASS_GROUP))
 					{

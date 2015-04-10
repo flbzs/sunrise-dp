@@ -18,8 +18,8 @@
  */
 package quests.Q00107_MercilessPunishment;
 
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.ItemHolder;
@@ -139,7 +139,7 @@ public final class Q00107_MercilessPunishment extends Quest
 				{
 					case State.CREATED:
 					{
-						if (talker.getRace() != PcRace.Orc)
+						if (talker.getRace() != Race.ORC)
 						{
 							htmltext = "30568-01.htm";
 						}

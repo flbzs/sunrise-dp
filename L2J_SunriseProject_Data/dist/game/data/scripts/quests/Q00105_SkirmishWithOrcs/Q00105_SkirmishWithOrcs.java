@@ -21,7 +21,7 @@ package quests.Q00105_SkirmishWithOrcs;
 import java.util.HashMap;
 import java.util.Map;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -166,7 +166,7 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 		{
 			case State.CREATED:
 			{
-				if (talker.getRace() == PcRace.Elf)
+				if (talker.getRace() == Race.ELF)
 				{
 					htmltext = (talker.getLevel() >= MIN_LVL) ? "30218-03.htm" : "30218-02.htm";
 				}

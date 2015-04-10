@@ -18,7 +18,7 @@
  */
 package handlers.usercommandhandlers;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.handler.IUserCommandHandler;
 import l2r.gameserver.instancemanager.MapRegionManager;
 import l2r.gameserver.instancemanager.ZoneManager;
@@ -44,7 +44,7 @@ public class Loc implements IUserCommandHandler
 		L2RespawnZone zone = ZoneManager.getInstance().getZone(activeChar, L2RespawnZone.class);
 		if (zone != null)
 		{
-			region = MapRegionManager.getInstance().getRestartRegion(activeChar, zone.getAllRespawnPoints().get(PcRace.Human)).getLocId();
+			region = MapRegionManager.getInstance().getRestartRegion(activeChar, zone.getAllRespawnPoints().get(Race.HUMAN)).getLocId();
 		}
 		else
 		{

@@ -1,6 +1,6 @@
 package ai.npc.VillageMasters.ElvenHumanFighters2;
 
-import l2r.gameserver.enums.PcRace;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
@@ -169,7 +169,7 @@ public class ElvenHumanFighters2 extends AbstractNpcAI
 		{
 			int i = Integer.valueOf(event);
 			final ClassId cid = player.getClassId();
-			if (((cid.getRace() == PcRace.Elf) || (cid.getRace() == PcRace.Human)) && (cid.getId() == CLASSES[i][1]))
+			if (((cid.getRace() == Race.ELF) || (cid.getRace() == Race.HUMAN)) && (cid.getId() == CLASSES[i][1]))
 			{
 				int suffix;
 				final boolean item1 = st.hasQuestItems(CLASSES[i][6]);
@@ -220,7 +220,7 @@ public class ElvenHumanFighters2 extends AbstractNpcAI
 		}
 		
 		final ClassId cid = player.getClassId();
-		if ((cid.getRace() == PcRace.Elf) || (cid.getRace() == PcRace.Human))
+		if ((cid.getRace() == Race.ELF) || (cid.getRace() == Race.HUMAN))
 		{
 			switch (cid)
 			{

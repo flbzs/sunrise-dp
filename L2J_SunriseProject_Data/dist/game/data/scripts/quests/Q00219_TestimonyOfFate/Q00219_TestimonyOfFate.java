@@ -19,8 +19,8 @@
 package quests.Q00219_TestimonyOfFate;
 
 import l2r.gameserver.enums.CategoryType;
-import l2r.gameserver.enums.PcRace;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -409,7 +409,7 @@ public final class Q00219_TestimonyOfFate extends Quest
 		{
 			if (npc.getId() == MAGISTER_KAIRA)
 			{
-				if (player.getRace() == PcRace.DarkElf)
+				if (player.getRace() == Race.DARK_ELF)
 				{
 					if ((player.getLevel() >= MIN_LEVEL) && player.isInCategory(CategoryType.DELF_2ND_GROUP))
 					{
