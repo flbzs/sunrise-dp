@@ -2075,7 +2075,7 @@
 				<sub stat="rEvas" val="4" />
 				<mul stat="pDef" val="0.55" />
 				<mul stat="pAtkSpd" val="0.75" />
-				<mul stat="rCrit" val="-0.23" />
+				<mul stat="rCrit" val="0.77" />
 				<mul stat="mDef" val="0.2" />
 			</effect>
 		</for>
