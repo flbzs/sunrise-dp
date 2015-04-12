@@ -191,6 +191,7 @@ import handlers.itemhandlers.BlessedSpiritShot;
 import handlers.itemhandlers.Book;
 import handlers.itemhandlers.Bypass;
 import handlers.itemhandlers.Calculator;
+import handlers.itemhandlers.CharmOfCourage;
 import handlers.itemhandlers.ChristmasTree;
 import handlers.itemhandlers.Disguise;
 import handlers.itemhandlers.Elixir;
@@ -231,7 +232,6 @@ import handlers.skillhandlers.GiveReco;
 import handlers.skillhandlers.Manadam;
 import handlers.skillhandlers.Mdam;
 import handlers.skillhandlers.Pdam;
-import handlers.skillhandlers.Resurrect;
 import handlers.skillhandlers.ShiftTarget;
 import handlers.skillhandlers.Sow;
 import handlers.skillhandlers.TransformDispel;
@@ -501,6 +501,7 @@ public class MasterHandler
 			Book.class,
 			Bypass.class,
 			Calculator.class,
+			CharmOfCourage.class,
 			ChristmasTree.class,
 			Disguise.class,
 			Elixir.class,
@@ -547,7 +548,6 @@ public class MasterHandler
 			Manadam.class,
 			Mdam.class,
 			Pdam.class,
-			Resurrect.class,
 			ShiftTarget.class,
 			Sow.class,
 			TransformDispel.class,

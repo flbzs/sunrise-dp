@@ -640,13 +640,28 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21054" levels="1" name="Blessed Resurrection Ability">
-		<!-- Can use the ability of Blessed Resurrection. Reuse Delay 12 hours -->
+		<!-- Confirmed CT2.5 -->
+		<set name="castRange" val="400" />
+		<set name="effectPoint" val="1" />
+		<set name="effectRange" val="600" />
 		<set name="hitTime" val="3000" />
+		<set name="icon" val="BranchSys.icon.br_Uniform_Hat_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="43200000" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="CORPSE_PLAYER" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<cond>
+			<player canResurrect="true" />
+		</cond>
+		<for>
+			<effect name="Resurrection" noicon="1" val="0">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="21055" levels="1" name="Wind Walk">
 		<!-- Increases moving speed by 20 for 2 minutes. Reuse delay 18 minutes -->
@@ -1117,13 +1132,23 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="resurrection_special" />
+		<set name="effectPoint" val="673" />
 		<set name="hitTime" val="4000" />
+		<set name="icon" val="BranchSys.icon.br_comfortspirit_hat_a_i00" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="86400000" />
-		<set name="skillType" val="NOTDONE" />
 		<set name="staticReuse" val="true" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="ResurrectionSpecial" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="resurrection_special">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="21091" levels="1" name="Agathion Seal Cancel - Weaver">
 		<!-- Confirmed CT2.5 -->
@@ -1153,13 +1178,28 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21095" levels="1" name="Blessed Resurrection">
-		<!-- Can use the ability of Blessed Resurrection. Reuse Delay 12 hours. -->
+		<!-- Confirmed CT2.5 -->
+		<set name="castRange" val="400" />
+		<set name="coolTime" val="600" />
+		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="3000" />
+		<set name="icon" val="BranchSys.icon.br_comfortspirit_hat_a_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="43200000" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="CORPSE_PLAYER" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<cond>
+			<player canResurrect="true" />
+		</cond>
+		<for>
+			<effect name="Resurrection" noicon="1" val="0">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="21096" levels="1" name="Ability of Cool Watermelon">
 		<!-- For 30 minutes, increases critical rate by 30% and critical power by 35%. -->

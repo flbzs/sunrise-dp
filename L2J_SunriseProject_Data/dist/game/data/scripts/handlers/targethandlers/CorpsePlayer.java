@@ -27,8 +27,8 @@ import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.instance.L2PetInstance;
+import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.skills.L2Skill;
-import l2r.gameserver.model.skills.L2SkillType;
 import l2r.gameserver.model.skills.targets.L2TargetType;
 import l2r.gameserver.network.SystemMessageId;
 
@@ -77,7 +77,7 @@ public class CorpsePlayer implements ITargetTypeHandler
 			{
 				boolean condGood = true;
 				
-				if (skill.getSkillType() == L2SkillType.RESURRECT)
+				if (skill.hasEffectType(L2EffectType.RESURRECTION))
 				{
 					if (targetPlayer != null)
 					{

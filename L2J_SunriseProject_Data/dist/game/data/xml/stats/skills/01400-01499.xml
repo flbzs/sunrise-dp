@@ -346,7 +346,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="PhoenixBless" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="resurrection_special" />
+			<effect name="ResurrectionSpecial" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="resurrection_special">
+				<param power="100" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1411" levels="1" name="Mystic Immunity">

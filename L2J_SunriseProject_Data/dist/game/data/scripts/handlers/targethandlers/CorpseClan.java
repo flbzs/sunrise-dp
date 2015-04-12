@@ -31,7 +31,6 @@ import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.skills.L2Skill;
-import l2r.gameserver.model.skills.L2SkillType;
 import l2r.gameserver.model.skills.targets.L2TargetType;
 import l2r.gameserver.util.Util;
 
@@ -100,23 +99,15 @@ public class CorpseClan implements ITargetTypeHandler
 						continue;
 					}
 					
-					if (!onlyFirst && L2Skill.addSummon(activeChar, obj, radius, true))
-					{
-						targetList.add(obj.getSummon());
-					}
-					
 					if (!L2Skill.addCharacter(activeChar, obj, radius, true))
 					{
 						continue;
 					}
 					
-					if (skill.getSkillType() == L2SkillType.RESURRECT)
+					// check target is not in a active siege zone
+					if (obj.isInsideZone(ZoneIdType.SIEGE) && !obj.isInSiege())
 					{
-						// check target is not in a active siege zone
-						if (obj.isInsideZone(ZoneIdType.SIEGE) && !obj.isInSiege())
-						{
-							continue;
-						}
+						continue;
 					}
 					
 					if (onlyFirst)

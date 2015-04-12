@@ -955,7 +955,11 @@
 			<player landingZone="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="-1" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation has unlimited time -->
+			<effect name="Transformation" abnormalTime="-1" val="0" abnormalLvl="1" abnormalType="transform"> <!-- Transformation has unlimited time -->
+				<mul stat="reduceExpLostByPvp" val="0.1" />
+				<mul stat="reduceExpLostByMob" val="0.1" />
+				<mul stat="reduceExpLostByRaid" val="0.1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5983" levels="1" name="Aura Bird - Owl">
@@ -977,7 +981,11 @@
 			<player landingZone="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="-1" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation has unlimited time -->
+			<effect name="Transformation" abnormalTime="-1" val="0" abnormalLvl="1" abnormalType="transform"> <!-- Transformation has unlimited time -->
+				<mul stat="reduceExpLostByPvp" val="0.1" />
+				<mul stat="reduceExpLostByMob" val="0.1" />
+				<mul stat="reduceExpLostByRaid" val="0.1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5984" levels="1" name="Hand of Death">

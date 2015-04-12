@@ -371,9 +371,15 @@
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="100" />
-		<set name="skillType" val="RESURRECT" />
 		<set name="targetType" val="CORPSE_PLAYER" />
+		<cond>
+			<player canResurrect="true" />
+		</cond>
+		<for>
+			<effect name="Resurrection" noicon="1" val="0">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="2322" levels="1" name="Chest Key - For Events Only">
 		<!-- Confirmed CT2.5 -->
@@ -1493,9 +1499,15 @@
 		<set name="itemConsumeCount" val="1" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="100" />
-		<set name="skillType" val="RESURRECT" />
 		<set name="targetType" val="CORPSE_PLAYER" />
+		<cond>
+			<player canResurrect="true" />
+		</cond>
+		<for>
+			<effect name="Resurrection" noicon="1" val="0">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="2394" levels="1" name="Scroll of Battlefield Transformation">
 		<!-- Confirmed CT2.5 -->

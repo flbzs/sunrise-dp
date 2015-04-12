@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  *
  * This file is part of L2J DataPack.
  *
@@ -18,38 +18,59 @@
  */
 package handlers.effecthandlers;
 
-import l2r.gameserver.model.effects.EffectFlag;
+import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
+import l2r.gameserver.model.stats.Formulas;
+import l2r.gameserver.taskmanager.DecayTaskManager;
 
 /**
- * Charm Of Luck effect.
- * @author kerberos_20
+ * Resurrection effect implementation.
+ * @author Adry_85
  */
-public class CharmOfLuck extends L2Effect
+public final class Resurrection extends L2Effect
 {
-	public CharmOfLuck(Env env, EffectTemplate template)
+	private final int _power;
+	
+	public Resurrection(Env env, EffectTemplate template)
 	{
 		super(env, template);
-	}
-	
-	@Override
-	public int getEffectFlags()
-	{
-		return EffectFlag.CHARM_OF_LUCK.getMask();
+		
+		_power = template.getParameters().getInt("power", 0);
 	}
 	
 	@Override
 	public L2EffectType getEffectType()
 	{
-		return L2EffectType.CHARM_OF_LUCK;
+		return L2EffectType.RESURRECTION;
+	}
+	
+	@Override
+	public boolean isInstant()
+	{
+		return true;
 	}
 	
 	@Override
 	public boolean onStart()
 	{
-		return (getEffector() != null) && (getEffected() != null) && getEffected().isPlayer();
+		L2Character target = getEffected();
+		L2Character activeChar = getEffector();
+		
+		if (activeChar.isPlayer())
+		{
+			if (target.getActingPlayer() != null)
+			{
+				target.getActingPlayer().reviveRequest(activeChar.getActingPlayer(), getSkill(), target.isPet(), _power);
+			}
+		}
+		else
+		{
+			DecayTaskManager.getInstance().cancelDecayTask(target);
+			target.doRevive(Formulas.calculateSkillResurrectRestorePercent(_power, activeChar));
+		}
+		return true;
 	}
 }

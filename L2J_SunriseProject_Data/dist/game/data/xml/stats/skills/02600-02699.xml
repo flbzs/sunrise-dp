@@ -267,11 +267,19 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="resurrection_special" />
+		<set name="icon" val="icon.etc_beetle_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="13776" /> <!-- Structure Scarab -->
+		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1800000" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="ResurrectionSpecial" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="resurrection_special">
+				<param power="50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="2629" levels="1" name="Ancient Treasure Sack">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->

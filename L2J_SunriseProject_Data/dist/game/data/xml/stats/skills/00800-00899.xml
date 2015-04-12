@@ -777,6 +777,9 @@
 			<effect name="Transformation" abnormalTime="-1" val="0" abnormalLvl="1" abnormalType="transform"> <!-- Transformation has unlimited time -->
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
+				<mul stat="reduceExpLostByPvp" val="0.1" />
+				<mul stat="reduceExpLostByMob" val="0.1" />
+				<mul stat="reduceExpLostByRaid" val="0.1" />
 			</effect>
 		</for>
 	</skill>
@@ -800,6 +803,9 @@
 			<effect name="Transformation" abnormalTime="-1" val="0" abnormalLvl="1" abnormalType="transform"> <!-- Transformation has unlimited time -->
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
+				<mul stat="reduceExpLostByPvp" val="0.1" />
+				<mul stat="reduceExpLostByMob" val="0.1" />
+				<mul stat="reduceExpLostByRaid" val="0.1" />
 			</effect>
 		</for>
 	</skill>
@@ -823,6 +829,9 @@
 			<effect name="Transformation" abnormalTime="-1" val="0" abnormalLvl="1" abnormalType="transform"> <!-- Transformation has unlimited time -->
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
+				<mul stat="reduceExpLostByPvp" val="0.1" />
+				<mul stat="reduceExpLostByMob" val="0.1" />
+				<mul stat="reduceExpLostByRaid" val="0.1" />
 			</effect>
 		</for>
 	</skill>

@@ -1440,7 +1440,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="PhoenixBless" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="resurrection_special" />
+			<effect name="ResurrectionSpecial" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="resurrection_special">
+				<param power="100" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="439" levels="1" name="Shield of Revenge">

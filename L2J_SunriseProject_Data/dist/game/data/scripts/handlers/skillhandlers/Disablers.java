@@ -344,22 +344,24 @@ public class Disablers implements ISkillHandler
 						final L2Summon summon = summonOwner.getSummon();
 						if (summon != null)
 						{
-							// TODO: Retail confirmation for Soul of the Phoenix required.
-							if (summon.isPhoenixBlessed())
-							{
-								if (summon.isNoblesseBlessed())
-								{
-									summon.stopEffects(L2EffectType.NOBLESSE_BLESSING);
-								}
-							}
-							else if (summon.isNoblesseBlessed())
+							boolean deleteBuffs = true;
+							
+							if (summon.isNoblesseBlessedAffected())
 							{
 								summon.stopEffects(L2EffectType.NOBLESSE_BLESSING);
+								deleteBuffs = false;
 							}
-							else
+							if (summon.isResurrectSpecialAffected())
+							{
+								summon.stopEffects(L2EffectType.RESURRECTION_SPECIAL);
+								deleteBuffs = false;
+							}
+							
+							if (deleteBuffs)
 							{
 								summon.stopAllEffectsExceptThoseThatLastThroughDeath();
 							}
+							
 							summon.abortAttack();
 							summon.abortCast();
 							summon.unSummon(summonOwner);

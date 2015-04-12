@@ -723,11 +723,21 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="resurrection_special" />
+		<set name="effectPoint" val="1" />
+		<set name="icon" val="icon.skill_agathion_special" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="43200000" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="1509">
+			<player olympiad="false" />
+		</cond>
+		<for>
+			<effect name="ResurrectionSpecial" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="resurrection_special">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="23175" levels="1" name="Soul Stealth">
 		<!-- Hides for 5 seconds, then bestows the ability not to provoke preemptive attacks from monsters for 2 minutes. Decreases moving speed by 50% while the skill is in effect. Reuse delay is 12 hours. -->

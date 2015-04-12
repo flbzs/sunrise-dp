@@ -150,13 +150,14 @@
 		<table name="#maxCP"> 1035 1116 1116 </table>
 		<table name="#mpConsumeRate"> 1 0.95 0.95 </table>
 		<table name="#triggeredLevel"> 1 2 2 </table>
+		<table name="#expLost"> 0.3 0.3 0.6 </table>
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<add stat="maxCp" val="#maxCP" />
 			<mul stat="regCp" val="1.4" />
-			<!-- TODO: Missing PK drop penalty decrease -70, -70, -40 -->
+			<mul stat="reduceExpLostByPvp" val="#expLost" />
 			<mul stat="PhysicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="MagicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="DanceMpConsumeRate" val="#mpConsumeRate" />
@@ -168,13 +169,14 @@
 		<table name="#maxCP"> 1035 1116 1116 </table>
 		<table name="#mpConsumeRate"> 1 0.95 0.95 </table>
 		<table name="#triggeredLevel"> 1 2 2 </table>
+		<table name="#expLost"> 0.3 0.3 0.6 </table>
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<add stat="maxCp" val="#maxCP" />
 			<mul stat="regCp" val="1.4" />
-			<!-- TODO: Missing PK drop penalty decrease -70, -70, -40 -->
+			<mul stat="reduceExpLostByPvp" val="#expLost" />
 			<mul stat="PhysicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="MagicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="DanceMpConsumeRate" val="#mpConsumeRate" />
@@ -186,13 +188,14 @@
 		<table name="#maxCP"> 1035 1116 1116 </table>
 		<table name="#mpConsumeRate"> 1 0.95 0.95 </table>
 		<table name="#triggeredLevel"> 1 2 2 </table>
+		<table name="#expLost"> 0.3 0.3 0.6 </table>
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<add stat="maxCp" val="#maxCP" />
 			<mul stat="regCp" val="1.4" />
-			<!-- TODO: Missing PK drop penalty decrease -70, -70, -40 -->
+			<mul stat="reduceExpLostByPvp" val="#expLost" />
 			<mul stat="PhysicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="MagicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="DanceMpConsumeRate" val="#mpConsumeRate" />

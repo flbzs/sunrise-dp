@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  *
  * This file is part of L2J DataPack.
  *
@@ -18,52 +18,62 @@
  */
 package handlers.effecthandlers;
 
+import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.model.actor.instance.L2PetInstance;
 import l2r.gameserver.model.effects.EffectFlag;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
+import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.stats.Env;
-import l2r.gameserver.network.serverpackets.EtcStatusUpdate;
 
 /**
- * @author nBd
+ * Resurrection Special effect implementation.
+ * @author Zealar
  */
-public class CharmOfCourage extends L2Effect
+public final class ResurrectionSpecial extends L2Effect
 {
-	public CharmOfCourage(Env env, EffectTemplate template)
+	private final int _power;
+	
+	public ResurrectionSpecial(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		
+		_power = template.getParameters().getInt("power", 0);
 	}
 	
 	@Override
 	public L2EffectType getEffectType()
 	{
-		return L2EffectType.CHARMOFCOURAGE;
-	}
-	
-	@Override
-	public boolean onStart()
-	{
-		if (getEffected().isPlayer())
-		{
-			getEffected().broadcastPacket(new EtcStatusUpdate(getEffected().getActingPlayer()));
-			return true;
-		}
-		return false;
-	}
-	
-	@Override
-	public void onExit()
-	{
-		if (getEffected().isPlayer())
-		{
-			getEffected().broadcastPacket(new EtcStatusUpdate(getEffected().getActingPlayer()));
-		}
+		return L2EffectType.RESURRECTION_SPECIAL;
 	}
 	
 	@Override
 	public int getEffectFlags()
 	{
-		return EffectFlag.CHARM_OF_COURAGE.getMask();
+		return EffectFlag.RESURRECTION_SPECIAL.getMask();
+	}
+	
+	@Override
+	public void onExit()
+	{
+		if (!getEffected().isPlayer() && !getEffected().isPet())
+		{
+			return;
+		}
+		L2PcInstance caster = getEffector().getActingPlayer();
+		
+		L2Skill skill = getSkill();
+		
+		if (getEffected().isPlayer())
+		{
+			getEffected().getActingPlayer().reviveRequest(caster, skill, false, _power);
+			return;
+		}
+		if (getEffected().isPet())
+		{
+			L2PetInstance pet = (L2PetInstance) getEffected();
+			getEffected().getActingPlayer().reviveRequest(pet.getActingPlayer(), skill, true, _power);
+		}
 	}
 }

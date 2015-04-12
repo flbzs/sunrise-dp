@@ -640,13 +640,19 @@
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="100" />
 		<set name="reuseDelay" val="259200000" />
-		<set name="skillType" val="RESURRECT" />
 		<set name="targetType" val="CORPSE_PLAYER" />
 		<cond msgId="2292">
 			<player agathionId="16031" />
 		</cond>
+		<cond>
+			<player canResurrect="true" />
+		</cond>
+		<for>
+			<effect name="Resurrection" noicon="1" val="0">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="5542" levels="1" name="Little Devil Agathion Special Skill - Firecrackers">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -696,13 +702,19 @@
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
-		<set name="power" val="100" />
 		<set name="reuseDelay" val="259200000" />
-		<set name="skillType" val="RESURRECT" />
 		<set name="targetType" val="CORPSE_PLAYER" />
 		<cond msgId="2292">
 			<player agathionId="16032" />
 		</cond>
+		<cond>
+			<player canResurrect="true" />
+		</cond>
+		<for>
+			<effect name="Resurrection" noicon="1" val="0">
+				<param power="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="5546" levels="1" name="Alert">
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
