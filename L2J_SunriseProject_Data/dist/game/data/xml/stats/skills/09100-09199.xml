@@ -288,12 +288,16 @@
 	<skill id="9114" levels="1" name="Nevit's Voice">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17094" /> <!-- Nevit's Voice -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="10" />
 		<set name="reuseDelay" val="2000" />
-		<set name="skillType" val="GIVE_RECO" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="GiveRecommendation" noicon="1" val="0">
+				<param amount="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="9115" levels="1" name="Nevit's Hourglass - 1 hour">
 		<!-- Increases Nevit's blessing by 1 hour. -->

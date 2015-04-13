@@ -21,6 +21,7 @@ package quests.Q00426_QuestForFishingShot;
 import java.util.HashMap;
 import java.util.Map;
 
+import l2r.gameserver.enums.QuestSound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -394,12 +395,14 @@ public class Q00426_QuestForFishingShot extends Quest
 				{
 					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS_SPECIAL.get(npc.getId()).reward);
 				}
+				playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 			else
 			{
 				if (Rnd.get(1000) <= MOBS.get(npc.getId()).chance)
 				{
 					rewardItems(qs.getPlayer(), SWEET_FLUID, MOBS.get(npc.getId()).reward);
+					playSound(qs.getPlayer(), QuestSound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}

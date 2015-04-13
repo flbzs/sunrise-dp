@@ -199,7 +199,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 				{
 					if (chr != null)
 					{
-						chr.teleToLocation(TeleportWhereType.Town);
+						chr.teleToLocation(TeleportWhereType.TOWN);
 					}
 				}
 			}

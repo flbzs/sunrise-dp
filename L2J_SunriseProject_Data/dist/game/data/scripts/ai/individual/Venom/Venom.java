@@ -128,7 +128,7 @@ public final class Venom extends AbstractNpcAI
 		{
 			case TELEPORT_CUBE:
 			{
-				talker.teleToLocation(TeleportWhereType.Town);
+				talker.teleToLocation(TeleportWhereType.TOWN);
 				break;
 			}
 			case DUNGEON_KEEPER:

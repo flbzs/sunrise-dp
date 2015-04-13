@@ -556,7 +556,7 @@ public final class Beleth extends AbstractNpcAI
 							}
 							else if (charInside.isPlayer())
 							{
-								charInside.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(charInside, TeleportWhereType.Town));
+								charInside.teleToLocation(MapRegionManager.getInstance().getTeleToLocation(charInside, TeleportWhereType.TOWN));
 							}
 						}
 					}

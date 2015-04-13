@@ -1082,7 +1082,6 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<for>
-
 			<!-- 35 50 68 87 107 123 134 134 139 139 142 142 HP * 3 during 10 seconds -->
 			<effect count="3" name="DamOverTime" abnormalTime="3" val="#dot" abnormalVisualEffect="bleed" abnormalLvl="#abnormalLvls" abnormalType="bleeding" />
 			<effect name="ChanceSkillTrigger" abnormalTime="10" noicon="1" val="0" chanceType="ON_EXIT" triggeredId="5252" triggeredLevel="#triggeredLevel" />

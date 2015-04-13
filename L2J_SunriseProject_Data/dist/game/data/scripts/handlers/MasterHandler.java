@@ -228,11 +228,9 @@ import handlers.skillhandlers.ChainHeal;
 import handlers.skillhandlers.Continuous;
 import handlers.skillhandlers.Disablers;
 import handlers.skillhandlers.Dummy;
-import handlers.skillhandlers.GiveReco;
 import handlers.skillhandlers.Manadam;
 import handlers.skillhandlers.Mdam;
 import handlers.skillhandlers.Pdam;
-import handlers.skillhandlers.ShiftTarget;
 import handlers.skillhandlers.Sow;
 import handlers.skillhandlers.TransformDispel;
 import handlers.skillhandlers.Unlock;
@@ -544,11 +542,9 @@ public class MasterHandler
 			Continuous.class,
 			Disablers.class,
 			Dummy.class,
-			GiveReco.class,
 			Manadam.class,
 			Mdam.class,
 			Pdam.class,
-			ShiftTarget.class,
 			Sow.class,
 			TransformDispel.class,
 			Unlock.class,

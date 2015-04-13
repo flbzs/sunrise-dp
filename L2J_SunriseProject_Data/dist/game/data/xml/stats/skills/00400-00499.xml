@@ -2624,12 +2624,11 @@
 		<set name="affectRange" val="300" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="200" />
-		<set name="hitTime" val="2500" />
+		<set name="icon" val="icon.skill0489" />
 		<set name="magicLvl" val="40" />
 		<set name="mpConsume" val="53" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="5000" />
-		<set name="skillType" val="SHIFT_TARGET" />
 		<set name="targetType" val="PARTY_MEMBER" />
 		<set name="trait" val="DERANGEMENT" />
 		<cond>
@@ -2638,6 +2637,11 @@
 		<cond msgId="113" addName="1">
 			<using kind="CROSSBOW" />
 		</cond>
+		<for>
+			<effect name="TransferHate" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="490" levels="2" name="Fast Shot" enchantGroup1="1" enchantGroup2="1">
 		<!-- Confirmed CT2.5 -->

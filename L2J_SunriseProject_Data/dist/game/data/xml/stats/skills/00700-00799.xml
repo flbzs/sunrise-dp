@@ -1719,6 +1719,7 @@
 		<set name="chargeConsume" val="2" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="1200" />
+		<set name="icon" val="icon.skill0776" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="81" />
@@ -1726,10 +1727,8 @@
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="overHit" val="true" />
-		<set name="power" val="4500" />
 		<set name="reuseDelay" val="15000" />
 		<set name="basicProperty" val="CON" />
-		<set name="skillType" val="CHARGEDAM" />
 		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
@@ -1739,6 +1738,10 @@
 			</and>
 		</cond>
 		<for>
+			<effect name="EnergyAttack" noicon="1" val="0">
+				<param power="4500" />
+				<param criticalChance="20" />
+			</effect>
 			<effect count="20" name="DamOverTime" abnormalTime="1" val="80" abnormalLvl="10" abnormalType="force_of_destruction" effectPower="70" abnormalVisualEffect="poison" />
 		</for>
 	</skill>

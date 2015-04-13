@@ -622,7 +622,6 @@
 			<mul stat="pAtk" val="0.2" />
 			<mul stat="mAtkSpd" val="0.2" />
 			<mul stat="mAtk" val="0.2" />
-
 		</for>
 	</skill>
 	<skill id="3359" levels="1" name="Transform Native">

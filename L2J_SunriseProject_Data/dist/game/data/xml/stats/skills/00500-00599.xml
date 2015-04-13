@@ -1925,18 +1925,23 @@
 		<set name="coolTime" val="720" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1080" />
+		<set name="icon" val="icon.skill_transform_s_attack" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
-		<set name="skillType" val="CHARGEDAM" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
 			<player Charges="2" />
 		</cond>
+		<for>
+			<effect name="EnergyAttack"  noicon="1" val="0">
+				<param power="#power" />
+				<param criticalChance="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="569" levels="4" name="Attack Storm">
 		<!-- Confirmed CT2.5 -->
@@ -1950,17 +1955,22 @@
 		<set name="chargeConsume" val="3" />
 		<set name="effectRange" val="1000" />
 		<set name="hitTime" val="2500" />
+		<set name="icon" val="icon.skill_transform_s_attack" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="15000" />
-		<set name="skillType" val="CHARGEDAM" />
 		<set name="targetType" val="AREA" />
 		<cond msgId="113" addName="1">
 			<player Charges="3" />
 		</cond>
+		<for>
+			<effect name="EnergyAttack"  noicon="1" val="0">
+				<param power="#power" />
+				<param criticalChance="10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="570" levels="4" name="Attack Rage">
 		<!-- Confirmed CT2.5 -->

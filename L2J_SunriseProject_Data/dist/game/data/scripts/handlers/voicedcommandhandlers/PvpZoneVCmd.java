@@ -108,7 +108,7 @@ public class PvpZoneVCmd implements IVoicedCommandHandler
 				activeChar.sendMessage("You will be send to nearest town!");
 				activeChar.getInventory().destroyItemByItemId("root", 57, 500, activeChar, activeChar.getTarget());
 				activeChar.broadcastUserInfo();
-				Location loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.Town);
+				Location loc = MapRegionManager.getInstance().getTeleToLocation(activeChar, TeleportWhereType.TOWN);
 				activeChar.setInstanceId(0);
 				activeChar.teleToLocation(loc, true);
 			}

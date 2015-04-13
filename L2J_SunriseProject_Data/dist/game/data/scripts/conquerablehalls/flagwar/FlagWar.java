@@ -735,7 +735,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 				{
 					if (pc != null)
 					{
-						pc.teleToLocation(TeleportWhereType.Town);
+						pc.teleToLocation(TeleportWhereType.TOWN);
 					}
 				}
 			}

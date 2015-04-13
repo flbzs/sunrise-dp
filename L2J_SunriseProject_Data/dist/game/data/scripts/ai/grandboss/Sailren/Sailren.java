@@ -137,7 +137,7 @@ public final class Sailren extends AbstractNpcAI
 			}
 			case "teleportOut":
 			{
-				player.teleToLocation(TeleportWhereType.Town);
+				player.teleToLocation(TeleportWhereType.TOWN);
 				break;
 			}
 			case "SPAWN_VELOCIRAPTOR":
@@ -229,7 +229,7 @@ public final class Sailren extends AbstractNpcAI
 					{
 						if (charInside.isPlayer())
 						{
-							charInside.teleToLocation(TeleportWhereType.Town);
+							charInside.teleToLocation(TeleportWhereType.TOWN);
 						}
 						else if (charInside.isNpc())
 						{
