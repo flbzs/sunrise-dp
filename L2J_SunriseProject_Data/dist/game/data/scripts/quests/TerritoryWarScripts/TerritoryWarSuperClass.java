@@ -103,7 +103,7 @@ public class TerritoryWarSuperClass extends Quest
 				GlobalVariablesManager.getInstance().set(TerritoryWarManager.GLOBAL_VARIABLE, cal.getTimeInMillis());
 			}
 			TerritoryWarManager.getInstance().setTWStartTimeInMillis(cal.getTimeInMillis());
-			_log.info(getClass().getSimpleName() + ": Siege date: " + cal.getTime());
+			_log.info(getClass().getSimpleName() + ": " + cal.getTime());
 		}
 	}
 	

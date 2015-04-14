@@ -33,7 +33,7 @@ import ai.npc.AbstractNpcAI;
  */
 public class Parade extends AbstractNpcAI
 {
-	private static final boolean DEBUG = true;
+	private static final boolean DEBUG = false;
 	protected final int[] ACTORS =
 	{
 		32381,
