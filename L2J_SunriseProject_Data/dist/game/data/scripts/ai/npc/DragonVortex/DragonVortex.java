@@ -168,9 +168,4 @@ public final class DragonVortex extends AbstractNpcAI
 		}
 		return false;
 	}
-	
-	public static void main(String[] args)
-	{
-		new DragonVortex();
-	}
 }
