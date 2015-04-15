@@ -626,6 +626,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="316" />
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="21600" val="0" abnormalLvl="1" abnormalType="transform" />
 		</for>
@@ -644,6 +647,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="317" />
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="21600" val="0" abnormalLvl="1" abnormalType="transform" />
 		</for>
@@ -662,6 +668,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="318" />
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="21600" val="0" abnormalLvl="1" abnormalType="transform" />
 		</for>

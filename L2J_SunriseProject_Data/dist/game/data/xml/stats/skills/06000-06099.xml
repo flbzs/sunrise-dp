@@ -280,8 +280,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="121" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -296,8 +296,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="122" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="transform" />

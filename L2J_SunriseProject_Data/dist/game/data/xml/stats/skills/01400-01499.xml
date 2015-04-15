@@ -654,6 +654,7 @@
 	<skill id="1419" levels="1" name="Volcano">
 		<set name="affectLimit" val="15-25" />
 		<set name="affectRange" val="180" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="900" />
 		<set name="effectId" val="5130" />
 		<set name="element" val="0" /> <!-- Fire -->
@@ -673,9 +674,6 @@
 		<set name="skillType" val="SIGNET_CASTTIME" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect self="1" count="9" name="SignetMDam" abnormalTime="2" val="0" />
 		</for>
@@ -683,6 +681,7 @@
 	<skill id="1420" levels="1" name="Cyclone">
 		<set name="affectLimit" val="15-25" />
 		<set name="affectRange" val="180" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="900" />
 		<set name="effectId" val="5132" />
 		<set name="element" val="2" /> <!-- Wind -->
@@ -702,9 +701,6 @@
 		<set name="skillType" val="SIGNET_CASTTIME" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect self="1" count="9" name="SignetMDam" abnormalTime="2" val="0" />
 		</for>
@@ -712,6 +708,7 @@
 	<skill id="1421" levels="1" name="Raging Waves">
 		<set name="affectLimit" val="15-25" />
 		<set name="affectRange" val="180" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="900" />
 		<set name="effectId" val="5131" />
 		<set name="element" val="1" /> <!-- Water -->
@@ -731,15 +728,13 @@
 		<set name="skillType" val="SIGNET_CASTTIME" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect self="1" count="9" name="SignetMDam" abnormalTime="2" val="0" />
 		</for>
 	</skill>
 	<skill id="1422" levels="1" name="Day of Doom">
 		<set name="affectRange" val="180" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="900" />
 		<set name="effectId" val="5145" />
 		<set name="hitTime" val="5000" />
@@ -756,9 +751,6 @@
 		<set name="skillType" val="SIGNET" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect count="5" name="Signet" abnormalTime="3" val="0" />
 		</for>
@@ -766,6 +758,7 @@
 	<skill id="1423" levels="1" name="Gehenna">
 		<set name="affectLimit" val="15-25" />
 		<set name="affectRange" val="180" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="900" />
 		<set name="effectId" val="5133" />
 		<set name="element" val="5" /> <!-- Dark -->
@@ -785,15 +778,13 @@
 		<set name="skillType" val="SIGNET_CASTTIME" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect self="1" count="9" name="SignetMDam" abnormalTime="2" val="0" />
 		</for>
 	</skill>
 	<skill id="1424" levels="1" name="Anti-Summoning Field">
 		<set name="affectRange" val="180" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="900" />
 		<set name="effectId" val="5134" />
 		<set name="hitTime" val="5000" />
@@ -811,15 +802,13 @@
 		<set name="skillType" val="SIGNET" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect count="6" name="SignetAntiSummon" abnormalTime="5" val="0" />
 		</for>
 	</skill>
 	<skill id="1425" levels="1" name="Purification Field">
 		<set name="affectRange" val="180" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -833,9 +822,6 @@
 		<set name="reuseDelay" val="1200000" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="CLAN" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect name="CancelDebuff" noicon="1" val="0" effectPower="100" />
 		</for>
@@ -843,6 +829,7 @@
 	<skill id="1426" levels="1" name="Miracle">
 		<set name="affectRange" val="900" />
 		<set name="aggroPoints" val="100" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="5000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -853,9 +840,6 @@
 		<set name="reuseDelay" val="3600000" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="CLAN" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect name="HealPercent" noicon="1" val="100" />
 		</for>
@@ -866,6 +850,7 @@
 		<set name="abnormalType" val="invincibility" />
 		<set name="affectRange" val="900" />
 		<set name="affectLimit" val="5-12" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="5000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -878,15 +863,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="PARTY_CLAN" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect name="Invincible" abnormalTime="30" val="0" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
 		</for>
 	</skill>
 	<skill id="1428" levels="1" name="Mass Recharge">
 		<set name="affectRange" val="1000" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="5000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -897,9 +880,6 @@
 		<set name="reuseDelay" val="3600000" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="PARTY" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect name="ManaHealByLevel" noicon="1" val="1500" />
 		</for>

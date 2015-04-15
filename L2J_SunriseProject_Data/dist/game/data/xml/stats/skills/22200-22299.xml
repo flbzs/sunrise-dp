@@ -5,6 +5,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -13,8 +14,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="4" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -25,6 +26,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -33,8 +35,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="5" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -45,6 +47,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -53,8 +56,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="6" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -65,6 +68,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -73,8 +77,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="7" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -85,6 +89,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -93,8 +98,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="305" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -105,6 +110,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -113,8 +119,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="306" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -125,6 +131,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -133,8 +140,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="307" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -145,6 +152,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -153,8 +161,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="308" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -165,6 +173,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -173,8 +182,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="309" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -185,6 +194,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -193,8 +203,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="310" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -205,6 +215,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -213,8 +224,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="311" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -222,6 +233,7 @@
 	</skill>
 	<skill id="22211" levels="1" name="Blessed Scroll of Escape">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
@@ -234,24 +246,28 @@
 	</skill>
 	<skill id="22213" levels="1" name="Mysterious Scroll - Prophecy of Wind">
 		<!-- "For 60 minutes, receives help from a great spirit to increase Max HP by 20%, rate of critical attack by 20%, rate of Prominent Damage through magic damage by 20%, P. Atk. by 10%, P. Def. by 20%, Atk. Spd. by 20%, M. Atk. by 20%, M. Def. by 20%, Casting Spd. by 20%, and resistance to de-buff by 10%. Decreases Speed by 20%. Bestows the ability to recover as HP 5% of the standard short-range physical damage inflicted on an enemy." -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22214" levels="1" name="MP Recovery Potion">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22215" levels="1" name="Energy Replenishing Herb Tea">
 		<!-- "For 30 minute(s), energy is replenished when Exp. is acquired through hunting." -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22216" levels="1" name="Transformation Scroll - Anakim">
 		<!-- Transformed into Anakim. -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="abnormalTime" val="1800" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
@@ -259,48 +275,56 @@
 	</skill>
 	<skill id="22217" levels="1" name="Super Healthy Juice (HP)">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22218" levels="1" name="Super Healthy Juice (HP)">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22219" levels="1" name="Super Healthy Juice (CP)">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22220" levels="1" name="Super Healthy Juice (CP)">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22221" levels="1" name="Energy Replenishing Beverage">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22222" levels="1" name="Energy Replenishing Beverage">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22223" levels="1" name="Potion of Energy Maintenance">
 		<!-- Energy is maintained for 30 minutes. -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22224" levels="1" name="Potion of Energy Maintenance">
 		<!-- Energy is maintained for 30 minutes. -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
@@ -592,6 +616,7 @@
 	</skill>
 	<skill id="22270" levels="1" name="Letter Collector's Gift">
 		<!-- "For 2 hours, increases Atk. Spd. by 15%, Casting Spd. by 15%, and Speed by 20." -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="abnormalTime" val="7200" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
@@ -599,6 +624,7 @@
 	</skill>
 	<skill id="22271" levels="1" name="Maestro's Key">
 		<!-- High Five Skill -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="500" />
@@ -619,6 +645,7 @@
 	<skill id="22272" levels="1" name="Beginner Adventurer's Treasure Sack">
 		<!-- High Five Skill -->
 		<table name="#extractableItems">312,1,4.76;167,1,4.76;220,1,4.76;178,1,4.76;221,1,4.76;123,1,4.76;156,1,4.76;291,1,4.76;166,1,4.76;274,1,4.76;21731,1,4.76;318,1,4.76;21738,1,4.76;21732,1,4.76;294,1,4.76;88,1,4.76;90,1,4.76;21735,1,4.76;172,1,4.76;279,1,4.76;169,1,4.8</table>
+		<set name="blockedInOlympiad" val="true" />
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -637,6 +664,7 @@
 	<skill id="22273" levels="1" name="Experienced Adventurer's Treasure Sack">
 		<!-- High Five Skill -->
 		<table name="#extractableItems">160,1,4.16;298,1,4.16;72,1,4.16;193,1,4.16;192,1,4.16;281,1,4.16;7887,1,4.16;226,1,4.16;191,1,4.16;71,1,4.16;263,1,4.16;78,1,2.5;300,1,2.5;284,1,2.5;142,1,2.5;267,1,2.5;229,1,2.5;148,1,2.5;243,1,2.5;7892,1,2.5;91,1,1.36;80,1,1.36;235,1,1.36;269,1,1.36;288,1,1.36;7884,1,1.36;2504,1,1.36;150,1,1.36;7889,1,1.36;6364,1,0.45;6365,1,0.45;6366,1,0.45;6367,1,0.45;6368,1,0.45;6369,1,0.45;6370,1,0.45;6371,1,0.45;6372,1,0.45;7575,1,0.45</table>
+		<set name="blockedInOlympiad" val="true" />
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -655,6 +683,7 @@
 	<skill id="22274" levels="1" name="Great Adventurer's Treasure Sack">
 		<!-- High Five Skill -->
 		<table name="#extractableItems">9442,1,3.33;9443,1,3.33;9444,1,3.33;9445,1,3.33;9446,1,3.33;9447,1,3.33;9448,1,3.33;9449,1,3.33;9450,1,3.33;9376,1,3.33;9380,1,3.33;9384,1,3.33;10253,1,3.33;10252,1,3.33;10215,1,2.3;10216,1,2.3;10217,1,2.3;10218,1,2.3;10219,1,2.3;10220,1,2.3;10221,1,2.3;10222,1,2.3;10223,1,2.3;10224,1,2.3;10225,1,2.3;10226,1,2.3;13457,1,1.33;13458,1,1.33;13459,1,1.33;13460,1,1.33;13461,1,1.33;13462,1,1.33;13463,1,1.33;13464,1,1.33;13465,1,1.33;13466,1,1.33;13467,1,1.33;13468,1,1.33;13469,1,1.33;13470,1,1.33</table>
+		<set name="blockedInOlympiad" val="true" />
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -680,6 +709,7 @@
 		<table name="#extractableItems">
 			9914,1,0.87;9915,1,0.87;9916,1,0.87;9917,1,0.87;9918,1,0.87;9919,1,0.87;9920,1,0.87;9921,1,0.87;9922,1,0.87;9923,1,0.87;9924,1,0.87;9925,1,0.87;9926,1,0.87;9927,1,0.87;9928,1,0.87;9929,1,0.87;9930,1,0.87;9931,1,0.87;9932,1,0.87;9933,1,0.87;9934,1,0.87;9935,1,0.87;9936,1,0.87;9937,1,0.87;9938,1,0.87;9939,1,0.87;9940,1,0.87;9941,1,0.87;9942,1,0.87;9943,1,0.87;9944,1,0.87;9945,1,0.87;9946,1,0.87;9947,1,0.87;9948,1,0.87;9949,1,0.87;9950,1,0.87;9951,1,0.87;9952,1,0.87;9953,1,0.87;9954,1,0.87;9955,1,0.87;9956,1,0.87;9957,1,0.87;9958,1,0.87;9959,1,0.87;9960,1,0.87;9961,1,0.87;9962,1,0.87;9963,1,0.87;9964,1,0.87;9965,1,0.87;9966,1,0.87;10141,1,0.87;10142,1,0.87;10158,1,0.87;10416,1,0.87;10417,1,0.87;10418,1,0.87;10419,1,0.87;10420,1,0.87;10423,1,0.87;10424,1,0.87;10518,1,0.87;10519,1,0.87;10533,1,0.87;10534,1,0.87;10535,1,0.87;10536,1,0.87;10537,1,0.87;10538,1,0.87;10539,1,0.87;10540,1,0.87;10541,1,0.87;10542,1,0.87;10543,1,0.87;12815,1,0.87;12816,1,0.87;12817,1,0.87;12818,1,0.87;14604,1,0.87;14605,1,0.87;14810,1,0.87;14811,1,0.87;14812,1,0.87;14813,1,0.87;14814,1,0.87
 		</table>
+		<set name="blockedInOlympiad" val="true" />
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -847,6 +877,7 @@
 		</cond>
 	</skill>
 	<skill id="22294" levels="1" name="Totem of Body">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
@@ -859,6 +890,7 @@
 		</for>
 	</skill>
 	<skill id="22295" levels="1" name="Totem of Spirit">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
@@ -871,6 +903,7 @@
 		</for>
 	</skill>
 	<skill id="22296" levels="1" name="Totem of Bravery">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="despawnDelay" val="1800000" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="magicLvl" val="1" />
@@ -884,6 +917,7 @@
 		</for>
 	</skill>
 	<skill id="22297" levels="1" name="Totem of Fortitude">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
@@ -897,24 +931,26 @@
 	</skill>
 	<skill id="22298" levels="1" name="Refined Red Dragon Blood">
 		<!-- There is no available description. -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21903" />
 		<set name="targetType" val="PARTY"/>
 		<set name="operateType" val="A1" />
 		<for>
-			<effect name="Heal" val="1000" /> <!-- TODO: Custom. -->
+			<effect name="Heal" val="4500" />
 		</for>
 	</skill>
 	<skill id="22299" levels="1" name="Refined Blue Dragon Blood">
 		<!-- There is no available description. -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21904" />
 		<set name="targetType" val="PARTY"/>
 		<set name="operateType" val="A1" />
 		<for>
-			<effect name="Heal" val="1000" /> <!-- TODO: Custom. -->
+			<effect name="Heal" val="3500" />
 		</for>
 	</skill>
 </list>

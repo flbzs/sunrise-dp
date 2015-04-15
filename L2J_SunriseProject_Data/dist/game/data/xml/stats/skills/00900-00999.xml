@@ -666,6 +666,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="219" />
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="MySummonKill" noicon="1" abnormalTime="1" val="0"/>
 			<effect name="Transformation" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="transform">
@@ -692,6 +695,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="221" />
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="MySummonKill" noicon="1" abnormalTime="1" val="0"/>
 			<effect name="Transformation" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="transform">
@@ -718,6 +724,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="220" />
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="MySummonKill" noicon="1" abnormalTime="1" val="0"/>
 			<effect name="Transformation" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="transform">

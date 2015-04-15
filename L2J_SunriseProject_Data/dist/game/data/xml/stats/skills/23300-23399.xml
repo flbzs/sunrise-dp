@@ -61,6 +61,7 @@
 	</skill>
 	<skill id="23308" levels="1" name="Totem's Energy - Body">
 		<!-- Increases HP Recovery Bonus by 30% and decreases damage from the topography by 80% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="abnormalTime" val="7" />
 		<set name="affectRange" val="200" />
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
@@ -75,6 +76,7 @@
 	</skill>
 	<skill id="23309" levels="1" name="Totem's Energy - Spirit">
 		<!-- Increases MP Recovery Bonus by 30% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="abnormalTime" val="7" />
 		<set name="affectRange" val="200" />
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
@@ -88,6 +90,7 @@
 	</skill>
 	<skill id="23310" levels="1" name="Totem's Energy - Courage">
 		<!-- Increases P. Def. by 15% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="abnormalTime" val="7" />
 		<set name="affectRange" val="200" />
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
@@ -101,6 +104,7 @@
 	</skill>
 	<skill id="23311" levels="1" name="Totem's Energy - Fortitude">
 		<!-- Increases M. Def. by 25% through the mysterious totem's energy. The energy disappears when the totem becomes out of range. -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="abnormalTime" val="7" />
 		<set name="affectRange" val="200" />
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
@@ -112,19 +116,19 @@
 			</effect>
 		</for>
 	</skill>
-    <skill id="23312" levels="1" name="Fall of the Dragon">
-       <!-- Nevit's gift to honor those warriors who caused the evil dragon's fall. Increases Nevit's blessing by 3 hour(s). -->
-       <set name="targetType" val="ONE" />
-       <set name="skillType" val="BUFF" />
-       <set name="canBeDispeled" val="false" />
-       <set name="stayAfterDeath" val="true" />
-       <set name="operateType" val="A1" />
-       <for>
-           <effect name="Buff" abnormalTime="7210" val="0" abnormalLvl="26" abnormalType="vp_keep" abnormal="vitality">
-               <mul stat="vitalityConsumeRate" val="0" />
-           </effect>
-       </for>
-    </skill> 
+	<skill id="23312" levels="1" name="Fall of the Dragon">
+		<!-- Nevit's gift to honor those warriors who caused the evil dragon's fall. Increases Nevit's blessing by 3 hour(s). -->
+		<set name="targetType" val="ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="canBeDispeled" val="false" />
+		<set name="stayAfterDeath" val="true" />
+		<set name="operateType" val="A1" />
+		<for>
+			<effect name="Buff" abnormalTime="7210" val="0" abnormalLvl="26" abnormalType="vp_keep" abnormal="vitality">
+				<mul stat="vitalityConsumeRate" val="0" />
+			</effect>
+		</for>
+	</skill> 
 	<skill id="23313" levels="5" name="Action Prohibit Immunity">
 		<!-- Increases resistance to action-inhibiting attacks by 100%. -->
 		<set name="operateType" val="P" />
@@ -167,6 +171,7 @@
 		<set name="abnormalLvl" val="8" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="bleeding" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="80" />
 		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
@@ -192,6 +197,7 @@
 		<set name="abnormalLvl" val="8" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="bleeding" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="80" />
 		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
@@ -217,6 +223,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="turn_flee" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="80" />
 		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
@@ -243,6 +250,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="pd_down" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="80" />
 		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
@@ -270,6 +278,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="pd_down" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="80" />
 		<set name="effectRange" val="400" />
 		<set name="isDebuff" val="true" />
@@ -297,6 +306,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="raid_weapon" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="67" />

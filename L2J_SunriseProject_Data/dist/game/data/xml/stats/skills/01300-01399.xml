@@ -2461,6 +2461,7 @@
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="hero_buff" />
 		<set name="affectRange" val="1000" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="aggroPoints" val="676" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -2486,6 +2487,7 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="hero_debuff" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="affectRange" val="1000" />
 		<set name="canBeDispeled" val="false" />
 		<set name="canBeReflected" val="false" />
@@ -2524,6 +2526,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="hero_debuff" />
 		<set name="affectRange" val="1000" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="canBeDispeled" val="false" />
 		<set name="canBeReflected" val="false" />
 		<set name="hitTime" val="2500" />

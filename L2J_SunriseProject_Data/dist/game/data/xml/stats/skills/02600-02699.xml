@@ -312,8 +312,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="111" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -328,8 +328,8 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="112" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -994,6 +994,9 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="121" />
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="transform" />
 		</for>
@@ -1009,6 +1012,9 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="122" />
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="transform" />
 		</for>
@@ -1031,6 +1037,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1055,6 +1064,9 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1077,6 +1089,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1101,6 +1116,9 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1123,6 +1141,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1147,6 +1168,9 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1169,6 +1193,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1193,6 +1220,9 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1215,6 +1245,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1239,6 +1272,9 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1261,6 +1297,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="81" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1285,6 +1324,9 @@
 				<player siegeSide="81" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1307,6 +1349,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1331,6 +1376,9 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1353,6 +1401,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1377,6 +1428,9 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1399,6 +1453,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1423,6 +1480,9 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1445,6 +1505,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1469,6 +1532,9 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1491,6 +1557,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1515,6 +1584,9 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1537,6 +1609,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="82" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1561,6 +1636,9 @@
 				<player siegeSide="82" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1583,6 +1661,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="83" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
@@ -1607,6 +1688,9 @@
 				<player siegeSide="83" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1630,6 +1714,9 @@
 				<player siegeSide="83" />
 			</and>
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
@@ -1652,6 +1739,9 @@
 				<player siegeZone="147" />
 				<player siegeSide="83" />
 			</and>
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->

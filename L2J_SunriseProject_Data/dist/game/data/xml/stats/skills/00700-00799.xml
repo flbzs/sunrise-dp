@@ -1784,6 +1784,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="259" />
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="transform" />
 		</for>

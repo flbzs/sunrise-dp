@@ -1250,6 +1250,9 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="303" />
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="7" val="0" abnormalLvl="1" abnormalType="transform" />
 		</for>

@@ -88,6 +88,7 @@
 	</skill>
 	<skill id="8509" levels="1" name="High Angel Circlet">
 		<!-- Confirmed CT2.5 -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="200" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="1" />
@@ -139,6 +140,7 @@
 	</skill>
 	<skill id="8515" levels="1" name="Release Seal on Agathion - Ball Trapping Gnosian">
 		<!-- High Five Skill -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
@@ -151,6 +153,7 @@
 	</skill>
 	<skill id="8516" levels="1" name="Release Seal on Agathion - Ball Trapping Orodriel">
 		<!-- High Five Skill -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />
@@ -163,6 +166,7 @@
 	</skill>
 	<skill id="8517" levels="1" name="Release Seal on Agathion - Penalty Kick">
 		<!-- High Five Skill -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="85" />

@@ -19,12 +19,10 @@
 package handlers.effecthandlers;
 
 import l2r.gameserver.data.xml.impl.TransformData;
-import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
-import l2r.gameserver.network.SystemMessageId;
 
 /**
  * Transformation effect.
@@ -32,9 +30,20 @@ import l2r.gameserver.network.SystemMessageId;
  */
 public class Transformation extends L2Effect
 {
+	private int _id;
+	
 	public Transformation(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		
+		try
+		{
+			_id = template.getParameters().getInt("id", -1);
+		}
+		catch (Exception e)
+		{
+			_id = -1;
+		}
 	}
 	
 	public Transformation(Env env, L2Effect effect)
@@ -62,33 +71,14 @@ public class Transformation extends L2Effect
 			return false;
 		}
 		
-		L2PcInstance trg = getEffected().getActingPlayer();
-		if ((trg == null) || trg.isAlikeDead() || trg.isCursedWeaponEquipped())
+		if (_id > 0)
 		{
-			return false;
+			TransformData.getInstance().transformPlayer(_id, getEffected().getActingPlayer());
 		}
-		else if (trg.isSitting())
+		else
 		{
-			trg.sendPacket(SystemMessageId.CANNOT_TRANSFORM_WHILE_SITTING);
-			return false;
+			TransformData.getInstance().transformPlayer(getSkill().getTransformId(), getEffected().getActingPlayer());
 		}
-		else if (trg.isTransformed() || trg.isInStance())
-		{
-			getEffected().sendPacket(SystemMessageId.YOU_ALREADY_POLYMORPHED_AND_CANNOT_POLYMORPH_AGAIN);
-			return false;
-		}
-		else if (trg.isInWater())
-		{
-			getEffected().sendPacket(SystemMessageId.YOU_CANNOT_POLYMORPH_INTO_THE_DESIRED_FORM_IN_WATER);
-			return false;
-		}
-		else if (trg.isFlyingMounted() || trg.isMounted())
-		{
-			getEffected().sendPacket(SystemMessageId.YOU_CANNOT_POLYMORPH_WHILE_RIDING_A_PET);
-			return false;
-		}
-		
-		TransformData.getInstance().transformPlayer(getSkill().getTransformId(), trg);
 		return true;
 	}
 }

@@ -40,6 +40,7 @@
 		<set name="abnormalLvl" val="0" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="big_head" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
@@ -54,6 +55,7 @@
 		</for>
 	</skill>
 	<skill id="23005" levels="1" name="Gold Majo Agathion Special Skill - Power of Blessed Resurrection">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="600" />
 		<set name="hitTime" val="3000" />
@@ -74,6 +76,7 @@
 		</for>
 	</skill>
 	<skill id="23006" levels="1" name="Black Majo Agathion Special Skill - Power of Blessed Return">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="200" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
@@ -93,6 +96,7 @@
 		<set name="abnormalLvl" val="0" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="big_head" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
@@ -107,6 +111,7 @@
 		</for>
 	</skill>
 	<skill id="23008" levels="1" name="Plaipitak Agathion Special Skill - Power of Blessed Return">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="200" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
@@ -123,6 +128,7 @@
 		</cond>
 	</skill>
 	<skill id="23009" levels="1" name="Plaipitak Agathion Special Skill - Power of Blessed Resurrection">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="600" />
 		<set name="hitTime" val="3000" />
@@ -173,6 +179,7 @@
 		<set name="abnormalLvl" val="0" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="big_head" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
@@ -187,6 +194,7 @@
 		</for>
 	</skill>
 	<skill id="23014" levels="1" name="Bamboo Panda Agathion Special Skill - Power of Blessed Resurrection">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="600" />
 		<set name="hitTime" val="3000" />
@@ -207,6 +215,7 @@
 		</for>
 	</skill>
 	<skill id="23015" levels="1" name="Sexy Panda Agathion Special Skill - Power of Blessed Return">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="200" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
@@ -226,6 +235,7 @@
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="vp_up" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -246,6 +256,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="br_event_buf1" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="skillType" val="BUFF" />
@@ -270,6 +281,7 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="br_event_buf1" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -296,6 +308,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="br_event_buf2" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="500" />
 		<set name="effectRange" val="550" />
@@ -310,6 +323,7 @@
 		</for>
 	</skill>
 	<skill id="23020" levels="1" name="Challenge the Turkey">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="affectRange" val="500" />
 		<set name="coolTime" val="500" />
 		<set name="hitTime" val="8000" />
@@ -320,6 +334,7 @@
 	</skill>
 	<skill id="23021" levels="3" name="Turkey's Attack Scissors">
 		<!-- Confirmed CT2.5 -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
@@ -330,6 +345,7 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="br_event_buf3" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="canBeDispeled" val="false" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -341,6 +357,7 @@
 		</for>
 	</skill>
 	<skill id="23023" levels="1" name="Reset Consecutive Wins">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="NOTDONE" />
@@ -351,6 +368,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="vp_up" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -413,6 +431,7 @@
 		</cond>
 	</skill>
 	<skill id="23030" levels="1" name="White Maneki Neko Agathion Special Skill - Blessed Resurrection Ability">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="600" />
 		<set name="hitTime" val="3000" />
@@ -433,6 +452,7 @@
 		</for>
 	</skill>
 	<skill id="23031" levels="1" name="Black Maneki Neko Agathion Special Skill - Ability of Blessed Return">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="200" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
@@ -453,6 +473,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="vp_up" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -483,6 +504,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="armor_unholy" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -504,6 +526,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="vp_up" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -534,6 +557,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="speed_up" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -551,6 +575,7 @@
 		</for>
 	</skill>
 	<skill id="23038" levels="1" name="Pegasus Agathion Special Skill - Blessed Return Ability">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="200" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
@@ -598,6 +623,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="15" />
 		<set name="abnormalType" val="life_force_others" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -620,6 +646,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="dmg_shield" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -641,6 +668,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="mp_regen_up" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -770,6 +798,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="critical_dmg_up" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -790,6 +819,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="magic_critical_up" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -810,6 +840,7 @@
 		<set name="abnormalLvl" val="0" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="big_head" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
@@ -824,6 +855,7 @@
 		</for>
 	</skill>
 	<skill id="23060" levels="1" name="Great Sumo Match Agathion Special Skill - Ability of Firework">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
@@ -833,6 +865,7 @@
 		</cond>
 	</skill>
 	<skill id="23061" levels="1" name="Button-Eyed Bear Doll Agathion Special Skill - Ability of Blessed Return">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="200" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
@@ -849,6 +882,7 @@
 		</cond>
 	</skill>
 	<skill id="23062" levels="1" name="Button-Eyed Bear Doll Agathion Special Skill - Ability of Blessed Resurrection">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="600" />
 		<set name="hitTime" val="3000" />
@@ -873,6 +907,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="vp_up" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -894,6 +929,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="vp_up" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -915,6 +951,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="big_head" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -935,6 +972,7 @@
 		<table name="#extractableItems">
 			57,2009,99;57,20090,0.99;57,200900,0.099;57,2009000,0.0099
 		</table>
+		<set name="blockedInOlympiad" val="true" />
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -968,6 +1006,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="resist_derangement" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
@@ -990,6 +1029,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="speed_down" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="skillType" val="NOTDONE" />
@@ -1000,6 +1040,7 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="br_event_buf1" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="skillType" val="NOTDONE" />
@@ -1010,6 +1051,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="8" />
 		<set name="abnormalType" val="br_event_buf1" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="skillType" val="NOTDONE" />
@@ -1020,6 +1062,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="70" />
 		<set name="abnormalType" val="br_event_buf2" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="affectRange" val="600" />
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
@@ -1035,6 +1078,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="2" />
 		<set name="abnormalType" val="br_event_buf3" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="skillType" val="NOTDONE" />
@@ -1045,6 +1089,7 @@
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="4" />
 		<set name="abnormalType" val="br_event_buf3" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="skillType" val="NOTDONE" />
@@ -1052,6 +1097,7 @@
 	</skill>
 	<skill id="23075" levels="1" name="Flame Shock">
 		<!-- Loses the target. -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="NOTDONE" />
@@ -1071,6 +1117,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="br_event_buf5" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1086,6 +1133,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="br_event_buf5" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="300000" />
@@ -1110,6 +1158,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="multi_buff" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
@@ -1133,6 +1182,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="multi_buff" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
@@ -1156,6 +1206,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="multi_buff" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
@@ -1179,6 +1230,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="multi_buff" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
@@ -1202,6 +1254,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="multi_buff" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
@@ -1225,6 +1278,7 @@
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="multi_buff" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="3600000" />
@@ -1239,6 +1293,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="big_head" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />
 		<set name="skillType" val="NOTDONE" />
@@ -1246,6 +1301,7 @@
 		<set name="trait" val="ETC" />
 	</skill>
 	<skill id="23092" levels="1" name="Jack O'Lantern Card">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
@@ -1253,6 +1309,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23093" levels="1" name="Rotten Jack O'Lantern Card">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="coolTime" val="500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
@@ -1260,36 +1317,42 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23094" levels="1" name="Jack O'Lantern Card - Confirm Skill">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23095" levels="1" name="Rotten Jack O'Lantern Card - Confirm Skill">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23096" levels="1" name="Halloween Defeat">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23097" levels="1" name="First Consecutive Win">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23098" levels="1" name="2nd Consecutive Win">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23099" levels="1" name="Third Consecutive Win">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="NOTDONE" />

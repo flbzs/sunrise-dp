@@ -1809,6 +1809,7 @@
 		</for>
 	</skill>
 	<skill id="454" levels="1" name="Symbol of Defense">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="affectRange" val="180" />
 		<set name="effectId" val="5123" />
 		<set name="hitTime" val="5000" />
@@ -1824,14 +1825,12 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="SELF" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect count="24" name="Signet" abnormalTime="5" val="0" />
 		</for>
 	</skill>
 	<skill id="455" levels="1" name="Symbol of Noise">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="affectRange" val="180" />
 		<set name="castRange" val="900" />
 		<set name="effectId" val="5124" />
@@ -1849,14 +1848,12 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="GROUND" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect count="6" name="SignetNoise" abnormalTime="5" val="0" />
 		</for>
 	</skill>
 	<skill id="456" levels="1" name="Symbol of Resistance">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="affectRange" val="180" />
 		<set name="effectId" val="5125" />
 		<set name="hitTime" val="5000" />
@@ -1872,14 +1869,12 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="SELF" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect count="24" name="Signet" abnormalTime="5" val="0" />
 		</for>
 	</skill>
 	<skill id="457" levels="1" name="Symbol of Honor">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="affectRange" val="180" />
 		<set name="effectId" val="5126" />
 		<set name="hitTime" val="5000" />
@@ -1895,14 +1890,12 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="SELF" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect count="24" name="Signet" abnormalTime="5" val="0" />
 		</for>
 	</skill>
 	<skill id="458" levels="1" name="Symbol of Energy">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="affectRange" val="180" />
 		<set name="effectId" val="5127" />
 		<set name="hitTime" val="5000" />
@@ -1918,14 +1911,12 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="SELF" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect count="24" name="Signet" abnormalTime="5" val="0" />
 		</for>
 	</skill>
 	<skill id="459" levels="1" name="Symbol of the Sniper">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="affectRange" val="180" />
 		<set name="effectId" val="5128" />
 		<set name="hitTime" val="5000" />
@@ -1941,14 +1932,12 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="SELF" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect count="24" name="Signet" abnormalTime="5" val="0" />
 		</for>
 	</skill>
 	<skill id="460" levels="1" name="Symbol of the Assassin">
+		<set name="blockedInOlympiad" val="true" />
 		<set name="affectRange" val="180" />
 		<set name="effectId" val="5129" />
 		<set name="hitTime" val="5000" />
@@ -1964,9 +1953,6 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="SELF" />
-		<cond msgId="1509">
-			<player olympiad="false" />
-		</cond>
 		<for>
 			<effect count="24" name="Signet" abnormalTime="5" val="0" />
 		</for>

@@ -1309,6 +1309,9 @@
 		<cond msgId="2195">
 			<player souls="20" />
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="transform"> <!-- Transformation lasts 5 minutes -->
 				<mul stat="pAtk" val="2" /> <!-- pAtk +100% -->
@@ -1364,6 +1367,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1373,8 +1377,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="201" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1385,6 +1389,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1394,11 +1399,11 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="202" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform"> 	</effect>
+			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="543" levels="1" name="Transform Grail Apostle">
@@ -1406,6 +1411,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1415,8 +1421,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="203" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1427,6 +1433,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1436,8 +1443,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="204" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1448,6 +1455,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1457,8 +1465,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="205" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1469,6 +1477,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1478,8 +1487,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="206" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1490,6 +1499,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1499,8 +1509,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="207" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1511,6 +1521,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1520,8 +1531,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="208" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1532,6 +1543,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1541,8 +1553,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="209" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1553,6 +1565,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1562,8 +1575,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="210" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1574,6 +1587,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1583,8 +1597,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="211" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1595,6 +1609,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1604,8 +1619,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="212" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1616,6 +1631,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1625,8 +1641,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="213" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1637,6 +1653,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1646,8 +1663,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="214" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1658,6 +1675,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1667,8 +1685,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="215" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1679,6 +1697,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1688,8 +1707,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="216" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1700,6 +1719,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1709,8 +1729,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="217" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
@@ -1721,6 +1741,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
 		<set name="abnormalType" val="transform" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="mpConsume" val="31" />
@@ -1730,8 +1751,8 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<set name="transformId" val="218" />
-		<cond msgId="1509">
-			<player olympiad="false" />
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />

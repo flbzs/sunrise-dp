@@ -2,18 +2,21 @@
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/skills.xsd">
 	<skill id="6700" levels="1" name="Ball Trapping Orodriel Agathion Cute Trick">
 		<!-- You can see the summoned spirit's cute tricks. -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6701" levels="1" name="Penalty Kick Agathion Cute Trick">
 		<!-- You can see the summoned spirit's cute tricks. -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6702" levels="1" name="Blessing of Cheers">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
@@ -37,6 +40,7 @@
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="stun" />
 		<set name="affectRange" val="150" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="mpConsume" val="78" />
 		<set name="coolTime" val="800" />
 		<set name="hitTime" val="1000" />
@@ -78,6 +82,7 @@
 	</skill>
 	<skill id="6707" levels="1" name="Self-destruction">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
@@ -95,6 +100,7 @@
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="stun" />
 		<set name="affectRange" val="150" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="mpConsume" val="78" />
 		<set name="coolTime" val="800" />
 		<set name="hitTime" val="1000" />
@@ -120,6 +126,7 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="attack_time_down" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="aggroPoints" val="100" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
@@ -145,6 +152,7 @@
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="pa_up" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="aggroPoints" val="100" />
 		<set name="hitTime" val="1800" />
 		<set name="magicLvl" val="#magicLvl" />
@@ -165,6 +173,7 @@
 		<set name="abnormalTime" val="600" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -181,6 +190,7 @@
 		<set name="abnormalTime" val="600" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -197,6 +207,7 @@
 		<set name="abnormalTime" val="600" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -213,6 +224,7 @@
 		<set name="abnormalTime" val="600" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -236,6 +248,7 @@
 		<set name="abnormalTime" val="600" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -252,6 +265,7 @@
 		<set name="abnormalTime" val="600" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -268,6 +282,7 @@
 		<set name="abnormalTime" val="600" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -284,6 +299,7 @@
 		<set name="abnormalTime" val="600" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -300,6 +316,7 @@
 		<set name="abnormalTime" val="600" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -316,6 +333,7 @@
 		<set name="abnormalTime" val="1200" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -332,6 +350,7 @@
 		<set name="abnormalTime" val="15" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -347,6 +366,7 @@
 		<set name="abnormalTime" val="15" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -358,6 +378,7 @@
 	</skill>
 	<skill id="6726" levels="1" name="Bless the Blood">
 		<!-- High Five Skill -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="isTriggeredSkill" val="true" />
 		<set name="operateType" val="A1" />
@@ -373,6 +394,7 @@
 		<set name="abnormalTime" val="1200" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="operateType" val="A2" />
@@ -399,6 +421,7 @@
 	</skill>
 	<skill id="6729" levels="1" name="Resist Holy of Elcadia">
 		<!-- High Five Skill -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="abnormalTime" val="600" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
@@ -415,6 +438,7 @@
 	</skill>
 	<skill id="6730" levels="1" name="Greater Battle Heal of Elcadia">
 		<!-- High Five Skill -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="2000" />
@@ -520,6 +544,7 @@
 	</skill>
 	<skill id="6742" levels="1" name="Presentation - Behemoth Object Channeling">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
@@ -530,6 +555,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="bleeding" />
+		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="1500" />
 		<set name="effectRange" val="2000" />
 		<set name="hitTime" val="2000" />
@@ -1237,120 +1263,140 @@
 	</skill>
 	<skill id="6780" levels="1" name="Presentation - Portal Ray Combined Light Maintenance">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6781" levels="1" name="Presentation - Red Portal Ray">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6782" levels="1" name="Presentation - Blue Portal Ray">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6783" levels="1" name="Presentation - Portal 2_boom_up">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6784" levels="1" name="Presentation - Eris's Suffering">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6785" levels="1" name="Presentation - Dialogue with Etis 1">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6786" levels="1" name="Presentation - Etis Transformation Effect">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6787" levels="1" name="Presentation - Etis Pre-Transformation">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6788" levels="1" name="Presentation - Etis Post-Transformation">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6789" levels="1" name="Presentation - Etis's Defeat">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6790" levels="1" name="Presentation - Etis Kneeling">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6791" levels="1" name="Presentation - Dialogue with Elcadia 1">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6792" levels="1" name="Presentation - Dialogue with Elcadia 2">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6793" levels="1" name="Presentation - Dialogue with Elcadia 3">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6794" levels="1" name="Presentation - Elcadia Casting 1">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6795" levels="1" name="Presentation - Elcadia Casting 2">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6796" levels="1" name="Presentation - Meteor Effect">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6797" levels="1" name="Presentation - Eris Scatter Effect">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6798" levels="1" name="Presentation - Etis Summon Effect">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6799" levels="1" name="Presentation - Portal 2_boom_down">
 		<!-- none -->
+		<set name="blockedInOlympiad" val="true" />
 		<set name="operateType" val="P" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />

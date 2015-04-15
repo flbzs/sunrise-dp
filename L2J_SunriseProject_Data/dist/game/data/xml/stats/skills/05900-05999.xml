@@ -954,6 +954,9 @@
 		<cond msgId="2721">
 			<player landingZone="true" />
 		</cond>
+		<cond>
+			<player canTransform="true" />
+		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="-1" val="0" abnormalLvl="1" abnormalType="transform"> <!-- Transformation has unlimited time -->
 				<mul stat="reduceExpLostByPvp" val="0.1" />
@@ -979,6 +982,9 @@
 		<set name="transformId" val="9" />
 		<cond msgId="2721">
 			<player landingZone="true" />
+		</cond>
+		<cond>
+			<player canTransform="true" />
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="-1" val="0" abnormalLvl="1" abnormalType="transform"> <!-- Transformation has unlimited time -->
