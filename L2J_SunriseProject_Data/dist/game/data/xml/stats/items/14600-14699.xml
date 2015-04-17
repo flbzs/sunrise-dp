@@ -14,7 +14,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8387-1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 			<add stat="darkRes" val="12" />
 			<enchant stat="mDef" val="0" />
@@ -38,7 +38,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 		</for>
 	</item>
 	<item id="14602" type="Armor" name="Ancient Cloak">
@@ -59,7 +59,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 		</for>
 	</item>
 	<item id="14603" type="EtcItem" name="Sealed Ancient Cloak">
@@ -72,7 +72,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 		</for>
 	</item>
 	<item id="14604" type="Armor" name="Red Talisman - Territory Guardian">
@@ -159,7 +159,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 		</for>
 	</item>
 	<item id="14609" type="Armor" name="Ancient Cloak">
@@ -177,7 +177,7 @@
 			<player cloakStatus="1" />
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 		</for>
 	</item>
 	<item id="14610" type="Armor" name="Ancient Cloak: Robe exclusive">
@@ -199,7 +199,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 		</for>
 	</item>
 	<item id="14611" type="Armor" name="Rudolph's Nose">
@@ -1057,7 +1057,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8348-1" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 			<add stat="waterRes" val="8" />
 			<enchant stat="mDef" val="0" />
@@ -1077,7 +1077,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8349-1" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 			<add stat="holyRes" val="8" />
 			<enchant stat="mDef" val="0" />
@@ -1097,7 +1097,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8350-1" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 			<add stat="windRes" val="8" />
 			<enchant stat="mDef" val="0" />
@@ -1117,7 +1117,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8351-1" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 			<add stat="darkRes" val="8" />
 			<enchant stat="mDef" val="0" />
@@ -1137,7 +1137,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8352-1" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 			<add stat="earthRes" val="8" />
 			<enchant stat="mDef" val="0" />
@@ -1157,7 +1157,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8353-1" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 			<add stat="waterRes" val="8" />
 			<enchant stat="mDef" val="0" />
@@ -1177,7 +1177,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8354-1" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 			<add stat="fireRes" val="8" />
 			<enchant stat="mDef" val="0" />
@@ -1197,7 +1197,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8355-1" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 			<add stat="fireRes" val="8" />
 			<enchant stat="mDef" val="0" />
@@ -1217,7 +1217,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8356-1" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 			<add stat="windRes" val="8" />
 			<enchant stat="mDef" val="0" />

@@ -1445,7 +1445,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 		</for>
 	</item>
 	<item id="13687" type="Armor" name="Knight's Cloak">
@@ -1468,7 +1468,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 			<add stat="darkRes" val="30" />
 		</for>
 	</item>
@@ -1494,7 +1494,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 			<add stat="darkRes" val="30" />
 		</for>
 	</item>
@@ -1520,7 +1520,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 			<add stat="darkRes" val="30" />
 		</for>
 	</item>
@@ -1545,7 +1545,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 			<add stat="darkRes" val="30" />
 		</for>
 	</item>

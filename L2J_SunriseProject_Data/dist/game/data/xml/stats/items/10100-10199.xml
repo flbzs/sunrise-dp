@@ -198,7 +198,7 @@
 		</cond>
 		<for>
 			<sub stat="rEvas" val="8" />
-			<add stat="pDef" val="15" />
+			<add order="0" stat="pDef" val="15" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -219,7 +219,7 @@
 		</cond>
 		<for>
 			<sub stat="rEvas" val="8" />
-			<add stat="pDef" val="15" />
+			<add order="0" stat="pDef" val="15" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -240,7 +240,7 @@
 		</cond>
 		<for>
 			<sub stat="rEvas" val="8" />
-			<add stat="pDef" val="13" />
+			<add order="0" stat="pDef" val="13" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -258,7 +258,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="mDef" val="24" />
+			<add order="0" stat="mDef" val="24" />
 		</for>
 	</item>
 	<item id="10123" type="Armor" name="Necklace of Devotion">
@@ -275,7 +275,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="mDef" val="32" />
+			<add order="0" stat="mDef" val="32" />
 		</for>
 	</item>
 	<item id="10124" type="Armor" name="Ring of Devotion">
@@ -292,7 +292,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="mDef" val="16" />
+			<add order="0" stat="mDef" val="16" />
 		</for>
 	</item>
 	<item id="10125" type="Weapon" name="Shadow Item - War Axe">
@@ -343,7 +343,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -364,7 +364,7 @@
 			<player categoryType="WEAPON_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -539,7 +539,7 @@
 		<set name="duration" val="250" />
 		<set name="useSkillDisTime" val="2" />
 		<for>
-			<add stat="mDef" val="24" />
+			<add order="0" stat="mDef" val="24" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -963,7 +963,7 @@
 			<player categoryType="BUFF_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -993,7 +993,7 @@
 		<set name="price" val="12185000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 			<add stat="darkRes" val="30" />
 			<enchant stat="mDef" val="0" />

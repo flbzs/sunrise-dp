@@ -75,7 +75,7 @@
 		<set name="item_skill" val="3562-1" />
 		<set name="time" val="4320" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -95,7 +95,7 @@
 		<set name="item_skill" val="3562-1" />
 		<set name="time" val="10080" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -115,7 +115,7 @@
 		<set name="item_skill" val="3562-1" />
 		<set name="time" val="21600" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -135,7 +135,7 @@
 		<set name="item_skill" val="3559-1" />
 		<set name="time" val="4320" />
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -155,7 +155,7 @@
 		<set name="item_skill" val="3559-1" />
 		<set name="time" val="10080" />
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -175,7 +175,7 @@
 		<set name="item_skill" val="3559-1" />
 		<set name="time" val="21600" />
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 			<enchant stat="mDef" val="0" />
 		</for>

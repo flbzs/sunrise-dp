@@ -1298,7 +1298,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="272" />
+			<add order="0" stat="pDef" val="272" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1318,7 +1318,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="204" />
+			<add order="0" stat="pDef" val="204" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1341,7 +1341,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="136" />
+			<add order="0" stat="pDef" val="136" />
 			<add stat="maxMp" val="661" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1365,7 +1365,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="263" />
+			<add order="0" stat="pDef" val="263" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1385,7 +1385,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="197" />
+			<add order="0" stat="pDef" val="197" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1408,7 +1408,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="132" />
+			<add order="0" stat="pDef" val="132" />
 			<add stat="maxMp" val="649" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1432,7 +1432,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="238" />
+			<add order="0" stat="pDef" val="238" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1452,7 +1452,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="178" />
+			<add order="0" stat="pDef" val="178" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1475,7 +1475,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="119" />
+			<add order="0" stat="pDef" val="119" />
 			<add stat="maxMp" val="614" />
 			<enchant stat="pDef" val="0" />
 		</for>

@@ -504,7 +504,7 @@
 		<set name="weight" val="150" />
 		<set name="price" val="6840" />
 		<for>
-			<add stat="mDef" val="19" />
+			<add order="0" stat="mDef" val="19" />
 		</for>
 	</item>
 	<item id="846" type="Armor" name="Coral Earring">
@@ -516,7 +516,7 @@
 		<set name="weight" val="150" />
 		<set name="price" val="12300" />
 		<for>
-			<add stat="mDef" val="21" />
+			<add order="0" stat="mDef" val="21" />
 		</for>
 	</item>
 	<item id="847" type="Armor" name="Red Crescent Earring">
@@ -531,7 +531,7 @@
 		<set name="price" val="20700" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="24" />
+			<add order="0" stat="mDef" val="24" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -547,7 +547,7 @@
 		<set name="price" val="32800" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="27" />
+			<add order="0" stat="mDef" val="27" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -563,7 +563,7 @@
 		<set name="price" val="49400" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="30" />
+			<add order="0" stat="mDef" val="30" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -579,7 +579,7 @@
 		<set name="price" val="71900" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="34" />
+			<add order="0" stat="mDef" val="34" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -595,7 +595,7 @@
 		<set name="price" val="93300" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="36" />
+			<add order="0" stat="mDef" val="36" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -611,7 +611,7 @@
 		<set name="price" val="119300" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="39" />
+			<add order="0" stat="mDef" val="39" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -627,7 +627,7 @@
 		<set name="price" val="150500" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -643,7 +643,7 @@
 		<set name="price" val="226600" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="45" />
+			<add order="0" stat="mDef" val="45" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -659,7 +659,7 @@
 		<set name="price" val="325800" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -675,7 +675,7 @@
 		<set name="price" val="465900" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="51" />
+			<add order="0" stat="mDef" val="51" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -691,7 +691,7 @@
 		<set name="price" val="325800" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -707,7 +707,7 @@
 		<set name="price" val="3270000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -724,7 +724,7 @@
 		<set name="price" val="465900" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="51" />
+			<add order="0" stat="mDef" val="51" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -740,7 +740,7 @@
 		<set name="price" val="711000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="54" />
+			<add order="0" stat="mDef" val="54" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -756,7 +756,7 @@
 		<set name="price" val="711000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="54" />
+			<add order="0" stat="mDef" val="54" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -772,7 +772,7 @@
 		<set name="price" val="1498000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -789,7 +789,7 @@
 		<set name="price" val="465900" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="51" />
+			<add order="0" stat="mDef" val="51" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -805,7 +805,7 @@
 		<set name="price" val="711000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="54" />
+			<add order="0" stat="mDef" val="54" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -821,7 +821,7 @@
 		<set name="price" val="465900" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="51" />
+			<add order="0" stat="mDef" val="51" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -837,7 +837,7 @@
 		<set name="price" val="711000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="54" />
+			<add order="0" stat="mDef" val="54" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -853,7 +853,7 @@
 		<set name="price" val="711000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="54" />
+			<add order="0" stat="mDef" val="54" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -869,7 +869,7 @@
 		<set name="price" val="1498000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="60" />
+			<add order="0" stat="mDef" val="60" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -885,7 +885,7 @@
 		<set name="price" val="465900" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="51" />
+			<add order="0" stat="mDef" val="51" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -901,7 +901,7 @@
 		<set name="price" val="711000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="54" />
+			<add order="0" stat="mDef" val="54" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -917,7 +917,7 @@
 		<set name="price" val="1005000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="60" />
+			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="20" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -934,7 +934,7 @@
 		<set name="price" val="1498000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="60" />
+			<add order="0" stat="mDef" val="60" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -950,7 +950,7 @@
 		<set name="price" val="465900" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="51" />
+			<add order="0" stat="mDef" val="51" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -966,7 +966,7 @@
 		<set name="price" val="465900" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="51" />
+			<add order="0" stat="mDef" val="51" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -979,7 +979,7 @@
 		<set name="weight" val="150" />
 		<set name="price" val="420" />
 		<for>
-			<add stat="mDef" val="9" />
+			<add order="0" stat="mDef" val="9" />
 		</for>
 	</item>
 	<item id="876" type="Armor" name="Ring of Anguish">
@@ -991,7 +991,7 @@
 		<set name="weight" val="150" />
 		<set name="price" val="1800" />
 		<for>
-			<add stat="mDef" val="11" />
+			<add order="0" stat="mDef" val="11" />
 		</for>
 	</item>
 	<item id="877" type="Armor" name="Ring of Wisdom">
@@ -1003,7 +1003,7 @@
 		<set name="weight" val="150" />
 		<set name="price" val="4560" />
 		<for>
-			<add stat="mDef" val="12" />
+			<add order="0" stat="mDef" val="12" />
 		</for>
 	</item>
 	<item id="878" type="Armor" name="Blue Coral Ring">
@@ -1015,7 +1015,7 @@
 		<set name="weight" val="150" />
 		<set name="price" val="8200" />
 		<for>
-			<add stat="mDef" val="14" />
+			<add order="0" stat="mDef" val="14" />
 		</for>
 	</item>
 	<item id="879" type="Armor" name="Enchanted Ring">
@@ -1030,7 +1030,7 @@
 		<set name="price" val="21800" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="18" />
+			<add order="0" stat="mDef" val="18" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1046,7 +1046,7 @@
 		<set name="price" val="33000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="20" />
+			<add order="0" stat="mDef" val="20" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1062,7 +1062,7 @@
 		<set name="price" val="47900" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="22" />
+			<add order="0" stat="mDef" val="22" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1078,7 +1078,7 @@
 		<set name="price" val="62200" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="24" />
+			<add order="0" stat="mDef" val="24" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1094,7 +1094,7 @@
 		<set name="price" val="79500" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="26" />
+			<add order="0" stat="mDef" val="26" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1110,7 +1110,7 @@
 		<set name="price" val="100300" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="28" />
+			<add order="0" stat="mDef" val="28" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1126,7 +1126,7 @@
 		<set name="price" val="151100" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="30" />
+			<add order="0" stat="mDef" val="30" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1142,7 +1142,7 @@
 		<set name="price" val="217200" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="32" />
+			<add order="0" stat="mDef" val="32" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1158,7 +1158,7 @@
 		<set name="price" val="310600" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="34" />
+			<add order="0" stat="mDef" val="34" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1174,7 +1174,7 @@
 		<set name="price" val="217200" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="32" />
+			<add order="0" stat="mDef" val="32" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1190,7 +1190,7 @@
 		<set name="price" val="2180000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -1207,7 +1207,7 @@
 		<set name="price" val="13800" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="16" />
+			<add order="0" stat="mDef" val="16" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1223,7 +1223,7 @@
 		<set name="price" val="474000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="36" />
+			<add order="0" stat="mDef" val="36" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1239,7 +1239,7 @@
 		<set name="price" val="474000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="36" />
+			<add order="0" stat="mDef" val="36" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1255,7 +1255,7 @@
 		<set name="price" val="999000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -1272,7 +1272,7 @@
 		<set name="price" val="310600" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="34" />
+			<add order="0" stat="mDef" val="34" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1288,7 +1288,7 @@
 		<set name="price" val="474000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="36" />
+			<add order="0" stat="mDef" val="36" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1304,7 +1304,7 @@
 		<set name="price" val="310600" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="34" />
+			<add order="0" stat="mDef" val="34" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1320,7 +1320,7 @@
 		<set name="price" val="474000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="36" />
+			<add order="0" stat="mDef" val="36" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1336,7 +1336,7 @@
 		<set name="price" val="474000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="36" />
+			<add order="0" stat="mDef" val="36" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1352,7 +1352,7 @@
 		<set name="price" val="999000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="40" />
+			<add order="0" stat="mDef" val="40" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>

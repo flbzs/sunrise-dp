@@ -16,7 +16,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="55" />
+			<add order="0" stat="pDef" val="55" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -36,7 +36,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="55" />
+			<add order="0" stat="pDef" val="55" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -77,7 +77,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="83" />
+			<add order="0" stat="pDef" val="83" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -98,7 +98,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="193" />
+			<add order="0" stat="pDef" val="193" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -120,7 +120,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="128" />
+			<add order="0" stat="pDef" val="128" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -141,7 +141,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="55" />
+			<add order="0" stat="pDef" val="55" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -162,7 +162,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="55" />
+			<add order="0" stat="pDef" val="55" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -205,7 +205,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="83" />
+			<add order="0" stat="pDef" val="83" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -227,7 +227,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="205" />
+			<add order="0" stat="pDef" val="205" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -243,8 +243,8 @@
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="14" />
-			<add stat="pDef" val="171" />
+			<add order="0" stat="mDef" val="14" />
+			<add order="0" stat="pDef" val="171" />
 		</for>
 	</item>
 	<item id="11512" type="Armor" name="Dynasty Gaiters">
@@ -265,7 +265,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="141" />
+			<add order="0" stat="pDef" val="141" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -286,7 +286,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -307,7 +307,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -325,7 +325,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3866-1" />
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -344,7 +344,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3796-1" />
 		<for>
-			<add stat="pDef" val="106" />
+			<add order="0" stat="pDef" val="106" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -363,7 +363,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3795-1" />
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -384,7 +384,7 @@
 			<player categoryType="DAGGER_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -405,7 +405,7 @@
 			<player categoryType="BOW_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -429,7 +429,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -453,7 +453,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -474,7 +474,7 @@
 			<player categoryType="BUFF_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -495,7 +495,7 @@
 			<player categoryType="SUMMON_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -513,7 +513,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3797-1" />
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -531,7 +531,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3798-1" />
 		<for>
-			<add stat="pDef" val="92" />
+			<add order="0" stat="pDef" val="92" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -552,7 +552,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -574,7 +574,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="226" />
+			<add order="0" stat="pDef" val="226" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -598,7 +598,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="226" />
+			<add order="0" stat="pDef" val="226" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -622,7 +622,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="226" />
+			<add order="0" stat="pDef" val="226" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -646,7 +646,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="226" />
+			<add order="0" stat="pDef" val="226" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -670,7 +670,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="226" />
+			<add order="0" stat="pDef" val="226" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -713,7 +713,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -735,7 +735,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="113" />
+			<add order="0" stat="pDef" val="113" />
 			<add stat="maxMp" val="592" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -760,7 +760,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="113" />
+			<add order="0" stat="pDef" val="113" />
 			<add stat="maxMp" val="592" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -785,7 +785,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="113" />
+			<add order="0" stat="pDef" val="113" />
 			<add stat="maxMp" val="592" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -810,7 +810,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="113" />
+			<add order="0" stat="pDef" val="113" />
 			<add stat="maxMp" val="592" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -835,7 +835,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="113" />
+			<add order="0" stat="pDef" val="113" />
 			<add stat="maxMp" val="592" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -857,7 +857,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="92" />
+			<add order="0" stat="pDef" val="92" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -876,7 +876,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3805-1" />
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -897,7 +897,7 @@
 			<player categoryType="DAGGER_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -918,7 +918,7 @@
 			<player categoryType="BOW_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -939,7 +939,7 @@
 			<player categoryType="FORCE_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -960,7 +960,7 @@
 			<player categoryType="WEAPON_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -981,7 +981,7 @@
 			<player categoryType="BUFF_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1002,7 +1002,7 @@
 			<player categoryType="SUMMON_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1024,7 +1024,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="113" />
+			<add order="0" stat="pDef" val="113" />
 			<add stat="maxMp" val="592" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1049,7 +1049,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="113" />
+			<add order="0" stat="pDef" val="113" />
 			<add stat="maxMp" val="592" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1074,7 +1074,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="113" />
+			<add order="0" stat="pDef" val="113" />
 			<add stat="maxMp" val="592" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1099,7 +1099,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="113" />
+			<add order="0" stat="pDef" val="113" />
 			<add stat="maxMp" val="592" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1124,7 +1124,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="113" />
+			<add order="0" stat="pDef" val="113" />
 			<add stat="maxMp" val="592" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1147,7 +1147,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="226" />
+			<add order="0" stat="pDef" val="226" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1171,7 +1171,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="226" />
+			<add order="0" stat="pDef" val="226" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1195,7 +1195,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="226" />
+			<add order="0" stat="pDef" val="226" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1219,7 +1219,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="226" />
+			<add order="0" stat="pDef" val="226" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1243,7 +1243,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="226" />
+			<add order="0" stat="pDef" val="226" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1264,7 +1264,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="92" />
+			<add order="0" stat="pDef" val="92" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1286,7 +1286,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="71" />
+			<add order="0" stat="pDef" val="71" />
 			<add stat="maxMp" val="370" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1308,7 +1308,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="134" />
+			<add order="0" stat="pDef" val="134" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1328,7 +1328,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1348,7 +1348,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1365,7 +1365,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1383,7 +1383,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="100" />
+			<add order="0" stat="pDef" val="100" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1401,7 +1401,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="161" />
+			<add order="0" stat="pDef" val="161" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1418,7 +1418,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1435,7 +1435,7 @@
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="92" />
+			<add order="0" stat="pDef" val="92" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1455,7 +1455,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1476,7 +1476,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="214" />
+			<add order="0" stat="pDef" val="214" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1517,7 +1517,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1537,7 +1537,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="92" />
+			<add order="0" stat="pDef" val="92" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1558,7 +1558,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="107" />
+			<add order="0" stat="pDef" val="107" />
 			<add stat="maxMp" val="592" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1579,7 +1579,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="92" />
+			<add order="0" stat="pDef" val="92" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1600,7 +1600,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="67" />
+			<add order="0" stat="pDef" val="67" />
 			<add stat="maxMp" val="370" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1618,7 +1618,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3807-1" />
 		<for>
-			<add stat="mDef" val="51" />
+			<add order="0" stat="mDef" val="51" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1635,7 +1635,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3808-1" />
 		<for>
-			<add stat="mDef" val="68" />
+			<add order="0" stat="mDef" val="68" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1652,7 +1652,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3809-1" />
 		<for>
-			<add stat="mDef" val="34" />
+			<add order="0" stat="mDef" val="34" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1669,7 +1669,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3810-1" />
 		<for>
-			<add stat="mDef" val="54" />
+			<add order="0" stat="mDef" val="54" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1686,7 +1686,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3811-1" />
 		<for>
-			<add stat="mDef" val="72" />
+			<add order="0" stat="mDef" val="72" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1703,7 +1703,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3812-1" />
 		<for>
-			<add stat="mDef" val="36" />
+			<add order="0" stat="mDef" val="36" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1719,7 +1719,7 @@
 		<set name="price" val="1340000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="76" />
+			<add order="0" stat="mDef" val="76" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1735,7 +1735,7 @@
 		<set name="price" val="670000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="38" />
+			<add order="0" stat="mDef" val="38" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1751,7 +1751,7 @@
 		<set name="price" val="1005000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="57" />
+			<add order="0" stat="mDef" val="57" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1768,7 +1768,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3813-1" />
 		<for>
-			<add stat="mDef" val="80" />
+			<add order="0" stat="mDef" val="80" />
 			<add stat="maxMp" val="26" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -1786,7 +1786,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3814-1" />
 		<for>
-			<add stat="mDef" val="40" />
+			<add order="0" stat="mDef" val="40" />
 			<add stat="maxMp" val="13" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -1804,7 +1804,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3815-1" />
 		<for>
-			<add stat="mDef" val="60" />
+			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="20" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -1822,7 +1822,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3816-1" />
 		<for>
-			<add stat="mDef" val="85" />
+			<add order="0" stat="mDef" val="85" />
 			<add stat="maxMp" val="33" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -1840,7 +1840,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3817-1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -1858,7 +1858,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3818-1" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -1875,7 +1875,7 @@
 		<set name="price" val="1998000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="80" />
+			<add order="0" stat="mDef" val="80" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1891,7 +1891,7 @@
 		<set name="price" val="999000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="40" />
+			<add order="0" stat="mDef" val="40" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1907,7 +1907,7 @@
 		<set name="price" val="1498000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="60" />
+			<add order="0" stat="mDef" val="60" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1923,7 +1923,7 @@
 		<set name="price" val="4361000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="91" />
+			<add order="0" stat="mDef" val="91" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1939,7 +1939,7 @@
 		<set name="price" val="2180000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="46" />
+			<add order="0" stat="mDef" val="46" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1955,7 +1955,7 @@
 		<set name="price" val="3270000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="68" />
+			<add order="0" stat="mDef" val="68" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>
@@ -1972,7 +1972,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3819-1" />
 		<for>
-			<add stat="mDef" val="95" />
+			<add order="0" stat="mDef" val="95" />
 			<add stat="maxMp" val="42" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -1990,7 +1990,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3820-1" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -2008,7 +2008,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3821-1" />
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -2026,7 +2026,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3822-1" />
 		<for>
-			<add stat="mDef" val="106" />
+			<add order="0" stat="mDef" val="106" />
 			<add stat="maxMp" val="46" />
 			<enchant stat="mDef" val="0" />
 		</for>

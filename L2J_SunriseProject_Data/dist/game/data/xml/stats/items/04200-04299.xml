@@ -285,7 +285,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="68" />
+			<add order="0" stat="pDef" val="68" />
 		</for>
 	</item>
 	<item id="4225" type="Armor" name="Dream Stockings">
@@ -305,7 +305,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="43" />
+			<add order="0" stat="pDef" val="43" />
 		</for>
 	</item>
 	<item id="4226" type="Armor" name="Dream Gloves">
@@ -321,7 +321,7 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="17" />
+			<add order="0" stat="pDef" val="17" />
 		</for>
 	</item>
 	<item id="4227" type="Armor" name="Dream Boots">
@@ -337,7 +337,7 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="17" />
+			<add order="0" stat="pDef" val="17" />
 		</for>
 	</item>
 	<item id="4228" type="Armor" name="Ubiquitous Armor">
@@ -357,7 +357,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="68" />
+			<add order="0" stat="pDef" val="68" />
 		</for>
 	</item>
 	<item id="4229" type="Armor" name="Ubiquitous Stockings">
@@ -377,7 +377,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="43" />
+			<add order="0" stat="pDef" val="43" />
 		</for>
 	</item>
 	<item id="4230" type="Armor" name="Ubiquitous Gloves">
@@ -393,7 +393,7 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="17" />
+			<add order="0" stat="pDef" val="17" />
 		</for>
 	</item>
 	<item id="4231" type="Armor" name="Ubiquitous Boots">
@@ -409,7 +409,7 @@
 		<set name="is_destroyable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="17" />
+			<add order="0" stat="pDef" val="17" />
 		</for>
 	</item>
 	<item id="4232" type="EtcItem" name="Dice">
@@ -460,8 +460,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="50" />
-			<add stat="pDef" val="50" />
+			<add order="0" stat="mDef" val="50" />
+			<add order="0" stat="pDef" val="50" />
 		</for>
 	</item>
 	<item id="4235" type="Armor" name="Hatchling's Level 75 Armor">
@@ -478,8 +478,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="58" />
-			<add stat="pDef" val="58" />
+			<add order="0" stat="mDef" val="58" />
+			<add order="0" stat="pDef" val="58" />
 		</for>
 	</item>
 	<item id="4236" type="Armor" name="Gara Item">
@@ -496,8 +496,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="58" />
-			<add stat="pDef" val="58" />
+			<add order="0" stat="mDef" val="58" />
+			<add order="0" stat="pDef" val="58" />
 		</for>
 	</item>
 	<item id="4237" type="Weapon" name="Hatchling's Level 65 Weapon">

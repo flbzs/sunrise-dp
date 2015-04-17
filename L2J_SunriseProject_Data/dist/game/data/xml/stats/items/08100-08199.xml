@@ -1836,7 +1836,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="item_skill" val="3604-1" />
 		<for>
-			<add stat="mDef" val="95" />
+			<add order="0" stat="mDef" val="95" />
 			<add stat="maxMp" val="42" />
 			<enchant stat="mDef" val="0" />
 		</for>

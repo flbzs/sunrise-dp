@@ -807,8 +807,8 @@
 			<player categoryType="STRIDER" />
 		</cond>
 		<for>
-			<add stat="mDef" val="41" />
-			<add stat="pDef" val="41" />
+			<add order="0" stat="mDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="5171" type="Armor" name="Brigadine Panzer Coat">
@@ -825,8 +825,8 @@
 			<player categoryType="STRIDER" />
 		</cond>
 		<for>
-			<add stat="mDef" val="44" />
-			<add stat="pDef" val="44" />
+			<add order="0" stat="mDef" val="44" />
+			<add order="0" stat="pDef" val="44" />
 		</for>
 	</item>
 	<item id="5172" type="Armor" name="Draconic Panzer Coat">
@@ -843,8 +843,8 @@
 			<player categoryType="STRIDER" />
 		</cond>
 		<for>
-			<add stat="mDef" val="46" />
-			<add stat="pDef" val="46" />
+			<add order="0" stat="mDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 		</for>
 	</item>
 	<item id="5173" type="Armor" name="Blood Panzer Coat">
@@ -861,8 +861,8 @@
 			<player categoryType="STRIDER" />
 		</cond>
 		<for>
-			<add stat="mDef" val="49" />
-			<add stat="pDef" val="49" />
+			<add order="0" stat="mDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
 	<item id="5174" type="Armor" name="Ophidian Panzer Coat">
@@ -879,8 +879,8 @@
 			<player categoryType="STRIDER" />
 		</cond>
 		<for>
-			<add stat="mDef" val="52" />
-			<add stat="pDef" val="52" />
+			<add order="0" stat="mDef" val="52" />
+			<add order="0" stat="pDef" val="52" />
 		</for>
 	</item>
 	<item id="5175" type="Armor" name="Inferno Panzer Coat">
@@ -897,8 +897,8 @@
 			<player categoryType="STRIDER" />
 		</cond>
 		<for>
-			<add stat="mDef" val="54" />
-			<add stat="pDef" val="54" />
+			<add order="0" stat="mDef" val="54" />
+			<add order="0" stat="pDef" val="54" />
 		</for>
 	</item>
 	<item id="5176" type="Weapon" name="Serpentine Spike">
@@ -1053,8 +1053,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="44" />
-			<add stat="pDef" val="44" />
+			<add order="0" stat="mDef" val="44" />
+			<add order="0" stat="pDef" val="44" />
 		</for>
 	</item>
 	<item id="5183" type="Armor" name="Hatchling's Ophidian Plate">
@@ -1071,8 +1071,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="46" />
-			<add stat="pDef" val="46" />
+			<add order="0" stat="mDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 		</for>
 	</item>
 	<item id="5184" type="Armor" name="Hatchling's Crimson Plate">
@@ -1089,8 +1089,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="49" />
-			<add stat="pDef" val="49" />
+			<add order="0" stat="mDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
 	<item id="5185" type="Armor" name="Hatchling's Draconic Plate">
@@ -1107,8 +1107,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="52" />
-			<add stat="pDef" val="52" />
+			<add order="0" stat="mDef" val="52" />
+			<add order="0" stat="pDef" val="52" />
 		</for>
 	</item>
 	<item id="5186" type="Armor" name="Hatchling's Inferno Plate">
@@ -1125,8 +1125,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="54" />
-			<add stat="pDef" val="54" />
+			<add order="0" stat="mDef" val="54" />
+			<add order="0" stat="pDef" val="54" />
 		</for>
 	</item>
 	<item id="5187" type="Weapon" name="Serpentine Grinder">

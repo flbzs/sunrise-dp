@@ -281,7 +281,7 @@
 		</cond>
 		<for>
 			<sub stat="rEvas" val="8" />
-			<add stat="pDef" val="13" />
+			<add order="0" stat="pDef" val="13" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -302,7 +302,7 @@
 		</cond>
 		<for>
 			<sub stat="rEvas" val="8" />
-			<add stat="pDef" val="15" />
+			<add order="0" stat="pDef" val="15" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -323,7 +323,7 @@
 		</cond>
 		<for>
 			<sub stat="rEvas" val="8" />
-			<add stat="pDef" val="17" />
+			<add order="0" stat="pDef" val="17" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>

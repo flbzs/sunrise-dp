@@ -1531,7 +1531,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="180" />
 		<for>
-			<add stat="mDef" val="24" />
+			<add order="0" stat="mDef" val="24" />
 		</for>
 	</item>
 	<item id="10471" type="Armor" name="Shadow Item - Ring of Devotion">
@@ -1547,7 +1547,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="180" />
 		<for>
-			<add stat="mDef" val="16" />
+			<add order="0" stat="mDef" val="16" />
 		</for>
 	</item>
 	<item id="10472" type="Armor" name="Shadow Item - Necklace of Devotion">
@@ -1563,7 +1563,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="180" />
 		<for>
-			<add stat="mDef" val="32" />
+			<add order="0" stat="mDef" val="32" />
 		</for>
 	</item>
 	<item id="10473" type="EtcItem" name="Magic Accessory Set">
@@ -1841,7 +1841,7 @@
 			<player categoryType="FORCE_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1862,7 +1862,7 @@
 			<player categoryType="WEAPON_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1883,7 +1883,7 @@
 			<player categoryType="BUFF_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1904,7 +1904,7 @@
 			<player categoryType="SUMMON_MASTER" />
 		</cond>
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1921,7 +1921,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3439-1" />
 		<for>
-			<add stat="pDef" val="17" />
+			<add order="0" stat="pDef" val="17" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1938,7 +1938,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3440-1" />
 		<for>
-			<add stat="pDef" val="17" />
+			<add order="0" stat="pDef" val="17" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1955,7 +1955,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3441-1" />
 		<for>
-			<add stat="pDef" val="17" />
+			<add order="0" stat="pDef" val="17" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1972,7 +1972,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3445-1" />
 		<for>
-			<add stat="pDef" val="21" />
+			<add order="0" stat="pDef" val="21" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1989,7 +1989,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3446-1" />
 		<for>
-			<add stat="pDef" val="21" />
+			<add order="0" stat="pDef" val="21" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2006,7 +2006,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3447-1" />
 		<for>
-			<add stat="pDef" val="21" />
+			<add order="0" stat="pDef" val="21" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2023,7 +2023,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3451-1" />
 		<for>
-			<add stat="pDef" val="23" />
+			<add order="0" stat="pDef" val="23" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2040,7 +2040,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3452-1" />
 		<for>
-			<add stat="pDef" val="23" />
+			<add order="0" stat="pDef" val="23" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2057,7 +2057,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3453-1" />
 		<for>
-			<add stat="pDef" val="23" />
+			<add order="0" stat="pDef" val="23" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>

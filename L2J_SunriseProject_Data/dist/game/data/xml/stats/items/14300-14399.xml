@@ -1103,7 +1103,7 @@
 		<set name="price" val="434400" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="64" />
+			<add order="0" stat="mDef" val="64" />
 		</for>
 	</item>
 	<item id="14343" type="EtcItem" name="Nassen's Earring">
@@ -1118,7 +1118,7 @@
 		<set name="price" val="325800" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 		</for>
 	</item>
 	<item id="14344" type="EtcItem" name="Ring of Seal">
@@ -1133,7 +1133,7 @@
 		<set name="price" val="217200" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="32" />
+			<add order="0" stat="mDef" val="32" />
 		</for>
 	</item>
 	<item id="14345" type="EtcItem" name="Earring of Black Ore">
@@ -1148,7 +1148,7 @@
 		<set name="price" val="711000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="54" />
+			<add order="0" stat="mDef" val="54" />
 		</for>
 	</item>
 	<item id="14346" type="EtcItem" name="Ring of Black Ore">
@@ -1163,7 +1163,7 @@
 		<set name="price" val="474000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="36" />
+			<add order="0" stat="mDef" val="36" />
 		</for>
 	</item>
 	<item id="14347" type="EtcItem" name="Necklace of Black Ore">
@@ -1178,7 +1178,7 @@
 		<set name="price" val="948000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="72" />
+			<add order="0" stat="mDef" val="72" />
 		</for>
 	</item>
 	<item id="14348" type="EtcItem" name="Majestic Earring">
@@ -1193,7 +1193,7 @@
 		<set name="price" val="1498000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 		</for>
 	</item>
@@ -1209,7 +1209,7 @@
 		<set name="price" val="999000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 		</for>
 	</item>
@@ -1225,7 +1225,7 @@
 		<set name="price" val="1998000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="mDef" val="85" />
+			<add order="0" stat="mDef" val="85" />
 			<add stat="maxMp" val="33" />
 		</for>
 	</item>

@@ -563,8 +563,8 @@
 			<player categoryType="BABY_PET_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="25" />
-			<add stat="pDef" val="10" />
+			<add order="0" stat="mDef" val="25" />
+			<add order="0" stat="pDef" val="10" />
 		</for>
 	</item>
 	<item id="8542" type="EtcItem" name="Newbie Travel Token">

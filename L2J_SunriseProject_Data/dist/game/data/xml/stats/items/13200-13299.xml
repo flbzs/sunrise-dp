@@ -1800,7 +1800,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="mDef" val="43" />
+			<add order="0" stat="mDef" val="43" />
 			<add stat="maxMp" val="20" />
 		</for>
 	</item>
@@ -1816,7 +1816,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="mDef" val="29" />
+			<add order="0" stat="mDef" val="29" />
 			<add stat="maxMp" val="15" />
 		</for>
 	</item>
@@ -1848,7 +1848,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="28" />
+			<add order="0" stat="pDef" val="28" />
 			<add stat="maxMp" val="40" />
 		</for>
 	</item>

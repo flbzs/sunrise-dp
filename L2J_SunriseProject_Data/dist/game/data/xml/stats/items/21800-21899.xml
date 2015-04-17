@@ -14,7 +14,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="170" />
+			<add order="0" stat="pDef" val="170" />
 		</for>
 	</item>
 	<item id="21801" type="Armor" name="Dynasty Leather Leggings of Fortune - 90-day limited period">
@@ -31,7 +31,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="106" />
+			<add order="0" stat="pDef" val="106" />
 		</for>
 	</item>
 	<item id="21802" type="Armor" name="Dynasty Leather Helmet of Fortune - 90-day limited period">
@@ -47,7 +47,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="92" />
+			<add order="0" stat="pDef" val="92" />
 		</for>
 	</item>
 	<item id="21803" type="Armor" name="Dynasty Leather Gloves of Fortune - 90-day limited period">
@@ -63,7 +63,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 		</for>
 	</item>
 	<item id="21804" type="Armor" name="Dynasty Leather Boots of Fortune - 90-day limited period">
@@ -79,7 +79,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 		</for>
 	</item>
 	<item id="21805" type="EtcItem" name="Dynasty Leather Mail of Fortune Set Pack (S-Grade) - 90-day limited period">
@@ -110,7 +110,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="113" />
+			<add order="0" stat="pDef" val="113" />
 			<add stat="maxMp" val="592" />
 		</for>
 	</item>
@@ -131,7 +131,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="71" />
+			<add order="0" stat="pDef" val="71" />
 			<add stat="maxMp" val="370" />
 		</for>
 	</item>
@@ -148,7 +148,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="92" />
+			<add order="0" stat="pDef" val="92" />
 		</for>
 	</item>
 	<item id="21809" type="Armor" name="Dynasty Gloves of Fortune - 90-day limited period">
@@ -164,7 +164,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 		</for>
 	</item>
 	<item id="21810" type="Armor" name="Dynasty Shoes of Fortune - 90-day limited period">
@@ -180,7 +180,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 		</for>
 	</item>
 	<item id="21811" type="Armor" name="Dynasty Sickle of Fortune - 90-day limited period">
@@ -195,7 +195,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="15" />
+			<add order="0" stat="pDef" val="15" />
 		</for>
 	</item>
 	<item id="21812" type="EtcItem" name="Dynasty Tunic of Fortune Set Pack (S-Grade) - 90-day limited period">
@@ -221,7 +221,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 		</for>
 	</item>
@@ -237,7 +237,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 		</for>
 	</item>
@@ -253,7 +253,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="mDef" val="95" />
+			<add order="0" stat="mDef" val="95" />
 			<add stat="maxMp" val="42" />
 		</for>
 	</item>
@@ -277,7 +277,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="mDef" val="79" />
+			<add order="0" stat="mDef" val="79" />
 			<add stat="maxMp" val="35" />
 		</for>
 	</item>
@@ -293,7 +293,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="mDef" val="106" />
+			<add order="0" stat="mDef" val="106" />
 			<add stat="maxMp" val="46" />
 		</for>
 	</item>
@@ -309,7 +309,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="mDef" val="60" />
+			<add order="0" stat="mDef" val="60" />
 			<add stat="maxMp" val="23" />
 		</for>
 	</item>

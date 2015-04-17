@@ -292,7 +292,7 @@
 		<set name="weight" val="4830" />
 		<set name="price" val="113" />
 		<for>
-			<add stat="pDef" val="36" />
+			<add order="0" stat="pDef" val="36" />
 		</for>
 	</item>
 	<item id="13527" type="Armor" name="Test Cloak">
@@ -304,7 +304,7 @@
 		<set name="weight" val="260" />
 		<set name="price" val="37" />
 		<for>
-			<add stat="pDef" val="2" />
+			<add order="0" stat="pDef" val="2" />
 		</for>
 	</item>
 	<item id="13528" type="Weapon" name="Test Dual Daggers">

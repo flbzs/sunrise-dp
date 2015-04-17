@@ -168,8 +168,8 @@
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="58" />
-			<add stat="pDef" val="71" />
+			<add order="0" stat="mDef" val="58" />
+			<add order="0" stat="pDef" val="71" />
 		</for>
 	</item>
 	<item id="5217" type="Weapon" name="Wolf's Level 75 Weapon">
@@ -1095,7 +1095,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="171" />
+			<add order="0" stat="pDef" val="171" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1115,7 +1115,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="107" />
+			<add order="0" stat="pDef" val="107" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1131,7 +1131,7 @@
 		<set name="price" val="1336000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="69" />
+			<add order="0" stat="pDef" val="69" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1147,7 +1147,7 @@
 		<set name="price" val="890000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1163,7 +1163,7 @@
 		<set name="price" val="890000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1204,7 +1204,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="278" />
+			<add order="0" stat="pDef" val="278" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1220,7 +1220,7 @@
 		<set name="price" val="1336000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="69" />
+			<add order="0" stat="pDef" val="69" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1236,7 +1236,7 @@
 		<set name="price" val="890000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1252,7 +1252,7 @@
 		<set name="price" val="890000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1269,7 +1269,7 @@
 		<set name="price" val="2671000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="128" />
+			<add order="0" stat="pDef" val="128" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1286,7 +1286,7 @@
 		<set name="price" val="1670000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="80" />
+			<add order="0" stat="pDef" val="80" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1302,7 +1302,7 @@
 		<set name="price" val="890000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="45" />
+			<add order="0" stat="pDef" val="45" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>

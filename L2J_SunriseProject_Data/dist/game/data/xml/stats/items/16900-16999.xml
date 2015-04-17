@@ -13,7 +13,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="58" />
+			<add order="0" stat="pDef" val="58" />
 		</for>
 	</item>
 	<item id="16901" type="Armor" name="Full Plate Armor of Fortune - 90-day limited period">
@@ -33,7 +33,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="239" />
+			<add order="0" stat="pDef" val="239" />
 		</for>
 	</item>
 	<item id="16902" type="Armor" name="Full Plate Boots of Fortune - 90-day limited period">
@@ -49,7 +49,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="39" />
+			<add order="0" stat="pDef" val="39" />
 		</for>
 	</item>
 	<item id="16903" type="Armor" name="Full Plate Gauntlet of Fortune - 90-day limited period">
@@ -65,7 +65,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="39" />
+			<add order="0" stat="pDef" val="39" />
 		</for>
 	</item>
 	<item id="16904" type="Armor" name="Full Plate Shield of Fortune - 90-day limited period">
@@ -104,7 +104,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="77" />
+			<add order="0" stat="pDef" val="77" />
 		</for>
 	</item>
 	<item id="16906" type="Armor" name="Manticore Skin Gaiters of Fortune - 90-day limited period">
@@ -121,7 +121,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="48" />
+			<add order="0" stat="pDef" val="48" />
 		</for>
 	</item>
 	<item id="16907" type="Armor" name="Manticore Skin Boots of Fortune - 90-day limited period">
@@ -137,7 +137,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="27" />
+			<add order="0" stat="pDef" val="27" />
 		</for>
 	</item>
 	<item id="16908" type="Armor" name="Manticore Skin Gloves of Fortune - 90-day limited period">
@@ -153,7 +153,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="27" />
+			<add order="0" stat="pDef" val="27" />
 		</for>
 	</item>
 	<item id="16909" type="Armor" name="Brigandine of Fortune - 90-day limited period">
@@ -173,7 +173,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="103" />
+			<add order="0" stat="pDef" val="103" />
 		</for>
 	</item>
 	<item id="16910" type="Armor" name="Brigandine Gaiters of Fortune - 90-day limited period">
@@ -193,7 +193,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="64" />
+			<add order="0" stat="pDef" val="64" />
 		</for>
 	</item>
 	<item id="16911" type="Armor" name="Brigandine Helmet of Fortune - 90-day limited period">
@@ -209,7 +209,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="16912" type="Armor" name="Brigandine Boots of Fortune - 90-day limited period">
@@ -225,7 +225,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="27" />
+			<add order="0" stat="pDef" val="27" />
 		</for>
 	</item>
 	<item id="16913" type="Armor" name="Brigandine Gauntlet of Fortune - 90-day limited period">
@@ -241,7 +241,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="27" />
+			<add order="0" stat="pDef" val="27" />
 		</for>
 	</item>
 	<item id="16914" type="Armor" name="Brigandine Shield of Fortune - 90-day limited period">
@@ -283,7 +283,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="293" />
+			<add order="0" stat="pDef" val="293" />
 		</for>
 	</item>
 	<item id="16916" type="Armor" name="Fortune Helm of Nightmare - 90-day limited period">
@@ -299,7 +299,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="73" />
+			<add order="0" stat="pDef" val="73" />
 		</for>
 	</item>
 	<item id="16917" type="Armor" name="Fortune Gauntlet of Nightmare - Heavy Armor - 90-day limited period">
@@ -318,7 +318,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
 	<item id="16918" type="Armor" name="Fortune Boots of Nightmare - Heavy Armor - 90-day limited period">
@@ -337,7 +337,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
 	<item id="16919" type="Armor" name="Fortune Shield of Nightmare - 90-day limited period">

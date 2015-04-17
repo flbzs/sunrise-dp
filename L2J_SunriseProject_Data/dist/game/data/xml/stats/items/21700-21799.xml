@@ -67,7 +67,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_destroyable" val="false" />
 		<for>
-			<add stat="pDef" val="28" />
+			<add order="0" stat="pDef" val="28" />
 		</for>
 	</item>
 	<item id="21707" type="EtcItem" name="Blessed Olf's T-shirt Enchant Scroll - Event">
@@ -134,7 +134,7 @@
 		<set name="item_skill" val="3559-2" />
 		<set name="price" val="11394000" />
 		<for>
-			<add stat="mDef" val="94" />
+			<add order="0" stat="mDef" val="94" />
 			<add stat="maxMp" val="37" />
 			<enchant stat="mDef" val="0" />
 		</for>
@@ -181,7 +181,7 @@
 			<add stat="holyRes" val="5" />
 			<add stat="waterRes" val="15" />
 			<add stat="windRes" val="15" />
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 		</for>
 	</item>
 	<item id="21717" type="Armor" name="Cloak of Freya">
@@ -205,7 +205,7 @@
 			<add stat="holyRes" val="20" />
 			<add stat="waterRes" val="20" />
 			<add stat="windRes" val="20" />
-			<add stat="pDef" val="30" />
+			<add order="0" stat="pDef" val="30" />
 		</for>
 	</item>
 	<item id="21718" type="Armor" name="Cloak of Frintezza">
@@ -229,7 +229,7 @@
 			<add stat="holyRes" val="5" />
 			<add stat="waterRes" val="5" />
 			<add stat="windRes" val="5" />
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 		</for>
 	</item>
 	<item id="21719" type="Armor" name="Soul Cloak of Zaken">
@@ -254,7 +254,7 @@
 			<add stat="holyRes" val="5" />
 			<add stat="waterRes" val="10" />
 			<add stat="windRes" val="10" />
-			<add stat="pDef" val="40" />
+			<add order="0" stat="pDef" val="40" />
 		</for>
 	</item>
 	<item id="21720" type="Armor" name="Soul Cloak of Freya">
@@ -279,7 +279,7 @@
 			<add stat="holyRes" val="15" />
 			<add stat="waterRes" val="15" />
 			<add stat="windRes" val="15" />
-			<add stat="pDef" val="60" />
+			<add order="0" stat="pDef" val="60" />
 		</for>
 	</item>
 	<item id="21721" type="Armor" name="Soul Cloak of Frintezza">
@@ -304,7 +304,7 @@
 			<add stat="holyRes" val="5" />
 			<add stat="waterRes" val="5" />
 			<add stat="windRes" val="5" />
-			<add stat="pDef" val="40" />
+			<add order="0" stat="pDef" val="40" />
 		</for>
 	</item>
 	<item id="21722" type="EtcItem" name="Zaken's Soul Fragment">
@@ -1017,7 +1017,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="205" />
+			<add order="0" stat="pDef" val="205" />
 		</for>
 	</item>
 	<item id="21776" type="Armor" name="Imperial Crusader Gaiters of Fortune - 90-day limited period">
@@ -1037,7 +1037,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="128" />
+			<add order="0" stat="pDef" val="128" />
 		</for>
 	</item>
 	<item id="21777" type="Armor" name="Imperial Crusader Gauntlet of Fortune - 90-day limited period">
@@ -1053,7 +1053,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="55" />
+			<add order="0" stat="pDef" val="55" />
 		</for>
 	</item>
 	<item id="21778" type="Armor" name="Imperial Crusader Boots of Fortune - 90-day limited period">
@@ -1069,7 +1069,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="55" />
+			<add order="0" stat="pDef" val="55" />
 		</for>
 	</item>
 	<item id="21779" type="Armor" name="Imperial Crusader Helmet of Fortune - 90-day limited period">
@@ -1085,7 +1085,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="83" />
+			<add order="0" stat="pDef" val="83" />
 		</for>
 	</item>
 	<item id="21780" type="Armor" name="Imperial Crusader Shield of Fortune - 90-day limited period">
@@ -1131,7 +1131,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="249" />
+			<add order="0" stat="pDef" val="249" />
 		</for>
 	</item>
 	<item id="21783" type="Armor" name="Draconic Leather Gloves of Fortune - 90-day limited period">
@@ -1147,7 +1147,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="55" />
+			<add order="0" stat="pDef" val="55" />
 		</for>
 	</item>
 	<item id="21784" type="Armor" name="Draconic Leather Boots of Fortune - 90-day limited period">
@@ -1163,7 +1163,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="55" />
+			<add order="0" stat="pDef" val="55" />
 		</for>
 	</item>
 	<item id="21785" type="Armor" name="Draconic Leather Helmet of Fortune - 90-day limited period">
@@ -1179,7 +1179,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="83" />
+			<add order="0" stat="pDef" val="83" />
 		</for>
 	</item>
 	<item id="21786" type="EtcItem" name="Draconic Leather of Fortune Set Pack (S-Grade) - 90-day limited period">
@@ -1207,7 +1207,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="166" />
+			<add order="0" stat="pDef" val="166" />
 			<add stat="maxMp" val="866" />
 		</for>
 	</item>
@@ -1224,7 +1224,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="55" />
+			<add order="0" stat="pDef" val="55" />
 		</for>
 	</item>
 	<item id="21789" type="Armor" name="Major Arcana Boots of Fortune - 90-day limited period">
@@ -1240,7 +1240,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="55" />
+			<add order="0" stat="pDef" val="55" />
 		</for>
 	</item>
 	<item id="21790" type="Armor" name="Major Arcana Circlet of Fortune - 90-day limited period">
@@ -1256,7 +1256,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="83" />
+			<add order="0" stat="pDef" val="83" />
 		</for>
 	</item>
 	<item id="21791" type="Armor" name="Arcana Sickle of Fortune - 90-day limited period">
@@ -1271,7 +1271,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="13" />
+			<add order="0" stat="pDef" val="13" />
 		</for>
 	</item>
 	<item id="21792" type="EtcItem" name="Major Arcana Robe of Fortune Set Pack (S-Grade) - 90-day limited period">
@@ -1299,7 +1299,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="226" />
+			<add order="0" stat="pDef" val="226" />
 		</for>
 	</item>
 	<item id="21794" type="Armor" name="Dynasty Gaiters of Fortune - 90-day limited period">
@@ -1319,7 +1319,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="141" />
+			<add order="0" stat="pDef" val="141" />
 		</for>
 	</item>
 	<item id="21795" type="Armor" name="Dynasty Gauntlet of Fortune - 90-day limited period">
@@ -1335,7 +1335,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 		</for>
 	</item>
 	<item id="21796" type="Armor" name="Dynasty Boots of Fortune - 90-day limited period">
@@ -1351,7 +1351,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="61" />
+			<add order="0" stat="pDef" val="61" />
 		</for>
 	</item>
 	<item id="21797" type="Armor" name="Dynasty Helmet of Fortune - 90-day limited period">
@@ -1367,7 +1367,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="129600" />
 		<for>
-			<add stat="pDef" val="92" />
+			<add order="0" stat="pDef" val="92" />
 		</for>
 	</item>
 	<item id="21798" type="Armor" name="Dynasty Shield of Fortune - 90-day limited period">

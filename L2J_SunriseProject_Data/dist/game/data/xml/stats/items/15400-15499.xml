@@ -436,7 +436,7 @@
 		<set name="item_skill" val="8361-1" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="31" />
 		</for>
 	</item>

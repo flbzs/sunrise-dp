@@ -13,7 +13,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
 	<item id="9101" type="Armor" name="Shadow Item: Majestic Robe">
@@ -33,7 +33,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="147" />
+			<add order="0" stat="pDef" val="147" />
 			<add stat="maxMp" val="718" />
 		</for>
 	</item>
@@ -53,7 +53,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
 	<item id="9103" type="Armor" name="Shadow Item: Majestic Boots">
@@ -72,7 +72,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
 	<item id="9104" type="EtcItem" name="Composite Bow and Wooden Arrow">
@@ -400,7 +400,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="duration" val="600" />
 		<for>
-			<add stat="pDef" val="36" />
+			<add order="0" stat="pDef" val="36" />
 		</for>
 	</item>
 	<item id="9129" type="Armor" name="Shadow Item: Shield of Nightmare">

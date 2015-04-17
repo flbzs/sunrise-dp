@@ -17,7 +17,7 @@
 			<add stat="holyRes" val="10" />
 			<add stat="waterRes" val="10" />
 			<add stat="windRes" val="10" />
-			<add stat="pDef" val="40" />
+			<add order="0" stat="pDef" val="40" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -38,7 +38,7 @@
 			<add stat="holyRes" val="20" />
 			<add stat="waterRes" val="20" />
 			<add stat="windRes" val="20" />
-			<add stat="pDef" val="40" />
+			<add order="0" stat="pDef" val="40" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -59,7 +59,7 @@
 			<add stat="holyRes" val="15" />
 			<add stat="waterRes" val="15" />
 			<add stat="windRes" val="15" />
-			<add stat="pDef" val="40" />
+			<add order="0" stat="pDef" val="40" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -80,7 +80,7 @@
 			<add stat="holyRes" val="30" />
 			<add stat="waterRes" val="30" />
 			<add stat="windRes" val="30" />
-			<add stat="pDef" val="60" />
+			<add order="0" stat="pDef" val="60" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -101,7 +101,7 @@
 			<add stat="holyRes" val="50" />
 			<add stat="waterRes" val="50" />
 			<add stat="windRes" val="50" />
-			<add stat="pDef" val="60" />
+			<add order="0" stat="pDef" val="60" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -122,7 +122,7 @@
 			<add stat="holyRes" val="40" />
 			<add stat="waterRes" val="40" />
 			<add stat="windRes" val="40" />
-			<add stat="pDef" val="60" />
+			<add order="0" stat="pDef" val="60" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>

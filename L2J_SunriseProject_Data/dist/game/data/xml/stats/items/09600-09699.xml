@@ -910,8 +910,8 @@
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="14" />
-			<add stat="pDef" val="112" />
+			<add order="0" stat="mDef" val="14" />
+			<add order="0" stat="pDef" val="112" />
 		</for>
 	</item>
 	<item id="9663" type="Armor" name="Great Wolf Bronze Armor">
@@ -928,8 +928,8 @@
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="14" />
-			<add stat="pDef" val="124" />
+			<add order="0" stat="mDef" val="14" />
+			<add order="0" stat="pDef" val="124" />
 		</for>
 	</item>
 	<item id="9664" type="Armor" name="Great Wolf Plate Armor">
@@ -946,8 +946,8 @@
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="14" />
-			<add stat="pDef" val="136" />
+			<add order="0" stat="mDef" val="14" />
+			<add order="0" stat="pDef" val="136" />
 		</for>
 	</item>
 	<item id="9665" type="Armor" name="Great Wolf Mithril Armor">
@@ -964,8 +964,8 @@
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="14" />
-			<add stat="pDef" val="148" />
+			<add order="0" stat="mDef" val="14" />
+			<add order="0" stat="pDef" val="148" />
 		</for>
 	</item>
 	<item id="9666" type="Armor" name="Great Wolf Oriharukon Armor">
@@ -982,8 +982,8 @@
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="14" />
-			<add stat="pDef" val="160" />
+			<add order="0" stat="mDef" val="14" />
+			<add order="0" stat="pDef" val="160" />
 		</for>
 	</item>
 	<item id="9667" type="Armor" name="Great Wolf Orichalcum Armor">
@@ -1000,8 +1000,8 @@
 			<player categoryType="GROWN_UP_WOLF_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="14" />
-			<add stat="pDef" val="171" />
+			<add order="0" stat="mDef" val="14" />
+			<add order="0" stat="pDef" val="171" />
 		</for>
 	</item>
 	<item id="9668" type="EtcItem" name="Great Wolf Food">
@@ -1032,7 +1032,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="619-1" />
 		<for>
-			<add stat="pDef" val="33" />
+			<add order="0" stat="pDef" val="33" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1049,7 +1049,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="619-1" />
 		<for>
-			<add stat="pDef" val="53" />
+			<add order="0" stat="pDef" val="53" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1066,7 +1066,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="unequip_skill" val="619-1" />
 		<for>
-			<add stat="pDef" val="29" />
+			<add order="0" stat="pDef" val="29" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1139,7 +1139,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="3319-1" />
 		<for>
-			<add stat="mDef" val="36" />
+			<add order="0" stat="mDef" val="36" />
 			<enchant stat="mDef" val="0" />
 		</for>
 	</item>

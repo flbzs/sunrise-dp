@@ -1352,7 +1352,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="23" />
+			<add order="0" stat="pDef" val="23" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1370,7 +1370,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="28" />
+			<add order="0" stat="pDef" val="28" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1388,7 +1388,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="26" />
+			<add order="0" stat="pDef" val="26" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1406,7 +1406,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="30" />
+			<add order="0" stat="pDef" val="30" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>

@@ -12,7 +12,7 @@
 		<set name="price" val="2032000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="73" />
+			<add order="0" stat="pDef" val="73" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -31,7 +31,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="73" />
+			<add order="0" stat="pDef" val="73" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -803,8 +803,8 @@
 			<player instanceId="43,44,45" />
 		</cond>
 		<for>
-			<add stat="mDef" val="49" />
-			<add stat="pDef" val="49" />
+			<add order="0" stat="mDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
 	<item id="13051" type="EtcItem" name="Hair Accessory">
@@ -1204,7 +1204,7 @@
 		</cond>
 		<for>
 			<sub stat="rEvas" val="8" />
-			<add stat="pDef" val="13" />
+			<add order="0" stat="pDef" val="13" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>

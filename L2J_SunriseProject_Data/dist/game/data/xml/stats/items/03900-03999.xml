@@ -14,8 +14,8 @@
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="38" />
-			<add stat="pDef" val="43" />
+			<add order="0" stat="mDef" val="38" />
+			<add order="0" stat="pDef" val="43" />
 		</for>
 	</item>
 	<item id="3901" type="Armor" name="Wolf's Mithril Armor">
@@ -32,8 +32,8 @@
 			<player categoryType="ALL_WOLF_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="41" />
-			<add stat="pDef" val="47" />
+			<add order="0" stat="mDef" val="41" />
+			<add order="0" stat="pDef" val="47" />
 		</for>
 	</item>
 	<item id="3902" type="Weapon" name="Ghost Canine">
@@ -280,8 +280,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="26" />
-			<add stat="pDef" val="26" />
+			<add order="0" stat="mDef" val="26" />
+			<add order="0" stat="pDef" val="26" />
 		</for>
 	</item>
 	<item id="3913" type="Armor" name="Hatchling's Scale Mail">
@@ -298,8 +298,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="29" />
-			<add stat="pDef" val="29" />
+			<add order="0" stat="mDef" val="29" />
+			<add order="0" stat="pDef" val="29" />
 		</for>
 	</item>
 	<item id="3914" type="Armor" name="Hatchling's Brigandine">
@@ -316,8 +316,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="31" />
-			<add stat="pDef" val="31" />
+			<add order="0" stat="mDef" val="31" />
+			<add order="0" stat="pDef" val="31" />
 		</for>
 	</item>
 	<item id="3915" type="Armor" name="Hatchling's Bronze Coat">
@@ -334,8 +334,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="33" />
-			<add stat="pDef" val="33" />
+			<add order="0" stat="mDef" val="33" />
+			<add order="0" stat="pDef" val="33" />
 		</for>
 	</item>
 	<item id="3916" type="Armor" name="Hatchling's Steel Coat">
@@ -352,8 +352,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="36" />
-			<add stat="pDef" val="36" />
+			<add order="0" stat="mDef" val="36" />
+			<add order="0" stat="pDef" val="36" />
 		</for>
 	</item>
 	<item id="3917" type="Armor" name="Hatchling's Shadowplate">
@@ -370,8 +370,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="38" />
-			<add stat="pDef" val="38" />
+			<add order="0" stat="mDef" val="38" />
+			<add order="0" stat="pDef" val="38" />
 		</for>
 	</item>
 	<item id="3918" type="Armor" name="Hatchling's Mithril Coat">
@@ -388,8 +388,8 @@
 			<player categoryType="HATCHLING_GROUP" />
 		</cond>
 		<for>
-			<add stat="mDef" val="41" />
-			<add stat="pDef" val="41" />
+			<add order="0" stat="mDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="3919" type="Weapon" name="Serpent Fang">

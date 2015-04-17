@@ -688,7 +688,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="250" />
+			<add order="0" stat="pDef" val="250" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -708,7 +708,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="187" />
+			<add order="0" stat="pDef" val="187" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -731,7 +731,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="125" />
+			<add order="0" stat="pDef" val="125" />
 			<add stat="maxMp" val="637" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -755,7 +755,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="250" />
+			<add order="0" stat="pDef" val="250" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -775,7 +775,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="187" />
+			<add order="0" stat="pDef" val="187" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -798,7 +798,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="125" />
+			<add order="0" stat="pDef" val="125" />
 			<add stat="maxMp" val="637" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -2044,7 +2044,7 @@
 			<player pledgeClass="4" /> <!-- Elder -->
 		</cond>
 		<for>
-			<add stat="pDef" val="73" />
+			<add order="0" stat="pDef" val="73" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2068,7 +2068,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="293" />
+			<add order="0" stat="pDef" val="293" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2091,7 +2091,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2114,7 +2114,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2135,7 +2135,7 @@
 			<player pledgeClass="4" /> <!-- Elder -->
 		</cond>
 		<for>
-			<add stat="pDef" val="220" />
+			<add order="0" stat="pDef" val="220" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2155,7 +2155,7 @@
 			<player pledgeClass="4" /> <!-- Elder -->
 		</cond>
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2175,7 +2175,7 @@
 			<player pledgeClass="4" /> <!-- Elder -->
 		</cond>
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2199,7 +2199,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="147" />
+			<add order="0" stat="pDef" val="147" />
 			<add stat="maxMp" val="718" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -2223,7 +2223,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2246,7 +2246,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -2264,7 +2264,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8379-1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 			<add stat="earthRes" val="12" />
 			<enchant stat="mDef" val="0" />
@@ -2284,7 +2284,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8380-1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 			<add stat="waterRes" val="12" />
 			<enchant stat="mDef" val="0" />
@@ -2304,7 +2304,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8381-1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 			<add stat="fireRes" val="12" />
 			<enchant stat="mDef" val="0" />
@@ -2324,7 +2324,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8382-1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 			<add stat="earthRes" val="12" />
 			<enchant stat="mDef" val="0" />
@@ -2344,7 +2344,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8383-1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 			<add stat="holyRes" val="12" />
 			<enchant stat="mDef" val="0" />
@@ -2364,7 +2364,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8384-1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 			<add stat="holyRes" val="12" />
 			<enchant stat="mDef" val="0" />
@@ -2384,7 +2384,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8385-1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 			<add stat="darkRes" val="12" />
 			<enchant stat="mDef" val="0" />
@@ -2404,7 +2404,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8386-1" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 			<add stat="windRes" val="12" />
 			<enchant stat="mDef" val="0" />

@@ -22,7 +22,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8348-2" />
 		<for>
-			<add stat="mDef" val="79" />
+			<add order="0" stat="mDef" val="79" />
 			<add stat="maxMp" val="35" />
 			<add stat="waterRes" val="10" />
 			<enchant stat="mDef" val="0" />
@@ -42,7 +42,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8349-2" />
 		<for>
-			<add stat="mDef" val="79" />
+			<add order="0" stat="mDef" val="79" />
 			<add stat="maxMp" val="35" />
 			<add stat="holyRes" val="10" />
 			<enchant stat="mDef" val="0" />
@@ -62,7 +62,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8350-2" />
 		<for>
-			<add stat="mDef" val="79" />
+			<add order="0" stat="mDef" val="79" />
 			<add stat="maxMp" val="35" />
 			<add stat="windRes" val="10" />
 			<enchant stat="mDef" val="0" />
@@ -82,7 +82,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8351-2" />
 		<for>
-			<add stat="mDef" val="79" />
+			<add order="0" stat="mDef" val="79" />
 			<add stat="maxMp" val="35" />
 			<add stat="darkRes" val="10" />
 			<enchant stat="mDef" val="0" />
@@ -102,7 +102,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8352-2" />
 		<for>
-			<add stat="mDef" val="79" />
+			<add order="0" stat="mDef" val="79" />
 			<add stat="maxMp" val="35" />
 			<add stat="earthRes" val="10" />
 			<enchant stat="mDef" val="0" />
@@ -122,7 +122,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8353-2" />
 		<for>
-			<add stat="mDef" val="79" />
+			<add order="0" stat="mDef" val="79" />
 			<add stat="maxMp" val="35" />
 			<add stat="waterRes" val="10" />
 			<enchant stat="mDef" val="0" />
@@ -142,7 +142,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8354-2" />
 		<for>
-			<add stat="mDef" val="79" />
+			<add order="0" stat="mDef" val="79" />
 			<add stat="maxMp" val="35" />
 			<add stat="fireRes" val="10" />
 			<enchant stat="mDef" val="0" />
@@ -162,7 +162,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8355-2" />
 		<for>
-			<add stat="mDef" val="79" />
+			<add order="0" stat="mDef" val="79" />
 			<add stat="maxMp" val="35" />
 			<add stat="fireRes" val="10" />
 			<enchant stat="mDef" val="0" />
@@ -182,7 +182,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="item_skill" val="8356-2" />
 		<for>
-			<add stat="mDef" val="79" />
+			<add order="0" stat="mDef" val="79" />
 			<add stat="maxMp" val="35" />
 			<add stat="windRes" val="10" />
 			<enchant stat="mDef" val="0" />

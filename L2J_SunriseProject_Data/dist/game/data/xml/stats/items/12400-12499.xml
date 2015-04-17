@@ -1691,7 +1691,7 @@
 		<set name="weight" val="590" />
 		<set name="price" val="399100" />
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="12487" type="EtcItem" name="Foundation Sealed Zubei's Boots">
@@ -1702,7 +1702,7 @@
 		<set name="weight" val="1180" />
 		<set name="price" val="399100" />
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="12488" type="EtcItem" name="Foundation Sealed Avadon Gloves">
@@ -1713,7 +1713,7 @@
 		<set name="weight" val="590" />
 		<set name="price" val="399100" />
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="12489" type="EtcItem" name="Foundation Sealed Avadon Boots">
@@ -1724,7 +1724,7 @@
 		<set name="weight" val="1170" />
 		<set name="price" val="399100" />
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="12490" type="EtcItem" name="Foundation Zubei's Leather Gaiters">
@@ -1736,7 +1736,7 @@
 		<set name="weight" val="1480" />
 		<set name="price" val="748300" />
 		<for>
-			<add stat="pDef" val="73" />
+			<add order="0" stat="pDef" val="73" />
 		</for>
 	</item>
 	<item id="12491" type="EtcItem" name="Foundation Zubei's Leather Shirt">
@@ -1748,7 +1748,7 @@
 		<set name="weight" val="4330" />
 		<set name="price" val="1197000" />
 		<for>
-			<add stat="pDef" val="117" />
+			<add order="0" stat="pDef" val="117" />
 		</for>
 	</item>
 	<item id="12492" type="EtcItem" name="Foundation Zubei's Gaiters">
@@ -1763,7 +1763,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="98" />
+			<add order="0" stat="pDef" val="98" />
 		</for>
 	</item>
 	<item id="12493" type="EtcItem" name="Foundation Zubei's Gauntlet">
@@ -1777,7 +1777,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="12494" type="EtcItem" name="Foundation Zubei's Gauntlet">
@@ -1788,7 +1788,7 @@
 		<set name="weight" val="590" />
 		<set name="price" val="399100" />
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="12495" type="EtcItem" name="Foundation Zubei's Gauntlet">
@@ -1802,7 +1802,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="12496" type="EtcItem" name="Foundation Zubei's Boots">
@@ -1816,7 +1816,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="12497" type="EtcItem" name="Foundation Zubei's Boots">
@@ -1827,7 +1827,7 @@
 		<set name="weight" val="1180" />
 		<set name="price" val="399100" />
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="12498" type="EtcItem" name="Foundation Zubei's Boots">
@@ -1841,7 +1841,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="12499" type="EtcItem" name="Foundation Zubei's Shield">

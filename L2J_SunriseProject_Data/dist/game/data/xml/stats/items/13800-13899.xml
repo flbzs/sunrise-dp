@@ -39,7 +39,7 @@
 		<set name="unequip_skill" val="619-1" />
 		<set name="item_skill" val="8277-1" />
 		<for>
-			<add stat="pDef" val="33" />
+			<add order="0" stat="pDef" val="33" />
 		</for>
 	</item>
 	<item id="13803" type="Armor" name="Native's Tunic">
@@ -57,7 +57,7 @@
 		<set name="unequip_skill" val="619-1" />
 		<set name="item_skill" val="8277-1" />
 		<for>
-			<add stat="pDef" val="53" />
+			<add order="0" stat="pDef" val="53" />
 		</for>
 	</item>
 	<item id="13804" type="Armor" name="Native's Trousers">
@@ -75,7 +75,7 @@
 		<set name="unequip_skill" val="619-1" />
 		<set name="item_skill" val="8277-1" />
 		<for>
-			<add stat="pDef" val="29" />
+			<add order="0" stat="pDef" val="29" />
 		</for>
 	</item>
 	<item id="13805" type="Armor" name="Guards of the Dawn Helmet">
@@ -93,7 +93,7 @@
 		<set name="unequip_skill" val="619-1" />
 		<set name="item_skill" val="8278-1" />
 		<for>
-			<add stat="pDef" val="33" />
+			<add order="0" stat="pDef" val="33" />
 		</for>
 	</item>
 	<item id="13806" type="Armor" name="Guards of the Dawn Tunic">
@@ -111,7 +111,7 @@
 		<set name="unequip_skill" val="619-1" />
 		<set name="item_skill" val="8278-1" />
 		<for>
-			<add stat="pDef" val="53" />
+			<add order="0" stat="pDef" val="53" />
 		</for>
 	</item>
 	<item id="13807" type="Armor" name="Guards of the Dawn Trousers">
@@ -129,7 +129,7 @@
 		<set name="unequip_skill" val="619-1" />
 		<set name="item_skill" val="8278-1" />
 		<for>
-			<add stat="pDef" val="29" />
+			<add order="0" stat="pDef" val="29" />
 		</for>
 	</item>
 	<item id="13808" type="EtcItem" name="Elmoreden Holy Water">
@@ -1070,7 +1070,7 @@
 		</cond>
 		<for>
 			<sub stat="rEvas" val="8" />
-			<add stat="pDef" val="13" />
+			<add order="0" stat="pDef" val="13" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1091,7 +1091,7 @@
 		</cond>
 		<for>
 			<sub stat="rEvas" val="8" />
-			<add stat="pDef" val="15" />
+			<add order="0" stat="pDef" val="15" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1112,7 +1112,7 @@
 		</cond>
 		<for>
 			<sub stat="rEvas" val="8" />
-			<add stat="pDef" val="17" />
+			<add order="0" stat="pDef" val="17" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1129,7 +1129,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="2" />
+			<add order="0" stat="pDef" val="2" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1149,7 +1149,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 			<add stat="darkRes" val="30" />
 		</for>
 	</item>
@@ -1166,7 +1166,7 @@
 			<player cloakStatus="1" />
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 			<add stat="darkRes" val="30" />
 		</for>
 	</item>
@@ -1187,7 +1187,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 			<add stat="darkRes" val="30" />
 		</for>
 	</item>
@@ -1208,7 +1208,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 			<add stat="darkRes" val="30" />
 		</for>
 	</item>
@@ -1220,7 +1220,7 @@
 		<set name="weight" val="220" />
 		<set name="price" val="28671000" />
 		<for>
-			<add stat="pDef" val="20" />
+			<add order="0" stat="pDef" val="20" />
 		</for>
 	</item>
 	<item id="13894" type="Armor" name="Cloth Belt">
@@ -1236,7 +1236,7 @@
 		<set name="price" val="45100" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="10" />
+			<add order="0" stat="pDef" val="10" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1253,7 +1253,7 @@
 		<set name="price" val="165000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="11" />
+			<add order="0" stat="pDef" val="11" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1270,7 +1270,7 @@
 		<set name="price" val="371300" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="12" />
+			<add order="0" stat="pDef" val="12" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1287,7 +1287,7 @@
 		<set name="price" val="1917000" />
 		<set name="enchant_enabled" val="1" />
 		<for>
-			<add stat="pDef" val="14" />
+			<add order="0" stat="pDef" val="14" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>

@@ -13,7 +13,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3457-1" />
 		<for>
-			<add stat="pDef" val="28" />
+			<add order="0" stat="pDef" val="28" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -30,7 +30,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3458-1" />
 		<for>
-			<add stat="pDef" val="28" />
+			<add order="0" stat="pDef" val="28" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -47,7 +47,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3459-1" />
 		<for>
-			<add stat="pDef" val="28" />
+			<add order="0" stat="pDef" val="28" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -64,7 +64,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3463-1" />
 		<for>
-			<add stat="pDef" val="19" />
+			<add order="0" stat="pDef" val="19" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -81,7 +81,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3464-1" />
 		<for>
-			<add stat="pDef" val="19" />
+			<add order="0" stat="pDef" val="19" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -98,7 +98,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3465-1" />
 		<for>
-			<add stat="pDef" val="19" />
+			<add order="0" stat="pDef" val="19" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -115,7 +115,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3469-1" />
 		<for>
-			<add stat="pDef" val="22" />
+			<add order="0" stat="pDef" val="22" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -132,7 +132,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3470-1" />
 		<for>
-			<add stat="pDef" val="22" />
+			<add order="0" stat="pDef" val="22" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -149,7 +149,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3471-1" />
 		<for>
-			<add stat="pDef" val="22" />
+			<add order="0" stat="pDef" val="22" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -166,7 +166,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3475-1" />
 		<for>
-			<add stat="pDef" val="26" />
+			<add order="0" stat="pDef" val="26" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -183,7 +183,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3476-1" />
 		<for>
-			<add stat="pDef" val="26" />
+			<add order="0" stat="pDef" val="26" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -200,7 +200,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3477-1" />
 		<for>
-			<add stat="pDef" val="26" />
+			<add order="0" stat="pDef" val="26" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -217,7 +217,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3481-1" />
 		<for>
-			<add stat="pDef" val="30" />
+			<add order="0" stat="pDef" val="30" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -234,7 +234,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3482-1" />
 		<for>
-			<add stat="pDef" val="30" />
+			<add order="0" stat="pDef" val="30" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -251,7 +251,7 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="enchant4_skill" val="3483-1" />
 		<for>
-			<add stat="pDef" val="30" />
+			<add order="0" stat="pDef" val="30" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>

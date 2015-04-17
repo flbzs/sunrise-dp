@@ -3022,7 +3022,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="293" />
+			<add order="0" stat="pDef" val="293" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -3045,7 +3045,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="293" />
+			<add order="0" stat="pDef" val="293" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -3065,7 +3065,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="220" />
+			<add order="0" stat="pDef" val="220" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -3085,7 +3085,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="220" />
+			<add order="0" stat="pDef" val="220" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -3108,7 +3108,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="147" />
+			<add order="0" stat="pDef" val="147" />
 			<add stat="maxMp" val="718" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -3129,7 +3129,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="147" />
+			<add order="0" stat="pDef" val="147" />
 			<add stat="maxMp" val="718" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -3153,7 +3153,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="205" />
+			<add order="0" stat="pDef" val="205" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>

@@ -15,7 +15,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="202" />
+			<add order="0" stat="pDef" val="202" />
 		</for>
 	</item>
 	<item id="15001" type="Armor" name="Doom Helmet of Fortune - 30-day limited period">
@@ -32,7 +32,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="66" />
+			<add order="0" stat="pDef" val="66" />
 		</for>
 	</item>
 	<item id="15002" type="Armor" name="Doom Gloves of Fortune - Heavy Armor - 30-day limited period">
@@ -52,7 +52,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="44" />
+			<add order="0" stat="pDef" val="44" />
 		</for>
 	</item>
 	<item id="15003" type="Armor" name="Doom Gloves of Fortune - Light Armor - 30-day limited period">
@@ -69,7 +69,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="44" />
+			<add order="0" stat="pDef" val="44" />
 		</for>
 	</item>
 	<item id="15004" type="Armor" name="Doom Boots of Fortune - Heavy Armor - 30-day limited period">
@@ -89,7 +89,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="44" />
+			<add order="0" stat="pDef" val="44" />
 		</for>
 	</item>
 	<item id="15005" type="Armor" name="Doom Boots of Fortune - Light Armor - 30-day limited period">
@@ -106,7 +106,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="44" />
+			<add order="0" stat="pDef" val="44" />
 		</for>
 	</item>
 	<item id="15006" type="Armor" name="Doom Plate Armor of Fortune - 30-day limited period">
@@ -127,7 +127,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="270" />
+			<add order="0" stat="pDef" val="270" />
 		</for>
 	</item>
 	<item id="15007" type="Armor" name="Doom Shield of Fortune - 30-day limited period">
@@ -167,7 +167,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="94" />
+			<add order="0" stat="pDef" val="94" />
 		</for>
 	</item>
 	<item id="15009" type="Armor" name="Plate Leather Gaiters of Fortune - 30-day limited period">
@@ -185,7 +185,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="59" />
+			<add order="0" stat="pDef" val="59" />
 		</for>
 	</item>
 	<item id="15010" type="Armor" name="Plate Leather Boots of Fortune - 30-day limited period">
@@ -202,7 +202,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="32" />
+			<add order="0" stat="pDef" val="32" />
 		</for>
 	</item>
 	<item id="15011" type="Armor" name="Plate Leather Gloves of Fortune - 30-day limited period">
@@ -219,7 +219,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="33" />
+			<add order="0" stat="pDef" val="33" />
 		</for>
 	</item>
 	<item id="15012" type="Armor" name="Full Plate Helmet of Fortune - 30-day limited period">
@@ -236,7 +236,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="58" />
+			<add order="0" stat="pDef" val="58" />
 		</for>
 	</item>
 	<item id="15013" type="Armor" name="Full Plate Armor of Fortune - 30-day limited period">
@@ -257,7 +257,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="239" />
+			<add order="0" stat="pDef" val="239" />
 		</for>
 	</item>
 	<item id="15014" type="Armor" name="Full Plate Boots of Fortune - 30-day limited period">
@@ -274,7 +274,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="39" />
+			<add order="0" stat="pDef" val="39" />
 		</for>
 	</item>
 	<item id="15015" type="Armor" name="Full Plate Gauntlet of Fortune - 30-day limited period">
@@ -291,7 +291,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="39" />
+			<add order="0" stat="pDef" val="39" />
 		</for>
 	</item>
 	<item id="15016" type="Armor" name="Full Plate Shield of Fortune - 30-day limited period">
@@ -331,7 +331,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="77" />
+			<add order="0" stat="pDef" val="77" />
 		</for>
 	</item>
 	<item id="15018" type="Armor" name="Manticore Skin Gaiters of Fortune - 30-day limited period">
@@ -349,7 +349,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="48" />
+			<add order="0" stat="pDef" val="48" />
 		</for>
 	</item>
 	<item id="15019" type="Armor" name="Manticore Skin Boots of Fortune - 30-day limited period">
@@ -366,7 +366,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="27" />
+			<add order="0" stat="pDef" val="27" />
 		</for>
 	</item>
 	<item id="15020" type="Armor" name="Manticore Skin Gloves of Fortune - 30-day limited period">
@@ -383,7 +383,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="27" />
+			<add order="0" stat="pDef" val="27" />
 		</for>
 	</item>
 	<item id="15021" type="Armor" name="Brigandine of Fortune - 30-day limited period">
@@ -404,7 +404,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="103" />
+			<add order="0" stat="pDef" val="103" />
 		</for>
 	</item>
 	<item id="15022" type="Armor" name="Brigandine Gaiters of Fortune - 30-day limited period">
@@ -425,7 +425,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="64" />
+			<add order="0" stat="pDef" val="64" />
 		</for>
 	</item>
 	<item id="15023" type="Armor" name="Brigandine Helmet of Fortune - 30-day limited period">
@@ -442,7 +442,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 	<item id="15024" type="Armor" name="Brigandine Boots of Fortune - 30-day limited period">
@@ -459,7 +459,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="27" />
+			<add order="0" stat="pDef" val="27" />
 		</for>
 	</item>
 	<item id="15025" type="Armor" name="Brigandine Gauntlet of Fortune - 30-day limited period">
@@ -476,7 +476,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="27" />
+			<add order="0" stat="pDef" val="27" />
 		</for>
 	</item>
 	<item id="15026" type="Armor" name="Brigandine Shield of Fortune - 30-day limited period">
@@ -519,7 +519,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="293" />
+			<add order="0" stat="pDef" val="293" />
 		</for>
 	</item>
 	<item id="15028" type="Armor" name="Fortune Helm of Nightmare - 30-day limited period">
@@ -536,7 +536,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="pDef" val="73" />
+			<add order="0" stat="pDef" val="73" />
 		</for>
 	</item>
 	<item id="15029" type="Armor" name="Fortune Gauntlet of Nightmare - Heavy Armor - 30-day limited period">
@@ -556,7 +556,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
 	<item id="15030" type="Armor" name="Fortune Boots of Nightmare - Heavy Armor - 30-day limited period">
@@ -576,7 +576,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="49" />
+			<add order="0" stat="pDef" val="49" />
 		</for>
 	</item>
 	<item id="15031" type="Armor" name="Fortune Shield of Nightmare - 30-day limited period">
@@ -2037,7 +2037,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="63" />
+			<add order="0" stat="mDef" val="63" />
 			<add stat="maxMp" val="25" />
 		</for>
 	</item>
@@ -2055,7 +2055,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="85" />
+			<add order="0" stat="mDef" val="85" />
 			<add stat="maxMp" val="33" />
 		</for>
 	</item>
@@ -2073,7 +2073,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="42" />
+			<add order="0" stat="mDef" val="42" />
 			<add stat="maxMp" val="17" />
 		</for>
 	</item>
@@ -2091,7 +2091,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="54" />
+			<add order="0" stat="mDef" val="54" />
 		</for>
 	</item>
 	<item id="15084" type="Armor" name="Fortune Necklace of Black Ore - 10-day limited period">
@@ -2108,7 +2108,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="72" />
+			<add order="0" stat="mDef" val="72" />
 		</for>
 	</item>
 	<item id="15085" type="Armor" name="Fortune Ring of Black Ore - 10-day limited period">
@@ -2125,7 +2125,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="36" />
+			<add order="0" stat="mDef" val="36" />
 		</for>
 	</item>
 	<item id="15086" type="Armor" name="Fortune Earring of Seal - 10-day limited period">
@@ -2142,7 +2142,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="45" />
+			<add order="0" stat="mDef" val="45" />
 		</for>
 	</item>
 	<item id="15087" type="Armor" name="Fortune Necklace of Seal - 10-day limited period">
@@ -2159,7 +2159,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="64" />
+			<add order="0" stat="mDef" val="64" />
 		</for>
 	</item>
 	<item id="15088" type="Armor" name="Fortune Ring of Seal - 10-day limited period">
@@ -2176,7 +2176,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="32" />
+			<add order="0" stat="mDef" val="32" />
 		</for>
 	</item>
 	<item id="15089" type="Armor" name="Elven Earring of Fortune - 10-day limited period">
@@ -2193,7 +2193,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="34" />
+			<add order="0" stat="mDef" val="34" />
 		</for>
 	</item>
 	<item id="15090" type="Armor" name="Elven Earring of Fortune - 10-day limited period">
@@ -2210,7 +2210,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="45" />
+			<add order="0" stat="mDef" val="45" />
 		</for>
 	</item>
 	<item id="15091" type="Armor" name="Elven Ring of Fortune - 10-day limited period">
@@ -2227,7 +2227,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="22" />
+			<add order="0" stat="mDef" val="22" />
 		</for>
 	</item>
 	<item id="15092" type="Armor" name="Dark Crystal Robe of Fortune - 10-day limited period">
@@ -2248,7 +2248,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="139" />
+			<add order="0" stat="pDef" val="139" />
 			<add stat="maxMp" val="665" />
 		</for>
 	</item>
@@ -2266,7 +2266,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="pDef" val="69" />
+			<add order="0" stat="pDef" val="69" />
 		</for>
 	</item>
 	<item id="15094" type="Armor" name="Dark Crystal Gloves of Fortune - Robe - 10-day limited period">
@@ -2286,7 +2286,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 		</for>
 	</item>
 	<item id="15095" type="Armor" name="Dark Crystal Boots of Fortune - Robe - 10-day limited period">
@@ -2306,7 +2306,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 		</for>
 	</item>
 	<item id="15096" type="Armor" name="Dark Crystal Shield of Fortune - 10-day limited period">
@@ -2349,7 +2349,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="127" />
+			<add order="0" stat="pDef" val="127" />
 			<add stat="maxMp" val="561" />
 		</for>
 	</item>
@@ -2367,7 +2367,7 @@
 		<set name="is_depositable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="pDef" val="62" />
+			<add order="0" stat="pDef" val="62" />
 		</for>
 	</item>
 	<item id="15099" type="Armor" name="Avadon Gloves of Fortune - Robe - 10-day limited period">
@@ -2387,7 +2387,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="41" />
+			<add order="0" stat="pDef" val="41" />
 		</for>
 	</item>
 </list>

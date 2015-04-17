@@ -211,7 +211,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="51" />
+			<add order="0" stat="pDef" val="51" />
 		</for>
 	</item>
 	<item id="1309" type="Armor" name="Mithril Breastplate">
@@ -229,7 +229,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="51" />
+			<add order="0" stat="pDef" val="51" />
 		</for>
 	</item>
 	<item id="1310" type="Armor" name="Tunic of Magic">
@@ -247,7 +247,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="51" />
+			<add order="0" stat="pDef" val="51" />
 			<add stat="maxMp" val="96" />
 		</for>
 	</item>
@@ -263,7 +263,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="51" />
+			<add order="0" stat="pDef" val="51" />
 		</for>
 	</item>
 	<item id="1312" type="Armor" name="White Tunic">
@@ -281,7 +281,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="51" />
+			<add order="0" stat="pDef" val="51" />
 			<add stat="maxMp" val="142" />
 		</for>
 	</item>
@@ -300,7 +300,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="32" />
+			<add order="0" stat="pDef" val="32" />
 		</for>
 	</item>
 	<item id="1314" type="Armor" name="Mithril Gaiters">
@@ -318,7 +318,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="32" />
+			<add order="0" stat="pDef" val="32" />
 		</for>
 	</item>
 	<item id="1315" type="Armor" name="Stockings of Magic">
@@ -336,7 +336,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="32" />
+			<add order="0" stat="pDef" val="32" />
 			<add stat="maxMp" val="60" />
 		</for>
 	</item>
@@ -352,7 +352,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="32" />
+			<add order="0" stat="pDef" val="32" />
 		</for>
 	</item>
 	<item id="1317" type="Armor" name="Dark Stockings">
@@ -370,7 +370,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="32" />
+			<add order="0" stat="pDef" val="32" />
 			<add stat="maxMp" val="79" />
 		</for>
 	</item>
@@ -385,7 +385,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="14" />
+			<add order="0" stat="pDef" val="14" />
 		</for>
 	</item>
 	<item id="1319" type="Armor" name="Leather Gloves">
@@ -399,7 +399,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="14" />
+			<add order="0" stat="pDef" val="14" />
 		</for>
 	</item>
 	<item id="1320" type="Armor" name="Crafted Leather Gloves">
@@ -413,7 +413,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="14" />
+			<add order="0" stat="pDef" val="14" />
 		</for>
 	</item>
 	<item id="1321" type="Armor" name="Rip Gauntlets">
@@ -427,7 +427,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="14" />
+			<add order="0" stat="pDef" val="14" />
 		</for>
 	</item>
 	<item id="1322" type="Armor" name="Bracer">
@@ -441,7 +441,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="14" />
+			<add order="0" stat="pDef" val="14" />
 		</for>
 	</item>
 	<item id="1323" type="Armor" name="Leather Shoes">
@@ -455,7 +455,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="14" />
+			<add order="0" stat="pDef" val="14" />
 		</for>
 	</item>
 	<item id="1324" type="Armor" name="Low Boots">
@@ -469,7 +469,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="14" />
+			<add order="0" stat="pDef" val="14" />
 		</for>
 	</item>
 	<item id="1325" type="Armor" name="Leather Boots">
@@ -483,7 +483,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="14" />
+			<add order="0" stat="pDef" val="14" />
 		</for>
 	</item>
 	<item id="1326" type="Armor" name="Iron Boots">
@@ -497,7 +497,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="14" />
+			<add order="0" stat="pDef" val="14" />
 		</for>
 	</item>
 	<item id="1327" type="Armor" name="Boots">
@@ -511,7 +511,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_sellable" val="false" />
 		<for>
-			<add stat="pDef" val="14" />
+			<add order="0" stat="pDef" val="14" />
 		</for>
 	</item>
 	<item id="1328" type="Armor" name="Shield of Grace">

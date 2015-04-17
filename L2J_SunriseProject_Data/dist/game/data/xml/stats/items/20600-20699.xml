@@ -673,7 +673,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
-			<add stat="pDef" val="29" />
+			<add order="0" stat="pDef" val="29" />
 		</for>
 	</item>
 	<item id="20643" type="Armor" name="Common Item - Plate Boots">
@@ -689,7 +689,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
-			<add stat="pDef" val="29" />
+			<add order="0" stat="pDef" val="29" />
 		</for>
 	</item>
 	<item id="20644" type="Armor" name="Common Item - Plate Shield">
@@ -726,7 +726,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
-			<add stat="pDef" val="44" />
+			<add order="0" stat="pDef" val="44" />
 		</for>
 	</item>
 	<item id="20646" type="Armor" name="Common Item - Plate Gaiters">
@@ -746,7 +746,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="70" />
+			<add order="0" stat="pDef" val="70" />
 		</for>
 	</item>
 	<item id="20647" type="Armor" name="Common Item - Half Plate Armor">
@@ -766,7 +766,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="111" />
+			<add order="0" stat="pDef" val="111" />
 		</for>
 	</item>
 	<item id="20648" type="Armor" name="Common Item - Salamander Skin Mail">
@@ -783,7 +783,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
-			<add stat="pDef" val="136" />
+			<add order="0" stat="pDef" val="136" />
 		</for>
 	</item>
 	<item id="20649" type="Weapon" name="Common Item - Ghost Staff">
@@ -830,7 +830,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="52" />
+			<add order="0" stat="pDef" val="52" />
 			<add stat="maxMp" val="169" />
 		</for>
 	</item>
@@ -851,7 +851,7 @@
 			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
 		</cond>
 		<for>
-			<add stat="pDef" val="32" />
+			<add order="0" stat="pDef" val="32" />
 			<add stat="maxMp" val="105" />
 		</for>
 	</item>
@@ -868,7 +868,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
-			<add stat="pDef" val="29" />
+			<add order="0" stat="pDef" val="29" />
 		</for>
 	</item>
 	<item id="20653" type="Armor" name="Common Item - Ogre Power Gauntlet">
@@ -884,7 +884,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<for>
-			<add stat="pDef" val="29" />
+			<add order="0" stat="pDef" val="29" />
 		</for>
 	</item>
 	<item id="20654" type="Armor" name="Agathion Seal Bracelet - Chon-chon">

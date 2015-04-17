@@ -77,7 +77,7 @@
 		<set name="time" val="43200" />
 		<set name="item_skill" val="3562-1" /> <!-- Guess. -->
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 		</for>
 	</item>
@@ -94,7 +94,7 @@
 		<set name="time" val="43200" />
 		<set name="item_skill" val="3561-1" /> <!-- Guess. -->
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 		</for>
 	</item>
@@ -112,7 +112,7 @@
 		<set name="time" val="43200" />
 		<set name="item_skill" val="3559-1" /> <!-- Guess. -->
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 		</for>
 	</item>
@@ -212,7 +212,7 @@
 		<set name="time" val="259200" />
 		<set name="item_skill" val="3562-1" /> <!-- Guess. -->
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 		</for>
 	</item>
@@ -229,7 +229,7 @@
 		<set name="time" val="259200" />
 		<set name="item_skill" val="3561-1" /> <!-- Guess. -->
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 		</for>
 	</item>
@@ -247,7 +247,7 @@
 		<set name="time" val="259200" />
 		<set name="item_skill" val="3559-1" /> <!-- Guess. -->
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 		</for>
 	</item>
@@ -264,7 +264,7 @@
 		<set name="time" val="259200" />
 		<set name="item_skill" val="3557-1" /> <!-- Guess. -->
 		<for>
-			<add stat="mDef" val="125" />
+			<add order="0" stat="mDef" val="125" />
 			<add stat="maxMp" val="50" />
 		</for>
 	</item>
@@ -281,7 +281,7 @@
 		<set name="time" val="259200" />
 		<set name="item_skill" val="3558-1" /> <!-- Guess. -->
 		<for>
-			<add stat="mDef" val="94" />
+			<add order="0" stat="mDef" val="94" />
 			<add stat="maxMp" val="37" />
 		</for>
 	</item>

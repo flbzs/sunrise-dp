@@ -986,7 +986,7 @@
 			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 		</cond>
 		<for>
-			<add stat="pDef" val="37" />
+			<add order="0" stat="pDef" val="37" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1010,7 +1010,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="158" />
+			<add order="0" stat="pDef" val="158" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1033,7 +1033,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="24" />
+			<add order="0" stat="pDef" val="24" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1056,7 +1056,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="24" />
+			<add order="0" stat="pDef" val="24" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1077,7 +1077,7 @@
 			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 		</cond>
 		<for>
-			<add stat="pDef" val="119" />
+			<add order="0" stat="pDef" val="119" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1097,7 +1097,7 @@
 			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 		</cond>
 		<for>
-			<add stat="pDef" val="24" />
+			<add order="0" stat="pDef" val="24" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1117,7 +1117,7 @@
 			<player pledgeClass="1" /> <!-- Vassal (Academy) -->
 		</cond>
 		<for>
-			<add stat="pDef" val="24" />
+			<add order="0" stat="pDef" val="24" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1141,7 +1141,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="79" />
+			<add order="0" stat="pDef" val="79" />
 			<add stat="maxMp" val="239" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1165,7 +1165,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="24" />
+			<add order="0" stat="pDef" val="24" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1188,7 +1188,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="24" />
+			<add order="0" stat="pDef" val="24" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1206,7 +1206,7 @@
 			<player pledgeClass="4" /> <!-- Elder -->
 		</cond>
 		<for>
-			<add stat="pDef" val="69" />
+			<add order="0" stat="pDef" val="69" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1228,7 +1228,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="278" />
+			<add order="0" stat="pDef" val="278" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1249,7 +1249,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1270,7 +1270,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1289,7 +1289,7 @@
 			<player pledgeClass="4" /> <!-- Elder -->
 		</cond>
 		<for>
-			<add stat="pDef" val="209" />
+			<add order="0" stat="pDef" val="209" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1307,7 +1307,7 @@
 			<player pledgeClass="4" /> <!-- Elder -->
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1325,7 +1325,7 @@
 			<player pledgeClass="4" /> <!-- Elder -->
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1347,7 +1347,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="139" />
+			<add order="0" stat="pDef" val="139" />
 			<add stat="maxMp" val="665" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1369,7 +1369,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1390,7 +1390,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1408,7 +1408,7 @@
 			<player pledgeClass="4" /> <!-- Elder -->
 		</cond>
 		<for>
-			<add stat="pDef" val="69" />
+			<add order="0" stat="pDef" val="69" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1430,7 +1430,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="278" />
+			<add order="0" stat="pDef" val="278" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1451,7 +1451,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1472,7 +1472,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1491,7 +1491,7 @@
 			<player pledgeClass="4" /> <!-- Elder -->
 		</cond>
 		<for>
-			<add stat="pDef" val="209" />
+			<add order="0" stat="pDef" val="209" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1509,7 +1509,7 @@
 			<player pledgeClass="4" /> <!-- Elder -->
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1527,7 +1527,7 @@
 			<player pledgeClass="4" /> <!-- Elder -->
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1549,7 +1549,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="139" />
+			<add order="0" stat="pDef" val="139" />
 			<add stat="maxMp" val="665" />
 			<enchant stat="pDef" val="0" />
 		</for>
@@ -1571,7 +1571,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>
@@ -1592,7 +1592,7 @@
 			</and>
 		</cond>
 		<for>
-			<add stat="pDef" val="46" />
+			<add order="0" stat="pDef" val="46" />
 			<enchant stat="pDef" val="0" />
 		</for>
 	</item>

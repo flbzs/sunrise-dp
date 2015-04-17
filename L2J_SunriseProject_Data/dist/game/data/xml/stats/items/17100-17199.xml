@@ -1199,7 +1199,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="4320" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 		</for>
 	</item>
@@ -1214,7 +1214,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="4320" />
 		<for>
-			<add stat="mDef" val="95" />
+			<add order="0" stat="mDef" val="95" />
 			<add stat="maxMp" val="42" />
 		</for>
 	</item>
@@ -1229,7 +1229,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="4320" />
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 		</for>
 	</item>
@@ -1244,7 +1244,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="10080" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 		</for>
 	</item>
@@ -1259,7 +1259,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="10080" />
 		<for>
-			<add stat="mDef" val="95" />
+			<add order="0" stat="mDef" val="95" />
 			<add stat="maxMp" val="42" />
 		</for>
 	</item>
@@ -1274,7 +1274,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="10080" />
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 		</for>
 	</item>
@@ -1289,7 +1289,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 		</for>
 	</item>
@@ -1304,7 +1304,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="95" />
+			<add order="0" stat="mDef" val="95" />
 			<add stat="maxMp" val="42" />
 		</for>
 	</item>
@@ -1319,7 +1319,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="14400" />
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 		</for>
 	</item>
@@ -1334,7 +1334,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 		</for>
 	</item>
@@ -1349,7 +1349,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="mDef" val="95" />
+			<add order="0" stat="mDef" val="95" />
 			<add stat="maxMp" val="42" />
 		</for>
 	</item>
@@ -1364,7 +1364,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="time" val="43200" />
 		<for>
-			<add stat="mDef" val="71" />
+			<add order="0" stat="mDef" val="71" />
 			<add stat="maxMp" val="31" />
 		</for>
 	</item>
@@ -1378,7 +1378,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<for>
-			<add stat="mDef" val="48" />
+			<add order="0" stat="mDef" val="48" />
 			<add stat="maxMp" val="21" />
 		</for>
 	</item>
@@ -1392,7 +1392,7 @@
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<for>
-			<add stat="mDef" val="95" />
+			<add order="0" stat="mDef" val="95" />
 			<add stat="maxMp" val="42" />
 		</for>
 	</item>
