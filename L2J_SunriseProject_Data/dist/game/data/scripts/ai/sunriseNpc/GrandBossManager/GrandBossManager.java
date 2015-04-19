@@ -1,6 +1,5 @@
 package ai.sunriseNpc.GrandBossManager;
 
-import javolution.text.TextBuilder;
 import l2r.gameserver.data.sql.NpcTable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -42,8 +41,8 @@ public class GrandBossManager extends AbstractNpcAI
 	
 	private final void showRbInfo(L2PcInstance player)
 	{
-		NpcHtmlMessage html = new NpcHtmlMessage(0);
-		TextBuilder tb = new TextBuilder();
+		NpcHtmlMessage html = new NpcHtmlMessage();
+		StringBuilder tb = new StringBuilder();
 		tb.append("<html><title>Chat</title><body>");
 		tb.append("<br><br>");
 		tb.append("<font color=00FFFF>Grand Boss Info:</font>");

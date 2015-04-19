@@ -42,7 +42,7 @@ public class PvpZoneVCmd implements IVoicedCommandHandler
 	{
 		if (command.equalsIgnoreCase("zone"))
 		{
-			NpcHtmlMessage playerReply = new NpcHtmlMessage(5);
+			NpcHtmlMessage playerReply = new NpcHtmlMessage();
 			TextBuilder replyMSG = new TextBuilder();
 			replyMSG.append("<html><title>Zone Manager</title><body>");
 			replyMSG.append("<br><font color=\"LEVEL\">Custom Zones...:</font><br><br>");

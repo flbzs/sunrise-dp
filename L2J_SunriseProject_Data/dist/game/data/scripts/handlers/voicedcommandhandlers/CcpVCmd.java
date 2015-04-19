@@ -86,7 +86,7 @@ public class CcpVCmd implements IVoicedCommandHandler
 	public static void sendHtml(L2PcInstance player)
 	{
 		TextBuilder builder = new TextBuilder();
-		NpcHtmlMessage html = new NpcHtmlMessage(5);
+		NpcHtmlMessage html = new NpcHtmlMessage();
 		
 		builder.append("<html noscrollbar><title>Character Control Panel</title><body>");
 		builder.append("<table width=285  height=358 background=\"L2UI_CH3.refinewnd_back_Pattern\">");

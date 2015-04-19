@@ -174,7 +174,7 @@ public class AdminTerritoryWar implements IAdminCommandHandler
 	
 	private void showSiegeTimePage(L2PcInstance activeChar)
 	{
-		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+		NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/territorywartime.htm");
 		adminReply.replace("%time%", TerritoryWarManager.getInstance().getTWStart().getTime().toString());
 		activeChar.sendPacket(adminReply);

@@ -751,7 +751,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	
 	private void sendRegistrationPageDate(L2PcInstance player)
 	{
-		final NpcHtmlMessage msg = new NpcHtmlMessage(5);
+		final NpcHtmlMessage msg = new NpcHtmlMessage();
 		msg.setHtml(getHtm(player.getHtmlPrefix(), "siege_date.htm"));
 		msg.replace("%nextSiege%", _hall.getSiegeDate().getTime().toString());
 		player.sendPacket(msg);

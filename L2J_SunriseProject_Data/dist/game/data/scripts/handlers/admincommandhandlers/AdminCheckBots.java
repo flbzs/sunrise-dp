@@ -39,7 +39,7 @@ public class AdminCheckBots implements IAdminCommandHandler
 		
 		if (command.startsWith("admin_check_bots"))
 		{
-			final NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+			final NpcHtmlMessage adminReply = new NpcHtmlMessage();
 			adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/botsystem.htm");
 			
 			adminReply.replace("%farmbots%", String.valueOf(farmBotsCount));
@@ -119,7 +119,7 @@ public class AdminCheckBots implements IAdminCommandHandler
 	{
 		final L2PcInstance[] players = L2World.getInstance().getPlayersSortedBy(Comparators.PLAYER_UPTIME_COMPARATOR);
 		
-		NpcHtmlMessage html = new NpcHtmlMessage(5);
+		NpcHtmlMessage html = new NpcHtmlMessage();
 		if (type.equals("farm"))
 		{
 			html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/farmbotlist.htm");

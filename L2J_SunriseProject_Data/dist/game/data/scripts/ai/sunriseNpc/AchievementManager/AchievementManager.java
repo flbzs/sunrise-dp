@@ -2,7 +2,6 @@ package ai.sunriseNpc.AchievementManager;
 
 import java.util.StringTokenizer;
 
-import javolution.text.TextBuilder;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -91,7 +90,7 @@ public class AchievementManager extends AbstractNpcAI
 	
 	private void showMyAchievements(L2PcInstance player, L2Npc npc)
 	{
-		TextBuilder tb = new TextBuilder();
+		StringBuilder tb = new StringBuilder();
 		
 		tb.append("<html><title>Achievements Manager</title><body><br>");
 		tb.append("<center><font color=\"LEVEL\">My achievements</font>:</center><br>");
@@ -128,7 +127,7 @@ public class AchievementManager extends AbstractNpcAI
 	{
 		Achievement a = AchievementsManager.getInstance().getAchievementList().get(achievementID);
 		
-		TextBuilder tb = new TextBuilder();
+		StringBuilder tb = new StringBuilder();
 		tb.append("<html><title>Achievements Manager</title><body><br>");
 		
 		tb.append("<center><table width=270 border=0 bgcolor=\"33FF33\">");

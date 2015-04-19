@@ -39,7 +39,7 @@ public class PremiumVCmd implements IVoicedCommandHandler
 			SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy HH:mm");
 			if (!activeChar.isPremium())
 			{
-				NpcHtmlMessage preReply = new NpcHtmlMessage(5);
+				NpcHtmlMessage preReply = new NpcHtmlMessage();
 				TextBuilder html3 = new TextBuilder("<html><body><title>Normal Account</title><center>");
 				html3.append("<table>");
 				html3.append("<tr><td><center>Account Type: <font color=\"LEVEL\">Normal<br></font></td></tr>");
@@ -69,7 +69,7 @@ public class PremiumVCmd implements IVoicedCommandHandler
 			{
 				long _end_prem_date;
 				_end_prem_date = PremiumHandler.getPremServiceData(activeChar.getAccountName());
-				NpcHtmlMessage preReply = new NpcHtmlMessage(5);
+				NpcHtmlMessage preReply = new NpcHtmlMessage();
 				
 				TextBuilder html3 = new TextBuilder("<html><body><title>Premium Account Details</title><center>");
 				html3.append("<table>");

@@ -68,7 +68,7 @@ public class RepairVCmd implements IVoicedCommandHandler
 		if (command.startsWith("repair"))
 		{
 			String htmContent = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/mods/repair/repair.htm");
-			NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(5);
+			NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage();
 			npcHtmlMessage.setHtml(htmContent);
 			npcHtmlMessage.replace("%acc_chars%", getCharList(activeChar));
 			activeChar.sendPacket(npcHtmlMessage);
@@ -84,7 +84,7 @@ public class RepairVCmd implements IVoicedCommandHandler
 				if (checkChar(activeChar, repairChar))
 				{
 					String htmContent = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/mods/repair/repair-self.htm");
-					NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(5);
+					NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage();
 					npcHtmlMessage.setHtml(htmContent);
 					activeChar.sendPacket(npcHtmlMessage);
 					return false;
@@ -92,7 +92,7 @@ public class RepairVCmd implements IVoicedCommandHandler
 				else if (checkJail(activeChar, repairChar))
 				{
 					String htmContent = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/mods/repair/repair-jail.htm");
-					NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(5);
+					NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage();
 					npcHtmlMessage.setHtml(htmContent);
 					activeChar.sendPacket(npcHtmlMessage);
 					return false;
@@ -106,14 +106,14 @@ public class RepairVCmd implements IVoicedCommandHandler
 				{
 					repairBadCharacter(repairChar);
 					String htmContent = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/mods/repair/repair-done.htm");
-					NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(5);
+					NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage();
 					npcHtmlMessage.setHtml(htmContent);
 					activeChar.sendPacket(npcHtmlMessage);
 					return true;
 				}
 			}
 			String htmContent = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/mods/repair/repair-error.htm");
-			NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(5);
+			NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage();
 			npcHtmlMessage.setHtml(htmContent);
 			activeChar.sendPacket(npcHtmlMessage);
 			return false;

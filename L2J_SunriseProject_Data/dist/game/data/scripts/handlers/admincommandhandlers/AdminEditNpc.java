@@ -347,7 +347,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 	
 	private void showNpcProperty(L2PcInstance activeChar, L2NpcTemplate npc)
 	{
-		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+		NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/editnpc.htm");
 		
 		if (content != null)
@@ -700,7 +700,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		replyMSG.append(npcId);
 		replyMSG.append("\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Close\" action=\"bypass -h admin_close_window\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 		
-		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+		NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		adminReply.setHtml(replyMSG.toString());
 		activeChar.sendPacket(adminReply);
 	}
@@ -788,7 +788,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		replyMSG.append("\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center>");
 		replyMSG.append("</body></html>");
 		
-		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+		NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		adminReply.setHtml(replyMSG.toString());
 		activeChar.sendPacket(adminReply);
 	}
@@ -797,7 +797,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 	{
 		final String replyMSG = StringUtil.concat("<html><title>Add drop data</title><body><table width=\"100%\"><tr><td>Npc</td><td>", npcData.getName(), " (", Integer.toString(npcData.getId()), ")", "</td></tr><tr><td>Item Id</td><td><edit var=\"itemId\" width=80></td></tr><tr><td>Min count</td><td><edit var=\"min\" width=80></td></tr><tr><td>Max count</td><td><edit var=\"max\" width=80></td></tr><tr><td>Category (sweep=-1)</td><td><edit var=\"category\" width=80></td></tr><tr><td>Chance (0-1000000)</td><td><edit var=\"chance\" width=80></td></tr></table><center><br><button value=\"Add\" action=\"bypass -h admin_add_drop ", Integer.toString(npcData.getId()), " $itemId $category $min $max $chance\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Back to Droplist\" action=\"bypass -h admin_show_droplist ", Integer.toString(npcData.getId()), "\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 		
-		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+		NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		adminReply.setHtml(replyMSG);
 		activeChar.sendPacket(adminReply);
 	}
@@ -884,7 +884,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		{
 			final String replyMSG = StringUtil.concat("<html><title>Drop Data Delete</title><body><br>Delete drop data.", "<table width=\"100%\"><tr><td>NPC</td><td>", NpcTable.getInstance().getTemplate(npcId).getName(), " (", Integer.toString(npcId), ")</td></tr><tr><td>Item ID</td><td>", Integer.toString(itemId), "</td></tr><tr><td>Category</td><td>", Integer.toString(category), "</td></tr></table><center><br><button value=\"Delete\" action=\"bypass -h admin_del_drop ", Integer.toString(npcId), " ", Integer.toString(itemId), " ", Integer.toString(category), " 1\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Back to Droplist\" action=\"bypass -h admin_show_droplist ", Integer.toString(npcId), "\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 			
-			NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+			NpcHtmlMessage adminReply = new NpcHtmlMessage();
 			adminReply.setHtml(replyMSG);
 			activeChar.sendPacket(adminReply);
 			return;
@@ -1095,7 +1095,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		replyMSG.append(npcId);
 		replyMSG.append("\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Close\" action=\"bypass -h admin_close_window\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 		
-		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+		NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		adminReply.setHtml(replyMSG.toString());
 		activeChar.sendPacket(adminReply);
 	}
@@ -1142,7 +1142,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 			
 			replyMSG.append("</body></html>");
 			
-			NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+			NpcHtmlMessage adminReply = new NpcHtmlMessage();
 			adminReply.setHtml(replyMSG.toString());
 			activeChar.sendPacket(adminReply);
 		}
@@ -1219,7 +1219,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		replyMSG.append(npcData.getId());
 		replyMSG.append("\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 		
-		NpcHtmlMessage adminReply = new NpcHtmlMessage(5);
+		NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		adminReply.setHtml(replyMSG.toString());
 		activeChar.sendPacket(adminReply);
 	}

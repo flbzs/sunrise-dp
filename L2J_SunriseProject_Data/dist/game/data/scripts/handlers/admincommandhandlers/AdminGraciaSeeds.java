@@ -68,7 +68,7 @@ public class AdminGraciaSeeds implements IAdminCommandHandler
 	
 	private void showMenu(L2PcInstance activeChar)
 	{
-		NpcHtmlMessage html = new NpcHtmlMessage(0);
+		NpcHtmlMessage html = new NpcHtmlMessage();
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/graciaseeds.htm");
 		html.replace("%sodstate%", String.valueOf(SoDManager.getInstance().getSoDState()));
 		html.replace("%sodtiatkill%", String.valueOf(SoDManager.getInstance().getSoDTiatKilled()));
