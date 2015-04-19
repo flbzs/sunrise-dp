@@ -46,14 +46,11 @@ public final class Reeling extends L2Effect
 	{
 		super(env, template);
 		
-		if (template.hasParameters())
-		{
-			_power = template.getParameters().getDouble("power");
-		}
-		else
+		if (template.getParameters().getString("power", null) == null)
 		{
 			throw new IllegalArgumentException(getClass().getSimpleName() + ": effect without power!");
 		}
+		_power = template.getParameters().getDouble("power");
 	}
 	
 	@Override

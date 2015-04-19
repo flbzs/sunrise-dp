@@ -32,16 +32,13 @@ import l2r.gameserver.model.stats.Env;
  */
 public class Paralyze extends L2Effect
 {
-	private boolean _mustCleanFreezingEffect;
+	private final boolean _mustCleanFreezingEffect;
 	
 	public Paralyze(Env env, EffectTemplate template)
 	{
 		super(env, template);
-		_mustCleanFreezingEffect = false;
-		if (template.hasParameters())
-		{
-			_mustCleanFreezingEffect = template.getParameters().getBoolean("mustCleanFreezingEffect", false);
-		}
+		
+		_mustCleanFreezingEffect = template.getParameters().getBoolean("mustCleanFreezingEffect", false);
 	}
 	
 	@Override

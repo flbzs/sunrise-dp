@@ -39,19 +39,17 @@ public class ResistSkill extends L2Effect
 	{
 		super(env, template);
 		
-		if (template.hasParameters())
+		for (int i = 1;; i++)
 		{
-			for (int i = 1;; i++)
+			int skillId = template.getParameters().getInt("skillId" + i, 0);
+			int skillLvl = template.getParameters().getInt("skillLvl" + i, 0);
+			if (skillId == 0)
 			{
-				int skillId = template.getParameters().getInt("skillId" + i, 0);
-				int skillLvl = template.getParameters().getInt("skillLvl" + i, 0);
-				if (skillId == 0)
-				{
-					break;
-				}
-				_skills.add(new SkillHolder(skillId, skillLvl));
+				break;
 			}
+			_skills.add(new SkillHolder(skillId, skillLvl));
 		}
+		
 		if (_skills.isEmpty())
 		{
 			throw new IllegalArgumentException(getClass().getSimpleName() + ": Without parameters!");
