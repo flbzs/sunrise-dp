@@ -96,7 +96,7 @@ public class AreaFriendly implements ITargetTypeHandler
 			return false;
 		}
 		
-		if ((target == null) || (!target.isPlayer() && !target.isSummon()))
+		if ((target == null) || target.isAlikeDead() || (!target.isPlayer() && !target.isSummon()))
 		{
 			return false;
 		}
@@ -108,7 +108,7 @@ public class AreaFriendly implements ITargetTypeHandler
 			return false;
 		}
 		
-		if (!actingPlayer.isFriend(targetPlayer))
+		if (!actingPlayer.isFriend(targetPlayer, true))
 		{
 			return false;
 		}
