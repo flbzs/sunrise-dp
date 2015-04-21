@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -126,14 +126,10 @@ public class AdminTeleport implements IAdminCommandHandler
 			{
 				String val = command.substring(11);
 				StringTokenizer st = new StringTokenizer(val);
-				String x1 = st.nextToken();
-				int x = Integer.parseInt(x1);
-				String y1 = st.nextToken();
-				int y = Integer.parseInt(y1);
-				String z1 = st.nextToken();
-				int z = Integer.parseInt(z1);
-				Location pos = new Location(x, y, z, 0);
-				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, pos);
+				int x = Integer.parseInt(st.nextToken());
+				int y = Integer.parseInt(st.nextToken());
+				int z = Integer.parseInt(st.nextToken());
+				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(x, y, z, 0));
 			}
 			catch (Exception e)
 			{
@@ -202,7 +198,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				L2PcInstance player = L2World.getInstance().getPlayer(targetName);
 				if (player != null)
 				{
-					teleportCharacter(player, activeChar.getX(), activeChar.getY(), activeChar.getZ(), activeChar);
+					teleportCharacter(player, activeChar.getLocation(), activeChar);
 				}
 				else
 				{
@@ -254,7 +250,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				{
 					z -= intVal;
 				}
-				activeChar.teleToLocation(x, y, z, false);
+				activeChar.teleToLocation(new Location(x, y, z));
 				showTeleportWindow(activeChar);
 			}
 			catch (Exception e)
@@ -350,7 +346,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			int z = Integer.parseInt(z1);
 			
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			activeChar.teleToLocation(x, y, z, false);
+			activeChar.teleToLocation(x, y, z);
 			
 			activeChar.sendMessage("You have been teleported to " + Coords);
 		}
@@ -378,7 +374,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			return;
 		}
-		NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		
 		final String replyMSG = StringUtil.concat("<html><title>Teleport Character</title>" + "<body>" + "The character you will teleport is ", player.getName(), "." + "<br>" + "Co-ordinate x" + "<edit var=\"char_cord_x\" width=110>" + "Co-ordinate y" + "<edit var=\"char_cord_y\" width=110>" + "Co-ordinate z" + "<edit var=\"char_cord_z\" width=110>" + "<button value=\"Teleport\" action=\"bypass -h admin_teleport_character $char_cord_x $char_cord_y $char_cord_z\" width=60 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">" + "<button value=\"Teleport near you\" action=\"bypass -h admin_teleport_character ", String.valueOf(activeChar.getX()), " ", String.valueOf(activeChar.getY()), " ", String.valueOf(activeChar.getZ()), "\" width=115 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">" + "<center><button value=\"Back\" action=\"bypass -h admin_current_player\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center>" + "</body></html>");
 		adminReply.setHtml(replyMSG);
@@ -414,7 +410,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				int y = Integer.parseInt(y1);
 				String z1 = st.nextToken();
 				int z = Integer.parseInt(z1);
-				teleportCharacter(player, x, y, z, null);
+				teleportCharacter(player, new Location(x, y, z), null);
 			}
 			catch (NoSuchElementException nsee)
 			{
@@ -424,12 +420,10 @@ public class AdminTeleport implements IAdminCommandHandler
 	
 	/**
 	 * @param player
-	 * @param x
-	 * @param y
-	 * @param z
+	 * @param loc
 	 * @param activeChar
 	 */
-	private void teleportCharacter(L2PcInstance player, int x, int y, int z, L2PcInstance activeChar)
+	private void teleportCharacter(L2PcInstance player, Location loc, L2PcInstance activeChar)
 	{
 		if (player != null)
 		{
@@ -452,7 +446,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				}
 				player.sendMessage("Admin is teleporting you.");
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-				player.teleToLocation(x, y, z, true);
+				player.teleToLocation(loc, true);
 			}
 		}
 	}
@@ -490,7 +484,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			int z = player.getZ();
 			
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			activeChar.teleToLocation(x, y, z, true);
+			activeChar.teleToLocation(new Location(x, y, z), true);
 			
 			activeChar.sendMessage("You have teleported to character " + player.getName() + ".");
 		}

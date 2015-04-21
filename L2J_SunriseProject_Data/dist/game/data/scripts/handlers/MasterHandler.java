@@ -37,9 +37,9 @@ import l2r.gameserver.handler.VoicedCommandHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import gr.sr.configsEngine.configs.impl.AioBufferConfigs;
 import gr.sr.configsEngine.configs.impl.AioItemsConfigs;
 import gr.sr.configsEngine.configs.impl.AntibotConfigs;
+import gr.sr.configsEngine.configs.impl.BufferConfigs;
 import gr.sr.configsEngine.configs.impl.ChaoticZoneConfigs;
 import gr.sr.configsEngine.configs.impl.CustomServerConfigs;
 import gr.sr.configsEngine.configs.impl.GetRewardVoteSystemConfigs;
@@ -490,7 +490,7 @@ public class MasterHandler
 		},
 		{
 			// Item Handlers
-			(AioBufferConfigs.ENABLE_AIO_BUFFER ? AioItemBuff.class : null),
+			(BufferConfigs.ENABLE_ITEM_BUFFER ? AioItemBuff.class : null),
 			(AioItemsConfigs.ENABLE_AIO_NPCS ? AioItemNpcs.class : null),
 			BeastSoulShot.class,
 			BeastSpice.class,
@@ -581,7 +581,7 @@ public class MasterHandler
 			(Config.L2JMOD_DEBUG_VOICE_COMMAND ? Debug.class : null),
 			(CustomServerConfigs.EVENLY_DISTRIBUTED_ITEMS ? EvenlyDistributeItems.class : null),
 			(Config.L2JMOD_HELLBOUND_STATUS ? Hellbound.class : null),
-			(AioBufferConfigs.ENABLE_AIO_BUFFER && PremiumServiceConfigs.USE_PREMIUM_SERVICE ? ItemBufferVCmd.class : null),
+			(BufferConfigs.ENABLE_ITEM_BUFFER && PremiumServiceConfigs.USE_PREMIUM_SERVICE ? ItemBufferVCmd.class : null),
 			(Config.L2JMOD_MULTILANG_ENABLE && Config.L2JMOD_MULTILANG_VOICED_ALLOW ? Lang.class : null),
 			(CustomServerConfigs.ALLOW_ONLINE_COMMAND ? OnlineVCmd.class : null),
 			(PremiumServiceConfigs.USE_PREMIUM_SERVICE ? PremiumVCmd.class : null),

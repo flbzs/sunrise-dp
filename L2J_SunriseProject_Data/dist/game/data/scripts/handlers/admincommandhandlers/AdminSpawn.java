@@ -197,7 +197,7 @@ public class AdminSpawn implements IAdminCommandHandler
 							}
 						}
 						StringUtil.append(html, "<tr><td>Skipped:</td><td>" + String.valueOf(skiped) + "</td></tr></table></body></html>");
-						NpcHtmlMessage ms = new NpcHtmlMessage(1);
+						NpcHtmlMessage ms = new NpcHtmlMessage();
 						ms.setHtml(html.toString());
 						activeChar.sendPacket(ms);
 					}

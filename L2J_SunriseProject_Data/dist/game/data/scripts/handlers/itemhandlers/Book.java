@@ -46,7 +46,7 @@ public class Book implements IItemHandler
 		
 		if (content == null)
 		{
-			NpcHtmlMessage html = new NpcHtmlMessage(1);
+			NpcHtmlMessage html = new NpcHtmlMessage();
 			html.setHtml("<html><body>My Text is missing:<br>" + filename + "</body></html>");
 			activeChar.sendPacket(html);
 		}

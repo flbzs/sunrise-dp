@@ -2,12 +2,12 @@ package handlers.admincommandhandlers;
 
 import java.util.StringTokenizer;
 
-import l2r.Config;
 import l2r.gameserver.data.xml.impl.ItemData;
 import l2r.gameserver.handler.IAdminCommandHandler;
 import l2r.gameserver.model.Elementals;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.items.L2Item;
+import gr.sr.configsEngine.configs.impl.SecuritySystemConfigs;
 
 /**
  * @author -=DoctorNo=-
@@ -99,9 +99,9 @@ public class AdminCustomCreateItem implements IAdminCommandHandler
 			return;
 		}
 		
-		if ((enchantvalue < 0) || (enchantvalue > Config.MAX_ENCHANT_LEVEL))
+		if ((enchantvalue < 0) || (enchantvalue > SecuritySystemConfigs.MAX_ENCHANT_LEVEL))
 		{
-			activeChar.sendMessage("Incorrect value, max enchant value " + Config.MAX_ENCHANT_LEVEL + ".");
+			activeChar.sendMessage("Incorrect value, max enchant value " + SecuritySystemConfigs.MAX_ENCHANT_LEVEL + ".");
 			return;
 		}
 		
@@ -113,7 +113,7 @@ public class AdminCustomCreateItem implements IAdminCommandHandler
 		
 		target.getInventory().addItem("Admin", id, 1, activeChar, null);
 		
-		if ((enchantvalue > 0) && (enchantvalue <= Config.MAX_ENCHANT_LEVEL))
+		if ((enchantvalue > 0) && (enchantvalue <= SecuritySystemConfigs.MAX_ENCHANT_LEVEL))
 		{
 			target.getInventory().getItemByItemId(id).setEnchantLevel(enchantvalue);
 		}

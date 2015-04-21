@@ -35,7 +35,7 @@ public class ItemBufferVCmd implements IVoicedCommandHandler
 	{
 		String htmFile = "data/html/sunrise/ItemBuffer/main.htm";
 		
-		NpcHtmlMessage msg = new NpcHtmlMessage(1);
+		NpcHtmlMessage msg = new NpcHtmlMessage();
 		msg.setFile(activeChar.getHtmlPrefix(), htmFile);
 		activeChar.sendPacket(msg);
 	}

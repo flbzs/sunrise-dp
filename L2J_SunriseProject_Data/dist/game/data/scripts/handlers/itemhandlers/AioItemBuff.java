@@ -5,40 +5,32 @@ import l2r.gameserver.model.actor.L2Playable;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.items.instance.L2ItemInstance;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
-import gr.sr.configsEngine.configs.impl.AioBufferConfigs;
+import gr.sr.configsEngine.configs.impl.BufferConfigs;
 
 /**
  * @author DoctorNo
  */
 public class AioItemBuff implements IItemHandler
 {
-	private static final int ITEM_IDS = AioBufferConfigs.BUFF_ITEM_ID;
+	private static final int ITEM_IDS = BufferConfigs.BUFF_ITEM_ID;
 	
 	@Override
 	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
 	{
-		// No null pointers
-		if (playable == null)
-		{
-			return false;
-		}
-		L2PcInstance player = null;
 		// Just for players
-		if (!(playable instanceof L2PcInstance))
+		if (!playable.isPlayer())
 		{
 			return false;
 		}
 		
-		player = (L2PcInstance) playable;
+		L2PcInstance player = null;
+		player = playable.getActingPlayer();
 		
-		int itemId = item.getId();
-		if (itemId == AioBufferConfigs.BUFF_ITEM_ID)
-		{
-			String htmFile = "data/html/sunrise/ItemBuffer/main.htm";
-			NpcHtmlMessage msg = new NpcHtmlMessage(1);
-			msg.setFile(player.getHtmlPrefix(), htmFile);
-			player.sendPacket(msg);
-		}
+		String htmFile = "data/html/sunrise/ItemBuffer/main.htm";
+		NpcHtmlMessage msg = new NpcHtmlMessage();
+		msg.setFile(player.getHtmlPrefix(), htmFile);
+		player.sendPacket(msg);
+		
 		return true;
 	}
 	

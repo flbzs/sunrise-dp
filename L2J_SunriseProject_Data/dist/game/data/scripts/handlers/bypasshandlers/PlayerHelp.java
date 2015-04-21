@@ -59,7 +59,7 @@ public class PlayerHelp implements IBypassHandler
 			}
 			else
 			{
-				html = new NpcHtmlMessage(1);
+				html = new NpcHtmlMessage();
 			}
 			
 			html.setFile(activeChar.getHtmlPrefix(), "data/html/help/" + cmd[0]);
