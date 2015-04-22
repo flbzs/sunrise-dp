@@ -251,7 +251,7 @@ public final class NornilsGarden extends AbstractInstance
 			// check for level difference again on reenter
 			if ((player.getLevel() > INSTANCE_LVL_MAX) || (player.getLevel() < INSTANCE_LVL_MIN))
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 				sm.addPcName(player);
 				player.sendPacket(sm);
 				return null;
@@ -400,13 +400,13 @@ public final class NornilsGarden extends AbstractInstance
 		// player must be in party
 		if (party == null)
 		{
-			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
+			player.sendPacket(SystemMessageId.NOT_IN_PARTY_CANT_ENTER);
 			return "32330-05.html";
 		}
 		// ...and be party leader
 		if (party.getLeader() != player)
 		{
-			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
+			player.sendPacket(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER);
 			return "32330-08.html";
 		}
 		boolean _kamael = false;
@@ -416,21 +416,21 @@ public final class NornilsGarden extends AbstractInstance
 			// player level must be in range
 			if (partyMember.getLevel() > INSTANCE_LVL_MAX)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 				sm.addPcName(partyMember);
 				player.sendPacket(sm);
 				return "32330-06.html";
 			}
 			if (partyMember.getLevel() < INSTANCE_LVL_MIN)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 				sm.addPcName(partyMember);
 				player.sendPacket(sm);
 				return "32330-07.html";
 			}
 			if (partyMember.getClassId().level() != 0)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 				sm.addPcName(partyMember);
 				player.sendPacket(sm);
 				return "32330-06.html";

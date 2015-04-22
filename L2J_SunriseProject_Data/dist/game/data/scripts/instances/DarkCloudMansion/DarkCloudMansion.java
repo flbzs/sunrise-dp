@@ -246,24 +246,24 @@ public final class DarkCloudMansion extends AbstractInstance
 		final L2Party party = player.getParty();
 		if (party == null)
 		{
-			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
+			player.sendPacket(SystemMessageId.NOT_IN_PARTY_CANT_ENTER);
 			return false;
 		}
 		if (party.getLeader() != player)
 		{
-			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
+			player.sendPacket(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER);
 			return false;
 		}
 		if (party.getMemberCount() > 2)
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_DUE_TO_THE_PARTY_HAVING_EXCEEDED_THE_LIMIT);
+			player.sendPacket(SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER);
 			return false;
 		}
 		for (L2PcInstance partyMember : party.getMembers())
 		{
 			if (partyMember.getLevel() < 78)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 				sm.addPcName(partyMember);
 				player.sendPacket(sm);
 				return false;

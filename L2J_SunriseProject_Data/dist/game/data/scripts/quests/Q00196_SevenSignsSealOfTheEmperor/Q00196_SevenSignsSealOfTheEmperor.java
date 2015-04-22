@@ -1120,14 +1120,14 @@ public final class Q00196_SevenSignsSealOfTheEmperor extends Quest
 				{
 					if (_numAtk < 4)
 					{
-						player.sendPacket(SystemMessageId.THE_SEALING_DEVICE_GLITTERS_AND_MOVES_ACTIVATION_COMPLETE_NORMALLY);
+						player.sendPacket(SystemMessageId.THE_SEALING_DEVICE_ACTIVATION_COMPLETE);
 						npc.setRHandId(15281);
 						st.playSound("ItemSound.quest_itemget");
 						st.giveItems(SEAL, 1);
 					}
 					else
 					{
-						player.sendPacket(SystemMessageId.THE_SEALING_DEVICE_GLITTERS_AND_MOVES_ACTIVATION_COMPLETE_NORMALLY);
+						player.sendPacket(SystemMessageId.THE_SEALING_DEVICE_ACTIVATION_COMPLETE);
 						npc.setRHandId(15281);
 						st.giveItems(SEAL, 1);
 						st.playSound("ItemSound.quest_middle");

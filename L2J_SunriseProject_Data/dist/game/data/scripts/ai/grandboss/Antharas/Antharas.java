@@ -238,7 +238,7 @@ public final class Antharas extends AbstractNpcAI
 						{
 							if (!hasQuestItems(member, STONE))
 							{
-								SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_ITEM_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
+								SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ITEM_REQUIREMENT_NOT_SUFFICIENT);
 								sm.addPcName(member);
 								party.broadcastPacket(sm);
 								htmltext = "13001-03.html";

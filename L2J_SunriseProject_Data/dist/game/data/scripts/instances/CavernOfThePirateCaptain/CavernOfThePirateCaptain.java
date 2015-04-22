@@ -214,7 +214,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		
 		if (!player.isInParty())
 		{
-			broadcastSystemMessage(player, null, SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER, false);
+			broadcastSystemMessage(player, null, SystemMessageId.NOT_IN_PARTY_CANT_ENTER, false);
 			return false;
 		}
 		
@@ -226,13 +226,13 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		
 		if (!isPartyLeader)
 		{
-			broadcastSystemMessage(player, null, SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER, false);
+			broadcastSystemMessage(player, null, SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER, false);
 			return false;
 		}
 		
 		if ((members.size() < (is83 ? PLAYERS_83_MIN : PLAYERS_60_MIN)) || (members.size() > (is83 ? PLAYERS_83_MAX : PLAYERS_60_MAX)))
 		{
-			broadcastSystemMessage(player, null, SystemMessageId.YOU_CANNOT_ENTER_DUE_TO_THE_PARTY_HAVING_EXCEEDED_THE_LIMIT, false);
+			broadcastSystemMessage(player, null, SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER, false);
 			return false;
 		}
 		
@@ -240,7 +240,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 		{
 			if (groupMembers.getLevel() < (is83 ? MIN_LV_83 : MIN_LV_60))
 			{
-				broadcastSystemMessage(player, groupMembers, SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY, true);
+				broadcastSystemMessage(player, groupMembers, SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED, true);
 				return false;
 			}
 			

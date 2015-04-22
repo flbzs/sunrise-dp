@@ -351,7 +351,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.1))
 				{
 					giveItems(player, SEAL_OF_BINDING, 1);
-					player.sendPacket(SystemMessageId.THE_SEALING_DEVICE_GLITTERS_AND_MOVES_ACTIVATION_COMPLETE_NORMALLY);
+					player.sendPacket(SystemMessageId.THE_SEALING_DEVICE_ACTIVATION_COMPLETE);
 					npc.setScriptValue(1);
 					startQuestTimer("FINISH", 1000, npc, player);
 					cancelQuestTimer("FIGHT", npc, player);

@@ -344,7 +344,7 @@ public class AdminEffects implements IAdminCommandHandler
 				activeChar.stopSkillEffects(7029);
 				if ((val == 0) && sendMessage)
 				{
-					final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.EFFECT_S1_DISAPPEARED);
+					final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.EFFECT_S1_HAS_BEEN_REMOVED);
 					sm.addSkillName(7029);
 					activeChar.sendPacket(sm);
 				}

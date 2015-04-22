@@ -927,22 +927,22 @@ public class HeartInfinityAttack extends Quest
 		L2Party party = player.getParty();
 		if (party == null)
 		{
-			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
+			player.sendPacket(SystemMessageId.NOT_IN_PARTY_CANT_ENTER);
 			return false;
 		}
 		if (party.getLeader() != player)
 		{
-			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
+			player.sendPacket(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER);
 			return false;
 		}
 		if ((party.getCommandChannel() == null) || (party.getCommandChannel().getLeader() != player))
 		{
-			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
+			player.sendPacket(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER);
 			return false;
 		}
 		if ((party.getCommandChannel().getMembers().size() < Config.HEART_ATTACK_MIN_PLAYERS) || (party.getCommandChannel().getMembers().size() > Config.HEART_ATTACK_MAX_PLAYERS))
 		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY);
+			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 			party.getCommandChannel().broadcastPacket(sm);
 			return false;
 		}
@@ -1205,7 +1205,7 @@ public class HeartInfinityAttack extends Quest
 				Calendar reenter = Calendar.getInstance();
 				reenter.add(Calendar.HOUR, INSTANCEPENALTY);
 				
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_BY_USING_THE_COMMAND_INSTANCEZONE);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_FROM_HERE_S1_S_ENTRY_HAS_BEEN_RESTRICTED);
 				sm.addInstanceName(tmpworld.getTemplateId());
 				
 				for (int objectId : tmpworld.getAllowed())

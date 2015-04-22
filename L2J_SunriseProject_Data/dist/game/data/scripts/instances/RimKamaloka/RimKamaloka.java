@@ -935,7 +935,7 @@ public class RimKamaloka extends Quest
 		// player must not be in party
 		if (party != null)
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_DUE_TO_THE_PARTY_HAVING_EXCEEDED_THE_LIMIT);
+			player.sendPacket(SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER);
 			return false;
 		}
 		
@@ -947,7 +947,7 @@ public class RimKamaloka extends Quest
 		// player level must be in range
 		if (Math.abs(player.getLevel() - level) > MAX_LEVEL_DIFFERENCE)
 		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY);
+			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 			sm.addPcName(player);
 			player.sendPacket(sm);
 			return false;
@@ -1008,7 +1008,7 @@ public class RimKamaloka extends Quest
 			// check for level difference again on reenter
 			if (Math.abs(player.getLevel() - LEVEL[world.index]) > MAX_LEVEL_DIFFERENCE)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 				sm.addPcName(player);
 				player.sendPacket(sm);
 				return;
@@ -1197,7 +1197,7 @@ public class RimKamaloka extends Quest
 				}
 				reenter.set(Calendar.HOUR_OF_DAY, RESET_HOUR);
 				
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_BY_USING_THE_COMMAND_INSTANCEZONE);
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_FROM_HERE_S1_S_ENTRY_HAS_BEEN_RESTRICTED);
 				sm.addString(InstanceManager.getInstance().getInstanceIdName(_world.getTemplateId()));
 				
 				// set instance reenter time for all allowed players

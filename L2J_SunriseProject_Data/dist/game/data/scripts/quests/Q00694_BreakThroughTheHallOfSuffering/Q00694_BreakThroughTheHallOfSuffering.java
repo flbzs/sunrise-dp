@@ -290,7 +290,7 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 		}
 		reenter.set(Calendar.HOUR_OF_DAY, 6);
 		
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_BY_USING_THE_COMMAND_INSTANCEZONE);
+		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_FROM_HERE_S1_S_ENTRY_HAS_BEEN_RESTRICTED);
 		sm.addInstanceName(world.getTemplateId());
 		
 		for (int objectId : world.getAllowed())

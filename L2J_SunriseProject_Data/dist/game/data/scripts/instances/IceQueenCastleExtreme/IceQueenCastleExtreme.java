@@ -936,17 +936,17 @@ public class IceQueenCastleExtreme extends AbstractNpcAI
 		
 		if (party == null)
 		{
-			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
+			player.sendPacket(SystemMessageId.NOT_IN_PARTY_CANT_ENTER);
 			return false;
 		}
 		else if (channel == null)
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_BECAUSE_YOU_ARE_NOT_ASSOCIATED_WITH_THE_CURRENT_COMMAND_CHANNEL);
+			player.sendPacket(SystemMessageId.NOT_IN_COMMAND_CHANNEL_CANT_ENTER);
 			return false;
 		}
 		else if (player != channel.getLeader())
 		{
-			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
+			player.sendPacket(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER);
 			return false;
 		}
 		
@@ -1303,7 +1303,7 @@ public class IceQueenCastleExtreme extends AbstractNpcAI
 			}
 		}
 		
-		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_BY_USING_THE_COMMAND_INSTANCEZONE);
+		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_FROM_HERE_S1_S_ENTRY_HAS_BEEN_RESTRICTED);
 		sm.addInstanceName(TEMPLATE_ID);
 		// set instance reenter time for all allowed players
 		for (int objectId : world.getAllowed())

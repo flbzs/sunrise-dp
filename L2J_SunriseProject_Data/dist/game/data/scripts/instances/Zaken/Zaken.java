@@ -119,7 +119,7 @@ public class Zaken extends AbstractNpcAI
 		L2Party party = player.getParty();
 		if (party == null)
 		{
-			player.sendPacket(SystemMessageId.YOU_ARE_NOT_CURRENTLY_IN_A_PARTY_SO_YOU_CANNOT_ENTER);
+			player.sendPacket(SystemMessageId.NOT_IN_PARTY_CANT_ENTER);
 			return false;
 		}
 		
@@ -152,7 +152,7 @@ public class Zaken extends AbstractNpcAI
 		}
 		else if (members.size() > maxMembers)
 		{
-			player.sendPacket(SystemMessageId.YOU_CANNOT_ENTER_DUE_TO_THE_PARTY_HAVING_EXCEEDED_THE_LIMIT);
+			player.sendPacket(SystemMessageId.PARTY_EXCEEDED_THE_LIMIT_CANT_ENTER);
 			return false;
 		}
 		
@@ -508,7 +508,7 @@ public class Zaken extends AbstractNpcAI
 		reuseTime.set(Calendar.MINUTE, 30);
 		reuseTime.set(Calendar.SECOND, 0);
 		
-		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_S1_S_ENTRY_HAS_BEEN_RESTRICTED_YOU_CAN_CHECK_THE_NEXT_POSSIBLE_ENTRY_TIME_BY_USING_THE_COMMAND_INSTANCEZONE);
+		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.INSTANT_ZONE_FROM_HERE_S1_S_ENTRY_HAS_BEEN_RESTRICTED);
 		sm.addInstanceName(tmpworld.getTemplateId());
 		InstanceManager.getInstance().setInstanceTime(player.getObjectId(), tmpworld.getTemplateId(), reuseTime.getTimeInMillis());
 		player.sendPacket(sm);

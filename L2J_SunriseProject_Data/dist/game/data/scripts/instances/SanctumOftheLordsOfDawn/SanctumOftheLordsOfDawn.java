@@ -105,7 +105,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 				{
 					final HSWorld world = (HSWorld) tmpworld;
 					spawnGroup("high_priest_of_dawn", world.getInstanceId());
-					player.sendPacket(SystemMessageId.BY_USING_THE_INVISIBLE_SKILL_SNEAK_INTO_THE_DAWN_S_DOCUMENT_STORAGE);
+					player.sendPacket(SystemMessageId.SNEAK_INTO_DAWNS_DOCUMENT_STORAGE);
 				}
 				break;
 			}
@@ -187,9 +187,9 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 						if (world.doorst == 0)
 						{
 							openDoor(DOOR_ONE, world.getInstanceId());
-							talker.sendPacket(SystemMessageId.BY_USING_THE_INVISIBLE_SKILL_SNEAK_INTO_THE_DAWN_S_DOCUMENT_STORAGE);
-							talker.sendPacket(SystemMessageId.MALE_GUARDS_CAN_DETECT_THE_CONCEALMENT_BUT_THE_FEMALE_GUARDS_CANNOT);
-							talker.sendPacket(SystemMessageId.FEMALE_GUARDS_NOTICE_THE_DISGUISES_FROM_FAR_AWAY_BETTER_THAN_THE_MALE_GUARDS_DO_SO_BEWARE);
+							talker.sendPacket(SystemMessageId.SNEAK_INTO_DAWNS_DOCUMENT_STORAGE);
+							talker.sendPacket(SystemMessageId.MALE_GUARDS_CAN_DETECT_FEMALES_DONT);
+							talker.sendPacket(SystemMessageId.FEMALE_GUARDS_NOTICE_BETTER_THAN_MALE);
 							world.doorst++;
 							npc.decayMe();
 						}

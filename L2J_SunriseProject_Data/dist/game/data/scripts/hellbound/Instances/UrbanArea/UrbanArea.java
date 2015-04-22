@@ -346,7 +346,7 @@ public final class UrbanArea extends AbstractInstance
 		
 		if ((party == null) || !party.isLeader(player))
 		{
-			player.sendPacket(SystemMessageId.ONLY_A_PARTY_LEADER_CAN_MAKE_THE_REQUEST_TO_ENTER);
+			player.sendPacket(SystemMessageId.ONLY_PARTY_LEADER_CAN_ENTER);
 			return false;
 		}
 		
@@ -354,7 +354,7 @@ public final class UrbanArea extends AbstractInstance
 		{
 			if (partyMember.getLevel() < MIN_LV)
 			{
-				party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_DOES_NOT_CORRESPOND_TO_THE_REQUIREMENTS_FOR_ENTRY).addPcName(partyMember));
+				party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED).addPcName(partyMember));
 				return false;
 			}
 			
