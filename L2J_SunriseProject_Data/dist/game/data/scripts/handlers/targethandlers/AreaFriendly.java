@@ -20,8 +20,6 @@ package handlers.targethandlers;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import l2r.gameserver.GeoData;
@@ -62,10 +60,6 @@ public class AreaFriendly implements ITargetTypeHandler
 		{
 			int maxTargets = skill.getAffectLimit();
 			final Collection<L2Character> objs = target.getKnownList().getKnownCharactersInRadius(skill.getAffectRange());
-			
-			// TODO: Chain Heal - The recovery amount decreases starting from the most injured person.
-			Collections.sort(targetList, new CharComparator());
-			
 			for (L2Character obj : objs)
 			{
 				if (!checkTarget(activeChar, obj) || (obj == activeChar))
@@ -91,12 +85,17 @@ public class AreaFriendly implements ITargetTypeHandler
 	
 	private boolean checkTarget(L2Character activeChar, L2Character target)
 	{
+		if (target == null)
+		{
+			return false;
+		}
+		
 		if (!GeoData.getInstance().canSeeTarget(activeChar, target))
 		{
 			return false;
 		}
 		
-		if ((target == null) || target.isAlikeDead() || (!target.isPlayer() && !target.isSummon()))
+		if (target.isDead() || (!target.isPlayer() && !target.isSummon()))
 		{
 			return false;
 		}
@@ -108,21 +107,12 @@ public class AreaFriendly implements ITargetTypeHandler
 			return false;
 		}
 		
-		if (!actingPlayer.isFriend(targetPlayer, true))
+		if (!actingPlayer.isFriend(targetPlayer) && !actingPlayer.isInSameClan(targetPlayer) && !actingPlayer.isInSameAlly(targetPlayer))
 		{
 			return false;
 		}
 		
 		return true;
-	}
-	
-	public class CharComparator implements Comparator<L2Character>
-	{
-		@Override
-		public int compare(L2Character char1, L2Character char2)
-		{
-			return Double.compare((char1.getCurrentHp() / char1.getMaxHp()), (char2.getCurrentHp() / char2.getMaxHp()));
-		}
 	}
 	
 	@Override
