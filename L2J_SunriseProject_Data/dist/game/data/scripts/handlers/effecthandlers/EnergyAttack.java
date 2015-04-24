@@ -84,7 +84,7 @@ public final class EnergyAttack extends L2Effect
 		final L2Skill skill = getSkill();
 		
 		double attack = attacker.getPAtk(target);
-		int defence = target.getPDef(attacker);
+		double defence = target.getPDef(attacker);
 		
 		if (!_ignoreShieldDefence)
 		{
