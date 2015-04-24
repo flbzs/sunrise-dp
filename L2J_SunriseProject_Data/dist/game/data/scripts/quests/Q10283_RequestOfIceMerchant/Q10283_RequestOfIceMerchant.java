@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -55,7 +55,7 @@ public class Q10283_RequestOfIceMerchant extends Quest
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
-		final QuestState st = player.getQuestState(getName());
+		final QuestState st = getQuestState(player, false);
 		if (st == null)
 		{
 			return htmltext;
@@ -111,7 +111,7 @@ public class Q10283_RequestOfIceMerchant extends Quest
 			return "32760-10.html";
 		}
 		
-		final QuestState st = player.getQuestState(getName());
+		final QuestState st = getQuestState(player, false);
 		if ((st != null) && st.isCond(2))
 		{
 			return "32760-01.html";
@@ -123,7 +123,7 @@ public class Q10283_RequestOfIceMerchant extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
-		QuestState st = getQuestState(player, true);
+		final QuestState st = getQuestState(player, true);
 		if (st == null)
 		{
 			return htmltext;
