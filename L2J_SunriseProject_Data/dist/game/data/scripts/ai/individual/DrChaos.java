@@ -44,7 +44,6 @@ public final class DrChaos extends AbstractNpcAI
 	
 	public DrChaos()
 	{
-		// TODO extends AbstractNpcAI
 		super(DrChaos.class.getSimpleName(), "ai/individual");
 		addFirstTalkId(DR_CHAOS);
 		_IsGolemSpawned = false;
@@ -122,7 +121,7 @@ public final class DrChaos extends AbstractNpcAI
 		if (npc.getId() == DR_CHAOS)
 		{
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(96323, -110914, -3328, 0));
-			this.startQuestTimer("1", 3000, npc, player);
+			startQuestTimer("1", 3000, npc, player);
 		}
 		return "";
 	}
