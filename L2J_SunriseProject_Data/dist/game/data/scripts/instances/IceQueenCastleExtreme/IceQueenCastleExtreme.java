@@ -14,6 +14,8 @@
  */
 package instances.IceQueenCastleExtreme;
 
+import instances.IceQueenCastleNormal.IceQueenCastleNormal;
+
 import java.util.Calendar;
 import java.util.List;
 
@@ -683,6 +685,10 @@ public class IceQueenCastleExtreme extends AbstractNpcAI
 		}
 		catch (Exception e)
 		{
+			if (debugWarnings)
+			{
+				_log.warn(IceQueenCastleNormal.class.getSimpleName() + ": getWorldStatus is Null");
+			}
 			return 0;
 		}
 	}
@@ -690,58 +696,58 @@ public class IceQueenCastleExtreme extends AbstractNpcAI
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
-		int npcId = npc.getId();
-		if (npcId == KNIGHT)
+		switch (npc.getId())
 		{
-			if (npc.getDisplayEffect() == 1)
-			{
-				npc.setDisplayEffect(2);
-			}
-			
-			if (getWorldStatus(attacker) == 2)
-			{
-				handleWorldState(10, attacker.getInstanceId());
-			}
-			else if (getWorldStatus(attacker) == 20)
-			{
-				handleWorldState(21, attacker.getInstanceId());
-			}
-		}
-		else if (npcId == FREYA_STAND)
-		{
-			if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTI_STRIDER.getSkillId()) && !npc.isCastingNow())
-			{
-				if (!npc.isSkillDisabled(ANTI_STRIDER.getSkill()))
+			case KNIGHT:
+				if (npc.getDisplayEffect() == 1)
 				{
-					npc.setTarget(attacker);
-					npc.doCast(ANTI_STRIDER.getSkill());
+					npc.setDisplayEffect(2);
 				}
-			}
-			
-			double cur_hp = npc.getCurrentHp();
-			double max_hp = npc.getMaxHp();
-			int percent = (int) Math.round((cur_hp / max_hp) * 100);
-			if ((percent <= 20) && (getWorldStatus(attacker) < 40))
-			{
-				handleWorldState(40, attacker.getInstanceId());
-			}
-		}
-		else if (npcId == FREYA_THRONE)
-		{
-			if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTI_STRIDER.getSkillId()) && !npc.isCastingNow())
-			{
-				if (!npc.isSkillDisabled(ANTI_STRIDER.getSkill()))
+				
+				if (getWorldStatus(attacker) == 2)
 				{
-					npc.setTarget(attacker);
-					npc.doCast(ANTI_STRIDER.getSkill());
+					handleWorldState(10, attacker.getInstanceId());
 				}
-			}
-			
-			if (!npc.isCastingNow())
-			{
-				callSkillAI(npc);
-			}
+				else if (getWorldStatus(attacker) == 20)
+				{
+					handleWorldState(21, attacker.getInstanceId());
+				}
+				break;
+			case FREYA_STAND:
+				if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTI_STRIDER.getSkillId()) && !npc.isCastingNow())
+				{
+					if (!npc.isSkillDisabled(ANTI_STRIDER.getSkill()))
+					{
+						npc.setTarget(attacker);
+						npc.doCast(ANTI_STRIDER.getSkill());
+					}
+				}
+				
+				double cur_hp = npc.getCurrentHp();
+				double max_hp = npc.getMaxHp();
+				int percent = (int) Math.round((cur_hp / max_hp) * 100);
+				if ((percent <= 20) && (getWorldStatus(attacker) < 40))
+				{
+					handleWorldState(40, attacker.getInstanceId());
+				}
+				break;
+			case FREYA_THRONE:
+				if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTI_STRIDER.getSkillId()) && !npc.isCastingNow())
+				{
+					if (!npc.isSkillDisabled(ANTI_STRIDER.getSkill()))
+					{
+						npc.setTarget(attacker);
+						npc.doCast(ANTI_STRIDER.getSkill());
+					}
+				}
+				
+				if (!npc.isCastingNow())
+				{
+					callSkillAI(npc);
+				}
+				break;
 		}
+		
 		return super.onAttack(npc, attacker, damage, isPet);
 	}
 	
@@ -804,26 +810,19 @@ public class IceQueenCastleExtreme extends AbstractNpcAI
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
 		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
-		
 		if ((tmpworld != null) && (tmpworld instanceof IQCEWorld))
 		{
-			// final IQCEWorld world = (IQCEWorld) tmpworld;
-			
-			if (npc.getId() == SUPP_JINIA)
+			// final IQCNBWorld world = (IQCNBWorld) tmpworld;
+			switch (npc.getId())
 			{
-				player.sendPacket(ActionFailed.STATIC_PACKET);
-				return null;
-			}
-			else if (npc.getId() == SUPP_JINIA)
-			{
-				player.sendPacket(ActionFailed.STATIC_PACKET);
-				return null;
-			}
+				case SUPP_JINIA:
+					player.sendPacket(ActionFailed.STATIC_PACKET);
+					break;
 			/**
-			 * else if (npc.getId() == SUPP_KEGOR) { if (world.isSupportActive) { player.sendPacket(ActionFailed.STATIC_PACKET); return null; } return "18851.html"; }
+			 * case SUPP_KEGOR: if (world.isSupportActive) { player.sendPacket(ActionFailed.STATIC_PACKET); } break;
 			 */
+			}
 		}
-		player.sendPacket(ActionFailed.STATIC_PACKET);
 		return null;
 	}
 	
