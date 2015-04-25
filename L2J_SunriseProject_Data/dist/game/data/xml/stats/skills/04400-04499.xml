@@ -1237,6 +1237,7 @@
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="100" />
+		<set name="reuseDelay" val="10000" />
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
