@@ -14,8 +14,6 @@
  */
 package instances.IceQueenCastleExtreme;
 
-import instances.IceQueenCastleNormal.IceQueenCastleNormal;
-
 import java.util.Calendar;
 import java.util.List;
 
@@ -687,7 +685,7 @@ public class IceQueenCastleExtreme extends AbstractNpcAI
 		{
 			if (debugWarnings)
 			{
-				_log.warn(IceQueenCastleNormal.class.getSimpleName() + ": getWorldStatus is Null");
+				_log.warn(IceQueenCastleExtreme.class.getSimpleName() + ": getWorldStatus is Null");
 			}
 			return 0;
 		}
