@@ -12,7 +12,7 @@ import gr.sr.configsEngine.configs.impl.BufferConfigs;
  */
 public class AioItemBuff implements IItemHandler
 {
-	private static final int ITEM_IDS = BufferConfigs.BUFF_ITEM_ID;
+	private static final int ITEM_IDS = BufferConfigs.DONATE_BUFF_ITEM_ID;
 	
 	@Override
 	public boolean useItem(L2Playable playable, L2ItemInstance item, boolean forceUse)
