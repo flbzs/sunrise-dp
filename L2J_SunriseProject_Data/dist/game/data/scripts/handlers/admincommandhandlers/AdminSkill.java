@@ -18,7 +18,7 @@
  */
 package handlers.admincommandhandlers;
 
-import java.util.HashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 import l2r.Config;
@@ -259,11 +259,10 @@ public class AdminSkill implements IAdminCommandHandler
 			activeChar.sendPacket(sm);
 		}
 		
-		final HashMap<Integer, L2SkillLearn> skills = SkillTreesData.getInstance().getMaxPledgeSkills(clan, includeSquad);
+		final Map<Integer, L2SkillLearn> skills = SkillTreesData.getInstance().getMaxPledgeSkills(clan, includeSquad);
 		for (L2SkillLearn s : skills.values())
 		{
-			L2Skill sk = SkillData.getInstance().getInfo(s.getSkillId(), s.getSkillLevel());
-			clan.addNewSkill(sk);
+			clan.addNewSkill(SkillData.getInstance().getInfo(s.getSkillId(), s.getSkillLevel()));
 		}
 		
 		// Notify target and active char
