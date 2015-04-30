@@ -1312,7 +1312,7 @@
 	<skill id="680" levels="1" name="Divine Knight Hate">
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="lock" />
+		<set name="abnormalType" val="target_lock" />
 		<set name="castRange" val="400" />
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="900" />
@@ -1335,7 +1335,7 @@
 	<skill id="681" levels="1" name="Divine Knight Hate Aura">
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="lock" />
+		<set name="abnormalType" val="target_lock" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="200" />
 		<set name="hitTime" val="1000" />

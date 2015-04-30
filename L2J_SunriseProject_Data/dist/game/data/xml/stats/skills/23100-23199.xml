@@ -187,7 +187,7 @@
 		<!-- Stimulates the enemy's attack by 6983 Power. Cooldown of 1 minute. -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="30" />
-		<set name="abnormalType" val="lock" />
+		<set name="abnormalType" val="target_lock" />
 		<set name="coolTime" val="200" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A2" />

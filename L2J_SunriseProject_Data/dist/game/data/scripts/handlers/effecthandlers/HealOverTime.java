@@ -92,6 +92,6 @@ public class HealOverTime extends L2Effect
 		StatusUpdate suhp = new StatusUpdate(getEffected());
 		suhp.addAttribute(StatusUpdate.CUR_HP, (int) hp);
 		getEffected().sendPacket(suhp);
-		return true;
+		return getSkill().isToggle();
 	}
 }

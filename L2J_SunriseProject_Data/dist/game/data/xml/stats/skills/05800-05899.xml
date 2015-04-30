@@ -323,7 +323,7 @@
 	<skill id="5832" levels="1" name="Hate Aura">
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="lock" />
+		<set name="abnormalType" val="target_lock" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="600" />
 		<set name="hitTime" val="1000" />
@@ -1206,7 +1206,7 @@
 	<skill id="5889" levels="3" name="Tainted Shackle">
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="lock" />
+		<set name="abnormalType" val="target_lock" />
 		<set name="hitTime" val="1000" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="operateType" val="A2" />
@@ -1218,7 +1218,7 @@
 	<skill id="5890" levels="3" name="Tainted Mass Shackle">
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="lock" />
+		<set name="abnormalType" val="target_lock" />
 		<set name="affectLimit" val="10-10" />
 		<set name="hitTime" val="1000" />
 		<set name="lvlBonusRate" val="2" />

@@ -1425,6 +1425,9 @@
 	<skill id="23296" levels="1" name="Master's Blessing - Arcane Protection">
 		<!-- High Five Skill -->
 		<!-- GM Skill -->
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="3600" />
+		<set name="abnormalType" val="resist_debuff_dispel" />
 		<set name="affectRange" val="200" />
 		<set name="hitTime" val="500" />
 		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
@@ -1445,6 +1448,9 @@
 	</skill>
 	<skill id="23298" levels="1" name="Flame Hawk">
 		<!-- FIXME: Chance and Reuse values are unconfirmed -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="flame_hawk" />
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
 		<set name="isTriggeredSkill" val="true" />
@@ -1462,6 +1468,9 @@
 	</skill>
 	<skill id="23299" levels="1" name="Arrow Rain">
 		<!-- FIXME: Chance and Reuse values are unconfirmed -->
+		<set name="abnormalLvl" val="1" />
+		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="arrow_rain" />
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
 		<set name="isTriggeredSkill" val="true" />

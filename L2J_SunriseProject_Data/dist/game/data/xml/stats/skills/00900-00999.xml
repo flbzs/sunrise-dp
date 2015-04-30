@@ -1636,7 +1636,7 @@
 		<table name="#power"> 7427 8137 8851 9570 10292 11018 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="lock" />
+		<set name="abnormalType" val="target_lock" />
 		<set name="castRange" val="800" />
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="1300" />
@@ -1661,7 +1661,7 @@
 		<table name="#power"> 6752 7459 8170 8886 9606 10330 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="lock" />
+		<set name="abnormalType" val="target_lock" />
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="200" />
 		<set name="hitTime" val="1000" />
@@ -1898,7 +1898,9 @@
 	</skill>
 	<skill id="991" levels="1" name="Throwing Dagger">
 		<!-- High Five Skill -->
+		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="10" />
+		<set name="abnormalType" val="speed_down" />
 		<set name="blowChance" val="20" /> <!-- FIXME: value unconfirmed -->
 		<set name="castRange" val="300" />
 		<set name="condition" val="16" /> <!-- Crit -->

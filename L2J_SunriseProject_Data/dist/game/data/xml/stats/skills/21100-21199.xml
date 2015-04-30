@@ -1469,7 +1469,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="abnormalLvl" val="26" />
 		<set name="abnormalTime" val="300" />
-		<set name="abnormalType" val="VP_KEEP" />
+		<set name="abnormalType" val="vp_keep" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="effectPoint" val="1" />
 		<set name="hitTime" val="500" />

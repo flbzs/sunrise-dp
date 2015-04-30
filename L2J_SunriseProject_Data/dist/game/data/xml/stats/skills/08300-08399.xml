@@ -815,7 +815,7 @@
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, P. Atk. by 5%, and earth tolerance by 5. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="SIGNAL_D" />
+		<set name="abnormalType" val="signal_d" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.ev_frankenstein_mask_i00" />
 		<set name="hitCancelTime" val="500" />
@@ -839,7 +839,7 @@
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, Critical rate by 5%, and wind tolerance by 5. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="SIGNAL_D" />
+		<set name="abnormalType" val="signal_d" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.ev_scream_mask_i00" />
 		<set name="hitCancelTime" val="500" />
@@ -863,7 +863,7 @@
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, moving speed by 5%, and fire tolerance by 5. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="SIGNAL_D" />
+		<set name="abnormalType" val="signal_d" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.ev_doccabi_mask_i00" />
 		<set name="hitCancelTime" val="500" />
@@ -887,7 +887,7 @@
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, skill's MP consumption by 5%, and darkness tolerance by 5. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="SIGNAL_D" />
+		<set name="abnormalType" val="signal_d" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.ev_mummy_mask_i00" />
 		<set name="hitCancelTime" val="500" />
@@ -912,7 +912,7 @@
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 10%, damage magic's Prominent Damage occurrence by 2, and water tolerance by 5. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="SIGNAL_D" />
+		<set name="abnormalType" val="signal_d" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.ev_alien_mask_i00" />
 		<set name="hitCancelTime" val="500" />
@@ -936,7 +936,7 @@
 		<!-- Mask's effect. For 60 minutes, increases Max HP and Max MP by 20%, moving speed by 10%, and resistance to debuffs by 10%. -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3600" />
-		<set name="abnormalType" val="SIGNAL_D" />
+		<set name="abnormalType" val="signal_d" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="icon" val="icon.ev_golden_jack0_mask_i00" />
 		<set name="hitCancelTime" val="500" />

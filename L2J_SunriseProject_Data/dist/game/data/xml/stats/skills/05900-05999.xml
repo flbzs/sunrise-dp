@@ -776,7 +776,7 @@
 	<skill id="5967" levels="2" name="Hate Aura">
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="lock" />
+		<set name="abnormalType" val="target_lock" />
 		<set name="affectLimit" val="10-10" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="operateType" val="A2" />
@@ -1117,7 +1117,7 @@
 	<skill id="5992" levels="12" name="NPC Hate">
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
-		<set name="abnormalType" val="lock" />
+		<set name="abnormalType" val="target_lock" />
 		<set name="lvlBonusRate" val="2" />
 		<set name="operateType" val="A2" />
 		<set name="basicProperty" val="MEN" />
