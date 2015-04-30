@@ -347,7 +347,9 @@
 	</skill>
 	<skill id="6724" levels="1" name="Greater Heal of Elcadia">
 		<!-- High Five Skill -->
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="15" />
+		<set name="abnormalType" val="life_force_others" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="blockedInOlympiad" val="true" />
