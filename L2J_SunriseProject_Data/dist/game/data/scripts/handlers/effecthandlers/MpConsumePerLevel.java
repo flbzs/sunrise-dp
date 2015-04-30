@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.SystemMessageId;
 
@@ -29,12 +28,6 @@ public class MpConsumePerLevel extends L2Effect
 	public MpConsumePerLevel(Env env, EffectTemplate template)
 	{
 		super(env, template);
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.MP_CONSUME_PER_LEVEL;
 	}
 	
 	@Override

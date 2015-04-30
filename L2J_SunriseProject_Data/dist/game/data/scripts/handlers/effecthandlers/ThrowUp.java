@@ -23,7 +23,6 @@ import l2r.gameserver.model.Location;
 import l2r.gameserver.model.effects.EffectFlag;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.serverpackets.FlyToLocation;
 import l2r.gameserver.network.serverpackets.FlyToLocation.FlyType;
@@ -39,12 +38,6 @@ public class ThrowUp extends L2Effect
 	public ThrowUp(Env env, EffectTemplate template)
 	{
 		super(env, template);
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.THROW_UP;
 	}
 	
 	@Override

@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import l2r.gameserver.model.effects.EffectFlag;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.skills.L2SkillType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.SystemMessageId;
@@ -43,12 +42,6 @@ public class SilentMove extends L2Effect
 	public boolean canBeStolen()
 	{
 		return true;
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.SILENT_MOVE;
 	}
 	
 	@Override

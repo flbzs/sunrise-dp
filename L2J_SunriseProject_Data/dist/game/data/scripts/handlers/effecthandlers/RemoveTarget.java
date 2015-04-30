@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 
 /**
@@ -35,12 +34,6 @@ public class RemoveTarget extends L2Effect
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.REMOVE_TARGET;
-	}
-	
-	@Override
 	public boolean onStart()
 	{
 		getEffected().setTarget(null);
@@ -48,11 +41,5 @@ public class RemoveTarget extends L2Effect
 		getEffected().abortCast();
 		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, getEffector());
 		return true;
-	}
-	
-	@Override
-	public void onExit()
-	{
-		// nothing
 	}
 }

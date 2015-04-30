@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import l2r.gameserver.model.effects.EffectFlag;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 
 /**
@@ -39,12 +38,6 @@ public class ProtectionBlessing extends L2Effect
 	public int getEffectFlags()
 	{
 		return EffectFlag.PROTECTION_BLESSING.getMask();
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.PROTECTION_BLESSING;
 	}
 	
 	@Override

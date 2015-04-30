@@ -38,12 +38,6 @@ public class ManaHealOverTime extends L2Effect
 	}
 	
 	@Override
-	public boolean canBeStolen()
-	{
-		return true;
-	}
-	
-	@Override
 	public L2EffectType getEffectType()
 	{
 		return L2EffectType.MANA_HEAL_OVER_TIME;
