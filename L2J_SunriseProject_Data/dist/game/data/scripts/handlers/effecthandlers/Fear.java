@@ -18,7 +18,6 @@
  */
 package handlers.effecthandlers;
 
-import l2r.Config;
 import l2r.gameserver.GeoData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.Location;
@@ -118,15 +117,12 @@ public class Fear extends L2Effect
 		
 		// If pathfinding enabled the creature will go to the defined destination (retail like).
 		// Otherwise it will go to the nearest obstacle.
-		final Location destination;
-		if (Config.PATHFINDING > 0)
-		{
-			destination = new Location(posX, posY, posZ, getEffected().getInstanceId());
-		}
-		else
-		{
-			destination = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), posX, posY, posZ, getEffected().getInstanceId());
-		}
+		/**
+		 * final Location destination; if (Config.PATHFINDING > 0) { destination = new Location(posX, posY, posZ, getEffected().getInstanceId()); } else { destination = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), posX, posY, posZ,
+		 * getEffected().getInstanceId()); }
+		 */
+		
+		final Location destination = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), posX, posY, posZ, getEffected().getInstanceId());
 		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
 		return true;
 	}
