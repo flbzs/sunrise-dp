@@ -31,12 +31,6 @@ import ai.zone.PavelRuins.PavelArchaic;
 import ai.zone.PrimevalIsle.PrimevalIsle;
 import ai.zone.SelMahums.SelMahumDrill;
 import ai.zone.SelMahums.SelMahumSquad;
-import ai.zone.StakatoNest.CannibalisticStakatoChief;
-import ai.zone.StakatoNest.CannibalisticStakatoFollower;
-import ai.zone.StakatoNest.FemaleSpikedStakato;
-import ai.zone.StakatoNest.MaleSpikedStakato;
-import ai.zone.StakatoNest.SpikedStakatoBaby;
-import ai.zone.StakatoNest.SpikedStakatoNurse;
 import ai.zone.StakatoNest.StakatoNest;
 
 /**
@@ -59,12 +53,6 @@ public final class ZonesLoader
 		PrimevalIsle.class,
 		SelMahumDrill.class,
 		SelMahumSquad.class,
-		CannibalisticStakatoChief.class,
-		CannibalisticStakatoFollower.class,
-		FemaleSpikedStakato.class,
-		MaleSpikedStakato.class,
-		SpikedStakatoBaby.class,
-		SpikedStakatoNurse.class,
 		StakatoNest.class,
 	};
 	
