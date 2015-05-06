@@ -86,7 +86,7 @@ public final class WildBeastReserve extends FlagWar
 		CENTER = new Location(57762, -92696, -1359, 0);
 	}
 	
-	public WildBeastReserve()
+	private WildBeastReserve()
 	{
 		super(WildBeastReserve.class.getSimpleName(), BEAST_FARM);
 	}
@@ -149,5 +149,10 @@ public final class WildBeastReserve extends FlagWar
 	public boolean canPayRegistration()
 	{
 		return false;
+	}
+	
+	public static void main(String[] args)
+	{
+		new WildBeastReserve();
 	}
 }

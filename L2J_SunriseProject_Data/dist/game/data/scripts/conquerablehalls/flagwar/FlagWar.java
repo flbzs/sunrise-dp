@@ -28,7 +28,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import l2r.L2DatabaseFactory;
-import l2r.gameserver.Announcements;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.ai.L2SpecialSiegeGuardAI;
 import l2r.gameserver.data.sql.ClanTable;
@@ -50,6 +49,7 @@ import l2r.gameserver.model.zone.type.L2ResidenceHallTeleportZone;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2r.gameserver.network.serverpackets.SystemMessage;
+import l2r.gameserver.util.Broadcast;
 
 /**
  * @author BiggBoss
@@ -456,7 +456,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		_hall.banishForeigners();
 		SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.REGISTRATION_TERM_FOR_S1_ENDED);
 		msg.addString(getName());
-		Announcements.getInstance().announceToAll(msg);
+		Broadcast.toAllOnlinePlayers(msg);
 		_hall.updateSiegeStatus(SiegeStatus.WAITING_BATTLE);
 		
 		_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(new SiegeStarts(), 3600000);
@@ -472,7 +472,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			_hall.updateNextSiege();
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.SIEGE_OF_S1_HAS_BEEN_CANCELED_DUE_TO_LACK_OF_INTEREST);
 			sm.addString(_hall.getName());
-			Announcements.getInstance().announceToAll(sm);
+			Broadcast.toAllOnlinePlayers(sm);
 			return;
 		}
 		
@@ -501,7 +501,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		}
 		
 		// Schedule open doors closement and siege start in 2 minutes
-		ThreadPoolManager.getInstance().scheduleGeneral(new CloseOutterDoorsTask(this), 300000);
+		ThreadPoolManager.getInstance().scheduleGeneral(new CloseOutterDoorsTask(FlagWar.super), 300000);
 	}
 	
 	/**

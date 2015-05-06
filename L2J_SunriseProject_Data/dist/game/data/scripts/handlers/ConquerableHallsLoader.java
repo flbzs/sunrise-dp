@@ -25,8 +25,6 @@ import conquerablehalls.DevastatedCastle.DevastatedCastle;
 import conquerablehalls.FortressOfResistance.FortressOfResistance;
 import conquerablehalls.FortressOfTheDead.FortressOfTheDead;
 import conquerablehalls.RainbowSpringsChateau.RainbowSpringsChateau;
-import conquerablehalls.flagwar.BanditStronghold.BanditStronghold;
-import conquerablehalls.flagwar.WildBeastReserve.WildBeastReserve;
 
 /**
  * @author L2jSunrise Team
@@ -38,8 +36,8 @@ public final class ConquerableHallsLoader
 	
 	private static final Class<?>[] HALLS =
 	{
-		BanditStronghold.class,
-		WildBeastReserve.class,
+		// BanditStronghold.class,
+		// WildBeastReserve.class,
 		DevastatedCastle.class,
 		FortressOfResistance.class,
 		FortressOfTheDead.class,

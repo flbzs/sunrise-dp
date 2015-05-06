@@ -86,7 +86,7 @@ public final class BanditStronghold extends FlagWar
 		CENTER = new Location(82882, -16280, -1894, 0);
 	}
 	
-	public BanditStronghold()
+	private BanditStronghold()
 	{
 		super(BanditStronghold.class.getSimpleName(), BANDIT_STRONGHOLD);
 	}
@@ -143,5 +143,10 @@ public final class BanditStronghold extends FlagWar
 		}
 		
 		return result;
+	}
+	
+	public static void main(String[] args)
+	{
+		new BanditStronghold();
 	}
 }
