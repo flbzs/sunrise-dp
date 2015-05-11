@@ -60,10 +60,4 @@ public final class BlockChat extends L2Effect
 	{
 		PunishmentManager.getInstance().stopPunishment(getEffected().getObjectId(), PunishmentAffect.CHARACTER, PunishmentType.CHAT_BAN);
 	}
-	
-	@Override
-	public boolean isInstant()
-	{
-		return true;
-	}
 }

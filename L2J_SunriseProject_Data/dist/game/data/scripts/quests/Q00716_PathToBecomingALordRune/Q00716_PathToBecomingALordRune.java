@@ -103,12 +103,13 @@ public class Q00716_PathToBecomingALordRune extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		QuestState st = player.getQuestState(getName());
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
 		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
-		String htmltext = getNoQuestMsg(player);
+		
 		int npcId = npc.getId();
 		int cond = st.getInt("cond");
 		Castle castle = CastleManager.getInstance().getCastleById(RuneCastle);

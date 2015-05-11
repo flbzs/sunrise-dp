@@ -119,7 +119,12 @@ public class Q00712_PathToBecomingALordOren extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
-		QuestState st = player.getQuestState(getName());
+		final QuestState st = getQuestState(player, true);
+		if (st == null)
+		{
+			return htmltext;
+		}
+		
 		int npcId = npc.getId();
 		int cond = st.getInt("cond");
 		Castle castle = CastleManager.getInstance().getCastleById(OrenCastle);
