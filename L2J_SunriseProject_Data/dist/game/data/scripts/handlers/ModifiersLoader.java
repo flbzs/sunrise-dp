@@ -28,6 +28,7 @@ import ai.modifier.NoRandomAnimation;
 import ai.modifier.NoRandomWalkMobs;
 import ai.modifier.NonLethalableNpcs;
 import ai.modifier.NonTalkingNpcs;
+import ai.modifier.RunningNpcs;
 import ai.modifier.SeeThroughSilentMove;
 import ai.modifier.dropEngine.FortressReward;
 
@@ -48,6 +49,7 @@ public final class ModifiersLoader
 		NonTalkingNpcs.class,
 		NoRandomAnimation.class,
 		NoRandomWalkMobs.class,
+		RunningNpcs.class,
 		SeeThroughSilentMove.class,
 		
 		// Drop Modifiers

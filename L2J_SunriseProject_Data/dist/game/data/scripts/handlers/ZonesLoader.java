@@ -26,7 +26,6 @@ import ai.zone.DragonValley.NecromancerValley;
 import ai.zone.FantasyIsle.HandysBlockCheckerEvent;
 import ai.zone.FantasyIsle.MC_Show;
 import ai.zone.FantasyIsle.Parade;
-import ai.zone.LairOfAntharas.BridgeRunners;
 import ai.zone.LairOfAntharas.LairOfAntharas;
 import ai.zone.PavelRuins.PavelArchaic;
 import ai.zone.PrimevalIsle.PrimevalIsle;
@@ -54,7 +53,6 @@ public final class ZonesLoader
 		Parade.class,
 		
 		// Antharas Lair
-		BridgeRunners.class,
 		LairOfAntharas.class,
 		
 		// Pavel Ruins
