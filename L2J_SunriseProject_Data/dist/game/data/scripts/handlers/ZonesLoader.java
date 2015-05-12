@@ -26,6 +26,7 @@ import ai.zone.DragonValley.NecromancerValley;
 import ai.zone.FantasyIsle.HandysBlockCheckerEvent;
 import ai.zone.FantasyIsle.MC_Show;
 import ai.zone.FantasyIsle.Parade;
+import ai.zone.LairOfAntharas.BridgeRunners;
 import ai.zone.LairOfAntharas.LairOfAntharas;
 import ai.zone.PavelRuins.PavelArchaic;
 import ai.zone.PrimevalIsle.PrimevalIsle;
@@ -43,16 +44,30 @@ public final class ZonesLoader
 	
 	private static final Class<?>[] ZONES =
 	{
+		// Dragon Valley
 		DragonValley.class,
 		NecromancerValley.class,
+		
+		// Fantasy Island
 		HandysBlockCheckerEvent.class,
 		MC_Show.class,
 		Parade.class,
+		
+		// Antharas Lair
+		BridgeRunners.class,
 		LairOfAntharas.class,
+		
+		// Pavel Ruins
 		PavelArchaic.class,
+		
+		// Primeval Island
 		PrimevalIsle.class,
+		
+		// Sel Mahums
 		SelMahumDrill.class,
 		SelMahumSquad.class,
+		
+		// Stakato Nest
 		StakatoNest.class,
 	};
 	
