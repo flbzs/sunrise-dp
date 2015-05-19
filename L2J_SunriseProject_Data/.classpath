@@ -5,11 +5,10 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/L2J_SunriseProject_Core"/>
 	<classpathentry kind="lib" path="/L2J_SunriseProject_Core/dist/libs/javolution-5.5.1.jar" sourcepath="/L2J_SunriseProject_Core/dist/libs/javolution-5.5.1-src.zip"/>
 	<classpathentry kind="lib" path="/L2J_SunriseProject_Core/dist/libs/mmocore.jar"/>
-	<classpathentry kind="lib" path="/L2J_SunriseProject_Core/dist/libs/netcon-1.7.jar"/>
-	<classpathentry kind="lib" path="/L2J_SunriseProject_Core/dist/libs/slf4j-api-1.6.4.jar"/>
 	<classpathentry kind="lib" path="/L2J_SunriseProject_Core/dist/libs/engine.jar"/>
 	<classpathentry kind="lib" path="/L2J_SunriseProject_Core/dist/libs/protection.jar"/>
 	<classpathentry kind="lib" path="/L2J_SunriseProject_Core/dist/libs/event-interface.jar"/>
 	<classpathentry kind="lib" path="/L2J_SunriseProject_Core/dist/libs/event-core.jar"/>
+	<classpathentry kind="lib" path="/L2J_SunriseProject_Core/dist/libs/commons.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
