@@ -68,12 +68,7 @@ public final class GrandBossTeleporters extends AbstractNpcAI
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = "";
-		QuestState st = player.getQuestState(getName());
-		
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
+		final QuestState st = getQuestState(player, false);
 		
 		if (st.hasQuestItems(VACUALITE_FLOATING_STONE))
 		{
