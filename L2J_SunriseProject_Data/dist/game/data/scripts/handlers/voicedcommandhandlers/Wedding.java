@@ -267,6 +267,12 @@ public class Wedding implements IVoicedCommandHandler
 			return false;
 		}
 		
+		if (activeChar.isInStoreMode())
+		{
+			activeChar.sendMessage("While you are in store mode you can't go to your love!");
+			return false;
+		}
+		
 		if (activeChar.isCombatFlagEquipped())
 		{
 			activeChar.sendMessage("While you are holding a Combat Flag or Territory Ward you can't go to your love!");
