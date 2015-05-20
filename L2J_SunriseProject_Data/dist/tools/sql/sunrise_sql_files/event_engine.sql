@@ -1,20 +1,3 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : ServerConnection
-Source Server Version : 50528
-Source Host           : localhost:3306
-Source Database       : l2jsunrisegs
-
-Target Server Type    : MYSQL
-Target Server Version : 50528
-File Encoding         : 65001
-
-Date: 2013-04-29 16:14:37
-*/
-
-SET FOREIGN_KEY_CHECKS=0;
-
 -- ----------------------------
 -- Table structure for `sunrise_buffs`
 -- ----------------------------
@@ -493,21 +476,20 @@ CREATE TABLE `sunrise_main_instances` (
 -- ----------------------------
 -- Records of sunrise_main_instances
 -- ----------------------------
-INSERT INTO `sunrise_main_instances` VALUES ('Battlefields', '14', 'Default', 'Default Instance', '');
-INSERT INTO `sunrise_main_instances` VALUES ('Chests', '8', 'Default', 'Default Instance', '');
-INSERT INTO `sunrise_main_instances` VALUES ('Commanders', '15', 'Default', 'Default Instance', '');
+INSERT INTO `sunrise_main_instances` VALUES ('TvT', '1', 'Default', 'Default Instance', '');
 INSERT INTO `sunrise_main_instances` VALUES ('CTF', '2', 'Default', 'Default Instance', '');
-INSERT INTO `sunrise_main_instances` VALUES ('DM', '5', 'Default', 'Default Instance', '');
 INSERT INTO `sunrise_main_instances` VALUES ('Domination', '3', 'Default', 'Default Instance', '');
-INSERT INTO `sunrise_main_instances` VALUES ('HuntGround', '13', 'Default', 'Default Instance', '');
-INSERT INTO `sunrise_main_instances` VALUES ('LastMan', '6', 'Default', 'Default Instance', '');
 INSERT INTO `sunrise_main_instances` VALUES ('MassDom', '4', 'Default', 'Default Instance', '');
+INSERT INTO `sunrise_main_instances` VALUES ('DM', '5', 'Default', 'Default Instance', '');
+INSERT INTO `sunrise_main_instances` VALUES ('LastMan', '6', 'Default', 'Default Instance', '');
+INSERT INTO `sunrise_main_instances` VALUES ('TvTAdv', '7', 'Default', 'Default Instance', '');
+INSERT INTO `sunrise_main_instances` VALUES ('Chests', '8', 'Default', 'Default Instance', '');
+INSERT INTO `sunrise_main_instances` VALUES ('Zombies', '9', 'Default', 'Default Instance', '');
 INSERT INTO `sunrise_main_instances` VALUES ('Mutant', '10', 'Default', 'Default Instance', '');
 INSERT INTO `sunrise_main_instances` VALUES ('THunt', '11', 'Default', 'Default Instance', '');
 INSERT INTO `sunrise_main_instances` VALUES ('THuntPvP', '12', 'Default', 'Default Instance', '');
-INSERT INTO `sunrise_main_instances` VALUES ('TvT', '1', 'Default', 'Default Instance', '');
-INSERT INTO `sunrise_main_instances` VALUES ('TvTAdv', '7', 'Default', 'Default Instance', '');
-INSERT INTO `sunrise_main_instances` VALUES ('Zombies', '9', 'Default', 'Default Instance', '');
+INSERT INTO `sunrise_main_instances` VALUES ('HuntGround', '13', 'Default', 'Default Instance', '');
+INSERT INTO `sunrise_main_instances` VALUES ('Battlefields', '14', 'Default', 'Default Instance', '');
 
 -- ----------------------------
 -- Table structure for `sunrise_maps`
