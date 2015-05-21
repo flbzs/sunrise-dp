@@ -1,26 +1,9 @@
-/*
- * Copyright (C) 2004-2015 L2J DataPack
- *
- * This file is part of L2J DataPack.
- *
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.effecthandlers;
 
 import l2r.gameserver.GeoData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.Location;
+import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
@@ -28,10 +11,8 @@ import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.serverpackets.FlyToLocation;
 import l2r.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2r.gameserver.network.serverpackets.ValidateLocation;
+import l2r.gameserver.util.Util;
 
-/**
- * @author vGodFather
- */
 public class TeleportToTarget extends L2Effect
 {
 	public TeleportToTarget(Env env, EffectTemplate template)
@@ -46,24 +27,44 @@ public class TeleportToTarget extends L2Effect
 	}
 	
 	@Override
+	public boolean isInstant()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean onStart()
 	{
-		if (getEffected() == null)
+		L2Character activeChar = getEffector();
+		L2Character target = getEffected();
+		if (target == null)
 		{
 			return false;
 		}
 		
-		Location flyLoc = getEffector().getFlyLocation(getEffected(), getSkill());
-		if (flyLoc != null)
+		int px = target.getX();
+		int py = target.getY();
+		double ph = Util.convertHeadingToDegree(target.getHeading());
+		
+		ph += 180;
+		if (ph > 360)
 		{
-			getEffector().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			getEffector().broadcastPacket(new FlyToLocation(getEffector(), flyLoc.getX(), flyLoc.getY(), flyLoc.getZ(), FlyType.DUMMY));
-			getEffector().abortAttack();
-			getEffector().abortCast();
-			getEffector().setXYZ(flyLoc);
-			getEffector().getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, GeoData.getInstance().moveCheck(flyLoc.getX(), flyLoc.getY(), flyLoc.getZ(), flyLoc.getX() + 1, flyLoc.getY() + 1, flyLoc.getZ(), false));
-			getEffector().broadcastPacket(new ValidateLocation(getEffector()));
+			ph -= 360;
 		}
+		
+		ph = (Math.PI * ph) / 180;
+		int x = (int) (px + (25 * Math.cos(ph)));
+		int y = (int) (py + (25 * Math.sin(ph)));
+		int z = target.getZ();
+		
+		final Location loc = GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z, activeChar.getInstanceId());
+		
+		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+		activeChar.broadcastPacket(new FlyToLocation(activeChar, loc.getX(), loc.getY(), loc.getZ(), FlyType.DUMMY));
+		activeChar.abortAttack();
+		activeChar.abortCast();
+		activeChar.setXYZ(loc);
+		activeChar.broadcastPacket(new ValidateLocation(activeChar));
 		return true;
 	}
 }

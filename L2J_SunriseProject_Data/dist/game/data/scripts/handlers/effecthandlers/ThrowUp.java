@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2013 L2J DataPack
  *
  * This file is part of L2J DataPack.
  *
@@ -19,50 +19,78 @@
 package handlers.effecthandlers;
 
 import l2r.gameserver.GeoData;
-import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.effects.EffectFlag;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.serverpackets.FlyToLocation;
 import l2r.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2r.gameserver.network.serverpackets.ValidateLocation;
 
-/**
- * @author vGodFather
- */
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class ThrowUp extends L2Effect
 {
+	private static final Logger _log = LoggerFactory.getLogger(ThrowUp.class);
+	
 	public ThrowUp(Env env, EffectTemplate template)
 	{
 		super(env, template);
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.TELEPORT_TO_TARGET;
-	}
-	
-	@Override
-	public boolean isInstant()
-	{
-		return true;
-	}
-	
-	@Override
 	public boolean onStart()
 	{
-		Location flyLoc = getEffector().getFlyLocation(getEffected(), getSkill());
-		if (flyLoc != null)
+		// Get current position of the L2Character
+		final int curX = getEffected().getX();
+		final int curY = getEffected().getY();
+		final int curZ = getEffected().getZ();
+		
+		// Calculate distance between effector and effected current position
+		double dx = getEffector().getX() - curX;
+		double dy = getEffector().getY() - curY;
+		double dz = getEffector().getZ() - curZ;
+		double distance = Math.sqrt((dx * dx) + (dy * dy));
+		if (distance > 2000)
 		{
-			getEffected().broadcastPacket(new FlyToLocation(getEffected(), flyLoc, FlyType.THROW_UP));
-			getEffected().setXYZ(flyLoc);
-			getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, GeoData.getInstance().moveCheck(flyLoc.getX(), flyLoc.getY(), flyLoc.getZ(), flyLoc.getX() + 1, flyLoc.getY() + 1, flyLoc.getZ(), false));
-			getEffected().broadcastPacket(new ValidateLocation(getEffected()));
+			_log.info("EffectThrow was going to use invalid coordinates for characters, getEffected: " + curX + "," + curY + " and getEffector: " + getEffector().getX() + "," + getEffector().getY());
+			return false;
 		}
+		int offset = Math.min((int) distance + getSkill().getFlyRadius(), 1400);
+		
+		double cos;
+		double sin;
+		
+		// approximation for moving futher when z coordinates are different
+		// TODO: handle Z axis movement better
+		offset += Math.abs(dz);
+		if (offset < 5)
+		{
+			offset = 5;
+		}
+		
+		// If no distance
+		if (distance < 1)
+		{
+			return false;
+		}
+		
+		// Calculate movement angles needed
+		sin = dy / distance;
+		cos = dx / distance;
+		
+		// Calculate the new destination with offset included
+		int x = getEffector().getX() - (int) (offset * cos);
+		int y = getEffector().getY() - (int) (offset * sin);
+		int z = getEffected().getZ();
+		
+		final Location destination = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), x, y, z, getEffected().getInstanceId());
+		getEffected().broadcastPacket(new FlyToLocation(getEffected(), destination, FlyType.THROW_UP));
+		// TODO: Review.
+		getEffected().setXYZ(destination);
+		getEffected().broadcastPacket(new ValidateLocation(getEffected()));
 		return true;
 	}
 	

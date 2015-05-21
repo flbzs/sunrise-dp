@@ -272,7 +272,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 						final double cos = Math.cos(radian);
 						final int newX = (int) (npc.getX() + (cos * distance));
 						final int newY = (int) (npc.getY() + (sin * distance));
-						final Location loc = GeoData.getInstance().moveCheck(npc.getX(), npc.getY(), npc.getZ(), newX, newY, npc.getZ(), false);
+						final Location loc = GeoData.getInstance().moveCheck(npc.getX(), npc.getY(), npc.getZ(), newX, newY, npc.getZ(), npc.getInstanceId());
 						npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, loc, 0);
 					}
 					else if (ag_type == 1)

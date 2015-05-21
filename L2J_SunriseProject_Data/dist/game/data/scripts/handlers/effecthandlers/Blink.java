@@ -21,12 +21,14 @@ package handlers.effecthandlers;
 import l2r.gameserver.GeoData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.Location;
+import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.serverpackets.FlyToLocation;
 import l2r.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2r.gameserver.network.serverpackets.ValidateLocation;
+import l2r.gameserver.util.Util;
 
 /**
  * This class handles warp effects, disappear and quickly turn up in a near location. If geodata enabled and an object is between initial and final point, flight is stopped just before colliding with object. Flight course and radius are set as skill properties (flyCourse and flyRadius): <li>Fly
@@ -35,7 +37,7 @@ import l2r.gameserver.network.serverpackets.ValidateLocation;
  * <br>
  * If target is effector, put in XML self = "1". This will make _actor = getEffector(). This, combined with target type, allows more complex actions like flying target's backwards or player's backwards.<br>
  * <br>
- * @author House reworked by vGodFather
+ * @author House
  */
 public class Blink extends L2Effect
 {
@@ -53,17 +55,26 @@ public class Blink extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		Location flyLoc = getEffector().getFlyLocation(getEffected(), getSkill());
-		if (flyLoc != null)
-		{
-			getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			getEffected().broadcastPacket(new FlyToLocation(getEffected(), flyLoc, FlyType.DUMMY));
-			getEffected().abortAttack();
-			getEffected().abortCast();
-			getEffected().setXYZ(flyLoc);
-			getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, GeoData.getInstance().moveCheck(flyLoc.getX(), flyLoc.getY(), flyLoc.getZ(), flyLoc.getX() + 1, flyLoc.getY() + 1, flyLoc.getZ(), false));
-			getEffected().broadcastPacket(new ValidateLocation(getEffected()));
-		}
+		final L2Character effected = getEffected();
+		final int radius = getSkill().getFlyRadius();
+		final double angle = Util.convertHeadingToDegree(effected.getHeading());
+		final double radian = Math.toRadians(angle);
+		final double course = Math.toRadians(getSkill().getFlyCourse());
+		final int x1 = (int) (Math.cos(Math.PI + radian + course) * radius);
+		final int y1 = (int) (Math.sin(Math.PI + radian + course) * radius);
+		
+		int x = effected.getX() + x1;
+		int y = effected.getY() + y1;
+		int z = effected.getZ();
+		
+		final Location destination = GeoData.getInstance().moveCheck(effected.getX(), effected.getY(), effected.getZ(), x, y, z, effected.getInstanceId());
+		
+		effected.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+		effected.broadcastPacket(new FlyToLocation(effected, destination, FlyType.DUMMY));
+		effected.abortAttack();
+		effected.abortCast();
+		effected.setXYZ(destination);
+		effected.broadcastPacket(new ValidateLocation(effected));
 		return true;
 	}
 }

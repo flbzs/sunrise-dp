@@ -1,86 +1,136 @@
+/*
+ * Copyright (C) 2004-2015 L2J DataPack
+ * 
+ * This file is part of L2J DataPack.
+ * 
+ * L2J DataPack is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * L2J DataPack is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
 package handlers.admincommandhandlers;
 
-import l2r.Config;
+import java.util.StringTokenizer;
+
 import l2r.gameserver.GeoData;
 import l2r.gameserver.handler.IAdminCommandHandler;
+import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.network.SystemMessageId;
+import l2r.gameserver.network.serverpackets.SystemMessage;
+import l2r.gameserver.util.GeoUtils;
 
+/**
+ * @author -Nemesiss-
+ * @author FBIagent
+ */
 public class AdminGeodata implements IAdminCommandHandler
 {
 	private static final String[] ADMIN_COMMANDS =
 	{
-		"admin_geo_z",
-		"admin_geo_type",
-		"admin_geo_nswe",
-		"admin_geo_los",
-		"admin_geo_position"
+		"admin_geo_pos",
+		"admin_geo_spawn_pos",
+		"admin_geo_can_move",
+		"admin_geo_can_see",
+		"admin_geogrid",
 	};
 	
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
-		if (!Config.GEODATA)
+		final StringTokenizer st = new StringTokenizer(command, " ");
+		final String actualCommand = st.nextToken();
+		switch (actualCommand.toLowerCase())
 		{
-			activeChar.sendMessage("Geo Engine is Turned Off!");
-			return true;
-		}
-		
-		if (command.equals("admin_geo_z"))
-		{
-			activeChar.sendMessage("GeoEngine: Geo_Z = " + GeoData.getInstance().getHeight(activeChar.getX(), activeChar.getY(), activeChar.getZ()) + " Loc_Z = " + activeChar.getZ());
-		}
-		else if (command.equals("admin_geo_type"))
-		{
-			short type = GeoData.getInstance().getType(activeChar.getX(), activeChar.getY());
-			activeChar.sendMessage("GeoEngine: Geo_Type = " + type);
-			int height = GeoData.getInstance().getHeight(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-			activeChar.sendMessage("GeoEngine: height = " + height);
-		}
-		else if (command.equals("admin_geo_nswe"))
-		{
-			String result = "";
-			short nswe = GeoData.getInstance().getNSWE(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-			if ((nswe & 8) == 0)
+			case "admin_geo_pos":
 			{
-				result += " N";
-			}
-			if ((nswe & 4) == 0)
-			{
-				result += " S";
-			}
-			if ((nswe & 2) == 0)
-			{
-				result += " W";
-			}
-			if ((nswe & 1) == 0)
-			{
-				result += " E";
-			}
-			activeChar.sendMessage("GeoEngine: Geo_NSWE -> " + nswe + "->" + result);
-		}
-		else if (command.equals("admin_geo_los"))
-		{
-			if (activeChar.getTarget() != null)
-			{
-				if (GeoData.getInstance().canSeeTarget(activeChar, activeChar.getTarget()))
+				final int worldX = activeChar.getX();
+				final int worldY = activeChar.getY();
+				final int worldZ = activeChar.getZ();
+				final int geoX = GeoData.getInstance().getGeoX(worldX);
+				final int geoY = GeoData.getInstance().getGeoY(worldY);
+				
+				if (GeoData.getInstance().hasGeoPos(geoX, geoY))
 				{
-					activeChar.sendMessage("GeoEngine: Can See Target");
+					activeChar.sendMessage("WorldX: " + worldX + ", WorldY: " + worldY + ", WorldZ: " + worldZ + ", GeoX: " + geoX + ", GeoY: " + geoY + ", GeoZ: " + GeoData.getInstance().getNearestZ(geoX, geoY, worldZ));
 				}
 				else
 				{
-					activeChar.sendMessage("GeoEngine: Can't See Target");
+					activeChar.sendMessage("There is no geodata at this position.");
 				}
-				
+				break;
 			}
-			else
+			case "admin_geo_spawn_pos":
 			{
-				activeChar.sendMessage("None Target!");
+				final int worldX = activeChar.getX();
+				final int worldY = activeChar.getY();
+				final int worldZ = activeChar.getZ();
+				final int geoX = GeoData.getInstance().getGeoX(worldX);
+				final int geoY = GeoData.getInstance().getGeoY(worldY);
+				
+				if (GeoData.getInstance().hasGeoPos(geoX, geoY))
+				{
+					activeChar.sendMessage("WorldX: " + worldX + ", WorldY: " + worldY + ", WorldZ: " + worldZ + ", GeoX: " + geoX + ", GeoY: " + geoY + ", GeoZ: " + GeoData.getInstance().getSpawnHeight(worldX, worldY, worldZ));
+				}
+				else
+				{
+					activeChar.sendMessage("There is no geodata at this position.");
+				}
+				break;
 			}
-		}
-		else if (command.equals("admin_geo_position"))
-		{
-			activeChar.sendMessage("GeoEngine: Your current position: ");
-			activeChar.sendMessage(".... world coords: x: " + activeChar.getX() + " y: " + activeChar.getY() + " z: " + activeChar.getZ());
+			case "admin_geo_can_move":
+			{
+				final L2Object target = activeChar.getTarget();
+				if (target != null)
+				{
+					if (GeoData.getInstance().canSeeTarget(activeChar, target))
+					{
+						activeChar.sendMessage("Can move beeline.");
+					}
+					else
+					{
+						activeChar.sendMessage("Can not move beeline!");
+					}
+				}
+				else
+				{
+					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
+				}
+				break;
+			}
+			case "admin_geo_can_see":
+			{
+				final L2Object target = activeChar.getTarget();
+				if (target != null)
+				{
+					if (GeoData.getInstance().canSeeTarget(activeChar, target))
+					{
+						activeChar.sendMessage("Can see target.");
+					}
+					else
+					{
+						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_SEE_TARGET));
+					}
+				}
+				else
+				{
+					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
+				}
+				break;
+			}
+			case "admin_geogrid":
+			{
+				GeoUtils.debugGrid(activeChar);
+				break;
+			}
 		}
 		return true;
 	}
