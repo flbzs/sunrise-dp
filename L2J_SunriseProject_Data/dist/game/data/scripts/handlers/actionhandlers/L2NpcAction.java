@@ -19,17 +19,17 @@
 package handlers.actionhandlers;
 
 import l2r.Config;
+import l2r.gameserver.GeoData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.enums.InstanceType;
 import l2r.gameserver.handler.IActionHandler;
 import l2r.gameserver.model.L2Object;
-import l2r.gameserver.model.actor.L2Character;
+import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.events.EventDispatcher;
 import l2r.gameserver.model.events.EventType;
 import l2r.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
-import l2r.gameserver.network.serverpackets.ActionFailed;
 import l2r.gameserver.network.serverpackets.MoveToPawn;
 import l2r.util.Rnd;
 
@@ -59,51 +59,55 @@ public class L2NpcAction implements IActionHandler
 	@Override
 	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
 	{
-		if (!((L2Npc) target).canTarget(activeChar))
+		final L2Npc npc = (L2Npc) target;
+		if (!npc.canTarget(activeChar))
 		{
 			return false;
 		}
-		activeChar.setLastFolkNPC((L2Npc) target);
+		activeChar.setLastFolkNPC(npc);
 		// Check if the L2PcInstance already target the L2Npc
-		if (target != activeChar.getTarget())
+		if (npc != activeChar.getTarget())
 		{
 			// Set the target of the L2PcInstance activeChar
-			activeChar.setTarget(target);
+			activeChar.setTarget(npc);
 			// Check if the activeChar is attackable (without a forced attack)
-			if (target.isAutoAttackable(activeChar))
+			if (npc.isAutoAttackable(activeChar))
 			{
-				((L2Npc) target).getAI(); // wake up ai
+				npc.getAI(); // wake up ai
 			}
 		}
 		else if (interact)
 		{
 			// Check if the activeChar is attackable (without a forced attack) and isn't dead
-			if (target.isAutoAttackable(activeChar) && !((L2Character) target).isAlikeDead())
+			if (npc.isAutoAttackable(activeChar) && !npc.isAlikeDead())
 			{
-				// Check the height difference
-				if (Math.abs(activeChar.getZ() - target.getZ()) < 400) // this max heigth difference might need some tweaking
+				if (GeoData.getInstance().canSeeTarget(activeChar, npc))
 				{
-					// Set the L2PcInstance Intention to AI_INTENTION_ATTACK
-					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
-					// activeChar.startAttack(this);
+					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, npc);
 				}
 				else
 				{
-					// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
-					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+					final Location destination = GeoData.getInstance().moveCheck(activeChar, npc);
+					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
 				}
 			}
-			else if (!target.isAutoAttackable(activeChar))
+			else if (!npc.isAutoAttackable(activeChar))
 			{
-				// Calculate the distance between the L2PcInstance and the L2Npc
-				if (!((L2Npc) target).canInteract(activeChar))
+				if (!GeoData.getInstance().canSeeTarget(activeChar, npc))
+				{
+					final Location destination = GeoData.getInstance().moveCheck(activeChar, npc);
+					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
+					return true;
+				}
+				
+				// Verifies if the NPC can interact with the player.
+				if (!npc.canInteract(activeChar))
 				{
 					// Notify the L2PcInstance AI with AI_INTENTION_INTERACT
-					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, target);
+					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, npc);
 				}
 				else
 				{
-					final L2Npc npc = (L2Npc) target;
 					// Turn NPC to the player.
 					activeChar.sendPacket(new MoveToPawn(activeChar, npc, 100));
 					if (npc.hasRandomAnimation())
@@ -113,7 +117,7 @@ public class L2NpcAction implements IActionHandler
 					// Open a chat window on client with the text of the L2Npc
 					if (npc.hasListener(EventType.ON_NPC_QUEST_START))
 					{
-						activeChar.setLastQuestNpcObject(target.getObjectId());
+						activeChar.setLastQuestNpcObject(npc.getObjectId());
 					}
 					if (npc.hasListener(EventType.ON_NPC_FIRST_TALK))
 					{
