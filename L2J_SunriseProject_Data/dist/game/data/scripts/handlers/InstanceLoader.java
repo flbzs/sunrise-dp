@@ -41,6 +41,7 @@ import instances.Kamaloka.Kamaloka;
 import instances.LibraryOfSages.LibraryOfSages;
 import instances.MithrilMine.MithrilMine;
 import instances.NornilsGarden.NornilsGarden;
+import instances.NornilsGardenQuest.NornilsGardenQuest;
 import instances.PailakaDevilsLegacy.PailakaDevilsLegacy;
 import instances.PailakaInjuredDragon.PailakaInjuredDragon;
 import instances.PailakaSongOfIceAndFire.PailakaSongOfIceAndFire;
@@ -86,6 +87,7 @@ public class InstanceLoader
 		LibraryOfSages.class,
 		MithrilMine.class,
 		NornilsGarden.class,
+		NornilsGardenQuest.class,
 		PailakaDevilsLegacy.class,
 		PailakaInjuredDragon.class,
 		PailakaSongOfIceAndFire.class,
