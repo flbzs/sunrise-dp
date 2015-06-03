@@ -436,6 +436,8 @@ INSERT INTO `sunrise_globalconfigs` VALUES ('Features', 'globalStatisticsRefresh
 INSERT INTO `sunrise_globalconfigs` VALUES ('Core', 'logToFile', 'Enables logging all engine\'s messages (even if you have turned debugging off) to SunriseEvents.log file in log directory.', 'false', '1');
 INSERT INTO `sunrise_globalconfigs` VALUES ('Core', 'mainEventManagerId', 'Main Events NPC Manager ID.', '9999', '1');
 INSERT INTO `sunrise_globalconfigs` VALUES ('Core', 'mapGuardNpcId', 'The NPC ID of the automatic NPC MapGuard. This NPC may be useful to prevent players from escaping the map - It will kill all players on sight! The MapGuard will be spawned on Spawn of type \'MapGuard\'. To disable spawning MapGuard NPCs, set this to -1.', '9996', '1');
+INSERT INTO `sunrise_globalconfigs` VALUES ('Core', 'eventEngineName', 'Specify here which will be the event engine name.', 'Test', '1');
+INSERT INTO `sunrise_globalconfigs` VALUES ('Core', 'eventEngineSiteName', 'Specify here which will be the event engine site name.', 'Testing', '1');
 INSERT INTO `sunrise_globalconfigs` VALUES ('Buffer', 'maxBuffsCount', 'The max count of buffs player can take from Sunrise buffer.. Put -1 to make this value loaded from the gameserver configs.', '-1', '1');
 INSERT INTO `sunrise_globalconfigs` VALUES ('Features', 'maxBuffsPerPage', 'You can specify here how many buffs in the event buffer (shown in registration NPC) will there be per one page. Default and safe value should be 12, but you may want to decrease it for Interlude.', '12', '1');
 INSERT INTO `sunrise_globalconfigs` VALUES ('Buffer', 'maxDancesCount', 'The max count of dances player can take from Sunrise buffer. Put -1 to make this value loaded from the gameserver configs. Put 0 to count dances as buffs.', '-1', '1');
