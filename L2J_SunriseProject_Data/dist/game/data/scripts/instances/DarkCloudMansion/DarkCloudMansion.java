@@ -287,13 +287,13 @@ public final class DarkCloudMansion extends AbstractInstance
 	@Override
 	public void onEnterInstance(L2PcInstance player, InstanceWorld world, boolean firstEntrance)
 	{
-		if (!checkConditions(player))
-		{
-			return;
-		}
-		
 		if (firstEntrance)
 		{
+			if (!checkConditions(player))
+			{
+				return;
+			}
+			
 			runStartRoom((DMCWorld) world);
 			// teleport players
 			if (debug && (player.getParty() == null))
