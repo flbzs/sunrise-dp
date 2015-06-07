@@ -15,13 +15,12 @@ public class GrandBossManager extends AbstractNpcAI
 	private static final int NpcId = 543; // npc id here
 	private static final int[] BOSSES =
 	{
-		29001,
-		29006,
-		29014,
-		29019,
-		29020,
-		29022,
-		29028
+		29001,// Queen Ant
+		29006,// Core
+		29014,// Orfgen
+		29020,// Baium
+		29028, // Valakas
+		29068, // Antharas
 	};
 	
 	public GrandBossManager()
@@ -52,22 +51,29 @@ public class GrandBossManager extends AbstractNpcAI
 		tb.append("<table width = 280>");
 		for (int boss : BOSSES)
 		{
-			String name = NpcTable.getInstance().getTemplate(boss).getName();
-			long delay = l2r.gameserver.instancemanager.GrandBossManager.getInstance().getStatsSet(boss).getLong("respawn_time");
-			if (delay <= System.currentTimeMillis())
+			try
 			{
-				tb.append("<tr>");
-				tb.append("<td><font color=\"00C3FF\">" + name + "</color>:</td> " + "<td><font color=\"00FF00\">Is Alive</color></td>" + "<br1>");
-				tb.append("</tr>");
+				String name = NpcTable.getInstance().getTemplate(boss).getName();
+				long delay = l2r.gameserver.instancemanager.GrandBossManager.getInstance().getStatsSet(boss).getLong("respawn_time");
+				if (delay <= System.currentTimeMillis())
+				{
+					tb.append("<tr>");
+					tb.append("<td><font color=\"00C3FF\">" + name + "</color>:</td> " + "<td><font color=\"00FF00\">Is Alive</color></td>" + "<br1>");
+					tb.append("</tr>");
+				}
+				else
+				{
+					int hours = (int) ((delay - System.currentTimeMillis()) / 1000 / 60 / 60);
+					int mins = (int) (((delay - (hours * 60 * 60 * 1000)) - System.currentTimeMillis()) / 1000 / 60);
+					int seconts = (int) (((delay - ((hours * 60 * 60 * 1000) + (mins * 60 * 1000))) - System.currentTimeMillis()) / 1000);
+					tb.append("<tr>");
+					tb.append("<td><font color=\"00C3FF\">" + name + "</color></td>" + "<td><font color=\"00BFFF\">" + " " + "Respawn in :</color></td>" + " " + "<td><font color=\"00BFFF\">" + hours + " : " + mins + " : " + seconts + "</color></td>");
+					tb.append("</tr>");
+				}
 			}
-			else
+			catch (Exception e)
 			{
-				int hours = (int) ((delay - System.currentTimeMillis()) / 1000 / 60 / 60);
-				int mins = (int) (((delay - (hours * 60 * 60 * 1000)) - System.currentTimeMillis()) / 1000 / 60);
-				int seconts = (int) (((delay - ((hours * 60 * 60 * 1000) + (mins * 60 * 1000))) - System.currentTimeMillis()) / 1000);
-				tb.append("<tr>");
-				tb.append("<td><font color=\"00C3FF\">" + name + "</color></td>" + "<td><font color=\"00BFFF\">" + " " + "Respawn in :</color></td>" + " " + "<td><font color=\"00BFFF\">" + hours + " : " + mins + " : " + seconts + "</color></td>");
-				tb.append("</tr>");
+				continue;
 			}
 		}
 		tb.append("</table>");
