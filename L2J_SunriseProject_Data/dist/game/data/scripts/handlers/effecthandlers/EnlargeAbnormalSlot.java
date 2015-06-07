@@ -20,35 +20,42 @@ package handlers.effecthandlers;
 
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 
 /**
  * Enlarge Abnormal Slot effect.
- * @author Zoey76
+ * @author Zoey76 vGodFather
  */
 public class EnlargeAbnormalSlot extends L2Effect
 {
+	private final int _slots;
+	
 	public EnlargeAbnormalSlot(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		
+		_slots = template.getParameters().getInt("slots", 0);
 	}
 	
 	@Override
 	public boolean onStart()
 	{
-		return (getEffector() != null) && (getEffected() != null) && getEffected().isPlayer();
+		if ((getEffector() != null) && (getEffected() != null) && getEffected().isPlayer())
+		{
+			getEffected().getStat().setMaxBuffCount(getEffected().getStat().getMaxBuffCount() + _slots);
+		}
+		return true;
 	}
 	
 	@Override
 	public boolean onActionTime()
 	{
-		return true;
+		return getSkill().isPassive();
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
+	public void onExit()
 	{
-		return L2EffectType.ENLARGE_ABNORMAL_SLOT;
+		getEffected().getStat().setMaxBuffCount(Math.max(0, getEffected().getStat().getMaxBuffCount() - _slots));
 	}
 }

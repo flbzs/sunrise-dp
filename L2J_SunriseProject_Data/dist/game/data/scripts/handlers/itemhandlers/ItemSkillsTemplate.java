@@ -24,7 +24,6 @@ import l2r.gameserver.model.actor.L2Playable;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.items.instance.L2ItemInstance;
-import l2r.gameserver.model.items.type.ActionType;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
@@ -94,15 +93,9 @@ public class ItemSkillsTemplate implements IItemHandler
 					return false;
 				}
 				
-				boolean alreadyConsumed = false;
-				final boolean isCapsuleItem = item.getItem().getDefaultAction() == ActionType.CAPSULE;
-				if (isCapsuleItem || ((itemSkill.getItemConsumeId() == 0) && (itemSkill.getItemConsumeCount() > 0) && (item.isPotion() || item.isElixir() || item.isScroll() || itemSkill.isSimultaneousCast())))
+				if ((itemSkill.getItemConsumeId() == 0) && (itemSkill.getItemConsumeCount() > 0) && (item.isPotion() || item.isElixir() || itemSkill.isSimultaneousCast()))
 				{
-					if (playable.destroyItem("Consume", item.getObjectId(), isCapsuleItem && (itemSkill.getItemConsumeCount() == 0) ? 1 : itemSkill.getItemConsumeCount(), playable, false))
-					{
-						alreadyConsumed = true;
-					}
-					else
+					if (!playable.destroyItem("Consume", item.getObjectId(), itemSkill.getItemConsumeCount(), playable, false))
 					{
 						playable.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS);
 						return false;
@@ -163,13 +156,10 @@ public class ItemSkillsTemplate implements IItemHandler
 					// Consume.
 					if ((itemSkill.getItemConsumeId() == 0) && (itemSkill.getItemConsumeCount() > 0))
 					{
-						if (!alreadyConsumed)
+						if (!playable.destroyItem("Consume", item.getObjectId(), itemSkill.getItemConsumeCount(), null, false))
 						{
-							if (!playable.destroyItem("Consume", item.getObjectId(), itemSkill.getItemConsumeCount(), null, false))
-							{
-								playable.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS);
-								return false;
-							}
+							playable.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS);
+							return false;
 						}
 					}
 				}
