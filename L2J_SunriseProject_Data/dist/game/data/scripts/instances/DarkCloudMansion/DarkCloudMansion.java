@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import l2r.gameserver.enums.PcCondOverride;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.L2Party;
 import l2r.gameserver.model.Location;
@@ -242,7 +241,7 @@ public final class DarkCloudMansion extends AbstractInstance
 	@Override
 	protected boolean checkConditions(L2PcInstance player)
 	{
-		if (debug || player.canOverrideCond(PcCondOverride.INSTANCE_CONDITIONS))
+		if (debug)
 		{
 			return true;
 		}
@@ -289,11 +288,6 @@ public final class DarkCloudMansion extends AbstractInstance
 	{
 		if (firstEntrance)
 		{
-			if (!checkConditions(player))
-			{
-				return;
-			}
-			
 			runStartRoom((DMCWorld) world);
 			// teleport players
 			if (debug && (player.getParty() == null))
