@@ -273,6 +273,7 @@
 	<skill id="26027" levels="6" name="Secret medicine of Will">
 		<!-- Confirmed CT2.5 -->
 		<!-- Level 1 doesn't exist in client. -->
+		<set name="abnormalType" val="cp_recover" />
 		<table name="#amount"> 0 350 600 800 1000 1200 </table>
 		<table name="#levelRange"> 0;0 20;39 40;51 52;60 61;75 76;85 </table>
 		<set name="blockedInOlympiad" val="true" />
@@ -307,6 +308,7 @@
 		</for>
 	</skill>
 	<skill id="26029" levels="1" name="Potion of Will">
+		<set name="abnormalType" val="cp_recover" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -318,6 +320,7 @@
 	</skill>
 	<skill id="26030" levels="1" name="Healing medicine for Mana">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalType" val="mp_recover" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="1" />
