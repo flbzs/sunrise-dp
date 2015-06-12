@@ -730,7 +730,6 @@
 		</for>
 	</skill>
 	<skill id="2166" levels="2" name="CP Gauge Potion">
-		<set name="abnormalType" val="cp_recover" />
 		<table name="#amount"> 50 200 </table>
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />

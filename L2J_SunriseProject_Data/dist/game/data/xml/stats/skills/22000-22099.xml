@@ -710,7 +710,6 @@
 		</for>
 	</skill>
 	<skill id="22042" levels="1" name="High Grade Potion of Will">
-		<set name="abnormalType" val="cp_recover" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
@@ -724,7 +723,6 @@
 	<skill id="22043" levels="6" name="Secret medicine of Will">
 		<!-- Confirmed CT2.5 -->
 		<!-- Level 1 doesn't exist in client. -->
-		<set name="abnormalType" val="cp_recover" />
 		<set name="blockedInOlympiad" val="true" />
 		<table name="#amount"> 0 800 1500 2000 2500 3000 </table>
 		<table name="#levelRange"> 0;0 20;39 40;51 52;60 61;75 76;85 </table>

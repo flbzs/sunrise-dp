@@ -34,7 +34,6 @@
 	</skill>
 	<skill id="2402" levels="1" name="Lesser Battlefield CP Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalType" val="cp_recover" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="magicLvl" val="1" />
@@ -50,7 +49,6 @@
 	</skill>
 	<skill id="2403" levels="1" name="Spring CP Potion">
 		<!-- Confirmed CT2.5 -->
-		<set name="abnormalType" val="cp_recover" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="magicLvl" val="1" />

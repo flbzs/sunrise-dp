@@ -63,6 +63,8 @@ public class ItemSkillsTemplate implements IItemHandler
 			return false;
 		}
 		
+		boolean hasConsumeSkill = false;
+		boolean isSimultaniously = false;
 		for (SkillHolder skillInfo : skills)
 		{
 			if (skillInfo == null)
@@ -73,6 +75,16 @@ public class ItemSkillsTemplate implements IItemHandler
 			L2Skill itemSkill = skillInfo.getSkill();
 			if (itemSkill != null)
 			{
+				if ((itemSkill.getItemConsumeId() == 0) && (itemSkill.getItemConsumeCount() > 0))
+				{
+					hasConsumeSkill = true;
+				}
+				
+				if (itemSkill.isSimultaneousCast())
+				{
+					isSimultaniously = true;
+				}
+				
 				if (!itemSkill.checkCondition(playable, playable.getTarget(), false))
 				{
 					return false;
@@ -92,27 +104,6 @@ public class ItemSkillsTemplate implements IItemHandler
 				if (!item.isPotion() && !item.isElixir() && !item.isScroll() && playable.isCastingNow())
 				{
 					return false;
-				}
-				
-				final boolean isCapsuleItem = item.getItem().getDefaultAction() == ActionType.CAPSULE;
-				if (isCapsuleItem || ((itemSkill.getItemConsumeId() == 0) && (itemSkill.getItemConsumeCount() > 0) && (item.isPotion() || item.isElixir() || item.isScroll() || itemSkill.isSimultaneousCast())))
-				{
-					if (isCapsuleItem)
-					{
-						if ((playable.getActingPlayer() != null) && !playable.getActingPlayer().isSitting())
-						{
-							if (!playable.destroyItem("Consume", item.getObjectId(), isCapsuleItem && (itemSkill.getItemConsumeCount() == 0) ? 1 : itemSkill.getItemConsumeCount(), playable, false))
-							{
-								playable.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS);
-								return false;
-							}
-						}
-					}
-					else if (!playable.destroyItem("Consume", item.getObjectId(), isCapsuleItem && (itemSkill.getItemConsumeCount() == 0) ? 1 : itemSkill.getItemConsumeCount(), playable, false))
-					{
-						playable.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS);
-						return false;
-					}
 				}
 				
 				// Send message to the master.
@@ -165,16 +156,6 @@ public class ItemSkillsTemplate implements IItemHandler
 					{
 						return false;
 					}
-					
-					// Consume.
-					if ((itemSkill.getItemConsumeId() == 0) && (itemSkill.getItemConsumeCount() > 0))
-					{
-						if (!playable.destroyItem("Consume", item.getObjectId(), itemSkill.getItemConsumeCount(), null, false))
-						{
-							playable.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS);
-							return false;
-						}
-					}
 				}
 				
 				if (itemSkill.getReuseDelay() > 0)
@@ -183,6 +164,28 @@ public class ItemSkillsTemplate implements IItemHandler
 				}
 			}
 		}
+		
+		final boolean isCapsuleItem = item.getItem().getDefaultAction() == ActionType.CAPSULE;
+		if (isCapsuleItem || (hasConsumeSkill && (item.isPotion() || item.isElixir() || item.isScroll() || isSimultaniously)))
+		{
+			if (isCapsuleItem)
+			{
+				if ((playable.getActingPlayer() != null) && !playable.getActingPlayer().isSitting())
+				{
+					if (!playable.destroyItem("Consume", item.getObjectId(), 1, playable, false))
+					{
+						playable.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS);
+						return false;
+					}
+				}
+			}
+			else if (!playable.destroyItem("Consume", item.getObjectId(), 1, playable, false))
+			{
+				playable.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS);
+				return false;
+			}
+		}
+		
 		return true;
 	}
 	
