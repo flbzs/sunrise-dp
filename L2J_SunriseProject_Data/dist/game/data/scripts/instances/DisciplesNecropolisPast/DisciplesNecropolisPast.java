@@ -20,10 +20,11 @@ package instances.DisciplesNecropolisPast;
 
 import instances.AbstractInstance;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-import javolution.util.FastList;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
@@ -46,8 +47,8 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 {
 	protected class DNPWorld extends InstanceWorld
 	{
-		protected final FastList<L2Npc> anakimGroup = new FastList<>();
-		protected final FastList<L2Npc> lilithGroup = new FastList<>();
+		protected final List<L2Npc> anakimGroup = new ArrayList<>();
+		protected final List<L2Npc> lilithGroup = new ArrayList<>();
 		protected int countKill = 0;
 	}
 	
@@ -96,7 +97,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	private static final NpcStringId[] LILITH_SHOUT =
 	{
 		NpcStringId.HOW_DARE_YOU_TRY_TO_CONTEND_AGAINST_ME_IN_STRENGTH_RIDICULOUS,
-		NpcStringId.ANAKIM_IN_THE_NAME_OF_GREAT_SHILEN_I_WILL_CUT_YOUR_THROAT,
+		NpcStringId.ANAKIM_IN_THE_NAME_OF_GREAT_SHILIEN_I_WILL_CUT_YOUR_THROAT,
 		NpcStringId.YOU_CANNOT_BE_THE_MATCH_OF_LILITH_I_LL_TEACH_YOU_A_LESSON
 	};
 	// Misc
@@ -148,7 +149,6 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	
 	private synchronized void checkDoors(L2Npc npc, DNPWorld world)
 	{
-		world.countKill++;
 		switch (world.countKill)
 		{
 			case 4:
@@ -180,7 +180,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 		teleportPlayer(player, ENTER, world.getInstanceId());
 	}
 	
-	private void makeCast(L2Npc npc, FastList<L2Npc> targets)
+	private void makeCast(L2Npc npc, List<L2Npc> targets)
 	{
 		npc.setTarget(targets.get(getRandom(targets.size())));
 		if (SKILLS.containsKey(npc.getId()))
@@ -224,7 +224,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 						{
 							if (caster.isScriptValue(0))
 							{
-								caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), NpcStringId.YOU_SUCH_A_FOOL_THE_VICTORY_OVER_THIS_WAR_BELONGS_TO_SHILEN));
+								caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), NpcStringId.YOU_SUCH_A_FOOL_THE_VICTORY_OVER_THIS_WAR_BELONGS_TO_SHILIEN));
 								caster.setScriptValue(1);
 							}
 							else if (getRandom(100) < 10)
@@ -246,7 +246,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 								caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), NpcStringId.FOR_THE_ETERNITY_OF_EINHASAD));
 								if (Util.checkIfInRange(2000, caster, player, true))
 								{
-									player.sendPacket(new NpcSay(caster.getObjectId(), Say2.TELL, caster.getId(), NpcStringId.MY_POWER_S_WEAKENING_HURRY_AND_TURN_ON_THE_SEALING_DEVICE));
+									player.sendPacket(new NpcSay(caster.getObjectId(), Say2.TELL, caster.getId(), NpcStringId.MY_POWERS_WEAKENING_HURRY_AND_TURN_ON_THE_SEALING_DEVICE));
 								}
 								caster.setScriptValue(1);
 							}
@@ -256,7 +256,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 								{
 									case 0:
 									{
-										caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), NpcStringId.DEAR_SHILLIEN_S_OFFSPRINGS_YOU_ARE_NOT_CAPABLE_OF_CONFRONTING_US));
+										caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), NpcStringId.DEAR_SHILLIENS_OFFSPRINGS_YOU_ARE_NOT_CAPABLE_OF_CONFRONTING_US));
 										if (Util.checkIfInRange(2000, caster, player, true))
 										{
 											player.sendPacket(new NpcSay(caster.getObjectId(), Say2.TELL, caster.getId(), NpcStringId.ALL_4_SEALING_DEVICES_MUST_BE_TURNED_ON));
@@ -265,10 +265,10 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 									}
 									case 1:
 									{
-										caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), NpcStringId.I_LL_SHOW_YOU_THE_REAL_POWER_OF_EINHASAD));
+										caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), NpcStringId.ILL_SHOW_YOU_THE_REAL_POWER_OF_EINHASAD));
 										if (Util.checkIfInRange(2000, caster, player, true))
 										{
-											player.sendPacket(new NpcSay(caster.getObjectId(), Say2.TELL, caster.getId(), NpcStringId.LILITH_ATTACK_IS_GETTING_STRONGER_GO_AHEAD_AND_TURN_IT_ON));
+											player.sendPacket(new NpcSay(caster.getObjectId(), Say2.TELL, caster.getId(), NpcStringId.LILITHS_ATTACK_IS_GETTING_STRONGER_GO_AHEAD_AND_TURN_IT_ON));
 										}
 										break;
 									}
@@ -379,6 +379,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 		if (tmpworld instanceof DNPWorld)
 		{
 			final DNPWorld world = (DNPWorld) tmpworld;
+			world.countKill++;
 			checkDoors(npc, world);
 		}
 		
