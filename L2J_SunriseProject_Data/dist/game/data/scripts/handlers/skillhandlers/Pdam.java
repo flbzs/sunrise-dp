@@ -54,14 +54,6 @@ public class Pdam implements ISkillHandler
 			return;
 		}
 		
-		if (((skill.getFlyRadius() > 0) || (skill.getFlyType() != null)) && activeChar.isMovementDisabled())
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
-			sm.addSkillName(skill);
-			activeChar.sendPacket(sm);
-			return;
-		}
-		
 		int damage = 0;
 		
 		boolean ss = skill.useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
