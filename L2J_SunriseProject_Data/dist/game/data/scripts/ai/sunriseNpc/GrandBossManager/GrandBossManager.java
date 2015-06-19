@@ -1,10 +1,13 @@
 package ai.sunriseNpc.GrandBossManager;
 
+import java.util.List;
+
 import l2r.gameserver.data.sql.NpcTable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 import ai.npc.AbstractNpcAI;
+import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
 
 /**
  * @author L2jSunrise Team
@@ -12,16 +15,8 @@ import ai.npc.AbstractNpcAI;
  */
 public class GrandBossManager extends AbstractNpcAI
 {
-	private static final int NpcId = 543; // npc id here
-	private static final int[] BOSSES =
-	{
-		29001,// Queen Ant
-		29006,// Core
-		29014,// Orfgen
-		29020,// Baium
-		29028, // Valakas
-		29068, // Antharas
-	};
+	private static final int NpcId = CustomNpcsConfigs.GRANDBOSS_NPC_ID;
+	private static final List<Integer> BOSSES = CustomNpcsConfigs.GRANDBOSS_LIST;
 	
 	public GrandBossManager()
 	{
@@ -34,6 +29,12 @@ public class GrandBossManager extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
+		if (!CustomNpcsConfigs.ENABLE_GRANDBOSS_MANAGER)
+		{
+			player.sendMessage("GrandBoss manager npc is disabled by admin");
+			return "";
+		}
+		
 		showRbInfo(player);
 		return "";
 	}

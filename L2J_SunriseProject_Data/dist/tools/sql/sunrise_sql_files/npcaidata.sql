@@ -1,20 +1,3 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : ServerConnection
-Source Server Version : 50528
-Source Host           : localhost:3306
-Source Database       : l2jsunrisegs
-
-Target Server Type    : MYSQL
-Target Server Version : 50528
-File Encoding         : 65001
-
-Date: 2013-07-25 22:20:26
-*/
-
-SET FOREIGN_KEY_CHECKS=0;
-
 -- ----------------------------
 -- Table structure for `custom_npcaidata`
 -- ----------------------------
@@ -53,6 +36,7 @@ CREATE TABLE `custom_npcaidata` (
 INSERT INTO `custom_npcaidata` VALUES ('539', '7', '15', '0', '0', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '0', null, '0', '0', 'fighter');
 INSERT INTO `custom_npcaidata` VALUES ('541', '7', '15', '0', '1000', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '300', '', '0', '0', 'fighter');
 INSERT INTO `custom_npcaidata` VALUES ('542', '7', '15', '0', '1000', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'fighter');
+INSERT INTO `custom_npcaidata` VALUES ('543', '7', '15', '0', '1000', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'fighter');
 INSERT INTO `custom_npcaidata` VALUES ('553', '7', '15', '0', '1000', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'fighter');
 INSERT INTO `custom_npcaidata` VALUES ('554', '7', '15', '0', '1000', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'fighter');
 INSERT INTO `custom_npcaidata` VALUES ('555', '7', '15', '0', '1000', '0', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'fighter');
