@@ -107,7 +107,7 @@ public class AreaFriendly implements ITargetTypeHandler
 			return false;
 		}
 		
-		if (!actingPlayer.isFriend(targetPlayer) && !actingPlayer.isInSameClan(targetPlayer) && !actingPlayer.isInSameAlly(targetPlayer))
+		if (!actingPlayer.isFriend(targetPlayer))
 		{
 			return false;
 		}

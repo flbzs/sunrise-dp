@@ -18,10 +18,9 @@
  */
 package handlers.skillhandlers;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import l2r.gameserver.handler.ISkillHandler;
 import l2r.gameserver.handler.SkillHandler;
@@ -104,7 +103,7 @@ public class ChainHeal implements ISkillHandler
 	private L2Character[] getTargetsToHeal(L2Character[] targets)
 	{
 		Map<L2Character, Double> tmpTargets = new ConcurrentHashMap<>();
-		List<L2Character> sortedListToReturn = new CopyOnWriteArrayList<>();
+		Set<L2Character> sortedListToReturn = ConcurrentHashMap.newKeySet();
 		int curTargets = 0;
 		
 		for (L2Character target : targets)
