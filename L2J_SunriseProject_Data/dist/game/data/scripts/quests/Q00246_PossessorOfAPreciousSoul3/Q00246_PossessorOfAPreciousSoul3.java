@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -75,7 +75,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		QuestState st = player.getQuestState(getName());
+		QuestState st = getQuestState(player, false);
 		if (st == null)
 		{
 			return getNoQuestMsg(player);
@@ -147,7 +147,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				partyMember = getRandomPartyMember(player, "awaitsWaterbinder", "1");
 				if (partyMember != null)
 				{
-					st = partyMember.getQuestState(getName());
+					st = getQuestState(partyMember, false);
 					final int chance = getRandom(100);
 					if (st.isCond(2) && !st.hasQuestItems(WATERBINDER))
 					{
@@ -172,7 +172,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				partyMember = getRandomPartyMember(player, "awaitsEvergreen", "1");
 				if (partyMember != null)
 				{
-					st = partyMember.getQuestState(getName());
+					st = getQuestState(partyMember, false);
 					final long chance = getRandom(100);
 					if (st.isCond(2) && !st.hasQuestItems(EVERGREEN))
 					{
@@ -198,7 +198,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				{
 					for (L2PcInstance member : player.getParty().getMembers())
 					{
-						pst = member.getQuestState(getName());
+						pst = getQuestState(member, false);
 						if (pst != null)
 						{
 							if (pst.isCond(4) && !pst.hasQuestItems(RAIN_SONG))
@@ -253,7 +253,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = getNoQuestMsg(player);
-		QuestState st = getQuestState(player, true);
+		final QuestState st = getQuestState(player, true);
 		if (st == null)
 		{
 			return htmltext;
