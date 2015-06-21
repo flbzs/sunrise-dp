@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,8 +21,6 @@ package events.CharacterBirthday;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
-import l2r.gameserver.model.quest.QuestState;
-import l2r.gameserver.model.quest.State;
 import l2r.gameserver.util.Util;
 
 /**
@@ -30,7 +28,7 @@ import l2r.gameserver.util.Util;
  * Updated to H5 by Nyaran.
  * @author Gnacik
  */
-public class CharacterBirthday extends Quest
+public final class CharacterBirthday extends Quest
 {
 	private static final int ALEGRIA = 32600;
 	private static int SPAWNS = 0;
@@ -71,8 +69,6 @@ public class CharacterBirthday extends Quest
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
-		QuestState st = player.getQuestState(getName());
-		
 		if (event.equalsIgnoreCase("despawn_npc"))
 		{
 			npc.doDie(player);
@@ -83,10 +79,10 @@ public class CharacterBirthday extends Quest
 		else if (event.equalsIgnoreCase("change"))
 		{
 			// Change Hat
-			if (st.hasQuestItems(10250))
+			if (hasQuestItems(player, 10250))
 			{
-				st.takeItems(10250, 1); // Adventurer Hat (Event)
-				st.giveItems(21594, 1); // Birthday Hat
+				takeItems(player, 10250, 1); // Adventurer Hat (Event)
+				giveItems(player, 21594, 1); // Birthday Hat
 				htmltext = null; // FIXME: Probably has html
 				// Despawn npc
 				npc.doDie(player);
@@ -108,17 +104,10 @@ public class CharacterBirthday extends Quest
 			return "busy.htm";
 		}
 		
-		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
-		
 		if (!Util.checkIfInRange(10, npc, player, true))
 		{
-			L2Npc spawned = st.addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);
-			st.setState(State.STARTED);
-			st.startQuestTimer("despawn_npc", 180000, spawned);
+			L2Npc spawned = addSpawn(32600, player.getX() + 10, player.getY() + 10, player.getZ() + 10, 0, false, 0, true);
+			startQuestTimer("despawn_npc", 180000, spawned, player);
 			SPAWNS++;
 		}
 		else

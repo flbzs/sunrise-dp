@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -22,13 +22,12 @@ import l2r.gameserver.enums.QuestSound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.event.LongTimeEvent;
-import l2r.gameserver.model.quest.QuestState;
 
 /**
  * Heavy Medals event AI.
  * @author Gnacik
  */
-public class HeavyMedal extends LongTimeEvent
+public final class HeavyMedal extends LongTimeEvent
 {
 	private final static int CAT_ROY = 31228;
 	private final static int CAT_WINNIE = 31229;
@@ -65,28 +64,22 @@ public class HeavyMedal extends LongTimeEvent
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		final QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
-			return getNoQuestMsg(player);
-		}
-		
 		String htmltext = event;
-		int level = checkLevel(st);
+		int level = checkLevel(player);
 		
 		if (event.equalsIgnoreCase("game"))
 		{
-			htmltext = st.getQuestItemsCount(GLITTERING_MEDAL) < MEDALS[level] ? "31229-no.htm" : "31229-game.htm";
+			htmltext = getQuestItemsCount(player, GLITTERING_MEDAL) < MEDALS[level] ? "31229-no.htm" : "31229-game.htm";
 		}
 		else if (event.equalsIgnoreCase("heads") || event.equalsIgnoreCase("tails"))
 		{
-			if (st.getQuestItemsCount(GLITTERING_MEDAL) < MEDALS[level])
+			if (getQuestItemsCount(player, GLITTERING_MEDAL) < MEDALS[level])
 			{
 				htmltext = "31229-" + event.toLowerCase() + "-10.htm";
 			}
 			else
 			{
-				st.takeItems(GLITTERING_MEDAL, MEDALS[level]);
+				takeItems(player, GLITTERING_MEDAL, MEDALS[level]);
 				
 				if (getRandom(100) > WIN_CHANCE)
 				{
@@ -96,10 +89,10 @@ public class HeavyMedal extends LongTimeEvent
 				{
 					if (level > 0)
 					{
-						st.takeItems(BADGES[level - 1], -1);
+						takeItems(player, BADGES[level - 1], -1);
 					}
-					st.giveItems(BADGES[level], 1);
-					st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					giveItems(player, BADGES[level], 1);
+					playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 					level++;
 				}
 				htmltext = "31229-" + event.toLowerCase() + "-" + String.valueOf(level) + ".htm";
@@ -115,29 +108,25 @@ public class HeavyMedal extends LongTimeEvent
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		if (player.getQuestState(getName()) == null)
-		{
-			newQuestState(player);
-		}
 		return npc.getId() + ".htm";
 	}
 	
-	public int checkLevel(QuestState st)
+	public int checkLevel(L2PcInstance player)
 	{
 		int _lev = 0;
-		if (st.hasQuestItems(6402))
+		if (hasQuestItems(player, 6402))
 		{
 			_lev = 4;
 		}
-		else if (st.hasQuestItems(6401))
+		else if (hasQuestItems(player, 6401))
 		{
 			_lev = 3;
 		}
-		else if (st.hasQuestItems(6400))
+		else if (hasQuestItems(player, 6400))
 		{
 			_lev = 2;
 		}
-		else if (st.hasQuestItems(6399))
+		else if (hasQuestItems(player, 6399))
 		{
 			_lev = 1;
 		}

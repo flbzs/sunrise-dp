@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -22,19 +22,19 @@ import l2r.gameserver.enums.QuestSound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.event.LongTimeEvent;
-import l2r.gameserver.model.quest.QuestState;
-import l2r.gameserver.model.quest.State;
 
 /**
  * The Valentine Event event AI.
  * @author Gnacik
  */
-public class TheValentineEvent extends LongTimeEvent
+public final class TheValentineEvent extends LongTimeEvent
 {
 	// NPC
 	private static final int NPC = 4301;
 	// Item
 	private static final int RECIPE = 20191;
+	// Misc
+	private static final String COMPLETED = TheValentineEvent.class.getSimpleName() + "_completed";
 	
 	public TheValentineEvent()
 	{
@@ -47,24 +47,17 @@ public class TheValentineEvent extends LongTimeEvent
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		final QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
-			return getNoQuestMsg(player);
-		}
-		
 		String htmltext = event;
 		if (event.equalsIgnoreCase("4301-3.htm"))
 		{
-			if (st.isCompleted())
+			if (player.getVariables().getBoolean(COMPLETED, false))
 			{
 				htmltext = "4301-4.htm";
 			}
 			else
 			{
-				st.giveItems(RECIPE, 1);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ITEMGET);
-				st.setState(State.COMPLETED);
+				giveItems(player, RECIPE, 1);
+				playSound(player, QuestSound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 		return htmltext;
@@ -73,10 +66,6 @@ public class TheValentineEvent extends LongTimeEvent
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		if (player.getQuestState(getName()) == null)
-		{
-			newQuestState(player);
-		}
 		return npc.getId() + ".htm";
 	}
 }

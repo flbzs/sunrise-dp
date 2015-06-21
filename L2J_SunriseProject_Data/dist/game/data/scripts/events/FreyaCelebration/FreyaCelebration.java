@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -23,8 +23,6 @@ import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.event.LongTimeEvent;
 import l2r.gameserver.model.itemcontainer.Inventory;
-import l2r.gameserver.model.quest.QuestState;
-import l2r.gameserver.model.quest.State;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
@@ -37,7 +35,7 @@ import l2r.gameserver.util.Util;
  * Freya Celebration event AI.
  * @author Gnacik
  */
-public class FreyaCelebration extends LongTimeEvent
+public final class FreyaCelebration extends LongTimeEvent
 {
 	// NPC
 	private static final int FREYA = 13296;
@@ -70,7 +68,6 @@ public class FreyaCelebration extends LongTimeEvent
 	public FreyaCelebration()
 	{
 		super(FreyaCelebration.class.getSimpleName(), "events");
-		
 		addStartNpc(FREYA);
 		addFirstTalkId(FREYA);
 		addTalkId(FREYA);
@@ -80,15 +77,9 @@ public class FreyaCelebration extends LongTimeEvent
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
-			return null;
-		}
-		
 		if (event.equalsIgnoreCase("give_potion"))
 		{
-			if (st.getQuestItemsCount(Inventory.ADENA_ID) > 1)
+			if (getQuestItemsCount(player, Inventory.ADENA_ID) > 1)
 			{
 				long _curr_time = System.currentTimeMillis();
 				String value = loadGlobalQuestVar(player.getAccountName());
@@ -96,9 +87,8 @@ public class FreyaCelebration extends LongTimeEvent
 				
 				if (_curr_time > _reuse_time)
 				{
-					st.setState(State.STARTED);
-					st.takeItems(Inventory.ADENA_ID, 1);
-					st.giveItems(FREYA_POTION, 1);
+					takeItems(player, Inventory.ADENA_ID, 1);
+					giveItems(player, FREYA_POTION, 1);
 					saveGlobalQuestVar(player.getAccountName(), Long.toString(System.currentTimeMillis() + (HOURS * 3600000)));
 				}
 				else
@@ -157,10 +147,6 @@ public class FreyaCelebration extends LongTimeEvent
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		if (player.getQuestState(getName()) == null)
-		{
-			newQuestState(player);
-		}
 		return "13296.htm";
 	}
 }
