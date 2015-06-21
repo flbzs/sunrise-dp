@@ -183,6 +183,7 @@
 	<item id="7117" type="EtcItem" name="Scroll of Escape: Talking Island Village">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -197,6 +198,7 @@
 	<item id="7118" type="EtcItem" name="Scroll of Escape: Elven Village">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -211,6 +213,7 @@
 	<item id="7119" type="EtcItem" name="Scroll of Escape: Dark Elven Village">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -225,6 +228,7 @@
 	<item id="7120" type="EtcItem" name="Scroll of Escape: Orc Village">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -239,6 +243,7 @@
 	<item id="7121" type="EtcItem" name="Scroll of Escape: Dwarven Village">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -253,6 +258,7 @@
 	<item id="7122" type="EtcItem" name="Scroll of Escape: Gludin Village">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -267,6 +273,7 @@
 	<item id="7123" type="EtcItem" name="Scroll of Escape: Town of Gludio">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -281,6 +288,7 @@
 	<item id="7124" type="EtcItem" name="Scroll of Escape: Town of Dion">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -295,6 +303,7 @@
 	<item id="7125" type="EtcItem" name="Scroll of Escape: Floran Village">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -309,6 +318,7 @@
 	<item id="7126" type="EtcItem" name="Scroll of Escape: Town of Giran">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -323,6 +333,7 @@
 	<item id="7127" type="EtcItem" name="Scroll of Escape: Hardin's Academy">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -337,6 +348,7 @@
 	<item id="7128" type="EtcItem" name="Scroll of Escape: Heine">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -351,6 +363,7 @@
 	<item id="7129" type="EtcItem" name="Scroll of Escape: Town of Oren">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -365,6 +378,7 @@
 	<item id="7130" type="EtcItem" name="Scroll of Escape: Ivory Tower">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -379,6 +393,7 @@
 	<item id="7131" type="EtcItem" name="Scroll of Escape: Hunters Village">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -393,6 +408,7 @@
 	<item id="7132" type="EtcItem" name="Scroll of Escape: Town of Aden">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -407,6 +423,7 @@
 	<item id="7133" type="EtcItem" name="Scroll of Escape: Town of Goddard">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -421,6 +438,7 @@
 	<item id="7134" type="EtcItem" name="Scroll of Escape: Rune Township">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
@@ -435,6 +453,7 @@
 	<item id="7135" type="EtcItem" name="Scroll of Escape: Town of Schuttgart">
 		<set name="icon" val="icon.etc_scroll_of_return_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="30" />
 		<set name="price" val="35000" />
