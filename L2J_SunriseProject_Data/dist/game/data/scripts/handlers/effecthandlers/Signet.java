@@ -18,7 +18,9 @@
  */
 package handlers.effecthandlers;
 
-import javolution.util.FastList;
+import java.util.ArrayList;
+import java.util.List;
+
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.enums.ZoneIdType;
 import l2r.gameserver.model.actor.L2Character;
@@ -82,15 +84,20 @@ public class Signet extends L2Effect
 		}
 		
 		getEffector().reduceCurrentMp(mpConsume);
-		FastList<L2Character> targets = FastList.newInstance();
+		List<L2Character> targets = new ArrayList<>();
 		for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getAffectRange()))
 		{
-			if (cha == null)
+			if ((cha == null) || (!cha.isPlayer() && !cha.isSummon()))
 			{
 				continue;
 			}
 			
 			if (_skill.isOffensive() && !L2Skill.checkForAreaOffensiveSkills(getEffector(), cha, _skill, _srcInArena))
+			{
+				continue;
+			}
+			
+			if (getEffector().isPlayer() && !_skill.isOffensive() && !getEffector().getActingPlayer().isFriend(cha.getActingPlayer()))
 			{
 				continue;
 			}
@@ -104,7 +111,6 @@ public class Signet extends L2Effect
 		{
 			getEffector().callSkill(_skill, targets.toArray(new L2Character[targets.size()]));
 		}
-		FastList.recycle(targets);
 		return true;
 	}
 	

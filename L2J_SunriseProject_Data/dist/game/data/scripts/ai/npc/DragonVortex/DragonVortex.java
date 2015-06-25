@@ -20,6 +20,8 @@ package ai.npc.DragonVortex;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import l2r.gameserver.data.SpawnTable;
 import l2r.gameserver.model.L2Spawn;
@@ -57,8 +59,10 @@ public final class DragonVortex extends AbstractNpcAI
 	//@formatter:on
 	// Item
 	private static final int LARGE_DRAGON_BONE = 17248;
+	
 	// Misc
 	private static final int DESPAWN_DELAY = 1800000; // 30min
+	private static Set<Integer> _spawnedList = ConcurrentHashMap.newKeySet();
 	
 	public DragonVortex()
 	{
@@ -66,6 +70,7 @@ public final class DragonVortex extends AbstractNpcAI
 		addStartNpc(VORTEX);
 		addFirstTalkId(VORTEX);
 		addTalkId(VORTEX);
+		addKillId(25718, 25719, 25720, 25721, 25723, 25722, 25724);
 	}
 	
 	@Override
@@ -138,6 +143,13 @@ public final class DragonVortex extends AbstractNpcAI
 		return super.onAdvEvent(event, npc, player);
 	}
 	
+	@Override
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
+	{
+		_spawnedList.remove(npc.getId());
+		return super.onKill(npc, player, isPet);
+	}
+	
 	/**
 	 * Method used for spawning a Dragon Vortex Raid and take a Large Dragon Bone from the Player
 	 * @param raidId
@@ -149,6 +161,7 @@ public final class DragonVortex extends AbstractNpcAI
 		L2Spawn spawnDat = addSpawn(raidId, npc.getX() + getRandom(-500, 500), npc.getY() + getRandom(-500, 500), npc.getZ() + 10, 0, false, DESPAWN_DELAY, true).getSpawn();
 		SpawnTable.getInstance().addNewSpawn(spawnDat, false);
 		takeItems(player, LARGE_DRAGON_BONE, 1);
+		_spawnedList.add(raidId);
 	}
 	
 	/**
@@ -158,13 +171,9 @@ public final class DragonVortex extends AbstractNpcAI
 	 */
 	public boolean checkIfNpcSpawned(int npcId)
 	{
-		for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(npcId))
+		if (_spawnedList.contains(npcId))
 		{
-			L2Npc spawnedWarpgate = spawn.getLastSpawn();
-			if ((spawnedWarpgate != null))
-			{
-				return true;
-			}
+			return true;
 		}
 		return false;
 	}
