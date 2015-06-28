@@ -19,9 +19,9 @@
 package gracia.instances.HallOfSufferingDefence;
 
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Map;
 
-import javolution.util.FastMap;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.enums.CtrlEvent;
 import l2r.gameserver.enums.CtrlIntention;
@@ -49,7 +49,7 @@ public class HallOfSufferingDefence extends Quest
 {
 	private class DHSWorld extends InstanceWorld
 	{
-		public Map<L2Npc, Boolean> npcList = new FastMap<>();
+		public Map<L2Npc, Boolean> npcList = new HashMap<>();
 		public L2Npc klodekus = null;
 		public L2Npc klanikus = null;
 		public boolean isBossesAttacked = false;

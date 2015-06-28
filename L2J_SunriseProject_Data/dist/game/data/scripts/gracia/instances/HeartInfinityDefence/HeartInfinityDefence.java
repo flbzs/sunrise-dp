@@ -18,9 +18,10 @@
  */
 package gracia.instances.HeartInfinityDefence;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 
-import javolution.util.FastList;
 import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.instancemanager.InstanceManager;
@@ -52,8 +53,8 @@ public class HeartInfinityDefence extends Quest
 {
 	private class HIDWorld extends InstanceWorld
 	{
-		public FastList<L2Npc> npcList = new FastList<>();
-		public FastList<L2Npc> deadTumors = new FastList<>();
+		public List<L2Npc> npcList = new ArrayList<>();
+		public List<L2Npc> deadTumors = new ArrayList<>();
 		protected L2Npc deadTumor;
 		public long startTime = 0;
 		protected ScheduledFuture<?> finishTask = null, timerTask = null, wagonSpawnTask = null;

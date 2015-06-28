@@ -1,7 +1,10 @@
 package quests.Q10292_SevenSignsGirlofDoubt;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -30,12 +33,12 @@ public class Q10292_SevenSignsGirlofDoubt extends Quest
 		22805
 	};
 	
-	private final FastMap<Integer, InstanceHolder> instanceWorlds = new FastMap<>();
+	private final Map<Integer, InstanceHolder> instanceWorlds = new HashMap<>();
 	
 	protected static class InstanceHolder
 	{
 		// List
-		FastList<L2Npc> mobs = new FastList<>();
+		List<L2Npc> mobs = new ArrayList<>();
 		// State
 		boolean spawned = false;
 	}

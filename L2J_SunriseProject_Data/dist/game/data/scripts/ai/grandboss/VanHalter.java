@@ -8,9 +8,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 
-import javolution.util.FastMap;
 import l2r.Config;
 import l2r.L2DatabaseFactory;
 import l2r.gameserver.ThreadPoolManager;
@@ -70,7 +70,7 @@ public class VanHalter extends AbstractNpcAI
 	protected ArrayList<L2Npc> _royalGuardHepler = new ArrayList<>();
 	protected ArrayList<L2Npc> _triolRevelation = new ArrayList<>();
 	protected ArrayList<L2Npc> _guardOfAltar = new ArrayList<>();
-	protected Map<Integer, L2Npc> _cameraMarker = new FastMap<Integer, L2Npc>().shared();
+	protected Map<Integer, L2Npc> _cameraMarker = new ConcurrentHashMap<>();
 	protected ArrayList<L2DoorInstance> _doorOfAltar = new ArrayList<>();
 	protected ArrayList<L2DoorInstance> _doorOfSacrifice = new ArrayList<>();
 	protected L2Npc _ritualOffering = null;

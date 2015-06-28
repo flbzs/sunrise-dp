@@ -19,8 +19,8 @@
 package hellbound.AI.Zones.AnomicFoundry;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastMap;
 import l2r.gameserver.data.SpawnTable;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.L2Spawn;
@@ -47,7 +47,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	private static int LESSER_EVIL = 22398;
 	private static int GREATER_EVIL = 22399;
 	// Misc
-	private final Map<Integer, Integer> _atkIndex = new FastMap<>();
+	private final Map<Integer, Integer> _atkIndex = new ConcurrentHashMap<>();
 	// npcId, x, y, z, heading, max count
 	//@formatter:off
 	private static int[][] SPAWNS =
@@ -77,6 +77,7 @@ public final class AnomicFoundry extends AbstractNpcAI
 	{
 		super(AnomicFoundry.class.getSimpleName(), "hellbound/AI/Zones");
 		addAggroRangeEnterId(LABORER);
+		addAttackId(LABORER);
 		addKillId(LABORER, LESSER_EVIL, GREATER_EVIL);
 		addSpawnId(LABORER, LESSER_EVIL, GREATER_EVIL);
 		addTeleportId(LABORER, LESSER_EVIL, GREATER_EVIL);

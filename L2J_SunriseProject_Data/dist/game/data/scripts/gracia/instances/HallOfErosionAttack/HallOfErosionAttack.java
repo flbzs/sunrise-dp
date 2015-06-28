@@ -18,9 +18,10 @@
  */
 package gracia.instances.HallOfErosionAttack;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
-import javolution.util.FastList;
 import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.instancemanager.InstanceManager;
@@ -51,8 +52,8 @@ public class HallOfErosionAttack extends Quest
 {
 	protected class HEWorld extends InstanceWorld
 	{
-		public FastList<L2Npc> npcList = new FastList<>();
-		public FastList<L2Npc> deadTumors = new FastList<>();
+		public List<L2Npc> npcList = new ArrayList<>();
+		public List<L2Npc> deadTumors = new ArrayList<>();
 		public int tumorCount = 0;
 		public L2Npc cohemenes = null;
 		protected L2Npc deadTumor;

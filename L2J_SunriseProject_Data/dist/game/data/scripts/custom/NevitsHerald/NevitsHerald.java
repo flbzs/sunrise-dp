@@ -1,8 +1,8 @@
 package custom.NevitsHerald;
 
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-import javolution.util.FastList;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.actor.L2Npc;
@@ -18,7 +18,7 @@ import l2r.util.Rnd;
 
 public class NevitsHerald extends Quest
 {
-	private static final List<L2Npc> spawns = new FastList<>();
+	private static final List<L2Npc> spawns = new CopyOnWriteArrayList<>();
 	private static boolean isActive = false;
 	
 	private static final int NevitsHerald = 4326;

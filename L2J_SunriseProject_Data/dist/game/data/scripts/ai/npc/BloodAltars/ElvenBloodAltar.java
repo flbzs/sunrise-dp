@@ -14,7 +14,9 @@
  */
 package ai.npc.BloodAltars;
 
-import javolution.util.FastList;
+import java.util.ArrayList;
+import java.util.List;
+
 import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.actor.L2Npc;
@@ -28,8 +30,8 @@ public class ElvenBloodAltar extends AbstractNpcAI
 {
 	private static final long delay = Config.CHANGE_STATUS * 60 * 1000;
 	
-	private final FastList<L2Npc> deadnpcs = new FastList<>();
-	private final FastList<L2Npc> alivenpcs = new FastList<>();
+	private final List<L2Npc> deadnpcs = new ArrayList<>();
+	private final List<L2Npc> alivenpcs = new ArrayList<>();
 	
 	private static final int[][] BLOODALTARS_DEAD_NPC =
 	{

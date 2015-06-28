@@ -17,7 +17,6 @@ package handlers.voicedcommandhandlers;
 
 import java.text.SimpleDateFormat;
 
-import javolution.text.TextBuilder;
 import l2r.gameserver.handler.IVoicedCommandHandler;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -40,7 +39,7 @@ public class PremiumVCmd implements IVoicedCommandHandler
 			if (!activeChar.isPremium())
 			{
 				NpcHtmlMessage preReply = new NpcHtmlMessage();
-				TextBuilder html3 = new TextBuilder("<html><body><title>Normal Account</title><center>");
+				StringBuilder html3 = new StringBuilder("<html><body><title>Normal Account</title><center>");
 				html3.append("<table>");
 				html3.append("<tr><td><center>Account Type: <font color=\"LEVEL\">Normal<br></font></td></tr>");
 				html3.append("<tr><td><center>Details<br1></td></tr>");
@@ -71,7 +70,7 @@ public class PremiumVCmd implements IVoicedCommandHandler
 				_end_prem_date = PremiumHandler.getPremServiceData(activeChar.getAccountName());
 				NpcHtmlMessage preReply = new NpcHtmlMessage();
 				
-				TextBuilder html3 = new TextBuilder("<html><body><title>Premium Account Details</title><center>");
+				StringBuilder html3 = new StringBuilder("<html><body><title>Premium Account Details</title><center>");
 				html3.append("<table>");
 				html3.append("<tr><td><center>Thank you for supporting <font color=\"00FF00\">YOUR</font> server.<br><br></td></tr>");
 				html3.append("<tr><td><center>Your account: <font color=\"LEVEL\">Premium<br></font></td></tr>");

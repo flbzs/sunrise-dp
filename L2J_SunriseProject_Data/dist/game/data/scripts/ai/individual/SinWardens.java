@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -19,8 +19,8 @@
 package ai.individual;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastMap;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -33,7 +33,7 @@ import ai.npc.AbstractNpcAI;
  * Manages Sin Wardens disappearing and chat.
  * @author GKR
  */
-public class SinWardens extends AbstractNpcAI
+public final class SinWardens extends AbstractNpcAI
 {
 	private static final int[] SIN_WARDEN_MINIONS =
 	{
@@ -53,11 +53,11 @@ public class SinWardens extends AbstractNpcAI
 		22438
 	};
 	
-	private final Map<Integer, Integer> killedMinionsCount = new FastMap<>();
+	private final Map<Integer, Integer> killedMinionsCount = new ConcurrentHashMap<>();
 	
 	public SinWardens()
 	{
-		super(SinWardens.class.getSimpleName(), "ai");
+		super(SinWardens.class.getSimpleName(), "ai/individual");
 		addKillId(SIN_WARDEN_MINIONS);
 	}
 	
@@ -66,7 +66,7 @@ public class SinWardens extends AbstractNpcAI
 	{
 		if (npc.isMinion())
 		{
-			L2MonsterInstance master = ((L2MonsterInstance) npc).getLeader();
+			final L2MonsterInstance master = ((L2MonsterInstance) npc).getLeader();
 			if ((master != null) && !master.isDead())
 			{
 				int killedCount = killedMinionsCount.containsKey(master.getObjectId()) ? killedMinionsCount.get(master.getObjectId()) : 0;

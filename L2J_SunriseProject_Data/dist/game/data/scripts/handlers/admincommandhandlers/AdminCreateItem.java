@@ -18,9 +18,10 @@
  */
 package handlers.admincommandhandlers;
 
+import java.util.Set;
 import java.util.StringTokenizer;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastList;
 import l2r.gameserver.data.xml.impl.ItemData;
 import l2r.gameserver.handler.IAdminCommandHandler;
 import l2r.gameserver.model.L2World;
@@ -385,7 +386,7 @@ public class AdminCreateItem implements IAdminCommandHandler
 		return id;
 	}
 	
-	protected static final FastList<String[]> _dualboxCheck = new FastList<>();
+	protected static final Set<String[]> _dualboxCheck = ConcurrentHashMap.newKeySet();
 	
 	// Dual Box Check pcIp based
 	protected static boolean addToList(L2PcInstance player)
@@ -406,7 +407,7 @@ public class AdminCreateItem implements IAdminCommandHandler
 		return true;
 	}
 	
-	public FastList<String[]> getAddedIps()
+	public Set<String[]> getAddedIps()
 	{
 		return _dualboxCheck;
 	}

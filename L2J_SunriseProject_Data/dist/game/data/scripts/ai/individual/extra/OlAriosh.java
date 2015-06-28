@@ -16,8 +16,9 @@ package ai.individual.extra;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastSet;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.NpcStringId;
@@ -29,7 +30,7 @@ public class OlAriosh extends AbstractNpcAI
 	private static final int ARIOSH = 18555;
 	private static final int GUARD = 18556;
 	private static L2Npc _guard = null;
-	private final FastSet<Integer> _lockedSpawns = new FastSet<>();
+	private final Set<Integer> _lockedSpawns = ConcurrentHashMap.newKeySet();
 	private final Map<Integer, Integer> _spawnedGuards = new HashMap<>();
 	
 	public OlAriosh()

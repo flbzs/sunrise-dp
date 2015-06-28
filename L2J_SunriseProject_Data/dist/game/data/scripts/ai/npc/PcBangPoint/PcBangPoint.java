@@ -14,9 +14,9 @@
  */
 package ai.npc.PcBangPoint;
 
+import java.util.HashMap;
 import java.util.Map;
 
-import javolution.util.FastMap;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -72,9 +72,9 @@ public class PcBangPoint extends AbstractNpcAI
 	 * Missing Spawn NPCID 31729, 31730, 31731, 31732, 31733, 31734, 31735, 31736, 31737, 31738,
 	 */
 	
-	private static final Map<String, int[]> PETSKILL = new FastMap<>();
-	private static final Map<String, int[]> POINTSSKILL = new FastMap<>();
-	private static final Map<String, int[]> TELEPORTERS = new FastMap<>();
+	private static final Map<String, int[]> PETSKILL = new HashMap<>();
+	private static final Map<String, int[]> POINTSSKILL = new HashMap<>();
+	private static final Map<String, int[]> TELEPORTERS = new HashMap<>();
 	
 	static
 	{

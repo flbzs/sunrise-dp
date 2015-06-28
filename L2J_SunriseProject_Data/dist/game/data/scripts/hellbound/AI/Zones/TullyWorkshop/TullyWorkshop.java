@@ -18,15 +18,16 @@
  */
 package hellbound.AI.Zones.TullyWorkshop;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.data.xml.impl.DoorData;
 import l2r.gameserver.data.xml.impl.SkillData;
@@ -47,7 +48,6 @@ import l2r.gameserver.model.zone.L2ZoneType;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.clientpackets.Say2;
-import l2r.gameserver.network.serverpackets.NpcSay;
 import l2r.gameserver.util.MinionList;
 import l2r.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
@@ -111,8 +111,8 @@ public final class TullyWorkshop extends AbstractNpcAI
 		22383
 	};
 	
-	private static final Map<Integer, int[]> TULLY_DOORLIST = new FastMap<>();
-	private static final Map<Integer, Location[]> TELE_COORDS = new FastMap<>();
+	private static final Map<Integer, int[]> TULLY_DOORLIST = new HashMap<>();
+	private static final Map<Integer, Location[]> TELE_COORDS = new HashMap<>();
 	
 	protected int countdownTime;
 	private int nextServantIdx = 0;
@@ -125,14 +125,13 @@ public final class TullyWorkshop extends AbstractNpcAI
 	protected ScheduledFuture<?> _countdown = null;
 	
 	// NPC's, spawned after Tully's death are stored here
-	protected static List<L2Npc> postMortemSpawn = new FastList<>();
-	// TODO: Zoey76: Not thread-safe, probably will lead to problems.
-	protected static Set<Integer> brokenContraptions = new HashSet<>();
+	protected static List<L2Npc> postMortemSpawn = new ArrayList<>();
+	protected static Set<Integer> brokenContraptions = ConcurrentHashMap.newKeySet();
 	protected static Set<Integer> rewardedContraptions = new HashSet<>();
 	protected static Set<Integer> talkedContraptions = new HashSet<>();
 	
-	private final List<L2MonsterInstance> spawnedFollowers = new FastList<>();
-	private final List<L2MonsterInstance> spawnedFollowerMinions = new FastList<>();
+	private final List<L2MonsterInstance> spawnedFollowers = new ArrayList<>();
+	private final List<L2MonsterInstance> spawnedFollowerMinions = new ArrayList<>();
 	private L2Npc spawnedAgent = null;
 	private L2Spawn pillarSpawn = null;
 	
@@ -1209,10 +1208,59 @@ public final class TullyWorkshop extends AbstractNpcAI
 			DoorData.getInstance().getDoor(19260052).openMe();
 			
 			countdownTime = 600000;
-			_countdown = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new CountdownTask(), 60000, 10000);
-			NpcSay ns = new NpcSay(postMortemSpawn.get(0).getObjectId(), Say2.NPC_SHOUT, postMortemSpawn.get(0).getId(), NpcStringId.DETONATOR_INITIALIZATION_TIME_S1_MINUTES_FROM_NOW);
-			ns.addStringParameter(Integer.toString((countdownTime / 60000)));
-			postMortemSpawn.get(0).broadcastPacket(ns);
+			_countdown = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() ->
+			{
+				countdownTime -= 10000;
+				L2Npc _npc = null;
+				if ((postMortemSpawn != null) && (postMortemSpawn.size() > 0))
+				{
+					_npc = postMortemSpawn.get(0);
+				}
+				if (countdownTime > 60000)
+				{
+					if ((countdownTime % 60000) == 0)
+					{
+						if ((_npc != null) && (_npc.getId() == INGENIOUS_CONTRAPTION))
+						{
+							broadcastNpcSay(_npc, Say2.NPC_SHOUT, NpcStringId.S1_MINUTES_REMAINING, Integer.toString((countdownTime / 60000)));
+						}
+					}
+				}
+				else if (countdownTime <= 0)
+				{
+					if (_countdown != null)
+					{
+						_countdown.cancel(false);
+						_countdown = null;
+					}
+					
+					for (L2Npc spawnedNpc : postMortemSpawn)
+					{
+						if ((spawnedNpc != null) && ((spawnedNpc.getId() == INGENIOUS_CONTRAPTION) || (spawnedNpc.getId() == TIMETWISTER_GOLEM)))
+						{
+							spawnedNpc.deleteMe();
+						}
+					}
+					
+					brokenContraptions.clear();
+					rewardedContraptions.clear();
+					talkedContraptions.clear();
+					final L2ZoneType dmgZone = ZoneManager.getInstance().getZoneById(200011);
+					if (dmgZone != null)
+					{
+						dmgZone.setEnabled(true);
+					}
+					startQuestTimer("disable_zone", 300000, null, null);
+				}
+				else
+				{
+					if ((_npc != null) && (_npc.getId() == INGENIOUS_CONTRAPTION))
+					{
+						broadcastNpcSay(_npc, Say2.NPC_SHOUT, NpcStringId.S1_SECONDS_REMAINING, Integer.toString((countdownTime / 1000)));
+					}
+				}
+			}, 60000, 10000);
+			broadcastNpcSay(postMortemSpawn.get(0), Say2.NPC_SHOUT, NpcStringId.DETONATOR_INITIALIZATION_TIME_S1_MINUTES_FROM_NOW, Integer.toString((countdownTime / 60000)));
 		}
 		else if ((npcId == TIMETWISTER_GOLEM) && (_countdown != null))
 		{
@@ -1559,67 +1607,6 @@ public final class TullyWorkshop extends AbstractNpcAI
 			20250006,
 			20250007
 		}, STATE_CLOSE), 4000);
-	}
-	
-	protected class CountdownTask implements Runnable
-	{
-		@Override
-		public void run()
-		{
-			countdownTime -= 10000;
-			L2Npc npc = null;
-			if ((postMortemSpawn != null) && (postMortemSpawn.size() > 0))
-			{
-				npc = postMortemSpawn.get(0);
-			}
-			if (countdownTime > 60000)
-			{
-				if ((countdownTime % 60000) == 0)
-				{
-					if ((npc != null) && (npc.getId() == INGENIOUS_CONTRAPTION))
-					{
-						NpcSay ns = new NpcSay(npc.getObjectId(), Say2.NPC_SHOUT, npc.getId(), NpcStringId.S1_MINUTES_REMAINING);
-						ns.addStringParameter(Integer.toString((countdownTime / 60000)));
-						npc.broadcastPacket(ns);
-					}
-				}
-			}
-			else if (countdownTime <= 0)
-			{
-				if (_countdown != null)
-				{
-					_countdown.cancel(false);
-					_countdown = null;
-				}
-				
-				for (L2Npc spawnedNpc : postMortemSpawn)
-				{
-					if ((spawnedNpc != null) && ((spawnedNpc.getId() == INGENIOUS_CONTRAPTION) || (spawnedNpc.getId() == TIMETWISTER_GOLEM)))
-					{
-						spawnedNpc.deleteMe();
-					}
-				}
-				
-				brokenContraptions.clear();
-				rewardedContraptions.clear();
-				talkedContraptions.clear();
-				final L2ZoneType dmgZone = ZoneManager.getInstance().getZoneById(200011);
-				if (dmgZone != null)
-				{
-					dmgZone.setEnabled(true);
-				}
-				startQuestTimer("disable_zone", 300000, null, null);
-			}
-			else
-			{
-				if ((npc != null) && (npc.getId() == INGENIOUS_CONTRAPTION))
-				{
-					final NpcSay ns = new NpcSay(npc.getObjectId(), Say2.NPC_SHOUT, npc.getId(), NpcStringId.S1_SECONDS_REMAINING);
-					ns.addStringParameter(Integer.toString((countdownTime / 1000)));
-					npc.broadcastPacket(ns);
-				}
-			}
-		}
 	}
 	
 	private static class DoorTask implements Runnable

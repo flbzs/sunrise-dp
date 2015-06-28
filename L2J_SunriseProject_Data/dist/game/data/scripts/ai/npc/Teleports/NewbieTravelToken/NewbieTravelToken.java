@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,9 +18,9 @@
  */
 package ai.npc.Teleports.NewbieTravelToken;
 
+import java.util.HashMap;
 import java.util.Map;
 
-import javolution.util.FastMap;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -29,16 +29,15 @@ import l2r.gameserver.util.Util;
 import ai.npc.AbstractNpcAI;
 
 /**
- * Newbie Travel Token AI.<br>
- * Original Jython script by DrLecter.
+ * Newbie Travel Token AI.
  * @author Plim
  */
-public class NewbieTravelToken extends AbstractNpcAI
+public final class NewbieTravelToken extends AbstractNpcAI
 {
 	// Item
 	private static final int NEWBIE_TRAVEL_TOKEN = 8542;
 	// NPC Id - Teleport Location
-	private static final Map<Integer, Location> DATA = new FastMap<>();
+	private static final Map<Integer, Location> DATA = new HashMap<>();
 	
 	public NewbieTravelToken()
 	{

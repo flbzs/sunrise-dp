@@ -14,7 +14,9 @@
  */
 package ai.npc.BloodAltars;
 
-import javolution.util.FastList;
+import java.util.ArrayList;
+import java.util.List;
+
 import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.actor.L2Npc;
@@ -30,9 +32,9 @@ public class GludinBloodAltar extends AbstractNpcAI
 	private static final long delay = Config.CHANGE_STATUS * 60 * 1000;
 	protected static boolean bossesSpawned = false;
 	
-	private final FastList<L2Npc> deadnpcs = new FastList<>();
-	private final FastList<L2Npc> alivenpcs = new FastList<>();
-	private final FastList<L2Npc> bosses = new FastList<>();
+	private final List<L2Npc> deadnpcs = new ArrayList<>();
+	private final List<L2Npc> alivenpcs = new ArrayList<>();
+	private final List<L2Npc> bosses = new ArrayList<>();
 	
 	protected boolean progress1 = false;
 	protected boolean progress2 = false;

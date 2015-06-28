@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -18,9 +18,9 @@
  */
 package custom.EchoCrystals;
 
+import java.util.HashMap;
 import java.util.Map;
 
-import javolution.util.FastMap;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -28,11 +28,10 @@ import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.util.Util;
 
 /**
- * Echo Crystals AI.<br>
- * Original Jython script by DrLecter, formerly based on Elektra's script.
+ * Echo Crystals AI.
  * @author Plim
  */
-public class EchoCrystals extends Quest
+public final class EchoCrystals extends Quest
 {
 	private final static int[] NPCs =
 	{
@@ -43,7 +42,7 @@ public class EchoCrystals extends Quest
 	private static final int ADENA = 57;
 	private static final int COST = 200;
 	
-	private static final Map<Integer, ScoreData> SCORES = new FastMap<>();
+	private static final Map<Integer, ScoreData> SCORES = new HashMap<>();
 	
 	private class ScoreData
 	{
@@ -82,6 +81,25 @@ public class EchoCrystals extends Quest
 		}
 	}
 	
+	public EchoCrystals()
+	{
+		super(-1, EchoCrystals.class.getSimpleName(), "custom");
+		// Initialize Map
+		SCORES.put(4410, new ScoreData(4411, "01", "02", "03"));
+		SCORES.put(4409, new ScoreData(4412, "04", "05", "06"));
+		SCORES.put(4408, new ScoreData(4413, "07", "08", "09"));
+		SCORES.put(4420, new ScoreData(4414, "10", "11", "12"));
+		SCORES.put(4421, new ScoreData(4415, "13", "14", "15"));
+		SCORES.put(4419, new ScoreData(4417, "16", "05", "06"));
+		SCORES.put(4418, new ScoreData(4416, "17", "05", "06"));
+		
+		for (int npc : NPCs)
+		{
+			addStartNpc(npc);
+			addTalkId(npc);
+		}
+	}
+	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
@@ -98,18 +116,18 @@ public class EchoCrystals extends Quest
 				String noadena = SCORES.get(score).getNoAdenaMsg();
 				String noscore = SCORES.get(score).getNoScoreMsg();
 				
-				if (!st.hasQuestItems(score))
+				if (!hasQuestItems(player, score))
 				{
 					htmltext = npc.getId() + "-" + noscore + ".htm";
 				}
-				else if (st.getQuestItemsCount(ADENA) < COST)
+				else if (getQuestItemsCount(player, ADENA) < COST)
 				{
 					htmltext = npc.getId() + "-" + noadena + ".htm";
 				}
 				else
 				{
-					st.takeItems(ADENA, COST);
-					st.giveItems(crystal, 1);
+					takeItems(player, ADENA, COST);
+					giveItems(player, crystal, 1);
 					htmltext = npc.getId() + "-" + ok + ".htm";
 				}
 			}
@@ -126,25 +144,5 @@ public class EchoCrystals extends Quest
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		return "1.htm";
-	}
-	
-	public EchoCrystals()
-	{
-		super(-1, EchoCrystals.class.getSimpleName(), "custom");
-		
-		// Initialize Map
-		SCORES.put(4410, new ScoreData(4411, "01", "02", "03"));
-		SCORES.put(4409, new ScoreData(4412, "04", "05", "06"));
-		SCORES.put(4408, new ScoreData(4413, "07", "08", "09"));
-		SCORES.put(4420, new ScoreData(4414, "10", "11", "12"));
-		SCORES.put(4421, new ScoreData(4415, "13", "14", "15"));
-		SCORES.put(4419, new ScoreData(4417, "16", "05", "06"));
-		SCORES.put(4418, new ScoreData(4416, "17", "05", "06"));
-		
-		for (int npc : NPCs)
-		{
-			addStartNpc(npc);
-			addTalkId(npc);
-		}
 	}
 }

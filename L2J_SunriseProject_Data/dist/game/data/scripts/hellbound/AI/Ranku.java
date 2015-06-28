@@ -19,8 +19,8 @@
 package hellbound.AI;
 
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastSet;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -41,7 +41,7 @@ public final class Ranku extends AbstractNpcAI
 	private static final int MINION = 32305;
 	private static final int MINION_2 = 25543;
 	// Misc
-	private static final Set<Integer> MY_TRACKING_SET = new FastSet<Integer>().shared();
+	private static final Set<Integer> MY_TRACKING_SET = ConcurrentHashMap.newKeySet();
 	
 	public Ranku()
 	{

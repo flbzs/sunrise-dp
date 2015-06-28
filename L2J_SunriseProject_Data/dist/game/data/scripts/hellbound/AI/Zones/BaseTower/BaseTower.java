@@ -19,13 +19,12 @@
 package hellbound.AI.Zones.BaseTower;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastMap;
 import l2r.gameserver.data.xml.impl.DoorData;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
-import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.holders.SkillHolder;
 import ai.npc.AbstractNpcAI;
 
@@ -42,7 +41,7 @@ public final class BaseTower extends AbstractNpcAI
 	// Skills
 	private static final SkillHolder DEATH_WORD = new SkillHolder(5256, 1);
 	// Misc
-	private static final Map<Integer, L2PcInstance> BODY_DESTROYER_TARGET_LIST = new FastMap<>();
+	private static final Map<Integer, L2PcInstance> BODY_DESTROYER_TARGET_LIST = new ConcurrentHashMap<>();
 	
 	public BaseTower()
 	{
@@ -107,11 +106,7 @@ public final class BaseTower extends AbstractNpcAI
 					final L2PcInstance pl = BODY_DESTROYER_TARGET_LIST.get(npc.getObjectId());
 					if ((pl != null) && pl.isOnline() && !pl.isDead())
 					{
-						final L2Effect e = pl.getFirstEffect(DEATH_WORD.getSkill());
-						if (e != null)
-						{
-							e.exit();
-						}
+						pl.stopSkillEffects(DEATH_WORD.getSkillId());
 					}
 					BODY_DESTROYER_TARGET_LIST.remove(npc.getObjectId());
 				}

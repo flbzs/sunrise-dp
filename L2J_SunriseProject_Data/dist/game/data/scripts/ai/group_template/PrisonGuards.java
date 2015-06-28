@@ -19,8 +19,8 @@
 package ai.group_template;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastMap;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.L2Object;
@@ -53,7 +53,7 @@ public class PrisonGuards extends AbstractNpcAI
 	private final static int SKILL_PERTIFICATION = 4578;
 	private final static int SKILL_EVENT_TIMER = 5239;
 	
-	private final Map<L2Npc, Integer> _guards = new FastMap<>();
+	private final Map<L2Npc, Integer> _guards = new ConcurrentHashMap<>();
 	
 	public PrisonGuards()
 	{

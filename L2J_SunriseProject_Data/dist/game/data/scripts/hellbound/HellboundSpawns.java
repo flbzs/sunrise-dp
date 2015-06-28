@@ -24,9 +24,9 @@ import java.util.List;
 import java.util.Map;
 
 import l2r.gameserver.data.SpawnTable;
-import l2r.gameserver.data.xml.IXmlReader;
 import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.Location;
+import l2r.util.data.xml.IXmlReader.IXmlReader;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;

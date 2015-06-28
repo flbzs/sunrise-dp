@@ -23,7 +23,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import javolution.util.FastMap;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.instancemanager.FortManager;
@@ -422,7 +421,7 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 	};
 	
 	// Buffs
-	private static Map<Integer, SkillHolder> NPC_BUFFS = new FastMap<>();
+	private static Map<Integer, SkillHolder> NPC_BUFFS = new HashMap<>();
 	private static final SkillHolder RAID_CURSE = new SkillHolder(5456, 1);
 	
 	private String checkEnterConditions(L2PcInstance player, L2Npc npc)

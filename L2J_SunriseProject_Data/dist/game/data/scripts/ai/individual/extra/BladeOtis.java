@@ -17,7 +17,6 @@ package ai.individual.extra;
 import java.util.HashMap;
 import java.util.Map;
 
-import javolution.util.FastMap;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -29,7 +28,7 @@ public class BladeOtis extends AbstractNpcAI
 	private static final int BLADEO = 18562;
 	private static final int GUARD = 18563;
 	private final Map<Integer, Integer> _guardSpawns = new HashMap<>();
-	private final FastMap<L2Npc, L2Npc> _guardMaster = new FastMap<>();
+	private final Map<L2Npc, L2Npc> _guardMaster = new HashMap<>();
 	
 	public BladeOtis()
 	{

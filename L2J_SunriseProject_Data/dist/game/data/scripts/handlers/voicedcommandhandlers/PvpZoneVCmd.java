@@ -14,7 +14,6 @@
  */
 package handlers.voicedcommandhandlers;
 
-import javolution.text.TextBuilder;
 import l2r.gameserver.enums.TeleportWhereType;
 import l2r.gameserver.enums.ZoneIdType;
 import l2r.gameserver.handler.IVoicedCommandHandler;
@@ -43,7 +42,7 @@ public class PvpZoneVCmd implements IVoicedCommandHandler
 		if (command.equalsIgnoreCase("zone"))
 		{
 			NpcHtmlMessage playerReply = new NpcHtmlMessage();
-			TextBuilder replyMSG = new TextBuilder();
+			StringBuilder replyMSG = new StringBuilder();
 			replyMSG.append("<html><title>Zone Manager</title><body>");
 			replyMSG.append("<br><font color=\"LEVEL\">Custom Zones...:</font><br><br>");
 			replyMSG.append("    ... Name:&nbsp;<font color=\"00FF00\">Chaotic Zone.</font><br>");

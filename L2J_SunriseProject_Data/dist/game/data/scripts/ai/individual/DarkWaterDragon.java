@@ -22,7 +22,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastSet;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Character;
@@ -48,8 +47,8 @@ public class DarkWaterDragon extends AbstractNpcAI
 	private static final int WATER_DRAGON_SCALE = 9691;
 	private static final int WATER_DRAGON_CLAW = 9700;
 	
-	private static Set<Integer> SECOND_SPAWN = new FastSet<>(); // Used to track if second Shades were already spawned
-	private static Set<Integer> MY_TRACKING_SET = new FastSet<>(); // Used to track instances of npcs
+	private static Set<Integer> SECOND_SPAWN = ConcurrentHashMap.newKeySet(); // Used to track if second Shades were already spawned
+	private static Set<Integer> MY_TRACKING_SET = ConcurrentHashMap.newKeySet(); // Used to track instances of npcs
 	private static Map<Integer, L2PcInstance> ID_MAP = new ConcurrentHashMap<>(); // Used to track instances of npcs
 	
 	public DarkWaterDragon()

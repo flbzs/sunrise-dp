@@ -18,12 +18,12 @@
  */
 package ai.group_template.extra;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.L2World;
@@ -47,7 +47,7 @@ public final class LuckyPig extends AbstractNpcAI
 	private final int Wingless_Lucky_Pig = 2502;
 	private final int Golden_Wingless_Lucky_Pig = 2503;
 	// Misc
-	private final Map<Integer, List<Long>> Adena;
+	private final Map<Integer, List<Long>> Adena = new ConcurrentHashMap<>();
 	private boolean isLuckyPigLevel52 = false;
 	private boolean isLuckyPigLevel70 = false;
 	private boolean isLuckyPigLevel80 = false;
@@ -129,8 +129,6 @@ public final class LuckyPig extends AbstractNpcAI
 		addKillId(Lucky_Pig_Level_70);
 		addKillId(Lucky_Pig_Level_80);
 		addSpawnId(Lucky_Pig, Wingless_Lucky_Pig, Golden_Wingless_Lucky_Pig);
-		
-		Adena = new FastMap<Integer, List<Long>>().shared();
 	}
 	
 	@Override
@@ -341,7 +339,7 @@ public final class LuckyPig extends AbstractNpcAI
 		switch (npc.getId())
 		{
 			case Lucky_Pig:
-				List<Long> _Adena = new FastList<>();
+				List<Long> _Adena = new ArrayList<>();
 				Adena.put(npc.getObjectId(), _Adena);
 				startQuestTimer("checkForAdena", 1000, npc, null, true);
 				npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), "Now it's time to eat~"));

@@ -14,9 +14,9 @@
  */
 package ai.individual.extra;
 
+import java.util.HashMap;
 import java.util.Map;
 
-import javolution.util.FastMap;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.SkillHolder;
@@ -26,7 +26,7 @@ import ai.npc.AbstractNpcAI;
 
 public class SelfExplosiveKamikaze extends AbstractNpcAI
 {
-	private static final Map<Integer, SkillHolder> MONSTERS = new FastMap<>();
+	private static final Map<Integer, SkillHolder> MONSTERS = new HashMap<>();
 	
 	public SelfExplosiveKamikaze()
 	{

@@ -1,7 +1,10 @@
 package quests.Q00196_SevenSignsSealOfTheEmperor;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.instancemanager.InstanceManager;
@@ -38,12 +41,12 @@ public final class Q00196_SevenSignsSealOfTheEmperor extends Quest
 	
 	public static class SIGNSRoom
 	{
-		public FastList<SIGNSNpc> npcList = new FastList<>();
+		public List<SIGNSNpc> npcList = new ArrayList<>();
 	}
 	
 	private class SIGNSWorld extends InstanceWorld
 	{
-		public FastMap<String, SIGNSRoom> rooms = new FastMap<>();
+		public Map<String, SIGNSRoom> rooms = new HashMap<>();
 		public long[] storeTime =
 		{
 			0,

@@ -21,17 +21,18 @@ package instances.FinalEmperialTomb;
 import instances.AbstractInstance;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
 import l2r.Config;
 import l2r.gameserver.GeoData;
 import l2r.gameserver.ThreadPoolManager;
@@ -50,10 +51,10 @@ import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2GrandBossInstance;
 import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.skills.L2Skill;
-import l2r.gameserver.model.skills.L2SkillType;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.AbstractNpcInfo.NpcInfo;
@@ -80,10 +81,10 @@ import org.w3c.dom.Node;
  */
 public final class FinalEmperialTomb extends AbstractInstance
 {
-	private class FETWorld extends InstanceWorld
+	protected class FETWorld extends InstanceWorld
 	{
 		protected Lock lock = new ReentrantLock();
-		protected FastList<L2Npc> npcList = new FastList<>();
+		protected List<L2Npc> npcList = new CopyOnWriteArrayList<>();
 		protected int darkChoirPlayerCount = 0;
 		protected FrintezzaSong OnSong = null;
 		protected ScheduledFuture<?> songTask = null;
@@ -96,18 +97,13 @@ public final class FinalEmperialTomb extends AbstractInstance
 		protected L2Npc scarletDummy = null;
 		protected L2GrandBossInstance frintezza = null;
 		protected L2GrandBossInstance activeScarlet = null;
-		protected List<L2MonsterInstance> demons = new FastList<>();
-		protected Map<L2MonsterInstance, Integer> portraits = new FastMap<>();
+		protected List<L2MonsterInstance> demons = new CopyOnWriteArrayList<>();
+		protected Map<L2MonsterInstance, Integer> portraits = new ConcurrentHashMap<>();
 		protected int scarlet_x = 0;
 		protected int scarlet_y = 0;
 		protected int scarlet_z = 0;
 		protected int scarlet_h = 0;
 		protected int scarlet_a = 0;
-		
-		protected FETWorld()
-		{
-			npcList.shared();
-		}
 	}
 	
 	protected static class FETSpawn
@@ -193,7 +189,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	private static final boolean debug = false;
 	private final Map<Integer, L2Territory> _spawnZoneList = new HashMap<>();
 	private final Map<Integer, List<FETSpawn>> _spawnList = new HashMap<>();
-	private final List<Integer> _mustKillMobsId = new FastList<>();
+	private final List<Integer> _mustKillMobsId = new ArrayList<>();
 	protected static final int[] FIRST_ROOM_DOORS =
 	{
 		17130051,
@@ -297,11 +293,9 @@ public final class FinalEmperialTomb extends AbstractInstance
 									_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing flag in npc List npcId: " + npcId + ", skipping");
 									continue;
 								}
+								
 								int flag = Integer.parseInt(attrs.getNamedItem("flag").getNodeValue());
-								if (!_spawnList.containsKey(flag))
-								{
-									_spawnList.put(flag, new FastList<FETSpawn>());
-								}
+								_spawnList.putIfAbsent(flag, new ArrayList<FETSpawn>());
 								
 								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
 								{
@@ -847,8 +841,8 @@ public final class FinalEmperialTomb extends AbstractInstance
 					
 					if ((_world.frintezza != null) && !_world.frintezza.isDead() && (_world.activeScarlet != null) && !_world.activeScarlet.isDead())
 					{
-						List<L2Character> targetList = new FastList<>();
-						if ((skill.getSkillType() == L2SkillType.STUN) || (skill.getSkillType() == L2SkillType.DEBUFF))
+						final List<L2Character> targetList = new ArrayList<>();
+						if (skill.hasEffectType(L2EffectType.STUN) || skill.isDebuff())
 						{
 							for (int objId : _world.getAllowed())
 							{
@@ -870,7 +864,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 						{
 							targetList.add(_world.activeScarlet);
 						}
-						if (targetList.size() > 0)
+						if (!targetList.isEmpty())
 						{
 							_world.frintezza.doCast(skill, targetList.get(0), targetList.toArray(new L2Character[targetList.size()]));
 						}

@@ -1,12 +1,11 @@
 package instances.RimKamaloka;
 
 import java.util.Calendar;
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.data.sql.NpcTable;
 import l2r.gameserver.enums.CtrlIntention;
@@ -913,8 +912,8 @@ public class RimKamaloka extends Quest
 		public ScheduledFuture<?> lockTask = null;
 		public ScheduledFuture<?> finishTask = null;
 		
-		public List<L2MonsterInstance> spawnedMobs = new FastList<>();
-		public Map<Integer, Long> lastAttack = new FastMap<>();
+		public Set<L2MonsterInstance> spawnedMobs = ConcurrentHashMap.newKeySet();
+		public Map<Integer, Long> lastAttack = new ConcurrentHashMap<>();
 		public ScheduledFuture<?> despawnTask = null;
 		
 		public RimKamaWorld()

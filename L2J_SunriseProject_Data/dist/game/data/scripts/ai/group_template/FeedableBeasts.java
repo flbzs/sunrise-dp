@@ -19,8 +19,8 @@
 package ai.group_template;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastMap;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Attackable;
@@ -74,7 +74,7 @@ public class FeedableBeasts extends AbstractNpcAI
 	};
 	// @formatter:on
 	
-	private static final Map<Integer, Integer> MAD_COW_POLYMORPH = new FastMap<>();
+	private static final Map<Integer, Integer> MAD_COW_POLYMORPH = new ConcurrentHashMap<>();
 	static
 	{
 		MAD_COW_POLYMORPH.put(21824, 21468);
@@ -127,8 +127,8 @@ public class FeedableBeasts extends AbstractNpcAI
 		NpcStringId.ANIMALS_NEED_LOVE_TOO
 	};
 	
-	private static Map<Integer, Integer> _FeedInfo = new FastMap<>();
-	private static Map<Integer, GrowthCapableMob> _GrowthCapableMobs = new FastMap<>();
+	private static Map<Integer, Integer> _FeedInfo = new ConcurrentHashMap<>();
+	private static Map<Integer, GrowthCapableMob> _GrowthCapableMobs = new ConcurrentHashMap<>();
 	
 	// all mobs that grow by eating
 	private static class GrowthCapableMob
@@ -136,7 +136,7 @@ public class FeedableBeasts extends AbstractNpcAI
 		private final int _growthLevel;
 		private final int _chance;
 		
-		private final Map<Integer, int[][]> _spiceToMob = new FastMap<>();
+		private final Map<Integer, int[][]> _spiceToMob = new ConcurrentHashMap<>();
 		
 		public GrowthCapableMob(int growthLevel, int chance)
 		{

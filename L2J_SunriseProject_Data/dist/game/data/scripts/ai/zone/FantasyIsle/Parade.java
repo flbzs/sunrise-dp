@@ -16,9 +16,10 @@ package ai.zone.FantasyIsle;
 
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ScheduledFuture;
 
-import javolution.util.FastList;
 import l2r.gameserver.GameTimeController;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.enums.CtrlIntention;
@@ -352,12 +353,11 @@ public class Parade extends AbstractNpcAI
 	protected ScheduledFuture<?> cleanTask;
 	
 	protected int npcIndex;
-	protected FastList<L2Npc> spawns;
+	protected List<L2Npc> spawns = new CopyOnWriteArrayList<>();
 	
 	protected void load()
 	{
 		npcIndex = 0;
-		spawns = new FastList<L2Npc>().shared();
 	}
 	
 	protected void clean()

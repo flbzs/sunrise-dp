@@ -18,10 +18,10 @@
  */
 package gracia.instances.HallOfErosionDefence;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 
-import javolution.util.FastList;
 import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.instancemanager.InstanceManager;
@@ -52,9 +52,9 @@ public class HallOfErosionDefence extends Quest
 {
 	protected class HEDWorld extends InstanceWorld
 	{
-		public List<L2Attackable> npcList;
-		public FastList<L2Npc> alivetumor = new FastList<>();
-		public FastList<L2Npc> deadTumors = new FastList<>();
+		public List<L2Attackable> npcList = new ArrayList<>();
+		public List<L2Npc> alivetumor = new ArrayList<>();
+		public List<L2Npc> deadTumors = new ArrayList<>();
 		protected L2Npc deadTumor;
 		public long startTime = 0;
 		public ScheduledFuture<?> finishTask = null;
@@ -1018,7 +1018,7 @@ public class HallOfErosionDefence extends Quest
 		{
 			for (int i = 0; i < spawn[6]; i++)
 			{
-				world.npcList = new FastList<>();
+				world.npcList = new ArrayList<>();
 				L2Attackable npc = (L2Attackable) addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4], false, 0, false, world.getInstanceId());
 				npc.getSpawn().setRespawnDelay(spawn[5]);
 				npc.getSpawn().setAmount(1);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -19,8 +19,8 @@
 package ai.grandboss;
 
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-import javolution.util.FastList;
 import l2r.Config;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.enums.CtrlIntention;
@@ -46,7 +46,7 @@ import ai.npc.AbstractNpcAI;
  * Orfen's AI
  * @author Emperorc
  */
-public class Orfen extends AbstractNpcAI
+public final class Orfen extends AbstractNpcAI
 {
 	private static final Location[] POS =
 	{
@@ -71,7 +71,7 @@ public class Orfen extends AbstractNpcAI
 	private static final int RIBA_IREN = 29018;
 	
 	private static boolean _IsTeleported;
-	private static List<L2Attackable> _Minions = new FastList<>();
+	private static final List<L2Attackable> MINIONS = new CopyOnWriteArrayList<>();
 	private static L2BossZone ZONE;
 	
 	private static final byte ALIVE = 0;
@@ -79,7 +79,7 @@ public class Orfen extends AbstractNpcAI
 	
 	public Orfen()
 	{
-		super(Orfen.class.getSimpleName(), "ai");
+		super(Orfen.class.getSimpleName(), "ai/individual");
 		int[] mobs =
 		{
 			ORFEN,
@@ -157,16 +157,16 @@ public class Orfen extends AbstractNpcAI
 		L2Attackable mob;
 		mob = (L2Attackable) addSpawn(RAIKEL_LEOS, x + 100, y + 100, npc.getZ(), 0, false, 0);
 		mob.setIsRaidMinion(true);
-		_Minions.add(mob);
+		MINIONS.add(mob);
 		mob = (L2Attackable) addSpawn(RAIKEL_LEOS, x + 100, y - 100, npc.getZ(), 0, false, 0);
 		mob.setIsRaidMinion(true);
-		_Minions.add(mob);
+		MINIONS.add(mob);
 		mob = (L2Attackable) addSpawn(RAIKEL_LEOS, x - 100, y + 100, npc.getZ(), 0, false, 0);
 		mob.setIsRaidMinion(true);
-		_Minions.add(mob);
+		MINIONS.add(mob);
 		mob = (L2Attackable) addSpawn(RAIKEL_LEOS, x - 100, y - 100, npc.getZ(), 0, false, 0);
 		mob.setIsRaidMinion(true);
-		_Minions.add(mob);
+		MINIONS.add(mob);
 		startQuestTimer("check_minion_loc", 10000, npc, null, true);
 	}
 	
@@ -207,12 +207,12 @@ public class Orfen extends AbstractNpcAI
 		}
 		else if (event.equalsIgnoreCase("check_minion_loc"))
 		{
-			for (int i = 0; i < _Minions.size(); i++)
+			for (int i = 0; i < MINIONS.size(); i++)
 			{
-				L2Attackable mob = _Minions.get(i);
+				L2Attackable mob = MINIONS.get(i);
 				if (!npc.isInsideRadius(mob, 3000, false, false))
 				{
-					mob.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
+					mob.teleToLocation(npc.getLocation());
 					((L2Attackable) npc).clearAggroList();
 					npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null, null);
 				}
@@ -220,21 +220,21 @@ public class Orfen extends AbstractNpcAI
 		}
 		else if (event.equalsIgnoreCase("despawn_minions"))
 		{
-			for (int i = 0; i < _Minions.size(); i++)
+			for (int i = 0; i < MINIONS.size(); i++)
 			{
-				L2Attackable mob = _Minions.get(i);
+				L2Attackable mob = MINIONS.get(i);
 				if (mob != null)
 				{
 					mob.decayMe();
 				}
 			}
-			_Minions.clear();
+			MINIONS.clear();
 		}
 		else if (event.equalsIgnoreCase("spawn_minion"))
 		{
 			L2Attackable mob = (L2Attackable) addSpawn(RAIKEL_LEOS, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0);
 			mob.setIsRaidMinion(true);
-			_Minions.add(mob);
+			MINIONS.add(mob);
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
@@ -250,7 +250,7 @@ public class Orfen extends AbstractNpcAI
 				NpcSay packet = new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), TEXT[getRandom(4)]);
 				packet.addStringParameter(caster.getName().toString());
 				npc.broadcastPacket(packet);
-				originalCaster.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
+				originalCaster.teleToLocation(npc.getLocation());
 				npc.setTarget(originalCaster);
 				npc.doCast(SkillData.getInstance().getInfo(4064, 1));
 			}
@@ -305,7 +305,7 @@ public class Orfen extends AbstractNpcAI
 				NpcSay packet = new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npcId, TEXT[getRandom(3)]);
 				packet.addStringParameter(attacker.getName().toString());
 				npc.broadcastPacket(packet);
-				attacker.teleToLocation(npc.getX(), npc.getY(), npc.getZ());
+				attacker.teleToLocation(npc.getLocation());
 				npc.setTarget(attacker);
 				npc.doCast(SkillData.getInstance().getInfo(4064, 1));
 			}
@@ -343,7 +343,7 @@ public class Orfen extends AbstractNpcAI
 		}
 		else if ((GrandBossManager.getInstance().getBossStatus(ORFEN) == ALIVE) && (npc.getId() == RAIKEL_LEOS))
 		{
-			_Minions.remove(npc);
+			MINIONS.remove(npc);
 			startQuestTimer("spawn_minion", 360000, npc, null);
 		}
 		return super.onKill(npc, killer, isSummon);

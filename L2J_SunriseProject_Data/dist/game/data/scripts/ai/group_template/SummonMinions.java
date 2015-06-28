@@ -18,15 +18,15 @@
  */
 package ai.group_template;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArraySet;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
-import javolution.util.FastSet;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
@@ -42,8 +42,8 @@ import ai.npc.AbstractNpcAI;
 public class SummonMinions extends AbstractNpcAI
 {
 	private static int HasSpawned;
-	private static Set<Integer> myTrackingSet = new FastSet<Integer>().shared(); // Used to track instances of npcs
-	private final FastMap<Integer, FastList<L2PcInstance>> _attackersList = new FastMap<Integer, FastList<L2PcInstance>>().shared();
+	private static Set<Integer> myTrackingSet = new CopyOnWriteArraySet<>(); // Used to track instances of npcs
+	private final Map<Integer, List<L2PcInstance>> _attackersList = new ConcurrentHashMap<>();
 	private static final Map<Integer, List<Integer>> MINIONS = new HashMap<>();
 	static
 	{
@@ -153,7 +153,7 @@ public class SummonMinions extends AbstractNpcAI
 						{
 							if (_attackersList.get(npcObjId) == null)
 							{
-								FastList<L2PcInstance> player = new FastList<>();
+								List<L2PcInstance> player = new ArrayList<>();
 								player.add(member);
 								_attackersList.put(npcObjId, player);
 							}
@@ -167,7 +167,7 @@ public class SummonMinions extends AbstractNpcAI
 					{
 						if (_attackersList.get(npcObjId) == null)
 						{
-							FastList<L2PcInstance> player = new FastList<>();
+							List<L2PcInstance> player = new ArrayList<>();
 							player.add(attacker);
 							_attackersList.put(npcObjId, player);
 						}

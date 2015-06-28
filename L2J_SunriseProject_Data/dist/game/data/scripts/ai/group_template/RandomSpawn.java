@@ -19,8 +19,8 @@
 package ai.group_template;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastMap;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
@@ -32,7 +32,7 @@ import ai.npc.AbstractNpcAI;
  */
 public class RandomSpawn extends AbstractNpcAI
 {
-	private static Map<Integer, Location[]> SPAWN_POINTS = new FastMap<>();
+	private static Map<Integer, Location[]> SPAWN_POINTS = new ConcurrentHashMap<>();
 	static
 	{
 		// Keltas

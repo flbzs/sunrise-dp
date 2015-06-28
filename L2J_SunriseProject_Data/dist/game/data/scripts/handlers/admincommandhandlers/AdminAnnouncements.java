@@ -21,7 +21,6 @@ package handlers.admincommandhandlers;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import javolution.text.TextBuilder;
 import l2r.Config;
 import l2r.gameserver.Announcements;
 import l2r.gameserver.cache.HtmCache;
@@ -260,7 +259,7 @@ public class AdminAnnouncements implements IAdminCommandHandler
 				activeChar.sendMessage("Not enough parameters for adding autoannounce!");
 				return false;
 			}
-			TextBuilder memo = new TextBuilder();
+			StringBuilder memo = new StringBuilder();
 			while (st.hasMoreTokens())
 			{
 				memo.append(st.nextToken());
@@ -304,7 +303,7 @@ public class AdminAnnouncements implements IAdminCommandHandler
 		for (int i = 0; i < autoannouncements.size(); i++)
 		{
 			AutoAnnouncement autoann = autoannouncements.get(i);
-			TextBuilder memo2 = new TextBuilder();
+			StringBuilder memo2 = new StringBuilder();
 			for (String memo0 : autoann.getMemo())
 			{
 				memo2.append(memo0);

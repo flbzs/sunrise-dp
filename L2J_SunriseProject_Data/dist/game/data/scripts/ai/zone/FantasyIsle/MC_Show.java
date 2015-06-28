@@ -19,9 +19,9 @@
 package ai.zone.FantasyIsle;
 
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.Map;
 
-import javolution.util.FastMap;
 import l2r.Config;
 import l2r.gameserver.GameTimeController;
 import l2r.gameserver.ThreadPoolManager;
@@ -165,8 +165,8 @@ public class MC_Show extends AbstractNpcAI
 		}
 	}
 	
-	private static Map<String, ShoutInfo> talks = new FastMap<>();
-	private static Map<String, WalkInfo> walks = new FastMap<>();
+	private static Map<String, ShoutInfo> talks = new HashMap<>();
+	private static Map<String, WalkInfo> walks = new HashMap<>();
 	
 	public MC_Show()
 	{

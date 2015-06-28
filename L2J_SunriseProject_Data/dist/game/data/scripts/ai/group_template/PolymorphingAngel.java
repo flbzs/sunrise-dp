@@ -19,8 +19,8 @@
 package ai.group_template;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastMap;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -31,7 +31,7 @@ import ai.npc.AbstractNpcAI;
  */
 public class PolymorphingAngel extends AbstractNpcAI
 {
-	private static final Map<Integer, Integer> ANGELSPAWNS = new FastMap<>();
+	private static final Map<Integer, Integer> ANGELSPAWNS = new ConcurrentHashMap<>();
 	static
 	{
 		ANGELSPAWNS.put(20830, 20859);

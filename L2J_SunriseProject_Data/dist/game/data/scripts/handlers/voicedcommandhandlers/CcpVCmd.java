@@ -14,7 +14,6 @@
  */
 package handlers.voicedcommandhandlers;
 
-import javolution.text.TextBuilder;
 import l2r.gameserver.handler.IVoicedCommandHandler;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -85,7 +84,7 @@ public class CcpVCmd implements IVoicedCommandHandler
 	
 	public static void sendHtml(L2PcInstance player)
 	{
-		TextBuilder builder = new TextBuilder();
+		StringBuilder builder = new StringBuilder();
 		NpcHtmlMessage html = new NpcHtmlMessage();
 		
 		builder.append("<html noscrollbar><title>Character Control Panel</title><body>");

@@ -21,8 +21,8 @@ package ai.group_template;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastMap;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.L2Object;
@@ -103,8 +103,8 @@ public class BeastFarm extends AbstractNpcAI
 		18900
 	};
 	
-	private static Map<Integer, Integer> _FeedInfo = new FastMap<>();
-	private static Map<Integer, GrowthCapableMob> _GrowthCapableMobs = new FastMap<>();
+	private static Map<Integer, Integer> _FeedInfo = new ConcurrentHashMap<>();
+	private static Map<Integer, GrowthCapableMob> _GrowthCapableMobs = new ConcurrentHashMap<>();
 	private static List<TamedBeast> TAMED_BEAST_DATA = new ArrayList<>();
 	
 	public BeastFarm()
@@ -394,7 +394,7 @@ public class BeastFarm extends AbstractNpcAI
 		private final int _chance;
 		private final int _growthLevel;
 		private final int _tameNpcId;
-		private final Map<Integer, Integer> _skillSuccessNpcIdList = new FastMap<>();
+		private final Map<Integer, Integer> _skillSuccessNpcIdList = new ConcurrentHashMap<>();
 		
 		public GrowthCapableMob(int chance, int growthLevel, int tameNpcId)
 		{

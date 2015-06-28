@@ -14,11 +14,12 @@
  */
 package instances.IceQueenCastleExtreme;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
 import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.data.xml.impl.SkillData;
@@ -63,12 +64,12 @@ public class IceQueenCastleExtreme extends AbstractNpcAI
 		public L2Attackable _jinia = null;
 		public L2Attackable _kegor = null;
 		public boolean isMovieNow = false;
-		public FastMap<Integer, L2Npc> _simple_knights = new FastMap<>();
-		public FastMap<Integer, L2Npc> _glaciers = new FastMap<>();
+		public Map<Integer, L2Npc> _simple_knights = new ConcurrentHashMap<>();
+		public Map<Integer, L2Npc> _glaciers = new ConcurrentHashMap<>();
 		
 		public L2Attackable _freyaStand_hard = null;
 		public L2Attackable _glakias_hard = null;
-		public FastMap<Integer, L2Npc> _archery_knights_hard = new FastMap<>();
+		public Map<Integer, L2Npc> _archery_knights_hard = new ConcurrentHashMap<>();
 		
 		public IQCEWorld()
 		{
@@ -1263,7 +1264,7 @@ public class IceQueenCastleExtreme extends AbstractNpcAI
 	
 	private List<L2PcInstance> getAllPlayersInside(IQCEWorld world)
 	{
-		List<L2PcInstance> _players = new FastList<>();
+		List<L2PcInstance> _players = new ArrayList<>();
 		for (int objId : world.getAllowed())
 		{
 			L2PcInstance player = L2World.getInstance().getPlayer(objId);

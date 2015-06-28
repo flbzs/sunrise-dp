@@ -14,8 +14,11 @@
  */
 package ai.group_template.extra;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Character;
@@ -27,7 +30,7 @@ import ai.npc.AbstractNpcAI;
 
 public class ZombieGatekeepers extends AbstractNpcAI
 {
-	private final FastMap<Integer, FastList<L2Character>> _attackersList = new FastMap<>();
+	private final Map<Integer, List<L2Character>> _attackersList = new ConcurrentHashMap<>();
 	
 	public ZombieGatekeepers()
 	{
@@ -43,7 +46,7 @@ public class ZombieGatekeepers extends AbstractNpcAI
 		L2Character target = isPet ? attacker.getSummon() : attacker;
 		if (_attackersList.get(npcObjId) == null)
 		{
-			FastList<L2Character> player = new FastList<>();
+			List<L2Character> player = new ArrayList<>();
 			player.add(target);
 			_attackersList.put(npcObjId, player);
 		}

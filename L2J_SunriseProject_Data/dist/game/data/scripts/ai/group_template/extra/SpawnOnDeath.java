@@ -15,8 +15,8 @@
 package ai.group_template.extra;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-import javolution.util.FastMap;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
@@ -26,9 +26,9 @@ import ai.npc.AbstractNpcAI;
 
 public class SpawnOnDeath extends AbstractNpcAI
 {
-	private static final Map<Integer, Integer> MOBSPAWNS5 = new FastMap<>();
-	private static final Map<Integer, Integer> MOBSPAWNS15 = new FastMap<>();
-	private static final Map<Integer, Integer> MOBSPAWNS100 = new FastMap<>();
+	private static final Map<Integer, Integer> MOBSPAWNS5 = new ConcurrentHashMap<>();
+	private static final Map<Integer, Integer> MOBSPAWNS15 = new ConcurrentHashMap<>();
+	private static final Map<Integer, Integer> MOBSPAWNS100 = new ConcurrentHashMap<>();
 	
 	public SpawnOnDeath()
 	{
