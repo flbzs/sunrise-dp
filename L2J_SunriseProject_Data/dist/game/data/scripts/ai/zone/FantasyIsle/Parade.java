@@ -16,8 +16,8 @@ package ai.zone.FantasyIsle;
 
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 
 import l2r.gameserver.GameTimeController;
@@ -353,7 +353,7 @@ public class Parade extends AbstractNpcAI
 	protected ScheduledFuture<?> cleanTask;
 	
 	protected int npcIndex;
-	protected List<L2Npc> spawns = new CopyOnWriteArrayList<>();
+	protected Set<L2Npc> spawns = ConcurrentHashMap.newKeySet();
 	
 	protected void load()
 	{
