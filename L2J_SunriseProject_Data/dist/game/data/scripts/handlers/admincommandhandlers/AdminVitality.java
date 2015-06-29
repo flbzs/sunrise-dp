@@ -137,9 +137,4 @@ public class AdminVitality implements IAdminCommandHandler
 	{
 		return ADMIN_COMMANDS;
 	}
-	
-	public static void main(String[] args)
-	{
-		new AdminVitality();
-	}
 }

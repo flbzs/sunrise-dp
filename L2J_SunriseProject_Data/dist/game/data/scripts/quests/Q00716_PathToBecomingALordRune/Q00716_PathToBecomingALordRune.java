@@ -302,9 +302,4 @@ public class Q00716_PathToBecomingALordRune extends Quest
 		}
 		return false;
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q00716_PathToBecomingALordRune();
-	}
 }

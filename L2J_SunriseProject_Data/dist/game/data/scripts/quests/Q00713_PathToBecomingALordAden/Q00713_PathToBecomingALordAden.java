@@ -181,9 +181,4 @@ public class Q00713_PathToBecomingALordAden extends Quest
 		}
 		return false;
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q00713_PathToBecomingALordAden();
-	}
 }

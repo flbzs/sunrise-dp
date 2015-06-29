@@ -317,9 +317,4 @@ public class Q00709_PathToBecomingALordDion extends Quest
 		}
 		return false;
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q00709_PathToBecomingALordDion();
-	}
 }

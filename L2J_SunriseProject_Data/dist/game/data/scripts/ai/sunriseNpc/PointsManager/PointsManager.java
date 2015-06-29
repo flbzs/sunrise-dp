@@ -111,9 +111,4 @@ public final class PointsManager extends AbstractNpcAI
 		packet.setHtml(getHtm(player.getHtmlPrefix(), htmlFile));
 		return packet;
 	}
-	
-	public static void main(String[] args)
-	{
-		new PointsManager();
-	}
 }

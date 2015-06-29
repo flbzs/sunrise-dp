@@ -103,9 +103,4 @@ public final class CastleManager extends AbstractNpcAI
 		packet.setHtml(getHtm(player.getHtmlPrefix(), htmlFile));
 		return packet;
 	}
-	
-	public static void main(String args[])
-	{
-		new CastleManager();
-	}
 }

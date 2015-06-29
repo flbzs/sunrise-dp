@@ -268,9 +268,4 @@ public class Q00711_PathToBecomingALordInnadril extends Quest
 		}
 		return false;
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q00711_PathToBecomingALordInnadril();
-	}
 }

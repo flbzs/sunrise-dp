@@ -189,9 +189,4 @@ public class Q00715_PathToBecomingALordGoddard extends Quest
 		}
 		return false;
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q00715_PathToBecomingALordGoddard();
-	}
 }

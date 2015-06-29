@@ -317,9 +317,4 @@ public class Q00708_PathToBecomingALordGludio extends Quest
 		}
 		return false;
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q00708_PathToBecomingALordGludio();
-	}
 }

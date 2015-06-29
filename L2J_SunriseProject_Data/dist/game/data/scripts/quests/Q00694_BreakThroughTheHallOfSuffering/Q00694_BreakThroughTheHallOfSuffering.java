@@ -306,9 +306,4 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 		inst.setDuration(5 * 60000);
 		inst.setEmptyDestroyTime(0);
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q00694_BreakThroughTheHallOfSuffering();
-	}
 }

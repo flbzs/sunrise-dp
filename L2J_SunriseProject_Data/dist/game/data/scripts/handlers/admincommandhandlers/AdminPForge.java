@@ -37,7 +37,7 @@ import l2r.gameserver.network.clientpackets.L2GameClientPacket;
 import l2r.gameserver.network.serverpackets.AdminForgePacket;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 
-import org.mmocore.network.NioNetStringBuffer;
+import com.l2jserver.mmocore.NioNetStringBuffer;
 
 /**
  * This class handles commands for gm to forge packets

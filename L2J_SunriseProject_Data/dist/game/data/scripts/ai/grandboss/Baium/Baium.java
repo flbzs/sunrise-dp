@@ -99,7 +99,6 @@ public final class Baium extends AbstractNpcAI
 	// Misc
 	private L2GrandBossInstance _baium = null;
 	private static long _lastAttack = 0;
-	private static L2PcInstance _standbyPlayer = null;
 	
 	public Baium()
 	{
@@ -212,6 +211,7 @@ public final class Baium extends AbstractNpcAI
 					_lastAttack = System.currentTimeMillis();
 					startQuestTimer("WAKEUP_ACTION", 50, _baium, null);
 					startQuestTimer("MANAGE_EARTHQUAKE", 2000, _baium, null);
+					startQuestTimer("SOCIAL_ACTION", 10000, _baium, player);
 					startQuestTimer("CHECK_ATTACK", 60000, _baium, null);
 				}
 				break;
@@ -230,7 +230,6 @@ public final class Baium extends AbstractNpcAI
 				{
 					zone.broadcastPacket(new Earthquake(npc.getX(), npc.getY(), npc.getZ(), 40, 10));
 					zone.broadcastPacket(new PlaySound("BS02_A"));
-					startQuestTimer("SOCIAL_ACTION", 8000, npc, player);
 				}
 				break;
 			}
@@ -252,10 +251,18 @@ public final class Baium extends AbstractNpcAI
 						player.teleToLocation(BAIUM_GIFT_LOC);
 						startQuestTimer("PLAYER_KILL", 3000, npc, player);
 					}
-					else if ((_standbyPlayer != null) && _standbyPlayer.isInsideRadius(npc, 16000, true, false))
+					else
 					{
-						_standbyPlayer.teleToLocation(BAIUM_GIFT_LOC);
-						startQuestTimer("PLAYER_KILL", 3000, npc, _standbyPlayer);
+						L2PcInstance randomPlayer = getRandomPlayer(npc);
+						if (randomPlayer != null)
+						{
+							randomPlayer.teleToLocation(BAIUM_GIFT_LOC);
+							startQuestTimer("PLAYER_KILL", 3000, npc, randomPlayer);
+						}
+						else
+						{
+							startQuestTimer("PLAYER_KILL", 3000, npc, null);
+						}
 					}
 				}
 				break;
@@ -265,20 +272,20 @@ public final class Baium extends AbstractNpcAI
 				if ((player != null) && player.isInsideRadius(npc, 16000, true, false))
 				{
 					zone.broadcastPacket(new SocialAction(npc.getObjectId(), 1));
-					broadcastNpcSay(npc, Say2.NPC_ALL, player.getName() + ", How dare you wake me! Now you shall die!"); // TODO: replace with NpcStringId when are done core support
+					broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.HOW_DARE_YOU_WAKE_ME_NOW_YOU_SHALL_DIE, player.getName());
 					npc.setTarget(player);
 					npc.doCast(BAIUM_PRESENT.getSkill());
 				}
 				
-				for (L2PcInstance players : zone.getPlayersInside())
+				for (L2PcInstance insidePlayer : zone.getPlayersInside())
 				{
-					if (players.isHero())
+					if (insidePlayer.isHero())
 					{
-						zone.broadcastPacket(new ExShowScreenMessage(NpcStringId.NOT_EVEN_THE_GODS_THEMSELVES_COULD_TOUCH_ME_BUT_YOU_S1_YOU_DARE_CHALLENGE_ME_IGNORANT_MORTAL, 2, 4000, players.getName()));
+						zone.broadcastPacket(new ExShowScreenMessage(NpcStringId.NOT_EVEN_THE_GODS_THEMSELVES_COULD_TOUCH_ME_BUT_YOU_S1_YOU_DARE_CHALLENGE_ME_IGNORANT_MORTAL, 2, 4000, insidePlayer.getName()));
 						break;
 					}
 				}
-				startQuestTimer("SPAWN_ARCHANGEL", 8000, npc, null);
+				startQuestTimer("SPAWN_ARCHANGEL", 8000, npc, player);
 				break;
 			}
 			case "SPAWN_ARCHANGEL":
@@ -293,21 +300,14 @@ public final class Baium extends AbstractNpcAI
 				
 				if ((player != null) && !player.isDead())
 				{
-					attackPlayer((L2Attackable) npc, player);
-				}
-				else if ((_standbyPlayer != null) && !_standbyPlayer.isDead())
-				{
-					attackPlayer((L2Attackable) npc, _standbyPlayer);
+					addAttackPlayerDesire(npc, player);
 				}
 				else
 				{
-					for (L2Character characters : npc.getKnownList().getKnownCharactersInRadius(2000))
+					L2PcInstance randomPlayer = getRandomPlayer(npc);
+					if (randomPlayer != null)
 					{
-						if ((characters != null) && characters.isPlayer() && zone.isInsideZone(characters) && !characters.isDead())
-						{
-							attackPlayer((L2Attackable) npc, (L2Playable) characters);
-							break;
-						}
+						addAttackPlayerDesire(npc, randomPlayer);
 					}
 				}
 				break;
@@ -331,20 +331,20 @@ public final class Baium extends AbstractNpcAI
 						{
 							mob.clearAggroList();
 						}
-						attackPlayer(mob, (L2Playable) mostHated);
+						addAttackPlayerDesire(mob, (L2Playable) mostHated);
 					}
 					else
 					{
 						boolean found = false;
-						for (L2Character characters : mob.getKnownList().getKnownCharactersInRadius(1000))
+						for (L2Character creature : mob.getKnownList().getKnownCharactersInRadius(1000))
 						{
-							if ((characters != null) && characters.isPlayable() && zone.isInsideZone(characters) && !characters.isDead())
+							if ((creature != null) && creature.isPlayable() && zone.isInsideZone(creature) && !creature.isDead())
 							{
-								if (mob.getTarget() != characters)
+								if (mob.getTarget() != creature)
 								{
 									mob.clearAggroList();
 								}
-								attackPlayer(mob, (L2Playable) characters);
+								addAttackPlayerDesire(mob, (L2Playable) creature);
 								found = true;
 								break;
 							}
@@ -376,6 +376,7 @@ public final class Baium extends AbstractNpcAI
 			{
 				if ((npc != null) && ((_lastAttack + 1800000) < System.currentTimeMillis()))
 				{
+					cancelQuestTimers("SELECT_TARGET");
 					notifyEvent("CLEAR_ZONE", null, null);
 					addSpawn(BAIUM_STONE, BAIUM_LOC, false, 0);
 					setStatus(ALIVE);
@@ -554,13 +555,12 @@ public final class Baium extends AbstractNpcAI
 			setStatus(DEAD);
 			addSpawn(TELE_CUBE, TELEPORT_CUBIC_LOC, false, 900000);
 			zone.broadcastPacket(new PlaySound("BS01_D"));
-			// Calculate Min and Max respawn times randomly.
-			long respawnTime = Config.BAIUM_SPAWN_INTERVAL + getRandom(-Config.BAIUM_SPAWN_RANDOM, Config.BAIUM_SPAWN_RANDOM);
-			respawnTime *= 3600000;
+			long respawnTime = (Config.BAIUM_SPAWN_INTERVAL + getRandom(-Config.BAIUM_SPAWN_RANDOM, Config.BAIUM_SPAWN_RANDOM)) * 3600000;
 			setRespawn(respawnTime);
 			startQuestTimer("CLEAR_STATUS", respawnTime, null, null);
 			startQuestTimer("CLEAR_ZONE", 900000, null, null);
 			cancelQuestTimer("CHECK_ATTACK", npc, null);
+			cancelQuestTimers("SELECT_TARGET");
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
@@ -571,11 +571,6 @@ public final class Baium extends AbstractNpcAI
 		if (!zone.isInsideZone(creature) || (creature.isNpc() && (creature.getId() == BAIUM_STONE)))
 		{
 			return super.onSeeCreature(npc, creature, isSummon);
-		}
-		
-		if (creature.isPlayer() && !creature.isDead() && (_standbyPlayer == null))
-		{
-			_standbyPlayer = (L2PcInstance) creature;
 		}
 		
 		if (creature.isInCategory(CategoryType.CLERIC_GROUP))
@@ -784,5 +779,17 @@ public final class Baium extends AbstractNpcAI
 			npc.setTarget(player);
 			npc.doCast(skillToCast.getSkill());
 		}
+	}
+	
+	private L2PcInstance getRandomPlayer(L2Npc npc)
+	{
+		for (L2Character creature : npc.getKnownList().getKnownCharactersInRadius(2000))
+		{
+			if ((creature != null) && creature.isPlayer() && zone.isInsideZone(creature) && !creature.isDead())
+			{
+				return (L2PcInstance) creature;
+			}
+		}
+		return null;
 	}
 }

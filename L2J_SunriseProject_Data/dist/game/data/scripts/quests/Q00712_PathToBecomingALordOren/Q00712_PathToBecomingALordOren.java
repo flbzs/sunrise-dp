@@ -266,9 +266,4 @@ public class Q00712_PathToBecomingALordOren extends Quest
 		}
 		return false;
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q00712_PathToBecomingALordOren();
-	}
 }

@@ -243,9 +243,4 @@ public class Q00710_PathToBecomingALordGiran extends Quest
 		}
 		return false;
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q00710_PathToBecomingALordGiran();
-	}
 }

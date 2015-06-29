@@ -230,9 +230,4 @@ public class Q00714_PathToBecomingALordSchuttgart extends Quest
 		}
 		return false;
 	}
-	
-	public static void main(String[] args)
-	{
-		new Q00714_PathToBecomingALordSchuttgart();
-	}
 }

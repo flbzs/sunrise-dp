@@ -310,9 +310,4 @@ public class BetaManager extends AbstractNpcAI
 	{
 		return "main.htm";
 	}
-	
-	public static void main(String[] args)
-	{
-		new BetaManager();
-	}
 }

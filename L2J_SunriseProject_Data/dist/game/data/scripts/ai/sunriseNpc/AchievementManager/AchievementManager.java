@@ -211,9 +211,4 @@ public class AchievementManager extends AbstractNpcAI
 		}
 		return s;
 	}
-	
-	public static void main(String[] args)
-	{
-		new AchievementManager();
-	}
 }

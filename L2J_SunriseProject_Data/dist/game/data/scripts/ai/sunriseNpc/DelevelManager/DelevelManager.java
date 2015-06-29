@@ -125,9 +125,4 @@ public class DelevelManager extends AbstractNpcAI
 		packet.setHtml(getHtm(player.getHtmlPrefix(), htmlFile));
 		return packet;
 	}
-	
-	public static void main(final String[] args)
-	{
-		new DelevelManager();
-	}
 }
