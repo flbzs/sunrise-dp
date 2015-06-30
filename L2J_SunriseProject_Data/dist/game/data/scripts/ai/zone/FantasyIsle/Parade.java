@@ -434,7 +434,14 @@ public class Parade extends AbstractNpcAI
 					int[] goal = GOAL[route][i];
 					L2Npc actor = addSpawn(npcId, start[0], start[1], start[2], start[3], false, 0);
 					actor.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(goal[0], goal[1], goal[2], goal[3]));
-					spawns.add(actor);// TODO:NPE
+					try
+					{
+						spawns.add(actor);// TODO:NPE
+					}
+					catch (Exception e)
+					{
+						
+					}
 				}
 			}
 		}

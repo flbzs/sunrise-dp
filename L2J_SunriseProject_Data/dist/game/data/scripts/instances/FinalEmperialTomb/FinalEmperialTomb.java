@@ -182,8 +182,8 @@ public final class FinalEmperialTomb extends AbstractInstance
 	protected static final Location MOVE_TO_CENTER = new Location(-87904, -141296, -9168, 0);
 	// Misc
 	private static final int TEMPLATE_ID = 136; // this is the client number
-	private static final int MIN_PLAYERS = 36;
-	private static final int MAX_PLAYERS = 45;
+	private static final int MIN_PLAYERS = Config.MIN_PLAYER_TO_FE;
+	private static final int MAX_PLAYERS = Config.MAX_PLAYER_TO_FE;
 	private static final int TIME_BETWEEN_DEMON_SPAWNS = 20000;
 	private static final int MAX_DEMONS = 24;
 	private static final boolean debug = false;
@@ -511,7 +511,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 		}
 		for (L2PcInstance channelMember : channel.getMembers())
 		{
-			if (channelMember.getLevel() < 80)
+			if (channelMember.getLevel() < Config.MIN_LEVEL_TO_FE)
 			{
 				party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED).addPcName(channelMember));
 				return false;
