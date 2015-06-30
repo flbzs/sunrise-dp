@@ -16,10 +16,9 @@ package ai.zone.FantasyIsle;
 
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledFuture;
 
+import javolution.util.FastList;
 import l2r.gameserver.GameTimeController;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.enums.CtrlIntention;
@@ -353,11 +352,12 @@ public class Parade extends AbstractNpcAI
 	protected ScheduledFuture<?> cleanTask;
 	
 	protected int npcIndex;
-	protected Set<L2Npc> spawns = ConcurrentHashMap.newKeySet();
+	protected FastList<L2Npc> spawns;
 	
 	protected void load()
 	{
 		npcIndex = 0;
+		spawns = new FastList<L2Npc>().shared();
 	}
 	
 	protected void clean()
@@ -434,14 +434,7 @@ public class Parade extends AbstractNpcAI
 					int[] goal = GOAL[route][i];
 					L2Npc actor = addSpawn(npcId, start[0], start[1], start[2], start[3], false, 0);
 					actor.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(goal[0], goal[1], goal[2], goal[3]));
-					try
-					{
-						spawns.add(actor);// TODO:NPE
-					}
-					catch (Exception e)
-					{
-						
-					}
+					spawns.add(actor);// TODO:NPE
 				}
 			}
 		}
