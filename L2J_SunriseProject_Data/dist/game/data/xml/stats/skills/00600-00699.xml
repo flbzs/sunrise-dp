@@ -814,6 +814,7 @@
 		</for>
 	</skill>
 	<skill id="656" levels="3" name="Transform Divine Warrior">
+		<set name="blockCertificationInOly" val="true" />
 		<table name="#reuseDelay"> 14400000 7200000 3600000 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
@@ -836,6 +837,7 @@
 		</for>
 	</skill>
 	<skill id="657" levels="3" name="Transform Divine Knight">
+		<set name="blockCertificationInOly" val="true" />
 		<table name="#reuseDelay"> 14400000 7200000 3600000 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
@@ -858,6 +860,7 @@
 		</for>
 	</skill>
 	<skill id="658" levels="3" name="Transform Divine Rogue">
+		<set name="blockCertificationInOly" val="true" />
 		<table name="#reuseDelay"> 14400000 7200000 3600000 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
@@ -880,6 +883,7 @@
 		</for>
 	</skill>
 	<skill id="659" levels="3" name="Transform Divine Wizard">
+		<set name="blockCertificationInOly" val="true" />
 		<table name="#reuseDelay"> 14400000 7200000 3600000 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
@@ -902,6 +906,7 @@
 		</for>
 	</skill>
 	<skill id="660" levels="3" name="Transform Divine Summoner">
+		<set name="blockCertificationInOly" val="true" />
 		<table name="#reuseDelay"> 14400000 7200000 3600000 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
@@ -924,6 +929,7 @@
 		</for>
 	</skill>
 	<skill id="661" levels="3" name="Transform Divine Healer">
+		<set name="blockCertificationInOly" val="true" />
 		<table name="#reuseDelay"> 14400000 7200000 3600000 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
@@ -946,6 +952,7 @@
 		</for>
 	</skill>
 	<skill id="662" levels="3" name="Transform Divine Enchanter">
+		<set name="blockCertificationInOly" val="true" />
 		<table name="#reuseDelay"> 14400000 7200000 3600000 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1800" />
