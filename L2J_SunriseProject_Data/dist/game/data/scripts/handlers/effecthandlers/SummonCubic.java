@@ -40,6 +40,7 @@ public class SummonCubic extends L2Effect
 		super(env, template);
 		
 		_npcId = template.getParameters().getInt("npcId", 0);
+		
 		_cubicPower = template.getParameters().getInt("cubicPower", 0);
 		_cubicDuration = template.getParameters().getInt("cubicDuration", 0);
 		_cubicDelay = template.getParameters().getInt("cubicDelay", 0);
@@ -78,7 +79,7 @@ public class SummonCubic extends L2Effect
 		{
 			cubic.stopAction();
 			cubic.cancelDisappear();
-			player.getCubics().remove(cubic);
+			player.getCubics().remove(_npcId);
 		}
 		else
 		{
