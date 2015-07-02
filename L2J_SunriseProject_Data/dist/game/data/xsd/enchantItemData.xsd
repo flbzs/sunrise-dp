@@ -19,6 +19,14 @@
 							</xs:element>
 						</xs:sequence>
 						<xs:attribute name="id" type="xs:positiveInteger" use="required" />
+						<xs:attribute name="minEnchant">
+							<xs:simpleType>
+								<xs:restriction base="xs:int">
+									<xs:minInclusive value="0" />
+									<xs:maxInclusive value="65535" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
 						<xs:attribute name="maxEnchant">
 							<xs:simpleType>
 								<xs:restriction base="xs:positiveInteger">
@@ -52,6 +60,14 @@
 				<xs:element name="support" minOccurs="1" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:attribute name="id" type="xs:positiveInteger" use="required" />
+						<xs:attribute name="minEnchant" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:int">
+									<xs:minInclusive value="0" />
+									<xs:maxInclusive value="65535" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
 						<xs:attribute name="maxEnchant" use="required">
 							<xs:simpleType>
 								<xs:restriction base="xs:positiveInteger">

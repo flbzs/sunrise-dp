@@ -28,8 +28,8 @@
 	<enchant id="6578" targetGrade="S" />
 
 	<!-- Safe Enchant scrolls -->
-	<enchant id="40109" targetGrade="S" />
-	<enchant id="40104" targetGrade="S" />
+	<enchant id="40109" targetGrade="S" minEnchant="0" maxEnchant="16"/>
+	<enchant id="40104" targetGrade="S" minEnchant="0" maxEnchant="16" />
 
 	<!-- vote Enchant scrolls -->
 	<enchant id="40108" targetGrade="S" />
@@ -63,13 +63,13 @@
 	<enchant id="20518" targetGrade="S" bonusRate="10" />
 
 	<!-- Ancient Weapon Enchant Crystal -->
-	<enchant id="22014" targetGrade="B" maxEnchant="16" bonusRate="10" />
-	<enchant id="22015" targetGrade="A" maxEnchant="16" bonusRate="10" />
-	<enchant id="20519" targetGrade="S" maxEnchant="16" bonusRate="10" />
+	<enchant id="22014" targetGrade="B" minEnchant="0" maxEnchant="16" bonusRate="10" />
+	<enchant id="22015" targetGrade="A" minEnchant="0" maxEnchant="16" bonusRate="10" />
+	<enchant id="20519" targetGrade="S" minEnchant="0" maxEnchant="16" bonusRate="10" />
 	<!-- Ancient Armor Enchant Crystal -->
-	<enchant id="22016" targetGrade="B" maxEnchant="16" bonusRate="10" />
-	<enchant id="22017" targetGrade="A" maxEnchant="16" bonusRate="10" />
-	<enchant id="20520" targetGrade="S" maxEnchant="16" bonusRate="10" />
+	<enchant id="22016" targetGrade="B" minEnchant="0" maxEnchant="16" bonusRate="10" />
+	<enchant id="22017" targetGrade="A" minEnchant="0" maxEnchant="16" bonusRate="10" />
+	<enchant id="20520" targetGrade="S" minEnchant="0" maxEnchant="16" bonusRate="10" />
 
 	<!-- Divine Weapon Enchant Crystal -->
 	<enchant id="22018" targetGrade="B" bonusRate="100" />
@@ -81,17 +81,17 @@
 	<enchant id="20522" targetGrade="S" bonusRate="100" />
 
 	<!-- Scroll: Enchant Weapon of Destruction -->
-	<enchant id="22221" targetGrade="S" maxEnchant="15" />
-	<enchant id="22223" targetGrade="A" maxEnchant="15" />
-	<enchant id="22225" targetGrade="B" maxEnchant="15" />
-	<enchant id="22227" targetGrade="C" maxEnchant="15" />
-	<enchant id="22229" targetGrade="D" maxEnchant="15" />
+	<enchant id="22221" targetGrade="S" minEnchant="0" maxEnchant="15" />
+	<enchant id="22223" targetGrade="A" minEnchant="0" maxEnchant="15" />
+	<enchant id="22225" targetGrade="B" minEnchant="0" maxEnchant="15" />
+	<enchant id="22227" targetGrade="C" minEnchant="0" maxEnchant="15" />
+	<enchant id="22229" targetGrade="D" minEnchant="0" maxEnchant="15" />
 	<!-- Scroll: Enchant Armor of Destruction -->
-	<enchant id="22222" targetGrade="S" maxEnchant="6" />
-	<enchant id="22224" targetGrade="A" maxEnchant="6" />
-	<enchant id="22226" targetGrade="B" maxEnchant="6" />
-	<enchant id="22228" targetGrade="C" maxEnchant="6" />
-	<enchant id="22230" targetGrade="D" maxEnchant="6" />
+	<enchant id="22222" targetGrade="S" minEnchant="0" maxEnchant="6" />
+	<enchant id="22224" targetGrade="A" minEnchant="0" maxEnchant="6" />
+	<enchant id="22226" targetGrade="B" minEnchant="0" maxEnchant="6" />
+	<enchant id="22228" targetGrade="C" minEnchant="0" maxEnchant="6" />
+	<enchant id="22230" targetGrade="D" minEnchant="0" maxEnchant="6" />
 
 	<!-- Master Yogi's Scroll: Enchant Weapon -->
 	<enchant id="13540" maxEnchant="23">
@@ -233,30 +233,30 @@
 	</enchant>
 
 	<!-- Weapon-Type Enhance Backup Stone -->
-	<support id="12362" targetGrade="D" maxEnchant="9" bonusRate="20" />
-	<support id="12363" targetGrade="C" maxEnchant="9" bonusRate="18" />
-	<support id="12364" targetGrade="B" maxEnchant="9" bonusRate="15" />
-	<support id="12365" targetGrade="A" maxEnchant="9" bonusRate="12" />
-	<support id="12366" targetGrade="S" maxEnchant="9" bonusRate="10" />
+	<support id="12362" targetGrade="D" minEnchant="0" maxEnchant="9" bonusRate="20" />
+	<support id="12363" targetGrade="C" minEnchant="0" maxEnchant="9" bonusRate="18" />
+	<support id="12364" targetGrade="B" minEnchant="0" maxEnchant="9" bonusRate="15" />
+	<support id="12365" targetGrade="A" minEnchant="0" maxEnchant="9" bonusRate="12" />
+	<support id="12366" targetGrade="S" minEnchant="0" maxEnchant="9" bonusRate="10" />
 
 	<!-- Armor-Type Enhance Backup Stone -->
-	<support id="12367" targetGrade="D" maxEnchant="9" bonusRate="35" />
-	<support id="12368" targetGrade="C" maxEnchant="9" bonusRate="27" />
-	<support id="12369" targetGrade="B" maxEnchant="9" bonusRate="23" />
-	<support id="12370" targetGrade="A" maxEnchant="9" bonusRate="18" />
-	<support id="12371" targetGrade="S" maxEnchant="9" bonusRate="15" />
+	<support id="12367" targetGrade="D" minEnchant="0" maxEnchant="9" bonusRate="35" />
+	<support id="12368" targetGrade="C" minEnchant="0" maxEnchant="9" bonusRate="27" />
+	<support id="12369" targetGrade="B" minEnchant="0" maxEnchant="9" bonusRate="23" />
+	<support id="12370" targetGrade="A" minEnchant="0" maxEnchant="9" bonusRate="18" />
+	<support id="12371" targetGrade="S" minEnchant="0" maxEnchant="9" bonusRate="15" />
 
 	<!-- Agathion Auxiliary Stone: Enchant Weapon -->
-	<support id="14702" targetGrade="D" maxEnchant="9" bonusRate="20" />
-	<support id="14703" targetGrade="C" maxEnchant="9" bonusRate="18" />
-	<support id="14704" targetGrade="B" maxEnchant="9" bonusRate="15" />
-	<support id="14705" targetGrade="A" maxEnchant="9" bonusRate="12" />
-	<support id="14706" targetGrade="S" maxEnchant="9" bonusRate="10" />
+	<support id="14702" targetGrade="D" minEnchant="0" maxEnchant="9" bonusRate="20" />
+	<support id="14703" targetGrade="C" minEnchant="0" maxEnchant="9" bonusRate="18" />
+	<support id="14704" targetGrade="B" minEnchant="0" maxEnchant="9" bonusRate="15" />
+	<support id="14705" targetGrade="A" minEnchant="0" maxEnchant="9" bonusRate="12" />
+	<support id="14706" targetGrade="S" minEnchant="0" maxEnchant="9" bonusRate="10" />
 
 	<!-- Agathion Auxiliary Stone: Enchant Armor -->
-	<support id="14707" targetGrade="D" maxEnchant="9" bonusRate="35" />
-	<support id="14708" targetGrade="C" maxEnchant="9" bonusRate="27" />
-	<support id="14709" targetGrade="B" maxEnchant="9" bonusRate="23" />
-	<support id="14710" targetGrade="A" maxEnchant="9" bonusRate="18" />
-	<support id="14711" targetGrade="S" maxEnchant="9" bonusRate="15" />
+	<support id="14707" targetGrade="D" minEnchant="0" maxEnchant="9" bonusRate="35" />
+	<support id="14708" targetGrade="C" minEnchant="0" maxEnchant="9" bonusRate="27" />
+	<support id="14709" targetGrade="B" minEnchant="0" maxEnchant="9" bonusRate="23" />
+	<support id="14710" targetGrade="A" minEnchant="0" maxEnchant="9" bonusRate="18" />
+	<support id="14711" targetGrade="S" minEnchant="0" maxEnchant="9" bonusRate="15" />
 </list>
