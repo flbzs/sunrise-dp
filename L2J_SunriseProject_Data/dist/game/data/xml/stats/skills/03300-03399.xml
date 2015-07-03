@@ -219,45 +219,69 @@
 		</for>
 	</skill>
 	<skill id="3322" levels="1" name="Brass Bracelet">
+		<!-- Confirmed CT2.5 -->
+		<set name="icon" val="icon.etc_rbracelet_c_i00" />
+		<set name="magicLvl" val="20" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<set stat="talisman" val="1" />
+			<effect name="TalismanSlot" noicon="1" val="0" >
+				<param slots="1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3323" levels="1" name="Bronze Bracelet">
+		<!-- Confirmed CT2.5 -->
+		<set name="icon" val="icon.etc_rbracelet_b_i01" />
+		<set name="magicLvl" val="40" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<set stat="talisman" val="2" />
+			<effect name="TalismanSlot" noicon="1" val="0" >
+				<param slots="2" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3324" levels="1" name="Steel Bracelet">
+		<!-- Confirmed CT2.5 -->
+		<set name="icon" val="icon.etc_rbracelet_a_i02" />
+		<set name="magicLvl" val="52" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<set stat="talisman" val="3" />
+			<effect name="TalismanSlot" noicon="1" val="0" >
+				<param slots="3" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3325" levels="1" name="Mithril Bracelet">
+		<!-- Confirmed CT2.5 -->
+		<set name="icon" val="icon.etc_rbracelet_s_i03" />
+		<set name="magicLvl" val="61" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<set stat="talisman" val="4" />
+			<effect name="TalismanSlot" noicon="1" val="0" >
+				<param slots="4" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3326" levels="1" name="Jewelry Bracelet">
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<set stat="talisman" val="5" />
+			<effect name="TalismanSlot" noicon="1" val="0" >
+				<param slots="5" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3327" levels="1" name="Oriharukon Bracelet">
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<set stat="talisman" val="6" />
+			<effect name="TalismanSlot" noicon="1" val="0" >
+				<param slots="6" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3328" levels="1" name="Double Stab">
@@ -496,7 +520,7 @@
 			<mul stat="healEffect" val="1.03" /> <!-- Received Increased Heal +3% -->
 			<sub stat="stunVuln" val="13" /> <!-- Shock resistance is increased +13% -->
 			<add stat="darkRes" val="8" /> <!-- Darkness resistance is increased +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3349" levels="1" name="Dynasty Breast Plate - Weapon Master">
@@ -510,7 +534,7 @@
 			<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
 			<add stat="cAtkAdd" val="234" /> <!-- Critical Damage +234 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3350" levels="1" name="Dynasty Breast Plate - Force Master">
@@ -523,7 +547,7 @@
 			<add stat="maxHp" val="492" /> <!-- HP +492 -->
 			<add stat="darkRes" val="8" /> <!-- Resistance to Darkness attacks +8 -->
 			<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3351" levels="1" name="Dynasty Breast Plate - Bard">
@@ -536,7 +560,7 @@
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
 			<mul stat="DanceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
 			<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3352" levels="1" name="Dynasty Leather Armor - Dagger Master">
@@ -550,7 +574,7 @@
 			<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
 			<sub stat="rootVuln" val="13" /> <!-- Hold resistance are increased +13 -->
 			<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3353" levels="1" name="Dynasty Leather Armor - Bow Master">
@@ -564,7 +588,7 @@
 			<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
 			<add stat="regMp" val="1.72" /> <!-- MP recovery are increased +1.72 -->
 			<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3354" levels="1" name="Dynasty Tunic - Healer">
@@ -578,7 +602,7 @@
 			<add stat="healEffect" val="20" /> <!-- Increase amount of heal +20 -->
 			<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3355" levels="1" name="Dynasty Tunic - Enchanter">
@@ -592,7 +616,7 @@
 			<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 			<mul stat="MagicalMpConsumeRate" val="0.95" /> <!-- Decrease MP consumption -5% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3356" levels="1" name="Dynasty Tunic - Summoner">
@@ -606,7 +630,7 @@
 			<mul stat="pDef" val="1.026" /> <!-- P. Def. +2.6% -->
 			<mul stat="pAtk" val="1.026" /> <!-- Increase P. Atk. +2.6% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3357" levels="1" name="Dynasty Tunic - Wizard">
@@ -619,7 +643,7 @@
 			<mul stat="mAtk" val="1.054" /> <!-- Increase M. Atk +5.4% -->
 			<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3358" levels="1" name="Flag Equip">

@@ -1430,6 +1430,7 @@
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1452,11 +1453,12 @@
 		</cond>
 	</item>
 	<item id="21897" type="EtcItem" name="Scroll: Antharas Call">
-		 <!-- Description: One-time use scroll that teleports you to the entrance to Antharas's Lair. -->
+		<!-- Description: One-time use scroll that teleports you to the entrance to Antharas's Lair. -->
 		<set name="icon" val="BranchSys2.icon.call_of_earth_dragon" />
 		<set name="default_action" val="SKILL_REDUCE" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
@@ -1466,7 +1468,7 @@
 		</cond>
 	</item>
 	<item id="21898" type="EtcItem" name="Jewel of Antharas">
-		 <!-- Description: Mysterious jewel that teleports you to the entrance to Antharas's Lair. Re-use time is 60 minutes. -->
+		<!-- Description: Mysterious jewel that teleports you to the entrance to Antharas's Lair. Re-use time is 60 minutes. -->
 		<set name="icon" val="BranchSys2.icon.orb_of_earth_dragon" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="10" />

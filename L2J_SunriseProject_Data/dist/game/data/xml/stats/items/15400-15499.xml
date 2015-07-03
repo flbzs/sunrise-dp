@@ -533,7 +533,7 @@
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="9065-1" />
 	</item>
-	<item id="15436" type="EtcItem" name="Halloween Transformation Stick - 7-day limited period">
+	<item id="15436" type="Weapon" name="Halloween Transformation Stick - 7-day limited period">
 		<set name="icon" val="icon.weapon_pumpkin_stick_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="SWORD" />
@@ -1210,6 +1210,7 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_depositable" val="false" />
 		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="9059-1" />
 		<set name="time" val="4" />
 	</item>

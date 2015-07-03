@@ -622,7 +622,7 @@
 			<mul stat="healEffect" val="1.04" /> <!-- Heal Capacity +4% -->
 			<sub stat="stunVuln" val="15" /> <!-- Stun Resistance +15 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3637" levels="1" name="Dynasty Platinum Plate - Weapon Master">
@@ -636,7 +636,7 @@
 			<add stat="rCrit" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
 			<add stat="cAtkAdd" val="282" /> <!-- Critical Damage +282 -->
 			<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3638" levels="1" name="Dynasty Platinum Plate - Bard">
@@ -649,7 +649,7 @@
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 			<mul stat="DanceMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Song and Dance Skills -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3639" levels="1" name="Dynasty Platinum Plate - Force Master">
@@ -662,7 +662,7 @@
 			<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
 			<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 Increase -->
 			<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Active Skills -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3640" levels="1" name="Dynasty Jewel Leather Mail Dagger Master">
@@ -676,7 +676,7 @@
 			<mul stat="pAtkSpd" val="1.0324" /> <!-- Atk. Spd. +3.24% -->
 			<sub stat="rootVuln" val="15" /> <!-- Hold Resistance +15% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3641" levels="1" name="Dynasty Jewel Leather Mail Bow Master">
@@ -690,7 +690,7 @@
 			<mul stat="pAtkSpd" val="1.0324" /> <!-- Atk. Spd. +3.24% -->
 			<add stat="regMp" val="1.066" /> <!-- MP Recovery +6.6% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3642" levels="1" name="Dynasty Jeweled Leather Armor Force Master">
@@ -703,7 +703,7 @@
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3643" levels="1" name="Dynasty Jeweled Leather Armor Weapon Master">
@@ -717,7 +717,7 @@
 			<add stat="rCrit" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
 			<add stat="cAtkAdd" val="282" /> <!-- Critical Damage +282 -->
 			<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3644" levels="1" name="Dynasty Jeweled Leather Armor Summoner">
@@ -731,7 +731,7 @@
 			<mul stat="pDef" val="1.0266" /> <!-- P. Def. +2.66% -->
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3645" levels="1" name="Dynasty Silver Satin Tunic Healer">
@@ -745,7 +745,7 @@
 			<add stat="healEffect" val="22" /> <!-- Heal Capacity +22 -->
 			<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3646" levels="1" name="Dynasty Silver Satin Tunic Enchanter">
@@ -759,7 +759,7 @@
 			<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
 			<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3647" levels="1" name="Dynasty Silver Satin Tunic Summoner">
@@ -773,7 +773,7 @@
 			<mul stat="pDef" val="1.033" /> <!-- P. Def. +3.3% -->
 			<mul stat="pAtk" val="1.033" /> <!-- P. Atk. +3.3% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3648" levels="1" name="Dynasty Silver Satin Tunic Human Wizard">
@@ -786,7 +786,7 @@
 			<mul stat="mAtk" val="1.066" /> <!-- M. Atk. +6.6% -->
 			<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="3649" levels="1" name="Beleth's Ring">

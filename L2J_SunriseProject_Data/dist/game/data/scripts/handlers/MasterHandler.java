@@ -185,7 +185,6 @@ import handlers.chathandlers.ChatTrade;
 import handlers.itemhandlers.AioItemBuff;
 import handlers.itemhandlers.AioItemNpcs;
 import handlers.itemhandlers.BeastSoulShot;
-import handlers.itemhandlers.BeastSpice;
 import handlers.itemhandlers.BeastSpiritShot;
 import handlers.itemhandlers.BlessedSpiritShot;
 import handlers.itemhandlers.Book;
@@ -197,7 +196,6 @@ import handlers.itemhandlers.Disguise;
 import handlers.itemhandlers.Elixir;
 import handlers.itemhandlers.EnchantAttribute;
 import handlers.itemhandlers.EnchantScrolls;
-import handlers.itemhandlers.EnergyStarStone;
 import handlers.itemhandlers.EventItem;
 import handlers.itemhandlers.ExtractableItems;
 import handlers.itemhandlers.FishShots;
@@ -208,11 +206,9 @@ import handlers.itemhandlers.ManaPotion;
 import handlers.itemhandlers.Maps;
 import handlers.itemhandlers.MercTicket;
 import handlers.itemhandlers.NicknameColor;
-import handlers.itemhandlers.PaganKeys;
 import handlers.itemhandlers.PetFood;
 import handlers.itemhandlers.Recipes;
 import handlers.itemhandlers.RollingDice;
-import handlers.itemhandlers.ScrollOfResurrection;
 import handlers.itemhandlers.Seed;
 import handlers.itemhandlers.SevenSignsRecord;
 import handlers.itemhandlers.SoulShots;
@@ -493,7 +489,6 @@ public class MasterHandler
 			(BufferConfigs.ENABLE_ITEM_BUFFER ? AioItemBuff.class : null),
 			(AioItemsConfigs.ENABLE_AIO_NPCS ? AioItemNpcs.class : null),
 			BeastSoulShot.class,
-			BeastSpice.class,
 			BeastSpiritShot.class,
 			BlessedSpiritShot.class,
 			Book.class,
@@ -505,7 +500,6 @@ public class MasterHandler
 			Elixir.class,
 			EnchantAttribute.class,
 			EnchantScrolls.class,
-			EnergyStarStone.class,
 			EventItem.class,
 			ExtractableItems.class,
 			FishShots.class,
@@ -516,11 +510,9 @@ public class MasterHandler
 			Maps.class,
 			MercTicket.class,
 			NicknameColor.class,
-			PaganKeys.class,
 			PetFood.class,
 			Recipes.class,
 			RollingDice.class,
-			ScrollOfResurrection.class,
 			Seed.class,
 			SevenSignsRecord.class,
 			SoulShots.class,

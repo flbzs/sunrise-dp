@@ -39,7 +39,7 @@
 			<add stat="accCombat" val="4" /> <!-- Increases Accuracy by 4 -->
 			<add stat="runSpd" val="5" /> <!-- Increases Speed by 5 -->
 			<mul stat="magicSuccRes" val="1.01" /> <!-- Resistance to magic damage by 1% -->
-			<add stat="cloak" val="1" />
+			<effect name="EnableCloak" noicon="1" val="0" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
@@ -75,7 +75,7 @@
 			<add stat="rEvas" val="3" /> <!-- Increases Evasion by 3 -->
 			<add stat="cAtkAdd" val="172" /> <!-- Increases Critical Damage by 172 -->
 			<sub stat="paralyzeVuln" val="50" /> <!-- Increases Resistance to Paralysis by 50% -->
-			<add stat="cloak" val="1" />
+			<effect name="EnableCloak" noicon="1" val="0" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
@@ -112,7 +112,7 @@
 			<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
 			<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
 			<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
-			<add stat="cloak" val="1" />
+			<effect name="EnableCloak" noicon="1" val="0" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
@@ -1124,7 +1124,7 @@
 			<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
 			<add stat="windRes" val="3" /> <!-- resistance to wind attributes +3 -->
 			<add stat="earthRes" val="3" /> <!-- resistance to earth attributes +3 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="8398" levels="1" name="Moirai Leather Armor Set">
@@ -1141,7 +1141,7 @@
 			<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
 			<add stat="windRes" val="3" /> <!-- resistance to wind attributes +3 -->
 			<add stat="earthRes" val="3" /> <!-- resistance to earth attributes +3 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="8399" levels="1" name="Moirai Robe Set">
@@ -1157,7 +1157,7 @@
 			<add stat="waterRes" val="5" /> <!-- resistance to water attributes +5 -->
 			<add stat="windRes" val="5" /> <!-- resistance to wind attributes +5 -->
 			<add stat="earthRes" val="5" /> <!-- resistance to earth attributes +5 -->
-			<add stat="cloak" val="1" /> <!-- Opens cloak slot -->
+			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
 </list>

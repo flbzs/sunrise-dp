@@ -767,6 +767,7 @@
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="8056" /> <!-- Key of Splendor Room -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="100" />
