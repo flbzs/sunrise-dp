@@ -1163,6 +1163,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17030" /> <!-- Forgotten Scroll - Create Item Lv 10 -->
 		<set name="learnSkillId" val="172" />
 		<set name="learnSkillLvl" val="10" />
 		<set name="operateType" val="A1" />
@@ -1218,40 +1219,124 @@
 		</cond>
 	</skill>
 	<skill id="9090" levels="1" name="Fighter's Will">
+		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17034" /> <!-- Forgotten Scroll - Fighter's Will - For Events -->
+		<set name="learnSkillId" val="758" />
+		<set name="learnSkillLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="skillType" val="LEARN_SKILL" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<not>
+					<player active_skill_id="758" />
+				</not>
+				<player class_id_restriction="88, 89, 90, 91, 92, 93, 99, 100, 101, 102, 106, 107, 108, 109, 113, 114, 117, 118, 131, 132, 133, 134 " />
+				<player level="81" />
+			</and>
+		</cond>
 	</skill>
 	<skill id="9091" levels="1" name="Archer's Will">
+		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17035" /> <!-- Forgotten Scroll - Archer's Will - For Events -->
+		<set name="learnSkillId" val="759" />
+		<set name="learnSkillLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="skillType" val="LEARN_SKILL" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<not>
+					<player active_skill_id="759" />
+				</not>
+				<player class_id_restriction="88, 89, 90, 91, 92, 93, 99, 100, 101, 102, 106, 107, 108, 109, 113, 114, 117, 118, 131, 132, 133, 134 " />
+				<player level="81" />
+			</and>
+		</cond>
 	</skill>
 	<skill id="9092" levels="1" name="Magician's Will">
+		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17036" /> <!-- Forgotten Scroll - Magician's Will - For Events -->
+		<set name="learnSkillId" val="945" />
+		<set name="learnSkillLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="skillType" val="LEARN_SKILL" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<not>
+					<player active_skill_id="945" />
+				</not>
+				<player class_id_restriction="94, 95, 96, 97, 98, 103, 104, 105, 110, 111, 112, 115, 116" />
+				<player level="81" />
+			</and>
+		</cond>
 	</skill>
 	<skill id="9093" levels="1" name="Protection of Rune">
+		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17037" /> <!-- Forgotten Scroll - Protection of Rune - For Events -->
+		<set name="learnSkillId" val="755" />
+		<set name="learnSkillLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="skillType" val="LEARN_SKILL" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<not>
+					<player active_skill_id="755" />
+				</not>
+				<player class_id_restriction="88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 131, 132, 133, 134, 136 " />
+				<player level="82" />
+			</and>
+		</cond>
 	</skill>
 	<skill id="9094" levels="1" name="Protection of Elemental">
+		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17038" /> <!-- Forgotten Scroll - Protection of Elemental - For Events -->
+		<set name="learnSkillId" val="756" />
+		<set name="learnSkillLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="skillType" val="LEARN_SKILL" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<not>
+					<player active_skill_id="756" />
+				</not>
+				<player class_id_restriction="88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 131, 132, 133, 134, 136 " />
+				<player level="82" />
+			</and>
+		</cond>
 	</skill>
 	<skill id="9095" levels="1" name="Protection of Alignment">
+		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="17039" /> <!-- Forgotten Scroll - Protection of Alignment - For Events -->
+		<set name="learnSkillId" val="757" />
+		<set name="learnSkillLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="skillType" val="LEARN_SKILL" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<and>
+				<not>
+					<player active_skill_id="757" />
+				</not>
+				<player class_id_restriction="88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 131, 132, 133, 134, 136 " />
+				<player level="82" />
+			</and>
+		</cond>
 	</skill>
 	<skill id="9096" levels="1" name="Event - White Baby Tiger Scroll">
 		<!-- Confirmed CT2.5 -->

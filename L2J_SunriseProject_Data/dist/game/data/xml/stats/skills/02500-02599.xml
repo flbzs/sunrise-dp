@@ -72,6 +72,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="10608" /> <!-- Forgotten Scroll - Chant of Combat -->
 		<set name="learnSkillId" val="1517" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -90,6 +91,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="10609" /> <!-- Forgotten Scroll - Chant of Critical -->
 		<set name="learnSkillId" val="1518" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -108,6 +110,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="10610" /> <!-- Forgotten Scroll - Chant of Blood Awakening -->
 		<set name="learnSkillId" val="1519" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -335,6 +338,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="12768" /> <!-- Forgotten Scroll - Evasion Counter -->
 		<set name="learnSkillId" val="818" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -353,6 +357,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="12769" /> <!-- Forgotten Scroll - Evasion Chance -->
 		<set name="learnSkillId" val="819" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -371,6 +376,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="12770" /> <!-- Forgotten Scroll - Evasion Haste -->
 		<set name="learnSkillId" val="820" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -389,6 +395,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="12771" /> <!-- Forgotten Scroll - Shadow Step -->
 		<set name="learnSkillId" val="821" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />

@@ -626,6 +626,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14200" /> <!-- Forgotten Scroll - Summon Imperial Phoenix -->
 		<set name="learnSkillId" val="912" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -644,6 +645,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14207" /> <!-- Forgotten Scroll - Deflect Magic -->
 		<set name="learnSkillId" val="913" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -662,6 +664,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14198" /> <!-- Forgotten Scroll - Song of Purification -->
 		<set name="learnSkillId" val="914" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -680,6 +683,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14199" /> <!-- Forgotten Scroll - Dance of Berserker -->
 		<set name="learnSkillId" val="915" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -698,6 +702,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14208" /> <!-- Forgotten Scroll - Final Secret -->
 		<set name="learnSkillId" val="917" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -716,6 +721,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14201" /> <!-- Forgotten Scroll - Maximum Force Focus -->
 		<set name="learnSkillId" val="918" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -734,6 +740,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14202" /> <!-- Forgotten Scroll - Maximum Sonic Focus -->
 		<set name="learnSkillId" val="919" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -752,6 +759,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14209" /> <!-- Forgotten Scroll - Hide -->
 		<set name="learnSkillId" val="922" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -770,6 +778,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14210" /> <!-- Forgotten Scroll - Dual Dagger Mastery -->
 		<set name="learnSkillId" val="923" />
 		<set name="magicLvl" val="81" />
 		<set name="operateType" val="A1" />
@@ -789,6 +798,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14211" /> <!-- Forgotten Scroll - Seven Arrow -->
 		<set name="learnSkillId" val="924" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -807,6 +817,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14212" /> <!-- Forgotten Scroll - Enlightenment - Wizard -->
 		<set name="learnSkillId" val="1532" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -825,6 +836,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14213" /> <!-- Forgotten Scroll - Enlightenment - Healer -->
 		<set name="learnSkillId" val="1533" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -843,6 +855,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14214" /> <!-- Forgotten Scroll - Chant of Movement -->
 		<set name="learnSkillId" val="1535" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -861,6 +874,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14215" /> <!-- Forgotten Scroll - Combat of Pa'agrio -->
 		<set name="learnSkillId" val="1536" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -879,6 +893,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14216" /> <!-- Forgotten Scroll - Critical of Pa'agrio -->
 		<set name="learnSkillId" val="1537" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -897,6 +912,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14217" /> <!-- Forgotten Scroll - Condition of Pa'agrio -->
 		<set name="learnSkillId" val="1538" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -915,6 +931,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14218" /> <!-- Forgotten Scroll - Dual Blow -->
 		<set name="learnSkillId" val="928" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -933,6 +950,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14204" /> <!-- Forgotten Scroll - Spirit of the Cat -->
 		<set name="learnSkillId" val="929" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -951,6 +969,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14206" /> <!-- Forgotten Scroll - Spirit of the Phantom -->
 		<set name="learnSkillId" val="930" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
@@ -969,6 +988,7 @@
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14205" /> <!-- Forgotten Scroll - Spirit of the Unicorn -->
 		<set name="learnSkillId" val="931" />
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="LEARN_SKILL" />
