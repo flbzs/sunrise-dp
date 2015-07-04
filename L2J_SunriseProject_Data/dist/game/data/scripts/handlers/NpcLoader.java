@@ -54,6 +54,7 @@ import ai.npc.ManorManager.ManorManager;
 import ai.npc.MercenaryCaptain.MercenaryCaptain;
 import ai.npc.Minigame.Minigame;
 import ai.npc.MonumentOfHeroes.MonumentOfHeroes;
+import ai.npc.NevitsHerald.NevitsHerald;
 import ai.npc.NpcBuffers.NpcBuffers;
 import ai.npc.NpcBuffers.impl.CabaleBuffer;
 import ai.npc.PcBangPoint.PcBangPoint;
@@ -115,6 +116,7 @@ public final class NpcLoader
 		MercenaryCaptain.class,
 		Minigame.class,
 		MonumentOfHeroes.class,
+		NevitsHerald.class,
 		NpcBuffers.class,
 		CabaleBuffer.class,
 		PcBangPoint.class,

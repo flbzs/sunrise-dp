@@ -1,24 +1,22 @@
-package custom.NevitsHerald;
+package ai.npc.NevitsHerald;
 
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.effects.L2EffectType;
-import l2r.gameserver.model.quest.Quest;
-import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2r.gameserver.network.serverpackets.NpcSay;
 import l2r.util.Rnd;
+import ai.npc.AbstractNpcAI;
 
-public class NevitsHerald extends Quest
+public class NevitsHerald extends AbstractNpcAI
 {
-	private static final List<L2Npc> spawns = new CopyOnWriteArrayList<>();
+	private static final Set<L2Npc> spawns = ConcurrentHashMap.newKeySet();
 	private static boolean isActive = false;
 	
 	private static final int NevitsHerald = 4326;
@@ -37,73 +35,25 @@ public class NevitsHerald extends Quest
 		NpcStringId.PRAISE_THE_ACHIEVEMENT_OF_THE_HEROES_AND_RECEIVE_NEVITS_BLESSING
 	};
 	
+	//@formatter:off
 	private static final int[][] _spawns =
 	{
-		{
-			86979,
-			-142785,
-			-1341,
-			18259
-		},
-		{
-			44168,
-			-48513,
-			-801,
-			31924
-		},
-		{
-			148002,
-			-55279,
-			-2735,
-			44315
-		},
-		{
-			147953,
-			26656,
-			-2205,
-			20352
-		},
-		{
-			82313,
-			53280,
-			-1496,
-			14791
-		},
-		{
-			81918,
-			148305,
-			-3471,
-			49151
-		},
-		{
-			16286,
-			142805,
-			-2706,
-			15689
-		},
-		{
-			-13968,
-			122050,
-			-2990,
-			19497
-		},
-		{
-			-83207,
-			150896,
-			-3129,
-			30709
-		},
-		{
-			116892,
-			77277,
-			-2695,
-			45056
-		}
+		{ 86979, -142785, -1341, 18259 },
+		{ 44168, -48513, -801, 31924 },
+		{ 148002, -55279, -2735, 44315 },
+		{ 147953, 26656, -2205, 20352 },
+		{ 82313, 53280, -1496, 14791 },
+		{ 81918, 148305, -3471, 49151 },
+		{ 16286, 142805, -2706, 15689 },
+		{ -13968, 122050, -2990, 19497 },
+		{ -83207, 150896, -3129, 30709 },
+		{ 116892, 77277, -2695, 45056 }
 	};
+	//@formatter:on
 	
 	public NevitsHerald()
 	{
-		super(-1, NevitsHerald.class.getSimpleName(), "custom");
+		super(NevitsHerald.class.getSimpleName(), "ai/npc");
 		
 		addFirstTalkId(NevitsHerald);
 		addStartNpc(NevitsHerald);
@@ -115,12 +65,6 @@ public class NevitsHerald extends Quest
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
-		
 		return "4326.htm";
 	}
 	
@@ -133,7 +77,7 @@ public class NevitsHerald extends Quest
 		{
 			if (event.equalsIgnoreCase("buff"))
 			{
-				if (player.getFirstEffect(L2EffectType.NEVIT_HOURGLASS) != null)
+				if (player.isAffectedBySkill(23312))
 				{
 					return "4326-1.htm";
 				}
@@ -166,6 +110,7 @@ public class NevitsHerald extends Quest
 				npc.deleteMe();
 			}
 		}
+		isActive = false;
 		spawns.clear();
 	}
 	
@@ -175,12 +120,10 @@ public class NevitsHerald extends Quest
 		ExShowScreenMessage message = null;
 		if (npc.getId() == Valakas)
 		{
-			// message = new ExShowScreenMessage(1900151, 10000, null);
 			message = new ExShowScreenMessage(NpcStringId.THE_EVIL_FIRE_DRAGON_VALAKAS_HAS_BEEN_DEFEATED, 2, 10000);
 		}
 		else
 		{
-			// message = new ExShowScreenMessage(1900150, 10000, null);
 			message = new ExShowScreenMessage(NpcStringId.THE_EVIL_LAND_DRAGON_ANTHARAS_HAS_BEEN_DEFEATED, 2, 10000);
 		}
 		
@@ -188,12 +131,10 @@ public class NevitsHerald extends Quest
 		
 		for (L2PcInstance onlinePlayer : L2World.getInstance().getPlayers())
 		{
-			if (onlinePlayer == null)
+			if (onlinePlayer.isOnline())
 			{
-				continue;
+				onlinePlayer.sendPacket(message);
 			}
-			
-			onlinePlayer.sendPacket(message);
 		}
 		
 		if (!isActive)
@@ -205,10 +146,7 @@ public class NevitsHerald extends Quest
 			for (int[] _spawn : _spawns)
 			{
 				L2Npc herald = addSpawn(NevitsHerald, _spawn[0], _spawn[1], _spawn[2], _spawn[3], false, 0);
-				if (herald != null)
-				{
-					spawns.add(herald);
-				}
+				spawns.add(herald);
 			}
 			startQuestTimer("despawn", 14400000, npc, killer);
 			startQuestTimer("text_spam", 3000, npc, killer);
