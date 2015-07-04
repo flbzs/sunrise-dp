@@ -38,6 +38,16 @@ public class ChanceSkillTrigger extends L2Effect
 		_chanceCondition = template.chanceCondition;
 	}
 	
+	// Special constructor to steal this effect
+	public ChanceSkillTrigger(Env env, L2Effect effect)
+	{
+		super(env, effect);
+		
+		_triggeredId = effect.getEffectTemplate().triggeredId;
+		_triggeredLevel = effect.getEffectTemplate().triggeredLevel;
+		_chanceCondition = effect.getEffectTemplate().chanceCondition;
+	}
+	
 	@Override
 	protected boolean effectCanBeStolen()
 	{
