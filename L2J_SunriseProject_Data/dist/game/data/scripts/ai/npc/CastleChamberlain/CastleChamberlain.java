@@ -60,6 +60,7 @@ import l2r.gameserver.network.serverpackets.ExShowSeedInfo;
 import l2r.gameserver.network.serverpackets.ExShowSeedSetting;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2r.gameserver.util.Util;
+
 import ai.npc.AbstractNpcAI;
 
 /**

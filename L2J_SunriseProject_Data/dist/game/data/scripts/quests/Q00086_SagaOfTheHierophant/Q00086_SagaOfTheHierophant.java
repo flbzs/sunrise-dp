@@ -19,6 +19,7 @@
 package quests.Q00086_SagaOfTheHierophant;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

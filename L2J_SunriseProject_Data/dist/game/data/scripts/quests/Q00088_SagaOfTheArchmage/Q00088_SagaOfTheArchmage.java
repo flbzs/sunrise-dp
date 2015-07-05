@@ -19,6 +19,7 @@
 package quests.Q00088_SagaOfTheArchmage;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

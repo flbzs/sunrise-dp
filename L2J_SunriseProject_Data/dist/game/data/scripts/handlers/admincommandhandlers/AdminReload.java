@@ -49,6 +49,7 @@ import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.scripting.L2ScriptEngineManager;
 import l2r.gameserver.util.Util;
+
 import gr.sr.configsEngine.ConfigsController;
 
 /**
@@ -96,18 +97,15 @@ public class AdminReload implements IAdminCommandHandler
 					if (st.hasMoreElements())
 					{
 						Integer npcId = Integer.parseInt(st.nextToken());
-						if (npcId != null)
+						NpcTable.getInstance().reloadNpc(npcId);
+						for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(npcId))
 						{
-							NpcTable.getInstance().reloadNpc(npcId);
-							for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(npcId))
+							if (spawn != null)
 							{
-								if (spawn != null)
-								{
-									spawn.respawnNpc(spawn.getLastSpawn());
-								}
+								spawn.respawnNpc(spawn.getLastSpawn());
 							}
-							activeChar.sendMessage("NPC " + npcId + " have been reloaded");
 						}
+						activeChar.sendMessage("NPC " + npcId + " have been reloaded");
 					}
 					else
 					{

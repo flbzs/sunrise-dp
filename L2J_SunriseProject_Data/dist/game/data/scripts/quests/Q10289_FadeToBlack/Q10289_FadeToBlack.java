@@ -23,6 +23,7 @@ import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
+
 import quests.Q10288_SecretMission.Q10288_SecretMission;
 
 /**

@@ -7,6 +7,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.util.Rnd;
+
 import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
 
 public class Q10295_SevenSignsSolinasTomb extends Quest

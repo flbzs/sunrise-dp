@@ -2,6 +2,7 @@ package ai.individual.extra;
 
 import l2r.gameserver.model.actor.instance.L2NpcInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+
 import ai.npc.AbstractNpcAI;
 
 public class Barakiel extends AbstractNpcAI

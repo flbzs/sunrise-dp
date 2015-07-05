@@ -26,6 +26,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.itemcontainer.Inventory;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
+
 import ai.npc.AbstractNpcAI;
 
 /**

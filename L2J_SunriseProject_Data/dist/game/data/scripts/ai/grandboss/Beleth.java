@@ -49,6 +49,7 @@ import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.gameserver.network.serverpackets.SpecialCamera;
 import l2r.gameserver.network.serverpackets.StaticObject;
 import l2r.gameserver.util.Util;
+
 import ai.npc.AbstractNpcAI;
 
 /**

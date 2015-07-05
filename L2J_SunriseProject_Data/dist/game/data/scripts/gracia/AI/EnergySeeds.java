@@ -49,8 +49,9 @@ import l2r.gameserver.model.zone.L2ZoneType;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.ActionFailed;
 import l2r.gameserver.util.Util;
-import quests.Q00692_HowtoOpposeEvil.Q00692_HowtoOpposeEvil;
+
 import ai.npc.AbstractNpcAI;
+import quests.Q00692_HowtoOpposeEvil.Q00692_HowtoOpposeEvil;
 
 /**
  * Energy Seeds AI.

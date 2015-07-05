@@ -18,8 +18,6 @@
  */
 package instances.Kamaloka;
 
-import instances.AbstractInstance;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -41,6 +39,8 @@ import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
+
+import instances.AbstractInstance;
 
 public final class Kamaloka extends AbstractInstance
 {

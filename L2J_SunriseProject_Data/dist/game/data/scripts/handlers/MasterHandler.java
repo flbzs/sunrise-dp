@@ -34,9 +34,6 @@ import l2r.gameserver.handler.TelnetHandler;
 import l2r.gameserver.handler.UserCommandHandler;
 import l2r.gameserver.handler.VoicedCommandHandler;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import gr.sr.configsEngine.configs.impl.AioItemsConfigs;
 import gr.sr.configsEngine.configs.impl.AntibotConfigs;
 import gr.sr.configsEngine.configs.impl.BufferConfigs;
@@ -46,6 +43,10 @@ import gr.sr.configsEngine.configs.impl.GetRewardVoteSystemConfigs;
 import gr.sr.configsEngine.configs.impl.IndividualVoteSystemConfigs;
 import gr.sr.configsEngine.configs.impl.PremiumServiceConfigs;
 import gr.sr.voteEngine.RewardVote;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import handlers.actionhandlers.L2ArtefactInstanceAction;
 import handlers.actionhandlers.L2DecoyAction;
 import handlers.actionhandlers.L2DoorInstanceAction;

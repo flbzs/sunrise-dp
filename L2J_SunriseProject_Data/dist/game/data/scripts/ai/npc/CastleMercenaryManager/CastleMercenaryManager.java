@@ -28,6 +28,7 @@ import l2r.gameserver.model.actor.instance.L2MerchantInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.entity.Castle;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
+
 import ai.npc.AbstractNpcAI;
 
 /**

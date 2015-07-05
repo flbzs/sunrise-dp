@@ -28,6 +28,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.entity.Fort;
 import l2r.gameserver.model.entity.clanhall.SiegableHall;
 import l2r.gameserver.util.Util;
+
 import ai.npc.AbstractNpcAI;
 
 /**

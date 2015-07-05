@@ -18,8 +18,6 @@
  */
 package instances.CavernOfThePirateCaptain;
 
-import instances.AbstractInstance;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +33,8 @@ import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
+
+import instances.AbstractInstance;
 
 /**
  * Cavern Of The Pirate Captain (Day Dream) instance Zone.

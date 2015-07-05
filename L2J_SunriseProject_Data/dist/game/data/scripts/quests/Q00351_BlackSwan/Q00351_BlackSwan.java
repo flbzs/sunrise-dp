@@ -26,6 +26,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.util.Util;
+
 import quests.Q00345_MethodToRaiseTheDead.Q00345_MethodToRaiseTheDead;
 
 /**

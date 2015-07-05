@@ -1,6 +1,7 @@
 package ai.npc.Summons.MerchantGolem;
 
 import l2r.gameserver.model.actor.L2Npc;
+
 import ai.npc.AbstractNpcAI;
 
 /**

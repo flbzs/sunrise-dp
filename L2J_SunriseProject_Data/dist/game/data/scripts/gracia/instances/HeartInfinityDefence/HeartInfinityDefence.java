@@ -47,6 +47,7 @@ import l2r.gameserver.network.serverpackets.NpcSay;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
+
 import quests.Q00697_DefendtheHallofErosion.Q00697_DefendtheHallofErosion;
 
 public class HeartInfinityDefence extends Quest

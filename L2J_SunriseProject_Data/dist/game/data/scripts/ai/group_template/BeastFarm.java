@@ -34,8 +34,9 @@ import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.serverpackets.AbstractNpcInfo;
 import l2r.gameserver.util.Util;
-import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
+
 import ai.npc.AbstractNpcAI;
+import quests.Q00020_BringUpWithLove.Q00020_BringUpWithLove;
 
 /**
  * Growth-capable mobs: Polymorphing upon successful feeding.<br>

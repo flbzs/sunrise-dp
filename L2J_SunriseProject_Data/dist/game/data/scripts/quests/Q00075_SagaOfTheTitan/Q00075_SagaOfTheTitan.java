@@ -19,6 +19,7 @@
 package quests.Q00075_SagaOfTheTitan;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

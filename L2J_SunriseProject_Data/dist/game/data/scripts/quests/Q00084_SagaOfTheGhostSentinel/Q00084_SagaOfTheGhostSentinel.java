@@ -19,6 +19,7 @@
 package quests.Q00084_SagaOfTheGhostSentinel;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

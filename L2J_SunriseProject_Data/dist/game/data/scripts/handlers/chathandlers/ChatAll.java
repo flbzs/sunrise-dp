@@ -31,10 +31,10 @@ import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.CreatureSay;
 import l2r.gameserver.util.Util;
 
+import gr.sr.interf.SunriseEvents;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import gr.sr.interf.SunriseEvents;
 
 /**
  * A chat handler

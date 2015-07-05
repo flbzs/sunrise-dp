@@ -24,6 +24,7 @@ import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
+
 import quests.Q00194_SevenSignsMammonsContract.Q00194_SevenSignsMammonsContract;
 
 /**

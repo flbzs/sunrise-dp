@@ -19,6 +19,7 @@
 package quests.Q00080_SagaOfTheWindRider;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

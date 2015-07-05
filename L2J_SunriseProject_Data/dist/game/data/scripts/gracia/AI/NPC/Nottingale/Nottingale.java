@@ -27,8 +27,9 @@ import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.network.serverpackets.RadarControl;
-import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
+
 import ai.npc.AbstractNpcAI;
+import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
 
 /**
  * Nottingale AI

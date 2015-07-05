@@ -11,8 +11,10 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.L2GameClient;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.CreatureSay;
-import ai.npc.AbstractNpcAI;
+
 import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * @author L2jSunrise Team

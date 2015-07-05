@@ -28,6 +28,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
+
 import ai.npc.AbstractNpcAI;
 
 /**

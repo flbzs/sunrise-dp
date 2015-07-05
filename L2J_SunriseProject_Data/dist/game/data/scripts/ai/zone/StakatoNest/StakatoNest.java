@@ -31,6 +31,7 @@ import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
 import l2r.gameserver.util.Broadcast;
 import l2r.gameserver.util.Util;
+
 import ai.npc.AbstractNpcAI;
 
 /**

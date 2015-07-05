@@ -19,6 +19,7 @@
 package quests.Q00069_SagaOfTheTrickster;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

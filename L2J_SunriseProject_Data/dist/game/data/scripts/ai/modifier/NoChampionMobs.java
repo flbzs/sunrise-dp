@@ -16,6 +16,7 @@ package ai.modifier;
 
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
+
 import ai.npc.AbstractNpcAI;
 
 public class NoChampionMobs extends AbstractNpcAI

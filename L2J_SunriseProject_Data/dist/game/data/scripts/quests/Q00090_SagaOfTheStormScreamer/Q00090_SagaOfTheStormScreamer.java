@@ -19,6 +19,7 @@
 package quests.Q00090_SagaOfTheStormScreamer;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

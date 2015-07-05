@@ -31,6 +31,7 @@ import l2r.gameserver.model.holders.ItemHolder;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.AcquireSkillList;
+
 import ai.npc.AbstractNpcAI;
 
 /**

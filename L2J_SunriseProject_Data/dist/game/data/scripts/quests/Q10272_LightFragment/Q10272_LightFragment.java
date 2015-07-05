@@ -26,6 +26,7 @@ import l2r.gameserver.model.itemcontainer.Inventory;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
+
 import quests.Q10271_TheEnvelopingDarkness.Q10271_TheEnvelopingDarkness;
 
 /**

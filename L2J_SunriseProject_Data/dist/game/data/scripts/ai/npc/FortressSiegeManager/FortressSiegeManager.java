@@ -28,6 +28,7 @@ import l2r.gameserver.model.entity.Fort;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2r.gameserver.network.serverpackets.SystemMessage;
+
 import ai.npc.AbstractNpcAI;
 
 /**

@@ -21,6 +21,7 @@ import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.util.Rnd;
+
 import ai.npc.AbstractNpcAI;
 
 /**

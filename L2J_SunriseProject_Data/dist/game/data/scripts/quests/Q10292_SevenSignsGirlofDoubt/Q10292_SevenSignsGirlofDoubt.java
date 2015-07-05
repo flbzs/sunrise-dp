@@ -11,6 +11,7 @@ import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
 import l2r.gameserver.util.Util;
+
 import quests.Q00198_SevenSignsEmbryo.Q00198_SevenSignsEmbryo;
 
 public class Q10292_SevenSignsGirlofDoubt extends Quest

@@ -21,6 +21,7 @@ package ai.npc.NpcBuffers;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+
 import ai.npc.AbstractNpcAI;
 
 /**

@@ -24,6 +24,7 @@ import l2r.gameserver.model.entity.FortSiege;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.util.Util;
+
 import ai.npc.AbstractNpcAI;
 
 public class FortressReward extends AbstractNpcAI

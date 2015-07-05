@@ -26,10 +26,11 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.util.Util;
+
+import ai.npc.AbstractNpcAI;
 import quests.Q00064_CertifiedBerserker.Q00064_CertifiedBerserker;
 import quests.Q00065_CertifiedSoulBreaker.Q00065_CertifiedSoulBreaker;
 import quests.Q00066_CertifiedArbalester.Q00066_CertifiedArbalester;
-import ai.npc.AbstractNpcAI;
 
 /**
  * Kamael class transfer AI.

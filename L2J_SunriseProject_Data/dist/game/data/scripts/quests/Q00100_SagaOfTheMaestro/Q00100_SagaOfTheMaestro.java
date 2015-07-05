@@ -19,6 +19,7 @@
 package quests.Q00100_SagaOfTheMaestro;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

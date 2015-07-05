@@ -19,6 +19,7 @@
 package quests.Q00095_SagaOfTheHellKnight;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

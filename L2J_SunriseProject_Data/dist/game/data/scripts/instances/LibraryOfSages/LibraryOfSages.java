@@ -18,7 +18,6 @@
  */
 package instances.LibraryOfSages;
 
-import instances.AbstractInstance;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
@@ -26,6 +25,8 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
+
+import instances.AbstractInstance;
 
 /**
  * Library of Sages instance zone.

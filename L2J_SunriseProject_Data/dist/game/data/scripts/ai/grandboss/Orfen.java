@@ -40,6 +40,7 @@ import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.NpcSay;
 import l2r.gameserver.network.serverpackets.PlaySound;
+
 import ai.npc.AbstractNpcAI;
 
 /**

@@ -21,6 +21,7 @@ package ai.zone.PavelRuins;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+
 import ai.npc.AbstractNpcAI;
 
 /**

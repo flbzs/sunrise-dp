@@ -18,8 +18,6 @@
  */
 package instances.ChambersOfDelusion;
 
-import instances.AbstractInstance;
-
 import java.util.Calendar;
 import java.util.concurrent.ScheduledFuture;
 
@@ -45,6 +43,8 @@ import l2r.gameserver.network.serverpackets.Earthquake;
 import l2r.gameserver.network.serverpackets.NpcSay;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
+
+import instances.AbstractInstance;
 
 /**
  * Chambers of Delusion superclass.

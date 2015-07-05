@@ -24,9 +24,10 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
+
+import ai.npc.AbstractNpcAI;
 import quests.Q00184_ArtOfPersuasion.Q00184_ArtOfPersuasion;
 import quests.Q00185_NikolasCooperation.Q00185_NikolasCooperation;
-import ai.npc.AbstractNpcAI;
 
 /**
  * Alarm AI for quests Art of Persuasion (184) and Nikola's Cooperation (185).

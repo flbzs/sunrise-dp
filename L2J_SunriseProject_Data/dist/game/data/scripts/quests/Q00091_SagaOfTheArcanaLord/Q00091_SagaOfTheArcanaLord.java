@@ -19,6 +19,7 @@
 package quests.Q00091_SagaOfTheArcanaLord;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

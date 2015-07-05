@@ -7,8 +7,10 @@ import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.ExBrExtraUserInfo;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2r.gameserver.network.serverpackets.UserInfo;
-import ai.npc.AbstractNpcAI;
+
 import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * @author L2jSunrise Team

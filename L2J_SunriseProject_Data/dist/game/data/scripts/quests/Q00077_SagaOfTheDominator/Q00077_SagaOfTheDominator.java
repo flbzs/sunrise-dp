@@ -19,6 +19,7 @@
 package quests.Q00077_SagaOfTheDominator;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

@@ -7,9 +7,11 @@ import l2r.gameserver.network.serverpackets.MagicSkillUse;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.util.Rnd;
-import ai.npc.AbstractNpcAI;
+
 import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
 import gr.sr.main.Conditions;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * @author L2jSunrise Team

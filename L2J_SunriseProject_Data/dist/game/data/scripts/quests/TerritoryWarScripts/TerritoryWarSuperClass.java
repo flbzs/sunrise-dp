@@ -39,6 +39,7 @@ import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2r.gameserver.util.Util;
+
 import quests.Q00147_PathtoBecominganEliteMercenary.Q00147_PathtoBecominganEliteMercenary;
 import quests.Q00148_PathtoBecominganExaltedMercenary.Q00148_PathtoBecominganExaltedMercenary;
 import quests.Q00176_StepsForHonor.Q00176_StepsForHonor;

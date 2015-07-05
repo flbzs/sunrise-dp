@@ -5,7 +5,6 @@ import static l2r.gameserver.enums.CtrlIntention.AI_INTENTION_ATTACK;
 import java.util.Calendar;
 import java.util.List;
 
-import javolution.util.FastList;
 import l2r.Config;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.enums.MountType;
@@ -32,7 +31,9 @@ import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
+
 import ai.npc.AbstractNpcAI;
+import javolution.util.FastList;
 
 public class Zaken extends AbstractNpcAI
 {

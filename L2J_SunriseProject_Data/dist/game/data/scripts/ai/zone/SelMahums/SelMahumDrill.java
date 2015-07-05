@@ -29,6 +29,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.util.Util;
+
 import ai.npc.AbstractNpcAI;
 
 /**

@@ -18,7 +18,6 @@
  */
 package hellbound.Instances.DemonPrinceFloor;
 
-import instances.AbstractInstance;
 import l2r.gameserver.enums.PcCondOverride;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.L2Party;
@@ -30,6 +29,8 @@ import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
+
+import instances.AbstractInstance;
 
 /**
  * Demon Prince Floor instance zone.

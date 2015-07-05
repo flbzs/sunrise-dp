@@ -19,6 +19,7 @@
 package quests.Q00096_SagaOfTheSpectralDancer;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

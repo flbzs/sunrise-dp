@@ -21,6 +21,7 @@ import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.util.Rnd;
+
 import ai.npc.AbstractNpcAI;
 
 public class BladeOtis extends AbstractNpcAI

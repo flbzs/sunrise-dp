@@ -24,6 +24,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
+
 import quests.Q00023_LidiasHeart.Q00023_LidiasHeart;
 import quests.Q00025_HidingBehindTheTruth.Q00025_HidingBehindTheTruth;
 

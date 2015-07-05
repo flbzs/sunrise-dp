@@ -18,6 +18,9 @@
  */
 package handlers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import instances.CavernOfThePirateCaptain.CavernOfThePirateCaptain;
 import instances.ChambersOfDelusion.ChamberOfDelusionEast;
 import instances.ChambersOfDelusion.ChamberOfDelusionNorth;
@@ -50,9 +53,6 @@ import instances.SanctumOftheLordsOfDawn.SanctumOftheLordsOfDawn;
 import instances.SecretAreaKeucereus.SecretAreaKeucereus;
 import instances.ToTheMonastery.ToTheMonastery;
 import instances.Zaken.Zaken;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author Nos

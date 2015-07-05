@@ -38,6 +38,7 @@ import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.zone.type.L2BossZone;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
 import l2r.gameserver.network.serverpackets.PlaySound;
+
 import ai.npc.AbstractNpcAI;
 
 /**

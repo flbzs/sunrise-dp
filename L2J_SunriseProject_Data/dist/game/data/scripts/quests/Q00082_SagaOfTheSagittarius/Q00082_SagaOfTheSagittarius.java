@@ -19,6 +19,7 @@
 package quests.Q00082_SagaOfTheSagittarius;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

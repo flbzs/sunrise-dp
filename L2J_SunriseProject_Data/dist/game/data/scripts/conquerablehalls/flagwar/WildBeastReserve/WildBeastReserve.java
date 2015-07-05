@@ -23,6 +23,7 @@ import java.util.Collection;
 import l2r.gameserver.instancemanager.ZoneManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.zone.type.L2ResidenceHallTeleportZone;
+
 import conquerablehalls.flagwar.FlagWar;
 
 /**

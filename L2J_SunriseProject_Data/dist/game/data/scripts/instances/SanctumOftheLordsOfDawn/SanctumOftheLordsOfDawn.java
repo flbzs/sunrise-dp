@@ -18,8 +18,6 @@
  */
 package instances.SanctumOftheLordsOfDawn;
 
-import instances.AbstractInstance;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +35,8 @@ import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
+
+import instances.AbstractInstance;
 import quests.Q00195_SevenSignsSecretRitualOfThePriests.Q00195_SevenSignsSecretRitualOfThePriests;
 
 /**

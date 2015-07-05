@@ -20,6 +20,7 @@ import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.templates.L2NpcTemplate;
+
 import ai.npc.AbstractNpcAI;
 
 public class CryptsOfDisgrace extends AbstractNpcAI

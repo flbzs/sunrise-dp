@@ -17,6 +17,7 @@ package ai.group_template.extra;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+
 import ai.npc.AbstractNpcAI;
 
 public class TomlanKamos extends AbstractNpcAI

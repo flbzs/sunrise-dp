@@ -21,8 +21,9 @@ package ai.npc.Jinia;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.QuestState;
-import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
+
 import ai.npc.AbstractNpcAI;
+import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
 
 /**
  * Jinia AI.

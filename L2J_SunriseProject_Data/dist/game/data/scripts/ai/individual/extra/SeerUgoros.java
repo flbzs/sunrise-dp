@@ -33,9 +33,10 @@ import l2r.gameserver.model.zone.L2ZoneType;
 import l2r.gameserver.network.serverpackets.NpcSay;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
+
+import ai.npc.AbstractNpcAI;
 import quests.Q00288_HandleWithCare.Q00288_HandleWithCare;
 import quests.Q00423_TakeYourBestShot.Q00423_TakeYourBestShot;
-import ai.npc.AbstractNpcAI;
 
 public class SeerUgoros extends AbstractNpcAI
 {

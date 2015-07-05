@@ -18,12 +18,13 @@
  */
 package instances.HideoutOfTheDawn;
 
-import instances.AbstractInstance;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
+
+import instances.AbstractInstance;
 
 /**
  * Hideout of the Dawn instance zone.

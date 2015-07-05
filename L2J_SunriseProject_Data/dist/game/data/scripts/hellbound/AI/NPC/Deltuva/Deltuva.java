@@ -22,8 +22,9 @@ import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.QuestState;
-import quests.Q00132_MatrasCuriosity.Q00132_MatrasCuriosity;
+
 import ai.npc.AbstractNpcAI;
+import quests.Q00132_MatrasCuriosity.Q00132_MatrasCuriosity;
 
 /**
  * Deltuva AI.

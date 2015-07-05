@@ -19,6 +19,7 @@
 package quests.Q00081_SagaOfTheGhostHunter;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

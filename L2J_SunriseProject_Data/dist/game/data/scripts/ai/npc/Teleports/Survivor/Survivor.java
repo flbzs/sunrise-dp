@@ -21,6 +21,7 @@ package ai.npc.Teleports.Survivor;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.itemcontainer.Inventory;
+
 import ai.npc.AbstractNpcAI;
 
 /**

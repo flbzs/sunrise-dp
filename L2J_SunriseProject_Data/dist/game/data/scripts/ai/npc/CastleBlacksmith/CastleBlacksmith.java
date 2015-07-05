@@ -22,6 +22,7 @@ import l2r.gameserver.enums.PcCondOverride;
 import l2r.gameserver.model.ClanPrivilege;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+
 import ai.npc.AbstractNpcAI;
 
 /**

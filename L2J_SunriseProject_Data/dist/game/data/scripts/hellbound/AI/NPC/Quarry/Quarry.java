@@ -30,6 +30,7 @@ import l2r.gameserver.model.holders.ItemChanceHolder;
 import l2r.gameserver.model.zone.L2ZoneType;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
+
 import ai.npc.AbstractNpcAI;
 import hellbound.HellboundEngine;
 

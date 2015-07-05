@@ -39,6 +39,7 @@ import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2r.gameserver.network.serverpackets.L2GameServerPacket;
 import l2r.gameserver.network.serverpackets.SystemMessage;
+
 import quests.Q00727_HopeWithinTheDarkness.Q00727_HopeWithinTheDarkness;
 
 public class Q00726_LightwithintheDarkness extends Quest

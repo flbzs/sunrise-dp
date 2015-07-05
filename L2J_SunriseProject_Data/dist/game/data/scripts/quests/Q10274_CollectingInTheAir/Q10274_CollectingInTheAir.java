@@ -26,6 +26,7 @@ import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
 import l2r.gameserver.model.skills.L2Skill;
+
 import quests.Q10273_GoodDayToFly.Q10273_GoodDayToFly;
 
 /**

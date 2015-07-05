@@ -6,6 +6,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.util.Util;
+
 import ai.npc.AbstractNpcAI;
 
 public class ElvenHumanMystics1 extends AbstractNpcAI

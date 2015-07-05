@@ -8,9 +8,11 @@ import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import l2r.gameserver.network.serverpackets.UserInfo;
-import ai.npc.AbstractNpcAI;
+
 import gr.sr.aioItem.runnable.TransformFinalizer;
 import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * @author L2jSunrise Team

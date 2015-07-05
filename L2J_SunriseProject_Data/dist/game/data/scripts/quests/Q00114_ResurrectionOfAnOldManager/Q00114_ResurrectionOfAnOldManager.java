@@ -31,6 +31,7 @@ import l2r.gameserver.model.zone.L2ZoneType;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.NpcSay;
+
 import quests.Q00121_PavelTheGiant.Q00121_PavelTheGiant;
 
 /**

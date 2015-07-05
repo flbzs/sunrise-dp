@@ -18,7 +18,6 @@
  */
 package instances.NornilsGarden;
 
-import instances.AbstractInstance;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.L2Party;
@@ -35,6 +34,8 @@ import l2r.gameserver.model.zone.L2ZoneType;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
+
+import instances.AbstractInstance;
 
 /**
  * Nornil's Garden instance zone.

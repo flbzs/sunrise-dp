@@ -20,6 +20,7 @@ package gracia.vehicles.SoDController;
 
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.VehiclePathPoint;
+
 import gracia.vehicles.AirShipController;
 
 public final class SoDController extends AirShipController

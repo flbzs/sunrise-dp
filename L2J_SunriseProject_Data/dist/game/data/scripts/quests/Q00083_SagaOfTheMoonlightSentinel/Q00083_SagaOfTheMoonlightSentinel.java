@@ -19,6 +19,7 @@
 package quests.Q00083_SagaOfTheMoonlightSentinel;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

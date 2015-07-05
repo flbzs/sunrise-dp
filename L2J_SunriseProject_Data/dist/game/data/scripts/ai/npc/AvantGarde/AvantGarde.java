@@ -19,6 +19,7 @@ import l2r.gameserver.network.clientpackets.RequestAcquireSkill;
 import l2r.gameserver.network.serverpackets.AcquireSkillList;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
+
 import ai.npc.AbstractNpcAI;
 import custom.Validators.SubClassSkills;
 

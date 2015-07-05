@@ -27,8 +27,6 @@ import l2r.gameserver.handler.VoicedCommandHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import quests.Q00130_PathToHellbound.Q00130_PathToHellbound;
-import quests.Q00133_ThatsBloodyHot.Q00133_ThatsBloodyHot;
 import handlers.admincommandhandlers.AdminHellbound;
 import handlers.voicedcommandhandlers.Hellbound;
 import hellbound.HellboundEngine;
@@ -66,6 +64,8 @@ import hellbound.AI.Zones.TullyWorkshop.TullyWorkshop;
 import hellbound.Instances.DemonPrinceFloor.DemonPrinceFloor;
 import hellbound.Instances.RankuFloor.RankuFloor;
 import hellbound.Instances.UrbanArea.UrbanArea;
+import quests.Q00130_PathToHellbound.Q00130_PathToHellbound;
+import quests.Q00133_ThatsBloodyHot.Q00133_ThatsBloodyHot;
 
 /**
  * Hellbound class-loader.

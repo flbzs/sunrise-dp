@@ -16,6 +16,7 @@ package ai.individual.extra.ToiRaids;
 
 import l2r.gameserver.model.actor.instance.L2NpcInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+
 import ai.npc.AbstractNpcAI;
 
 public class Hallate extends AbstractNpcAI

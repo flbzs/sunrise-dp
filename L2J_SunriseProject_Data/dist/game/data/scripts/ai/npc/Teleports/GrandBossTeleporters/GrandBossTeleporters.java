@@ -29,6 +29,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.zone.type.L2BossZone;
+
 import ai.grandboss.Valakas;
 import ai.npc.AbstractNpcAI;
 

@@ -20,6 +20,7 @@ package ai.npc.Teleports.ElrokiTeleporters;
 
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+
 import ai.npc.AbstractNpcAI;
 
 /**

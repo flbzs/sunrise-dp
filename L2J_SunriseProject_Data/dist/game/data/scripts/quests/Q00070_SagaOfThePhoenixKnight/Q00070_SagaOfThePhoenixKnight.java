@@ -19,6 +19,7 @@
 package quests.Q00070_SagaOfThePhoenixKnight;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

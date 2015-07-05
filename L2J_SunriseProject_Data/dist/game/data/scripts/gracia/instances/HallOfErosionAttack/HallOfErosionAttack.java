@@ -46,6 +46,7 @@ import l2r.gameserver.network.serverpackets.NpcSay;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
+
 import quests.Q00696_ConquertheHallofErosion.Q00696_ConquertheHallofErosion;
 
 public class HallOfErosionAttack extends Quest

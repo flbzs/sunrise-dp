@@ -18,8 +18,6 @@
  */
 package instances.FinalEmperialTomb;
 
-import instances.AbstractInstance;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -71,6 +69,8 @@ import l2r.gameserver.util.Util;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+
+import instances.AbstractInstance;
 
 /**
  * Final Emperial Tomb instance zone. TODO:<br>

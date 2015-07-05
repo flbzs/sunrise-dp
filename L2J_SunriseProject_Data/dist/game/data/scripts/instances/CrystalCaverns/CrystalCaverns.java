@@ -18,8 +18,6 @@
  */
 package instances.CrystalCaverns;
 
-import instances.AbstractInstance;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -63,6 +61,8 @@ import l2r.gameserver.network.serverpackets.SpecialCamera;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.network.serverpackets.ValidateLocation;
 import l2r.gameserver.util.Util;
+
+import instances.AbstractInstance;
 import quests.Q00131_BirdInACage.Q00131_BirdInACage;
 
 /**

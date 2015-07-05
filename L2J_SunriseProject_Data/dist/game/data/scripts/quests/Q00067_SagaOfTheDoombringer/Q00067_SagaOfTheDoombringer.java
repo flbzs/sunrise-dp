@@ -19,6 +19,7 @@
 package quests.Q00067_SagaOfTheDoombringer;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

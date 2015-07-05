@@ -19,6 +19,7 @@
 package quests.Q00099_SagaOfTheFortuneSeeker;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

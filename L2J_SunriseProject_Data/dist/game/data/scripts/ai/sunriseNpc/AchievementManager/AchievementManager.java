@@ -5,12 +5,14 @@ import java.util.StringTokenizer;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
-import ai.npc.AbstractNpcAI;
+
 import gr.sr.achievementEngine.AchievementsHandler;
 import gr.sr.achievementEngine.AchievementsManager;
 import gr.sr.achievementEngine.base.Achievement;
 import gr.sr.achievementEngine.base.Condition;
 import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * @author L2jSunrise Team

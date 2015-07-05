@@ -29,6 +29,7 @@ import l2r.gameserver.model.actor.instance.L2RaidBossInstance;
 import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.zone.type.L2NoRestartZone;
 import l2r.gameserver.network.serverpackets.SpecialCamera;
+
 import ai.npc.AbstractNpcAI;
 
 /**

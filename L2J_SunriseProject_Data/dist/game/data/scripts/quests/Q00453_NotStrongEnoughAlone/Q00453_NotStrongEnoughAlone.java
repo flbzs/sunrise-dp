@@ -27,6 +27,7 @@ import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
 import l2r.gameserver.network.serverpackets.ExQuestNpcLogList;
 import l2r.gameserver.util.Util;
+
 import quests.Q10282_ToTheSeedOfAnnihilation.Q10282_ToTheSeedOfAnnihilation;
 
 /**

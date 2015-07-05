@@ -5,9 +5,11 @@ import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
-import ai.npc.AbstractNpcAI;
+
 import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
 import gr.sr.premiumEngine.PremiumHandler;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * @author L2jSunrise Team

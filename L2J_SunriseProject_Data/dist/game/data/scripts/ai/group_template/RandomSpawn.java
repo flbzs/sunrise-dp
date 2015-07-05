@@ -24,6 +24,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
+
 import ai.npc.AbstractNpcAI;
 
 /**

@@ -27,6 +27,7 @@ import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.NpcStringId;
+
 import ai.npc.AbstractNpcAI;
 import gracia.AI.NPC.Nemo.Nemo;
 

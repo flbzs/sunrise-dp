@@ -29,6 +29,7 @@ import l2r.gameserver.model.base.ClassId;
 import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
+
 import ai.npc.AbstractNpcAI;
 
 /**

@@ -19,6 +19,7 @@
 package quests.Q00093_SagaOfTheSpectralMaster;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

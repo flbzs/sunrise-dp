@@ -19,6 +19,7 @@
 package quests.Q00085_SagaOfTheCardinal;
 
 import l2r.gameserver.model.Location;
+
 import quests.AbstractSagaQuest;
 
 /**

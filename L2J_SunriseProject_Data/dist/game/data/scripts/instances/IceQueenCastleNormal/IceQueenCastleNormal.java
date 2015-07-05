@@ -53,8 +53,9 @@ import l2r.gameserver.network.serverpackets.ExSendUIEvent;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
-import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
+
 import ai.npc.AbstractNpcAI;
+import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
 
 public class IceQueenCastleNormal extends AbstractNpcAI
 {

@@ -35,6 +35,7 @@ import l2r.gameserver.model.items.instance.L2ItemInstance;
 import l2r.gameserver.network.serverpackets.NpcSay;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
+
 import ai.npc.AbstractNpcAI;
 
 /**

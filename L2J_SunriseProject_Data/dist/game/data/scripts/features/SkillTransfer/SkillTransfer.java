@@ -29,6 +29,7 @@ import l2r.gameserver.model.events.impl.character.player.OnPlayerProfessionChang
 import l2r.gameserver.model.holders.ItemHolder;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.util.Util;
+
 import ai.npc.AbstractNpcAI;
 
 /**

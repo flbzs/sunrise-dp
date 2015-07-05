@@ -21,6 +21,7 @@ import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.network.serverpackets.RadarControl;
 import l2r.gameserver.util.Util;
+
 import quests.Q00309_ForAGoodCause.Q00309_ForAGoodCause;
 
 /**

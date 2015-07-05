@@ -36,6 +36,7 @@ import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
+
 import ai.npc.AbstractNpcAI;
 
 /**

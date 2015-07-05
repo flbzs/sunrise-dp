@@ -12,6 +12,7 @@ import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2r.gameserver.network.serverpackets.NpcSay;
 import l2r.util.Rnd;
+
 import ai.npc.AbstractNpcAI;
 
 public class NevitsHerald extends AbstractNpcAI
