@@ -80,6 +80,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	// Skills
 	private static final SkillHolder SEAL_ISOLATION = new SkillHolder(5980, 3);
 	private static final Map<Integer, SkillHolder> SKILLS = new HashMap<>();
+	
 	static
 	{
 		SKILLS.put(32715, new SkillHolder(6187, 1)); // Presentation - Lilith Battle
@@ -90,6 +91,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 		SKILLS.put(32720, new SkillHolder(6194, 1)); // Presentation - Anakim's Guard Battle
 		SKILLS.put(32721, new SkillHolder(6195, 1)); // Presentation - Anakim's Executor Battle
 	}
+	
 	// Locations
 	private static final Location ENTER = new Location(-89554, 216078, -7488, 0, 0);
 	private static final Location EXIT = new Location(171895, -17501, -4903, 0, 0);
@@ -110,6 +112,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	private static final int DISCIPLES_NECROPOLIS_DOOR = 17240111;
 	private static final Map<Integer, Location> LILITH_SPAWN = new HashMap<>();
 	private static final Map<Integer, Location> ANAKIM_SPAWN = new HashMap<>();
+	
 	static
 	{
 		LILITH_SPAWN.put(LILITH, new Location(-83175, 217021, -7504, 49151));
@@ -149,6 +152,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	
 	private synchronized void checkDoors(L2Npc npc, DNPWorld world)
 	{
+		world.countKill++;
 		switch (world.countKill)
 		{
 			case 4:
@@ -379,7 +383,6 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 		if (tmpworld instanceof DNPWorld)
 		{
 			final DNPWorld world = (DNPWorld) tmpworld;
-			world.countKill++;
 			checkDoors(npc, world);
 		}
 		
