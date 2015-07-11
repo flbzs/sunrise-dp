@@ -175,25 +175,25 @@ public class AdminAdmin implements IAdminCommandHandler
 				String mode = command.substring(15);
 				if (mode.equalsIgnoreCase("on"))
 				{
-					activeChar.setTradeRefusal(true);
+					activeChar.setVar("noTrade", "true");
 					activeChar.sendMessage("Trade refusal enabled");
 				}
 				else if (mode.equalsIgnoreCase("off"))
 				{
-					activeChar.setTradeRefusal(false);
+					activeChar.setVar("noTrade", "false");
 					activeChar.sendMessage("Trade refusal disabled");
 				}
 			}
 			catch (Exception ex)
 			{
-				if (activeChar.getTradeRefusal())
+				if (activeChar.getVarB("noTrade"))
 				{
-					activeChar.setTradeRefusal(false);
+					activeChar.setVar("noTrade", "false");
 					activeChar.sendMessage("Trade refusal disabled");
 				}
 				else
 				{
-					activeChar.setTradeRefusal(true);
+					activeChar.setVar("noTrade", "true");
 					activeChar.sendMessage("Trade refusal enabled");
 				}
 			}

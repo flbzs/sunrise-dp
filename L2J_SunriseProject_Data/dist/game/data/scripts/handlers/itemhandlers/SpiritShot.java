@@ -97,7 +97,7 @@ public class SpiritShot implements IItemHandler
 		
 		// Send message to client
 		activeChar.sendPacket(SystemMessageId.ENABLED_SPIRITSHOT);
-		if (!activeChar.isSsAnimationBlocked())
+		if (!activeChar.getVarB("hideSSAnime"))
 		{
 			Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0), 600);
 		}

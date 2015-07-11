@@ -97,7 +97,7 @@ public class BlessedSpiritShot implements IItemHandler
 		activeChar.sendPacket(SystemMessageId.ENABLED_SPIRITSHOT);
 		activeChar.setChargedShot(ShotType.BLESSED_SPIRITSHOTS, true);
 		
-		if (!activeChar.isSsAnimationBlocked())
+		if (!activeChar.getVarB("hideSSAnime"))
 		{
 			Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0), 600);
 		}

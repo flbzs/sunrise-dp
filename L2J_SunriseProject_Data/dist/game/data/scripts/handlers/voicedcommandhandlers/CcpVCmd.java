@@ -42,14 +42,30 @@ public class CcpVCmd implements IVoicedCommandHandler
 			case "ccp":
 				break;
 			case "tradeprot":
-				activeChar.setTradeRefusal(!activeChar.getTradeRefusal());
-				activeChar.sendMessage("Trade refusal mode changed.");
+				if (activeChar.getVarB("noTrade"))
+				{
+					activeChar.setVar("noTrade", "false");
+					activeChar.sendMessage("Trade refusal mode disabled.");
+				}
+				else
+				{
+					activeChar.setVar("noTrade", "true");
+					activeChar.sendMessage("Trade refusal mode enabled.");
+				}
 				break;
 			case "changeexp":
 				if (CustomServerConfigs.ALLOW_EXP_GAIN_COMMAND)
 				{
-					activeChar.setExpOn(!activeChar.getExpOn());
-					activeChar.sendMessage("Experience gain mode changed.");
+					if (!activeChar.getVarB("noExp"))
+					{
+						activeChar.setVar("noExp", "true");
+						activeChar.sendMessage("Experience gain disabled.");
+					}
+					else
+					{
+						activeChar.setVar("noExp", "false");
+						activeChar.sendMessage("Experience gain enabled.");
+					}
 				}
 				else
 				{
@@ -57,24 +73,64 @@ public class CcpVCmd implements IVoicedCommandHandler
 				}
 				break;
 			case "nobuff":
-				activeChar.setProtectedPlayer(!activeChar.isProtected());
-				activeChar.sendMessage("The grief-buff protection mode changed.");
+				if (activeChar.getVarB("noBuff"))
+				{
+					activeChar.setVar("noBuff", "false");
+					activeChar.sendMessage("Bad-buff protection disabled.");
+				}
+				else
+				{
+					activeChar.setVar("noBuff", "true");
+					activeChar.sendMessage("Bad-buff protection enabled.");
+				}
 				break;
 			case "enchantanime":
-				activeChar.setEnchantAnimation(!activeChar.isEnchantAnimation());
-				activeChar.sendMessage("Enchant animation mode changed.");
+				if (activeChar.getVarB("showEnchantAnime"))
+				{
+					activeChar.setVar("showEnchantAnime", "false");
+					activeChar.sendMessage("Enchant animation disabled.");
+				}
+				else
+				{
+					activeChar.setVar("showEnchantAnime", "true");
+					activeChar.sendMessage("Enchant animation enabled.");
+				}
 				break;
 			case "hidestores":
-				activeChar.getAppearance().setHideStores(!activeChar.getAppearance().isHideStores());
-				activeChar.sendMessage("Stores visibility mode changed, please restart.");
+				if (activeChar.getVarB("hideStores"))
+				{
+					activeChar.setVar("hideStores", "false");
+					activeChar.sendMessage("All stores are visible, please restart.");
+				}
+				else
+				{
+					activeChar.setVar("hideStores", "true");
+					activeChar.sendMessage("All stores are invisible, please restart.");
+				}
 				break;
 			case "shotsonenter":
-				activeChar.setOnEnterLoadSS(!activeChar.isOnEnterLoadSS());
-				activeChar.sendMessage("On enter auto load shots mode changed.");
+				if (activeChar.getVarB("onEnterLoadSS"))
+				{
+					activeChar.setVar("onEnterLoadSS", "false");
+					activeChar.sendMessage("On enter auto load shots disabled.");
+				}
+				else
+				{
+					activeChar.setVar("onEnterLoadSS", "true");
+					activeChar.sendMessage("On enter auto load shots enabled.");
+				}
 				break;
 			case "blockshotsanime":
-				activeChar.setSsAnimation(!activeChar.isSsAnimationBlocked());
-				activeChar.sendMessage("Broadcast shots animation mode changed.");
+				if (!activeChar.getVarB("hideSSAnime"))
+				{
+					activeChar.setVar("hideSSAnime", "true");
+					activeChar.sendMessage("Broadcast shots animation disabled.");
+				}
+				else
+				{
+					activeChar.setVar("hideSSAnime", "false");
+					activeChar.sendMessage("Broadcast shots animation enabled.");
+				}
 				break;
 		}
 		
@@ -118,7 +174,7 @@ public class CcpVCmd implements IVoicedCommandHandler
 		builder.append("<tr>");
 		builder.append("<td width=110><font color=898989>Trade Refusal:</font></td>");
 		builder.append("<td width=60><button value=\"Change\" action=\"bypass -h voice .tradeprot\" width=60 height=21 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_ct1.button_df\"></td>");
-		if (player.getTradeRefusal())
+		if (player.getVarB("noTrade"))
 		{
 			builder.append("<td width=60 align=\"center\"><font color=849D68>Enabled</font></td></tr>");
 		}
@@ -130,7 +186,7 @@ public class CcpVCmd implements IVoicedCommandHandler
 		builder.append("<tr>");
 		builder.append("<td width=110><font color=898989>Block Experience:</font></td>");
 		builder.append("<td width=60><button value=\"Change\" action=\"bypass -h voice .changeexp\" width=60 height=21 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_ct1.button_df\"></td>");
-		if (!player.getExpOn())
+		if (player.getVarB("noExp"))
 		{
 			builder.append("<td width=60 align=\"center\"><font color=849D68>Enabled</font></td></tr>");
 		}
@@ -142,7 +198,7 @@ public class CcpVCmd implements IVoicedCommandHandler
 		builder.append("<tr>");
 		builder.append("<td width=110><font color=898989>Badbuff Protection:</font></td>");
 		builder.append("<td width=60><button value=\"Change\" action=\"bypass -h voice .nobuff\" width=60 height=21 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_ct1.button_df\"></td>");
-		if (player.isProtected())
+		if (player.getVarB("noBuff"))
 		{
 			builder.append("<td width=60 align=\"center\"><font color=849D68>Enabled</font></td></tr>");
 		}
@@ -154,7 +210,7 @@ public class CcpVCmd implements IVoicedCommandHandler
 		builder.append("<tr>");
 		builder.append("<td width=110><font color=898989>Enchant Animation:</font></td>");
 		builder.append("<td width=60><button value=\"Change\" action=\"bypass -h voice .enchantanime\" width=60 height=21 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_ct1.button_df\"></td>");
-		if (player.isEnchantAnimation())
+		if (player.getVarB("showEnchantAnime"))
 		{
 			builder.append("<td width=60 align=\"center\"><font color=849D68>Enabled</font></td></tr>");
 		}
@@ -166,7 +222,7 @@ public class CcpVCmd implements IVoicedCommandHandler
 		builder.append("<tr>");
 		builder.append("<td width=110><font color=898989>Hide Stores:</font></td>");
 		builder.append("<td width=60><button value=\"Change\" action=\"bypass -h voice .hidestores\" width=60 height=21 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_ct1.button_df\"></td>");
-		if (player.isHideStores())
+		if (player.getVarB("hideStores"))
 		{
 			builder.append("<td width=60 align=\"center\"><font color=849D68>Enabled</font></td></tr>");
 		}
@@ -178,7 +234,7 @@ public class CcpVCmd implements IVoicedCommandHandler
 		builder.append("<tr>");
 		builder.append("<td width=110><font color=898989>On Enter Load Shots:</font></td>");
 		builder.append("<td width=60><button value=\"Change\" action=\"bypass -h voice .shotsonenter\" width=60 height=21 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_ct1.button_df\"></td>");
-		if (player.isOnEnterLoadSS())
+		if (player.getVarB("onEnterLoadSS"))
 		{
 			builder.append("<td width=60 align=\"center\"><font color=849D68>Enabled</font></td></tr>");
 		}
@@ -190,7 +246,7 @@ public class CcpVCmd implements IVoicedCommandHandler
 		builder.append("<tr>");
 		builder.append("<td width=110><font color=898989>Block Shots Animation:</font></td>");
 		builder.append("<td width=60><button value=\"Change\" action=\"bypass -h voice .blockshotsanime\" width=60 height=21 back=\"L2UI_CT1.Button_DF_Down\" fore=\"L2UI_ct1.button_df\"></td>");
-		if (player.isSsAnimationBlocked())
+		if (player.getVarB("hideSSAnime"))
 		{
 			builder.append("<td width=60 align=\"center\"><font color=849D68>Enabled</font></td></tr>");
 		}

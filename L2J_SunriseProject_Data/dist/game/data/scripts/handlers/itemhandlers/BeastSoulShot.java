@@ -97,7 +97,7 @@ public class BeastSoulShot implements IItemHandler
 		activeOwner.sendPacket(SystemMessageId.PET_USE_SPIRITSHOT);
 		activeOwner.getSummon().setChargedShot(ShotType.SOULSHOTS, true);
 		
-		if (!activeOwner.isSsAnimationBlocked())
+		if (!activeOwner.getVarB("hideSSAnime"))
 		{
 			Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(activeOwner.getSummon(), activeOwner.getSummon(), skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0), 600);
 		}

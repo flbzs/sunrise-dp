@@ -87,7 +87,7 @@ public class FishShots implements IItemHandler
 		L2Object oldTarget = activeChar.getTarget();
 		activeChar.setTarget(activeChar);
 		
-		if (!activeChar.isSsAnimationBlocked())
+		if (!activeChar.getVarB("hideSSAnime"))
 		{
 			Broadcast.toSelfAndKnownPlayers(activeChar, new MagicSkillUse(activeChar, skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0));
 		}
