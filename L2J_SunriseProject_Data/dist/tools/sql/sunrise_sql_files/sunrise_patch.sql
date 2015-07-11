@@ -1,5 +1,3 @@
-ALTER TABLE `characters` ADD `lastVoteHopzone` BIGINT UNSIGNED DEFAULT NULL;
-ALTER TABLE `characters` ADD `lastVoteTopzone` BIGINT UNSIGNED DEFAULT NULL;
 ALTER TABLE `characters` ADD `exp_activation` INT UNSIGNED DEFAULT 1;
 ALTER TABLE `characters` ADD `fire_zone_kills` INT UNSIGNED DEFAULT 0;
 ALTER TABLE `characters` ADD `prefix_category` MEDIUMINT UNSIGNED DEFAULT 0;
@@ -10,8 +8,5 @@ ALTER TABLE `characters` ADD `soulshot_animation` INT UNSIGNED DEFAULT 0;
 ALTER TABLE `characters` ADD `bad_buff_protection` INT UNSIGNED DEFAULT 0;
 ALTER TABLE `characters` ADD `enchant_bot` INT UNSIGNED DEFAULT 0;
 ALTER TABLE `characters` ADD `enchant_chance` DOUBLE UNSIGNED DEFAULT 80;
-ALTER TABLE `characters` ADD `tries` INT UNSIGNED DEFAULT 2;
-ALTER TABLE `characters` ADD `hopzonedone` INT UNSIGNED DEFAULT 0;
-ALTER TABLE `characters` ADD `topzonedone` INT UNSIGNED DEFAULT 0;
 ALTER TABLE `characters` ADD `achievementmobkilled` INT UNSIGNED DEFAULT 0;
 ALTER TABLE `characters` ADD COLUMN `pccafe_points` INT NULL DEFAULT 0 AFTER `createDate`;

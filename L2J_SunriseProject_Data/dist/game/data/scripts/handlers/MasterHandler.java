@@ -40,7 +40,6 @@ import gr.sr.configsEngine.configs.impl.BufferConfigs;
 import gr.sr.configsEngine.configs.impl.ChaoticZoneConfigs;
 import gr.sr.configsEngine.configs.impl.CustomServerConfigs;
 import gr.sr.configsEngine.configs.impl.GetRewardVoteSystemConfigs;
-import gr.sr.configsEngine.configs.impl.IndividualVoteSystemConfigs;
 import gr.sr.configsEngine.configs.impl.PremiumServiceConfigs;
 import gr.sr.voteEngine.RewardVote;
 
@@ -305,7 +304,6 @@ import handlers.voicedcommandhandlers.PremiumVCmd;
 import handlers.voicedcommandhandlers.PvpZoneVCmd;
 import handlers.voicedcommandhandlers.RepairVCmd;
 import handlers.voicedcommandhandlers.TeleportsVCmd;
-import handlers.voicedcommandhandlers.VotePanelVCmd;
 import handlers.voicedcommandhandlers.Wedding;
 
 /**
@@ -581,7 +579,6 @@ public class MasterHandler
 			(ChaoticZoneConfigs.ENABLE_CHAOTIC_ZONE ? PvpZoneVCmd.class : null),
 			(CustomServerConfigs.ALLOW_REPAIR_COMMAND ? RepairVCmd.class : null),
 			(CustomServerConfigs.ALLOW_TELEPORTS_COMMAND ? TeleportsVCmd.class : null),
-			(IndividualVoteSystemConfigs.ENABLE_VOTE_SYSTEM ? VotePanelVCmd.class : null),
 			PingVCmd.class,
 			(Config.L2JMOD_ALLOW_WEDDING ? Wedding.class : null),
 			(GetRewardVoteSystemConfigs.ENABLE_VOTE_SYSTEM ? RewardVote.class : null),
