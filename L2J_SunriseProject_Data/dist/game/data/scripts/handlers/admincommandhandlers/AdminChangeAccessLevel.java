@@ -31,6 +31,8 @@ import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.SystemMessageId;
 
+import gr.sr.main.NamePrefix;
+
 /**
  * This class handles following admin commands: - changelvl = change a character's access level Can be used for character ban (as opposed to regular //ban that affects accounts) or to grant mod/GM privileges ingame
  * @version $Revision: 1.1.2.2.2.3 $ $Date: 2005/04/11 10:06:00 $ con.close() change by Zoey76 24/02/2011
@@ -66,8 +68,8 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler
 					{
 						if (target.isGM())
 						{
-							target.setNamePrefixCategory(masterLevel);
-							target.loadNamePrefix();
+							target.setVar("namePrefixId", String.valueOf(masterLevel));
+							NamePrefix.namePrefixCategories(target, Integer.parseInt(target.getVar("namePrefixId", "0")));
 							// successfully
 							activeChar.sendMessage("You have successfully change master category of player: " + target.getName() + " to Level: " + masterLevel + ".");
 						}
@@ -79,13 +81,13 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler
 					}
 					else
 					{
-						activeChar.sendMessage("Specify a valid number. Master level must be 0 - 4.");
+						activeChar.sendMessage("Usage: //changemasterlvl <0-4>");
 						return false;
 					}
 				}
 				catch (Exception e)
 				{
-					activeChar.sendMessage("Specify a valid number.");
+					activeChar.sendMessage("Usage: //changemasterlvl <0-4>");
 				}
 			}
 			else

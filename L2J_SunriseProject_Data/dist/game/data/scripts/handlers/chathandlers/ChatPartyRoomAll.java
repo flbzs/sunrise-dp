@@ -58,7 +58,7 @@ public class ChatPartyRoomAll implements IChatHandler
 				}
 				if (activeChar.isGM())
 				{
-					CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getNamePrefix() + activeChar.getName(), text);
+					CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getVar("namePrefix", "") + activeChar.getName(), text);
 					activeChar.getParty().getCommandChannel().broadcastCreatureSay(cs, activeChar);
 					return;
 				}

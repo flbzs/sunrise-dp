@@ -114,7 +114,7 @@ public class ChatAll implements IChatHandler
 			else
 			{
 				CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getAppearance().getVisibleName(), text);
-				CreatureSay cs2 = new CreatureSay(activeChar.getObjectId(), type, activeChar.getNamePrefix() + activeChar.getAppearance().getVisibleName(), text);
+				CreatureSay cs2 = new CreatureSay(activeChar.getObjectId(), type, activeChar.getVar("namePrefix", "") + activeChar.getAppearance().getVisibleName(), text);
 				Collection<L2PcInstance> plrs = activeChar.getKnownList().getKnownPlayers().values();
 				if (activeChar.isGM())
 				{

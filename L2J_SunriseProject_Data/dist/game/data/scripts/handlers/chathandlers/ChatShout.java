@@ -60,7 +60,7 @@ public class ChatShout implements IChatHandler
 		}
 		
 		CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getName(), text);
-		CreatureSay cs2 = new CreatureSay(activeChar.getObjectId(), type, activeChar.getNamePrefix() + activeChar.getName(), text);
+		CreatureSay cs2 = new CreatureSay(activeChar.getObjectId(), type, activeChar.getVar("namePrefix", "") + activeChar.getName(), text);
 		
 		Collection<L2PcInstance> pls = L2World.getInstance().getPlayers();
 		

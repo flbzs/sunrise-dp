@@ -65,7 +65,7 @@ public class ChatHeroVoice implements IChatHandler
 			}
 			if (activeChar.isGM())
 			{
-				CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getNamePrefix() + activeChar.getName(), text);
+				CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getVar("namePrefix", "") + activeChar.getName(), text);
 				for (L2PcInstance player : L2World.getInstance().getPlayers())
 				{
 					if ((player != null) && !BlockList.isBlocked(player, activeChar))

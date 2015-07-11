@@ -61,7 +61,7 @@ public class ChatPartyMatchRoom implements IChatHandler
 				}
 				if (activeChar.isGM())
 				{
-					CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getNamePrefix() + activeChar.getName(), text);
+					CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getVar("namePrefix", "") + activeChar.getName(), text);
 					for (L2PcInstance _member : _room.getPartyMembers())
 					{
 						_member.sendPacket(cs);

@@ -52,7 +52,7 @@ public class ChatAlliance implements IChatHandler
 			}
 			if (activeChar.isGM())
 			{
-				CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getNamePrefix() + activeChar.getName(), text);
+				CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getVar("namePrefix", "") + activeChar.getName(), text);
 				activeChar.getClan().broadcastToOnlineAllyMembers(cs);
 				return;
 			}
