@@ -755,6 +755,7 @@
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="multi_debuff" />
 		<set name="canBeReflected" val="false" />
+		<set name="canBeDispeled" val="false" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A2" />
