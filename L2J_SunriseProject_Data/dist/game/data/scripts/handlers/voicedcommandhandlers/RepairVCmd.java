@@ -22,7 +22,10 @@ import java.sql.SQLException;
 import l2r.L2DatabaseFactory;
 import l2r.gameserver.cache.HtmCache;
 import l2r.gameserver.handler.IVoicedCommandHandler;
+import l2r.gameserver.instancemanager.PunishmentManager;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.model.punishment.PunishmentAffect;
+import l2r.gameserver.model.punishment.PunishmentType;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 
 import org.slf4j.Logger;
@@ -213,47 +216,16 @@ public class RepairVCmd implements IVoicedCommandHandler
 	
 	private boolean checkJail(L2PcInstance activeChar, String repairChar)
 	{
-		boolean result = false;
-		int repCharJail = 0;
-		Connection con = null;
-		try
+		final PunishmentAffect affect = PunishmentAffect.getByName("CHARACTER");
+		final PunishmentType type = PunishmentType.getByName("JAIL");
+		String charId = String.valueOf(activeChar.getObjectId());
+		
+		if (PunishmentManager.getInstance().hasPunishment(charId, affect, type))
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT punish_level FROM characters WHERE char_name=?");
-			statement.setString(1, repairChar);
-			ResultSet rset = statement.executeQuery();
-			if (rset.next())
-			{
-				repCharJail = rset.getInt(1);
-			}
-			rset.close();
-			statement.close();
-			
+			return true;
 		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-			return result;
-		}
-		finally
-		{
-			try
-			{
-				if (con != null)
-				{
-					con.close();
-				}
-			}
-			catch (SQLException e)
-			{
-				e.printStackTrace();
-			}
-		}
-		if (repCharJail > 1)
-		{
-			result = true;
-		}
-		return result;
+		
+		return false;
 	}
 	
 	private boolean checkKarma(L2PcInstance activeChar, String repairChar)
@@ -349,7 +321,7 @@ public class RepairVCmd implements IVoicedCommandHandler
 		}
 		catch (Exception e)
 		{
-			_log.warn("GameServer: could not repair character:" + e);
+			_log.warn(RepairVCmd.class.getSimpleName() + ": could not repair character:" + e);
 		}
 		finally
 		{
