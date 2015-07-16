@@ -22,8 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import l2r.gameserver.data.xml.impl.SkillData;
+import l2r.gameserver.enums.ZoneIdType;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.instance.L2EffectPointInstance;
+import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
@@ -41,6 +43,7 @@ public class Signet extends L2Effect
 {
 	private L2Skill _skill;
 	private L2EffectPointInstance _actor;
+	private boolean _srcInArena;
 	
 	public Signet(Env env, EffectTemplate template)
 	{
@@ -62,6 +65,7 @@ public class Signet extends L2Effect
 		}
 		
 		_actor = (L2EffectPointInstance) getEffected();
+		_srcInArena = (getEffector().isInsideZone(ZoneIdType.PVP) && !getEffector().isInsideZone(ZoneIdType.SIEGE));
 		return true;
 	}
 	
@@ -80,28 +84,25 @@ public class Signet extends L2Effect
 			return false;
 		}
 		
-		getEffector().reduceCurrentMp(mpConsume);
+		final L2PcInstance activeChar = getEffector().getActingPlayer();
+		
+		activeChar.reduceCurrentMp(mpConsume);
 		List<L2Character> targets = new ArrayList<>();
 		for (L2Character cha : _actor.getKnownList().getKnownCharactersInRadius(getSkill().getAffectRange()))
 		{
-			if ((cha == null) || cha.isDead())
+			if (((cha == null) || cha.isAlikeDead()) || ((cha == activeChar) && _skill.isOffensive()) || (!_skill.isOffensive() && !cha.isPlayable()))
 			{
 				continue;
 			}
 			
-			if (!_skill.isOffensive() && !cha.isPlayable())
+			if (cha.isPlayable())
 			{
-				continue;
-			}
-			
-			if (cha.isPlayable() && getEffector().isPlayer())
-			{
-				if (_skill.isOffensive() && cha.getActingPlayer().isFriend(getEffector().getActingPlayer()))
+				if (_skill.isOffensive() && !L2Skill.checkForAreaOffensiveSkills(getEffector(), cha, getSkill(), _srcInArena))
 				{
 					continue;
 				}
 				
-				if (!_skill.isOffensive() && !cha.getActingPlayer().isFriend(getEffector().getActingPlayer().getActingPlayer()))
+				if (!_skill.isOffensive() && !cha.getActingPlayer().isFriend(activeChar))
 				{
 					continue;
 				}
