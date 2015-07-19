@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -126,7 +126,7 @@ public class AdminTerritoryWar implements IAdminCommandHandler
 		else if (command.equalsIgnoreCase("admin_territory_wards_list"))
 		{
 			// build beginning of html page
-			NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(1, 1);
+			final NpcHtmlMessage npcHtmlMessage = new NpcHtmlMessage(0, 1);
 			StringBuilder sb = new StringBuilder();
 			sb.append("<html><title>Territory War</title><body><br><center><font color=\"LEVEL\">Active Wards List:</font></center>");
 			
@@ -174,7 +174,7 @@ public class AdminTerritoryWar implements IAdminCommandHandler
 	
 	private void showSiegeTimePage(L2PcInstance activeChar)
 	{
-		NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/territorywartime.htm");
 		adminReply.replace("%time%", TerritoryWarManager.getInstance().getTWStart().getTime().toString());
 		activeChar.sendPacket(adminReply);

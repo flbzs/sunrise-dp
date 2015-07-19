@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -51,11 +51,11 @@ public class PlayerHelp implements IBypassHandler
 			final StringTokenizer st = new StringTokenizer(path);
 			final String[] cmd = st.nextToken().split("#");
 			
-			NpcHtmlMessage html;
+			final NpcHtmlMessage html;
 			if (cmd.length > 1)
 			{
 				final int itemId = Integer.parseInt(cmd[1]);
-				html = new NpcHtmlMessage(1, itemId);
+				html = new NpcHtmlMessage(0, itemId);
 			}
 			else
 			{

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -46,13 +46,13 @@ public class Book implements IItemHandler
 		
 		if (content == null)
 		{
-			NpcHtmlMessage html = new NpcHtmlMessage();
+			final NpcHtmlMessage html = new NpcHtmlMessage(0, item.getId());
 			html.setHtml("<html><body>My Text is missing:<br>" + filename + "</body></html>");
 			activeChar.sendPacket(html);
 		}
 		else
 		{
-			NpcHtmlMessage itemReply = new NpcHtmlMessage(5, itemId);
+			final NpcHtmlMessage itemReply = new NpcHtmlMessage(0, item.getId());
 			itemReply.setHtml(content);
 			activeChar.sendPacket(itemReply);
 		}

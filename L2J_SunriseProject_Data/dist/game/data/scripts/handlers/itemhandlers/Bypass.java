@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -42,7 +42,7 @@ public class Bypass implements IItemHandler
 		
 		String filename = "data/html/item/" + itemId + ".htm";
 		String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), filename);
-		NpcHtmlMessage html = new NpcHtmlMessage(0, itemId);
+		final NpcHtmlMessage html = new NpcHtmlMessage(0, item.getId());
 		if (content == null)
 		{
 			html.setHtml("<html><body>My Text is missing:<br>" + filename + "</body></html>");
