@@ -254,6 +254,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="turn_passive" />
+		<set name="activateRate" val="70" />
 		<set name="castRange" val="500" />
 		<set name="effectRange" val="900" />
 		<set name="hitTime" val="1200" />
@@ -262,16 +263,12 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="70" /> <!-- Base Land Rate -->
 		<set name="reuseDelay" val="5000" />
 		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="AGGREMOVE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="Debuff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="turn_passive">
-				<sub stat="aggression" val="100000" />
-			</effect>
+			<effect name="Passive" abnormalTime="120" val="0" effectPower="70" abnormalLvl="1" abnormalType="turn_passive"/>
 		</for>
 	</skill>
 	<skill id="107" levels="9" name="Divine Aura" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">

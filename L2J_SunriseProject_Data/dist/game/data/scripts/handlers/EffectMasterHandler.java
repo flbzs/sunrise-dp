@@ -40,6 +40,7 @@ public final class EffectMasterHandler
 	private static final Class<?>[] _effects =
 	{
 		AbortCast.class,
+		AddHate.class,
 		RebalanceHP.class,
 		Betray.class,
 		BigHead.class,
@@ -73,6 +74,8 @@ public final class EffectMasterHandler
 		DamOverTime.class,
 		DamOverTimePercent.class,
 		Debuff.class,
+		DeleteHate.class,
+		DeleteHateOfMe.class,
 		DetectHiddenObjects.class,
 		Detection.class,
 		Disarm.class,
@@ -120,6 +123,7 @@ public final class EffectMasterHandler
 		OutpostCreate.class,
 		OutpostDestroy.class,
 		Paralyze.class,
+		Passive.class,
 		Petrification.class,
 		PhysicalAttackMute.class,
 		PhysicalMute.class,

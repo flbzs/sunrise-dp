@@ -176,7 +176,7 @@
 	<skill id="3109" levels="10" name="Item Skill: Aggression Down">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
-		<table name="#power"> 219 234 248 262 275 287 299 309 318 330 </table>
+		<table name="#power"> -219 -234 -248 -262 -275 -287 -299 -309 -318 -330 </table>
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
 		<set name="isDebuff" val="true" />
@@ -184,11 +184,14 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="30000" />
-		<set name="skillType" val="AGGREDUCE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
+		<for>
+			<effect name="AddHate" noicon="1" val="0">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="3110" levels="10" name="Item Skill: Mana Burn">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
@@ -1040,7 +1043,7 @@
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
 		<table name="#mpConsume"> 38 42 44 47 51 52 55 58 61 65 </table>
 		<table name="#mpInitialConsume"> 10 11 11 12 13 13 14 15 16 17 </table>
-		<table name="#power"> 219 234 248 262 275 287 299 309 318 330 </table>
+		<table name="#power"> -219 -234 -248 -262 -275 -287 -299 -309 -318 -330 </table>
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="1500" />
@@ -1051,11 +1054,14 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="180000" />
-		<set name="skillType" val="AGGREDUCE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
+		<for>
+			<effect name="AddHate" noicon="1" val="0">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="3151" levels="10" name="Item Skill: Peace">
 		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
@@ -1070,11 +1076,12 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="80" />
 		<set name="reuseDelay" val="180000" />
-		<set name="skillType" val="AGGREMOVE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
+		<for>
+			<effect name="DeleteHate" noicon="1" val="0" effectPower="80" />
+		</for>
 	</skill>
 	<skill id="3152" levels="10" name="Item Skill: Trick">
 		<table name="#magicLvl"> 49 52 55 58 60 62 64 66 68 70 72 74 </table>
@@ -1086,14 +1093,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="80" />
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="180000" />
-		<set name="skillType" val="AGGREDUCE_CHAR" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="DeleteHateOfMe" noicon="1" val="0" effectPower="80" />
+			<effect name="RemoveTarget" noicon="1" val="0" effectPower="80" />
 		</for>
 	</skill>
 	<skill id="3153" levels="10" name="Item Skill: Vampiric Touch">

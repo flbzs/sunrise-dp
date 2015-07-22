@@ -1947,11 +1947,9 @@
 		<set name="magicLvl" val="77" />
 		<set name="mpConsume" val="35" />
 		<set name="operateType" val="A2" />
-		<set name="power" val="80" /> <!-- Base Land Rate -->
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="8000" />
 		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="AGGREDUCE_CHAR" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
@@ -1960,11 +1958,13 @@
 		</cond>
 		<for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="40" abnormalLvl="1" abnormalType="stun" />
+			<effect name="DeleteHateOfMe" noicon="1" val="0" effectPower="80" />
 			<effect name="Bluff" noicon="1" val="0" effectPower="80" />
 			<effect name="RemoveTarget" noicon="1" val="0" effectPower="80" />
 		</for>
 		<enchant1for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="#ench1Power" abnormalLvl="1" abnormalType="stun" />
+			<effect name="DeleteHateOfMe" noicon="1" val="0" effectPower="80" />
 			<effect name="Bluff" noicon="1" val="0" effectPower="80" />
 			<effect name="RemoveTarget" noicon="1" val="0" effectPower="80" />
 		</enchant1for>

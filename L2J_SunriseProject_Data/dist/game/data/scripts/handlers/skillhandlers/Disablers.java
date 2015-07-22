@@ -20,13 +20,10 @@ package handlers.skillhandlers;
 
 import java.util.List;
 
-import l2r.gameserver.ai.L2AttackableAI;
 import l2r.gameserver.enums.CtrlEvent;
-import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.enums.ShotType;
 import l2r.gameserver.handler.ISkillHandler;
 import l2r.gameserver.model.L2Object;
-import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Summon;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -35,10 +32,8 @@ import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.L2SkillType;
-import l2r.gameserver.model.skills.targets.L2TargetType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.model.stats.Formulas;
-import l2r.gameserver.model.stats.Stats;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 
@@ -58,9 +53,6 @@ public class Disablers implements ISkillHandler
 		L2SkillType.SLEEP,
 		L2SkillType.CONFUSION,
 		L2SkillType.AGGDAMAGE,
-		L2SkillType.AGGREDUCE,
-		L2SkillType.AGGREDUCE_CHAR,
-		L2SkillType.AGGREMOVE,
 		L2SkillType.MUTE,
 		L2SkillType.CONFUSE_MOB_ONLY,
 		L2SkillType.PARALYZE,
@@ -222,117 +214,6 @@ public class Disablers implements ISkillHandler
 					skill.getEffects(activeChar, target, new Env(shld, ss, sps, bss));
 					// TODO: Remove this when lethal effect is done.
 					Formulas.calcLethalHit(activeChar, target, skill);
-					break;
-				}
-				case AGGREDUCE:
-				{
-					// these skills needs to be rechecked
-					if (target.isAttackable())
-					{
-						skill.getEffects(activeChar, target, new Env(shld, ss, sps, bss));
-						
-						double aggdiff = ((L2Attackable) target).getHating(activeChar) - target.calcStat(Stats.AGGRESSION, ((L2Attackable) target).getHating(activeChar), target, skill);
-						
-						if (skill.getPower() > 0)
-						{
-							((L2Attackable) target).reduceHate(null, (int) skill.getPower());
-						}
-						else if (aggdiff > 0)
-						{
-							((L2Attackable) target).reduceHate(null, (int) aggdiff);
-						}
-					}
-					// when fail, target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, activeChar);
-					break;
-				}
-				case AGGREDUCE_CHAR:
-				{
-					// these skills needs to be rechecked
-					if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ss, sps, bss))
-					{
-						if (target.isAttackable())
-						{
-							L2Attackable targ = (L2Attackable) target;
-							targ.stopHating(activeChar);
-							if ((targ.getMostHated() == null) && targ.hasAI() && (targ.getAI() instanceof L2AttackableAI))
-							{
-								((L2AttackableAI) targ.getAI()).setGlobalAggro(-25);
-								targ.clearAggroList();
-								targ.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-								targ.setWalking();
-							}
-						}
-						skill.getEffects(activeChar, target, new Env(shld, ss, sps, bss));
-					}
-					else
-					{
-						if (activeChar.isPlayer())
-						{
-							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
-							sm.addCharName(target);
-							sm.addSkillName(skill);
-							activeChar.sendPacket(sm);
-						}
-						try
-						{
-							target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, activeChar);
-						}
-						catch (Exception e)
-						{
-							_log.warn("Logger: notifyEvent failed (Disablers 2) Report this to team. ");
-						}
-					}
-					break;
-				}
-				case AGGREMOVE:
-				{
-					// these skills needs to be rechecked
-					if (target.isAttackable() && !target.isRaid())
-					{
-						if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ss, sps, bss))
-						{
-							if (skill.getTargetType() == L2TargetType.UNDEAD)
-							{
-								if (target.isUndead())
-								{
-									((L2Attackable) target).reduceHate(null, ((L2Attackable) target).getHating(((L2Attackable) target).getMostHated()));
-								}
-							}
-							else
-							{
-								((L2Attackable) target).reduceHate(null, ((L2Attackable) target).getHating(((L2Attackable) target).getMostHated()));
-							}
-						}
-						else
-						{
-							if (activeChar.isPlayer())
-							{
-								SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
-								sm.addCharName(target);
-								sm.addSkillName(skill);
-								activeChar.sendPacket(sm);
-							}
-							try
-							{
-								target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, activeChar);
-							}
-							catch (Exception e)
-							{
-								_log.warn("Logger: notifyEvent failed (Disablers 3) Report this to team. ");
-							}
-						}
-					}
-					else
-					{
-						try
-						{
-							target.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, activeChar);
-						}
-						catch (Exception e)
-						{
-							_log.warn("Logger: notifyEvent failed (Disablers 4) Report this to team. ");
-						}
-					}
 					break;
 				}
 				case ERASE:

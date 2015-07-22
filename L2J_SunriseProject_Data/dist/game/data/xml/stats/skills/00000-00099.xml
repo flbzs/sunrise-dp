@@ -393,14 +393,13 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="80" /> <!-- Base Land Rate -->
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="5000" />
-		<set name="skillType" val="AGGREDUCE_CHAR" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="DeleteHateOfMe" noicon="1" val="0" effectPower="80" />
+			<effect name="RemoveTarget" noicon="1" val="0" effectPower="80" />
 		</for>
 	</skill>
 	<skill id="12" levels="14" name="Switch">
@@ -456,7 +455,7 @@
 		<table name="#magicLvl"> 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>
 		<table name="#mpConsume"> 8 8 8 8 9 9 10 10 10 11 11 11 12 12 13 14 14 14 15 15 15 16 16 17 18 18 18 18 19 19 20 20 20 21 22 22 22 22 23 23 24 24 24 25 26 26 26 26 27 27 27 28 </table>
 		<table name="#mpInitialConsume"> 2 2 2 2 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 5 4 5 5 5 5 5 5 5 5 6 5 6 6 6 6 6 6 6 6 7 6 7 7 7 7 7 7 7 </table>
-		<table name="#power"> 132 137 143 153 159 164 176 182 188 200 206 213 225 232 239 252 259 266 272 279 286 293 300 307 313 320 327 334 340 347 353 360 366 373 379 385 391 396 402 407 413 418 423 428 432 437 441 445 449 452 455 458 </table>
+		<table name="#power"> -132 -137 -143 -153 -159 -164 -176 -182 -188 -200 -206 -213 -225 -232 -239 -252 -259 -266 -272 -279 -286 -293 -300 -307 -313 -320 -327 -334 -340 -347 -353 -360 -366 -373 -379 -385 -391 -396 -402 -407 -413 -418 -423 -428 -432 -437 -441 -445 -449 -452 -455 -458 </table>
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="1500" />
@@ -467,11 +466,14 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
 		<set name="reuseDelay" val="15000" />
-		<set name="skillType" val="AGGREDUCE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
+		<for>
+			<effect name="AddHate" noicon="1" val="0">
+				<param power="#power" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="16" levels="24" name="Mortal Blow">
 		<table name="#magicLvl"> 3 4 5 8 9 10 13 14 15 18 19 20 22 23 24 26 27 28 30 31 32 34 35 36 </table>
@@ -1266,9 +1268,7 @@
 		<set name="mpConsume" val="44" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="500" />
 		<set name="reuseDelay" val="3000" />
-		<set name="skillType" val="AGGDAMAGE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<enchant1 name="castRange" val="#ench1castRange" />
@@ -1276,6 +1276,11 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="mpConsume" val="#ench1mpConsume" />
 		<enchant1 name="reuseDelay" val="2000" />
+		<for>
+			<effect name="AddHate" noicon="1" val="0">
+				<param power="500" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="54" levels="49" name="Force Blaster" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
 		<table name="#magicLvl"> 22 23 24 26 27 28 30 31 32 34 35 36 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 </table>

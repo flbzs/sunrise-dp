@@ -474,11 +474,14 @@
 		<set name="mpConsume" val="44" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="500" />
 		<set name="reuseDelay" val="3000" />
-		<set name="skillType" val="AGGDAMAGE" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
+		<for>
+			<effect name="AddHate" noicon="1" val="0">
+				<param power="500" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="512" levels="10" name="Create Bio Potion">
 		<!-- Confirmed CT2.5 -->

@@ -835,10 +835,11 @@
 		<set name="itemConsumeCount" val="1" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="70" />
 		<set name="offensive" val="true" />
-		<set name="skillType" val="AGGREDUCE_CHAR" />
 		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="DeleteHateOfMe" noicon="1" val="0" effectPower="70" />
+		</for>
 	</skill>
 	<skill id="2076" levels="1" name="Bless of Eva">
 		<set name="abnormalLvl" val="2" />
