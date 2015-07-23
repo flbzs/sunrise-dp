@@ -86,7 +86,7 @@ public class SummonTrap extends L2Effect
 		trap.setIsInvul(true);
 		trap.setHeading(player.getHeading());
 		trap.spawnMe(player.getX(), player.getY(), player.getZ());
-		player.addTrap(npcId, npcTemplate, _despawnTime);
+		player.addTrap(npcId, trap);
 		return true;
 	}
 }
