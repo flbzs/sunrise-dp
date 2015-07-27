@@ -116,7 +116,7 @@ public final class IndividualLoader
 		Venom.class,
 	};
 	
-	public static void main(String[] args)
+	public IndividualLoader()
 	{
 		_log.info(IndividualLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : individual)

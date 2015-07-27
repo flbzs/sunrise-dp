@@ -98,7 +98,7 @@ public class InstanceLoader
 		Zaken.class,
 	};
 	
-	public static void main(String[] args)
+	public InstanceLoader()
 	{
 		_log.info(InstanceLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> instance : INSTANCES)

@@ -52,7 +52,7 @@ public final class GrandBossLoader
 		Sailren.class,
 	};
 	
-	public static void main(String[] args)
+	public GrandBossLoader()
 	{
 		_log.info(GrandBossLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : GRANDBOSSES)

@@ -54,7 +54,7 @@ public final class CustomsLoader
 		Wedding.class,
 	};
 	
-	public static void main(String[] args)
+	public CustomsLoader()
 	{
 		_log.info(CustomsLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : CUSTOMS)

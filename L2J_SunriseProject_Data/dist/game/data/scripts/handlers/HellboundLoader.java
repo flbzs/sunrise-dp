@@ -121,7 +121,7 @@ public final class HellboundLoader
 		Q00133_ThatsBloodyHot.class,
 	};
 	
-	public static void main(String[] args)
+	public HellboundLoader()
 	{
 		_log.info(HellboundLoader.class.getSimpleName() + ": Loading related scripts.");
 		// Data

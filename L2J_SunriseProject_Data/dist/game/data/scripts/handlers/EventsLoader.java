@@ -34,17 +34,17 @@ public final class EventsLoader
 	private static final Class<?>[] EVENTS =
 	{
 		CharacterBirthday.class,
-	
-	// Disabled by default events
-	// FreyaCelebration.class,
-	// GiftOfVitality.class,
-	// HeavyMedal.class,
-	// LoveYourGatekeeper.class,
-	// MasterOfEnchanting.class,
-	// TheValentineEvent.class,
+		
+		// Disabled by default events
+		// FreyaCelebration.class,
+		// GiftOfVitality.class,
+		// HeavyMedal.class,
+		// LoveYourGatekeeper.class,
+		// MasterOfEnchanting.class,
+		// TheValentineEvent.class,
 	};
 	
-	public static void main(String[] args)
+	public EventsLoader()
 	{
 		_log.info(EventsLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : EVENTS)

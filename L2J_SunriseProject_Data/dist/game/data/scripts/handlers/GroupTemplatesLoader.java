@@ -114,7 +114,7 @@ public final class GroupTemplatesLoader
 		ZombieGatekeepers.class,
 	};
 	
-	public static void main(String[] args)
+	public GroupTemplatesLoader()
 	{
 		_log.info(GroupTemplatesLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : templates)

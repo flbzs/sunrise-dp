@@ -78,7 +78,7 @@ public final class TeleportersLoader
 		ToIVortex.class,
 	};
 	
-	public static void main(String[] args)
+	public TeleportersLoader()
 	{
 		_log.info(TeleportersLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : TELEPORTERS)

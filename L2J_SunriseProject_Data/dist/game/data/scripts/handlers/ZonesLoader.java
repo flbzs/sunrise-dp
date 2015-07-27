@@ -69,7 +69,7 @@ public final class ZonesLoader
 		StakatoNest.class,
 	};
 	
-	public static void main(String[] args)
+	public ZonesLoader()
 	{
 		_log.info(ZonesLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : ZONES)

@@ -635,10 +635,7 @@ public class MasterHandler
 		},
 	};
 	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args)
+	public MasterHandler()
 	{
 		_log.info(MasterHandler.class.getSimpleName() + ": Loading related scripts.");
 		Object loadInstance = null;

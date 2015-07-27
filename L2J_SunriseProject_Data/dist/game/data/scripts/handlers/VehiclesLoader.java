@@ -21,25 +21,33 @@ package handlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import features.SkillTransfer.SkillTransfer;
+import vehicles.BoatGiranTalking;
+import vehicles.BoatGludinRune;
+import vehicles.BoatInnadrilTour;
+import vehicles.BoatRunePrimeval;
+import vehicles.BoatTalkingGludin;
 
 /**
  * @author L2jSunrise Team
  * @Website www.l2jsunrise.com
  */
-public final class FeaturesLoader
+public final class VehiclesLoader
 {
-	private static final Logger _log = LoggerFactory.getLogger(FeaturesLoader.class);
+	private static final Logger _log = LoggerFactory.getLogger(VehiclesLoader.class);
 	
-	private static final Class<?>[] FEATURES =
+	private static final Class<?>[] VEHICLES =
 	{
-		SkillTransfer.class,
+		BoatGiranTalking.class,
+		BoatGludinRune.class,
+		BoatInnadrilTour.class,
+		BoatRunePrimeval.class,
+		BoatTalkingGludin.class
 	};
 	
-	public FeaturesLoader()
+	public VehiclesLoader()
 	{
-		_log.info(FeaturesLoader.class.getSimpleName() + ": Loading related scripts.");
-		for (Class<?> script : FEATURES)
+		_log.info(VehiclesLoader.class.getSimpleName() + ": Loading related scripts.");
+		for (Class<?> script : VEHICLES)
 		{
 			try
 			{
@@ -47,7 +55,7 @@ public final class FeaturesLoader
 			}
 			catch (Exception e)
 			{
-				_log.error(FeaturesLoader.class.getSimpleName() + ": Failed loading " + script.getSimpleName() + ":", e);
+				_log.error(VehiclesLoader.class.getSimpleName() + ": Failed loading " + script.getSimpleName() + ":", e);
 			}
 		}
 	}

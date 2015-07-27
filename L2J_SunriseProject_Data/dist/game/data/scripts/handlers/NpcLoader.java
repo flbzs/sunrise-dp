@@ -136,7 +136,7 @@ public final class NpcLoader
 		WyvernManager.class,
 	};
 	
-	public static void main(String[] args)
+	public NpcLoader()
 	{
 		_log.info(NpcLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : NPCs)

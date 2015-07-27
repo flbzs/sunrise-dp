@@ -66,7 +66,7 @@ public final class VillageMastersLoader
 		SubclassCertification.class,
 	};
 	
-	public static void main(String[] args)
+	public VillageMastersLoader()
 	{
 		_log.info(VillageMastersLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : MASTERS)

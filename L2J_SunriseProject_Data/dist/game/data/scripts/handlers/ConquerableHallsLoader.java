@@ -44,7 +44,7 @@ public final class ConquerableHallsLoader
 		RainbowSpringsChateau.class,
 	};
 	
-	public static void main(String[] args)
+	public ConquerableHallsLoader()
 	{
 		_log.info(ConquerableHallsLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : HALLS)

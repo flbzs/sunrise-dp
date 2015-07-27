@@ -54,7 +54,7 @@ public class SunriseNpcsLoader
 		ReportManager.class,
 	};
 	
-	public static void main(String[] args)
+	public SunriseNpcsLoader()
 	{
 		_log.info(SunriseNpcsLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> instance : NPCS)

@@ -89,7 +89,7 @@ public final class GraciaLoader
 		SoDController.class,
 	};
 	
-	public static void main(String[] args)
+	public GraciaLoader()
 	{
 		_log.info(GraciaLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : SCRIPTS)

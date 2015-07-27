@@ -1018,7 +1018,7 @@ public class QuestLoader
 		Q10505_JewelOfValakas.class
 	};
 	
-	public static void main(String[] args)
+	public QuestLoader()
 	{
 		_log.info(QuestLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> quest : QUESTS)

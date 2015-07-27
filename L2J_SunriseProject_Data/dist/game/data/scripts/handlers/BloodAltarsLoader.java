@@ -68,7 +68,7 @@ public final class BloodAltarsLoader
 		TalkingIslandBloodAltar.class,
 	};
 	
-	public static void main(String[] args)
+	public BloodAltarsLoader()
 	{
 		_log.info(BloodAltarsLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : ALTARs)

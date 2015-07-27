@@ -56,7 +56,7 @@ public final class ModifiersLoader
 		FortressReward.class,
 	};
 	
-	public static void main(String[] args)
+	public ModifiersLoader()
 	{
 		_log.info(ModifiersLoader.class.getSimpleName() + ": Loading related scripts.");
 		for (Class<?> script : MODIFIERS)
