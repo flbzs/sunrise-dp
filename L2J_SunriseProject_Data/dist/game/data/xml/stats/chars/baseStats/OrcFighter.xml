@@ -56,11 +56,11 @@
 		<baseSafeFall>200</baseSafeFall>
 		<collisionMale>
 			<radius>11</radius>
-			<height>28.0</height>
+			<height>28</height>
 		</collisionMale>
 		<collisionFemale>
 			<radius>7</radius>
-			<height>27.0</height>
+			<height>26.6</height>
 		</collisionFemale>
 	</staticData>
 	<lvlUpgainData>

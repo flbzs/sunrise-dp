@@ -101,7 +101,7 @@ public class ItemSkillsTemplate implements IItemHandler
 					return false;
 				}
 				
-				if (!item.isPotion() && !item.isElixir() && !item.isScroll() && playable.isCastingNow())
+				if (!item.isPotion() && !item.getItem().hasImmediateEffect() && !item.getItem().hasExImmediateEffect() && !item.isElixir() && !item.isScroll() && playable.isCastingNow())
 				{
 					return false;
 				}

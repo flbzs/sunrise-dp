@@ -162,6 +162,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 	private final Map<Integer, Boolean> _activeRooms = new HashMap<>();
 	private final Map<Integer, List<L2Npc>> _spawns = new ConcurrentHashMap<>();
 	private final Set<L2Npc> _sporeSpawn = ConcurrentHashMap.newKeySet();
+	
 	static
 	{
 		// Format: entrance_door, exit_door
@@ -738,6 +739,11 @@ public final class TowerOfNaia extends AbstractNpcAI
 		
 		if (npcId == MUTATED_ELPY)
 		{
+			cancelQuestTimers("despawn_total");
+			removeSpores();
+			_despawnedSporesCount.set(0);
+			_challengeState = -1;
+			
 			DoorData.getInstance().getDoor(18250025).openMe();
 			ZoneManager.getInstance().getZoneById(200100).setEnabled(false);
 			ZoneManager.getInstance().getZoneById(200101).setEnabled(true);
@@ -817,8 +823,12 @@ public final class TowerOfNaia extends AbstractNpcAI
 	
 	private void markElpyRespawn()
 	{
-		final long respawnTime = (getRandom(43200, 216000) * 1000) + System.currentTimeMillis();
+		long respawnTime = getRandom(43200, 216000); // Seconds
+		respawnTime *= 1000; // ms
+		respawnTime += System.currentTimeMillis(); // ms + current millis
 		GlobalVariablesManager.getInstance().set("elpy_respawn_time", respawnTime);
+		// TODO: vGodFather Is this retail like?
+		spawnElpy();
 	}
 	
 	private int moveTo(L2Npc npc, int[] coords)

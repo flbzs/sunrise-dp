@@ -122,16 +122,14 @@ public class VanHalter extends AbstractNpcAI
 	
 	public VanHalter()
 	{
-		super(VanHalter.class.getSimpleName(), "ai");
+		super(VanHalter.class.getSimpleName(), "ai/grandboss");
 		
 		addAttackId(ANDREAS_VAN_HALTER);
 		
 		addKillId(ANDREAS_VAN_HALTER);
 		addKillId(ANDREAS_CAPTAIN);
-		for (int Triol : TRIOLS)
-		{
-			addKillId(Triol);
-		}
+		addKillId(TRIOLS);
+		
 		init();
 	}
 	
@@ -169,16 +167,14 @@ public class VanHalter extends AbstractNpcAI
 		
 		if (npcId == ANDREAS_VAN_HALTER)
 		{
-			GrandBossManager.getInstance().setBossStatus(ANDREAS_VAN_HALTER, INTERVAL);
+			setStatus(INTERVAL);
 			// Calculate Min and Max respawn times randomly.
 			long respawnTime = Config.HPH_FIXINTERVALOFHALTER + getRandom(-Config.HPH_RANDOMINTERVALOFHALTER, Config.HPH_RANDOMINTERVALOFHALTER);
 			respawnTime *= 3600000;
 			
 			startQuestTimer("core_unlock", respawnTime, null, null);
 			// also save the respawn time so that the info is maintained past reboots
-			StatsSet info = GrandBossManager.getInstance().getStatsSet(ANDREAS_VAN_HALTER);
-			info.set("respawn_time", (System.currentTimeMillis() + respawnTime));
-			GrandBossManager.getInstance().setStatsSet(ANDREAS_VAN_HALTER, info);
+			setRespawn(respawnTime);
 			enterInterval();
 		}
 		return super.onKill(npc, killer, isSummon);
@@ -192,7 +188,7 @@ public class VanHalter extends AbstractNpcAI
 	public void init()
 	{
 		_zone = (L2BossZone) ZoneManager.getInstance().getZoneById(12014);
-		_state = GrandBossManager.getInstance().getBossStatus(ANDREAS_VAN_HALTER);
+		_state = getStatus();
 		StatsSet info = GrandBossManager.getInstance().getStatsSet(ANDREAS_VAN_HALTER);
 		
 		_isLocked = false;
@@ -673,7 +669,7 @@ public class VanHalter extends AbstractNpcAI
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
 			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id");
-			statement.setInt(1, 29062);
+			statement.setInt(1, ANDREAS_VAN_HALTER);
 			ResultSet rset = statement.executeQuery();
 			
 			L2Spawn spawnDat;
@@ -719,7 +715,7 @@ public class VanHalter extends AbstractNpcAI
 		_vanHalter.setIsImmobilized(true);
 		_vanHalter.setIsInvul(true);
 		_isHalterSpawned = true;
-		GrandBossManager.getInstance().addBoss(_vanHalter);
+		addBoss(_vanHalter);
 	}
 	
 	protected void deleteVanHalter()
@@ -1283,7 +1279,7 @@ public class VanHalter extends AbstractNpcAI
 		
 		if (_state != INTERVAL)
 		{
-			GrandBossManager.getInstance().setBossStatus(ANDREAS_VAN_HALTER, INTERVAL);
+			setStatus(INTERVAL);
 		}
 		
 		long respawntime = info.getLong("respawn_time");
@@ -1385,7 +1381,7 @@ public class VanHalter extends AbstractNpcAI
 		spawnRitualOffering();
 		spawnVanHalter();
 		
-		GrandBossManager.getInstance().setBossStatus(ANDREAS_VAN_HALTER, ALIVE);
+		setStatus(ALIVE);
 		
 		_timeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new TimeUp(), Config.HPH_ACTIVITYTIMEOFHALTER);
 	}
@@ -1419,7 +1415,7 @@ public class VanHalter extends AbstractNpcAI
 			switch (_taskId)
 			{
 				case 1:
-					GrandBossManager.getInstance().setBossStatus(ANDREAS_VAN_HALTER, ALIVE);
+					setStatus(ALIVE);
 					
 					for (L2PcInstance pc : _players)
 					{
@@ -1442,7 +1438,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(2), 16);
 					
 					break;
-				
+					
 				case 2:
 					for (L2PcInstance pc : _players)
 					{
@@ -1465,7 +1461,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(3), 1);
 					
 					break;
-				
+					
 				case 3:
 					for (L2PcInstance pc : _players)
 					{
@@ -1488,7 +1484,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(4), 1500);
 					
 					break;
-				
+					
 				case 4:
 					for (L2PcInstance pc : _players)
 					{
@@ -1511,7 +1507,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(5), 1);
 					
 					break;
-				
+					
 				case 5:
 					for (L2PcInstance pc : _players)
 					{
@@ -1534,7 +1530,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(6), 1500);
 					
 					break;
-				
+					
 				case 6:
 					for (L2PcInstance pc : _players)
 					{
@@ -1557,7 +1553,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(7), 1);
 					
 					break;
-				
+					
 				case 7:
 					for (L2PcInstance pc : _players)
 					{
@@ -1580,7 +1576,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(8), 1500);
 					
 					break;
-				
+					
 				case 8:
 					for (L2PcInstance pc : _players)
 					{
@@ -1603,7 +1599,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(9), 1);
 					
 					break;
-				
+					
 				case 9:
 					for (L2PcInstance pc : _players)
 					{
@@ -1626,7 +1622,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(10), 1500);
 					
 					break;
-				
+					
 				case 10:
 					for (L2PcInstance pc : _players)
 					{
@@ -1649,7 +1645,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(11), 1);
 					
 					break;
-				
+					
 				case 11:
 					for (L2PcInstance pc : _players)
 					{
@@ -1672,7 +1668,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(12), 2000);
 					
 					break;
-				
+					
 				case 12:
 					for (L2PcInstance pc : _players)
 					{
@@ -1695,7 +1691,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(13), 1000);
 					
 					break;
-				
+					
 				case 13:
 					L2Skill skill = SkillData.getInstance().getInfo(1168, 7);
 					_ritualOffering.setIsInvul(false);
@@ -1712,7 +1708,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(14), 4700);
 					
 					break;
-				
+					
 				case 14:
 					_ritualOffering.setIsInvul(false);
 					_ritualOffering.reduceCurrentHp(_ritualOffering.getMaxHp() + 1, _vanHalter, null);
@@ -1725,7 +1721,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(15), 4300);
 					
 					break;
-				
+					
 				case 15:
 					spawnRitualSacrifice();
 					deleteRitualOffering();
@@ -1751,7 +1747,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(16), 2000);
 					
 					break;
-				
+					
 				case 16:
 					for (L2PcInstance pc : _players)
 					{
@@ -1774,7 +1770,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(17), 6000);
 					
 					break;
-				
+					
 				case 17:
 					for (L2PcInstance pc : _players)
 					{
@@ -1793,7 +1789,7 @@ public class VanHalter extends AbstractNpcAI
 					_movieTask = ThreadPoolManager.getInstance().scheduleGeneral(new Movie(18), 1000);
 					
 					break;
-				
+					
 				case 18:
 					combatBeginning();
 					if (_movieTask != null)
@@ -1866,5 +1862,25 @@ public class VanHalter extends AbstractNpcAI
 			}
 		}
 		return false;
+	}
+	
+	private int getStatus()
+	{
+		return GrandBossManager.getInstance().getBossStatus(ANDREAS_VAN_HALTER);
+	}
+	
+	private void addBoss(L2GrandBossInstance grandboss)
+	{
+		GrandBossManager.getInstance().addBoss(grandboss);
+	}
+	
+	protected void setStatus(int status)
+	{
+		GrandBossManager.getInstance().setBossStatus(ANDREAS_VAN_HALTER, status);
+	}
+	
+	private void setRespawn(long respawnTime)
+	{
+		GrandBossManager.getInstance().getStatsSet(ANDREAS_VAN_HALTER).set("respawn_time", (System.currentTimeMillis() + respawnTime));
 	}
 }

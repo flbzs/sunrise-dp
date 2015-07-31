@@ -421,7 +421,10 @@ public class Parade extends AbstractNpcAI
 			{
 				if (npcIndex >= ACTORS.length)
 				{
-					spawnTask.cancel(false);
+					if (spawnTask != null)
+					{
+						spawnTask.cancel(false);
+					}
 					break;
 				}
 				int npcId = ACTORS[npcIndex++];
@@ -455,7 +458,7 @@ public class Parade extends AbstractNpcAI
 						L2Npc actor = it.next();
 						if (actor != null)
 						{
-							if (actor.getPlanDistanceSq(actor.getXdestination(), actor.getYdestination()) < (100 * 100))// TODO:NPE
+							if (actor.getPlanDistanceSq(actor.getXdestination(), actor.getYdestination()) < (100 * 100)) // TODO:NPE
 							{
 								actor.deleteMe();
 								it.remove();

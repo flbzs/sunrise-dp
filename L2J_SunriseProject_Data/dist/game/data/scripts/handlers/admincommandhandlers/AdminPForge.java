@@ -37,8 +37,6 @@ import l2r.gameserver.network.clientpackets.L2GameClientPacket;
 import l2r.gameserver.network.serverpackets.AdminForgePacket;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 
-import com.l2jserver.mmocore.NioNetStringBuffer;
-
 /**
  * This class handles commands for gm to forge packets
  * @author Maktakien, FBIagent
@@ -553,7 +551,7 @@ public final class AdminPForge implements IAdminCommandHandler
 					L2GameClientPacket p = (L2GameClientPacket) GameServer.gameServer.getL2GamePacketHandler().handlePacket(bb, activeChar.getClient());
 					if (p != null)
 					{
-						p.setBuffers(bb, activeChar.getClient(), new NioNetStringBuffer(2000));
+						p.setBuffers(bb, activeChar.getClient());
 						if (p.read())
 						{
 							ThreadPoolManager.getInstance().executePacket(p);

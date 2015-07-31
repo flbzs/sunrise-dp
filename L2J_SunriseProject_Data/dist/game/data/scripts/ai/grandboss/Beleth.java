@@ -36,6 +36,7 @@ import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2DoorInstance;
+import l2r.gameserver.model.actor.instance.L2GrandBossInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.holders.ItemHolder;
@@ -107,8 +108,7 @@ public final class Beleth extends AbstractNpcAI
 		addTalkId(STONE_COFFIN);
 		addFirstTalkId(ELF);
 		StatsSet info = GrandBossManager.getInstance().getStatsSet(REAL_BELETH);
-		int status = GrandBossManager.getInstance().getBossStatus(REAL_BELETH);
-		if (status == DEAD)
+		if (getStatus() == DEAD)
 		{
 			final long time = (info.getLong("respawn_time") - System.currentTimeMillis());
 			if (time > 0)
@@ -117,12 +117,12 @@ public final class Beleth extends AbstractNpcAI
 			}
 			else
 			{
-				GrandBossManager.getInstance().setBossStatus(REAL_BELETH, ALIVE);
+				setStatus(ALIVE);
 			}
 		}
-		else if (status != ALIVE)
+		else if (getStatus() != ALIVE)
 		{
-			GrandBossManager.getInstance().setBossStatus(REAL_BELETH, ALIVE);
+			setStatus(ALIVE);
 		}
 		DoorData.getInstance().getDoor(DOOR1).openMe();
 	}
@@ -134,7 +134,7 @@ public final class Beleth extends AbstractNpcAI
 		{
 			case "BELETH_UNLOCK":
 			{
-				GrandBossManager.getInstance().setBossStatus(REAL_BELETH, ALIVE);
+				setStatus(ALIVE);
 				DoorData.getInstance().getDoor(DOOR1).openMe();
 				break;
 			}
@@ -237,6 +237,7 @@ public final class Beleth extends AbstractNpcAI
 				_beleth.disableAllSkills();
 				_beleth.setIsInvul(true);
 				_beleth.setIsImmobilized(true);
+				addBoss((L2GrandBossInstance) _beleth);
 				
 				startQuestTimer("SPAWN11", 200, null, null);
 				break;
@@ -468,6 +469,7 @@ public final class Beleth extends AbstractNpcAI
 			case "SPAWN_REAL":
 			{
 				_beleth = addSpawn(REAL_BELETH, new Location(16323, 213170, -9357, 49152));
+				addBoss((L2GrandBossInstance) _beleth);
 				break;
 			}
 			case "SPAWN26":
@@ -546,7 +548,7 @@ public final class Beleth extends AbstractNpcAI
 			{
 				if ((_lastAttack + 900000) < System.currentTimeMillis())
 				{
-					GrandBossManager.getInstance().setBossStatus(REAL_BELETH, ALIVE);
+					setStatus(ALIVE);
 					for (L2Character charInside : ZONE.getCharactersInside())
 					{
 						if (charInside != null)
@@ -576,7 +578,7 @@ public final class Beleth extends AbstractNpcAI
 	@Override
 	public String onEnterZone(L2Character character, L2ZoneType zone)
 	{
-		if (character.isPlayer() && (GrandBossManager.getInstance().getBossStatus(REAL_BELETH) == INIT))
+		if (character.isPlayer() && (getStatus() == INIT))
 		{
 			if (_priest != null)
 			{
@@ -587,7 +589,7 @@ public final class Beleth extends AbstractNpcAI
 				_stone.deleteMe();
 			}
 			
-			GrandBossManager.getInstance().setBossStatus(REAL_BELETH, FIGHT);
+			setStatus(FIGHT);
 			startQuestTimer("SPAWN1", 300000, null, null);
 		}
 		
@@ -756,11 +758,12 @@ public final class Beleth extends AbstractNpcAI
 			cancelQuestTimer("CHECK_ATTACK", null, null);
 			
 			setBelethKiller(killer);
-			GrandBossManager.getInstance().setBossStatus(REAL_BELETH, DEAD);
-			final long respawnTime = (Config.BELETH_SPAWN_INTERVAL + getRandom(-Config.BELETH_SPAWN_RANDOM, Config.BELETH_SPAWN_RANDOM)) * 3600000;
-			StatsSet info = GrandBossManager.getInstance().getStatsSet(REAL_BELETH);
-			info.set("respawn_time", System.currentTimeMillis() + respawnTime);
-			GrandBossManager.getInstance().setStatsSet(REAL_BELETH, info);
+			setStatus(DEAD);
+			// Calculate Min and Max respawn times randomly.
+			long respawnTime = Config.BELETH_SPAWN_INTERVAL + getRandom(-Config.BELETH_SPAWN_RANDOM, Config.BELETH_SPAWN_RANDOM);
+			respawnTime *= 3600000;
+			// also save the respawn time so that the info is maintained past reboots
+			setRespawn(respawnTime);
 			startQuestTimer("BELETH_UNLOCK", respawnTime, null, null);
 			
 			deleteAll();
@@ -777,6 +780,7 @@ public final class Beleth extends AbstractNpcAI
 			_beleth.disableAllSkills();
 			_beleth.setIsInvul(true);
 			_beleth.setIsImmobilized(true);
+			addBoss((L2GrandBossInstance) _beleth);
 			
 			_priest = addSpawn(ELF, new Location(_beleth));
 			_priest.setShowSummonAnimation(true);
@@ -833,5 +837,25 @@ public final class Beleth extends AbstractNpcAI
 			n.deleteMe();
 		});
 		_allowedObjId = 0;
+	}
+	
+	private int getStatus()
+	{
+		return GrandBossManager.getInstance().getBossStatus(REAL_BELETH);
+	}
+	
+	private void addBoss(L2GrandBossInstance grandboss)
+	{
+		GrandBossManager.getInstance().addBoss(grandboss);
+	}
+	
+	private void setStatus(int status)
+	{
+		GrandBossManager.getInstance().setBossStatus(REAL_BELETH, status);
+	}
+	
+	private void setRespawn(long respawnTime)
+	{
+		GrandBossManager.getInstance().getStatsSet(REAL_BELETH).set("respawn_time", (System.currentTimeMillis() + respawnTime));
 	}
 }

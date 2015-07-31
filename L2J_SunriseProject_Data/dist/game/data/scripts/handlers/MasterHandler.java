@@ -103,6 +103,7 @@ import handlers.admincommandhandlers.AdminKick;
 import handlers.admincommandhandlers.AdminKill;
 import handlers.admincommandhandlers.AdminLevel;
 import handlers.admincommandhandlers.AdminLogin;
+import handlers.admincommandhandlers.AdminLogsViewer;
 import handlers.admincommandhandlers.AdminMammon;
 import handlers.admincommandhandlers.AdminManor;
 import handlers.admincommandhandlers.AdminMenu;
@@ -433,6 +434,7 @@ public class MasterHandler
 			AdminUnblockIp.class,
 			AdminVitality.class,
 			AdminZone.class,
+			AdminLogsViewer.class,
 		},
 		{
 			// Bypass Handlers
