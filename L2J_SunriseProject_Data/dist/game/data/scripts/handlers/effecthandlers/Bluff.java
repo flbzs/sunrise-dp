@@ -18,12 +18,11 @@
  */
 package handlers.effecthandlers;
 
-import l2r.gameserver.model.actor.L2Npc;
-import l2r.gameserver.model.actor.instance.L2NpcInstance;
-import l2r.gameserver.model.actor.instance.L2SiegeSummonInstance;
+import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.stats.Env;
+import l2r.gameserver.model.stats.Formulas;
 import l2r.gameserver.network.serverpackets.StartRotation;
 import l2r.gameserver.network.serverpackets.StopRotation;
 
@@ -33,9 +32,13 @@ import l2r.gameserver.network.serverpackets.StopRotation;
  */
 public class Bluff extends L2Effect
 {
+	private final int _chance;
+	
 	public Bluff(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		
+		_chance = template.getParameters().getInt("chance", 100);
 	}
 	
 	@Override
@@ -47,24 +50,22 @@ public class Bluff extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if (getEffected() instanceof L2NpcInstance)
+		if (!Formulas.calcProbability(_chance, getEffector(), getEffected(), getSkill()))
 		{
 			return false;
 		}
 		
-		if ((getEffected() instanceof L2Npc) && (((L2Npc) getEffected()).getId() == 35062))
+		final L2Character effected = getEffected();
+		// Headquarters NPC should not rotate
+		if ((effected.getId() == 35062) || effected.isRaid() || effected.isRaidMinion())
 		{
 			return false;
 		}
 		
-		if (getEffected() instanceof L2SiegeSummonInstance)
-		{
-			return false;
-		}
-		
-		getEffected().broadcastPacket(new StartRotation(getEffected().getObjectId(), getEffected().getHeading(), 1, 65535));
-		getEffected().broadcastPacket(new StopRotation(getEffected().getObjectId(), getEffector().getHeading(), 65535));
-		getEffected().setHeading(getEffector().getHeading());
+		final L2Character effector = getEffector();
+		effected.broadcastPacket(new StartRotation(effected.getObjectId(), effected.getHeading(), 1, 65535));
+		effected.broadcastPacket(new StopRotation(effected.getObjectId(), effector.getHeading(), 65535));
+		effected.setHeading(effector.getHeading());
 		return true;
 	}
 }

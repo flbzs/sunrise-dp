@@ -1242,6 +1242,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="3" />
 		<set name="abnormalType" val="stun" />
+		<set name="activateRate" val="40" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="#hitTime" />
@@ -1258,7 +1259,9 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="Bluff" val="9" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Bluff" val="9" abnormalLvl="1" abnormalType="stun">
+				<param chance="80" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5893" levels="1" name="Ritual of Cannibalism">

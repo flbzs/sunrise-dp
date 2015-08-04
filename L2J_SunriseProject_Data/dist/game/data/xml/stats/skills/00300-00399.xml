@@ -785,7 +785,9 @@
 			<effect self="1" name="Buff" abnormalTime="15" val="0" abnormalLvl="1" abnormalType="speed_up_special">
 				<add stat="runSpd" val="40" />
 			</effect>
-			<effect name="Bluff" val="0" effectPower="80" />
+			<effect name="Bluff" val="0">
+				<param chance="80" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="322" levels="6" name="Shield Fortress" enchantGroup1="1" enchantGroup2="1">
@@ -1264,6 +1266,7 @@
 		<set name="offensive" val="true" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A2" />
+		<set name="power" val="80" /> <!-- Base Land Rate -->
 		<set name="reuseDelay" val="150000" />
 		<set name="basicProperty" val="CON" />
 		<set name="targetType" val="ONE" />
@@ -1272,7 +1275,7 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="Debuff" abnormalTime="120" val="0" effectPower="80" abnormalLvl="1" abnormalType="touch_of_death">
+			<effect name="Debuff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="touch_of_death">
 				<mul stat="maxCp" val="0.1" />
 				<add stat="debuffVuln" val="30" />
 				<mul stat="healEffect" val="0.7" />
@@ -1953,7 +1956,7 @@
 	</skill>
 	<skill id="358" levels="1" name="Bluff" enchantGroup1="6">
 		<!-- Confirmed CT2.5 -->
-		<table name="#ench1Power"> 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 </table>
+		<table name="#ench1ActivateRates"> 42 44 46 48 50 52 54 56 58 60 62 64 66 68 70 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
@@ -1973,12 +1976,15 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
+		<enchant1 name="power" val="#ench1ActivateRates" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<cond msgId="113" addName="1">
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="Bluff" noicon="1" val="0" effectPower="80" />
+			<effect name="Bluff" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 			<effect name="RemoveTarget" noicon="1" val="0">
 				<param chance="80" />
 			</effect>
@@ -1988,7 +1994,9 @@
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="40" abnormalLvl="1" abnormalType="stun" />
 		</for>
 		<enchant1for>
-			<effect name="Bluff" noicon="1" val="0" effectPower="80" />
+			<effect name="Bluff" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 			<effect name="RemoveTarget" noicon="1" val="0">
 				<param chance="80" />
 			</effect>

@@ -1178,7 +1178,7 @@
 			<target npcRace="UNDEAD" />
 		</cond>
 		<for>
-			<effect name="Passive" abnormalTime="120" val="0" effectPower="35" abnormalLvl="1" abnormalType="turn_passive"/>
+			<effect name="Passive" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="turn_passive"/>
 		</for>
 	</skill>
 	<skill id="1050" levels="2" name="Return">
