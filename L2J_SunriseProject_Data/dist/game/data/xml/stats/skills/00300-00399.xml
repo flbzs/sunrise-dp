@@ -2003,7 +2003,7 @@
 			<effect name="DeleteHateOfMe" noicon="1" val="0">
 				<param chance="80" />
 			</effect>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="#ench1Power" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" val="0" effectPower="#ench1ActivateRates" abnormalLvl="1" abnormalType="stun" />
 		</enchant1for>
 	</skill>
 	<skill id="359" levels="1" name="Eye of Hunter" enchantGroup1="5" enchantGroup2="5">
