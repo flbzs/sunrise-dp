@@ -758,6 +758,7 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
+		<set name="power" val="40" />
 		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
@@ -1168,6 +1169,7 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A2" />
+		<set name="power" val="35" /> <!-- Base Land Rate -->
 		<set name="reuseDelay" val="5000" />
 		<set name="basicProperty" val="MEN" />
 		<set name="targetType" val="AREA" />

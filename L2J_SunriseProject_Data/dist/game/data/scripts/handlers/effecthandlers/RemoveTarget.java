@@ -22,20 +22,30 @@ import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.stats.Env;
+import l2r.gameserver.model.stats.Formulas;
 
 /**
  * @author -Nemesiss-
  */
 public class RemoveTarget extends L2Effect
 {
+	private final int _chance;
+	
 	public RemoveTarget(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		
+		_chance = template.getParameters().getInt("chance", 100);
 	}
 	
 	@Override
 	public boolean onStart()
 	{
+		if (!Formulas.calcProbability(_chance, getEffector(), getEffected(), getSkill()))
+		{
+			return false;
+		}
+		
 		getEffected().setTarget(null);
 		getEffected().abortAttack();
 		getEffected().abortCast();

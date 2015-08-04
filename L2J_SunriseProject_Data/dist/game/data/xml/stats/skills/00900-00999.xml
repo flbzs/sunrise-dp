@@ -1515,7 +1515,9 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="1" abnormalType="stun" effectPower="80" />
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="40" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="40" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="975" levels="7" name="Aqua Swirl">

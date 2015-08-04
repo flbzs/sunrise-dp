@@ -822,7 +822,9 @@
 		<set name="skillType" val="CONFUSION" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="RandomizeHate" noicon="1" val="0" />
+			<effect name="RandomizeHate" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 			<effect name="Debuff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
@@ -835,10 +837,13 @@
 		<set name="itemConsumeCount" val="1" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
+		<set name="power" val="70" />
 		<set name="offensive" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="DeleteHateOfMe" noicon="1" val="0" effectPower="70" />
+			<effect name="DeleteHateOfMe" noicon="1" val="0">
+				<param chance="70" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="2076" levels="1" name="Bless of Eva">

@@ -26,19 +26,29 @@ import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.stats.Env;
+import l2r.gameserver.model.stats.Formulas;
 import l2r.util.Rnd;
 
 public class RandomizeHate extends L2Effect
 {
+	private final int _chance;
+	
 	public RandomizeHate(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		
+		_chance = template.getParameters().getInt("chance", 100);
 	}
 	
 	@Override
 	public boolean onStart()
 	{
 		if ((getEffected() == null) || (getEffected() == getEffector()) || !getEffected().isAttackable())
+		{
+			return false;
+		}
+		
+		if (!Formulas.calcProbability(_chance, getEffector(), getEffected(), getSkill()))
 		{
 			return false;
 		}

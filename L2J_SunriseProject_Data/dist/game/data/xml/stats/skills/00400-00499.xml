@@ -1787,11 +1787,15 @@
 		</cond>
 		<for>
 			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="2" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="#effectPower" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="#effectPower" />
+			</effect>
 		</for>
 		<enchant1for>
 			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="2" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="#ench1Power" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="#ench1Power" />
+			</effect>
 		</enchant1for>
 	</skill>
 	<skill id="453" levels="1" name="Escape Shackle">

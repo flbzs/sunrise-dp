@@ -77,23 +77,31 @@
 		</cond>
 		<for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="40" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="40" />
+			</effect>
 		</for>
 		<enchant1for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="#ench1effectPower" abnormalLvl="1" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="40" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="40" />
+			</effect>
 		</enchant1for>
 		<enchant3for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun">
 				<mul stat="pDef" val="#ench34pmDef" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="40" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="40" />
+			</effect>
 		</enchant3for>
 		<enchant4for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun">
 				<mul stat="mDef" val="#ench34pmDef" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="40" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="40" />
+			</effect>
 		</enchant4for>
 	</skill>
 	<skill id="102" levels="16" name="Entangle" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
@@ -263,6 +271,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A2" />
+		<set name="power" val="70" /> <!-- Base Land Rate -->
 		<set name="reuseDelay" val="5000" />
 		<set name="basicProperty" val="MEN" />
 		<set name="targetType" val="ONE" />

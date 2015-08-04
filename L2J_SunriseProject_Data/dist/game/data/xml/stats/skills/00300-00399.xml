@@ -1469,7 +1469,9 @@
 			<using kind="POLE" />
 		</cond>
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="60" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="348" levels="1" name="Spoil Crush">
@@ -1624,31 +1626,41 @@
 		</cond>
 		<for>
 			<effect name="Stun" abnormalTime="2" val="0" abnormalLvl="1" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 		</for>
 		<enchant2for>
 			<effect name="Stun" abnormalTime="2" val="0" abnormalLvl="1" abnormalType="stun">
 				<sub stat="fireRes" val="#ench-Res" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 		</enchant2for>
 		<enchant3for>
 			<effect name="Stun" abnormalTime="2" val="0" abnormalLvl="1" abnormalType="stun">
 				<sub stat="waterRes" val="#ench-Res" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 		</enchant3for>
 		<enchant4for>
 			<effect name="Stun" abnormalTime="2" val="0" abnormalLvl="1" abnormalType="stun">
 				<sub stat="windRes" val="#ench-Res" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 		</enchant4for>
 		<enchant5for>
 			<effect name="Stun" abnormalTime="2" val="0" abnormalLvl="1" abnormalType="stun">
 				<sub stat="earthRes" val="#ench-Res" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 		</enchant5for>
 	</skill>
 	<skill id="353" levels="1" name="Shield Slam" enchantGroup1="6" enchantGroup2="6" enchantGroup3="6">
@@ -1683,19 +1695,25 @@
 		</cond>
 		<for>
 			<effect name="PhysicalMute" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="silence_physical" />
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 		</for>
 		<enchant2for>
 			<effect name="PhysicalMute" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="silence_physical">
 				<sub stat="holyRes" val="#ench-Res" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 		</enchant2for>
 		<enchant3for>
 			<effect name="PhysicalMute" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="silence_physical">
 				<sub stat="darkRes" val="#ench-Res" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 		</enchant3for>
 	</skill>
 	<skill id="354" levels="1" name="Hamstring Shot" enchantGroup1="6" enchantGroup2="6">
@@ -1949,6 +1967,7 @@
 		<set name="magicLvl" val="77" />
 		<set name="mpConsume" val="35" />
 		<set name="operateType" val="A2" />
+		<set name="power" val="40" /> <!-- Base Land Rate -->
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="8000" />
 		<set name="basicProperty" val="MEN" />
@@ -1960,14 +1979,22 @@
 		</cond>
 		<for>
 			<effect name="Bluff" noicon="1" val="0" effectPower="80" />
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="80" />
-			<effect name="DeleteHateOfMe" noicon="1" val="0" effectPower="80" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
+			<effect name="DeleteHateOfMe" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="40" abnormalLvl="1" abnormalType="stun" />
 		</for>
 		<enchant1for>
 			<effect name="Bluff" noicon="1" val="0" effectPower="80" />
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="80" />
-			<effect name="DeleteHateOfMe" noicon="1" val="0" effectPower="80" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
+			<effect name="DeleteHateOfMe" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="#ench1Power" abnormalLvl="1" abnormalType="stun" />
 		</enchant1for>
 	</skill>
@@ -2101,14 +2128,18 @@
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="60" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="60" />
+			</effect>
 		</for>
 		<enchant3for>
 			<effect name="Stun" abnormalTime="8" val="0" effectPower="#ench3effectPower" abnormalLvl="2" abnormalType="stun">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="60" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="60" />
+			</effect>
 		</enchant3for>
 	</skill>
 	<skill id="362" levels="1" name="Armor Crush" enchantGroup1="6" enchantGroup2="6" enchantGroup3="6">

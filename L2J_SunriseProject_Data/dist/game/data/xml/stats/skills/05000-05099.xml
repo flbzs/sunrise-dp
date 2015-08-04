@@ -1119,7 +1119,9 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="10" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="10" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5084" levels="4" name="NPC Blinding Blow">

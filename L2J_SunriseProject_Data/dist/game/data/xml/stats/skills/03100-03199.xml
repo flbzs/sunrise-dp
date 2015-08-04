@@ -1086,6 +1086,7 @@
 	<skill id="3152" levels="10" name="Item Skill: Trick">
 		<table name="#magicLvl"> 49 52 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 21 22 24 25 27 29 30 31 33 35 </table>
+		<set name="activateRate" val="80" />
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="hitTime" val="1200" />
@@ -1093,13 +1094,18 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
+		<set name="power" val="80" />
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="180000" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="DeleteHateOfMe" noicon="1" val="0" effectPower="80" />
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="80" />
+			<effect name="DeleteHateOfMe" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="80" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3153" levels="10" name="Item Skill: Vampiric Touch">

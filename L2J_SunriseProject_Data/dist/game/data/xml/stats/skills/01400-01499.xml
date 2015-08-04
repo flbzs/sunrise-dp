@@ -628,10 +628,14 @@
 		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="#effectPower" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="#effectPower" />
+			</effect>
 		</for>
 		<enchant2for>
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="#ench2Chance" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="#ench2Chance" />
+			</effect>
 		</enchant2for>
 	</skill>
 	<skill id="1418" levels="1" name="Celestial Shield">
@@ -1125,7 +1129,9 @@
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<enchant4 name="pvpPower" val="#ench4Duel" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0" effectPower="30" />
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="30" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1437" levels="26" name="Dark Flame" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2">
