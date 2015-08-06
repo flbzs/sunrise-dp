@@ -47,6 +47,7 @@ import hellbound.AI.NPC.Budenka.Budenka;
 import hellbound.AI.NPC.Buron.Buron;
 import hellbound.AI.NPC.Deltuva.Deltuva;
 import hellbound.AI.NPC.Falk.Falk;
+import hellbound.AI.NPC.Galate.Galate;
 import hellbound.AI.NPC.Hude.Hude;
 import hellbound.AI.NPC.Jude.Jude;
 import hellbound.AI.NPC.Kanaf.Kanaf;
@@ -97,6 +98,7 @@ public final class HellboundLoader
 		Buron.class,
 		Deltuva.class,
 		Falk.class,
+		Galate.class,
 		Hude.class,
 		Jude.class,
 		Kanaf.class,

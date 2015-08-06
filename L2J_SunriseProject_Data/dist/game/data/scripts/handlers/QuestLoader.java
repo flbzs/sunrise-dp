@@ -300,8 +300,12 @@ import quests.Q00326_VanquishRemnants.Q00326_VanquishRemnants;
 import quests.Q00327_RecoverTheFarmland.Q00327_RecoverTheFarmland;
 import quests.Q00328_SenseForBusiness.Q00328_SenseForBusiness;
 import quests.Q00329_CuriosityOfADwarf.Q00329_CuriosityOfADwarf;
+import quests.Q00330_AdeptOfTaste.Q00330_AdeptOfTaste;
 import quests.Q00331_ArrowOfVengeance.Q00331_ArrowOfVengeance;
 import quests.Q00333_HuntOfTheBlackLion.Q00333_HuntOfTheBlackLion;
+import quests.Q00334_TheWishingPotion.Q00334_TheWishingPotion;
+import quests.Q00335_TheSongOfTheHunter.Q00335_TheSongOfTheHunter;
+import quests.Q00336_CoinOfMagic.Q00336_CoinOfMagic;
 import quests.Q00337_AudienceWithTheLandDragon.Q00337_AudienceWithTheLandDragon;
 import quests.Q00338_AlligatorHunter.Q00338_AlligatorHunter;
 import quests.Q00340_SubjugationOfLizardmen.Q00340_SubjugationOfLizardmen;
@@ -804,8 +808,12 @@ public class QuestLoader
 		Q00327_RecoverTheFarmland.class,
 		Q00328_SenseForBusiness.class,
 		Q00329_CuriosityOfADwarf.class,
+		Q00330_AdeptOfTaste.class,
 		Q00331_ArrowOfVengeance.class,
 		Q00333_HuntOfTheBlackLion.class,
+		Q00334_TheWishingPotion.class,
+		Q00335_TheSongOfTheHunter.class,
+		Q00336_CoinOfMagic.class,
 		Q00337_AudienceWithTheLandDragon.class,
 		Q00338_AlligatorHunter.class,
 		Q00340_SubjugationOfLizardmen.class,

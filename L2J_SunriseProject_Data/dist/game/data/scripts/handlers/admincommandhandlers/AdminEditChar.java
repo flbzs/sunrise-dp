@@ -32,8 +32,11 @@ import java.util.StringTokenizer;
 
 import l2r.Config;
 import l2r.L2DatabaseFactory;
+import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.data.sql.CharNameTable;
 import l2r.gameserver.data.xml.impl.ClassListData;
+import l2r.gameserver.data.xml.impl.TransformData;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.handler.IAdminCommandHandler;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.L2World;
@@ -77,7 +80,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		"admin_setfame", // sets fame of target char to any amount. //setfame <fame>
 		"admin_character_list", // same as character_info, kept for compatibility purposes
 		"admin_character_info", // given a player name, displays an information window
-		"admin_show_characters",// list of characters
+		"admin_show_characters", // list of characters
 		"admin_find_character", // find a player by his name or a part of it (case-insensitive)
 		"admin_find_ip", // find all the player connections from a given IPv4 number
 		"admin_find_account", // list all the characters from an account (useful for GMs w/o DB access)
@@ -372,6 +375,8 @@ public class AdminEditChar implements IAdminCommandHandler
 				}
 				if (valid && (player.getClassId().getId() != classidval))
 				{
+					Race race = player.getRace();
+					boolean isMage = player.isMageClass();
 					player.setClassId(classidval);
 					if (!player.isSubClassActive())
 					{
@@ -382,6 +387,12 @@ public class AdminEditChar implements IAdminCommandHandler
 					player.sendMessage("A GM changed your class to " + newclass + ".");
 					player.broadcastUserInfo();
 					activeChar.sendMessage(player.getName() + " is a " + newclass + ".");
+					// If necessary transform-untransform player quickly to force the client to reload the character textures
+					if ((race != player.getRace()) || (((race == Race.HUMAN) || (race == Race.ORC)) && (isMage != player.isMageClass())))
+					{
+						TransformData.getInstance().transformPlayer(105, player);
+						ThreadPoolManager.getInstance().scheduleGeneral(new Untransform(player), 200);
+					}
 				}
 				else
 				{
@@ -487,6 +498,9 @@ public class AdminEditChar implements IAdminCommandHandler
 			player.getAppearance().setSex(player.getAppearance().getSex() ? false : true);
 			player.sendMessage("Your gender has been changed by a GM");
 			player.broadcastUserInfo();
+			// Transform-untransorm player quickly to force the client to reload the character textures
+			TransformData.getInstance().transformPlayer(105, player);
+			ThreadPoolManager.getInstance().scheduleGeneral(new Untransform(player), 200);
 		}
 		else if (command.startsWith("admin_setcolor"))
 		{
@@ -910,7 +924,7 @@ public class AdminEditChar implements IAdminCommandHandler
 		final PageResult result = HtmlUtil.createPage(players, page, 20, i ->
 		{
 			return "<td align=center><a action=\"bypass -h admin_show_characters " + i + "\">Page " + (i + 1) + "</a></td>";
-		}, player ->
+		} , player ->
 		{
 			StringBuilder sb = new StringBuilder();
 			sb.append("<tr>");
@@ -1516,5 +1530,21 @@ public class AdminEditChar implements IAdminCommandHandler
 		html.replace("%player%", target.getName());
 		html.replace("%party%", text.toString());
 		activeChar.sendPacket(html);
+	}
+	
+	private final class Untransform implements Runnable
+	{
+		private final L2PcInstance _player;
+		
+		protected Untransform(L2PcInstance player)
+		{
+			_player = player;
+		}
+		
+		@Override
+		public void run()
+		{
+			_player.untransform();
+		}
 	}
 }

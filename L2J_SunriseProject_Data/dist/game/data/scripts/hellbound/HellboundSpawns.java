@@ -94,8 +94,6 @@ public final class HellboundSpawns implements IXmlReader
 			for (Node element = npc.getFirstChild(); element != null; element = element.getNextSibling())
 			{
 				final NamedNodeMap attrs = element.getAttributes();
-				minLevel = 1;
-				maxLevel = 100;
 				switch (element.getNodeName())
 				{
 					case "location":
