@@ -1156,7 +1156,7 @@
 			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="multi_buff">
 				<mul stat="maxHp" val="1.2" />
 				<mul stat="rCrit" val="1.2" />
-				<mul stat="mCritRate" val="0.2" />
+				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
 				<mul stat="pAtkSpd" val="1.2" />
@@ -1180,7 +1180,7 @@
 		<for>
 			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="2" abnormalType="multi_buff">
 				<mul stat="maxHp" val="1.2" />
-				<mul stat="mCritRate" val="0.2" />
+				<add stat="mCritRate" val="2" />
 				<mul stat="cAtk" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />

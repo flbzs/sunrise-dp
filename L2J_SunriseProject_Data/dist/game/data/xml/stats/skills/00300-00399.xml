@@ -2301,12 +2301,12 @@
 		</cond>
 		<for>
 			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="dance_of_siren">
-				<mul stat="mCritRate" val="1" />
+				<mul stat="mCritRate" val="2" />
 			</effect>
 		</for>
 		<enchant1for>
 			<effect name="Buff" abnormalTime="#ench1Time" val="0" abnormalLvl="1" abnormalType="dance_of_siren">
-				<mul stat="mCritRate" val="1" />
+				<mul stat="mCritRate" val="2" />
 			</effect>
 		</enchant1for>
 	</skill>
