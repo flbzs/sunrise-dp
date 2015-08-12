@@ -21,13 +21,15 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import l2r.gameserver.Announcements;
 import l2r.gameserver.data.EventDroplist;
+import l2r.gameserver.data.sql.AnnouncementsTable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.model.announce.EventAnnouncement;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.script.DateRange;
+import l2r.gameserver.util.Broadcast;
 import l2r.util.Rnd;
 
 public class FifthAnniversary extends Quest
@@ -39,10 +41,7 @@ public class FifthAnniversary extends Quest
 	 */
 	private static final String EVENT_DATE = "28 03 2009-05 05 2009"; // change date as you want
 	private static final DateRange EVENT_DATES = DateRange.parse(EVENT_DATE, new SimpleDateFormat("dd MM yyyy", Locale.US));
-	private static final String[] EVENT_ANNOUNCE =
-	{
-		"5th Anniversary Event is currently active."
-	};
+	private static final String EVENT_ANNOUNCE = "5th Anniversary Event is currently active.";
 	private static final Date EndDate = EVENT_DATES.getEndDate();
 	private static final Date currentDate = new Date();
 	
@@ -154,7 +153,7 @@ public class FifthAnniversary extends Quest
 		
 		EventDroplist.getInstance().addGlobalDrop(dropList, dropCount, dropChance, EVENT_DATES);
 		
-		Announcements.getInstance().addEventAnnouncement(EVENT_DATES, EVENT_ANNOUNCE);
+		AnnouncementsTable.getInstance().addAnnouncement(new EventAnnouncement(EVENT_DATES, EVENT_ANNOUNCE));
 		
 		addStartNpc(EventNPC);
 		addFirstTalkId(EventNPC);
@@ -218,7 +217,7 @@ public class FifthAnniversary extends Quest
 				{
 					FifthAnniversaryEvent = true;
 					_log.info("5th Anniversary Event - ON");
-					Announcements.getInstance().announceToAll("5th Anniversary Event is currently active. See the Event NPCs to participate!");
+					Broadcast.toAllOnlinePlayers("5th Anniversary Event is currently active. See the Event NPCs to participate!");
 					
 					for (int i = 0; i < EventSpawnX.length; i++)
 					{

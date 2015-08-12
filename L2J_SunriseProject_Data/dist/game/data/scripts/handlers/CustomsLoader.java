@@ -28,7 +28,6 @@ import custom.NpcLocationInfo.NpcLocationInfo;
 import custom.PinsAndPouchUnseal.PinsAndPouchUnseal;
 import custom.RaidbossInfo.RaidbossInfo;
 import custom.ShadowWeapons.ShadowWeapons;
-import custom.TheValentine.TheValentine;
 import custom.Validators.SubClassSkills;
 import custom.events.Wedding.Wedding;
 
@@ -50,7 +49,6 @@ public final class CustomsLoader
 		RaidbossInfo.class,
 		ShadowWeapons.class,
 		SubClassSkills.class,
-		TheValentine.class,
 		Wedding.class,
 	};
 	

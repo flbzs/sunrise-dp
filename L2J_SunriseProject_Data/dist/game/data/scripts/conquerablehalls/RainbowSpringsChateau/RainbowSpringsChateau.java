@@ -32,7 +32,6 @@ import java.util.concurrent.ScheduledFuture;
 
 import l2r.Config;
 import l2r.L2DatabaseFactory;
-import l2r.gameserver.Announcements;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.cache.HtmCache;
 import l2r.gameserver.data.SpawnTable;
@@ -56,6 +55,7 @@ import l2r.gameserver.model.items.instance.L2ItemInstance;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.NpcSay;
+import l2r.gameserver.util.Broadcast;
 import l2r.gameserver.util.Util;
 
 /**
@@ -123,7 +123,7 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 				}
 				else
 				{
-					Announcements.getInstance().announceToAll("Rainbow Springs Chateau siege aborted due lack of population");
+					Broadcast.toAllOnlinePlayers("Rainbow Springs Chateau siege aborted due lack of population");
 				}
 			}
 		}

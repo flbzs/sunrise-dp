@@ -19,13 +19,13 @@
 package hellbound;
 
 import l2r.Config;
-import l2r.gameserver.Announcements;
 import l2r.gameserver.data.xml.impl.DoorData;
 import l2r.gameserver.instancemanager.GlobalVariablesManager;
 import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2DoorInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.util.Broadcast;
 
 import ai.npc.AbstractNpcAI;
 
@@ -310,7 +310,7 @@ public final class HellboundEngine extends AbstractNpcAI
 		
 		if (_cachedLevel > 0)
 		{
-			Announcements.getInstance().announceToAll(ANNOUNCEMENT.replace("%lvl%", String.valueOf(newLevel)));
+			Broadcast.toAllOnlinePlayers(ANNOUNCEMENT.replace("%lvl%", String.valueOf(newLevel)));
 			_log.info(HellboundEngine.class.getSimpleName() + ": New level: " + newLevel);
 		}
 		_cachedLevel = newLevel;
