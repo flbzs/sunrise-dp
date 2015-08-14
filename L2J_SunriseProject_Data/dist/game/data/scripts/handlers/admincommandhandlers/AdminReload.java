@@ -246,7 +246,7 @@ public class AdminReload implements IAdminCommandHandler
 				}
 				case "handler":
 				{
-					final File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, "handlers/MasterHandler.java");
+					final File file = new File(L2ScriptEngineManager.SCRIPT_FOLDER, "handlers/loader/GlobalLoader.java");
 					try
 					{
 						L2ScriptEngineManager.getInstance().executeScript(file);

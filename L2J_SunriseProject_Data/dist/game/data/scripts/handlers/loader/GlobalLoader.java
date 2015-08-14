@@ -73,7 +73,7 @@ public final class GlobalLoader
 		ZonesLoader.class,
 	};
 	
-	public static void main(String[] args)
+	public GlobalLoader()
 	{
 		long serverLoadStart = System.currentTimeMillis();
 		for (Class<?> script : loader)
@@ -88,5 +88,10 @@ public final class GlobalLoader
 			}
 		}
 		_log.info(GlobalLoader.class.getSimpleName() + ": Global scripts loaded in " + (System.currentTimeMillis() - serverLoadStart) + " ms.");
+	}
+	
+	public static void main(String[] args)
+	{
+		new GlobalLoader();
 	}
 }
