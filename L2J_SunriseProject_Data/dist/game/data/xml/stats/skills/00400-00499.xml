@@ -289,6 +289,7 @@
 		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 50 53 55 58 59 61 63 65 67 68 </table>
 		<table name="#ench1Cost"> 66 65 64 63 62 61 60 58 57 56 55 54 53 52 51 49 48 47 46 45 44 43 41 40 39 38 37 36 35 34 </table>
+		<table name="#ench2Power"> 30 31 32 32 33 34 34 35 36 36 37 38 38 39 40 40 41 42 42 43 44 44 45 46 46 47 48 48 49 50 </table> 
 		<table name="#ench2Chance"> 30 31 32 32 33 34 34 35 36 36 37 38 38 39 40 40 41 42 42 43 44 44 45 46 46 47 48 48 49 50 </table>
 		<table name="#ench2LethalStrikeRate"> 25 25 25 26 26 26 26 27 27 27 27 28 28 28 29 29 29 29 30 30 30 30 31 31 31 31 32 32 32 33 </table>
 		<table name="#ench3Attack"> 191 196 201 206 211 216 221 227 232 237 242 247 252 257 263 268 273 278 283 288 293 298 304 309 314 319 324 329 334 340 </table>
@@ -307,7 +308,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="30" /> <!-- Base Land Rate -->
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="4000" />
 		<set name="skillType" val="FEAR" />
@@ -316,7 +316,6 @@
 		<enchant1 name="mpConsume" val="#ench1Cost" />
 		<enchant2 name="lethalStrikeRate" val="#ench2LethalStrikeRate" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
-		<enchant2 name="power" val="#ench2Chance" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="power" val="#ench3Attack" />
 		<enchant3 name="skillType" val="PDAM" />
@@ -327,10 +326,22 @@
 			<target npcRace="UNDEAD" />
 		</cond>
 		<for>
-			<effect count="10" name="Fear" abnormalTime="2" val="0" />
+			<effect name="RunAway" noicon="1" val="0">
+				<param power="30" />
+				<param time="20" />
+			</effect>
 		</for>
+		<enchant2for>
+			<effect name="RunAway" noicon="1" val="0">
+				<param power="#ench2Power" />
+				<param time="20" />
+			</effect>
+		</enchant2for>
 		<enchant3for>
-			<effect count="10" name="Fear" abnormalTime="2" val="0" effectPower="30" />
+			<effect name="RunAway" noicon="1" val="0">
+				<param power="30" />
+				<param time="20" />
+			</effect>
 		</enchant3for>
 	</skill>
 	<skill id="406" levels="3" name="Angelic Icon" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1" enchantGroup4="1">
@@ -1684,6 +1695,7 @@
 		<table name="#magicLvl"> 55 58 60 62 64 66 68 70 72 74 </table>
 		<table name="#mpConsume"> 50 53 55 58 59 61 63 65 67 68 </table>
 		<table name="#ench1Cost"> 66 65 64 63 62 61 60 58 57 56 55 54 53 52 51 49 48 47 46 45 44 43 41 40 39 38 37 36 35 34 </table>
+		<table name="#ench2Power"> 30 31 32 32 33 34 34 35 36 36 37 38 38 39 40 40 41 42 42 43 44 44 45 46 46 47 48 48 49 50 </table>
 		<table name="#ench2Chance"> 30 31 32 32 33 34 34 35 36 36 37 38 38 39 40 40 41 42 42 43 44 44 45 46 46 47 48 48 49 50 </table>
 		<table name="#ench2LethalStrikeRate"> 25 25 25 26 26 26 26 27 27 27 27 28 28 28 29 29 29 29 30 30 30 30 31 31 31 31 32 32 32 33 </table>
 		<table name="#ench3Attack"> 191 196 201 206 211 216 221 227 232 237 242 247 252 257 263 268 273 278 283 288 293 298 304 309 314 319 324 329 334 340 </table>
@@ -1702,7 +1714,6 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="30" /> <!-- Base Land Rate -->
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="4000" />
 		<set name="skillType" val="FEAR" />
@@ -1722,10 +1733,22 @@
 			<target npcRace="ANGEL" />
 		</cond>
 		<for>
-			<effect count="10" name="Fear" abnormalTime="2" val="0" />
+			<effect name="RunAway" noicon="1" val="0">
+				<param power="30" />
+				<param time="20" />
+			</effect>
 		</for>
+		<enchant2for>
+			<effect name="RunAway" noicon="1" val="0">
+				<param power="#ench2Power" />
+				<param time="20" />
+			</effect>
+		</enchant2for>
 		<enchant3for>
-			<effect count="10" name="Fear" abnormalTime="2" val="0" effectPower="30" />
+			<effect name="RunAway" noicon="1" val="0">
+				<param power="30" />
+				<param time="20" />
+			</effect>
 		</enchant3for>
 	</skill>
 	<skill id="451" levels="2" name="Sonic Move">

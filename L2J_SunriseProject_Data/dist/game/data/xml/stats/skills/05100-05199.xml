@@ -1398,7 +1398,10 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect count="5" name="Fear" abnormalTime="2" val="0" abnormalLvl="1" abnormalType="turn_flee" />
+			<effect name="RunAway" noicon="1" val="0">
+				<param power="40" />
+				<param time="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5174" levels="10" name="Poison">

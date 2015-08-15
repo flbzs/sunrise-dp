@@ -18,9 +18,7 @@
  */
 package handlers.effecthandlers;
 
-import l2r.gameserver.GeoData;
-import l2r.gameserver.enums.CtrlIntention;
-import l2r.gameserver.model.Location;
+import l2r.gameserver.enums.CtrlEvent;
 import l2r.gameserver.model.actor.instance.L2DefenderInstance;
 import l2r.gameserver.model.actor.instance.L2FortCommanderInstance;
 import l2r.gameserver.model.actor.instance.L2NpcInstance;
@@ -38,20 +36,28 @@ import l2r.gameserver.model.stats.Env;
  */
 public class Fear extends L2Effect
 {
-	public static final int FEAR_RANGE = 500;
-	
-	private int _dX = -1;
-	private int _dY = -1;
-	
 	public Fear(Env env, EffectTemplate template)
 	{
 		super(env, template);
 	}
 	
 	@Override
+	public int getEffectFlags()
+	{
+		return EffectFlag.FEAR.getMask();
+	}
+	
+	@Override
 	public L2EffectType getEffectType()
 	{
 		return L2EffectType.FEAR;
+	}
+	
+	@Override
+	public boolean onActionTime()
+	{
+		getEffected().getAI().notifyEvent(CtrlEvent.EVT_AFRAID, getEffector(), false);
+		return false;
 	}
 	
 	@Override
@@ -62,74 +68,7 @@ public class Fear extends L2Effect
 			return false;
 		}
 		
-		if (!getEffected().isAfraid())
-		{
-			if (getEffected().isCastingNow() && getEffected().canAbortCast())
-			{
-				getEffected().abortCast();
-			}
-			
-			if (getEffected().getX() > getEffector().getX())
-			{
-				_dX = 1;
-			}
-			if (getEffected().getY() > getEffector().getY())
-			{
-				_dY = 1;
-			}
-			
-			getEffected().startFear();
-			onActionTime();
-			return true;
-		}
+		getEffected().getAI().notifyEvent(CtrlEvent.EVT_AFRAID, getEffector(), true);
 		return false;
-	}
-	
-	@Override
-	public void onExit()
-	{
-		getEffected().stopFear(false);
-	}
-	
-	@Override
-	public boolean onActionTime()
-	{
-		int posX = getEffected().getX();
-		int posY = getEffected().getY();
-		int posZ = getEffected().getZ();
-		
-		if (getEffected().getX() > getEffector().getX())
-		{
-			_dX = 1;
-		}
-		if (getEffected().getY() > getEffector().getY())
-		{
-			_dY = 1;
-		}
-		
-		posX += _dX * FEAR_RANGE;
-		posY += _dY * FEAR_RANGE;
-		
-		if (!getEffected().isPet())
-		{
-			getEffected().setRunning();
-		}
-		
-		// If pathfinding enabled the creature will go to the defined destination (retail like).
-		// Otherwise it will go to the nearest obstacle.
-		/**
-		 * final Location destination; if (Config.PATHFINDING > 0) { destination = new Location(posX, posY, posZ, getEffected().getInstanceId()); } else { destination = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), posX, posY, posZ,
-		 * getEffected().getInstanceId()); }
-		 */
-		
-		final Location destination = GeoData.getInstance().moveCheck(getEffected().getX(), getEffected().getY(), getEffected().getZ(), posX, posY, posZ, getEffected().getInstanceId());
-		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, destination);
-		return true;
-	}
-	
-	@Override
-	public int getEffectFlags()
-	{
-		return EffectFlag.FEAR.getMask();
 	}
 }

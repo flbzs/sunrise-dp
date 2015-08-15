@@ -141,6 +141,7 @@ public final class EffectMasterHandler
 		Resurrection.class,
 		ResurrectionSpecial.class,
 		Root.class,
+		RunAway.class,
 		ServitorShare.class,
 		Signet.class,
 		SignetAntiSummon.class,

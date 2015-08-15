@@ -18,6 +18,7 @@
  */
 package handlers.effecthandlers;
 
+import l2r.gameserver.enums.CtrlEvent;
 import l2r.gameserver.model.effects.EffectFlag;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
@@ -35,6 +36,12 @@ public class Root extends L2Effect
 	}
 	
 	@Override
+	public int getEffectFlags()
+	{
+		return EffectFlag.ROOTED.getMask();
+	}
+	
+	@Override
 	public L2EffectType getEffectType()
 	{
 		return L2EffectType.ROOT;
@@ -43,19 +50,17 @@ public class Root extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		getEffected().startRooted();
+		getEffected().stopMove(null);
+		getEffected().getAI().notifyEvent(CtrlEvent.EVT_ROOTED);
 		return true;
 	}
 	
 	@Override
 	public void onExit()
 	{
-		getEffected().stopRooting(false);
-	}
-	
-	@Override
-	public int getEffectFlags()
-	{
-		return EffectFlag.ROOTED.getMask();
+		if (!getEffected().isPlayer())
+		{
+			getEffected().getAI().notifyEvent(CtrlEvent.EVT_THINK);
+		}
 	}
 }

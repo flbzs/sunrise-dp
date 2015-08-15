@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import l2r.gameserver.model.effects.EffectFlag;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 
 /**
@@ -35,27 +34,15 @@ public class PhysicalMute extends L2Effect
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
+	public int getEffectFlags()
 	{
-		return L2EffectType.PHYSICAL_MUTE;
+		return EffectFlag.PSYCHICAL_ATTACK_MUTED.getMask();
 	}
 	
 	@Override
 	public boolean onStart()
 	{
-		getEffected().startPsychicalMuted();
+		getEffected().startPhysicalAttackMuted();
 		return true;
-	}
-	
-	@Override
-	public void onExit()
-	{
-		getEffected().stopPsychicalMuted(false);
-	}
-	
-	@Override
-	public int getEffectFlags()
-	{
-		return EffectFlag.PSYCHICAL_MUTED.getMask();
 	}
 }
