@@ -89,7 +89,15 @@ public final class Warpgate extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		return HellboundEngine.getInstance().isLocked() ? "Warpgate-01.html" : "Warpgate-02.html";
+		if (!canEnter(player))
+		{
+			if (HellboundEngine.getInstance().isLocked())
+			{
+				return "Warpgate-01.html";
+			}
+		}
+		
+		return "Warpgate-02.html";
 	}
 	
 	@Override
