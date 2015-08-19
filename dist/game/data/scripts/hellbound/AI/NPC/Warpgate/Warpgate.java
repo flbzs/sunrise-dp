@@ -76,7 +76,7 @@ public final class Warpgate extends AbstractNpcAI
 			}
 			else
 			{
-				return "warpgate-no.htm";
+				return "Warpgate-03.html";
 			}
 		}
 		else if (event.equals("TELEPORT"))
@@ -93,11 +93,11 @@ public final class Warpgate extends AbstractNpcAI
 		{
 			if (HellboundEngine.getInstance().isLocked())
 			{
-				return "warpgate-locked.htm";
+				return "Warpgate-01.html";
 			}
 		}
 		
-		return npc.getId() + ".htm";
+		return "Warpgate-02.html";
 	}
 	
 	@Override
@@ -131,11 +131,9 @@ public final class Warpgate extends AbstractNpcAI
 			return true;
 		}
 		
-		int hellboundTrust = HellboundEngine.getInstance().getTrust();
-		
 		final QuestState path_to_hellbound_st = player.getQuestState(Q00130_PathToHellbound.class.getSimpleName());
 		final QuestState thats_bloody_hot_st = player.getQuestState(Q00133_ThatsBloodyHot.class.getSimpleName());
 		
-		return (((hellboundTrust > 99999) && (path_to_hellbound_st != null) && path_to_hellbound_st.isCompleted()) || ((hellboundTrust > 99999) && (thats_bloody_hot_st != null) && thats_bloody_hot_st.isCompleted()));
+		return (((path_to_hellbound_st != null) && path_to_hellbound_st.isCompleted()) || ((thats_bloody_hot_st != null) && thats_bloody_hot_st.isCompleted()));
 	}
 }
