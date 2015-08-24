@@ -3576,7 +3576,7 @@
 			<height normal="80" />
 		</collision>
 	</npc>
-	<npc id="29062" level="80" type="L2RaidBoss" name="Andreas Van Halter" title="Seer of Pagan">
+	<npc id="29062" level="80" type="L2GrandBoss" name="Andreas Van Halter" title="Seer of Pagan">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="RaidSpawnMusic" value="Rm03_A" />
