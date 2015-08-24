@@ -2444,7 +2444,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="32059" level="70" type="L2Npc" name="Triol's Revelation">
+	<npc id="32059" level="70" type="L2Monster" name="Triol's Revelation">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="AreaName" value="19_16_altar_leftroom_02" />
@@ -2488,7 +2488,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="32060" level="70" type="L2Npc" name="Triol's Revelation">
+	<npc id="32060" level="70" type="L2Monster" name="Triol's Revelation">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="AreaName" value="19_16_altar_rightroom_01" />
@@ -2532,7 +2532,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="32061" level="70" type="L2Npc" name="Triol's Revelation">
+	<npc id="32061" level="70" type="L2Monster" name="Triol's Revelation">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="AreaName" value="19_16_altar_rightroom_02" />
@@ -2576,7 +2576,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="32062" level="70" type="L2Npc" name="Triol's Revelation">
+	<npc id="32062" level="70" type="L2Monster" name="Triol's Revelation">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="AreaName" value="19_16_altar_first_01" />
@@ -2620,7 +2620,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="32063" level="70" type="L2Npc" name="Triol's Revelation">
+	<npc id="32063" level="70" type="L2Monster" name="Triol's Revelation">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="AreaName" value="19_16_altar_first_02" />
@@ -2664,7 +2664,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="32064" level="70" type="L2Npc" name="Triol's Revelation">
+	<npc id="32064" level="70" type="L2Monster" name="Triol's Revelation">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="AreaName" value="19_16_altar_first_03" />
@@ -2708,7 +2708,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="32065" level="70" type="L2Npc" name="Triol's Revelation">
+	<npc id="32065" level="70" type="L2Monster" name="Triol's Revelation">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="AreaName" value="19_16_altar_first_04" />
@@ -2752,7 +2752,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="32066" level="70" type="L2Npc" name="Triol's Revelation">
+	<npc id="32066" level="70" type="L2Monster" name="Triol's Revelation">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="AreaName" value="19_16_altar_first_05" />
@@ -2796,7 +2796,7 @@
 			<height normal="33.5" />
 		</collision>
 	</npc>
-	<npc id="32067" level="70" type="L2Npc" name="Triol's Revelation">
+	<npc id="32067" level="70" type="L2Monster" name="Triol's Revelation">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="AreaName" value="19_16_altar_hideroom_01" />
