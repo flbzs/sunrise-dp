@@ -59,12 +59,12 @@ public class CcpVCmd implements IVoicedCommandHandler
 					if (!activeChar.getVarB("noExp"))
 					{
 						activeChar.setVar("noExp", "true");
-						activeChar.sendMessage("Experience gain disabled.");
+						activeChar.sendMessage("Experience gain enabled.");
 					}
 					else
 					{
 						activeChar.setVar("noExp", "false");
-						activeChar.sendMessage("Experience gain enabled.");
+						activeChar.sendMessage("Experience gain disabled.");
 					}
 				}
 				else
@@ -124,12 +124,12 @@ public class CcpVCmd implements IVoicedCommandHandler
 				if (!activeChar.getVarB("hideSSAnime"))
 				{
 					activeChar.setVar("hideSSAnime", "true");
-					activeChar.sendMessage("Broadcast shots animation disabled.");
+					activeChar.sendMessage("Broadcast shots animation enabled.");
 				}
 				else
 				{
 					activeChar.setVar("hideSSAnime", "false");
-					activeChar.sendMessage("Broadcast shots animation enabled.");
+					activeChar.sendMessage("Broadcast shots animation disabled.");
 				}
 				break;
 		}
