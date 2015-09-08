@@ -73,7 +73,7 @@
 			<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5.57% -->
 			<add stat="maxMp" val="354" /> <!-- Max MP by 354 -->
 			<add stat="rEvas" val="3" /> <!-- Increases Evasion by 3 -->
-			<add stat="cAtkAdd" val="172" /> <!-- Increases Critical Damage by 172 -->
+			<add stat="critDmgAdd" val="172" /> <!-- Increases Critical Damage by 172 -->
 			<sub stat="paralyzeVuln" val="50" /> <!-- Increases Resistance to Paralysis by 50% -->
 			<effect name="EnableCloak" noicon="1" val="0" />
 			<mul stat="pvpMagicalDef" val="1.05" />
@@ -111,7 +111,7 @@
 			<sub stat="stunVuln" val="50" /> <!-- resistance to Stun Attacks by 50% -->
 			<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
 			<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
-			<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
+			<mul stat="magicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
 			<effect name="EnableCloak" noicon="1" val="0" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -194,8 +194,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
-			<mul stat="PhysicalMpConsumeRate" val="#MpConsumeRate" />
+			<mul stat="magicalMpConsumeRate" val="#MpConsumeRate" />
+			<mul stat="physicalMpConsumeRate" val="#MpConsumeRate" />
 		</for>
 	</skill>
 	<skill id="8314" levels="1" name="Release Seal on Agathion - Saerom">
@@ -854,7 +854,7 @@
 			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="br_event_buf1">
 				<mul stat="maxHp" val="1.1"/>
 				<mul stat="maxMp" val="1.1"/>
-				<mul stat="rCrit" val="1.05"/>
+				<mul stat="critRate" val="1.05"/>
 				<add stat="windRes" val="5"/>
 			</effect>
 		</for>
@@ -902,8 +902,8 @@
 			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="br_event_buf1">
 				<mul stat="maxHp" val="1.1"/>
 				<mul stat="maxMp" val="1.1"/>
-				<mul stat="MagicalMpConsumeRate" val="0.95"/>
-				<mul stat="PhysicalMpConsumeRate" val="0.95"/>
+				<mul stat="magicalMpConsumeRate" val="0.95"/>
+				<mul stat="physicalMpConsumeRate" val="0.95"/>
 				<add stat="darkRes" val="5"/>
 			</effect>
 		</for>

@@ -30,7 +30,6 @@ import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.L2SkillType;
-import l2r.gameserver.model.stats.BaseStats;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.model.stats.Formulas;
 import l2r.gameserver.network.SystemMessageId;
@@ -75,7 +74,7 @@ public class Pdam implements ISkillHandler
 			boolean crit = false;
 			if (!skill.isStaticDamage() && (skill.getBaseCritRate() > 0))
 			{
-				crit = Formulas.calcCrit(skill.getBaseCritRate() * 10 * BaseStats.STR.calcBonus(activeChar), true, target);
+				crit = Formulas.calcCrit(activeChar, target, skill);
 			}
 			
 			if (!crit && ((skill.getCondition() & L2Skill.COND_CRIT) != 0))

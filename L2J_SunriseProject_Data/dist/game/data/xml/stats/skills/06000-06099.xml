@@ -666,7 +666,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff" abnormalTime="8" val="0" abnormalLvl="1" abnormalType="counter_critical_trigger">
-				<mul stat="cAtk" val="2">
+				<mul stat="critDmg" val="2">
 					<using kind="SWORD,BLUNT,DAGGER,DUALDAGGER,DUAL,DUALFIST,POLE,ANCIENTSWORD,RAPIER" />
 				</mul>
 			</effect>
@@ -976,6 +976,7 @@
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1500" />
+		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="maxNegated" val="2" />
 		<set name="mpConsume" val="42" />

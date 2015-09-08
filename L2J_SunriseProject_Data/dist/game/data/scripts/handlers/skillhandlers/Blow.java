@@ -31,7 +31,6 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.L2SkillType;
-import l2r.gameserver.model.stats.BaseStats;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.model.stats.Formulas;
 import l2r.gameserver.network.SystemMessageId;
@@ -104,7 +103,7 @@ public class Blow implements ISkillHandler
 				}
 				
 				// Crit rate base crit rate for skill, modified with STR bonus
-				if (!skill.isStaticDamage() && Formulas.calcCrit(skill.getBaseCritRate() * 10 * BaseStats.STR.calcBonus(activeChar), true, target))
+				if (!skill.isStaticDamage() && Formulas.calcCrit(activeChar, target, skill))
 				{
 					damage *= 2;
 				}

@@ -620,7 +620,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="rCrit" val="1.2" />
+			<mul stat="critRate" val="1.2" />
 		</for>
 	</skill>
 	<skill id="3250" levels="10" name="Item Skill: Wild Magic">
@@ -681,7 +681,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
+			<mul stat="physicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
 		</for>
 	</skill>
 	<skill id="3256" levels="3" name="Item Skill: Spell Clarity">
@@ -692,7 +692,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
+			<mul stat="magicalMpConsumeRate" val="#MagicalMpConsumeRate" />
 		</for>
 	</skill>
 	<skill id="3257" levels="3" name="Item Skill: Music Clarity">
@@ -703,7 +703,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="DanceMpConsumeRate" val="#DanceMpConsumeRate" />
+			<mul stat="danceMpConsumeRate" val="#DanceMpConsumeRate" />
 		</for>
 	</skill>
 	<skill id="3258" levels="3" name="Item Skill: Clarity">
@@ -715,9 +715,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="MagicalMpConsumeRate" val="#MagicalMpConsumeRate" />
-			<mul stat="PhysicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
-			<mul stat="DanceMpConsumeRate" val="0.9" />
+			<mul stat="magicalMpConsumeRate" val="#MagicalMpConsumeRate" />
+			<mul stat="physicalMpConsumeRate" val="#PhysicalMpConsumeRate" />
+			<mul stat="danceMpConsumeRate" val="0.9" />
 		</for>
 	</skill>
 	<skill id="3259" levels="3" name="Item Skill: Reflect Damage">
@@ -1121,9 +1121,9 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="talisman">
-				<mul stat="MagicalMpConsumeRate" val="0.96" />
-				<mul stat="PhysicalMpConsumeRate" val="0.9" />
-				<mul stat="DanceMpConsumeRate" val="0.9" />
+				<mul stat="magicalMpConsumeRate" val="0.96" />
+				<mul stat="physicalMpConsumeRate" val="0.9" />
+				<mul stat="danceMpConsumeRate" val="0.9" />
 			</effect>
 		</for>
 	</skill>
@@ -1144,9 +1144,9 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff" abnormalTime="90" val="0" abnormalLvl="1" abnormalType="talisman">
-				<mul stat="MagicalMpConsumeRate" val="0" />
-				<mul stat="PhysicalMpConsumeRate" val="0" />
-				<mul stat="DanceMpConsumeRate" val="0" />
+				<mul stat="magicalMpConsumeRate" val="0" />
+				<mul stat="physicalMpConsumeRate" val="0" />
+				<mul stat="danceMpConsumeRate" val="0" />
 			</effect>
 		</for>
 	</skill>
@@ -1393,7 +1393,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="30" />
+			<add stat="critDmgAdd" val="30" />
 		</for>
 	</skill>
 </list>

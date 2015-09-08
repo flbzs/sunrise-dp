@@ -26,9 +26,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="MagicalMpConsumeRate" val="0.95" />
-			<mul stat="PhysicalMpConsumeRate" val="0.95" />
-			<mul stat="DanceMpConsumeRate" val="0.95" />
+			<mul stat="magicalMpConsumeRate" val="0.95" />
+			<mul stat="physicalMpConsumeRate" val="0.95" />
+			<mul stat="danceMpConsumeRate" val="0.95" />
 		</for>
 	</skill>
 	<skill id="3904" levels="1" name="Augment Option - Divine Attack">

@@ -1014,7 +1014,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="cAtk" val="1.5" />
+			<mul stat="critDmg" val="1.5" />
 		</for>
 	</skill>
 	<skill id="5079" levels="1" name="NPC Focused Haste">
@@ -1035,7 +1035,7 @@
 		<for>
 			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="2" abnormalType="attack_time_down">
 				<mul stat="pAtkSpd" val="1.33" />
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="critRate" val="1.3" />
 			</effect>
 		</for>
 	</skill>

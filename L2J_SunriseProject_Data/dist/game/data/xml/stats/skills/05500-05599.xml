@@ -366,8 +366,8 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="critical_dmg_up">
-				<mul stat="cAtk" val="1.35" />
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="critDmg" val="1.35" />
+				<mul stat="critRate" val="1.3" />
 				<mul stat="mCritRate" val="4" />
 			</effect>
 		</for>
@@ -747,8 +747,8 @@
 			<effect name="Buff" abnormalTime="8" val="0" abnormalLvl="1" abnormalType="maximum_ability">
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="mAtk" val="1.1" />
-				<mul stat="MagicalMpConsumeRate" val="0" />
-				<mul stat="PhysicalMpConsumeRate" val="0" />
+				<mul stat="magicalMpConsumeRate" val="0" />
+				<mul stat="physicalMpConsumeRate" val="0" />
 				<mul stat="healEffect" val="1.1" />
 			</effect>
 		</for>
@@ -915,7 +915,7 @@
 		<for>
 			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="will">
 				<mul stat="physicalSkillPower" val="1.2" />
-				<mul stat="rCrit" val="1.2" />
+				<mul stat="critRate" val="1.2" />
 			</effect>
 		</for>
 	</skill>
@@ -949,8 +949,8 @@
 		<for>
 			<effect name="ChanceSkillTrigger" abnormalTime="20" val="0" activationChance="#activationChance" chanceType="ON_ATTACKED_HIT" triggeredId="5561" triggeredLevel="#triggeredLevel" abnormalLvl="#abnormalLvls" abnormalType="seed_of_knight">
 				<add stat="pAtk" val="300" />
-				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#cAtk" />
+				<mul stat="critRate" val="#rCrit" />
+				<mul stat="critDmg" val="#cAtk" />
 			</effect>
 		</for>
 	</skill>
@@ -999,7 +999,7 @@
 			<effect name="ChanceSkillTrigger" abnormalTime="20" val="0" activationChance="#activationChance" chanceType="ON_ATTACKED_HIT" triggeredId="5563" triggeredLevel="#triggeredLevel" abnormalLvl="#abnormalLvls" abnormalType="seed_of_knight">
 				<add stat="mDef" val="400" />
 				<add stat="waterPower" val="#waterPower" />
-				<mul stat="rCrit" val="#rCrit" />
+				<mul stat="critRate" val="#rCrit" />
 			</effect>
 		</for>
 	</skill>
@@ -1021,7 +1021,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="ChanceSkillTrigger" abnormalTime="20" val="0" activationChance="#activationChance" chanceType="ON_ATTACKED" triggeredId="5564" triggeredLevel="#triggeredLevel" abnormalLvl="#abnormalLvls" abnormalType="seed_of_knight">
-				<mul stat="cAtk" val="1.2" />
+				<mul stat="critDmg" val="1.2" />
 				<add stat="windPower" val="#windPower" />
 				<add stat="absorbDam" val="#absorbDam" />
 			</effect>
@@ -1138,8 +1138,8 @@
 			<effect name="Buff" abnormalTime="20" val="0" abnormalLvl="1" abnormalType="summon_condition">
 				<mul stat="pAtk" val="1.35" />
 				<mul stat="mAtk" val="1.75" />
-				<mul stat="cAtk" val="1.35" />
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="critDmg" val="1.35" />
+				<mul stat="critRate" val="1.3" />
 			</effect>
 		</for>
 	</skill>
@@ -1215,7 +1215,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff" abnormalTime="15" val="0" abnormalLvl="1" abnormalType="sub_trigger_crt_rate_up">
-				<mul stat="rCrit" val="1.32" />
+				<mul stat="critRate" val="1.32" />
 			</effect>
 		</for>
 	</skill>
@@ -1476,7 +1476,7 @@
 		<set name="targetType" val="OWNER_PET" />
 		<for>
 			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="#abnormalLvls" abnormalType="critical_prob_up">
-				<mul stat="rCrit" val="#rCrit" />
+				<mul stat="critRate" val="#rCrit" />
 			</effect>
 		</for>
 	</skill>
@@ -1504,7 +1504,7 @@
 		<set name="targetType" val="OWNER_PET" />
 		<for>
 			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="#abnormalLvls" abnormalType="critical_dmg_up">
-				<mul stat="cAtk" val="#cAtk" />
+				<mul stat="critDmg" val="#cAtk" />
 			</effect>
 		</for>
 	</skill>

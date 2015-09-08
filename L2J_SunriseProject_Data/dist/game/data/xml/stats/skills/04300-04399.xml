@@ -177,7 +177,7 @@
 				<add stat="rEvas" val="4" />
 				<mul stat="pDef" val="1.83" />
 				<mul stat="pAtkSpd" val="1.33" />
-				<mul stat="rCrit" val="1.3" />
+				<mul stat="critRate" val="1.3" />
 				<mul stat="mDef" val="5" />
 			</effect>
 		</for>
@@ -978,7 +978,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff" abnormalTime="1200" val="0" abnormalLvl="#abnormalLvls" abnormalType="critical_prob_up">
-				<mul stat="rCrit" val="#rCrit" />
+				<mul stat="critRate" val="#rCrit" />
 			</effect>
 		</for>
 		<table name="#mpConsume"> 300 0 600 </table>
@@ -1001,7 +1001,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff" abnormalTime="1200" val="0" abnormalLvl="#abnormalLvls" abnormalType="critical_dmg_up">
-				<mul stat="cAtk" val="#cAtk" />
+				<mul stat="critDmg" val="#cAtk" />
 			</effect>
 		</for>
 		<table name="#mpConsume"> 300 0 600 </table>

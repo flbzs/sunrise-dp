@@ -114,8 +114,8 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<add stat="pAtk" val="17.3" />
-			<add stat="rCrit" val="#rCrit" />
-			<add stat="cAtkAdd" val="#cAtkAdd" />
+			<add stat="critRate" val="#rCrit" />
+			<add stat="critDmgAdd" val="#cAtkAdd" />
 		</for>
 	</skill>
 	<skill id="612" levels="3" name="Water Squad">
@@ -164,9 +164,9 @@
 		<for>
 			<add stat="healEffect" val="20" />
 			<mul stat="maxMp" val="#maxMp" />
-			<mul stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
-			<mul stat="PhysicalMpConsumeRate" val="#MpConsumeRate" />
-			<mul stat="DanceMpConsumeRate" val="#MpConsumeRate" />
+			<mul stat="magicalMpConsumeRate" val="#MpConsumeRate" />
+			<mul stat="physicalMpConsumeRate" val="#MpConsumeRate" />
+			<mul stat="danceMpConsumeRate" val="#MpConsumeRate" />
 		</for>
 	</skill>
 	<skill id="616" levels="3" name="Dark Squad">
@@ -379,16 +379,16 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<mul stat="rCrit" val="#rCrit" />
-			<add stat="cAtkAdd" val="#cAtk" />
+			<mul stat="critRate" val="#rCrit" />
+			<add stat="critDmgAdd" val="#cAtk" />
 		</for>
 		<enchant1for>
-			<mul stat="rCrit" val="#ench1rCrit" />
-			<add stat="cAtkAdd" val="317" />
+			<mul stat="critRate" val="#ench1rCrit" />
+			<add stat="critDmgAdd" val="317" />
 		</enchant1for>
 		<enchant2for>
-			<mul stat="rCrit" val="1.25" />
-			<add stat="cAtkAdd" val="#ench2cAtk" />
+			<mul stat="critRate" val="1.25" />
+			<add stat="critDmgAdd" val="#ench2cAtk" />
 		</enchant2for>
 	</skill>
 	<skill id="627" levels="40" name="Soul Shock" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">
@@ -662,7 +662,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="30" />
+			<add stat="critRate" val="30" />
 		</for>
 	</skill>
 	<skill id="641" levels="1" name="Knight Ability - Boost HP">

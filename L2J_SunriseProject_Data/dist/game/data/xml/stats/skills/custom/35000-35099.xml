@@ -18,8 +18,8 @@
 			<set stat="mDef" val="300" />
 			<set stat="pAtkSpd" val="600" />
 			<set stat="mAtkSpd" val="500" />
-			<set stat="cAtk" val="1.25" />
-			<set stat="cAtkAdd" val="0" />
+			<set stat="critDmg" val="1.25" />
+			<set stat="critDmgAdd" val="0" />
 			
 			<set stat="pvePhysDmg" val="1" />
 			<set stat="pvePhysSkillsDmg" val="1" />
@@ -28,7 +28,7 @@
 			<set stat="pveMagicalDmg" val="1" />
 			
 			<set stat="rEvas" val="140" />
-			<set stat="rCrit" val="150" />
+			<set stat="critRate" val="150" />
 			<set stat="blowRate" val="1" />
 			<set stat="lethalRate" val="1" />
 			<set stat="accCombat" val="145" />
@@ -66,7 +66,7 @@
 			<set stat="derangementProf" val="2" />
 			<set stat="critProf" val="1" />
 			
-			<set stat="BowMpConsumeRate" val="0" />
+			<set stat="bowMpConsumeRate" val="0" />
 			
 			<set stat="reflectDam" val="0" />
 			<set stat="reflectSkillMagic" val="0" />
@@ -85,7 +85,7 @@
 		<for>
 			<set stat="pAtkSpd" val="500" />
 			<set stat="pAtk" val="1000" />
-			<set stat="rCrit" val="50" />
+			<set stat="critRate" val="50" />
 			<sub stat="runSpd" val="10" />
 		</for>
 	</skill>
@@ -109,7 +109,7 @@
 		<for>
 			<set stat="pAtkSpd" val="900" />
 			<set stat="pAtk" val="200" />
-			<set stat="rCrit" val="200" />
+			<set stat="critRate" val="200" />
 			<set stat="derangementProf" val="250" />
 			
 			<set stat="blowRate" val="150">
@@ -128,7 +128,7 @@
 		<for>
 			<set stat="pAtkSpd" val="550" />
 			<set stat="pAtk" val="1100" />
-			<set stat="rCrit" val="100" />
+			<set stat="critRate" val="100" />
 			<set stat="stunProf" val="80" />
 		</for>
 	</skill>
@@ -170,7 +170,7 @@
 		<for>
 			<set stat="pAtkSpd" val="900" />
 			<set stat="pAtk" val="200" />
-			<set stat="rCrit" val="300" />
+			<set stat="critRate" val="300" />
 			<set stat="derangementProf" val="250" />
 			
 			<set stat="blowRate" val="150">
@@ -190,7 +190,7 @@
 			<set stat="pAtkSpd" val="930" />
 			<set stat="pAtk" val="500" />
 			<mul stat="pAtkRange" val="0.6" />
-			<set stat="rCrit" val="50" />
+			<set stat="critRate" val="50" />
 		</for>
 	</skill>
 	<skill id="35010" levels="1" name="Lucky Chests - Pike">
@@ -214,7 +214,7 @@
 			<set stat="pAtkSpd" val="125" />
 			<set stat="runSpd" val="110" />
 			<set stat="pAtk" val="8000" />
-			<set stat="rCrit" val="500" />
+			<set stat="critRate" val="500" />
 		</for>
 	</skill>
 	<skill id="35012" levels="1" name="Lucky Chests - Reinforced Bow">
@@ -225,7 +225,7 @@
 		<for>
 			<set stat="pAtkSpd" val="250" />
 			<set stat="pAtk" val="4000" />
-			<set stat="rCrit" val="200" />
+			<set stat="critRate" val="200" />
 			<sub stat="runSpd" val="10" />
 		</for>
 	</skill>
@@ -336,7 +336,7 @@
 		<set name="effectRange" val="900" />
 		<for>
 			<effect name="Buff" abnormalTime="-1" val="0" abnormalLvl="#abnormalLvl" abnormalType="crit_up">
-				<add stat="rCrit" val="#critRate" />
+				<add stat="critRate" val="#critRate" />
 			</effect>
 		</for>
 	</skill>
@@ -374,11 +374,11 @@
 			<set stat="mDef" val="300" />
 			<set stat="pAtkSpd" val="900" />
 			<set stat="mAtkSpd" val="500" />
-			<set stat="cAtk" val="1.25" />
-			<set stat="cAtkAdd" val="0" />
+			<set stat="critDmg" val="1.25" />
+			<set stat="critDmgAdd" val="0" />
 
 			<set stat="rEvas" val="175" />
-			<set stat="rCrit" val="10" />
+			<set stat="critRate" val="10" />
 			<set stat="blowRate" val="1" />
 			<set stat="lethalRate" val="1" />
 			<set stat="accCombat" val="145" />
@@ -413,11 +413,11 @@
 			<set stat="mDef" val="300" />
 			<set stat="pAtkSpd" val="700" />
 			<set stat="mAtkSpd" val="500" />
-			<set stat="cAtk" val="1.25" />
-			<set stat="cAtkAdd" val="0" />
+			<set stat="critDmg" val="1.25" />
+			<set stat="critDmgAdd" val="0" />
 
 			<set stat="rEvas" val="130" />
-			<set stat="rCrit" val="10" />
+			<set stat="critRate" val="10" />
 			<set stat="blowRate" val="1" />
 			<set stat="lethalRate" val="1" />
 			<set stat="accCombat" val="145" />
@@ -442,11 +442,11 @@
 			<set stat="mDef" val="300" />
 			<set stat="pAtkSpd" val="500" />
 			<set stat="mAtkSpd" val="500" />
-			<set stat="cAtk" val="1.25" />
-			<set stat="cAtkAdd" val="0" />
+			<set stat="critDmg" val="1.25" />
+			<set stat="critDmgAdd" val="0" />
 
 			<set stat="rEvas" val="100" />
-			<set stat="rCrit" val="500" />
+			<set stat="critRate" val="500" />
 			<set stat="blowRate" val="1" />
 			<set stat="lethalRate" val="1" />
 			<set stat="accCombat" val="145" />
@@ -466,7 +466,7 @@
 		<set name="effectRange" val="900" />
 		<for>
 			<effect name="Buff" abnormalTime="-1" val="0" abnormalLvl="#abnormalLvl" abnormalType="crit_up">
-				<add stat="rCrit" val="#critRate" />
+				<add stat="critRate" val="#critRate" />
 			</effect>
 		</for>
 	</skill>

@@ -144,7 +144,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="109.2" />
+			<add stat="critRate" val="109.2" />
 			<mul stat="maxHp" val="1.1" />
 			<mul stat="pvpPhysDmg" val="1.05" />
 			<mul stat="pvpPhysSkillsDmg" val="1.05" />
@@ -185,7 +185,7 @@
 			<mul stat="pAtk" val="1.054" /> <!-- P. Atk. +5.4% -->
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
 			<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
-			<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
+			<mul stat="physicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -197,8 +197,8 @@
 		<for>
 			<mul stat="pAtk" val="1.054" /> <!-- P. Atk +5.4% -->
 			<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
-			<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
-			<add stat="cAtkAdd" val="234" /> <!-- Critical Damage +234 -->
+			<add stat="critRate" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
+			<add stat="critDmgAdd" val="234" /> <!-- Critical Damage +234 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>

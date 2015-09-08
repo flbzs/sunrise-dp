@@ -600,7 +600,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="5" abnormalType="critical_prob_up">
-				<mul stat="rCrit" val="1.35" />
+				<mul stat="critRate" val="1.35" />
 			</effect>
 		</for>
 	</skill>
@@ -665,10 +665,10 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect count="5" name="DamOverTimePercent" val="#dot" abnormalLvl="#abnormalLvls" abnormalType="multi_debuff">
-				<mul stat="rCrit" val="#rCrit">
+				<mul stat="critRate" val="#rCrit">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
-				<mul stat="cAtk" val="#cAtk">
+				<mul stat="critDmg" val="#cAtk">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
 			</effect>
@@ -691,10 +691,10 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect count="3" name="DamOverTimePercent" abnormalTime="5" val="0.05" abnormalLvl="10" abnormalType="multi_debuff">
-				<mul stat="rCrit" val="1.9">
+				<mul stat="critRate" val="1.9">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
-				<mul stat="cAtk" val="1.5">
+				<mul stat="critDmg" val="1.5">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
 			</effect>
