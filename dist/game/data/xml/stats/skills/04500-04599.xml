@@ -200,7 +200,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="public_slot">
-				<mul stat="rCrit" val="2">
+				<mul stat="critRate" val="2">
 					<player behind="true" />
 				</mul>
 				<!-- TODO: Missing bonus for Rapier -->
@@ -663,7 +663,7 @@
 		<for>
 			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="#abnormalLvls" abnormalType="spa_disease_a" abnormalVisualEffect="poison">
 				<mul stat="pDef" val="#pDef" />
-				<add stat="rCrit" val="#rCrit" />
+				<add stat="critRate" val="#rCrit" />
 			</effect>
 		</for>
 	</skill>
@@ -744,7 +744,7 @@
 		<for>
 			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="#abnormalLvls" abnormalType="spa_disease_d" abnormalVisualEffect="poison">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
-				<mul stat="MagicalMpConsumeRate" val="#MpConsumeRate" />
+				<mul stat="magicalMpConsumeRate" val="#MpConsumeRate" />
 			</effect>
 		</for>
 	</skill>

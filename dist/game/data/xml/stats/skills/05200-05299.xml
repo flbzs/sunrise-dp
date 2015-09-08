@@ -1374,9 +1374,9 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Debuff" abnormalTime="60" val="0" abnormalLvl="3" abnormalType="mp_cost_up">
-				<mul stat="MagicalMpConsumeRate" val="#val" />
-				<mul stat="PhysicalMpConsumeRate" val="#val" />
-				<mul stat="DanceMpConsumeRate" val="#val" />
+				<mul stat="magicalMpConsumeRate" val="#val" />
+				<mul stat="physicalMpConsumeRate" val="#val" />
+				<mul stat="danceMpConsumeRate" val="#val" />
 			</effect>
 		</for>
 	</skill>

@@ -923,7 +923,7 @@
 			<mul stat="mAtk" val="1.05" />
 			<mul stat="mAtkSpd" val="1.05" />
 			<mul stat="mCritRate" val="1.05" />
-			<mul stat="MagicalMpConsumeRate" val="0.95" />
+			<mul stat="magicalMpConsumeRate" val="0.95" />
 		</for>
 	</skill>
 	<skill id="946" levels="1" name="Silent Mind">
@@ -931,7 +931,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="BowMpConsumeRate" val="0" />
+			<mul stat="bowMpConsumeRate" val="0" />
 		</for>
 	</skill>
 	<skill id="947" levels="1" name="Lucky Strike">
@@ -1161,10 +1161,10 @@
 				<add stat="accCombat" val="#accCombat">
 					<using kind="SWORD,BLUNT,DUAL" />
 				</add>
-				<add stat="rCrit" val="#rCrit">
+				<add stat="critRate" val="#rCrit">
 					<using kind="SWORD,BLUNT,DUAL" />
 				</add>
-				<mul stat="cAtk" val="#cAtk">
+				<mul stat="critDmg" val="#cAtk">
 					<using kind="SWORD,BLUNT,DUAL" />
 				</mul>
 			</effect>
@@ -1451,7 +1451,7 @@
 				<add stat="accCombat" val="6">
 					<using kind="BOW" />
 				</add>
-				<mul stat="rCrit" val="1.2">
+				<mul stat="critRate" val="1.2">
 					<using kind="BOW" />
 				</mul>
 				<add stat="pAtkRange" val="200">
@@ -1853,7 +1853,7 @@
 		<for>
 			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="battle_whisper">
 				<mul stat="pAtk" val="#pAtk" />
-				<mul stat="cAtk" val="#amount" />
+				<mul stat="critDmg" val="#amount" />
 				<mul stat="pAtkSpd" val="#amount" />
 			</effect>
 		</for>

@@ -409,7 +409,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="critical_dmg_up">
-				<mul stat="cAtk" val="1.35" />
+				<mul stat="critDmg" val="1.35" />
 			</effect>
 		</for>
 	</skill>
@@ -569,9 +569,9 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="cheap_magic">
-				<mul stat="PhysicalMpConsumeRate" val="0.8" />
-				<mul stat="MagicalMpConsumeRate" val="0.9" />
-				<mul stat="DanceMpConsumeRate" val="0.8" />
+				<mul stat="physicalMpConsumeRate" val="0.8" />
+				<mul stat="magicalMpConsumeRate" val="0.9" />
+				<mul stat="danceMpConsumeRate" val="0.8" />
 			</effect>
 		</for>
 	</skill>
@@ -910,9 +910,9 @@
 				<mul stat="maxMp" val="1.2" />
 				<mul stat="maxHp" val="1.2" />
 				<mul stat="rShld" val="1.1" />
-				<mul stat="PhysicalMpConsumeRate" val="0.9" />
-				<mul stat="MagicalMpConsumeRate" val="0.9" />
-				<mul stat="DanceMpConsumeRate" val="0.9" />
+				<mul stat="physicalMpConsumeRate" val="0.9" />
+				<mul stat="magicalMpConsumeRate" val="0.9" />
+				<mul stat="danceMpConsumeRate" val="0.9" />
 			</effect>
 		</for>
 	</skill>
@@ -928,7 +928,7 @@
 			<mul stat="mAtk" val="1.15" />
 			<mul stat="pAtkSpd" val="1.12" />
 			<mul stat="mAtkSpd" val="1.12" />
-			<add stat="rCrit" val="400" />
+			<add stat="critRate" val="400" />
 			<add stat="maxHp" val="3000" />
 			<add stat="maxHp" val="3000" />
 			<mul stat="pReuse" val="0.85" />

@@ -183,6 +183,7 @@ import handlers.chathandlers.ChatPetition;
 import handlers.chathandlers.ChatShout;
 import handlers.chathandlers.ChatTell;
 import handlers.chathandlers.ChatTrade;
+import handlers.custom.CustomAnnouncePkPvP;
 import handlers.itemhandlers.AioItemBuff;
 import handlers.itemhandlers.AioItemNpcs;
 import handlers.itemhandlers.BeastSoulShot;
@@ -635,6 +636,10 @@ public class MasterHandler
 			StatusHandler.class,
 			ThreadHandler.class,
 		},
+		{
+			// Custom Handlers
+			CustomAnnouncePkPvP.class
+		}
 	};
 	
 	public MasterHandler()

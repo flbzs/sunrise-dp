@@ -69,7 +69,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<add stat="darkRes" val="3.2" />
-			<mul stat="MagicalMpConsumeRate" val="0.95" />
+			<mul stat="magicalMpConsumeRate" val="0.95" />
 			<add stat="maxHp" val="1023" />
 			<mul stat="pDef" val="1.0724" />
 		</for>
@@ -241,7 +241,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="220" />
+			<add stat="critDmgAdd" val="220" />
 		</for>
 	</skill>
 	<skill id="3828" levels="1" name="Sword of Critical Chance">
@@ -249,7 +249,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="54.4" />
+			<add stat="critRate" val="54.4" />
 		</for>
 	</skill>
 	<skill id="3829" levels="1" name="Sword of Stun">
@@ -284,7 +284,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="169" />
+			<add stat="critDmgAdd" val="169" />
 		</for>
 	</skill>
 	<skill id="3833" levels="1" name="Rapier of Critical Chance">
@@ -292,7 +292,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="54.4" />
+			<add stat="critRate" val="54.4" />
 		</for>
 	</skill>
 	<skill id="3834" levels="1" name="Rapier of Stun">
@@ -327,7 +327,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="268" />
+			<add stat="critDmgAdd" val="268" />
 		</for>
 	</skill>
 	<skill id="3838" levels="1" name="Dual-Blade Weapon of Critical Chance">
@@ -335,7 +335,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="54.4" />
+			<add stat="critRate" val="54.4" />
 		</for>
 	</skill>
 	<skill id="3839" levels="1" name="Dual-Blade Weapon of Stun">
@@ -386,7 +386,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="340" />
+			<add stat="critDmgAdd" val="340" />
 		</for>
 	</skill>
 	<skill id="3845" levels="2" name="Two-handed Sword of Critical Chance">
@@ -396,7 +396,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="54.4" />
+			<add stat="critRate" val="54.4" />
 		</for>
 	</skill>
 	<skill id="3846" levels="2" name="Ancient Sword of Haste">
@@ -438,7 +438,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="303" />
+			<add stat="critDmgAdd" val="303" />
 		</for>
 	</skill>
 	<skill id="3851" levels="2" name="Ancient Sword of Critical Chance">
@@ -448,7 +448,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="54.4" />
+			<add stat="critRate" val="54.4" />
 		</for>
 	</skill>
 	<skill id="3852" levels="3" name="Sword of Mana Boost">
@@ -497,9 +497,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="MagicalMpConsumeRate" val="0.95" />
-			<mul stat="PhysicalMpConsumeRate" val="0.95" />
-			<mul stat="DanceMpConsumeRate" val="0.95" />
+			<mul stat="magicalMpConsumeRate" val="0.95" />
+			<mul stat="physicalMpConsumeRate" val="0.95" />
+			<mul stat="danceMpConsumeRate" val="0.95" />
 		</for>
 	</skill>
 	<skill id="3858" levels="3" name="Dagger of Avoid">
@@ -649,7 +649,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="#cAtkAdd" />
+			<add stat="critDmgAdd" val="#cAtkAdd" />
 		</for>
 	</skill>
 	<skill id="3874" levels="1" name="Polearm of Critical Chance">
@@ -657,7 +657,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="54.4" />
+			<add stat="critRate" val="54.4" />
 		</for>
 	</skill>
 	<skill id="3875" levels="1" name="Polearm of Regeneration">
@@ -736,7 +736,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="528" />
+			<add stat="critDmgAdd" val="528" />
 		</for>
 	</skill>
 	<skill id="3884" levels="3" name="Blunt Weapon of Boost HP">
@@ -816,7 +816,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="MagicalMpConsumeRate" val="0.95" />
+			<mul stat="magicalMpConsumeRate" val="0.95" />
 		</for>
 	</skill>
 	<skill id="3893" levels="1" name="Blunt Weapon of Mana Regeneration">
@@ -832,7 +832,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="415" />
+			<add stat="critDmgAdd" val="415" />
 		</for>
 	</skill>
 	<skill id="3895" levels="3" name="Two-handed Blunt Weapon of Critical Chance">
@@ -842,7 +842,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="52.2" />
+			<add stat="critRate" val="52.2" />
 		</for>
 	</skill>
 	<skill id="3896" levels="2" name="Two-handed Blunt Weapon of Haste">

@@ -495,7 +495,7 @@
 				<mul stat="maxCp" val="1.2" />
 				<mul stat="regCp" val="1.2" />
 				<mul stat="maxMp" val="1.2" />
-				<mul stat="rCrit" val="1.2" />
+				<mul stat="critRate" val="1.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
@@ -513,7 +513,7 @@
 				<mul stat="maxCp" val="1.2" />
 				<mul stat="regCp" val="1.2" />
 				<mul stat="maxMp" val="1.2" />
-				<mul stat="rCrit" val="1.2" />
+				<mul stat="critRate" val="1.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
@@ -531,7 +531,7 @@
 				<mul stat="maxCp" val="1.2" />
 				<mul stat="regCp" val="1.2" />
 				<mul stat="maxMp" val="1.2" />
-				<mul stat="rCrit" val="1.2" />
+				<mul stat="critRate" val="1.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
@@ -1971,13 +1971,13 @@
 		<for>
 			<effect name="Buff" abnormalTime="1200" val="0" abnormalLvl="1" abnormalType="ma_up_special">
 				<mul stat="mAtk" val="1.25" />
-				<mul stat="MagicalMpConsumeRate" val="1.35" />
+				<mul stat="magicalMpConsumeRate" val="1.35" />
 			</effect>
 		</for>
 		<enchant1for>
 			<effect name="Buff" abnormalTime="#ench1Time" val="0" abnormalLvl="1" abnormalType="ma_up_special">
 				<mul stat="mAtk" val="1.25" />
-				<mul stat="MagicalMpConsumeRate" val="1.35" />
+				<mul stat="magicalMpConsumeRate" val="1.35" />
 			</effect>
 		</enchant1for>
 	</skill>
@@ -2507,15 +2507,15 @@
 		<for>
 			<effect name="Buff" abnormalTime="15" val="0" abnormalLvl="1" abnormalType="instinct">
 				<mul stat="pAtk" val="#amount" />
-				<mul stat="rCrit" val="#rCrit" />
-				<mul stat="cAtk" val="#amount" />
+				<mul stat="critRate" val="#rCrit" />
+				<mul stat="critDmg" val="#amount" />
 			</effect>
 		</for>
 		<enchant2for>
 			<effect name="Buff" abnormalTime="#ench2Time" val="0" abnormalLvl="1" abnormalType="instinct">
 				<mul stat="pAtk" val="1.5" />
-				<mul stat="rCrit" val="1.5" />
-				<mul stat="cAtk" val="1.5" />
+				<mul stat="critRate" val="1.5" />
+				<mul stat="critDmg" val="1.5" />
 			</effect>
 		</enchant2for>
 	</skill>

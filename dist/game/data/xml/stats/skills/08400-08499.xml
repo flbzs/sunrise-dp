@@ -37,7 +37,7 @@
 			<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 			<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 			<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
-			<add stat="cAtkAdd" val="182" /> <!-- Increases Critical Damage by 182 -->
+			<add stat="critDmgAdd" val="182" /> <!-- Increases Critical Damage by 182 -->
 			<add stat="maxMp" val="360" /> <!-- Increases Max MP by 360 -->
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
@@ -68,7 +68,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<mul stat="pAtk" val="1.0659" /> <!-- P. Atk. +6.59% -->
-			<add stat="rCrit" val="127.4" /> <!-- Critical rate +127.4 -->
+			<add stat="critRate" val="127.4" /> <!-- Critical rate +127.4 -->
 			<sub stat="bleedVuln" val="50" /> <!-- Resistance to bleed attacks +50% -->
 			<sub stat="rootVuln" val="50" /> <!-- Resistance to hold attacks +50% -->
 			<sub stat="sleepVuln" val="50" /> <!-- Resistance to sleep attacks +50% -->
@@ -90,7 +90,7 @@
 		<for>
 			<mul stat="pAtk" val="1.0659" /> <!-- Attack Power +6.59% -->
 			<mul stat="pAtkSpd" val="1.06" /> <!-- Atk. Spd. +6% -->
-			<add stat="rCrit" val="170.5" /> <!-- Crt. Rate +170.5 -->
+			<add stat="critRate" val="170.5" /> <!-- Crt. Rate +170.5 -->
 			<sub stat="paralyzeVuln" val="50" /> <!-- Resistance to Paralyze Atk. +50% -->
 			<mul stat="runSpd" val="1.03" /> <!-- Moving Spd. +3% -->
 			<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -116,7 +116,7 @@
 			<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 			<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
 			<add stat="maxMp" val="92" /> <!-- Increases Max MP by 97 -->
-			<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
+			<mul stat="magicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -223,7 +223,7 @@
 			<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 			<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 			<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
-			<add stat="cAtkAdd" val="182" /> <!-- Increases Critical Damage by 182 -->
+			<add stat="critDmgAdd" val="182" /> <!-- Increases Critical Damage by 182 -->
 			<add stat="maxMp" val="360" /> <!-- Increases Max MP by 360 -->
 			<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
@@ -262,7 +262,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<mul stat="pAtk" val="1.0659" /> <!-- P. Atk. +6.59% -->
-			<add stat="rCrit" val="127.4" /> <!-- Critical rate +127.4 -->
+			<add stat="critRate" val="127.4" /> <!-- Critical rate +127.4 -->
 			<sub stat="bleedVuln" val="50" /> <!-- Resistance to bleed attacks +50% -->
 			<sub stat="rootVuln" val="50" /> <!-- Resistance to hold attacks +50% -->
 			<sub stat="sleepVuln" val="50" /> <!-- Resistance to sleep attacks +50% -->
@@ -288,7 +288,7 @@
 		<for>
 			<mul stat="pAtk" val="1.0659" /> <!-- Attack Power +6.59% -->
 			<mul stat="pAtkSpd" val="1.06" /> <!-- Atk. Spd. +6% -->
-			<add stat="rCrit" val="170.5" /> <!-- Crt. Rate +170.5 -->
+			<add stat="critRate" val="170.5" /> <!-- Crt. Rate +170.5 -->
 			<sub stat="paralyzeVuln" val="50" /> <!-- Resistance to Paralyze Atk. +50% -->
 			<mul stat="runSpd" val="1.03" /> <!-- Moving Spd. +3% -->
 			<add stat="fireRes" val="5" /> <!-- Resistance to fire attributes +5 -->
@@ -318,7 +318,7 @@
 			<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 			<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
 			<add stat="maxMp" val="92" /> <!-- Increases Max MP by 97 -->
-			<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
+			<mul stat="magicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
 			<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
@@ -803,7 +803,7 @@
 			<add stat="waterRes" val="15" />
 			<mul stat="mReuse" val="0.95" />
 			<add stat="reflectDam" val="4" />
-			<mul stat="MagicalMpConsumeRate" val="0.95" />
+			<mul stat="magicalMpConsumeRate" val="0.95" />
 			<sub stat="derangementVuln" val="10" />
 			<add stat="healEffect" val="15" />
 			<add stat="MEN" val="2" />

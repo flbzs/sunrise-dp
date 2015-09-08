@@ -18,11 +18,11 @@
 			<set stat="mDef" val="300" />
 			<set stat="pAtkSpd" val="600" />
 			<set stat="mAtkSpd" val="500" />
-			<set stat="cAtk" val="1.25" />
-			<set stat="cAtkAdd" val="0" />
+			<set stat="critDmg" val="1.25" />
+			<set stat="critDmgAdd" val="0" />
 			
 			<set stat="rEvas" val="140" />
-			<set stat="rCrit" val="150" />
+			<set stat="critRate" val="150" />
 			<set stat="blowRate" val="1" />
 			<set stat="lethalRate" val="1" />
 			<set stat="accCombat" val="145" />
@@ -35,7 +35,7 @@
 			<set stat="WIT" val="11" />
 			<set stat="MEN" val="25" />
 			
-			<set stat="BowMpConsumeRate" val="0" />
+			<set stat="bowMpConsumeRate" val="0" />
 			
 			<set stat="reflectDam" val="0" />
 			<set stat="reflectSkillMagic" val="0" />
@@ -64,11 +64,11 @@
 			<set stat="mDef" val="300" />
 			<set stat="pAtkSpd" val="500" />
 			<set stat="mAtkSpd" val="500" />
-			<set stat="cAtk" val="1.25" />
-			<set stat="cAtkAdd" val="0" />
+			<set stat="critDmg" val="1.25" />
+			<set stat="critDmgAdd" val="0" />
 			
 			<set stat="rEvas" val="140" />
-			<set stat="rCrit" val="150" />
+			<set stat="critRate" val="150" />
 			<set stat="blowRate" val="1" />
 			<set stat="lethalRate" val="1" />
 			<set stat="accCombat" val="200" />
@@ -81,7 +81,7 @@
 			<set stat="WIT" val="11" />
 			<set stat="MEN" val="25" />
 			
-			<set stat="BowMpConsumeRate" val="0" />
+			<set stat="bowMpConsumeRate" val="0" />
 			
 			<set stat="reflectDam" val="0" />
 			<set stat="reflectSkillMagic" val="0" />
@@ -110,11 +110,11 @@
 			<set stat="mDef" val="300" />
 			<set stat="pAtkSpd" val="600" />
 			<set stat="mAtkSpd" val="500" />
-			<set stat="cAtk" val="1.25" />
-			<set stat="cAtkAdd" val="0" />
+			<set stat="critDmg" val="1.25" />
+			<set stat="critDmgAdd" val="0" />
 			
 			<set stat="rEvas" val="140" />
-			<set stat="rCrit" val="150" />
+			<set stat="critRate" val="150" />
 			<set stat="blowRate" val="1" />
 			<set stat="lethalRate" val="1" />
 			<set stat="accCombat" val="200" />
@@ -127,7 +127,7 @@
 			<set stat="WIT" val="11" />
 			<set stat="MEN" val="25" />
 			
-			<set stat="BowMpConsumeRate" val="0" />
+			<set stat="bowMpConsumeRate" val="0" />
 			
 			<set stat="reflectDam" val="0" />
 			<set stat="reflectSkillMagic" val="0" />
@@ -156,11 +156,11 @@
 			<set stat="mDef" val="300" />
 			<set stat="pAtkSpd" val="600" />
 			<set stat="mAtkSpd" val="500" />
-			<set stat="cAtk" val="1.25" />
-			<set stat="cAtkAdd" val="0" />
+			<set stat="critDmg" val="1.25" />
+			<set stat="critDmgAdd" val="0" />
 			
 			<set stat="rEvas" val="140" />
-			<set stat="rCrit" val="150" />
+			<set stat="critRate" val="150" />
 			<set stat="blowRate" val="1" />
 			<set stat="lethalRate" val="1" />
 			<set stat="accCombat" val="145" />
@@ -173,7 +173,7 @@
 			<set stat="WIT" val="11" />
 			<set stat="MEN" val="25" />
 			
-			<set stat="BowMpConsumeRate" val="0" />
+			<set stat="bowMpConsumeRate" val="0" />
 			
 			<set stat="reflectDam" val="0" />
 			<set stat="reflectSkillMagic" val="0" />

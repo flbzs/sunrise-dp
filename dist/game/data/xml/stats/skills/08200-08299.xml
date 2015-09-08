@@ -75,8 +75,8 @@
 		<for>
 			<mul stat="pAtk" val="1.054" /> <!-- P. Atk +5.4% -->
 			<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
-			<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
-			<add stat="cAtkAdd" val="234" /> <!-- Critical Damage +234 -->
+			<add stat="critRate" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
+			<add stat="critDmgAdd" val="234" /> <!-- Critical Damage +234 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -94,7 +94,7 @@
 			<mul stat="pAtk" val="1.054" /> <!-- P. Atk. +5.4% -->
 			<add stat="maxHp" val="492" /> <!-- HP +492 -->
 			<add stat="darkRes" val="8" /> <!-- Resistance to Darkness attacks +8 -->
-			<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
+			<mul stat="physicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
@@ -110,7 +110,7 @@
 		<for>
 			<mul stat="pDef" val="1.054" /> <!-- P. Def. +5.4% -->
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
-			<mul stat="DanceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
+			<mul stat="danceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
 			<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -215,7 +215,7 @@
 			<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 			<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 			<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
-			<mul stat="MagicalMpConsumeRate" val="0.95" /> <!-- Decrease MP consumption -5% -->
+			<mul stat="magicalMpConsumeRate" val="0.95" /> <!-- Decrease MP consumption -5% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -268,7 +268,7 @@
 			<mul stat="pAtk" val="1.054" /> <!-- P. Atk. +5.4% -->
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
 			<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
-			<mul stat="PhysicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
+			<mul stat="physicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
@@ -284,8 +284,8 @@
 		<for>
 			<mul stat="pAtk" val="1.054" /> <!-- P. Atk +5.4% -->
 			<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
-			<add stat="rCrit" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
-			<add stat="cAtkAdd" val="234" /> <!-- Critical Damage +234 -->
+			<add stat="critRate" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
+			<add stat="critDmgAdd" val="234" /> <!-- Critical Damage +234 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -303,7 +303,7 @@
 			<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 			<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 			<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
-			<mul stat="MagicalMpConsumeRate" val="0.95" /> <!-- decrease MP consumption -5% -->
+			<mul stat="magicalMpConsumeRate" val="0.95" /> <!-- decrease MP consumption -5% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -356,8 +356,8 @@
 		<for>
 			<mul stat="pAtk" val="1.066" /> <!-- P. Atk. +6.6% -->
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
-			<add stat="rCrit" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
-			<add stat="cAtkAdd" val="282" /> <!-- Critical Damage +282 -->
+			<add stat="critRate" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
+			<add stat="critDmgAdd" val="282" /> <!-- Critical Damage +282 -->
 			<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -374,7 +374,7 @@
 		<for>
 			<mul stat="pDef" val="1.066" /> <!-- P. Def. +6.6% -->
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
-			<mul stat="DanceMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Song and Dance Skills -->
+			<mul stat="danceMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Song and Dance Skills -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			<mul stat="pvpPhysDef" val="1.05" />
 			<mul stat="pvpMagicalDef" val="1.05" />
@@ -392,7 +392,7 @@
 			<mul stat="pAtk" val="1.066" /> <!-- P. Atk. +6.6% -->
 			<add stat="maxHp" val="492" /> <!-- Max. HP +492 -->
 			<add stat="darkRes" val="8" /> <!-- Resistance to Darkness attacks +8 -->
-			<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- Decreases MP consumption by 6% for active skills -->
+			<mul stat="physicalMpConsumeRate" val="0.94" /> <!-- Decreases MP consumption by 6% for active skills -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
@@ -445,7 +445,7 @@
 			<mul stat="pAtk" val="1.066" /> <!-- P. Atk. +6.6% -->
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<mul stat="PhysicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
+			<mul stat="physicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
@@ -461,8 +461,8 @@
 		<for>
 			<mul stat="pAtk" val="1.066" /> <!-- Physical Attack Power +6.6% -->
 			<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
-			<add stat="rCrit" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
-			<add stat="cAtkAdd" val="282" /> <!-- Critical Damage +282 -->
+			<add stat="critRate" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
+			<add stat="critDmgAdd" val="282" /> <!-- Critical Damage +282 -->
 			<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -498,7 +498,7 @@
 			<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 			<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 			<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
-			<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- Decrease MP consumption -6% -->
+			<mul stat="magicalMpConsumeRate" val="0.94" /> <!-- Decrease MP consumption -6% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -534,7 +534,7 @@
 			<mul stat="mAtkSpd" val="1.15" /> <!-- Casting Spd. +15% -->
 			<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 			<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
-			<mul stat="MagicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
+			<mul stat="magicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
@@ -1215,7 +1215,7 @@
 			<mul stat="regMp" val="1.05" /> <!-- MP Recovery Rate by 5% -->
 			<add stat="maxMp" val="354" /> <!-- Max MP by 354 -->
 			<add stat="rEvas" val="3" /> <!-- Increases Evasion by 3 -->
-			<add stat="cAtkAdd" val="172" /> <!-- Increases Critical Damage by 172 -->
+			<add stat="critDmgAdd" val="172" /> <!-- Increases Critical Damage by 172 -->
 			<sub stat="paralyzeVuln" val="50" /> <!-- Increases Resistance to Paralysis by 50% -->
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
@@ -1245,7 +1245,7 @@
 			<sub stat="stunVuln" val="50" /> <!-- resistance to Stun Attacks by 50% -->
 			<sub stat="cancel" val="30" /> <!-- decreases the damage to be cancelled by magic by 30 -->
 			<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
-			<mul stat="MagicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
+			<mul stat="magicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -1257,7 +1257,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="#rCrit" />
+			<add stat="critRate" val="#rCrit" />
 			<mul stat="pvpPhysDmg" val="1.05" />
 			<mul stat="pvpPhysSkillsDmg" val="1.05" />
 			<mul stat="pvpMagicalDmg" val="1.05" />
@@ -1285,7 +1285,7 @@
 		<for>
 			<sub stat="rootVuln" val="30" /> <!-- Increases resistance to hold attacks by 30% -->
 			<add stat="rootProf" val="30" /> <!-- Increases hold attack bonus by 30% -->
-			<mul stat="cAtk" val="1.15" /> <!-- Increases critical attack power by 15% -->
+			<mul stat="critDmg" val="1.15" /> <!-- Increases critical attack power by 15% -->
 			<add stat="accCombat" val="2" /> <!-- Increases accuracy by 2 -->
 		</for>
 	</skill>
@@ -1321,7 +1321,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="109.2" />
+			<add stat="critRate" val="109.2" />
 			<mul stat="pvpPhysDmg" val="1.05" />
 			<mul stat="pvpPhysSkillsDmg" val="1.05" />
 			<mul stat="pvpMagicalDmg" val="1.05" />
@@ -1333,7 +1333,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="109.2" />
+			<add stat="critRate" val="109.2" />
 			<mul stat="pvpPhysDmg" val="1.05" />
 			<mul stat="pvpPhysSkillsDmg" val="1.05" />
 			<mul stat="pvpMagicalDmg" val="1.05" />
@@ -1357,7 +1357,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="109.2" />
+			<add stat="critRate" val="109.2" />
 			<mul stat="pvpPhysDmg" val="1.05" />
 			<mul stat="pvpPhysSkillsDmg" val="1.05" />
 			<mul stat="pvpMagicalDmg" val="1.05" />

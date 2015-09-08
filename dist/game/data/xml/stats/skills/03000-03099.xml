@@ -79,7 +79,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="#rCrit" />
+			<add stat="critRate" val="#rCrit" />
 		</for>
 	</skill>
 	<skill id="3011" levels="6" name="Special Ability: Focus">
@@ -90,7 +90,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="#rCrit" />
+			<add stat="critRate" val="#rCrit" />
 		</for>
 	</skill>
 	<skill id="3012" levels="6" name="Special Ability: Anger">
@@ -163,7 +163,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="rCrit" val="#rCrit">
+			<mul stat="critRate" val="#rCrit">
 				<player behind="true" />
 			</mul>
 		</for>
@@ -176,7 +176,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="rCrit" val="#rCrit">
+			<mul stat="critRate" val="#rCrit">
 				<player behind="true" />
 			</mul>
 		</for>
@@ -249,7 +249,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="#cAtkAdd" />
+			<add stat="critDmgAdd" val="#cAtkAdd" />
 		</for>
 	</skill>
 	<skill id="3024" levels="6" name="Special Ability: Critical Poison">
@@ -296,7 +296,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="#cAtkAdd" />
+			<add stat="critDmgAdd" val="#cAtkAdd" />
 		</for>
 	</skill>
 	<skill id="3027" levels="7" name="Special Ability: Rsk. Focus">
@@ -308,7 +308,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="#rCrit">
+			<add stat="critRate" val="#rCrit">
 				<player hp="60" />
 			</add>
 			<mul stat="pvpPhysDmg" val="#pvpBonus" />
@@ -528,7 +528,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="#cAtkAdd" />
+			<add stat="critDmgAdd" val="#cAtkAdd" />
 			<mul stat="pvpPhysDmg" val="#pvpBonus" />
 			<mul stat="pvpPhysSkillsDmg" val="#pvpBonus" />
 			<mul stat="pvpMagicalDmg" val="#pvpBonus" />
@@ -542,7 +542,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="#cAtkAdd" />
+			<add stat="critDmgAdd" val="#cAtkAdd" />
 		</for>
 	</skill>
 	<skill id="3044" levels="20" name="Special Ability: Focus">
@@ -554,7 +554,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="#rCrit" />
+			<add stat="critRate" val="#rCrit" />
 			<mul stat="pvpPhysDmg" val="#pvpBonus" />
 			<mul stat="pvpPhysSkillsDmg" val="#pvpBonus" />
 			<mul stat="pvpMagicalDmg" val="#pvpBonus" />
@@ -639,7 +639,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="61.6" />
+			<add stat="critRate" val="61.6" />
 			<mul stat="pvpPhysDmg" val="1.05" />
 			<mul stat="pvpPhysSkillsDmg" val="1.05" />
 			<mul stat="pvpMagicalDmg" val="1.05" />
@@ -652,7 +652,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="67.3" />
+			<add stat="critRate" val="67.3" />
 			<mul stat="pvpPhysDmg" val="1.05" />
 			<mul stat="pvpPhysSkillsDmg" val="1.05" />
 			<mul stat="pvpMagicalDmg" val="1.05" />
@@ -872,7 +872,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="rCrit" val="1.37">
+			<mul stat="critRate" val="1.37">
 				<player behind="true" />
 			</mul>
 			<mul stat="pvpPhysDmg" val="1.05" />
@@ -912,7 +912,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="#cAtkAdd" />
+			<add stat="critDmgAdd" val="#cAtkAdd" />
 			<mul stat="pvpPhysDmg" val="1.05" />
 			<mul stat="pvpPhysSkillsDmg" val="1.05" />
 			<mul stat="pvpMagicalDmg" val="1.05" />
@@ -926,7 +926,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="cAtkAdd" val="#cAtkAdd" />
+			<add stat="critDmgAdd" val="#cAtkAdd" />
 			<mul stat="pvpPhysDmg" val="1.05" />
 			<mul stat="pvpPhysSkillsDmg" val="1.05" />
 			<mul stat="pvpMagicalDmg" val="1.05" />
@@ -985,7 +985,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="rCrit" val="130">
+			<add stat="critRate" val="130">
 				<player hp="60" />
 			</add>
 			<mul stat="pvpPhysDmg" val="#pvpBonus" />
@@ -1016,7 +1016,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<add stat="mAtk" val="#mAtk" />
-			<mul stat="MagicalMpConsumeRate" val="1.15" />
+			<mul stat="magicalMpConsumeRate" val="1.15" />
 			<mul stat="pvpPhysDmg" val="1.05" />
 			<mul stat="pvpPhysSkillsDmg" val="1.05" />
 			<mul stat="pvpMagicalDmg" val="1.05" />
@@ -1091,7 +1091,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<add stat="mAtk" val="#mAtk" />
-			<mul stat="MagicalMpConsumeRate" val="1.15" />
+			<mul stat="magicalMpConsumeRate" val="1.15" />
 		</for>
 	</skill>
 	<skill id="3078" levels="6" name="Special Ability: Magic Silence">

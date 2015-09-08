@@ -1428,7 +1428,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="cAtk" val="1.25" />
+			<mul stat="critDmg" val="1.25" />
 		</for>
 	</skill>
 	<skill id="4086" levels="1" name="Critical Chance">
@@ -1436,7 +1436,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="rCrit" val="1.5" />
+			<mul stat="critRate" val="1.5" />
 		</for>
 	</skill>
 	<skill id="4087" levels="12" name="NPC Blaze">
