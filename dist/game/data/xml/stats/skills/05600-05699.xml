@@ -309,7 +309,7 @@
 	<skill id="5625" levels="1" name="Soul Confinement">
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="turn_stone" />
+		<set name="abnormalType" val="invincibility" />
 		<set name="affectLimit" val="1-9" />
 		<set name="affectRange" val="150" />
 		<set name="hitTime" val="2000" />
@@ -318,7 +318,7 @@
 		<set name="skillType" val="PARALYZE" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Petrification" abnormalTime="10" val="0" abnormalLvl="2" abnormalType="turn_stone" />
+			<effect name="Petrification" abnormalTime="10" val="0" abnormalLvl="2" abnormalType="invincibility" />
 		</for>
 	</skill>
 	<skill id="5626" levels="1" name="Raid Boss">

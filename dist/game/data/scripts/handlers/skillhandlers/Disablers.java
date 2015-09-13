@@ -51,7 +51,6 @@ public class Disablers implements ISkillHandler
 		L2SkillType.STUN,
 		L2SkillType.ROOT,
 		L2SkillType.SLEEP,
-		L2SkillType.CONFUSION,
 		L2SkillType.AGGDAMAGE,
 		L2SkillType.MUTE,
 		L2SkillType.CONFUSE_MOB_ONLY,
@@ -131,7 +130,6 @@ public class Disablers implements ISkillHandler
 					}
 					break;
 				}
-				case CONFUSION:
 				case MUTE:
 				{
 					if (Formulas.calcSkillReflect(target, skill) == Formulas.SKILL_REFLECT_SUCCEED)
