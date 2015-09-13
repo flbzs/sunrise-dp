@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import l2r.gameserver.enums.CtrlIntention;
+import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.stats.Env;
@@ -46,6 +47,10 @@ public class RemoveTarget extends L2Effect
 			return false;
 		}
 		
+		if (getEffected().isAttackable())
+		{
+			((L2Attackable) getEffected()).stopHating(getEffector());
+		}
 		getEffected().setTarget(null);
 		getEffected().abortAttack();
 		getEffected().abortCast();

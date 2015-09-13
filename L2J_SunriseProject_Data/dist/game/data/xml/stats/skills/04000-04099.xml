@@ -282,7 +282,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
-		<set name="targetType" val="ONE" />
+		<set name="targetType" val="OWNER_PET" />
 		<for>
 			<effect name="ManaHealByLevel" noicon="1" val="#amount" />
 		</for>
