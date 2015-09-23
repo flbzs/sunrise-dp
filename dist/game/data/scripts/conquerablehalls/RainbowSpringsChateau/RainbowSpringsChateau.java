@@ -840,20 +840,23 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			PreparedStatement statement;
 			if (remove)
 			{
-				statement = con.prepareStatement("DELETE FROM rainbowsprings_attacker_list WHERE clanId = ?");
-				statement.setInt(1, clanId);
+				try (PreparedStatement statement = con.prepareStatement("DELETE FROM rainbowsprings_attacker_list WHERE clanId = ?"))
+				{
+					statement.setInt(1, clanId);
+					statement.execute();
+				}
 			}
 			else
 			{
-				statement = con.prepareStatement("INSERT INTO rainbowsprings_attacker_list VALUES (?,?)");
-				statement.setInt(1, clanId);
-				statement.setLong(2, count);
+				try (PreparedStatement statement = con.prepareStatement("INSERT INTO rainbowsprings_attacker_list VALUES (?,?)"))
+				{
+					statement.setInt(1, clanId);
+					statement.setLong(2, count);
+					statement.execute();
+				}
 			}
-			statement.execute();
-			statement.close();
 		}
 		catch (Exception e)
 		{
@@ -864,18 +867,18 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 	@Override
 	public void loadAttackers()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT * FROM rainbowsprings_attacker_list"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM rainbowsprings_attacker_list");
-			ResultSet rset = statement.executeQuery();
-			while (rset.next())
+			try (ResultSet rset = statement.executeQuery())
 			{
-				int clanId = rset.getInt("clan_id");
-				long count = rset.getLong("decrees_count");
-				_warDecreesCount.put(clanId, count);
+				while (rset.next())
+				{
+					int clanId = rset.getInt("clan_id");
+					long count = rset.getLong("decrees_count");
+					_warDecreesCount.put(clanId, count);
+				}
 			}
-			rset.close();
-			statement.close();
 		}
 		catch (Exception e)
 		{

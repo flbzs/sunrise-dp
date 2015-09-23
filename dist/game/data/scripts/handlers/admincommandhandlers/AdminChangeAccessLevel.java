@@ -27,6 +27,7 @@ import l2r.Config;
 import l2r.L2DatabaseFactory;
 import l2r.gameserver.data.xml.impl.AdminData;
 import l2r.gameserver.handler.IAdminCommandHandler;
+import l2r.gameserver.model.L2AccessLevel;
 import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.SystemMessageId;
@@ -120,7 +121,7 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler
 				int lvl = Integer.parseInt(parts[1]);
 				if (activeChar.getTarget() instanceof L2PcInstance)
 				{
-					onLineChange(activeChar, (L2PcInstance) activeChar.getTarget(), lvl);
+					onlineChange(activeChar, (L2PcInstance) activeChar.getTarget(), lvl);
 				}
 				else
 				{
@@ -139,19 +140,18 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler
 			L2PcInstance player = L2World.getInstance().getPlayer(name);
 			if (player != null)
 			{
-				onLineChange(activeChar, player, lvl);
+				onlineChange(activeChar, player, lvl);
 			}
 			else
 			{
-				try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+				try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+					PreparedStatement ps = con.prepareStatement("UPDATE characters SET accesslevel=? WHERE char_name=?"))
 				{
-					PreparedStatement statement = con.prepareStatement("UPDATE characters SET accesslevel=? WHERE char_name=?");
-					statement.setInt(1, lvl);
-					statement.setString(2, name);
-					statement.execute();
-					int count = statement.getUpdateCount();
-					statement.close();
-					if (count == 0)
+					ps.setInt(1, lvl);
+					ps.setString(2, name);
+					ps.execute();
+					
+					if (ps.getUpdateCount() == 0)
 					{
 						activeChar.sendMessage("Character not found or access level unaltered.");
 					}
@@ -173,19 +173,20 @@ public class AdminChangeAccessLevel implements IAdminCommandHandler
 	}
 	
 	/**
-	 * @param activeChar
-	 * @param player
-	 * @param lvl
+	 * @param activeChar the active GM
+	 * @param player the online target
+	 * @param lvl the access level
 	 */
-	private void onLineChange(L2PcInstance activeChar, L2PcInstance player, int lvl)
+	private static void onlineChange(L2PcInstance activeChar, L2PcInstance player, int lvl)
 	{
 		if (lvl >= 0)
 		{
 			if (AdminData.getInstance().hasAccessLevel(lvl))
 			{
+				final L2AccessLevel acccessLevel = AdminData.getInstance().getAccessLevel(lvl);
 				player.setAccessLevel(lvl);
-				player.sendMessage("Your access level has been changed to " + lvl);
-				activeChar.sendMessage("Character's access level is now set to " + lvl + ". Effects won't be noticeable until next session.");
+				player.sendMessage("Your access level has been changed to " + acccessLevel.getName() + " (" + acccessLevel.getLevel() + ").");
+				activeChar.sendMessage(player.getName() + "'s access level has been changed to " + acccessLevel.getName() + " (" + acccessLevel.getLevel() + ").");
 			}
 			else
 			{

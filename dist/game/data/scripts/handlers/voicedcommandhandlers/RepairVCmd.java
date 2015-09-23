@@ -129,11 +129,9 @@ public class RepairVCmd implements IVoicedCommandHandler
 	{
 		String result = "";
 		String repCharAcc = activeChar.getAccountName();
-		Connection con = null;
-		try
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT char_name FROM characters WHERE account_name=?"))
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT char_name FROM characters WHERE account_name=?");
 			statement.setString(1, repCharAcc);
 			ResultSet rset = statement.executeQuery();
 			while (rset.next())
@@ -143,29 +141,13 @@ public class RepairVCmd implements IVoicedCommandHandler
 					result += rset.getString(1) + ";";
 				}
 			}
-			// _log.warn("Repair Attempt: Output Result for searching characters on account:"+result);
-			rset.close();
-			statement.close();
 		}
 		catch (SQLException e)
 		{
 			e.printStackTrace();
 			return result;
 		}
-		finally
-		{
-			try
-			{
-				if (con != null)
-				{
-					con.close();
-				}
-			}
-			catch (SQLException e)
-			{
-				e.printStackTrace();
-			}
-		}
+		
 		return result;
 	}
 	
@@ -173,40 +155,22 @@ public class RepairVCmd implements IVoicedCommandHandler
 	{
 		boolean result = false;
 		String repCharAcc = "";
-		Connection con = null;
-		try
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT account_name FROM characters WHERE char_name=?"))
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT account_name FROM characters WHERE char_name=?");
 			statement.setString(1, repairChar);
 			ResultSet rset = statement.executeQuery();
 			if (rset.next())
 			{
 				repCharAcc = rset.getString(1);
 			}
-			rset.close();
-			statement.close();
-			
 		}
 		catch (SQLException e)
 		{
 			e.printStackTrace();
 			return result;
 		}
-		finally
-		{
-			try
-			{
-				if (con != null)
-				{
-					con.close();
-				}
-			}
-			catch (SQLException e)
-			{
-				e.printStackTrace();
-			}
-		}
+		
 		if (activeChar.getAccountName().compareTo(repCharAcc) == 0)
 		{
 			result = true;
@@ -232,39 +196,22 @@ public class RepairVCmd implements IVoicedCommandHandler
 	{
 		boolean result = false;
 		int repCharKarma = 0;
-		Connection con = null;
-		try
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT karma FROM characters WHERE char_name=?"))
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			PreparedStatement statement = con.prepareStatement("SELECT karma FROM characters WHERE char_name=?");
 			statement.setString(1, repairChar);
 			ResultSet rset = statement.executeQuery();
 			if (rset.next())
 			{
 				repCharKarma = rset.getInt(1);
 			}
-			rset.close();
-			statement.close();
 		}
 		catch (SQLException e)
 		{
 			e.printStackTrace();
 			return result;
 		}
-		finally
-		{
-			try
-			{
-				if (con != null)
-				{
-					con.close();
-				}
-			}
-			catch (SQLException e)
-			{
-				e.printStackTrace();
-			}
-		}
+		
 		if (repCharKarma > 0)
 		{
 			result = true;
@@ -284,58 +231,48 @@ public class RepairVCmd implements IVoicedCommandHandler
 	
 	private void repairBadCharacter(String charName)
 	{
-		Connection con = null;
-		try
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			con = L2DatabaseFactory.getInstance().getConnection();
-			
-			PreparedStatement statement;
-			statement = con.prepareStatement("SELECT charId FROM characters WHERE char_name=?");
-			statement.setString(1, charName);
-			ResultSet rset = statement.executeQuery();
-			
 			int objId = 0;
-			if (rset.next())
+			try (PreparedStatement statement = con.prepareStatement("SELECT charId FROM characters WHERE char_name=?"))
 			{
-				objId = rset.getInt(1);
+				statement.setString(1, charName);
+				try (ResultSet rset = statement.executeQuery())
+				{
+					
+					if (rset.next())
+					{
+						objId = rset.getInt(1);
+					}
+				}
 			}
-			rset.close();
-			statement.close();
+			
 			if (objId == 0)
 			{
 				con.close();
 				return;
 			}
-			statement = con.prepareStatement("UPDATE characters SET x=17867, y=170259, z=-3503 WHERE charId=?");
-			statement.setInt(1, objId);
-			statement.execute();
-			statement.close();
-			statement = con.prepareStatement("DELETE FROM character_shortcuts WHERE charId=?");
-			statement.setInt(1, objId);
-			statement.execute();
-			statement.close();
-			statement = con.prepareStatement("UPDATE items SET loc=\"WAREHOUSE\" WHERE owner_id=? AND loc=\"PAPERDOLL\"");
-			statement.setInt(1, objId);
-			statement.execute();
-			statement.close();
+			try (PreparedStatement statement = con.prepareStatement("UPDATE characters SET x=17867, y=170259, z=-3503 WHERE charId=?"))
+			{
+				statement.setInt(1, objId);
+				statement.execute();
+			}
+			
+			try (PreparedStatement statement = con.prepareStatement("DELETE FROM character_shortcuts WHERE charId=?"))
+			{
+				statement.setInt(1, objId);
+				statement.execute();
+			}
+			
+			try (PreparedStatement statement = con.prepareStatement("UPDATE items SET loc=\"WAREHOUSE\" WHERE owner_id=? AND loc=\"PAPERDOLL\""))
+			{
+				statement.setInt(1, objId);
+				statement.execute();
+			}
 		}
 		catch (Exception e)
 		{
 			_log.warn(RepairVCmd.class.getSimpleName() + ": could not repair character:" + e);
-		}
-		finally
-		{
-			try
-			{
-				if (con != null)
-				{
-					con.close();
-				}
-			}
-			catch (SQLException e)
-			{
-				e.printStackTrace();
-			}
 		}
 	}
 	

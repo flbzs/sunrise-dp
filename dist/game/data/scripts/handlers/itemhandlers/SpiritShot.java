@@ -28,6 +28,7 @@ import l2r.gameserver.model.items.instance.L2ItemInstance;
 import l2r.gameserver.model.items.type.ActionType;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
+import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Broadcast;
 
 public class SpiritShot implements IItemHandler
@@ -95,7 +96,10 @@ public class SpiritShot implements IItemHandler
 		// Charge Spirit shot
 		activeChar.setChargedShot(ShotType.SPIRITSHOTS, true);
 		
-		// Send message to client
+		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_S1_);
+		sm.addItemName(itemId);
+		activeChar.sendPacket(sm);
+		
 		activeChar.sendPacket(SystemMessageId.ENABLED_SPIRITSHOT);
 		if (!activeChar.getVarB("hideSSAnime"))
 		{

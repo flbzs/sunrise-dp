@@ -81,9 +81,16 @@ public class ReportManager extends AbstractNpcAI
 					return "main.htm";
 				}
 				
-				FileWriter fstream = new FileWriter(fname);
-				BufferedWriter out = new BufferedWriter(fstream);
-				out.write("Character Info: " + info + "\r\nBug Type: " + _type + "\r\nMessage: " + message);
+				try (FileWriter fstream = new FileWriter(fname);
+					BufferedWriter out = new BufferedWriter(fstream))
+				{
+					out.write("Character Info: " + info + "\r\nBug Type: " + _type + "\r\nMessage: " + message);
+				}
+				catch (Exception e)
+				{
+				
+				}
+				
 				player.sendMessage("Report sent. GMs will check it soon. Thanks...");
 				
 				for (L2PcInstance allgms : L2World.getInstance().getAllGMs())
@@ -93,7 +100,6 @@ public class ReportManager extends AbstractNpcAI
 				}
 				
 				_log.info("Character: " + player.getName() + " sent a bug report.");
-				out.close();
 			}
 			catch (Exception e)
 			{

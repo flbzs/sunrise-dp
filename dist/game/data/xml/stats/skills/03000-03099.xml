@@ -163,7 +163,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="critRate" val="#rCrit">
+			<mul stat="critRatePos" val="#rCrit">
 				<player behind="true" />
 			</mul>
 		</for>
@@ -872,7 +872,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="critRate" val="1.37">
+			<mul stat="critRatePos" val="1.37">
 				<player behind="true" />
 			</mul>
 			<mul stat="pvpPhysDmg" val="1.05" />
