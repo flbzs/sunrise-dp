@@ -304,39 +304,38 @@ public class VanHalter extends AbstractNpcAI
 	{
 		_royalGuardSpawn.clear();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid between ? and ? ORDER BY id"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid between ? and ? ORDER BY id");
 			statement.setInt(1, 22175);
 			statement.setInt(2, 22176);
-			ResultSet rset = statement.executeQuery();
-			
-			L2Spawn spawnDat;
-			L2NpcTemplate template1;
-			
-			while (rset.next())
+			try (ResultSet rset = statement.executeQuery())
 			{
-				template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
-				if (template1 != null)
+				L2Spawn spawnDat;
+				L2NpcTemplate template1;
+				
+				while (rset.next())
 				{
-					spawnDat = new L2Spawn(template1);
-					spawnDat.setAmount(rset.getInt("count"));
-					spawnDat.setX(rset.getInt("locx"));
-					spawnDat.setY(rset.getInt("locy"));
-					spawnDat.setZ(rset.getInt("locz"));
-					spawnDat.setHeading(rset.getInt("heading"));
-					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
-					_royalGuardSpawn.add(spawnDat);
-				}
-				else
-				{
-					_log.warn("VanHalterManager.loadRoyalGuard: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
+					if (template1 != null)
+					{
+						spawnDat = new L2Spawn(template1);
+						spawnDat.setAmount(rset.getInt("count"));
+						spawnDat.setX(rset.getInt("locx"));
+						spawnDat.setY(rset.getInt("locy"));
+						spawnDat.setZ(rset.getInt("locz"));
+						spawnDat.setHeading(rset.getInt("heading"));
+						spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
+						SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+						_royalGuardSpawn.add(spawnDat);
+					}
+					else
+					{
+						_log.warn("VanHalterManager.loadRoyalGuard: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					}
 				}
 			}
 			
-			rset.close();
-			statement.close();
 			if (Config.DEBUG)
 			{
 				_log.info("VanHalterManager.loadRoyalGuard: Loaded " + _royalGuardSpawn.size() + " Royal Guard spawn locations.");
@@ -377,38 +376,37 @@ public class VanHalter extends AbstractNpcAI
 	{
 		_triolRevelationSpawn.clear();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid between ? and ? ORDER BY id"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid between ? and ? ORDER BY id");
 			statement.setInt(1, 32058);
 			statement.setInt(2, 32068);
-			ResultSet rset = statement.executeQuery();
-			
-			L2Spawn spawnDat;
-			L2NpcTemplate template1;
-			
-			while (rset.next())
+			try (ResultSet rset = statement.executeQuery())
 			{
-				template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
-				if (template1 != null)
+				L2Spawn spawnDat;
+				L2NpcTemplate template1;
+				
+				while (rset.next())
 				{
-					spawnDat = new L2Spawn(template1);
-					spawnDat.setAmount(rset.getInt("count"));
-					spawnDat.setX(rset.getInt("locx"));
-					spawnDat.setY(rset.getInt("locy"));
-					spawnDat.setZ(rset.getInt("locz"));
-					spawnDat.setHeading(rset.getInt("heading"));
-					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
-					_triolRevelationSpawn.add(spawnDat);
-				}
-				else
-				{
-					_log.warn("VanHalterManager.loadTriolRevelation: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
+					if (template1 != null)
+					{
+						spawnDat = new L2Spawn(template1);
+						spawnDat.setAmount(rset.getInt("count"));
+						spawnDat.setX(rset.getInt("locx"));
+						spawnDat.setY(rset.getInt("locy"));
+						spawnDat.setZ(rset.getInt("locz"));
+						spawnDat.setHeading(rset.getInt("heading"));
+						spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
+						SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+						_triolRevelationSpawn.add(spawnDat);
+					}
+					else
+					{
+						_log.warn("VanHalterManager.loadTriolRevelation: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					}
 				}
 			}
-			rset.close();
-			statement.close();
 			
 			if (Config.DEBUG)
 			{
@@ -455,37 +453,36 @@ public class VanHalter extends AbstractNpcAI
 	{
 		_royalGuardCaptainSpawn.clear();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id");
 			statement.setInt(1, 22188);
-			ResultSet rset = statement.executeQuery();
-			
-			L2Spawn spawnDat;
-			L2NpcTemplate template1;
-			
-			while (rset.next())
+			try (ResultSet rset = statement.executeQuery())
 			{
-				template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
-				if (template1 != null)
+				L2Spawn spawnDat;
+				L2NpcTemplate template1;
+				
+				while (rset.next())
 				{
-					spawnDat = new L2Spawn(template1);
-					spawnDat.setAmount(rset.getInt("count"));
-					spawnDat.setX(rset.getInt("locx"));
-					spawnDat.setY(rset.getInt("locy"));
-					spawnDat.setZ(rset.getInt("locz"));
-					spawnDat.setHeading(rset.getInt("heading"));
-					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
-					_royalGuardCaptainSpawn.add(spawnDat);
-				}
-				else
-				{
-					_log.warn("VanHalterManager.loadRoyalGuardCaptain: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
+					if (template1 != null)
+					{
+						spawnDat = new L2Spawn(template1);
+						spawnDat.setAmount(rset.getInt("count"));
+						spawnDat.setX(rset.getInt("locx"));
+						spawnDat.setY(rset.getInt("locy"));
+						spawnDat.setZ(rset.getInt("locz"));
+						spawnDat.setHeading(rset.getInt("heading"));
+						spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
+						SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+						_royalGuardCaptainSpawn.add(spawnDat);
+					}
+					else
+					{
+						_log.warn("VanHalterManager.loadRoyalGuardCaptain: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					}
 				}
 			}
-			rset.close();
-			statement.close();
 			
 			if (Config.DEBUG)
 			{
@@ -528,37 +525,36 @@ public class VanHalter extends AbstractNpcAI
 	{
 		_royalGuardHelperSpawn.clear();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id");
 			statement.setInt(1, 22191);
-			ResultSet rset = statement.executeQuery();
-			
-			L2Spawn spawnDat;
-			L2NpcTemplate template1;
-			
-			while (rset.next())
+			try (ResultSet rset = statement.executeQuery())
 			{
-				template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
-				if (template1 != null)
+				L2Spawn spawnDat;
+				L2NpcTemplate template1;
+				
+				while (rset.next())
 				{
-					spawnDat = new L2Spawn(template1);
-					spawnDat.setAmount(rset.getInt("count"));
-					spawnDat.setX(rset.getInt("locx"));
-					spawnDat.setY(rset.getInt("locy"));
-					spawnDat.setZ(rset.getInt("locz"));
-					spawnDat.setHeading(rset.getInt("heading"));
-					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
-					_royalGuardHelperSpawn.add(spawnDat);
-				}
-				else
-				{
-					_log.warn("VanHalterManager.loadRoyalGuardHelper: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
+					if (template1 != null)
+					{
+						spawnDat = new L2Spawn(template1);
+						spawnDat.setAmount(rset.getInt("count"));
+						spawnDat.setX(rset.getInt("locx"));
+						spawnDat.setY(rset.getInt("locy"));
+						spawnDat.setZ(rset.getInt("locz"));
+						spawnDat.setHeading(rset.getInt("heading"));
+						spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
+						SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+						_royalGuardHelperSpawn.add(spawnDat);
+					}
+					else
+					{
+						_log.warn("VanHalterManager.loadRoyalGuardHelper: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					}
 				}
 			}
-			rset.close();
-			statement.close();
 			
 			if (Config.DEBUG)
 			{
@@ -594,37 +590,36 @@ public class VanHalter extends AbstractNpcAI
 	{
 		_guardOfAltarSpawn.clear();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id");
 			statement.setInt(1, 32051);
-			ResultSet rset = statement.executeQuery();
-			
-			L2Spawn spawnDat;
-			L2NpcTemplate template1;
-			
-			while (rset.next())
+			try (ResultSet rset = statement.executeQuery())
 			{
-				template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
-				if (template1 != null)
+				L2Spawn spawnDat;
+				L2NpcTemplate template1;
+				
+				while (rset.next())
 				{
-					spawnDat = new L2Spawn(template1);
-					spawnDat.setAmount(rset.getInt("count"));
-					spawnDat.setX(rset.getInt("locx"));
-					spawnDat.setY(rset.getInt("locy"));
-					spawnDat.setZ(rset.getInt("locz"));
-					spawnDat.setHeading(rset.getInt("heading"));
-					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
-					_guardOfAltarSpawn.add(spawnDat);
-				}
-				else
-				{
-					_log.warn("VanHalterManager.loadGuardOfAltar: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
+					if (template1 != null)
+					{
+						spawnDat = new L2Spawn(template1);
+						spawnDat.setAmount(rset.getInt("count"));
+						spawnDat.setX(rset.getInt("locx"));
+						spawnDat.setY(rset.getInt("locy"));
+						spawnDat.setZ(rset.getInt("locz"));
+						spawnDat.setHeading(rset.getInt("heading"));
+						spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
+						SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+						_guardOfAltarSpawn.add(spawnDat);
+					}
+					else
+					{
+						_log.warn("VanHalterManager.loadGuardOfAltar: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					}
 				}
 			}
-			rset.close();
-			statement.close();
 			
 			if (Config.DEBUG)
 			{
@@ -666,37 +661,36 @@ public class VanHalter extends AbstractNpcAI
 	{
 		_vanHalterSpawn = null;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id");
 			statement.setInt(1, ANDREAS_VAN_HALTER);
-			ResultSet rset = statement.executeQuery();
-			
-			L2Spawn spawnDat;
-			L2NpcTemplate template1;
-			
-			while (rset.next())
+			try (ResultSet rset = statement.executeQuery())
 			{
-				template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
-				if (template1 != null)
+				L2Spawn spawnDat;
+				L2NpcTemplate template1;
+				
+				while (rset.next())
 				{
-					spawnDat = new L2Spawn(template1);
-					spawnDat.setAmount(rset.getInt("count"));
-					spawnDat.setX(rset.getInt("locx"));
-					spawnDat.setY(rset.getInt("locy"));
-					spawnDat.setZ(rset.getInt("locz"));
-					spawnDat.setHeading(rset.getInt("heading"));
-					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
-					_vanHalterSpawn = spawnDat;
-				}
-				else
-				{
-					_log.warn("VanHalterManager.loadVanHalter: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
+					if (template1 != null)
+					{
+						spawnDat = new L2Spawn(template1);
+						spawnDat.setAmount(rset.getInt("count"));
+						spawnDat.setX(rset.getInt("locx"));
+						spawnDat.setY(rset.getInt("locy"));
+						spawnDat.setZ(rset.getInt("locz"));
+						spawnDat.setHeading(rset.getInt("heading"));
+						spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
+						SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+						_vanHalterSpawn = spawnDat;
+					}
+					else
+					{
+						_log.warn("VanHalterManager.loadVanHalter: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					}
 				}
 			}
-			rset.close();
-			statement.close();
 			
 			if (Config.DEBUG)
 			{
@@ -733,37 +727,36 @@ public class VanHalter extends AbstractNpcAI
 	{
 		_ritualOfferingSpawn = null;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id");
 			statement.setInt(1, 32038);
-			ResultSet rset = statement.executeQuery();
-			
-			L2Spawn spawnDat;
-			L2NpcTemplate template1;
-			
-			while (rset.next())
+			try (ResultSet rset = statement.executeQuery())
 			{
-				template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
-				if (template1 != null)
+				L2Spawn spawnDat;
+				L2NpcTemplate template1;
+				
+				while (rset.next())
 				{
-					spawnDat = new L2Spawn(template1);
-					spawnDat.setAmount(rset.getInt("count"));
-					spawnDat.setX(rset.getInt("locx"));
-					spawnDat.setY(rset.getInt("locy"));
-					spawnDat.setZ(rset.getInt("locz"));
-					spawnDat.setHeading(rset.getInt("heading"));
-					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
-					_ritualOfferingSpawn = spawnDat;
-				}
-				else
-				{
-					_log.warn("VanHalterManager.loadRitualOffering: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
+					if (template1 != null)
+					{
+						spawnDat = new L2Spawn(template1);
+						spawnDat.setAmount(rset.getInt("count"));
+						spawnDat.setX(rset.getInt("locx"));
+						spawnDat.setY(rset.getInt("locy"));
+						spawnDat.setZ(rset.getInt("locz"));
+						spawnDat.setHeading(rset.getInt("heading"));
+						spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
+						SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+						_ritualOfferingSpawn = spawnDat;
+					}
+					else
+					{
+						_log.warn("VanHalterManager.loadRitualOffering: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					}
 				}
 			}
-			rset.close();
-			statement.close();
 			
 			if (Config.DEBUG)
 			{
@@ -800,37 +793,36 @@ public class VanHalter extends AbstractNpcAI
 	{
 		_ritualSacrificeSpawn = null;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT id, count, npc_templateid, locx, locy, locz, heading, respawn_delay FROM vanhalter_spawnlist Where npc_templateid = ? ORDER BY id");
 			statement.setInt(1, 22195);
-			ResultSet rset = statement.executeQuery();
-			
-			L2Spawn spawnDat;
-			L2NpcTemplate template1;
-			
-			while (rset.next())
+			try (ResultSet rset = statement.executeQuery())
 			{
-				template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
-				if (template1 != null)
+				L2Spawn spawnDat;
+				L2NpcTemplate template1;
+				
+				while (rset.next())
 				{
-					spawnDat = new L2Spawn(template1);
-					spawnDat.setAmount(rset.getInt("count"));
-					spawnDat.setX(rset.getInt("locx"));
-					spawnDat.setY(rset.getInt("locy"));
-					spawnDat.setZ(rset.getInt("locz"));
-					spawnDat.setHeading(rset.getInt("heading"));
-					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
-					_ritualSacrificeSpawn = spawnDat;
-				}
-				else
-				{
-					_log.warn("VanHalterManager.loadRitualSacrifice: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					template1 = NpcTable.getInstance().getTemplate(rset.getInt("npc_templateid"));
+					if (template1 != null)
+					{
+						spawnDat = new L2Spawn(template1);
+						spawnDat.setAmount(rset.getInt("count"));
+						spawnDat.setX(rset.getInt("locx"));
+						spawnDat.setY(rset.getInt("locy"));
+						spawnDat.setZ(rset.getInt("locz"));
+						spawnDat.setHeading(rset.getInt("heading"));
+						spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
+						SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+						_ritualSacrificeSpawn = spawnDat;
+					}
+					else
+					{
+						_log.warn("VanHalterManager.loadRitualSacrifice: Data missing in NPC table for ID: " + rset.getInt("npc_templateid") + ".");
+					}
 				}
 			}
-			rset.close();
-			statement.close();
 			
 			if (Config.DEBUG)
 			{

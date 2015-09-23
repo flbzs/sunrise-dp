@@ -28,6 +28,7 @@ import l2r.gameserver.model.items.instance.L2ItemInstance;
 import l2r.gameserver.model.items.type.ActionType;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
+import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Broadcast;
 import l2r.util.Rnd;
 
@@ -108,7 +109,10 @@ public class SoulShots implements IItemHandler
 			activeChar.soulShotLock.unlock();
 		}
 		
-		// Send message to client
+		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_S1_);
+		sm.addItemName(itemId);
+		activeChar.sendPacket(sm);
+		
 		activeChar.sendPacket(SystemMessageId.ENABLED_SOULSHOT);
 		if (!activeChar.getVarB("hideSSAnime"))
 		{

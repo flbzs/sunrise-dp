@@ -18,13 +18,15 @@
  */
 package handlers.effecthandlers;
 
-import l2r.gameserver.model.actor.L2Summon;
-import l2r.gameserver.model.actor.instance.L2PcInstance;
+import java.util.HashMap;
+import java.util.Map;
+
 import l2r.gameserver.model.effects.EffectFlag;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
+import l2r.gameserver.model.stats.Stats;
 
 /**
  * Servitor Share effect.<br>
@@ -33,9 +35,27 @@ import l2r.gameserver.model.stats.Env;
  */
 public class ServitorShare extends L2Effect
 {
+	private final Map<Stats, Double> stats = new HashMap<>(9);
+	
 	public ServitorShare(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		for (String key : template.getParameters().getSet().keySet())
+		{
+			stats.put(Stats.valueOfXml(key), template.getParameters().getDouble(key, 1.));
+		}
+	}
+	
+	@Override
+	public boolean onStart()
+	{
+		super.onStart();
+		getEffected().getActingPlayer().setServitorShare(stats);
+		if (getEffected().getActingPlayer().getSummon() != null)
+		{
+			getEffected().getActingPlayer().getSummon().broadcastInfo();
+		}
+		return true;
 	}
 	
 	@Override
@@ -53,35 +73,10 @@ public class ServitorShare extends L2Effect
 	@Override
 	public void onExit()
 	{
-		L2Effect[] effects = null;
-		if (getEffected().isPlayer())
+		getEffected().getActingPlayer().setServitorShare(null);
+		if (getEffected().getSummon() != null)
 		{
-			final L2Summon summon = getEffected().getSummon();
-			if ((summon != null) && summon.isServitor())
-			{
-				effects = summon.getAllEffects();
-			}
+			getEffected().getSummon().broadcastInfo();
 		}
-		else if (getEffected().isServitor())
-		{
-			final L2PcInstance owner = getEffected().getActingPlayer();
-			if (owner != null)
-			{
-				effects = owner.getAllEffects();
-			}
-		}
-		
-		if (effects != null)
-		{
-			for (L2Effect eff : effects)
-			{
-				if (eff.getSkill().getId() == getSkill().getId())
-				{
-					eff.exit();
-					break;
-				}
-			}
-		}
-		super.onExit();
 	}
 }

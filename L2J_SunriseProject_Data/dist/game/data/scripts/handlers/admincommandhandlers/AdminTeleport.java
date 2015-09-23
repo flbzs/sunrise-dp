@@ -495,16 +495,16 @@ public class AdminTeleport implements IAdminCommandHandler
 		final int x = activeChar.getX();
 		final int y = activeChar.getY();
 		final int z = activeChar.getZ();
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps = con.prepareStatement("UPDATE characters SET x=?, y=?, z=? WHERE char_name=?"))
 		{
-			PreparedStatement statement = con.prepareStatement("UPDATE characters SET x=?, y=?, z=? WHERE char_name=?");
-			statement.setInt(1, x);
-			statement.setInt(2, y);
-			statement.setInt(3, z);
-			statement.setString(4, name);
-			statement.execute();
-			int count = statement.getUpdateCount();
-			statement.close();
+			ps.setInt(1, x);
+			ps.setInt(2, y);
+			ps.setInt(3, z);
+			ps.setString(4, name);
+			ps.execute();
+			int count = ps.getUpdateCount();
+			
 			if (count == 0)
 			{
 				activeChar.sendMessage("Character not found or position unaltered.");

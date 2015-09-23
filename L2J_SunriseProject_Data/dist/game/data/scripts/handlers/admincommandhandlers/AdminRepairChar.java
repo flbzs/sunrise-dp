@@ -63,26 +63,28 @@ public class AdminRepairChar implements IAdminCommandHandler
 		{
 			return;
 		}
-		
+		int objId = 0;
 		String cmd = "UPDATE characters SET x=-84318, y=244579, z=-3730 WHERE char_name=?";
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			PreparedStatement statement = con.prepareStatement(cmd);
-			statement.setString(1, parts[1]);
-			statement.execute();
-			statement.close();
-			
-			statement = con.prepareStatement("SELECT charId FROM characters where char_name=?");
-			statement.setString(1, parts[1]);
-			ResultSet rset = statement.executeQuery();
-			int objId = 0;
-			if (rset.next())
+			try (PreparedStatement statement = con.prepareStatement(cmd))
 			{
-				objId = rset.getInt(1);
+				statement.setString(1, parts[1]);
+				statement.execute();
 			}
 			
-			rset.close();
-			statement.close();
+			try (PreparedStatement statement = con.prepareStatement("SELECT charId FROM characters where char_name=?"))
+			{
+				statement.setString(1, parts[1]);
+				try (ResultSet rset = statement.executeQuery())
+				{
+					
+					if (rset.next())
+					{
+						objId = rset.getInt(1);
+					}
+				}
+			}
 			
 			if (objId == 0)
 			{
@@ -91,16 +93,18 @@ public class AdminRepairChar implements IAdminCommandHandler
 			}
 			
 			// connection = L2DatabaseFactory.getInstance().getConnection();
-			statement = con.prepareStatement("DELETE FROM character_shortcuts WHERE charId=?");
-			statement.setInt(1, objId);
-			statement.execute();
-			statement.close();
+			try (PreparedStatement statement = con.prepareStatement("DELETE FROM character_shortcuts WHERE charId=?"))
+			{
+				statement.setInt(1, objId);
+				statement.execute();
+			}
 			
 			// connection = L2DatabaseFactory.getInstance().getConnection();
-			statement = con.prepareStatement("UPDATE items SET loc=\"INVENTORY\" WHERE owner_id=?");
-			statement.setInt(1, objId);
-			statement.execute();
-			statement.close();
+			try (PreparedStatement statement = con.prepareStatement("UPDATE items SET loc=\"INVENTORY\" WHERE owner_id=?"))
+			{
+				statement.setInt(1, objId);
+				statement.execute();
+			}
 		}
 		catch (Exception e)
 		{

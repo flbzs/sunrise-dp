@@ -43,7 +43,6 @@ import quests.Q10296_SevenSignsPowerOfTheSeal.Q10296_SevenSignsPowerOfTheSeal;
 
 public class ToTheMonastery extends Quest
 {
-	private static final String qn = "ToTheMonastery";
 	private final FastMap<Integer, InstanceHolder> instanceWorlds = new FastMap<>();
 	private static final int INSTANCE_ID = 151;
 	private boolean progress1 = false;
@@ -251,7 +250,7 @@ public class ToTheMonastery extends Quest
 	
 	public ToTheMonastery()
 	{
-		super(-1, "ToTheMonastery", "instances");
+		super(-1, ToTheMonastery.class.getSimpleName(), "instances");
 		addStartNpc(GLOBE);
 		addTalkId(NPCs);
 		addKillId(Minions);
@@ -272,11 +271,6 @@ public class ToTheMonastery extends Quest
 	public String onAdvEvent(String event, L2Npc npc, final L2PcInstance player)
 	{
 		String htmltext = event;
-		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
 		int npcId = npc.getId();
 		
 		InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
@@ -507,14 +501,15 @@ public class ToTheMonastery extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		String htmltext = getNoQuestMsg(player);
-		QuestState st = player.getQuestState(qn);
+		
+		final QuestState st = getQuestState(player, true);
 		if (st == null)
 		{
-			st = newQuestState(player);
+			return getNoQuestMsg(player);
 		}
-		int npcId = npc.getId();
 		
+		String htmltext = getNoQuestMsg(player);
+		int npcId = npc.getId();
 		if (npcId == GLOBE)
 		{
 			if ((player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName()) != null) && (player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName()).getState() == 1))

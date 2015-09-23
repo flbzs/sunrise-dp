@@ -1655,7 +1655,6 @@
 		<set name="power" val="1" />
 		<set name="reuseDelay" val="15000" />
 		<set name="basicProperty" val="CON" />
-		<set name="simultaneousCast" val="true" />
 		<set name="skillType" val="PDAM" />
 		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="AURA" />

@@ -1468,7 +1468,7 @@
 				<mul stat="critDmg" val="1.2">
 					<player behind="true" />
 				</mul>
-				<mul stat="critRate" val="1.2">
+				<mul stat="critRatePos" val="1.2">
 					<player behind="true" />
 				</mul>
 				<sub stat="debuffVuln" val="10" />

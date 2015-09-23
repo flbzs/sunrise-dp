@@ -211,29 +211,28 @@ public class Wedding implements IVoicedCommandHandler
 		}
 		
 		// check if target has player on friendlist
-		boolean FoundOnFriendList = false;
-		int objectId;
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		boolean foundOnFriendList = false;
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement("SELECT friendId FROM character_friends WHERE charId=?"))
 		{
-			final PreparedStatement statement = con.prepareStatement("SELECT friendId FROM character_friends WHERE charId=?");
 			statement.setInt(1, ptarget.getObjectId());
-			final ResultSet rset = statement.executeQuery();
-			while (rset.next())
+			try (ResultSet rset = statement.executeQuery())
 			{
-				objectId = rset.getInt("friendId");
-				if (objectId == activeChar.getObjectId())
+				while (rset.next())
 				{
-					FoundOnFriendList = true;
+					if (rset.getInt("friendId") == activeChar.getObjectId())
+					{
+						foundOnFriendList = true;
+					}
 				}
 			}
-			statement.close();
 		}
 		catch (Exception e)
 		{
 			_log.warn("could not read friend data:" + e);
 		}
 		
-		if (!FoundOnFriendList)
+		if (!foundOnFriendList)
 		{
 			activeChar.sendMessage("The player you want to ask is not on your friends list, you must first be on each others friends list before you choose to engage.");
 			return false;
