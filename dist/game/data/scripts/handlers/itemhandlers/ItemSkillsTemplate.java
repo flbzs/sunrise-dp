@@ -165,7 +165,7 @@ public class ItemSkillsTemplate implements IItemHandler
 			}
 		}
 		
-		final boolean isCapsuleItem = item.getItem().getDefaultAction() == ActionType.CAPSULE;
+		final boolean isCapsuleItem = (item.getItem().getDefaultAction() == ActionType.CAPSULE) || (item.getItem().getDefaultAction() == ActionType.SKILL_REDUCE);
 		if (isCapsuleItem || (hasConsumeSkill && (item.isPotion() || item.isElixir() || item.isScroll() || isSimultaniously)))
 		{
 			if (!playable.destroyItem("Consume", item.getObjectId(), 1, playable, false))

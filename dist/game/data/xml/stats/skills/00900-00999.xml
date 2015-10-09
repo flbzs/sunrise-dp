@@ -539,7 +539,7 @@
 	</skill>
 	<skill id="924" levels="1" name="Seven Arrow">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
-		<set name="baseCritRate" val="15" /> <!-- FIXME: value unconfirmed -->
+		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1000" />
 		<set name="hitTime" val="3000" />
@@ -1753,7 +1753,7 @@
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="nextActionAttack" val="true" />
 		<set name="offensive" val="true" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="6000" />
 		<set name="skillType" val="PDAM" />
@@ -1800,7 +1800,7 @@
 		<set name="nextActionAttack" val="true" />
 		<set name="offensive" val="true" />
 		<set name="offensive" val="true" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
@@ -1817,7 +1817,7 @@
 		<!-- High Five Skill -->
 		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="250" />
-		<set name="baseCritRate" val="15" /> <!-- FIXME: value unconfirmed -->
+		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="3000" />
@@ -1841,7 +1841,7 @@
 		<table name="#magicLvl"> 46 52 60 </table>
 		<table name="#pAtk"> 1.05 1.1 1.15 </table>
 		<set name="abnormalTime" val="120" />
-		<set name="aggroPoints" val="100" /> <!-- FIXME: value unconfirmed -->
+		<set name="aggroPoints" val="454" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="3" /> <!-- Dance Skill -->
 		<set name="magicLvl" val="#magicLvl" />
@@ -1861,7 +1861,7 @@
 	<skill id="989" levels="1" name="Defense Motion">
 		<!-- High Five Skill -->
 		<set name="abnormalTime" val="120" />
-		<set name="aggroPoints" val="100" /> <!-- FIXME: value unconfirmed -->
+		<set name="aggroPoints" val="635" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="3" /> <!-- Dance Skill -->
 		<set name="magicLvl" val="60" />
@@ -1880,7 +1880,7 @@
 	</skill>
 	<skill id="990" levels="1" name="Death Shot">
 		<!-- High Five Skill -->
-		<set name="baseCritRate" val="15" /> <!-- FIXME: value unconfirmed -->
+		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="3500" />
@@ -2098,14 +2098,14 @@
 	<skill id="998" levels="1" name="Blazing Boost">
 		<!-- High Five Skill -->
 		<set name="castRange" val="400" />
-		<set name="coolTime" val="200" /> <!-- FIXME: value unconfirmed -->
+		<set name="coolTime" val="200" />
 		<set name="effectRange" val="900" />
 		<set name="flyType" val="CHARGE" />
 		<set name="hitTime" val="800" />
 		<set name="magicLvl" val="40" />
 		<set name="mpConsume" val="38" />
 		<set name="offensive" val="true" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">

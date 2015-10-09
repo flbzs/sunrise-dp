@@ -1446,7 +1446,7 @@
 		<set name="mpConsume" val="67" />
 		<set name="mpInitialConsume" val="16" />
 		<set name="negateAbnormals" val="poison,9" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="PARTY" />
 		<for>
@@ -1490,8 +1490,8 @@
 	</skill>
 	<skill id="1553" levels="1" name="Chain Heal">
 		<!-- High Five Skill -->
-		<set name="affectLimit" val="7-12" />
-		<set name="affectRange" val="350" />
+		<set name="affectLimit" val="5-12" />
+		<set name="affectRange" val="300" />
 		<set name="aggroPoints" val="398" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
@@ -1512,7 +1512,7 @@
 		<!-- High Five Skill -->
 		<set name="abnormalTime" val="3" />
 		<set name="affectLimit" val="2-10" />
-		<set name="affectRange" val="100" /> <!-- FIXME: value unconfirmed -->
+		<set name="affectRange" val="100" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="3000" />
@@ -1521,7 +1521,7 @@
 		<set name="mpConsume" val="116" />
 		<set name="mpInitialConsume" val="29" />
 		<set name="offensive" val="true" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="operateType" val="A1" />
 		<set name="power" val="199" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
 		<set name="pvpPower" val="141" />
 		<set name="reuseDelay" val="15000" />
@@ -1541,7 +1541,7 @@
 		<set name="mpConsume" val="99" />
 		<set name="mpInitialConsume" val="24" />
 		<set name="offensive" val="true" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="operateType" val="A1" />
 		<set name="power" val="302" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
 		<set name="pvpPower" val="178" />
 		<set name="reuseDelay" val="10000" />
@@ -1575,7 +1575,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="1200" />
 		<set name="abnormalType" val="summon_condition" />
-		<set name="aggroPoints" val="669" /> <!-- FIXME: value unconfirmed -->
+		<set name="aggroPoints" val="669" />
 		<set name="castRange" val="400" />
 		<set name="canBeDispeled" val="false" />
 		<set name="effectRange" val="900" />
@@ -1619,7 +1619,7 @@
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="offensive" val="true" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="operateType" val="A1" />
 		<set name="overHit" val="true" />
 		<set name="power" val="#power" /> <!-- Inflicts additional non-attribute damage if the target is a monster -->
 		<set name="pvpPower" val="#pvpPower" />
@@ -1657,7 +1657,7 @@
 		<set name="effectRange" val="400" />
 		<set name="halfKillRate" val="8" />
 		<set name="hitTime" val="1800" />
-		<set name="lethalStrikeRate" val="1" /> <!-- FIXME: unconfirmed -->
+		<set name="lethalStrikeRate" val="1" />
 		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="82" />
 		<set name="nextActionAttack" val="true" />

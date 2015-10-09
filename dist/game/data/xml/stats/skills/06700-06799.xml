@@ -459,7 +459,6 @@
 	</skill>
 	<skill id="6732" levels="1" name="Mirage">
 		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
 		<set name="affectRange" val="300" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="85" />
@@ -508,7 +507,6 @@
 	</skill>
 	<skill id="6737" levels="1" name="Heal">
 		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
 		<set name="affectRange" val="900" />
 		<set name="hitTime" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
