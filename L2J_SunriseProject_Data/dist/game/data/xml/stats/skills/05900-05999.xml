@@ -145,7 +145,7 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="3000" /> <!-- FIXME: value unconfirmed -->
+		<set name="power" val="3000" />
 		<set name="reuseDelay" val="1000" />
 		<set name="skillType" val="PDAM" /> <!-- FIXME: value unconfirmed -->
 		<set name="targetType" val="ONE" />
@@ -157,7 +157,7 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="5000" /> <!-- FIXME: value unconfirmed -->
+		<set name="power" val="5000" />
 		<set name="reuseDelay" val="1000" />
 		<set name="skillType" val="PDAM" /> <!-- FIXME: value unconfirmed -->
 		<set name="targetType" val="ONE" />
