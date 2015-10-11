@@ -654,12 +654,12 @@
 		</for>
 	</skill>
 	<skill id="6059" levels="1" name="Counter Critical">
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="8" />
 		<set name="abnormalType" val="counter_critical_trigger" />
 		<set name="isTriggeredSkill" val="true" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="15000" />
 		<set name="skillType" val="BUFF" />
@@ -930,14 +930,13 @@
 	</skill>
 	<skill id="6092" levels="1" name="Lightning Shock">
 		<!-- Confirmed CT2.5 and Updated to H5 -->
-		<!-- Lightning Shock effect -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="8" />
 		<set name="abnormalType" val="paralyze" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="isTriggeredSkill" val="true" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="-1" /> <!-- Land Always -->
 		<set name="offensive" val="true" />

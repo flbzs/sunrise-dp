@@ -273,6 +273,7 @@
 		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="912" levels="1" name="Summon Imperial Phoenix">
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="hitTime" val="15000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="2" />
@@ -280,7 +281,7 @@
 		<set name="itemConsumeId" val="1461" />
 		<set name="itemConsumeIdOT" val="1461" />
 		<set name="itemConsumeSteps" val="4" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="145" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="45000" />
@@ -313,7 +314,7 @@
 		</for>
 	</skill>
 	<skill id="914" levels="1" name="Song of Purification">
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="song_of_purification" />
@@ -321,7 +322,7 @@
 		<set name="aggroPoints" val="679" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="3" /> <!-- Dance Skill -->
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="maxNegated" val="3" />
 		<set name="mpConsume" val="60" />
 		<set name="operateType" val="A2" />
@@ -337,7 +338,7 @@
 		</for>
 	</skill>
 	<skill id="915" levels="1" name="Dance of Berserker">
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="dance_of_berserker" />
@@ -345,7 +346,7 @@
 		<set name="aggroPoints" val="679" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="3" /> <!-- Dance Skill -->
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="60" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="240000" />
@@ -413,11 +414,11 @@
 		</for>
 	</skill>
 	<skill id="918" levels="1" name="Maximum Focus Force">
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="aggroPoints" val="150" />
 		<set name="hitTime" val="900" />
 		<set name="hpConsume" val="80" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="75000" />
@@ -435,11 +436,11 @@
 		</for>
 	</skill>
 	<skill id="919" levels="1" name="Maximum Focus Sonic">
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="aggroPoints" val="150" />
 		<set name="hitTime" val="900" />
 		<set name="hpConsume" val="80" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="75000" />
@@ -935,7 +936,7 @@
 		</for>
 	</skill>
 	<skill id="947" levels="1" name="Lucky Strike">
-		<!-- Confirmed CT2.5 -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="affectLimit" val="3-6" />
 		<set name="affectRange" val="150" />
 		<set name="baseCritRate" val="5" />
@@ -943,7 +944,7 @@
 		<set name="coolTime" val="100" />
 		<set name="effectRange" val="400" />
 		<set name="hitTime" val="1700" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="70" />
 		<set name="nextActionAttack" val="true" />
 		<set name="offensive" val="true" />
@@ -965,7 +966,7 @@
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="counter_skill" />
 		<set name="hitTime" val="500" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="29" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="75000" />
@@ -991,7 +992,7 @@
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="1080" />
 		<set name="lvlBonusRate" val="1" />
-		<set name="magicLvl" val="81" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="35" />
 		<set name="nextActionAttack" val="true" />
 		<set name="offensive" val="true" />
