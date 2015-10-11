@@ -1629,16 +1629,16 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="23298" levels="1" name="Flame Hawk">
-		<!-- FIXME: Chance and Reuse values are unconfirmed -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="flame_hawk" />
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
 		<set name="isTriggeredSkill" val="true" />
-		<set name="magicLvl" val="81" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
-		<set name="power" val="50" /> <!-- Base Land Rate -->
+		<set name="magicLvl" val="83" />
+		<set name="operateType" val="A1" />
+		<set name="power" val="50" />
 		<set name="offensive" val="true" />
 		<set name="basicProperty" val="MEN" />
 		<set name="skillType" val="DOT" />
@@ -1649,16 +1649,16 @@
 		</for>
 	</skill>
 	<skill id="23299" levels="1" name="Arrow Rain">
-		<!-- FIXME: Chance and Reuse values are unconfirmed -->
+		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="arrow_rain" />
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
 		<set name="isTriggeredSkill" val="true" />
-		<set name="magicLvl" val="81" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
-		<set name="power" val="50" /> <!-- Base Land Rate -->
+		<set name="magicLvl" val="83" />
+		<set name="operateType" val="A2" />
+		<set name="power" val="50" />
 		<set name="offensive" val="true" />
 		<set name="basicProperty" val="MEN" />
 		<set name="skillType" val="DOT" />
