@@ -18,9 +18,12 @@
  */
 package instances.PailakaInjuredDragon;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.enums.CtrlEvent;
@@ -44,9 +47,6 @@ import l2r.gameserver.network.serverpackets.SpecialCamera;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
-
 public class PailakaInjuredDragon extends Quest
 {
 	private static final String qn = "Q00144_PailakaInjuredDragon";
@@ -63,7 +63,8 @@ public class PailakaInjuredDragon extends Quest
 		-3736
 	};
 	
-	private static final Map<Integer, int[]> NOEXIT_ZONES = new FastMap<>();
+	private static final Map<Integer, int[]> NOEXIT_ZONES = new ConcurrentHashMap<>();
+	
 	static
 	{
 		NOEXIT_ZONES.put(200001, new int[]
@@ -243,24 +244,13 @@ public class PailakaInjuredDragon extends Quest
 		{ 4347, 6 } // Blessed Body Lv6
 	};
 	
-	private static final FastList<PailakaDrop> DROPLIST = new FastList<>();
+	private static final List<PailakaDrop> DROPLIST = new ArrayList<>();
 	static
 	{
 		DROPLIST.add(new PailakaDrop(HEAL_POTION, 80));
 		DROPLIST.add(new PailakaDrop(SHIELD_POTION, 30));
 	}
 	
-	private static final int[][] HP_HERBS_DROPLIST =
-	{
-		{ 8601, 1, 40 },
-		{ 8600, 1, 70 }
-	};
-	
-	private static final int[][] MP_HERBS_DROPLIST =
-	{
-		{ 8604, 1, 40 },
-		{ 8603, 1, 70 }
-	};
 	//@formatter:on
 	
 	public PailakaInjuredDragon()
@@ -282,19 +272,6 @@ public class PailakaInjuredDragon extends Quest
 		}
 		
 		questItemIds = ITEMS;
-	}
-	
-	private static final void dropHerb(L2Npc mob, L2PcInstance player, int[][] drop)
-	{
-		final int chance = getRandom(100);
-		for (int[] element : drop)
-		{
-			if (chance < element[2])
-			{
-				((L2MonsterInstance) mob).dropItem(player, element[0], element[1]);
-				return;
-			}
-		}
 	}
 	
 	private static final void dropItem(L2Npc mob, L2PcInstance player)
@@ -628,7 +605,6 @@ public class PailakaInjuredDragon extends Quest
 		{
 			case VARKA_SILENOS_FOOTMAN:
 			case VARKA_SILENOS_RECRUIT:
-				dropHerb(npc, player, HP_HERBS_DROPLIST);
 				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (getRandom(100) < 10))
 				{
 					st.set("cond", "4");
@@ -640,7 +616,6 @@ public class PailakaInjuredDragon extends Quest
 				checkIfLastInWall(npc);
 				break;
 			case VARKA_SILENOS_WARRIOR:
-				dropHerb(npc, player, HP_HERBS_DROPLIST);
 				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (getRandom(100) < 15))
 				{
 					st.set("cond", "4");
@@ -652,7 +627,6 @@ public class PailakaInjuredDragon extends Quest
 				checkIfLastInWall(npc);
 				break;
 			case VARKA_ELITE_GUARD:
-				dropHerb(npc, player, HP_HERBS_DROPLIST);
 				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (getRandom(100) < 20))
 				{
 					st.set("cond", "4");
@@ -665,7 +639,6 @@ public class PailakaInjuredDragon extends Quest
 				break;
 			case VARKAS_COMMANDER:
 			case VARKA_SILENOS_OFFICER:
-				dropHerb(npc, player, HP_HERBS_DROPLIST);
 				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (getRandom(100) < 30))
 				{
 					st.set("cond", "4");
@@ -678,7 +651,6 @@ public class PailakaInjuredDragon extends Quest
 				break;
 			case VARKA_SILENOS_GREAT_MAGUS:
 			case VARKA_SILENOS_GENERAL:
-				dropHerb(npc, player, HP_HERBS_DROPLIST);
 				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (getRandom(100) < 10))
 				{
 					st.set("cond", "6");
@@ -690,7 +662,6 @@ public class PailakaInjuredDragon extends Quest
 				checkIfLastInWall(npc);
 				break;
 			case VARKAS_PROPHET:
-				dropHerb(npc, player, HP_HERBS_DROPLIST);
 				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (getRandom(100) < 15))
 				{
 					st.set("cond", "6");
@@ -702,7 +673,6 @@ public class PailakaInjuredDragon extends Quest
 				checkIfLastInWall(npc);
 				break;
 			case VARKA_SILENOS_HEAD_GUARD:
-				dropHerb(npc, player, HP_HERBS_DROPLIST);
 				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (getRandom(100) < 20))
 				{
 					st.set("cond", "6");
@@ -714,7 +684,6 @@ public class PailakaInjuredDragon extends Quest
 				checkIfLastInWall(npc);
 				break;
 			case PROPHET_GUARD:
-				dropHerb(npc, player, HP_HERBS_DROPLIST);
 				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (getRandom(100) < 30))
 				{
 					st.set("cond", "6");
@@ -737,8 +706,6 @@ public class PailakaInjuredDragon extends Quest
 				dropItem(npc, player);
 				break;
 			default:
-				dropHerb(npc, player, HP_HERBS_DROPLIST);
-				dropHerb(npc, player, MP_HERBS_DROPLIST);
 				break;
 		}
 		return super.onKill(npc, player, isSummon);
@@ -993,31 +960,6 @@ public class PailakaInjuredDragon extends Quest
 			}
 		}
 		return super.onEnterZone(character, zone);
-	}
-	
-	static final class Teleport implements Runnable
-	{
-		private final L2Character _char;
-		private final int _instanceId;
-		
-		public Teleport(L2Character c, int id)
-		{
-			_char = c;
-			_instanceId = id;
-		}
-		
-		@Override
-		public void run()
-		{
-			try
-			{
-				teleportPlayer((L2PcInstance) _char, TELEPORT, _instanceId);
-			}
-			catch (Exception e)
-			{
-				e.printStackTrace();
-			}
-		}
 	}
 	
 	private static class PailakaDrop
