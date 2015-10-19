@@ -24,6 +24,7 @@ import java.util.StringTokenizer;
 import l2r.Config;
 import l2r.gameserver.data.xml.impl.SkillTreesData;
 import l2r.gameserver.handler.IAdminCommandHandler;
+import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -55,22 +56,12 @@ public class AdminBuffs implements IAdminCommandHandler
 		
 		if (command.startsWith("admin_getbuffs"))
 		{
-			StringTokenizer st = new StringTokenizer(command, " ");
+			final StringTokenizer st = new StringTokenizer(command, " ");
 			command = st.nextToken();
-			
 			if (st.hasMoreTokens())
 			{
-				L2PcInstance player = null;
-				String playername = st.nextToken();
-				
-				try
-				{
-					player = L2World.getInstance().getPlayer(playername);
-				}
-				catch (Exception e)
-				{
-				}
-				
+				final String playername = st.nextToken();
+				L2PcInstance player = L2World.getInstance().getPlayer(playername);
 				if (player != null)
 				{
 					int page = 1;
@@ -78,15 +69,15 @@ public class AdminBuffs implements IAdminCommandHandler
 					{
 						page = Integer.parseInt(st.nextToken());
 					}
-					showBuffs(activeChar, player, page);
+					showBuffs(activeChar, player, page, command.endsWith("_ps"));
 					return true;
 				}
 				activeChar.sendMessage("The player " + playername + " is not online.");
 				return false;
 			}
-			else if ((activeChar.getTarget() != null) && (activeChar.getTarget() instanceof L2Character))
+			else if ((activeChar.getTarget() != null) && activeChar.getTarget().isCharacter())
 			{
-				showBuffs(activeChar, (L2Character) activeChar.getTarget(), 1);
+				showBuffs(activeChar, (L2Character) activeChar.getTarget(), 1, command.endsWith("_ps"));
 				return true;
 			}
 			else
@@ -163,47 +154,39 @@ public class AdminBuffs implements IAdminCommandHandler
 			StringTokenizer st = new StringTokenizer(command, " ");
 			command = st.nextToken();
 			
-			L2PcInstance player = null;
+			L2Character creature = null;
 			if (st.hasMoreTokens())
 			{
-				String playername = st.nextToken();
-				
-				try
+				creature = L2World.getInstance().getPlayer(st.nextToken());
+				if (creature == null)
 				{
-					player = L2World.getInstance().getPlayer(playername);
-				}
-				catch (Exception e)
-				{
-				}
-				
-				if (player == null)
-				{
-					activeChar.sendMessage("The player " + playername + " is not online.");
+					activeChar.sendPacket(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME);
 					return false;
 				}
 			}
-			else if ((activeChar.getTarget() != null) && activeChar.getTarget().isPlayer())
-			{
-				player = activeChar.getTarget().getActingPlayer();
-			}
 			else
 			{
-				activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
-				return false;
+				final L2Object target = activeChar.getTarget();
+				if ((target != null) && target.isCharacter())
+				{
+					creature = (L2Character) target;
+				}
+				
+				if (creature == null)
+				{
+					activeChar.sendPacket(SystemMessageId.TARGET_IS_INCORRECT);
+					return false;
+				}
 			}
 			
-			try
+			creature.resetTimeStamps();
+			creature.resetDisabledSkills();
+			if (creature.isPlayer())
 			{
-				player.resetTimeStamps();
-				player.resetDisabledSkills();
-				player.sendPacket(new SkillCoolTime(player));
-				activeChar.sendMessage("Skill reuse was removed from " + player.getName() + ".");
-				return true;
+				creature.sendPacket(new SkillCoolTime(creature.getActingPlayer()));
 			}
-			catch (NullPointerException e)
-			{
-				return false;
-			}
+			activeChar.sendMessage("Skill reuse was removed from " + creature.getName() + ".");
+			return true;
 		}
 		else if (command.startsWith("admin_switch_gm_buffs"))
 		{
@@ -244,7 +227,7 @@ public class AdminBuffs implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	public static void showBuffs(L2PcInstance activeChar, L2Character target, int page)
+	public static void showBuffs(L2PcInstance activeChar, L2Character target, int page, boolean passive)
 	{
 		final L2Effect[] effects = target.getAllEffects();
 		if ((page > ((effects.length / PAGE_LIMIT) + 1)) || (page < 1))
@@ -321,15 +304,13 @@ public class AdminBuffs implements IAdminCommandHandler
 		
 		if ((target != null) && (skillId > 0))
 		{
-			for (L2Effect e : target.getAllEffects())
+			if (target.isAffectedBySkill(skillId))
 			{
-				if ((e != null) && (e.getSkill().getId() == skillId))
-				{
-					e.exit();
-					activeChar.sendMessage("Removed " + e.getSkill().getName() + " level " + e.getSkill().getLevel() + " from " + target.getName() + " (" + objId + ")");
-				}
+				target.stopSkillEffects(skillId);
+				activeChar.sendMessage("Removed skill ID: " + skillId + " effects from " + target.getName() + " (" + objId + ").");
 			}
-			showBuffs(activeChar, target, 1);
+			
+			showBuffs(activeChar, target, 1, false);
 			if (Config.GMAUDIT)
 			{
 				GMAudit.auditGMAction(activeChar.getName() + " [" + activeChar.getObjectId() + "]", "stopbuff", target.getName() + " (" + objId + ")", Integer.toString(skillId));
@@ -352,7 +333,7 @@ public class AdminBuffs implements IAdminCommandHandler
 		{
 			target.stopAllEffects();
 			activeChar.sendMessage("Removed all effects from " + target.getName() + " (" + objId + ")");
-			showBuffs(activeChar, target, 1);
+			showBuffs(activeChar, target, 1, false);
 			if (Config.GMAUDIT)
 			{
 				GMAudit.auditGMAction(activeChar.getName() + " [" + activeChar.getObjectId() + "]", "stopallbuffs", target.getName() + " (" + objId + ")", "");

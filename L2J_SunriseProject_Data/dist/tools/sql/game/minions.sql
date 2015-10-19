@@ -607,3 +607,7 @@ INSERT INTO `minions` VALUES
 (22827,22828,1,8),
 -- Hard Noxious Scorpion
 (22861,22826,1,4);
+
+-- Seven signs
+INSERT INTO `minions` VALUES
+(27346,27396,2,2);

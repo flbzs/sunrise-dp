@@ -381,7 +381,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 			return htmltext;
 		}
 		byte _state = st.getState();
-		if (event.equals("30744_03.htm") && (_state == State.CREATED))
+		if (event.equals("30744-03.htm") && (_state == State.CREATED))
 		{
 			if (st.getQuestItemsCount(_1st_Test_Instructions) == 0)
 			{
@@ -391,11 +391,11 @@ public class Q00335_TheSongOfTheHunter extends Quest
 			st.set("cond", "1");
 			st.playSound(QuestSound.ITEMSOUND_QUEST_ACCEPT);
 		}
-		else if (event.equals("30744_09.htm") && (_state == State.STARTED))
+		else if (event.equals("30744-09.htm") && (_state == State.STARTED))
 		{
 			if (GetCurrentRequest(st, Requests1) != null)
 			{
-				return "30744_09a.htm";
+				return "30744-09a.htm";
 			}
 			if (st.getQuestItemsCount(_2nd_Test_Instructions) == 0)
 			{
@@ -403,17 +403,17 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				st.giveItems(_2nd_Test_Instructions, 1);
 			}
 		}
-		else if (event.equals("30744_16.htm") && (_state == State.STARTED))
+		else if (event.equals("30744-16.htm") && (_state == State.STARTED))
 		{
 			if (st.getQuestItemsCount(Laurel_Leaf_Pin) >= 20)
 			{
 				st.giveItems(ADENA, 20000);
-				event = "30744_17.htm";
+				event = "30744-17.htm";
 			}
 			st.playSound(QuestSound.ITEMSOUND_QUEST_FINISH);
 			st.exitQuest(true);
 		}
-		else if (event.equals("30746_03.htm") && (_state == State.STARTED))
+		else if (event.equals("30746-03.htm") && (_state == State.STARTED))
 		{
 			if ((st.getQuestItemsCount(_1st_Circle_Hunter_License) == 0) && (st.getQuestItemsCount(_2nd_Circle_Hunter_License) == 0))
 			{
@@ -431,27 +431,27 @@ public class Q00335_TheSongOfTheHunter extends Quest
 			st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
 			st.giveItems(q_blood_crystal[1], 1);
 		}
-		else if (event.equals("30746_06.htm") && (_state == State.STARTED))
+		else if (event.equals("30746-06.htm") && (_state == State.STARTED))
 		{
 			if (!Blood_Crystal2Adena(st, Get_Blood_Crystal_Level(st)))
 			{
 				return null;
 			}
 		}
-		else if (event.equals("30746_10.htm") && (_state == State.STARTED))
+		else if (event.equals("30746-10.htm") && (_state == State.STARTED))
 		{
 			st.takeItems(Cybellins_Dagger, -1);
 			st.takeItems(Cybellins_Request, -1);
 			st.takeAllItems(q_blood_crystal);
 		}
-		else if (event.equals("30745_02.htm") && (_state == State.STARTED))
+		else if (event.equals("30745-02.htm") && (_state == State.STARTED))
 		{
 			if (st.getQuestItemsCount(_2nd_Test_Instructions) > 0)
 			{
-				return "30745_03.htm";
+				return "30745-03.htm";
 			}
 		}
-		else if (event.equals("30745_05b.htm") && (_state == State.STARTED))
+		else if (event.equals("30745-05b.htm") && (_state == State.STARTED))
 		{
 			if (st.getQuestItemsCount(Laurel_Leaf_Pin) > 0)
 			{
@@ -523,11 +523,11 @@ public class Q00335_TheSongOfTheHunter extends Quest
 			if (st.getPlayer().getLevel() < 35)
 			{
 				st.exitQuest(true);
-				return "30744_01.htm";
+				return "30744-01.htm";
 			}
 			st.set("cond", "0");
 			st.unset("list");
-			return "30744_02.htm";
+			return "30744-02.htm";
 		}
 		
 		if (_state != State.STARTED)
@@ -541,31 +541,31 @@ public class Q00335_TheSongOfTheHunter extends Quest
 			{
 				if (CalcItemsConds(st, Items_1st_Circle) < 3)
 				{
-					return "30744_05.htm";
+					return "30744-05.htm";
 				}
 				DelItemsConds(st, Items_1st_Circle);
 				st.takeItems(_1st_Test_Instructions, -1);
 				st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
 				st.giveItems(_1st_Circle_Hunter_License, 1);
 				st.set("cond", "2");
-				return "30744_06.htm";
+				return "30744-06.htm";
 			}
 			if (st.getQuestItemsCount(_1st_Circle_Hunter_License) > 0)
 			{
 				if (st.getPlayer().getLevel() < 45)
 				{
-					return "30744_07.htm";
+					return "30744-07.htm";
 				}
 				if (st.getQuestItemsCount(_2nd_Test_Instructions) == 0)
 				{
-					return "30744_08.htm";
+					return "30744-08.htm";
 				}
 			}
 			if (st.getQuestItemsCount(_2nd_Test_Instructions) > 0)
 			{
 				if (CalcItemsConds(st, Items_2nd_Circle) < 3)
 				{
-					return "30744_11.htm";
+					return "30744-11.htm";
 				}
 				DelItemsConds(st, Items_2nd_Circle);
 				st.takeItems(_2nd_Test_Instructions, -1);
@@ -573,11 +573,11 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				st.playSound(QuestSound.ITEMSOUND_QUEST_MIDDLE);
 				st.giveItems(_2nd_Circle_Hunter_License, 1);
 				st.set("cond", "3");
-				return "30744_12.htm";
+				return "30744-12.htm";
 			}
 			if (st.getQuestItemsCount(_2nd_Circle_Hunter_License) > 0)
 			{
-				return "30744_14.htm";
+				return "30744-14.htm";
 			}
 		}
 		
@@ -585,33 +585,33 @@ public class Q00335_TheSongOfTheHunter extends Quest
 		{
 			if ((st.getQuestItemsCount(_1st_Circle_Hunter_License) == 0) && (st.getQuestItemsCount(_2nd_Circle_Hunter_License) == 0))
 			{
-				return "30746_01.htm";
+				return "30746-01.htm";
 			}
 			if (st.getQuestItemsCount(Cybellins_Request) == 0)
 			{
-				return "30746_02.htm";
+				return "30746-02.htm";
 			}
 			
 			int Blood_Crystal_Level = Get_Blood_Crystal_Level(st);
 			if (Blood_Crystal_Level == -1)
 			{
-				return "30746_08.htm";
+				return "30746-08.htm";
 			}
 			if (Blood_Crystal_Level == 0)
 			{
-				return "30746_09.htm";
+				return "30746-09.htm";
 			}
 			if (Blood_Crystal_Level == 1)
 			{
-				return "30746_04.htm";
+				return "30746-04.htm";
 			}
 			if ((Blood_Crystal_Level > 1) && (Blood_Crystal_Level < 10))
 			{
-				return "30746_05.htm";
+				return "30746-05.htm";
 			}
 			if ((Blood_Crystal_Level == 10) && Blood_Crystal2Adena(st, Blood_Crystal_Level))
 			{
-				return "30746_05a.htm";
+				return "30746-05a.htm";
 			}
 		}
 		
@@ -619,7 +619,7 @@ public class Q00335_TheSongOfTheHunter extends Quest
 		{
 			if ((st.getQuestItemsCount(_1st_Circle_Hunter_License) == 0) && (st.getQuestItemsCount(_2nd_Circle_Hunter_License) == 0))
 			{
-				return "30745_01a.htm";
+				return "30745-01a.htm";
 			}
 			if (st.getQuestItemsCount(_1st_Circle_Hunter_License) > 0)
 			{
@@ -628,20 +628,20 @@ public class Q00335_TheSongOfTheHunter extends Quest
 				{
 					if (st.getPlayer().getLevel() < 45)
 					{
-						return "30745_01b.htm";
+						return "30745-01b.htm";
 					}
-					return st.getQuestItemsCount(_2nd_Test_Instructions) > 0 ? "30745_03.htm" : "30745_03a.htm";
+					return st.getQuestItemsCount(_2nd_Test_Instructions) > 0 ? "30745-03.htm" : "30745-03a.htm";
 				}
-				return request.Complete(st) ? "30745_06a.htm" : "30745_05.htm";
+				return request.Complete(st) ? "30745-06a.htm" : "30745-05.htm";
 			}
 			if (st.getQuestItemsCount(_2nd_Circle_Hunter_License) > 0)
 			{
 				Request request = GetCurrentRequest(st, Requests2);
 				if (request == null)
 				{
-					return "30745_03b.htm";
+					return "30745-03b.htm";
 				}
-				return request.Complete(st) ? "30745_06b.htm" : "30745_05.htm";
+				return request.Complete(st) ? "30745-06b.htm" : "30745-05.htm";
 			}
 		}
 		
