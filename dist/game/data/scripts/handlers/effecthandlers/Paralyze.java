@@ -67,6 +67,8 @@ public class Paralyze extends L2Effect
 			getEffected().getAI().notifyEvent(CtrlEvent.EVT_THINK);
 		}
 		
+		getEffected().stopAbnormalEffect(AbnormalEffect.HOLD_1);
+		
 		if (_mustCleanFreezingEffect)
 		{
 			getEffected().stopSpecialEffect(AbnormalEffect.S_FREEZING.getMask());
@@ -76,6 +78,7 @@ public class Paralyze extends L2Effect
 	@Override
 	public boolean onStart()
 	{
+		getEffected().startAbnormalEffect(AbnormalEffect.HOLD_1);
 		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, getEffector());
 		getEffected().startParalyze();
 		return super.onStart();
