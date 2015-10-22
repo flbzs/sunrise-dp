@@ -106,6 +106,7 @@ public class Q00146_TheZeroHour extends Quest
 					}
 					else
 					{
+						st.setCond(1);
 						htmltext = "31554-04.html";
 					}
 				}

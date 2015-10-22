@@ -930,8 +930,8 @@
 		</for>
 	</skill>
 	<skill id="22298" levels="1" name="Refined Red Dragon Blood">
-		<!-- There is no available description. -->
 		<set name="blockedInOlympiad" val="true" />
+		<set name="icon" val="BranchSys2.icon.refined_red_blood_of_dragon" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21903" />
@@ -942,8 +942,8 @@
 		</for>
 	</skill>
 	<skill id="22299" levels="1" name="Refined Blue Dragon Blood">
-		<!-- There is no available description. -->
 		<set name="blockedInOlympiad" val="true" />
+		<set name="icon" val="BranchSys2.icon.refined_blue_blood_of_dragon" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21904" />

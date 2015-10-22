@@ -1299,9 +1299,9 @@
 	</route>
 	<!-- Ghost of von Hellmann's Page -->
 	<route name="rune_ghost1b" repeat="false" repeatStyle="back">
-		<target id="31525" spawnX="51446" spawnY="-54514" spawnZ="-3136" />
-		<point X="51752" Y="-54736" Z="-3160" delay="0" run="false" />
-		<point X="51998" Y="-54685" Z="-3160" delay="0" run="false" />
+		<target id="31525" spawnX="51526" spawnY="-54530" spawnZ="-3160" />
+		<point X="51793" Y="-54507" Z="-3160" delay="0" run="false" />
+		<point X="52136" Y="-54497" Z="-3152" delay="0" run="false" />
 		<point X="52083" Y="-54439" Z="-3152" delay="0" run="false" />
 		<point X="52296" Y="-53194" Z="-3152" delay="0" run="false" />
 		<point X="51891" Y="-51628" Z="-3096" delay="15" run="false" />
