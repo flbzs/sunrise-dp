@@ -63,6 +63,11 @@ public class Aura implements ITargetTypeHandler
 					continue;
 				}
 				
+				if (obj.isPlayer() && activeChar.isPlayer() && skill.isOffensive() && activeChar.getActingPlayer().isFriend(obj.getActingPlayer()))
+				{
+					continue;
+				}
+				
 				if (onlyFirst)
 				{
 					return new L2Character[]
