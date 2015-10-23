@@ -254,7 +254,7 @@
 		<set name="skillType" val="AGGDAMAGE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="TargetMe" val="0" />
+			<effect name="TargetMe" val="0" abnormalLvl="1" abnormalType="target_lock" />
 		</for>
 	</skill>
 	<skill id="5116" levels="12" name="Hold">

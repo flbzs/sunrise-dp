@@ -1150,7 +1150,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="TargetMe" val="0" />
+			<effect name="TargetMe" val="0" abnormalLvl="1" abnormalType="target_lock" effectPower="100" />
 		</for>
 	</skill>
 	<skill id="5499" levels="1" name="Dark Lightening">

@@ -2420,7 +2420,7 @@
 				<add stat="mDef" val="4050" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
-			<effect name="TargetMe" val="0" />
+			<effect name="TargetMe" val="0" effectPower="100" effectType="DEBUFF" abnormalLvl="1" abnormalType="target_lock" />
 		</for>
 		<enchant2for>
 			<effect self="1" name="Buff" abnormalTime="30" val="0" abnormalLvl="3" abnormalType="pd_up_special">
@@ -2429,7 +2429,7 @@
 				<sub stat="cancelVuln" val="80" />
 				<mul stat="runSpd" val="#ench2decreasePenalty" />
 			</effect>
-			<effect name="TargetMe" val="0" />
+			<effect name="TargetMe" val="0" effectPower="100" effectType="DEBUFF" abnormalLvl="1" abnormalType="target_lock" />
 		</enchant2for>
 	</skill>
 	<skill id="369" levels="1" name="Evade Shot" enchantGroup1="6" enchantGroup2="6" enchantGroup3="6" enchantGroup4="6" enchantGroup5="6" enchantGroup6="6" enchantGroup7="6" enchantGroup8="6">

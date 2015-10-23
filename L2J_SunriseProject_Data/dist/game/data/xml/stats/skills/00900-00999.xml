@@ -1769,14 +1769,13 @@
 		</for>
 	</skill>
 	<skill id="985" levels="1" name="Challenge for Fate">
-		<!-- Confirmed High Five -->
-		<set name="abnormalLvl" val="1" />
+		<!-- High Five Skill -->
 		<set name="abnormalTime" val="5" />
-		<set name="abnormalType" val="target_lock" />
 		<set name="affectLimit" val="10-10" />
-		<set name="affectRange" val="550" />
+		<set name="affectRange" val="100" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
 		<set name="hitTime" val="1000" />
-		<set name="icon" val="icon.skill0985" />
 		<set name="isDebuff" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="offensive" val="true" />
@@ -1784,10 +1783,9 @@
 		<set name="power" val="7987" />
 		<set name="reuseDelay" val="45000" />
 		<set name="skillType" val="AGGDAMAGE" />
-		<set name="staticReuse" val="true" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="GetAgro" noicon="1" val="0" />
+			<effect name="TargetMe" noicon="1" val="0" abnormalTime="5" abnormalLvl="1" abnormalType="target_lock" effectPower="100" />
 			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_START" triggeredId="6913" triggeredLevel="1" />
 		</for>
 	</skill>
