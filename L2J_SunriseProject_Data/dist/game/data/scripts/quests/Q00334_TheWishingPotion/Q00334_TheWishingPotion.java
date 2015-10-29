@@ -72,131 +72,25 @@ public class Q00334_TheWishingPotion extends Quest
 	private static final int DROP_CHANCE_NECKLACE_OF_GRACE_ID = 4;
 	private static final int DROP_CHANCE_GOLD_BAR_ID = 10;
 	
+	//@formatter:off
 	// Drop Cond
 	// # [COND, NEWCOND, ID, REQUIRED, ITEM, NEED_COUNT, CHANCE, DROP]
 	private static final int[][] DROPLIST_COND =
 	{
-		{
-			1,
-			2,
-			SECRET_KEEPER_TREE,
-			0,
-			SECRET_BOOK_ID,
-			1,
-			100,
-			1
-		},
-		{
-			3,
-			0,
-			AMBER_BASILISK,
-			0,
-			AMBER_SCALE_ID,
-			1,
-			15,
-			1
-		},
-		{
-			3,
-			0,
-			WHISPERING_WIND,
-			0,
-			WIND_SOULSTONE_ID,
-			1,
-			20,
-			1
-		},
-		{
-			3,
-			0,
-			GLASS_JAGUAR,
-			0,
-			GLASS_EYE_ID,
-			1,
-			35,
-			1
-		},
-		{
-			3,
-			0,
-			HORROR_MIST_RIPPER,
-			0,
-			HORROR_ECTOPLASM_ID,
-			1,
-			15,
-			1
-		},
-		{
-			3,
-			0,
-			SILENOS,
-			0,
-			SILENOS_HORN_ID,
-			1,
-			30,
-			1
-		},
-		{
-			3,
-			0,
-			ANT_SOLDIER,
-			0,
-			ANT_SOLDIER_APHID_ID,
-			1,
-			40,
-			1
-		},
-		{
-			3,
-			0,
-			ANT_WARRIOR_CAPTAIN,
-			0,
-			ANT_SOLDIER_APHID_ID,
-			1,
-			40,
-			1
-		},
-		{
-			3,
-			0,
-			TYRANT,
-			0,
-			TYRANTS_CHITIN_ID,
-			1,
-			50,
-			1
-		},
-		{
-			3,
-			0,
-			TYRANT_KINGPIN,
-			0,
-			TYRANTS_CHITIN_ID,
-			1,
-			50,
-			1
-		},
-		{
-			3,
-			0,
-			TURAK_BUGBEAR,
-			0,
-			BUGBEAR_BLOOD_ID,
-			1,
-			15,
-			1
-		},
-		{
-			3,
-			0,
-			TURAK_BUGBEAR_WARRIOR,
-			0,
-			BUGBEAR_BLOOD_ID,
-			1,
-			25,
-			1
-		}
+		{ 1, 2, SECRET_KEEPER_TREE, 0, SECRET_BOOK_ID, 1, 1000000, 1 },
+		{ 3, 0, AMBER_BASILISK, 0, AMBER_SCALE_ID, 1, 150000, 1 },
+		{ 3, 0, WHISPERING_WIND, 0, WIND_SOULSTONE_ID, 1, 200000, 1 },
+		{ 3, 0, GLASS_JAGUAR, 0, GLASS_EYE_ID, 1, 350000, 1 },
+		{ 3, 0, HORROR_MIST_RIPPER, 0, HORROR_ECTOPLASM_ID, 1, 150000, 1 },
+		{ 3, 0, SILENOS, 0, SILENOS_HORN_ID, 1, 300000, 1 },
+		{ 3, 0, ANT_SOLDIER, 0, ANT_SOLDIER_APHID_ID, 1, 400000, 1 },
+		{ 3, 0, ANT_WARRIOR_CAPTAIN, 0, ANT_SOLDIER_APHID_ID, 1, 400000, 1 },
+		{ 3, 0, TYRANT, 0, TYRANTS_CHITIN_ID, 1, 500000, 1 },
+		{ 3, 0, TYRANT_KINGPIN, 0, TYRANTS_CHITIN_ID, 1, 500000, 1 },
+		{ 3, 0, TURAK_BUGBEAR, 0, BUGBEAR_BLOOD_ID, 1, 150000, 1 },
+		{ 3, 0, TURAK_BUGBEAR_WARRIOR, 0, BUGBEAR_BLOOD_ID, 1, 250000, 1 }
 	};
+	//@formatter:on
 	
 	public Q00334_TheWishingPotion()
 	{
@@ -541,10 +435,6 @@ public class Q00334_TheWishingPotion extends Quest
 		return htmltext;
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see com.l2jserver.gameserver.model.quest.Quest#onKill(com.l2jserver.gameserver.model.actor.L2Npc, com.l2jserver.gameserver.model.actor.instance.L2PcInstance, boolean)
-	 */
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
 	{
@@ -563,7 +453,7 @@ public class Q00334_TheWishingPotion extends Quest
 				{
 					if (element[5] == 0)
 					{
-						if (calcChance(element[6]))
+						if (calcChanceHigh(element[6]))
 						{
 							st.giveItems(element[4], element[7]);
 						}
