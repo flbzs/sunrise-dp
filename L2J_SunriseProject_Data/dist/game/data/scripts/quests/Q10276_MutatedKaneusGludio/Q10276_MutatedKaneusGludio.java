@@ -99,7 +99,10 @@ public class Q10276_MutatedKaneusGludio extends Quest
 			
 			if (!PartyMembers.isEmpty())
 			{
-				rewardItem(npcId, PartyMembers.get(getRandom(PartyMembers.size())));
+				for (QuestState member : PartyMembers)
+				{
+					rewardItem(npcId, member);
+				}
 			}
 		}
 		else if (st.isStarted())
