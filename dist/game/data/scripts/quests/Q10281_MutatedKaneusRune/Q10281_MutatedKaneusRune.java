@@ -97,7 +97,10 @@ public class Q10281_MutatedKaneusRune extends Quest
 			
 			if (!PartyMembers.isEmpty())
 			{
-				rewardItem(npcId, PartyMembers.get(getRandom(PartyMembers.size())));
+				for (QuestState member : PartyMembers)
+				{
+					rewardItem(npcId, member);
+				}
 			}
 		}
 		else if (st.isStarted() && !st.hasQuestItems(TISSUE_WA))
