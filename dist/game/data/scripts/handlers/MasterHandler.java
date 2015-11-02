@@ -19,6 +19,9 @@
 package handlers;
 
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import l2r.Config;
 import l2r.gameserver.handler.ActionHandler;
@@ -26,6 +29,7 @@ import l2r.gameserver.handler.ActionShiftHandler;
 import l2r.gameserver.handler.AdminCommandHandler;
 import l2r.gameserver.handler.BypassHandler;
 import l2r.gameserver.handler.ChatHandler;
+import l2r.gameserver.handler.IHandler;
 import l2r.gameserver.handler.ItemHandler;
 import l2r.gameserver.handler.PunishmentHandler;
 import l2r.gameserver.handler.SkillHandler;
@@ -317,23 +321,23 @@ public class MasterHandler
 {
 	private static final Logger _log = LoggerFactory.getLogger(MasterHandler.class);
 	
-	private static final Class<?>[] _loadInstances =
+	private static final IHandler<?, ?>[] LOAD_INSTANCES =
 	{
-		ActionHandler.class,
-		ActionShiftHandler.class,
-		AdminCommandHandler.class,
-		BypassHandler.class,
-		ChatHandler.class,
-		ItemHandler.class,
-		PunishmentHandler.class,
-		SkillHandler.class,
-		UserCommandHandler.class,
-		VoicedCommandHandler.class,
-		TargetHandler.class,
-		TelnetHandler.class,
+		ActionHandler.getInstance(),
+		ActionShiftHandler.getInstance(),
+		AdminCommandHandler.getInstance(),
+		BypassHandler.getInstance(),
+		ChatHandler.getInstance(),
+		ItemHandler.getInstance(),
+		PunishmentHandler.getInstance(),
+		SkillHandler.getInstance(),
+		UserCommandHandler.getInstance(),
+		VoicedCommandHandler.getInstance(),
+		TargetHandler.getInstance(),
+		TelnetHandler.getInstance(),
 	};
 	
-	private static final Class<?>[][] _handlers =
+	private static final Class<?>[][] HANDLERS =
 	{
 		{
 			// Action Handlers
@@ -645,27 +649,28 @@ public class MasterHandler
 	public MasterHandler()
 	{
 		_log.info(MasterHandler.class.getSimpleName() + ": Loading related scripts.");
-		Object loadInstance = null;
-		Method method = null;
-		Class<?>[] interfaces = null;
-		Object handler = null;
 		
-		for (int i = 0; i < _loadInstances.length; i++)
+		Map<IHandler<?, ?>, Method> registerHandlerMethods = new HashMap<>();
+		for (IHandler<?, ?> loadInstance : LOAD_INSTANCES)
 		{
-			try
+			registerHandlerMethods.put(loadInstance, null);
+			for (Method method : loadInstance.getClass().getMethods())
 			{
-				method = _loadInstances[i].getMethod("getInstance");
-				loadInstance = method.invoke(_loadInstances[i]);
+				if (method.getName().equals("registerHandler") && !method.isBridge())
+				{
+					registerHandlerMethods.put(loadInstance, method);
+				}
 			}
-			catch (Exception e)
-			{
-				_log.warn("Failed invoking getInstance method for handler: " + _loadInstances[i].getSimpleName(), e);
-				continue;
-			}
-			
-			method = null;
-			
-			for (Class<?> c : _handlers[i])
+		}
+		
+		registerHandlerMethods.entrySet().stream().filter(e -> e.getValue() == null).forEach(e ->
+		{
+			_log.warn("Failed loading handlers of: " + e.getKey().getClass().getSimpleName() + " seems registerHandler function does not exist.");
+		});
+		
+		for (Class<?> classes[] : HANDLERS)
+		{
+			for (Class<?> c : classes)
 			{
 				if (c == null)
 				{
@@ -674,18 +679,13 @@ public class MasterHandler
 				
 				try
 				{
-					// Don't wtf some classes extending another like ItemHandler, Elixir, etc.. and we need to find where the hell is interface xD
-					interfaces = c.getInterfaces().length > 0 ? // Standardly handler has implementation
-					c.getInterfaces() : c.getSuperclass().getInterfaces().length > 0 ? // No? then it extends another handler like (ItemSkills->ItemSkillsTemplate)
-					c.getSuperclass().getInterfaces() : c.getSuperclass().getSuperclass().getInterfaces(); // O noh that's Elixir->ItemSkills->ItemSkillsTemplate
-					if (method == null)
+					Object handler = c.newInstance();
+					for (Entry<IHandler<?, ?>, Method> entry : registerHandlerMethods.entrySet())
 					{
-						method = loadInstance.getClass().getMethod("registerHandler", interfaces);
-					}
-					handler = c.newInstance();
-					if (method.getParameterTypes()[0].isInstance(handler))
-					{
-						method.invoke(loadInstance, handler);
+						if ((entry.getValue() != null) && entry.getValue().getParameterTypes()[0].isInstance(handler))
+						{
+							entry.getValue().invoke(entry.getKey(), handler);
+						}
 					}
 				}
 				catch (Exception e)
@@ -694,18 +694,11 @@ public class MasterHandler
 					continue;
 				}
 			}
-			// And lets try get size
-			try
-			{
-				method = loadInstance.getClass().getMethod("size");
-				Object returnVal = method.invoke(loadInstance);
-				_log.info(loadInstance.getClass().getSimpleName() + ": Loaded " + returnVal + " Handlers");
-			}
-			catch (Exception e)
-			{
-				_log.warn("Failed invoking size method for handler: " + loadInstance.getClass().getSimpleName(), e);
-				continue;
-			}
+		}
+		
+		for (IHandler<?, ?> loadInstance : LOAD_INSTANCES)
+		{
+			_log.info(loadInstance.getClass().getSimpleName() + ": Loaded " + loadInstance.size() + " Handlers");
 		}
 	}
 }
