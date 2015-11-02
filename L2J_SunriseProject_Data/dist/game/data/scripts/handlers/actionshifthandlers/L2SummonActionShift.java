@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -20,12 +20,12 @@ package handlers.actionshifthandlers;
 
 import l2r.gameserver.enums.InstanceType;
 import l2r.gameserver.handler.AdminCommandHandler;
-import l2r.gameserver.handler.IActionHandler;
+import l2r.gameserver.handler.IActionShiftHandler;
 import l2r.gameserver.handler.IAdminCommandHandler;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 
-public class L2SummonActionShift implements IActionHandler
+public class L2SummonActionShift implements IActionShiftHandler
 {
 	@Override
 	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)

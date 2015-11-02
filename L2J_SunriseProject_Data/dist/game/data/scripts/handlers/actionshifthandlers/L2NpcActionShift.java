@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,7 +21,7 @@ package handlers.actionshifthandlers;
 import l2r.Config;
 import l2r.gameserver.data.xml.impl.ItemData;
 import l2r.gameserver.enums.InstanceType;
-import l2r.gameserver.handler.IActionHandler;
+import l2r.gameserver.handler.IActionShiftHandler;
 import l2r.gameserver.instancemanager.WalkingManager;
 import l2r.gameserver.model.Elementals;
 import l2r.gameserver.model.L2DropCategory;
@@ -37,7 +37,7 @@ import l2r.gameserver.model.stats.Stats;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2r.util.StringUtil;
 
-public class L2NpcActionShift implements IActionHandler
+public class L2NpcActionShift implements IActionShiftHandler
 {
 	/**
 	 * Manage and Display the GM console to modify the L2NpcInstance (GM only).<BR>
@@ -49,7 +49,12 @@ public class L2NpcActionShift implements IActionHandler
 	 * <li>If L2NpcInstance is autoAttackable, send a Server->Client packet StatusUpdate to the L2PcInstance in order to update L2NpcInstance HP bar</li>
 	 * <li>Send a Server->Client NpcHtmlMessage() containing the GM console about this L2NpcInstance</li><BR>
 	 * <BR>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Each group of Server->Client packet must be terminated by a ActionFailed packet in order to avoid that client wait an other packet</B></FONT><BR> <BR> <B><U> Example of use </U> :</B><BR> <BR> <li>Client packet : Action</li><BR> <BR>
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Each group of Server->Client packet must be terminated by a ActionFailed packet in order to avoid that client wait an other packet</B></FONT><BR>
+	 * <BR>
+	 * <B><U> Example of use </U> :</B><BR>
+	 * <BR>
+	 * <li>Client packet : Action</li><BR>
+	 * <BR>
 	 */
 	@Override
 	public boolean action(L2PcInstance activeChar, L2Object target, boolean interact)
