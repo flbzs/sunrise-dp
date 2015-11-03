@@ -36,83 +36,83 @@ import l2r.gameserver.model.skills.targets.L2TargetType;
  */
 public class AuraFriendly implements ITargetTypeHandler
 {
-   @Override
-   public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
-   {
-      List<L2Character> targetList = new ArrayList<>();
-      L2PcInstance player = activeChar.getActingPlayer();
-      int maxTargets = skill.getAffectLimit();
-     for (L2Character obj : player.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
-      {
-         if ((obj == activeChar) || !checkTarget(player, obj))
-         {
-            continue;
-         }
-         
-         if ((maxTargets > 0) && (targetList.size() >= maxTargets))
-         {
-            break;
-         }
-         
-         targetList.add(obj);
-      }
-      
-      if (targetList.isEmpty())
-      {
-         return _emptyTargetList;
-      }
-      
-      return targetList.toArray(new L2Character[targetList.size()]);
-   }
-   
-   private boolean checkTarget(L2PcInstance activeChar, L2Character target)
-   {
-      if (!GeoData.getInstance().canSeeTarget(activeChar, target))
-      {
-         return false;
-      }
-      
-      if ((target == null) || target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster())
-      {
-         return false;
-      }
-      
-      if (target.isPlayable())
-      {
-         L2PcInstance targetPlayer = target.getActingPlayer();
-         
-         if (activeChar.isInDuelWith(target))
-         {
-            return false;
-         }
-         
-         if (activeChar.isInPartyWith(target))
-         {
-            return true;
-         }
-         
-         if (target.isInsideZone(ZoneIdType.PVP))
-         {
-            return false;
-         }
-         
-         if (activeChar.isInClanWith(target) || activeChar.isInAllyWith(target) || activeChar.isInCommandChannelWith(target))
-         {
-            return true;
-         }
-         
-         if ((targetPlayer.getPvpFlag() > 0) || (targetPlayer.getKarma() > 0))
-         {
-            return false;
-         }
-      }
-      
-      return true;
-   }
-   
-   @Override
-   public Enum<L2TargetType> getTargetType()
-   {
-      return L2TargetType.AURA_FRIENDLY;
-   }
+	@Override
+	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
+	{
+		List<L2Character> targetList = new ArrayList<>();
+		L2PcInstance player = activeChar.getActingPlayer();
+		int maxTargets = skill.getAffectLimit();
+		for (L2Character obj : player.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
+		{
+			if ((obj == activeChar) || !checkTarget(player, obj))
+			{
+				continue;
+			}
+			
+			if ((maxTargets > 0) && (targetList.size() >= maxTargets))
+			{
+				break;
+			}
+			
+			targetList.add(obj);
+		}
+		
+		if (targetList.isEmpty())
+		{
+			return _emptyTargetList;
+		}
+		
+		return targetList.toArray(new L2Character[targetList.size()]);
+	}
+	
+	private boolean checkTarget(L2PcInstance activeChar, L2Character target)
+	{
+		if (!GeoData.getInstance().canSeeTarget(activeChar, target))
+		{
+			return false;
+		}
+		
+		if ((target == null) || target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster())
+		{
+			return false;
+		}
+		
+		if (target.isPlayable())
+		{
+			L2PcInstance targetPlayer = target.getActingPlayer();
+			
+			if (activeChar.isInDuelWith(target))
+			{
+				return false;
+			}
+			
+			if (activeChar.isInPartyWith(target))
+			{
+				return true;
+			}
+			
+			if (target.isInsideZone(ZoneIdType.PVP))
+			{
+				return false;
+			}
+			
+			if (activeChar.isInClanWith(target) || activeChar.isInAllyWith(target) || activeChar.isInCommandChannelWith(target))
+			{
+				return true;
+			}
+			
+			if ((targetPlayer.getPvpFlag() > 0) || (targetPlayer.getKarma() > 0))
+			{
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	@Override
+	public Enum<L2TargetType> getTargetType()
+	{
+		return L2TargetType.AURA_FRIENDLY;
+	}
 }
