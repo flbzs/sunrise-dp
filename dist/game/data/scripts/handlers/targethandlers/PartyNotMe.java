@@ -24,10 +24,11 @@ import java.util.List;
 import l2r.gameserver.handler.ITargetTypeHandler;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Character;
-import l2r.gameserver.model.actor.L2Summon;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.targets.L2TargetType;
+import l2r.gameserver.network.SystemMessageId;
+import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 
 /**
@@ -39,55 +40,43 @@ public class PartyNotMe implements ITargetTypeHandler
 	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
 	{
 		List<L2Character> targetList = new ArrayList<>();
-		if (onlyFirst)
+		
+		if (!activeChar.isInParty())
 		{
-			return new L2Character[]
-			{
-				activeChar
-			};
+			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
+			sm.addSkillName(skill);
+			activeChar.sendPacket(sm);
+			return _emptyTargetList;
 		}
 		
-		L2PcInstance player = null;
-		
-		if (activeChar.isSummon())
+		if (activeChar.getSummon() != null)
 		{
-			player = ((L2Summon) activeChar).getOwner();
-			targetList.add(player);
+			targetList.add(activeChar.getSummon());
 		}
-		else if (activeChar.isPlayer())
+		
+		for (L2PcInstance partyMember : activeChar.getParty().getMembers())
 		{
-			player = activeChar.getActingPlayer();
-			if (activeChar.getSummon() != null)
+			if ((partyMember == activeChar) || partyMember.isDead())
 			{
-				targetList.add(activeChar.getSummon());
+				continue;
 			}
-		}
-		
-		if (activeChar.getParty() != null)
-		{
-			List<L2PcInstance> partyList = activeChar.getParty().getMembers();
 			
-			for (L2PcInstance partyMember : partyList)
+			if (Util.checkIfInRange(skill.getAffectRange(), activeChar, partyMember, true))
 			{
-				if (partyMember == null)
+				targetList.add(partyMember);
+				
+				if ((partyMember.getSummon() != null) && !partyMember.getSummon().isDead())
 				{
-					continue;
-				}
-				else if (partyMember == player)
-				{
-					continue;
-				}
-				else if (!partyMember.isDead() && Util.checkIfInRange(skill.getAffectRange(), activeChar, partyMember, true))
-				{
-					targetList.add(partyMember);
-					
-					if ((partyMember.getSummon() != null) && !partyMember.getSummon().isDead())
-					{
-						targetList.add(partyMember.getSummon());
-					}
+					targetList.add(partyMember.getSummon());
 				}
 			}
 		}
+		
+		if (targetList.isEmpty())
+		{
+			return _emptyTargetList;
+		}
+		
 		return targetList.toArray(new L2Character[targetList.size()]);
 	}
 	
