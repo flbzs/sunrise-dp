@@ -143,7 +143,6 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="basicProperty" val="CON" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<for>

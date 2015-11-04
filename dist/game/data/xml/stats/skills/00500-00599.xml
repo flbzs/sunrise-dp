@@ -162,7 +162,6 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="skillType" val="PDAM" />
 		<set name="soulMaxConsumeCount" val="5" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="power" val="#ench1Power" />
@@ -214,7 +213,6 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="skillType" val="BLOW" />
 		<set name="soulMaxConsumeCount" val="5" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="power" val="#ench1Power" />
@@ -265,7 +263,6 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="skillType" val="PDAM" />
 		<set name="soulMaxConsumeCount" val="5" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="power" val="#ench1Power" />
@@ -308,7 +305,6 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="skillType" val="PDAM" />
 		<set name="soulMaxConsumeCount" val="5" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="power" val="#ench1Power" />
@@ -357,7 +353,6 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="skillType" val="PDAM" />
 		<set name="soulMaxConsumeCount" val="5" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="AREA" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="power" val="#ench1Power" />
@@ -413,7 +408,6 @@
 		<set name="basicProperty" val="CON" />
 		<set name="skillType" val="PDAM" />
 		<set name="soulMaxConsumeCount" val="5" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
@@ -1037,7 +1031,6 @@
 		<set name="reuseDelay" val="75000" />
 		<set name="skillType" val="PDAM" />
 		<set name="soulMaxConsumeCount" val="5" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="FRONT_AREA" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="power" val="#ench1Power" />
@@ -1339,7 +1332,6 @@
 		<set name="power" val="2583" />
 		<set name="reuseDelay" val="3000" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="540" levels="1" name="Wing Assault">
@@ -1359,7 +1351,6 @@
 		<set name="operateType" val="DA1" />
 		<set name="power" val="2067" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="AREA" />
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
@@ -2127,7 +2118,6 @@
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="576" levels="4" name="Paw Strike">
@@ -2340,7 +2330,6 @@
 		<set name="power" val="1008" />
 		<set name="reuseDelay" val="3000" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="585" levels="1" name="Fast Moving">
@@ -2393,7 +2382,6 @@
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="3000" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="588" levels="2" name="Curse of Darkness">

@@ -420,7 +420,6 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="skillType" val="PDAM" />
 		<set name="soulMaxConsumeCount" val="5" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
@@ -1239,7 +1238,6 @@
 		<set name="power" val="2904" />
 		<set name="reuseDelay" val="3000" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="676" levels="1" name="Divine Warrior Sonic Blaster">
@@ -1254,7 +1252,6 @@
 		<set name="power" val="2323" />
 		<set name="reuseDelay" val="3000" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="677" levels="1" name="Divine Warrior Transfixion of Earth">
@@ -1270,7 +1267,6 @@
 		<set name="power" val="2323" />
 		<set name="reuseDelay" val="4000" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="678" levels="1" name="Divine Warrior War Cry">
@@ -1379,7 +1375,6 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="basicProperty" val="CON" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
@@ -1405,7 +1400,6 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="basicProperty" val="CON" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
@@ -1474,7 +1468,6 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="basicProperty" val="CON" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
@@ -1497,7 +1490,6 @@
 		<set name="power" val="6195" />
 		<set name="reuseDelay" val="3000" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="688" levels="1" name="Divine Rogue Bleed Attack">
@@ -1519,7 +1511,6 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="basicProperty" val="CON" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<for>
