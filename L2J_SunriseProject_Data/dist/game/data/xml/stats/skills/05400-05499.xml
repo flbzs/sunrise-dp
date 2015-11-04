@@ -518,7 +518,6 @@
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="10000" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="5443" levels="4" name="Cry of the Wolf">
@@ -570,7 +569,6 @@
 		<set name="reuseDelay" val="11000" />
 		<set name="basicProperty" val="CON" />
 		<set name="skillType" val="PDAM" />
-		<set name="SSBoost" val="2.0" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<for>
