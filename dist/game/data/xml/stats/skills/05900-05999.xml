@@ -921,11 +921,19 @@
 	</skill>
 	<skill id="5980" levels="3" name="Seal Isolation">
 		<set name="affectLimit" val="10-10" />
+		<set name="affectRange" val="300" />
 		<set name="hitTime" val="2500" />
+		<set name="power" val="2273"/>
+		<set name="mpConsume" val="50" />
 		<set name="operateType" val="A1" />
-		<set name="reuseDelay" val="1000" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="reuseDelay" val="1000"/>
+		<set name="skillType" val="MDAM"/>
+		<set name="targetType" val="AURA" />
+		<for>
+			<effect name="RemoveTarget" noicon="1" val="0">
+				<param chance="50" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="5981" levels="3" name="Lilith's Curse">
 		<set name="abnormalLvl" val="3" />
