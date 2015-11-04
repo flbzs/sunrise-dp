@@ -206,6 +206,8 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 				{
 					if (getQuestItemsCount(player, SEAL_OF_BINDING) >= 4)
 					{
+						player.abortAttack();
+						player.abortCast();
 						player.showQuestMovie(13);
 						startQuestTimer("TELEPORT", 27000, null, player);
 					}
