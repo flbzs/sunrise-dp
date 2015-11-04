@@ -534,7 +534,11 @@ public final class Beleth extends AbstractNpcAI
 				
 				_camera1.deleteMe();
 				_camera2.deleteMe();
-				_whirpool.deleteMe();
+				
+				if (_whirpool != null)
+				{
+					_whirpool.deleteMe();
+				}
 				
 				for (L2Character c : ZONE.getCharactersInside())
 				{
