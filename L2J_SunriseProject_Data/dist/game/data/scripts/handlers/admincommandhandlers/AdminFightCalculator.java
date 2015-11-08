@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -120,7 +120,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			npc2 = NpcTable.getInstance().getTemplate(mid2);
 		}
 		
-		NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		
 		final String replyMSG;
 		
@@ -205,8 +205,8 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		double dmg2 = 0;
 		
 		// ATTACK speed in milliseconds
-		int sAtk1 = npc1.calculateTimeBetweenAttacks(npc2, null);
-		int sAtk2 = npc2.calculateTimeBetweenAttacks(npc1, null);
+		int sAtk1 = npc1.calculateTimeBetweenAttacks();
+		int sAtk2 = npc2.calculateTimeBetweenAttacks();
 		// number of ATTACK per 100 seconds
 		sAtk1 = 100000 / sAtk1;
 		sAtk2 = 100000 / sAtk2;
@@ -238,7 +238,6 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			
 			if (!_miss1)
 			{
-				npc1.setAttackingBodypart();
 				double _dmg1 = Formulas.calcPhysDam(npc1, npc2, null, _shld1, _crit1, false, false);
 				dmg1 += _dmg1;
 				npc1.abortAttack();
@@ -257,7 +256,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			{
 				shld2++;
 			}
-			boolean _crit2 = Formulas.calcCrit(npc1, npc1);
+			boolean _crit2 = Formulas.calcCrit(npc2, npc1);
 			if (_crit2)
 			{
 				crit2++;
@@ -272,7 +271,6 @@ public class AdminFightCalculator implements IAdminCommandHandler
 			
 			if (!_miss2)
 			{
-				npc2.setAttackingBodypart();
 				double _dmg2 = Formulas.calcPhysDam(npc2, npc1, null, _shld2, _crit2, false, false);
 				dmg2 += _dmg2;
 				npc2.abortAttack();
@@ -302,7 +300,7 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		double maxHp2 = npc2.getMaxHp();
 		int hp2 = (int) ((Formulas.calcHpRegen(npc2) * 100000) / Formulas.getRegeneratePeriod(npc2));
 		
-		NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		
 		final StringBuilder replyMSG = StringUtil.startAppend(1000, "<html><title>Selected mobs to fight</title>" + "<body>" + "<table>");
 		
