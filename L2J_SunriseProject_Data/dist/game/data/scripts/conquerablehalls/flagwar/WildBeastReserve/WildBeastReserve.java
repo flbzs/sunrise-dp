@@ -83,7 +83,7 @@ public final class WildBeastReserve extends FlagWar
 			TELE_ZONES[id] = teleZone;
 		}
 		
-		QUEST_REWARD = 0;
+		QUEST_REWARD = 8293;
 		CENTER = new Location(57762, -92696, -1359, 0);
 	}
 	

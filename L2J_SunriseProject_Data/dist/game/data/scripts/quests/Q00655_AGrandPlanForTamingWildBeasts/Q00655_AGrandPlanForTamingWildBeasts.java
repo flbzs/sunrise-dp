@@ -77,7 +77,7 @@ public final class Q00655_AGrandPlanForTamingWildBeasts extends Quest
 				if (qs.isCreated())
 				{
 					if ((clan != null) && (clan.getLevel() >= REQUIRED_CLAN_LEVEL) && (clan.getFortId() == 0) //
-						&& player.isClanLeader() && (minutesToSiege > 0) && (minutesToSiege < MINUTES_TO_SIEGE))
+					&& player.isClanLeader() && (minutesToSiege > 0) && (minutesToSiege < MINUTES_TO_SIEGE))
 					{
 						qs.startQuest();
 						htmltext = event;
@@ -203,7 +203,7 @@ public final class Q00655_AGrandPlanForTamingWildBeasts extends Quest
 		if (hall != null)
 		{
 			final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			return sdf.format(hall.getSiegeDate());
+			return sdf.format(hall.getSiegeDate().getTime());
 		}
 		return "Error in date.";
 	}
