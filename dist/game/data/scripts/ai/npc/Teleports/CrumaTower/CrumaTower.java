@@ -26,7 +26,7 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Cruma Tower teleport AI.
- * @author Plim
+ * @author vGodFather
  */
 public final class CrumaTower extends AbstractNpcAI
 {
@@ -47,13 +47,14 @@ public final class CrumaTower extends AbstractNpcAI
 	}
 	
 	@Override
-	public String onTalk(L2Npc npc, L2PcInstance talker)
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		if (talker.getLevel() <= MAX_LEVEL)
+		if (player.getLevel() <= MAX_LEVEL)
 		{
-			talker.teleToLocation(getRandomBoolean() ? TELEPORT_LOC1 : TELEPORT_LOC2);
-			return null;
+			player.teleToLocation(getRandomBoolean() ? TELEPORT_LOC1 : TELEPORT_LOC2);
+			return "";
 		}
+		
 		return "30483-1.html";
 	}
 }
