@@ -30,7 +30,6 @@ import l2r.gameserver.data.sql.NpcTable;
 import l2r.gameserver.data.xml.impl.DoorData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.enums.QuestSound;
-import l2r.gameserver.idfactory.IdFactory;
 import l2r.gameserver.instancemanager.SoDManager;
 import l2r.gameserver.instancemanager.SoIManager;
 import l2r.gameserver.instancemanager.ZoneManager;
@@ -1757,7 +1756,7 @@ public class EnergySeeds extends AbstractNpcAI
 	private L2MonsterInstance spawnSupriseMob(L2Npc energy, int npcId)
 	{
 		L2NpcTemplate supriseMobTemplate = NpcTable.getInstance().getTemplate(npcId);
-		L2MonsterInstance monster = new L2MonsterInstance(IdFactory.getInstance().getNextId(), supriseMobTemplate);
+		L2MonsterInstance monster = new L2MonsterInstance(supriseMobTemplate);
 		monster.setCurrentHpMp(monster.getMaxHp(), monster.getMaxMp());
 		monster.setHeading(energy.getHeading());
 		monster.setInstanceId(energy.getInstanceId());
@@ -2147,7 +2146,7 @@ public class EnergySeeds extends AbstractNpcAI
 					Integer spawnId = _spawnId; // the map uses "Integer", not "int"
 					_spawnedNpcs.put(addSpawn(_npcIds[getRandom(_npcIds.length)], _loc, false, 0), spawnId);
 				}
-			}, waitTime);
+			} , waitTime);
 		}
 	}
 	

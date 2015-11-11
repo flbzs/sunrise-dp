@@ -29,7 +29,6 @@ import l2r.gameserver.data.sql.NpcTable;
 import l2r.gameserver.enums.CtrlEvent;
 import l2r.gameserver.enums.ShotType;
 import l2r.gameserver.enums.ZoneIdType;
-import l2r.gameserver.idfactory.IdFactory;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.instance.L2EffectPointInstance;
@@ -75,7 +74,7 @@ public class SignetMDam extends L2Effect
 			return false;
 		}
 		
-		final L2EffectPointInstance effectPoint = new L2EffectPointInstance(IdFactory.getInstance().getNextId(), template, getEffector());
+		final L2EffectPointInstance effectPoint = new L2EffectPointInstance(template, getEffector());
 		effectPoint.setCurrentHp(effectPoint.getMaxHp());
 		effectPoint.setCurrentMp(effectPoint.getMaxMp());
 		

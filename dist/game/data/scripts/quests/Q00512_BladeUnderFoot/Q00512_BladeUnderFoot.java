@@ -50,7 +50,7 @@ public final class Q00512_BladeUnderFoot extends Quest
 	
 	public class CAUWorld extends InstanceWorld
 	{
-		
+	
 	}
 	
 	public static class CastleDungeon
@@ -193,7 +193,7 @@ public final class Q00512_BladeUnderFoot extends Quest
 		L2Party party = player.getParty();
 		int instanceId = InstanceManager.getInstance().createDynamicInstance(template);
 		Instance ins = InstanceManager.getInstance().getInstance(instanceId);
-		ins.setSpawnLoc(new Location(player));
+		ins.setExitLoc(new Location(player));
 		world = new CAUWorld();
 		world.setInstanceId(instanceId);
 		world.setTemplateId(dungeon.getInstanceId());

@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import l2r.gameserver.data.sql.NpcTable;
-import l2r.gameserver.idfactory.IdFactory;
 import l2r.gameserver.instancemanager.TerritoryWarManager;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.instance.L2SiegeFlagInstance;
@@ -58,7 +57,7 @@ public class OutpostCreate extends L2Effect
 		if (TerritoryWarManager.getInstance().isTWInProgress())
 		{
 			// Spawn a new flag
-			final L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, IdFactory.getInstance().getNextId(), NpcTable.getInstance().getTemplate(HQ_NPC_ID), true, true);
+			final L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, NpcTable.getInstance().getTemplate(HQ_NPC_ID), true, true);
 			flag.setTitle(player.getClan().getName());
 			flag.setCurrentHpMp(flag.getMaxHp(), flag.getMaxMp());
 			flag.setHeading(player.getHeading());

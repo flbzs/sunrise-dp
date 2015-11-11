@@ -287,7 +287,7 @@ public class Q00726_LightwithintheDarkness extends Quest
 		L2Party party = player.getParty();
 		int instanceId = InstanceManager.getInstance().createDynamicInstance(template);
 		Instance ins = InstanceManager.getInstance().getInstance(instanceId);
-		ins.setSpawnLoc(new Location(player));
+		ins.setExitLoc(new Location(player));
 		world = new PAWORLD();
 		world.setInstanceId(instanceId);
 		world.setTemplateId(dungeon.getInstanceId());
@@ -418,7 +418,7 @@ public class Q00726_LightwithintheDarkness extends Quest
 				addSpawn(KANADIS_FOLLOWER1, 50536, -12232, -9384, 32768, false, 0, false, world.getInstanceId());
 			}
 			ThreadPoolManager.getInstance().scheduleGeneral(() -> SecondWave(world), 8 * 60 * 1000);
-		}, 10000);
+		} , 10000);
 	}
 	
 	protected void SecondWave(final PAWORLD world)

@@ -9,7 +9,6 @@ import java.util.concurrent.ScheduledFuture;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.data.sql.NpcTable;
 import l2r.gameserver.enums.CtrlIntention;
-import l2r.gameserver.idfactory.IdFactory;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.L2Party;
 import l2r.gameserver.model.L2Spawn;
@@ -204,262 +203,262 @@ public class RimKamaloka extends Quest
 				8971,
 				-219546,
 				-8021
-			},
+		},
 			{
 				9318,
 				-219644,
 				-8021
-			},
+		},
 			{
 				9266,
 				-220208,
 				-8021
-			},
+		},
 			{
 				9497,
 				-220054,
 				-8024
-			}
+		}
 		},
 		{
 			{
 				16107,
 				-219574,
 				-8021
-			},
+		},
 			{
 				16769,
 				-219885,
 				-8021
-			},
+		},
 			{
 				16363,
 				-220219,
 				-8021
-			},
+		},
 			{
 				16610,
 				-219523,
 				-8021
-			}
+		}
 		},
 		{
 			{
 				23019,
 				-219730,
 				-7803
-			},
+		},
 			{
 				23351,
 				-220455,
 				-7803
-			},
+		},
 			{
 				23900,
 				-219864,
 				-7803
-			},
+		},
 			{
 				23851,
 				-220294,
 				-7803
-			}
+		}
 		},
 		{
 			{
 				9514,
 				-212478,
 				-7803
-			},
+		},
 			{
 				9236,
 				-213348,
 				-7803
-			},
+		},
 			{
 				8868,
 				-212683,
 				-7803
-			},
+		},
 			{
 				9719,
 				-213042,
 				-7803
-			}
+		}
 		},
 		{
 			{
 				16925,
 				-212811,
 				-7803
-			},
+		},
 			{
 				16885,
 				-213199,
 				-7802
-			},
+		},
 			{
 				16487,
 				-213339,
 				-7803
-			},
+		},
 			{
 				16337,
 				-212529,
 				-7803
-			}
+		}
 		},
 		{
 			{
 				23958,
 				-213282,
 				-8009
-			},
+		},
 			{
 				23292,
 				-212782,
 				-8012
-			},
+		},
 			{
 				23844,
 				-212781,
 				-8009
-			},
+		},
 			{
 				23533,
 				-213301,
 				-8009
-			}
+		}
 		},
 		{
 			{
 				8828,
 				-205518,
 				-8009
-			},
+		},
 			{
 				8895,
 				-205989,
 				-8009
-			},
+		},
 			{
 				9398,
 				-205967,
 				-8009
-			},
+		},
 			{
 				9393,
 				-205409,
 				-8009
-			}
+		}
 		},
 		{
 			{
 				16185,
 				-205472,
 				-8009
-			},
+		},
 			{
 				16808,
 				-205929,
 				-8009
-			},
+		},
 			{
 				16324,
 				-206042,
 				-8009
-			},
+		},
 			{
 				16782,
 				-205454,
 				-8009
-			}
+		}
 		},
 		{
 			{
 				23476,
 				-206310,
 				-7991
-			},
+		},
 			{
 				23230,
 				-205861,
 				-7991
-			},
+		},
 			{
 				22644,
 				-205888,
 				-7994
-			},
+		},
 			{
 				23078,
 				-206714,
 				-7991
-			}
+		}
 		},
 		{
 			{
 				42981,
 				-219308,
 				-8759
-			},
+		},
 			{
 				42320,
 				-220160,
 				-8759
-			},
+		},
 			{
 				42434,
 				-219181,
 				-8759
-			},
+		},
 			{
 				42101,
 				-219550,
 				-8759
-			},
+		},
 			{
 				41859,
 				-220236,
 				-8759
-			},
+		},
 			{
 				42881,
 				-219942,
 				-8759
-			}
+		}
 		},
 		{
 			{
 				48770,
 				-219304,
 				-8759
-			},
+		},
 			{
 				49036,
 				-220190,
 				-8759
-			},
+		},
 			{
 				49363,
 				-219814,
 				-8759
-			},
+		},
 			{
 				49393,
 				-219102,
 				-8759
-			},
+		},
 			{
 				49618,
 				-220490,
 				-8759
-			},
+		},
 			{
 				48526,
 				-220493,
 				-8759
-			}
+		}
 		}
 	};
 	
@@ -535,31 +534,31 @@ public class RimKamaloka extends Quest
 				2,
 				10839,
 				1
-			}, // Grade D
+		}, // Grade D
 			{
 				13002,
 				2,
 				10838,
 				1
-			}, // Grade C
+		}, // Grade C
 			{
 				13002,
 				2,
 				10837,
 				1
-			}, // Grade B
+		}, // Grade B
 			{
 				13002,
 				2,
 				10836,
 				1
-			}, // Grade A
+		}, // Grade A
 			{
 				13002,
 				2,
 				12824,
 				1
-			}
+		}
 		// Grade S
 		},
 		{ // 25-35
@@ -569,31 +568,31 @@ public class RimKamaloka extends Quest
 				3,
 				10838,
 				1
-			},
+		},
 			{
 				13002,
 				3,
 				10837,
 				1
-			},
+		},
 			{
 				13002,
 				3,
 				10836,
 				1
-			},
+		},
 			{
 				13002,
 				3,
 				10840,
 				1
-			},
+		},
 			{
 				13002,
 				3,
 				12825,
 				1
-			}
+		}
 		},
 		{ // 30-40
 			null,
@@ -602,31 +601,31 @@ public class RimKamaloka extends Quest
 				3,
 				10841,
 				1
-			},
+		},
 			{
 				13002,
 				3,
 				10842,
 				1
-			},
+		},
 			{
 				13002,
 				3,
 				10843,
 				1
-			},
+		},
 			{
 				13002,
 				3,
 				10844,
 				1
-			},
+		},
 			{
 				13002,
 				3,
 				12826,
 				1
-			}
+		}
 		},
 		{ // 35-45
 			null,
@@ -635,31 +634,31 @@ public class RimKamaloka extends Quest
 				5,
 				10842,
 				1
-			},
+		},
 			{
 				13002,
 				5,
 				10843,
 				1
-			},
+		},
 			{
 				13002,
 				5,
 				10844,
 				1
-			},
+		},
 			{
 				13002,
 				5,
 				10845,
 				1
-			},
+		},
 			{
 				13002,
 				5,
 				12827,
 				1
-			}
+		}
 		},
 		{ // 40-50
 			null,
@@ -668,31 +667,31 @@ public class RimKamaloka extends Quest
 				7,
 				10846,
 				1
-			},
+		},
 			{
 				13002,
 				7,
 				10847,
 				1
-			},
+		},
 			{
 				13002,
 				7,
 				10848,
 				1
-			},
+		},
 			{
 				13002,
 				7,
 				10849,
 				1
-			},
+		},
 			{
 				13002,
 				7,
 				12828,
 				1
-			}
+		}
 		},
 		{ // 45-55
 			null,
@@ -701,31 +700,31 @@ public class RimKamaloka extends Quest
 				8,
 				10847,
 				1
-			},
+		},
 			{
 				13002,
 				8,
 				10848,
 				1
-			},
+		},
 			{
 				13002,
 				8,
 				10849,
 				1
-			},
+		},
 			{
 				13002,
 				8,
 				10850,
 				1
-			},
+		},
 			{
 				13002,
 				8,
 				12829,
 				1
-			}
+		}
 		},
 		{ // 50-60
 			null,
@@ -734,31 +733,31 @@ public class RimKamaloka extends Quest
 				10,
 				10851,
 				1
-			},
+		},
 			{
 				13002,
 				10,
 				10852,
 				1
-			},
+		},
 			{
 				13002,
 				10,
 				10853,
 				1
-			},
+		},
 			{
 				13002,
 				10,
 				10854,
 				1
-			},
+		},
 			{
 				13002,
 				10,
 				12830,
 				1
-			}
+		}
 		},
 		{ // 55-65
 			null,
@@ -767,31 +766,31 @@ public class RimKamaloka extends Quest
 				12,
 				10852,
 				1
-			},
+		},
 			{
 				13002,
 				12,
 				10853,
 				1
-			},
+		},
 			{
 				13002,
 				12,
 				10854,
 				1
-			},
+		},
 			{
 				13002,
 				12,
 				10855,
 				1
-			},
+		},
 			{
 				13002,
 				12,
 				12831,
 				1
-			}
+		}
 		},
 		{ // 60-70
 			null,
@@ -800,31 +799,31 @@ public class RimKamaloka extends Quest
 				13,
 				10856,
 				1
-			},
+		},
 			{
 				13002,
 				13,
 				10857,
 				1
-			},
+		},
 			{
 				13002,
 				13,
 				10858,
 				1
-			},
+		},
 			{
 				13002,
 				13,
 				10859,
 				1
-			},
+		},
 			{
 				13002,
 				13,
 				12832,
 				1
-			}
+		}
 		},
 		{ // 65-75
 			null,
@@ -833,31 +832,31 @@ public class RimKamaloka extends Quest
 				15,
 				10857,
 				1
-			},
+		},
 			{
 				13002,
 				15,
 				10858,
 				1
-			},
+		},
 			{
 				13002,
 				15,
 				10859,
 				1
-			},
+		},
 			{
 				13002,
 				15,
 				10860,
 				1
-			},
+		},
 			{
 				13002,
 				15,
 				12833,
 				1
-			}
+		}
 		},
 		{ // 70-80
 			null,
@@ -866,31 +865,31 @@ public class RimKamaloka extends Quest
 				17,
 				10861,
 				1
-			},
+		},
 			{
 				13002,
 				17,
 				12834,
 				1
-			},
+		},
 			{
 				13002,
 				17,
 				10862,
 				1
-			},
+		},
 			{
 				13002,
 				17,
 				10863,
 				1
-			},
+		},
 			{
 				13002,
 				17,
 				10864,
 				1
-			}
+		}
 		}
 	};
 	
@@ -1033,7 +1032,7 @@ public class RimKamaloka extends Quest
 			// set name for the kamaloka
 			inst.setName(InstanceManager.getInstance().getInstanceIdName(templateId));
 			// set return location
-			inst.setSpawnLoc(new Location(player));
+			inst.setExitLoc(new Location(player));
 			// disable summon friend into instance
 			inst.setAllowSummon(false);
 			
@@ -1126,7 +1125,7 @@ public class RimKamaloka extends Quest
 		if (monster == null)
 		{
 			final L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
-			monster = new L2MonsterInstance(IdFactory.getInstance().getNextId(), template);
+			monster = new L2MonsterInstance(template);
 			world.spawnedMobs.add(monster);
 		}
 		
@@ -1339,7 +1338,7 @@ public class RimKamaloka extends Quest
 				if ((world instanceof RimKamaWorld) && world.isAllowed(player.getObjectId()))
 				{
 					Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-					teleportPlayer(player, inst.getSpawnLoc(), 0);
+					teleportPlayer(player, inst.getExitLoc(), 0);
 				}
 			}
 			catch (Exception e)

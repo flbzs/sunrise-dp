@@ -826,7 +826,7 @@ public class ToTheMonastery extends Quest
 		
 		int instanceId = InstanceManager.getInstance().createDynamicInstance("ToTheMonastery.xml");
 		Instance inst = InstanceManager.getInstance().getInstance(instanceId);
-		inst.setSpawnLoc(new Location(player));
+		inst.setExitLoc(new Location(player));
 		
 		world = new ToTheMonasteryWorld();
 		world.setInstanceId(instanceId);

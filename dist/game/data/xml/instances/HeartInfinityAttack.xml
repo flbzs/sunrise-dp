@@ -4,7 +4,7 @@
 	<allowSummon val="false" />
 	<emptyDestroyTime val="900" />
 	<showTimer val="true" />
-	<spawnPoint spawnX="-183245" spawnY="206006" spawnZ="-12901" />
+	<exitPoint x="-183245" y="206006" z="-12901" />
 	<doorlist>
 		<door doorId="14240102" />
 	</doorlist>

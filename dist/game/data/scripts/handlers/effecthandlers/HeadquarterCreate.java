@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import l2r.gameserver.data.sql.NpcTable;
-import l2r.gameserver.idfactory.IdFactory;
 import l2r.gameserver.instancemanager.CHSiegeManager;
 import l2r.gameserver.instancemanager.CastleManager;
 import l2r.gameserver.instancemanager.FortManager;
@@ -66,7 +65,7 @@ public final class HeadquarterCreate extends L2Effect
 			return false;
 		}
 		
-		final L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, IdFactory.getInstance().getNextId(), NpcTable.getInstance().getTemplate(HQ_NPC_ID), _isAdvanced, false);
+		final L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, NpcTable.getInstance().getTemplate(HQ_NPC_ID), _isAdvanced, false);
 		flag.setTitle(player.getClan().getName());
 		flag.setCurrentHpMp(flag.getMaxHp(), flag.getMaxMp());
 		flag.setHeading(player.getHeading());

@@ -79,30 +79,35 @@ public class AdminCheckBots implements IAdminCommandHandler
 					String[] player_Ip = new String[2];
 					player_Ip[0] = onlinePlayer.getClient().getConnection().getInetAddress().getHostAddress();
 					int[][] trace1 = onlinePlayer.getClient().getTrace();
-					for (int o = 0; o < trace1[0].length; o++)
-					{
-						player_Ip[1] = player_Ip[1] + trace1[0][o];
-						if (o != (trace1[0].length - 1))
-						{
-							player_Ip[1] = player_Ip[1] + ".";
-						}
-					}
 					
-					if (getAddedIps() != null)
+					// Just in case could not trace
+					if (trace1 != null)
 					{
-						for (String[] listIps : getAddedIps())
+						for (int o = 0; o < trace1[0].length; o++)
 						{
-							if (player_Ip[0].equals(listIps[0]) && player_Ip[1].equals(listIps[1]))
+							player_Ip[1] = player_Ip[1] + trace1[0][o];
+							if (o != (trace1[0].length - 1))
 							{
-								addToList = false;
+								player_Ip[1] = player_Ip[1] + ".";
 							}
 						}
-					}
-					
-					if (addToList)
-					{
-						addToList(onlinePlayer);
-						counter++;
+						
+						if (getAddedIps() != null)
+						{
+							for (String[] listIps : getAddedIps())
+							{
+								if (player_Ip[0].equals(listIps[0]) && player_Ip[1].equals(listIps[1]))
+								{
+									addToList = false;
+								}
+							}
+						}
+						
+						if (addToList)
+						{
+							addToList(onlinePlayer);
+							counter++;
+						}
 					}
 				}
 			}
@@ -143,7 +148,7 @@ public class AdminCheckBots implements IAdminCommandHandler
 				whatToReturn = "<td align=center><a action=\"bypass -h admin_check_enchant_bots " + i + "\">Page " + (i + 1) + "</a></td>";
 			}
 			return whatToReturn;
-		}, player ->
+		} , player ->
 		{
 			StringBuilder sb = new StringBuilder();
 			String typeToSend = null;
