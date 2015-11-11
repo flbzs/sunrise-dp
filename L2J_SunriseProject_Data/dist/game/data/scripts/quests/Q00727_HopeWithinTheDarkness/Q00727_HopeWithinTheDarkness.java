@@ -543,7 +543,7 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 		L2Party party = player.getParty();
 		int instanceId = InstanceManager.getInstance().createDynamicInstance(template);
 		Instance ins = InstanceManager.getInstance().getInstance(instanceId);
-		ins.setSpawnLoc(new Location(player));
+		ins.setExitLoc(new Location(player));
 		world = new CAUWorld();
 		world.setInstanceId(instanceId);
 		world.setTemplateId(dungeon.getInstanceId());
@@ -940,7 +940,7 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 				
 				world.removeAllowed(player.getObjectId());
 				final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-				teleportPlayer(player, inst.getSpawnLoc(), 0);
+				teleportPlayer(player, inst.getExitLoc(), 0);
 				return null;
 			}
 		}

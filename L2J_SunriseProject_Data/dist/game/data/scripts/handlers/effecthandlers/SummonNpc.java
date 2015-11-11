@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import l2r.gameserver.data.sql.NpcTable;
-import l2r.gameserver.idfactory.IdFactory;
 import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
@@ -82,7 +81,7 @@ public class SummonNpc extends L2Effect
 		{
 			case "L2Decoy":
 			{
-				final L2DecoyInstance decoy = new L2DecoyInstance(IdFactory.getInstance().getNextId(), npcTemplate, player, _despawnDelay);
+				final L2DecoyInstance decoy = new L2DecoyInstance(npcTemplate, player, _despawnDelay);
 				decoy.setCurrentHp(decoy.getMaxHp());
 				decoy.setCurrentMp(decoy.getMaxMp());
 				decoy.setHeading(player.getHeading());
@@ -93,7 +92,7 @@ public class SummonNpc extends L2Effect
 			}
 			case "L2EffectPoint":
 			{
-				final L2EffectPointInstance effectPoint = new L2EffectPointInstance(IdFactory.getInstance().getNextId(), npcTemplate, player);
+				final L2EffectPointInstance effectPoint = new L2EffectPointInstance(npcTemplate, player);
 				effectPoint.setCurrentHp(effectPoint.getMaxHp());
 				effectPoint.setCurrentMp(effectPoint.getMaxMp());
 				int x = player.getX();

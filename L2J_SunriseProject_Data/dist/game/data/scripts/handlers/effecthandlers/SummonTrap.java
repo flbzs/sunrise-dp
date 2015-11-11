@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import l2r.gameserver.data.sql.NpcTable;
 import l2r.gameserver.enums.ZoneIdType;
-import l2r.gameserver.idfactory.IdFactory;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.instance.L2TrapInstance;
 import l2r.gameserver.model.actor.templates.L2NpcTemplate;
@@ -79,14 +78,13 @@ public class SummonTrap extends L2Effect
 			player.destroyFirstTrap();
 		}
 		
-		int npcId = IdFactory.getInstance().getNextId();
-		final L2TrapInstance trap = new L2TrapInstance(npcId, npcTemplate, player, _despawnTime);
+		final L2TrapInstance trap = new L2TrapInstance(npcTemplate, player, _despawnTime);
 		trap.setCurrentHp(trap.getMaxHp());
 		trap.setCurrentMp(trap.getMaxMp());
 		trap.setIsInvul(true);
 		trap.setHeading(player.getHeading());
 		trap.spawnMe(player.getX(), player.getY(), player.getZ());
-		player.addTrap(npcId, trap);
+		player.addTrap(trap.getId(), trap);
 		return true;
 	}
 }
