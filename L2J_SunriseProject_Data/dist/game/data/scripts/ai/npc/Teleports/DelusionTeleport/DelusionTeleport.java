@@ -88,7 +88,7 @@ public final class DelusionTeleport extends AbstractNpcAI
 		else
 		{
 			final int townId = player.getVariables().getInt(DELUSION_RETURN, 0);
-			player.teleToLocation(RETURN_LOCATIONS.get(townId), true);
+			player.teleToLocation(RETURN_LOCATIONS.get(townId) != null ? RETURN_LOCATIONS.get(townId) : RETURN_LOCATIONS.get(0), true);
 			player.getVariables().remove(DELUSION_RETURN);
 		}
 		return super.onTalk(npc, player);
