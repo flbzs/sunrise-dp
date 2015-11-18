@@ -762,10 +762,12 @@
 	</skill>
 	<skill id="8458" levels="1" name="Bracelet Weight Gauge Add">
 		<!-- Confirmed CT2.5 -->
+		<set name="icon" val="icon.skill0150" />
+		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<add stat="weightPenalty" val="3000" />
+			<add stat="weightLimit" val="3000" />
 		</for>
 	</skill>
 	<skill id="8459" levels="1" name="Necklace of Freya">
