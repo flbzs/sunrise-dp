@@ -62,6 +62,7 @@ import ai.npc.PriestOfBlessing.PriestOfBlessing;
 import ai.npc.Rafforty.Rafforty;
 import ai.npc.Rignos.Rignos;
 import ai.npc.Selina.Selina;
+import ai.npc.Sirra.Sirra;
 import ai.npc.Summons.MerchantGolem.GolemTrader;
 import ai.npc.SupportUnitCaptain.SupportUnitCaptain;
 import ai.npc.SymbolMaker.SymbolMaker;
@@ -124,6 +125,7 @@ public final class NpcLoader
 		Rafforty.class,
 		Rignos.class,
 		Selina.class,
+		Sirra.class,
 		GolemTrader.class,
 		SupportUnitCaptain.class,
 		SymbolMaker.class,

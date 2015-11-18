@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -27,7 +27,6 @@ import quests.Q10286_ReunionWithSirra.Q10286_ReunionWithSirra;
 
 /**
  * Jinia AI.
- * @author Adry_85
  */
 public final class Jinia extends AbstractNpcAI
 {
@@ -51,24 +50,34 @@ public final class Jinia extends AbstractNpcAI
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
-		if ("check".equals(event))
+		switch (event)
 		{
-			if (hasAtLeastOneQuestItem(player, FROZEN_CORE, BLACK_FROZEN_CORE))
+			case "32781-10.html":
+			case "32781-11.html":
 			{
-				htmltext = "32781-03.html";
+				htmltext = event;
+				break;
 			}
-			else
+			case "check":
 			{
-				final QuestState st = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
-				if ((st != null) && st.isCompleted())
+				if (hasAtLeastOneQuestItem(player, FROZEN_CORE, BLACK_FROZEN_CORE))
 				{
-					giveItems(player, FROZEN_CORE, 1);
+					htmltext = "32781-03.html";
 				}
 				else
 				{
-					giveItems(player, BLACK_FROZEN_CORE, 1);
+					final QuestState st = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
+					if ((st != null) && st.isCompleted())
+					{
+						giveItems(player, FROZEN_CORE, 1);
+					}
+					else
+					{
+						giveItems(player, BLACK_FROZEN_CORE, 1);
+					}
+					htmltext = "32781-04.html";
 				}
-				htmltext = "32781-04.html";
+				break;
 			}
 		}
 		return htmltext;
@@ -78,6 +87,17 @@ public final class Jinia extends AbstractNpcAI
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
 		final QuestState st = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
-		return ((player.getLevel() >= MIN_LEVEL) && (st != null) && st.isCompleted()) ? "32781-02.html" : "32781-01.html";
+		if ((st != null) && (player.getLevel() >= MIN_LEVEL))
+		{
+			if (st.isCompleted())
+			{
+				return "32781-02.html";
+			}
+			else if (st.isCond(5) || st.isCond(6))
+			{
+				return "32781-09.html";
+			}
+		}
+		return "32781-01.html";
 	}
 }
