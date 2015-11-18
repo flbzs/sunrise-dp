@@ -430,6 +430,8 @@ public class IceQueenCastleExtreme extends AbstractNpcAI
 				world._archery_knights_hard.values().forEach(mob -> archeryAttack(mob, world));
 				break;
 			case 11:
+				broadcastMovie(16, world);
+				
 				world._archery_knights_hard.values().forEach(mob -> mob.deleteMe());
 				world._archery_knights_hard.values().forEach(mob -> mob.decayMe());
 				world._archery_knights_hard.clear();
@@ -437,7 +439,6 @@ public class IceQueenCastleExtreme extends AbstractNpcAI
 				world._freyaThrone.decayMe();
 				world._freyaThrone = null;
 				
-				broadcastMovie(16, world);
 				ThreadPoolManager.getInstance().scheduleGeneral(new spawnWave(9, world.getInstanceId()), 22000);
 				break;
 			case 12:
@@ -485,6 +486,8 @@ public class IceQueenCastleExtreme extends AbstractNpcAI
 				ThreadPoolManager.getInstance().scheduleGeneral(new spawnWave(12, world.getInstanceId()), 60000);
 				break;
 			case 30:
+				broadcastMovie(17, world);
+				
 				for (int[] iter : _archeryKnightsSpawn)
 				{
 					L2Attackable mob = (L2Attackable) spawnNpc(KNIGHT, iter[0], iter[1], iter[2], iter[3], instanceId);
@@ -498,7 +501,7 @@ public class IceQueenCastleExtreme extends AbstractNpcAI
 					world._freyaSpelling.decayMe();
 					world._freyaSpelling = null;
 				}
-				broadcastMovie(17, world);
+				
 				ThreadPoolManager.getInstance().scheduleGeneral(new spawnWave(13, world.getInstanceId()), 21500);
 				break;
 			case 31:
