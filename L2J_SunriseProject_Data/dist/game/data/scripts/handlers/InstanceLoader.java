@@ -34,9 +34,9 @@ import instances.DisciplesNecropolisPast.DisciplesNecropolisPast;
 import instances.ElcadiaTent.ElcadiaTent;
 import instances.FinalEmperialTomb.FinalEmperialTomb;
 import instances.HideoutOfTheDawn.HideoutOfTheDawn;
-import instances.IceQueenCastleExtreme.IceQueenCastleExtreme;
-import instances.IceQueenCastleNormal.IceQueenCastleNormal;
 import instances.IceQueensCastle.IceQueensCastle;
+import instances.IceQueensCastleNormalBattle.IceQueensCastleNormalBattle;
+import instances.IceQueensCastleUltimateBattle.IceQueensCastleUltimateBattle;
 import instances.JiniaGuildHideout1.JiniaGuildHideout1;
 import instances.JiniaGuildHideout2.JiniaGuildHideout2;
 import instances.JiniaGuildHideout3.JiniaGuildHideout3;
@@ -77,9 +77,9 @@ public class InstanceLoader
 		ElcadiaTent.class,
 		FinalEmperialTomb.class,
 		HideoutOfTheDawn.class,
-		IceQueenCastleExtreme.class,
-		IceQueenCastleNormal.class,
 		IceQueensCastle.class,
+		IceQueensCastleNormalBattle.class,
+		IceQueensCastleUltimateBattle.class,
 		JiniaGuildHideout1.class,
 		JiniaGuildHideout2.class,
 		JiniaGuildHideout3.class,
