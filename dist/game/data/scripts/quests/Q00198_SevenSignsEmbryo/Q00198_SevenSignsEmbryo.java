@@ -32,6 +32,7 @@ import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
+import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2r.gameserver.network.serverpackets.NpcSay;
 
 import quests.Q00197_SevenSignsTheSacredBookOfSeal.Q00197_SevenSignsTheSacredBookOfSeal;
@@ -205,7 +206,7 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 		cancelQuestTimers("heal");
 		npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.S1_YOU_MAY_HAVE_WON_THIS_TIME_BUT_NEXT_TIME_I_WILL_SURELY_CAPTURE_YOU).addStringParameter(partyMember.getName()));
 		npc.deleteMe();
-		partyMember.showQuestMovie(14);
+		partyMember.showQuestMovie(ExStartScenePlayer.SCENE_SSQ_EMBRYO);
 		return super.onKill(npc, player, isSummon);
 	}
 	

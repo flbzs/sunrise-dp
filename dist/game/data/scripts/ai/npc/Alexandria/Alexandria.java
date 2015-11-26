@@ -69,6 +69,7 @@ public final class Alexandria extends AbstractNpcAI
 		new QuestItemHolder(10320, 370),
 	};
 	private static final Map<String, List<QuestItemHolder>> AGATHIONS = new HashMap<>();
+	
 	static
 	{
 		AGATHIONS.put("littleAngel", Arrays.asList(LITTLE_ANGELS));

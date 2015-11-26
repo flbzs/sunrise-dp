@@ -21,6 +21,7 @@ import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
 import l2r.gameserver.model.skills.L2Skill;
+import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2r.gameserver.util.Util;
 
 import quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
@@ -133,7 +134,7 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 			{
 				st.set("good1", "1");
 				npc.setDisplayEffect(1);
-				player.showQuestMovie(25);
+				player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_HOLY_BURIAL_GROUND_CLOSING);
 				addSpawn(32888, 88655, -250591, -8320, 144, false, 0, false, player.getInstanceId());
 				addSpawn(27415, 88655, -250591, -8320, 144, false, 0, false, player.getInstanceId());
 				addSpawn(22125, 88655, -250591, -8320, 144, false, 0, false, player.getInstanceId());

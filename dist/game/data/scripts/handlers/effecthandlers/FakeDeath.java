@@ -23,8 +23,6 @@ import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.ChangeWaitType;
-import l2r.gameserver.network.serverpackets.Revive;
 
 /**
  * Fake Death effect.
@@ -53,14 +51,7 @@ public class FakeDeath extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if (getEffected().isPlayer())
-		{
-			getEffected().getActingPlayer().setIsFakeDeath(false);
-			getEffected().getActingPlayer().setRecentFakeDeath(true);
-		}
-		
-		getEffected().broadcastPacket(new ChangeWaitType(getEffected(), ChangeWaitType.WT_STOP_FAKEDEATH));
-		getEffected().broadcastPacket(new Revive(getEffected()));
+		getEffected().stopFakeDeath(false);
 	}
 	
 	@Override
@@ -73,13 +64,10 @@ public class FakeDeath extends L2Effect
 		
 		double manaDam = calc();
 		
-		if (manaDam > getEffected().getCurrentMp())
+		if ((manaDam > getEffected().getCurrentMp()) && getSkill().isToggle())
 		{
-			if (getSkill().isToggle())
-			{
-				getEffected().sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
-				return false;
-			}
+			getEffected().sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
+			return false;
 		}
 		
 		getEffected().reduceCurrentMp(manaDam);

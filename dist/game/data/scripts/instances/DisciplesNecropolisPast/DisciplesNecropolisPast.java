@@ -33,6 +33,7 @@ import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.clientpackets.Say2;
+import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2r.gameserver.network.serverpackets.NpcSay;
 import l2r.gameserver.util.Util;
 
@@ -208,7 +209,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 					{
 						player.abortAttack();
 						player.abortCast();
-						player.showQuestMovie(13);
+						player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ_SEALING_EMPEROR_2ND);
 						startQuestTimer("TELEPORT", 27000, null, player);
 					}
 					break;
@@ -461,7 +462,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 					{
 						DNPWorld world = (DNPWorld) tmpworld;
 						openDoor(DISCIPLES_NECROPOLIS_DOOR, world.getInstanceId());
-						talker.showQuestMovie(12);
+						talker.showQuestMovie(ExStartScenePlayer.SCENE_SSQ_SEALING_EMPEROR_1ST);
 						startQuestTimer("FIGHT", 1000, null, talker);
 					}
 				}

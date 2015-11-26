@@ -19,6 +19,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
+import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 
 import quests.Q10295_SevenSignsSolinasTomb.Q10295_SevenSignsSolinasTomb;
 
@@ -229,7 +230,7 @@ public class Q10296_SevenSignsPowerOfTheSeal extends Quest
 		if (npcId == ETISETINA)
 		{
 			st.set("EtisKilled", "1");
-			player.showQuestMovie(30);
+			player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_BOSS_CLOSING);
 		}
 		
 		return null;

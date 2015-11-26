@@ -33,6 +33,7 @@ import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.clientpackets.Say2;
+import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2r.gameserver.network.serverpackets.NpcSay;
 
 import quests.Q10285_MeetingSirra.Q10285_MeetingSirra;
@@ -115,7 +116,7 @@ public final class IceQueensCastle extends Quest
 			{
 				if (npc != null)
 				{
-					player.showQuestMovie(21);
+					player.showQuestMovie(ExStartScenePlayer.SCENE_BOSS_FREYA_FORCED_DEFEAT);
 					npc.deleteMe();
 					startQuestTimer("TIMER_PC_LEAVE", 24000, npc, player);
 				}

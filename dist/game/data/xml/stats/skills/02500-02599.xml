@@ -411,11 +411,15 @@
 		</cond>
 	</skill>
 	<skill id="2530" levels="1" name="Recovery Item for Battlefield Use">
+		<set name="negateAbnormals" val="death_penalty,1" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="12819" /> <!-- Recovery Spellbook for Combat Use -->
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Negate" noicon="1" val="0" />
+		</for>
 	</skill>
 	<skill id="2531" levels="1" name="Adventurer's Scroll of Escape">
 		<set name="hitTime" val="20000" />

@@ -32,10 +32,8 @@ import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.L2Playable;
-import l2r.gameserver.model.actor.L2Summon;
 import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.actor.instance.L2PetInstance;
 import l2r.gameserver.model.entity.Instance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.quest.Quest;
@@ -56,65 +54,23 @@ public class PailakaInjuredDragon extends Quest
 	private static final int MAX_SUMMON_LEVEL = 80;
 	private static final int EXIT_TIME = 5;
 	private static final int TEMPLATE_ID = 45;
+	
+	//@formatter:off
 	protected static final int[] TELEPORT =
 	{
-		125757,
-		-40928,
-		-3736
-	};
+		125757, -40928, -3736 };
 	
 	private static final Map<Integer, int[]> NOEXIT_ZONES = new ConcurrentHashMap<>();
-	
 	static
 	{
-		NOEXIT_ZONES.put(200001, new int[]
-		{
-			123167,
-			-45743,
-			-3023
-		});
-		NOEXIT_ZONES.put(200002, new int[]
-		{
-			117783,
-			-46398,
-			-2560
-		});
-		NOEXIT_ZONES.put(200003, new int[]
-		{
-			116791,
-			-51556,
-			-2584
-		});
-		NOEXIT_ZONES.put(200004, new int[]
-		{
-			117993,
-			-52505,
-			-2480
-		});
-		NOEXIT_ZONES.put(200005, new int[]
-		{
-			113226,
-			-44080,
-			-2776
-		});
-		NOEXIT_ZONES.put(200006, new int[]
-		{
-			107916,
-			-46716,
-			-2008
-		});
-		NOEXIT_ZONES.put(200007, new int[]
-		{
-			118341,
-			-55951,
-			-2280
-		});
-		NOEXIT_ZONES.put(200008, new int[]
-		{
-			110127,
-			-41562,
-			-2332
-		});
+		NOEXIT_ZONES.put(200001, new int[] { 123167, -45743, -3023 }); 
+		NOEXIT_ZONES.put(200002, new int[] { 117783, -46398, -2560 });
+		NOEXIT_ZONES.put(200003, new int[] { 116791, -51556, -2584 });
+		NOEXIT_ZONES.put(200004, new int[] { 117993, -52505, -2480 });
+		NOEXIT_ZONES.put(200005, new int[] { 113226, -44080, -2776 });
+		NOEXIT_ZONES.put(200006, new int[] { 107916, -46716, -2008 });
+		NOEXIT_ZONES.put(200007, new int[] { 118341, -55951, -2280 });
+		NOEXIT_ZONES.put(200008, new int[] { 110127, -41562, -2332 });
 	}
 	
 	// NPCS
@@ -181,32 +137,40 @@ public class PailakaInjuredDragon extends Quest
 		KETRA_ORC_SUPPORTER2
 	};
 	
-	private static final int[] WALL_MONSTERS =
+	private static final List<Integer> WALL_MONSTERS = new ArrayList<>();
+	static
 	{
 		// 1st Row Mobs
-		VARKA_SILENOS_FOOTMAN,
-		VARKA_SILENOS_WARRIOR,
-		VARKA_SILENOS_OFFICER,
-		VARKAS_COMMANDER,
-		VARKA_SILENOS_RECRUIT,
-		PROPHET_GUARD,
-		VARKA_ELITE_GUARD,
-		VARKA_SILENOS_GREAT_MAGUS,
-		VARKA_SILENOS_GENERAL,
-		VARKA_SILENOS_HEAD_GUARD,
-		PROPHET_GUARD,
-		VARKAS_PROPHET,
+		WALL_MONSTERS.add(VARKA_SILENOS_FOOTMAN);
+		WALL_MONSTERS.add(VARKA_SILENOS_WARRIOR);
+		WALL_MONSTERS.add(VARKA_SILENOS_OFFICER);
+		WALL_MONSTERS.add(VARKAS_COMMANDER);
+		WALL_MONSTERS.add(VARKA_SILENOS_RECRUIT);
+		WALL_MONSTERS.add(PROPHET_GUARD);
+		WALL_MONSTERS.add(VARKA_ELITE_GUARD);
+		WALL_MONSTERS.add(VARKA_SILENOS_GREAT_MAGUS);
+		WALL_MONSTERS.add(VARKA_SILENOS_GENERAL);
+		WALL_MONSTERS.add(VARKA_SILENOS_HEAD_GUARD);
+		WALL_MONSTERS.add(PROPHET_GUARD);
+		WALL_MONSTERS.add(VARKAS_PROPHET);
 		
 		// 2nd Row Mobs
-		DISCIPLE_OF_PROPHET,
-		VARKA_HEAD_MAGUS,
-		VARKA_SILENOS_GREAT_SEER,
-		VARKA_SILENOS_SHAMAN,
-		VARKA_SILENOS_MAGNUS,
-		VARKA_SILENOS_SEER,
-		VARKA_SILENOS_MEDIUM,
-		VARKA_SILENOS_PRIEST
-	};
+		WALL_MONSTERS.add(DISCIPLE_OF_PROPHET);
+		WALL_MONSTERS.add(VARKA_HEAD_MAGUS);
+		WALL_MONSTERS.add(VARKA_SILENOS_GREAT_SEER);
+		WALL_MONSTERS.add(VARKA_SILENOS_SHAMAN);
+		WALL_MONSTERS.add(VARKA_SILENOS_MAGNUS);
+		WALL_MONSTERS.add(VARKA_SILENOS_SEER);
+		WALL_MONSTERS.add(VARKA_SILENOS_MEDIUM);
+		WALL_MONSTERS.add(VARKA_SILENOS_PRIEST);
+	}
+	
+	private static final List<PailakaDrop> DROPLIST = new ArrayList<>();
+	static
+	{
+		DROPLIST.add(new PailakaDrop(HEAL_POTION, 80));
+		DROPLIST.add(new PailakaDrop(SHIELD_POTION, 30));
+	}
 	
 	private static final int[] OTHER_MONSTERS =
 	{
@@ -227,7 +191,6 @@ public class PailakaInjuredDragon extends Quest
 		HEAL_POTION
 	};
 	
-	//@formatter:off
 	private static final int[][] BUFFS =
 	{
 		{ 4357, 2 }, // Haste Lv2
@@ -243,14 +206,6 @@ public class PailakaInjuredDragon extends Quest
 		{ 4354, 4 }, // Vampiric Rage Lv4
 		{ 4347, 6 } // Blessed Body Lv6
 	};
-	
-	private static final List<PailakaDrop> DROPLIST = new ArrayList<>();
-	static
-	{
-		DROPLIST.add(new PailakaDrop(HEAL_POTION, 80));
-		DROPLIST.add(new PailakaDrop(SHIELD_POTION, 30));
-	}
-	
 	//@formatter:on
 	
 	public PailakaInjuredDragon()
@@ -265,11 +220,7 @@ public class PailakaInjuredDragon extends Quest
 		addSpawnId(WALL_MONSTERS);
 		addKillId(WALL_MONSTERS);
 		addAttackId(LATANA);
-		
-		for (int zoneid : NOEXIT_ZONES.keySet())
-		{
-			addEnterZoneId(zoneid);
-		}
+		addEnterZoneId(NOEXIT_ZONES.keySet());
 		
 		questItemIds = ITEMS;
 	}
@@ -314,16 +265,10 @@ public class PailakaInjuredDragon extends Quest
 				return;
 			}
 			
-			/**
-			 * if (world.isLocked) { player.sendMessage("This instance is blocked because the quest was canceled. You must wait until its time ends"); return; }
-			 */
-			
 			final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
 			if (inst != null)
 			{
-				// Synerge - Check max summon levels
 				checkMaxSummonLevel(player);
-				
 				teleportPlayer(player, TELEPORT, world.getInstanceId());
 			}
 		}
@@ -340,13 +285,11 @@ public class PailakaInjuredDragon extends Quest
 			}
 			
 			final int instanceId = InstanceManager.getInstance().createDynamicInstance("PailakaInjuredDragon.xml");
-			
 			world = new InstanceWorld();
 			world.setInstanceId(instanceId);
 			world.setTemplateId(TEMPLATE_ID);
 			InstanceManager.getInstance().addWorld(world);
 			
-			// Synerge - Check max summon levels
 			checkMaxSummonLevel(player);
 			
 			world.addAllowed(player.getObjectId());
@@ -354,16 +297,11 @@ public class PailakaInjuredDragon extends Quest
 		}
 	}
 	
-	// Synerge - Checks if the summon or pet that the player has can be used
 	private final void checkMaxSummonLevel(L2PcInstance player)
 	{
-		final L2Summon pet = player.getSummon();
-		if (pet instanceof L2PetInstance)
+		if (player.hasSummon() && player.getSummon().isPet() && (player.getSummon().getLevel() > MAX_SUMMON_LEVEL))
 		{
-			if (pet.getLevel() > MAX_SUMMON_LEVEL)
-			{
-				pet.unSummon(player);
-			}
+			player.getSummon().unSummon(player);
 		}
 	}
 	
@@ -612,7 +550,6 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_MEDIUM);
-				
 				checkIfLastInWall(npc);
 				break;
 			case VARKA_SILENOS_WARRIOR:
@@ -623,7 +560,6 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_PRIEST);
-				
 				checkIfLastInWall(npc);
 				break;
 			case VARKA_ELITE_GUARD:
@@ -634,7 +570,6 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_SHAMAN);
-				
 				checkIfLastInWall(npc);
 				break;
 			case VARKAS_COMMANDER:
@@ -646,7 +581,6 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_SEER);
-				
 				checkIfLastInWall(npc);
 				break;
 			case VARKA_SILENOS_GREAT_MAGUS:
@@ -658,7 +592,6 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_MAGNUS);
-				
 				checkIfLastInWall(npc);
 				break;
 			case VARKAS_PROPHET:
@@ -669,7 +602,6 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, DISCIPLE_OF_PROPHET);
-				
 				checkIfLastInWall(npc);
 				break;
 			case VARKA_SILENOS_HEAD_GUARD:
@@ -680,7 +612,6 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_HEAD_MAGUS);
-				
 				checkIfLastInWall(npc);
 				break;
 			case PROPHET_GUARD:
@@ -691,7 +622,6 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_GREAT_SEER);
-				
 				checkIfLastInWall(npc);
 				break;
 			case LATANA:
@@ -725,24 +655,17 @@ public class PailakaInjuredDragon extends Quest
 		final Collection<L2Character> knowns = npc.getKnownList().getKnownCharactersInRadius(700);
 		for (L2Character npcs : knowns)
 		{
-			if (!(npcs instanceof L2Npc))
+			if (!npcs.isNpc() || npcs.isDead())
 			{
 				continue;
 			}
-			
-			if (npcs.isDead())
-			{
-				continue;
-			}
-			
-			final L2Npc knownNpc = (L2Npc) npcs;
 			
 			switch (npc.getId())
 			{
 				case VARKA_SILENOS_FOOTMAN:
 				case VARKA_SILENOS_RECRUIT:
 				case VARKA_SILENOS_WARRIOR:
-					switch (knownNpc.getId())
+					switch (npcs.getId())
 					{
 						case VARKA_SILENOS_FOOTMAN:
 						case VARKA_SILENOS_RECRUIT:
@@ -753,7 +676,7 @@ public class PailakaInjuredDragon extends Quest
 				case VARKA_ELITE_GUARD:
 				case VARKAS_COMMANDER:
 				case VARKA_SILENOS_OFFICER:
-					switch (knownNpc.getId())
+					switch (npcs.getId())
 					{
 						case VARKA_ELITE_GUARD:
 						case VARKAS_COMMANDER:
@@ -764,7 +687,7 @@ public class PailakaInjuredDragon extends Quest
 				case VARKA_SILENOS_GREAT_MAGUS:
 				case VARKA_SILENOS_GENERAL:
 				case VARKAS_PROPHET:
-					switch (knownNpc.getId())
+					switch (npcs.getId())
 					{
 						case VARKA_SILENOS_GREAT_MAGUS:
 						case VARKA_SILENOS_GENERAL:
@@ -774,7 +697,7 @@ public class PailakaInjuredDragon extends Quest
 					break;
 				case VARKA_SILENOS_HEAD_GUARD:
 				case PROPHET_GUARD:
-					switch (knownNpc.getId())
+					switch (npcs.getId())
 					{
 						case VARKA_SILENOS_HEAD_GUARD:
 						case PROPHET_GUARD:
@@ -786,64 +709,57 @@ public class PailakaInjuredDragon extends Quest
 		
 		for (L2Character npcs : knowns)
 		{
-			if (!(npcs instanceof L2Npc))
+			if (!npcs.isNpc() || npcs.isDead())
 			{
 				continue;
 			}
-			
-			if (npcs.isDead())
-			{
-				continue;
-			}
-			
-			final L2Npc knownNpc = (L2Npc) npcs;
 			
 			switch (npc.getId())
 			{
 				case VARKA_SILENOS_FOOTMAN:
 				case VARKA_SILENOS_RECRUIT:
 				case VARKA_SILENOS_WARRIOR:
-					switch (knownNpc.getId())
+					switch (npcs.getId())
 					{
 						case VARKA_SILENOS_MEDIUM:
 						case VARKA_SILENOS_PRIEST:
-							knownNpc.abortCast();
-							knownNpc.deleteMe();
+							npcs.abortCast();
+							npcs.deleteMe();
 							break;
 					}
 					break;
 				case VARKA_ELITE_GUARD:
 				case VARKAS_COMMANDER:
 				case VARKA_SILENOS_OFFICER:
-					switch (knownNpc.getId())
+					switch (npcs.getId())
 					{
 						case VARKA_SILENOS_SHAMAN:
 						case VARKA_SILENOS_SEER:
-							knownNpc.abortCast();
-							knownNpc.deleteMe();
+							npcs.abortCast();
+							npcs.deleteMe();
 							break;
 					}
 					break;
 				case VARKA_SILENOS_GREAT_MAGUS:
 				case VARKA_SILENOS_GENERAL:
 				case VARKAS_PROPHET:
-					switch (knownNpc.getId())
+					switch (npcs.getId())
 					{
 						case VARKA_SILENOS_MAGNUS:
 						case DISCIPLE_OF_PROPHET:
-							knownNpc.abortCast();
-							knownNpc.deleteMe();
+							npcs.abortCast();
+							npcs.deleteMe();
 							break;
 					}
 					break;
 				case VARKA_SILENOS_HEAD_GUARD:
 				case PROPHET_GUARD:
-					switch (knownNpc.getId())
+					switch (npcs.getId())
 					{
 						case VARKA_HEAD_MAGUS:
 						case VARKA_SILENOS_GREAT_SEER:
-							knownNpc.abortCast();
-							knownNpc.deleteMe();
+							npcs.abortCast();
+							npcs.deleteMe();
 							break;
 					}
 					break;
@@ -855,12 +771,7 @@ public class PailakaInjuredDragon extends Quest
 	public final String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
 	{
 		final QuestState st = player.getQuestState(qn);
-		if ((st == null) || (st.getState() != State.STARTED))
-		{
-			return null;
-		}
-		
-		if (isSummon)
+		if ((st == null) || (st.getState() != State.STARTED) || isSummon)
 		{
 			return null;
 		}
@@ -881,11 +792,6 @@ public class PailakaInjuredDragon extends Quest
 	@Override
 	public final String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
-		if (attacker == null)
-		{
-			return super.onAttack(npc, attacker, damage, isSummon);
-		}
-		
 		switch (npc.getId())
 		{
 			case LATANA:
@@ -909,22 +815,10 @@ public class PailakaInjuredDragon extends Quest
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		if (npc instanceof L2MonsterInstance)
+		if (WALL_MONSTERS.contains(npc.getId()))
 		{
-			for (int mobId : WALL_MONSTERS)
-			{
-				if (mobId == npc.getId())
-				{
-					/*
-					 * Every monster on pailaka should be Aggresive and Active, with the same clan, also wall mobs cannot move, they all use magic from far, and if you get in combat range they hit
-					 */
-					final L2MonsterInstance monster = (L2MonsterInstance) npc;
-					// monster.setIsAggresiveOverride(900);
-					// monster.setClanOverride("pailaka_clan");
-					monster.setIsImmobilized(true);
-					break;
-				}
-			}
+			final L2MonsterInstance monster = (L2MonsterInstance) npc;
+			monster.setIsImmobilized(true);
 		}
 		return super.onSpawn(npc);
 	}

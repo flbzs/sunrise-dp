@@ -34,9 +34,9 @@ of this directory a little bit.
 
 1235.xml -> Apella shop
 
-3361.xml -> Quest 336: Coins of Magic, Rewards level 1
-3362.xml -> Quest 336: Coins of Magic, Rewards level 2
-3363.xml -> Quest 336: Coins of Magic, Rewards level 3
+507.xml -> Quest 336: Coins of Magic, Rewards level 1
+508.xml -> Quest 336: Coins of Magic, Rewards level 2
+509.xml -> Quest 336: Coins of Magic, Rewards level 3
 
 6281.xml -> Swamp of Screams: Abercrombie, first list
 6282.xml -> Swamp of Screams: Abercrombie, second list
@@ -45,9 +45,6 @@ of this directory a little bit.
 7897.xml -> Quest 351: BlackSwan, exchange Bills
 
 31522.xml -> Quest 632: Necromancers Request
-
-900001.xml -> Pc Bang Points Item 1
-900002.xml -> Pc Bang Points Item 2
 
 301660373.xml -> Quest 373: Supplier of Reagents - Wesley
 313880001.xml -> Quest 633: In The Forgotten Village - Exchange Livers

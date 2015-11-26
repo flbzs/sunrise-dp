@@ -23,6 +23,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
+import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 
 /**
  * Seven Signs, Series of Doubt (192)
@@ -79,7 +80,7 @@ public final class Q00192_SevenSignsSeriesOfDoubt extends Quest
 				if (st.isCond(1))
 				{
 					st.setCond(2, true);
-					player.showQuestMovie(8);
+					player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ_SUSPICIOUS_DEATH);
 					startQuestTimer("back", 32000, npc, player);
 					return "";
 				}

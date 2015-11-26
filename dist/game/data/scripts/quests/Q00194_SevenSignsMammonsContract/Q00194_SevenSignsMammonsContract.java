@@ -25,6 +25,7 @@ import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
+import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 
 import quests.Q00193_SevenSignsDyingMessage.Q00193_SevenSignsDyingMessage;
 
@@ -101,7 +102,7 @@ public final class Q00194_SevenSignsMammonsContract extends Quest
 				if (st.isCond(1))
 				{
 					st.setCond(2, true);
-					player.showQuestMovie(10);
+					player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ_CONTRACT_OF_MAMMON);
 					return "";
 				}
 				break;

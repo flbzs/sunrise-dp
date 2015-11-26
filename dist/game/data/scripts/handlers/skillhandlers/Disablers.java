@@ -21,13 +21,13 @@ package handlers.skillhandlers;
 import java.util.List;
 
 import l2r.gameserver.enums.CtrlEvent;
+import l2r.gameserver.enums.Race;
 import l2r.gameserver.enums.ShotType;
 import l2r.gameserver.handler.ISkillHandler;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Summon;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.actor.instance.L2SiegeSummonInstance;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.skills.L2Skill;
@@ -217,7 +217,7 @@ public class Disablers implements ISkillHandler
 				case ERASE:
 				{
 					// Doesn't affect siege golem or wild hog cannon
-					if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ss, sps, bss) && !(target instanceof L2SiegeSummonInstance))
+					if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ss, sps, bss) && !(target.getTemplate().getRace() == Race.SIEGE_WEAPON))
 					{
 						final L2PcInstance summonOwner = ((L2Summon) target).getOwner();
 						final L2Summon summon = summonOwner.getSummon();

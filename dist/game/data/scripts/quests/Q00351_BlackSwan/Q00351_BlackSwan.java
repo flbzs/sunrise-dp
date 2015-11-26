@@ -52,6 +52,7 @@ public final class Q00351_BlackSwan extends Quest
 	private static final int TASABA_LIZARDMAN2 = 21639;
 	private static final int TASABA_LIZARDMAN_SHAMAN2 = 21640;
 	private static final Map<Integer, Integer> MONSTER_DROP_CHANCES = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROP_CHANCES.put(TASABA_LIZARDMAN1, 4);

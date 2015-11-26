@@ -50,6 +50,8 @@ import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.ActionFailed;
 import l2r.gameserver.network.serverpackets.ExChangeClientEffectInfo;
 import l2r.gameserver.network.serverpackets.ExSendUIEvent;
+import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
+import l2r.gameserver.network.serverpackets.OnEventTrigger;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.taskmanager.DecayTaskManager;
 import l2r.gameserver.util.Util;
@@ -159,6 +161,17 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 	private static final int TEMPLATE_ID = 144; // Ice Queen's Castle
 	private static final int DOOR_ID = 23140101;
 	
+	private static final int[] _eventTriggers =
+	{
+		23140202,
+		23140204,
+		23140206,
+		23140208,
+		23140212,
+		23140214,
+		23140216
+	};
+	
 	public IceQueensCastleUltimateBattle()
 	{
 		super(IceQueensCastleUltimateBattle.class.getSimpleName());
@@ -216,7 +229,7 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 					{
 						world.supp_Kegor.deleteMe();
 						world.freya.decayMe();
-						manageMovie(world, 20);
+						manageMovie(world, ExStartScenePlayer.SCENE_BOSS_FREYA_ENDING_B);
 						cancelQuestTimer("FINISH_WORLD", world.controller, null);
 						startQuestTimer("FINISH_WORLD", 58500, world.controller, null);
 						break;
@@ -229,7 +242,7 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 					{
 						closeDoor(DOOR_ID, world.getInstanceId());
 						world.setStatus(1);
-						manageMovie(world, 15);
+						manageMovie(world, ExStartScenePlayer.SCENE_BOSS_FREYA_OPENING);
 						startQuestTimer("STAGE_1_START", 53500, world.controller, null);
 						break;
 					}
@@ -252,7 +265,7 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 						world.freya.deleteMe();
 						world.freya = null;
 						manageDespawnMinions(world);
-						manageMovie(world, 16);
+						manageMovie(world, ExStartScenePlayer.SCENE_BOSS_FREYA_PHASE_A);
 						startQuestTimer("STAGE_1_PAUSE", 24100 - 1000, world.controller, null);
 						break;
 					}
@@ -275,7 +288,7 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 					}
 					case "STAGE_2_MOVIE":
 					{
-						manageMovie(world, 23);
+						manageMovie(world, ExStartScenePlayer.SCENE_ICE_HEAVYKNIGHT_SPAWN);
 						startQuestTimer("STAGE_2_GLAKIAS", 7000, world.controller, null);
 						break;
 					}
@@ -296,19 +309,14 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 					}
 					case "STAGE_3_MOVIE":
 					{
-						manageMovie(world, 17);
+						manageStorm(world, true);
+						manageMovie(world, ExStartScenePlayer.SCENE_BOSS_FREYA_PHASE_B);
 						startQuestTimer("STAGE_3_START", 21500, world.controller, null);
 						break;
 					}
 					case "STAGE_3_START":
 					{
-						for (L2PcInstance players : world.playersInside)
-						{
-							if (players != null)
-							{
-								players.broadcastPacket(ExChangeClientEffectInfo.STATIC_FREYA_DESTROYED);
-							}
-						}
+						world.playersInside.stream().filter(p -> p != null).forEach(p -> p.broadcastPacket(ExChangeClientEffectInfo.STATIC_FREYA_DESTROYED));
 						world.setStatus(4);
 						world.freya.deleteMe();
 						world.canSpawnMobs = true;
@@ -797,7 +805,7 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 							players.setIsInvul(true);
 							players.abortAttack();
 						}
-						manageMovie(world, 18);
+						manageMovie(world, ExStartScenePlayer.SCENE_BOSS_KEGOR_INTRUSION);
 						startQuestTimer("SPAWN_SUPPORT", 27000, world.controller, null);
 					}
 					
@@ -1055,7 +1063,7 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 				case FREYA_STAND:
 				{
 					world.isSupportActive = false;
-					manageMovie(world, 19);
+					manageMovie(world, ExStartScenePlayer.SCENE_BOSS_FREYA_ENDING_A);
 					manageDespawnMinions(world);
 					finishInstance(world);
 					DecayTaskManager.getInstance().cancel(world.freya);
@@ -1286,6 +1294,20 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 			if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
 			{
 				players.showQuestMovie(movie);
+			}
+		}
+	}
+	
+	private void manageStorm(IQCUBWorld world, boolean active)
+	{
+		for (L2PcInstance players : world.playersInside)
+		{
+			if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
+			{
+				for (int _eventTrigger : _eventTriggers)
+				{
+					players.sendPacket(new OnEventTrigger(_eventTrigger, active));
+				}
 			}
 		}
 	}

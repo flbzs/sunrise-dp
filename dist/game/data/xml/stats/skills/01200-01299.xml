@@ -386,7 +386,7 @@
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
 		<for>
-			<effect count="15" name="HealOverTime" val="#hotValue" abnormalLvl="#abnormalLvls" abnormalType="life_force_others" />
+			<effect count="15" name="HealOverTime" abnormalTime="1" val="#hotValue" abnormalLvl="#abnormalLvls" abnormalType="life_force_others" />
 			<effect name="Heal" noicon="1" val="#amount" />
 		</for>
 		<enchant1for>

@@ -148,6 +148,7 @@ public final class EffectMasterHandler
 		SignetMDam.class,
 		SignetNoise.class,
 		SilentMove.class,
+		SingleTarget.class,
 		Sleep.class,
 		SoulEating.class,
 		Spoil.class,

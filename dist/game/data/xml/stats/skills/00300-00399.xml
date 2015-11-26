@@ -645,16 +645,13 @@
 		<set name="skillType" val="CONT" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect count="0x7fffffff" name="ManaDamOverTime" abnormalTime="3" val="0">
+			<effect count="0x7fffffff" name="SingleTarget" abnormalTime="5" val="#mpConsume">
 				<mul stat="critDmg" val="#cAtk">
 					<using kind="POLE" />
 				</mul>
 				<add stat="accCombat" val="#accCombat">
 					<using kind="POLE" />
 				</add>
-				<set stat="atkCountMax" val="1">
-					<using kind="POLE" />
-				</set>
 			</effect>
 		</for>
 	</skill>
