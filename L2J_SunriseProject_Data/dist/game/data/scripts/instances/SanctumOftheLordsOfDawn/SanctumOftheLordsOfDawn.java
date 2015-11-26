@@ -34,6 +34,7 @@ import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.clientpackets.Say2;
+import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
 
 import instances.AbstractInstance;
@@ -203,7 +204,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 								final L2PcInstance pl = L2World.getInstance().getPlayer(objId);
 								if (pl != null)
 								{
-									pl.showQuestMovie(11);
+									pl.showQuestMovie(ExStartScenePlayer.SCENE_SSQ_RITUAL_OF_PRIEST);
 									startQuestTimer("spawn", 35000, null, talker);
 								}
 							}

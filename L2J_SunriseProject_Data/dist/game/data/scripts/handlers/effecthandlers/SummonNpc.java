@@ -28,6 +28,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.templates.L2NpcTemplate;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
+import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.skills.targets.L2TargetType;
 import l2r.gameserver.model.stats.Env;
 import l2r.util.Rnd;
@@ -48,6 +49,12 @@ public class SummonNpc extends L2Effect
 		_npcCount = template.getParameters().getInt("npcCount", 1);
 		_randomOffset = template.getParameters().getBoolean("randomOffset", false);
 		_isSummonSpawn = template.getParameters().getBoolean("isSummonSpawn", false);
+	}
+	
+	@Override
+	public L2EffectType getEffectType()
+	{
+		return L2EffectType.SUMMON_NPC;
 	}
 	
 	@Override

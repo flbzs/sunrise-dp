@@ -251,7 +251,6 @@ public final class FinalEmperialTomb extends AbstractInstance
 	
 	private void load()
 	{
-		@SuppressWarnings("unused")
 		int spawnCount = 0;
 		try
 		{
@@ -464,11 +463,9 @@ public final class FinalEmperialTomb extends AbstractInstance
 		{
 			_log.warn(FinalEmperialTomb.class.getSimpleName() + " Could not parse final_emperial_tomb.xml file: " + e.getMessage(), e);
 		}
-		if (debug)
-		{
-			_log.info(FinalEmperialTomb.class.getSimpleName() + " Loaded " + _spawnZoneList.size() + " spawn zones data.");
-			_log.info(FinalEmperialTomb.class.getSimpleName() + " Loaded " + spawnCount + " spawns data.");
-		}
+		
+		_log.info(FinalEmperialTomb.class.getSimpleName() + " Loaded " + _spawnZoneList.size() + " spawn zones data.");
+		_log.info(FinalEmperialTomb.class.getSimpleName() + " Loaded " + spawnCount + " spawns data.");
 	}
 	
 	@Override

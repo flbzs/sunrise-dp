@@ -18,7 +18,6 @@
  */
 package handlers.effecthandlers;
 
-import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
@@ -54,13 +53,6 @@ public class HealOverTime extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		L2Character target = getEffected();
-		
-		if ((target.getFirstEffect(L2EffectType.INVINCIBLE) != null) || target.isInvul())
-		{
-			return false;
-		}
-		
 		if (getEffected().isPlayer())
 		{
 			getEffected().sendPacket(new ExRegMax(calc(), getTotalCount() * getAbnormalTime(), getAbnormalTime()));
@@ -71,7 +63,7 @@ public class HealOverTime extends L2Effect
 	@Override
 	public boolean onActionTime()
 	{
-		if (getEffected().isDead() || getEffected().isDoor())
+		if ((getEffected().getFirstEffect(L2EffectType.INVINCIBLE) != null) || getEffected().isInvul() || getEffected().isDead() || getEffected().isDoor())
 		{
 			return false;
 		}

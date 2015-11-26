@@ -305,11 +305,12 @@ import quests.Q00331_ArrowOfVengeance.Q00331_ArrowOfVengeance;
 import quests.Q00333_HuntOfTheBlackLion.Q00333_HuntOfTheBlackLion;
 import quests.Q00334_TheWishingPotion.Q00334_TheWishingPotion;
 import quests.Q00335_TheSongOfTheHunter.Q00335_TheSongOfTheHunter;
-import quests.Q00336_CoinOfMagic.Q00336_CoinOfMagic;
+import quests.Q00336_CoinsOfMagic.Q00336_CoinsOfMagic;
 import quests.Q00337_AudienceWithTheLandDragon.Q00337_AudienceWithTheLandDragon;
 import quests.Q00338_AlligatorHunter.Q00338_AlligatorHunter;
 import quests.Q00340_SubjugationOfLizardmen.Q00340_SubjugationOfLizardmen;
 import quests.Q00341_HuntingForWildBeasts.Q00341_HuntingForWildBeasts;
+import quests.Q00343_UnderTheShadowOfTheIvoryTower.Q00343_UnderTheShadowOfTheIvoryTower;
 import quests.Q00344_1000YearsTheEndOfLamentation.Q00344_1000YearsTheEndOfLamentation;
 import quests.Q00345_MethodToRaiseTheDead.Q00345_MethodToRaiseTheDead;
 import quests.Q00347_GoGetTheCalculator.Q00347_GoGetTheCalculator;
@@ -816,11 +817,12 @@ public class QuestLoader
 		Q00333_HuntOfTheBlackLion.class,
 		Q00334_TheWishingPotion.class,
 		Q00335_TheSongOfTheHunter.class,
-		Q00336_CoinOfMagic.class,
+		Q00336_CoinsOfMagic.class,
 		Q00337_AudienceWithTheLandDragon.class,
 		Q00338_AlligatorHunter.class,
 		Q00340_SubjugationOfLizardmen.class,
 		Q00341_HuntingForWildBeasts.class,
+		Q00343_UnderTheShadowOfTheIvoryTower.class,
 		Q00344_1000YearsTheEndOfLamentation.class,
 		Q00345_MethodToRaiseTheDead.class,
 		Q00347_GoGetTheCalculator.class,

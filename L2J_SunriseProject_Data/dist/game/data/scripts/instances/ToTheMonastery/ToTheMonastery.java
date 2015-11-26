@@ -14,7 +14,10 @@
  */
 package instances.ToTheMonastery;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.data.xml.impl.SkillData;
@@ -26,24 +29,23 @@ import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.entity.Instance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
+import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2r.gameserver.network.serverpackets.NpcSay;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.util.Rnd;
 
-import javolution.util.FastList;
-import javolution.util.FastMap;
+import ai.npc.AbstractNpcAI;
 import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
 import quests.Q10295_SevenSignsSolinasTomb.Q10295_SevenSignsSolinasTomb;
 import quests.Q10296_SevenSignsPowerOfTheSeal.Q10296_SevenSignsPowerOfTheSeal;
 
-public class ToTheMonastery extends Quest
+public class ToTheMonastery extends AbstractNpcAI
 {
-	private final FastMap<Integer, InstanceHolder> instanceWorlds = new FastMap<>();
+	private final Map<Integer, InstanceHolder> instanceWorlds = new ConcurrentHashMap<>();
 	private static final int INSTANCE_ID = 151;
 	private boolean progress1 = false;
 	private boolean progress2 = false;
@@ -80,130 +82,49 @@ public class ToTheMonastery extends Quest
 	private static int STAFF_OF_BLESSING = 17231;
 	
 	private static int ETISETINA = 18949;
+	
+	//@formatter:off
 	private static int[] TombGuardians =
 	{
-		18956,
-		18957,
-		18958,
-		18959
+		18956, 18957, 18958, 18959
 	};
 	private static int[] Minions =
 	{
-		27403,
-		27404
+		27403, 27404
 	};
 	
 	private static final int[][] minions_1 =
 	{
-		{
-			56504,
-			-252840,
-			-6760,
-			0
-		},
-		{
-			56504,
-			-252728,
-			-6760,
-			0
-		},
-		{
-			56392,
-			-252728,
-			-6760,
-			0
-		},
-		{
-			56408,
-			-252840,
-			-6760,
-			0
-		}
+		{ 56504, -252840, -6760, 0 },
+		{ 56504, -252728, -6760, 0 },
+		{ 56392, -252728, -6760, 0 },
+		{ 56408, -252840, -6760, 0 }
 	};
 	
 	private static final int[][] minions_2 =
 	{
-		{
-			55672,
-			-252728,
-			-6760,
-			0
-		},
-		{
-			55752,
-			-252840,
-			-6760,
-			0
-		},
-		{
-			55768,
-			-252840,
-			-6760,
-			0
-		},
-		{
-			55752,
-			-252712,
-			-6760,
-			0
-		}
+		{ 55672, -252728, -6760, 0 },
+		{ 55752, -252840, -6760, 0 },
+		{ 55768, -252840, -6760, 0 },
+		{ 55752, -252712, -6760, 0 }
 	};
 	
 	private static final int[][] minions_3 =
 	{
-		{
-			55672,
-			-252120,
-			-6760,
-			0
-		},
-		{
-			55752,
-			-252120,
-			-6760,
-			0
-		},
-		{
-			55656,
-			-252216,
-			-6760,
-			0
-		},
-		{
-			55736,
-			-252216,
-			-6760,
-			0
-		}
+		{ 55672, -252120, -6760, 0 },
+		{ 55752, -252120, -6760, 0 },
+		{ 55656, -252216, -6760, 0 },
+		{ 55736, -252216, -6760, 0 }
 	};
 	
 	private static final int[][] minions_4 =
 	{
-		{
-			56520,
-			-252232,
-			-6760,
-			0
-		},
-		{
-			56520,
-			-252104,
-			-6760,
-			0
-		},
-		{
-			56424,
-			-252104,
-			-6760,
-			0
-		},
-		{
-			56440,
-			-252216,
-			-6760,
-			0
-		}
+		{ 56520, -252232, -6760, 0 },
+		{ 56520, -252104, -6760, 0 },
+		{ 56424, -252104, -6760, 0 },
+		{ 56440, -252216, -6760, 0 }
 	};
+	//@formatter:on
 	
 	private static final int[] NPCs =
 	{
@@ -250,7 +171,7 @@ public class ToTheMonastery extends Quest
 	
 	public ToTheMonastery()
 	{
-		super(-1, ToTheMonastery.class.getSimpleName(), "instances");
+		super(ToTheMonastery.class.getSimpleName(), "instances");
 		addStartNpc(GLOBE);
 		addTalkId(NPCs);
 		addKillId(Minions);
@@ -283,7 +204,7 @@ public class ToTheMonastery extends Quest
 				if (event.equalsIgnoreCase("Enter3"))
 				{
 					teleportPlayer(npc, player, TELEPORTS[2], player.getInstanceId());
-					ThreadPoolManager.getInstance().scheduleGeneral(() -> player.showQuestMovie(24), 1000);
+					ThreadPoolManager.getInstance().scheduleGeneral(() -> player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_HOLY_BURIAL_GROUND_OPENING), 1000);
 					return null;
 				}
 				if (event.equalsIgnoreCase("teleport_in"))
@@ -297,7 +218,7 @@ public class ToTheMonastery extends Quest
 					
 					check.set("cond", "2");
 					ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(npc, player, TELEPORTS[13], world.getInstanceId()), 60500L);
-					player.showQuestMovie(29);
+					player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_BOSS_OPENING);
 					return null;
 				}
 				if (event.equalsIgnoreCase("teleport_back"))
@@ -351,41 +272,29 @@ public class ToTheMonastery extends Quest
 					if (player.getCurrentHp() < (player.getMaxHp() * 0.8D))
 					{
 						L2Skill skill = SkillData.getInstance().getInfo(6724, 1);
-						if (skill != null)
-						{
-							npc.setTarget(player);
-							npc.doCast(skill);
-						}
+						npc.setTarget(player);
+						npc.doCast(skill);
 					}
 					
 					if (player.getCurrentMp() < (player.getMaxMp() * 0.5D))
 					{
 						L2Skill skill = SkillData.getInstance().getInfo(6728, 1);
-						if (skill != null)
-						{
-							npc.setTarget(player);
-							npc.doCast(skill);
-						}
+						npc.setTarget(player);
+						npc.doCast(skill);
 					}
 					
 					if (player.getCurrentHp() < (player.getMaxHp() * 0.1D))
 					{
 						L2Skill skill = SkillData.getInstance().getInfo(6730, 1);
-						if (skill != null)
-						{
-							npc.setTarget(player);
-							npc.doCast(skill);
-						}
+						npc.setTarget(player);
+						npc.doCast(skill);
 					}
 					
 					if (player.isInCombat())
 					{
 						L2Skill skill = SkillData.getInstance().getInfo(6725, 1);
-						if (skill != null)
-						{
-							npc.setTarget(player);
-							npc.doCast(skill);
-						}
+						npc.setTarget(player);
+						npc.doCast(skill);
 					}
 					return "";
 				}
@@ -455,39 +364,27 @@ public class ToTheMonastery extends Quest
 							if (player.getCurrentHp() < (player.getMaxHp() * 0.8D))
 							{
 								L2Skill skill = SkillData.getInstance().getInfo(6724, 1);
-								if (skill != null)
-								{
-									npc.setTarget(player);
-									npc.doCast(skill);
-								}
+								npc.setTarget(player);
+								npc.doCast(skill);
 							}
 							
 							if (player.getCurrentMp() < (player.getMaxMp() * 0.5D))
 							{
 								L2Skill skill = SkillData.getInstance().getInfo(6728, 1);
-								if (skill != null)
-								{
-									npc.setTarget(player);
-									npc.doCast(skill);
-								}
+								npc.setTarget(player);
+								npc.doCast(skill);
 							}
 							
 							if (player.getCurrentHp() < (player.getMaxHp() * 0.1D))
 							{
 								L2Skill skill = SkillData.getInstance().getInfo(6730, 1);
-								if (skill != null)
-								{
-									npc.setTarget(player);
-									npc.doCast(skill);
-								}
-							}
-							
-							L2Skill skill = SkillData.getInstance().getInfo(6725, 1);
-							if (skill != null)
-							{
 								npc.setTarget(player);
 								npc.doCast(skill);
 							}
+							
+							L2Skill skill = SkillData.getInstance().getInfo(6725, 1);
+							npc.setTarget(player);
+							npc.doCast(skill);
 						}
 					}
 					startQuestTimer("check_follow", 5000L, npc, player);
@@ -548,7 +445,7 @@ public class ToTheMonastery extends Quest
 			
 			if (npcId == EVIL)
 			{
-				InstanceHolder holder = instanceWorlds.get(Integer.valueOf(player.getInstanceId()));
+				InstanceHolder holder = instanceWorlds.get(player.getInstanceId());
 				if (holder != null)
 				{
 					for (L2Npc h : holder.mobs)
@@ -594,7 +491,7 @@ public class ToTheMonastery extends Quest
 			if (npcId == TELEPORT_DEVICE_3)
 			{
 				teleportPlayer(npc, player, TELEPORTS[12], player.getInstanceId());
-				player.showQuestMovie(28);
+				player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_ELYSS_NARRATION);
 				return null;
 			}
 			if (npcId == POWERFUL_DEVICE_1)
@@ -856,11 +753,11 @@ public class ToTheMonastery extends Quest
 	
 	protected void teleportPlayer(L2Npc npc, L2PcInstance player, Location loc, int instanceId)
 	{
-		InstanceHolder holder = instanceWorlds.get(Integer.valueOf(instanceId));
+		InstanceHolder holder = instanceWorlds.get(instanceId);
 		if ((holder == null) && (instanceId > 0))
 		{
 			holder = new InstanceHolder();
-			instanceWorlds.put(Integer.valueOf(instanceId), holder);
+			instanceWorlds.put(instanceId, holder);
 		}
 		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		player.setInstanceId(instanceId);
@@ -891,7 +788,7 @@ public class ToTheMonastery extends Quest
 	
 	protected void SpawnFirstGroup(ToTheMonasteryWorld world)
 	{
-		world.firstgroup = new FastList<>();
+		world.firstgroup = new ArrayList<>();
 		for (int[] spawn : minions_1)
 		{
 			L2Npc spawnedMob = addSpawn(27403, spawn[0], spawn[1], spawn[2], spawn[3], false, 0L, false, world.getInstanceId());
@@ -901,7 +798,7 @@ public class ToTheMonastery extends Quest
 	
 	protected void SpawnSecondGroup(ToTheMonasteryWorld world)
 	{
-		world.secondgroup = new FastList<>();
+		world.secondgroup = new ArrayList<>();
 		for (int[] spawn : minions_2)
 		{
 			L2Npc spawnedMob = addSpawn(27403, spawn[0], spawn[1], spawn[2], spawn[3], false, 0L, false, world.getInstanceId());
@@ -911,7 +808,7 @@ public class ToTheMonastery extends Quest
 	
 	protected void SpawnThirdGroup(ToTheMonasteryWorld world)
 	{
-		world.thirdgroup = new FastList<>();
+		world.thirdgroup = new ArrayList<>();
 		for (int[] spawn : minions_3)
 		{
 			L2Npc spawnedMob = addSpawn(27404, spawn[0], spawn[1], spawn[2], spawn[3], false, 0L, false, world.getInstanceId());
@@ -921,7 +818,7 @@ public class ToTheMonastery extends Quest
 	
 	protected void SpawnFourthGroup(ToTheMonasteryWorld world)
 	{
-		world.fourthgroup = new FastList<>();
+		world.fourthgroup = new ArrayList<>();
 		for (int[] spawn : minions_4)
 		{
 			L2Npc spawnedMob = addSpawn(27404, spawn[0], spawn[1], spawn[2], spawn[3], false, 0L, false, world.getInstanceId());
@@ -947,21 +844,14 @@ public class ToTheMonastery extends Quest
 		@Override
 		public void run()
 		{
-			try
-			{
-				teleportPlayer(_npc, _player, _cords, _instanceId);
-				startQuestTimer("check_follow", 3000L, _npc, _player);
-			}
-			catch (Exception e)
-			{
-				e.printStackTrace();
-			}
+			teleportPlayer(_npc, _player, _cords, _instanceId);
+			startQuestTimer("check_follow", 3000L, _npc, _player);
 		}
 	}
 	
 	protected static class InstanceHolder
 	{
-		FastList<L2Npc> mobs = new FastList<>();
+		List<L2Npc> mobs = new ArrayList<>();
 	}
 	
 	private class ToTheMonasteryWorld extends InstanceWorld

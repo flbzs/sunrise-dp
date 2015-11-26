@@ -1035,11 +1035,11 @@ public class HeartInfinityAttack extends Quest
 			for (int objId : world.getAllowed())
 			{
 				L2PcInstance player = L2World.getInstance().getPlayer(objId);
-				player.showQuestMovie(2);
+				player.showQuestMovie(2); // ExStartScenePlayer.SCENE_ECHMUS_OPENING
 			}
 			
 			ThreadPoolManager.getInstance().scheduleGeneral(() -> conquestBegins(world), 62500);
-		}, 20000);
+		} , 20000);
 	}
 	
 	protected void conquestBegins(HIAWorld world)

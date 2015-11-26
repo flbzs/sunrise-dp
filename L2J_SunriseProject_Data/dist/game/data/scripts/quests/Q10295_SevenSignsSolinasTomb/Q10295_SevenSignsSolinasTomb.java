@@ -6,6 +6,8 @@ import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
+import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
+import l2r.gameserver.network.serverpackets.OnEventTrigger;
 import l2r.util.Rnd;
 
 import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
@@ -118,7 +120,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 				openDoor(21100013, player.getInstanceId());
 				openDoor(21100011, player.getInstanceId());
 				openDoor(21100009, player.getInstanceId());
-				ThreadPoolManager.getInstance().scheduleGeneral(() -> player.showQuestMovie(26), 3000L);
+				ThreadPoolManager.getInstance().scheduleGeneral(() -> player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_SOLINA_TOMB_OPENING), 3000L);
 				L2Npc moving = addSpawn(ElcardiaInzone1, player.getX() + Rnd.get(100), player.getY() + Rnd.get(100), player.getZ(), 0, false, 0L, false, player.getInstanceId());
 				moving.setTarget(player);
 				moving.setRunning();
@@ -295,7 +297,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					{
 						st.set("cond", "2");
 						st.playSound("ItemSound.quest_middle");
-						player.showQuestMovie(28);
+						player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_ELYSS_NARRATION);
 					}
 					else if (event.equalsIgnoreCase("solina_q10295_8.htm"))
 					{
@@ -472,7 +474,9 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 			st.playSound("ItemSound.quest_middle");
 			if (solina == 4)
 			{
-				player.showQuestMovie(27);
+				player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_SOLINA_TOMB_CLOSING);
+				player.broadcastPacket(new OnEventTrigger(21100100, false));
+				player.broadcastPacket(new OnEventTrigger(21100102, true));
 			}
 		}
 		

@@ -21,16 +21,17 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.templates.L2NpcTemplate;
 import l2r.gameserver.model.entity.Instance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.util.Rnd;
 
-public class RimKamaloka extends Quest
+import ai.npc.AbstractNpcAI;
+
+public class RimKamaloka extends AbstractNpcAI
 {
 	public RimKamaloka()
 	{
-		super(-1, qn, "instances");
+		super(RimKamaloka.class.getSimpleName(), "instances");
 		
 		addStartNpc(START_NPC);
 		// addFirstTalkId(START_NPC);
@@ -41,15 +42,10 @@ public class RimKamaloka extends Quest
 		for (int[] list : KANABIONS)
 		{
 			addFactionCallId(list[0]);
-			for (int mob : list)
-			{
-				addAttackId(mob);
-				addKillId(mob);
-			}
+			addAttackId(list);
+			addKillId(list);
 		}
 	}
-	
-	private static String qn = "RimKamaloka";
 	
 	/*
 	 * Reset time for all kamaloka Default: 6:30AM on server time
@@ -1071,14 +1067,11 @@ public class RimKamaloka extends Quest
 		try
 		{
 			final L2NpcTemplate mob1 = NpcTable.getInstance().getTemplate(world.KANABION);
-			
 			spawnlist = SPAWNLIST[index];
-			final int length = spawnlist.length;
 			
 			L2Spawn spawn;
-			for (int i = 0; i < length; i++)
+			for (final int[] loc : spawnlist)
 			{
-				final int[] loc = spawnlist[i];
 				spawn = new L2Spawn(mob1);
 				spawn.setInstanceId(world.getInstanceId());
 				spawn.setX(loc[0]);
@@ -1093,7 +1086,7 @@ public class RimKamaloka extends Quest
 		}
 		catch (Exception e)
 		{
-			_log.warn("RimKamaloka: error during spawn: ", e);
+			e.printStackTrace();
 		}
 	}
 	

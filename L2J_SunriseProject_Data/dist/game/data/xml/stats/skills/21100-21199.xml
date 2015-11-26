@@ -1447,6 +1447,8 @@
 		<!-- Recovers all HP, MP, and CP with the power of virtue. Reuse delay 30 minutes. It can only be used when HP, MP, and CP are all below 30%. When you use the skill, 1 Proof of a Warrior is consumed. -->
 		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="20976" /> <!-- Proof of a Warrior -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="skillType" val="NOTDONE" />
@@ -1459,6 +1461,8 @@
 		<set name="abnormalType" val="multi_buff" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="20976" /> <!-- Proof of a Warrior -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="skillType" val="NOTDONE" />

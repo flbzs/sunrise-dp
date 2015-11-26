@@ -56,6 +56,7 @@ import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.ExShowScreenMessage;
+import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 
@@ -831,7 +832,7 @@ public final class Stage1 extends Quest
 							L2PcInstance pl = L2World.getInstance().getPlayer(objId);
 							if (pl != null)
 							{
-								pl.showQuestMovie(5);
+								pl.showQuestMovie(ExStartScenePlayer.SCENE_TIAT_OPENING);
 							}
 						}
 						npc.deleteMe();
@@ -997,7 +998,7 @@ public final class Stage1 extends Quest
 						L2PcInstance pl = L2World.getInstance().getPlayer(objId);
 						if (pl != null)
 						{
-							pl.showQuestMovie(6);
+							pl.showQuestMovie(ExStartScenePlayer.SCENE_TIAT_SUCCESS);
 						}
 					}
 					for (L2Npc mob : InstanceManager.getInstance().getInstance(world.getInstanceId()).getNpcs())
