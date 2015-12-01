@@ -50,8 +50,7 @@ public class DispelOnlyOne extends L2Effect
 		}
 		
 		int _dispelledCount = 0;
-		final L2Effect[] effects = target.getAllEffects();
-		for (L2Effect e : effects)
+		for (L2Effect e : target.getAllEffects())
 		{
 			if (!e.getSkill().canBeDispeled())
 			{
