@@ -107,11 +107,18 @@ public class L2NpcAction implements IActionHandler
 				if (!npc.canInteract(activeChar))
 				{
 					final Location destination = GeoData.getInstance().moveCheck(activeChar, npc);
-					// Notify the L2PcInstance AI with AI_INTENTION_INTERACT
-					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_AND_INTERACT, npc, destination);
+					activeChar.getAI().setIntention(npc.isWalker() ? CtrlIntention.AI_INTENTION_INTERACT : CtrlIntention.AI_INTENTION_MOVE_AND_INTERACT, npc, destination);
 				}
 				else
 				{
+					// vGodFather extra check if npc is walker interaction distance should be lower than normal.
+					if (!activeChar.isInsideRadius(npc, 60, true, false) && npc.isWalker())
+					{
+						final Location destination = GeoData.getInstance().moveCheck(activeChar, npc);
+						activeChar.getAI().setIntention(npc.isWalker() ? CtrlIntention.AI_INTENTION_INTERACT : CtrlIntention.AI_INTENTION_MOVE_AND_INTERACT, npc, destination);
+						return true;
+					}
+					
 					// Turn NPC to the player.
 					activeChar.sendPacket(new MoveToPawn(activeChar, npc, 100));
 					if (npc.hasRandomAnimation())
@@ -131,6 +138,9 @@ public class L2NpcAction implements IActionHandler
 					{
 						npc.showChatWindow(activeChar);
 					}
+					
+					// vGodFather we must stop move when start interacting.
+					activeChar.stopMove(null);
 				}
 				
 				if ((Config.PLAYER_MOVEMENT_BLOCK_TIME > 0) && !activeChar.isGM())
