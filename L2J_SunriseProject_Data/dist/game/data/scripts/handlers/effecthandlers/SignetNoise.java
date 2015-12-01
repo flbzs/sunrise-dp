@@ -70,15 +70,11 @@ public class SignetNoise extends L2Effect
 			
 			if (caster.canAttackCharacter(target))
 			{
-				L2Effect[] effects = target.getAllEffects();
-				if (effects != null)
+				for (L2Effect effect : target.getAllEffects())
 				{
-					for (L2Effect effect : effects)
+					if ((effect != null) && effect.getSkill().isDance())
 					{
-						if (effect.getSkill().isDance())
-						{
-							effect.exit();
-						}
+						effect.exit();
 					}
 				}
 			}

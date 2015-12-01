@@ -59,9 +59,7 @@ public class DispelBySlot extends L2Effect
 			return true;
 		}
 		
-		final L2Effect[] effects = target.getAllEffects();
-		
-		for (L2Effect e : effects)
+		for (L2Effect e : target.getAllEffects())
 		{
 			if (!e.getSkill().canBeDispeled())
 			{
