@@ -49,6 +49,12 @@ public class EnemyCharge extends L2Effect
 	}
 	
 	@Override
+	public boolean isInstant()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean onStart()
 	{
 		if (getEffected().isMovementDisabled())

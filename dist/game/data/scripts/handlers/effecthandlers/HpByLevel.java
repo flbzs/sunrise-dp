@@ -38,6 +38,18 @@ public class HpByLevel extends L2Effect
 	}
 	
 	@Override
+	public L2EffectType getEffectType()
+	{
+		return L2EffectType.BUFF;
+	}
+	
+	@Override
+	public boolean isInstant()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean onStart()
 	{
 		if ((getEffector() == null) || (getEffected() == null))
@@ -58,11 +70,5 @@ public class HpByLevel extends L2Effect
 		sm.addInt(restored);
 		getEffected().sendPacket(sm);
 		return true;
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.BUFF;
 	}
 }

@@ -41,6 +41,12 @@ public class ThrowUp extends L2Effect
 	}
 	
 	@Override
+	public boolean isInstant()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean onStart()
 	{
 		// Get current position of the L2Character

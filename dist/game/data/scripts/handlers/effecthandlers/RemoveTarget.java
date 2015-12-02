@@ -40,6 +40,12 @@ public class RemoveTarget extends L2Effect
 	}
 	
 	@Override
+	public boolean isInstant()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean onStart()
 	{
 		if (!Formulas.calcProbability(_chance, getEffector(), getEffected(), getSkill()))

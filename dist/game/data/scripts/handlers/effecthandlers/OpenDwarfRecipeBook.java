@@ -34,6 +34,12 @@ public class OpenDwarfRecipeBook extends L2Effect
 	}
 	
 	@Override
+	public boolean isInstant()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean onStart()
 	{
 		if (!getEffector().isPlayer())

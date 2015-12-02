@@ -49,6 +49,12 @@ public class Heal extends L2Effect
 	}
 	
 	@Override
+	public boolean isInstant()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean onStart()
 	{
 		L2Character target = getEffected();

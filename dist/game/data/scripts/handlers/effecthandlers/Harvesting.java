@@ -40,6 +40,12 @@ public final class Harvesting extends L2Effect
 	}
 	
 	@Override
+	public boolean isInstant()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean onStart()
 	{
 		if ((getEffector() == null) || (getEffected() == null) || !getEffector().isPlayer() || !getEffected().isMonster() || !getEffected().isDead())

@@ -38,11 +38,9 @@ import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.AbnormalEffect;
 import l2r.gameserver.model.skills.L2Skill;
-import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.ConfirmDlg;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
 import l2r.gameserver.network.serverpackets.SetupGauge;
-import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Broadcast;
 
 import org.slf4j.Logger;
@@ -167,13 +165,10 @@ public class Wedding implements IVoicedCommandHandler
 					skillId = 4361;
 				}
 				
-				final L2Skill skill = SkillData.getInstance().getInfo(skillId, skillLevel);
-				if (activeChar.getFirstEffect(skill) == null)
+				final L2Skill skill = SkillData.getInstance().getSkill(skillId, skillLevel);
+				if (!activeChar.isAffectedBySkill(skillId))
 				{
 					skill.getEffects(activeChar, activeChar);
-					final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
-					sm.addSkillName(skill);
-					activeChar.sendPacket(sm);
 				}
 			}
 			return false;
