@@ -51,15 +51,15 @@ public class CallPc extends L2Effect
 	}
 	
 	@Override
-	public boolean isInstant()
-	{
-		return true;
-	}
-	
-	@Override
 	public L2EffectType getEffectType()
 	{
 		return L2EffectType.CALLPC;
+	}
+	
+	@Override
+	public boolean isInstant()
+	{
+		return true;
 	}
 	
 	@Override

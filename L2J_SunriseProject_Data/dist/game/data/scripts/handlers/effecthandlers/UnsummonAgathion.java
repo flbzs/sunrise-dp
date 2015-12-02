@@ -34,6 +34,12 @@ public class UnsummonAgathion extends SummonAgathion
 	}
 	
 	@Override
+	public boolean isInstant()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean onStart()
 	{
 		final L2PcInstance player = getEffector().getActingPlayer();

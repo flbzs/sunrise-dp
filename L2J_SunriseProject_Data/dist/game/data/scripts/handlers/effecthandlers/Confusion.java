@@ -43,6 +43,12 @@ public class Confusion extends L2Effect
 	}
 	
 	@Override
+	public boolean isInstant()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean onStart()
 	{
 		getEffected().startConfused();

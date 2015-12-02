@@ -20,6 +20,12 @@ public class RefuelAirship extends L2Effect
 	}
 	
 	@Override
+	public boolean isInstant()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean onStart()
 	{
 		final L2AirShipInstance ship = getEffector().getActingPlayer().getAirShip();
