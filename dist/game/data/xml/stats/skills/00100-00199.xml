@@ -183,6 +183,7 @@
 		<for>
 			<!-- Retail Values CT2.3: 41 50 58 63HP * 3 Sec -->
 			<effect count="10" name="DamOverTime" abnormalTime="3" val="#dot" abnormalLvl="#abnormalLvls" abnormalType="poison" abnormalVisualEffect="poison" />
+			<effect name="ConsumeBody" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="104" levels="1" name="Detect Plant Weakness">

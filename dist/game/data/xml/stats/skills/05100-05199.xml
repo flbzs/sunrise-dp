@@ -713,6 +713,9 @@
 		<set name="reuseDelay" val="20000" />
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
+		<for>
+			<effect name="ConsumeBody" noicon="1" val="0" />
+		</for>
 	</skill>
 	<skill id="5143" levels="1" name="Sailren Use Blow">
 		<!-- Confirmed CT2.5 -->

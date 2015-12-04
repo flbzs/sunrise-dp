@@ -23,7 +23,6 @@ import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.StatusUpdate;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -32,9 +31,13 @@ import l2r.gameserver.network.serverpackets.SystemMessage;
  */
 public class HpByLevel extends L2Effect
 {
+	private final double _power;
+	
 	public HpByLevel(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		
+		_power = template.getParameters().getDouble("power", 0);
 	}
 	
 	@Override
@@ -57,18 +60,14 @@ public class HpByLevel extends L2Effect
 			return false;
 		}
 		// Calculation
-		final int abs = (int) calc();
-		final double absorb = ((getEffected().getCurrentHp() + abs) > getEffected().getMaxHp() ? getEffected().getMaxHp() : (getEffected().getCurrentHp() + abs));
-		final int restored = (int) (absorb - getEffected().getCurrentHp());
-		getEffected().setCurrentHp(absorb);
-		// Status update
-		final StatusUpdate su = new StatusUpdate(getEffected());
-		su.addAttribute(StatusUpdate.CUR_HP, (int) absorb);
-		getEffected().sendPacket(su);
+		final double abs = _power;
+		final double absorb = ((getEffector().getCurrentHp() + abs) > getEffector().getMaxHp() ? getEffector().getMaxHp() : (getEffector().getCurrentHp() + abs));
+		final int restored = (int) (absorb - getEffector().getCurrentHp());
+		getEffector().setCurrentHp(absorb);
 		// System message
 		final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_RESTORED);
 		sm.addInt(restored);
-		getEffected().sendPacket(sm);
+		getEffector().sendPacket(sm);
 		return true;
 	}
 }

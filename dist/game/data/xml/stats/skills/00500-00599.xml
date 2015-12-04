@@ -2415,13 +2415,16 @@
 		<set name="castRange" val="20" />
 		<set name="effectRange" val="200" />
 		<set name="hitTime" val="1500" />
+		<set name="icon" val="icon.skill_transform_etc" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="CORPSE_MOB" />
 		<for>
-			<effect self="1" name="HpByLevel" noicon="1" val="#drainHp" />
+			<effect name="HpByLevel" noicon="1" val="0">
+				<param power="#drainHp" />
+			</effect>
 			<effect name="ConsumeBody" noicon="1" val="0" />
 		</for>
 	</skill>
