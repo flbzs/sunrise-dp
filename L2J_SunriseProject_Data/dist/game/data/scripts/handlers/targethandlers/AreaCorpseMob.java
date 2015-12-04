@@ -71,7 +71,7 @@ public class AreaCorpseMob implements ITargetTypeHandler
 				continue;
 			}
 			
-			if (!L2Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena))
+			if ((skill.getId() != 444) && !L2Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena))
 			{
 				continue;
 			}
