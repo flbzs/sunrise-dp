@@ -24,6 +24,7 @@ import java.util.List;
 
 import l2r.gameserver.handler.ITargetTypeHandler;
 import l2r.gameserver.model.L2Object;
+import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.targets.L2TargetType;
@@ -42,7 +43,7 @@ public class AuraCorpseMob implements ITargetTypeHandler
 		int maxTargets = skill.getAffectLimit();
 		for (L2Character obj : objs)
 		{
-			if (obj.isAttackable() && obj.isDead())
+			if (obj.isAttackable() && obj.isDead() && ((L2Attackable) obj).checkSpoilOwner(activeChar.getActingPlayer(), false))
 			{
 				if (onlyFirst)
 				{
