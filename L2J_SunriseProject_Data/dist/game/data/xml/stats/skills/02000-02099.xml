@@ -69,7 +69,7 @@
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
-		<set name="targetType" val="ONE" /> <!-- FIXME: This should be OTHERS -->
+		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="2006" levels="1" name="Scroll: Enchant Weapon (Grade A)">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
