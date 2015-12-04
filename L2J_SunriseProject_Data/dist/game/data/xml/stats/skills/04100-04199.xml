@@ -770,6 +770,9 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
+		<for>
+			<effect name="ConsumeBody" noicon="1" val="0" />
+		</for>
 	</skill>
 	<skill id="4139" levels="12" name="Boom Attack">
 		<!-- Confirmed CT2.5 -->
