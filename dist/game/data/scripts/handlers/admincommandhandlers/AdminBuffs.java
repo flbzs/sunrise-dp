@@ -19,7 +19,6 @@
 package handlers.admincommandhandlers;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.StringTokenizer;
 
 import l2r.Config;
@@ -230,25 +229,25 @@ public class AdminBuffs implements IAdminCommandHandler
 	
 	public static void showBuffs(L2PcInstance activeChar, L2Character target, int page, boolean passive)
 	{
-		final List<L2Effect> effects = target.getAllEffects();
-		if ((page > ((effects.size() / PAGE_LIMIT) + 1)) || (page < 1))
+		final L2Effect[] effects = target.getAllEffects();
+		if ((page > ((effects.length / PAGE_LIMIT) + 1)) || (page < 1))
 		{
 			return;
 		}
 		
-		int max = effects.size() / PAGE_LIMIT;
-		if (effects.size() > (PAGE_LIMIT * max))
+		int max = effects.length / PAGE_LIMIT;
+		if (effects.length > (PAGE_LIMIT * max))
 		{
 			max++;
 		}
 		
-		final StringBuilder html = StringUtil.startAppend(500 + (effects.size() * 200), "<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Effects of ", target.getName(), "</font></td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"100%\"><tr><td width=200>Skill</td><td width=30>Rem. Time</td><td width=70>Action</td><td>In use</td></tr>");
+		final StringBuilder html = StringUtil.startAppend(500 + (effects.length * 200), "<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center><font color=\"LEVEL\">Effects of ", target.getName(), "</font></td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br><table width=\"100%\"><tr><td width=200>Skill</td><td width=30>Rem. Time</td><td width=70>Action</td><td>In use</td></tr>");
 		int start = ((page - 1) * PAGE_LIMIT);
-		int end = Math.min(((page - 1) * PAGE_LIMIT) + PAGE_LIMIT, effects.size());
+		int end = Math.min(((page - 1) * PAGE_LIMIT) + PAGE_LIMIT, effects.length);
 		L2Skill skill;
 		for (int i = start; i < end; i++)
 		{
-			L2Effect e = effects.get(i);
+			L2Effect e = effects[i];
 			if (e != null)
 			{
 				skill = e.getSkill();
