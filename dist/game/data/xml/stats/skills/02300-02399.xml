@@ -693,6 +693,7 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="9688" /> <!-- Ballista Bomb -->
+		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
