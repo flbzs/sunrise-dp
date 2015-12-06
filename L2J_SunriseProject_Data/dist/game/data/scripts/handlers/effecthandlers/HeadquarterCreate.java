@@ -73,15 +73,15 @@ public final class HeadquarterCreate extends L2Effect
 		final Castle castle = CastleManager.getInstance().getCastle(player);
 		final Fort fort = FortManager.getInstance().getFort(player);
 		final SiegableHall hall = CHSiegeManager.getInstance().getNearbyClanHall(player);
-		if (castle != null)
+		if ((castle != null) && !castle.getSiege().getFlag(player.getClan()).contains(flag))
 		{
 			castle.getSiege().getFlag(player.getClan()).add(flag);
 		}
-		else if (fort != null)
+		else if ((fort != null) && !fort.getSiege().getFlag(player.getClan()).contains(flag))
 		{
 			fort.getSiege().getFlag(player.getClan()).add(flag);
 		}
-		else
+		else if ((hall != null) && !hall.getSiege().getFlag(player.getClan()).contains(flag))
 		{
 			hall.getSiege().getFlag(player.getClan()).add(flag);
 		}
