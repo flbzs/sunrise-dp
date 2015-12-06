@@ -41,6 +41,8 @@ public final class EventsLoader
 		// HeavyMedal.class,
 		// LoveYourGatekeeper.class,
 		// MasterOfEnchanting.class,
+		// SavingSanta.class,
+		// SquashEvent.class,
 		// TheValentineEvent.class,
 	};
 	
