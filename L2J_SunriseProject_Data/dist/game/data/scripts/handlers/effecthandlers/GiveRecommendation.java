@@ -25,7 +25,6 @@ import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.ExVoteSystemInfo;
 import l2r.gameserver.network.serverpackets.SystemMessage;
-import l2r.gameserver.network.serverpackets.UserInfo;
 
 /**
  * Give Recommendation effect implementation.
@@ -75,7 +74,7 @@ public final class GiveRecommendation extends L2Effect
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_OBTAINED_S1_RECOMMENDATIONS);
 			sm.addInt(recommendationsGiven);
 			target.sendPacket(sm);
-			target.sendPacket(new UserInfo(target));
+			target.sendUserInfo(true);
 			target.sendPacket(new ExVoteSystemInfo(target));
 		}
 		else

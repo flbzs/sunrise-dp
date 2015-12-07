@@ -83,6 +83,7 @@ public class SavingSanta extends AbstractNpcAI
 		new ItemHolder(5559, 1)
 	};
 	
+	//@formatter:off
 	private static final int SANTA_TRAINEE_ID = 31863;
 	private static final int SPECIAL_CHRISTMAS_TREE_ID = 13007;
 	private static final int HOLIDAY_SANTA_ID = 104;
@@ -101,22 +102,10 @@ public class SavingSanta extends AbstractNpcAI
 	private static final int X_MAS_TREE2 = 5561;
 	private static final int SANTAS_HAT_ID = 7836;
 	private static final List<Integer> RANDOM_A_PLUS_10_WEAPON = Arrays.asList(81, 151, 164, 213, 236, 270, 289, 2500, 7895, 7902, 5706);
-	
 	private static final Location THOMAS_SPAWN = new Location(117935, -126003, -2585, 54625);
-	
-	private static final int[] SANTA_MAGE_BUFFS =
-	{
-		7055,
-		7054,
-		7051
-	};
-	
-	private static final int[] SANTA_FIGHTER_BUFFS =
-	{
-		7043,
-		7057,
-		7051
-	};
+	private static final int[] SANTA_MAGE_BUFFS = { 7055, 7054, 7051 };
+	private static final int[] SANTA_FIGHTER_BUFFS = { 7043, 7057, 7051 };
+	//@formatter:on
 	
 	private static final GregorianCalendar CALENDAR = new GregorianCalendar();
 	// 3th December 2015
@@ -890,38 +879,25 @@ public class SavingSanta extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		String htmltext = "";
-		final int npcId = npc.getId();
-		if ((npcId == THOMAS_D_TURKEY_ID) || (npcId == HOLIDAY_SANTA_ID) || (npcId == HOLIDAY_SLED_ID))
+		switch (npc.getId())
 		{
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-			htmltext = null;
+			case THOMAS_D_TURKEY_ID:
+			case HOLIDAY_SANTA_ID:
+			case HOLIDAY_SLED_ID:
+				player.sendPacket(ActionFailed.STATIC_PACKET);
+				return "";
+			case SANTA_TRAINEE_ID:
+				return SAVING_SANTA ? "savingsanta.htm" : "santa.htm";
+			default:
+				return "";
 		}
-		else if (npcId == SANTA_TRAINEE_ID)
-		{
-			if (SAVING_SANTA)
-			{
-				htmltext = "savingsanta.htm";
-			}
-			else
-			{
-				htmltext = "santa.htm";
-			}
-		}
-		return htmltext;
 	}
 	
 	@Override
 	public boolean unload()
 	{
-		for (L2Npc santaHelper : _santaHelpers)
-		{
-			santaHelper.deleteMe();
-		}
-		for (L2Npc specialTree : _specialTrees)
-		{
-			specialTree.deleteMe();
-		}
+		_santaHelpers.forEach(npc -> npc.deleteMe());
+		_specialTrees.forEach(npc -> npc.deleteMe());
 		return super.unload();
 	}
 	
