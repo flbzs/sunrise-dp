@@ -25,10 +25,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.itemcontainer.Inventory;
 import l2r.gameserver.model.items.instance.L2ItemInstance;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.CharInfo;
-import l2r.gameserver.network.serverpackets.ExBrExtraUserInfo;
 import l2r.gameserver.network.serverpackets.InventoryUpdate;
-import l2r.gameserver.network.serverpackets.UserInfo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,20 +40,20 @@ public class AdminEnchant implements IAdminCommandHandler
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
-		"admin_seteh",// 6
-		"admin_setec",// 10
-		"admin_seteg",// 9
-		"admin_setel",// 11
-		"admin_seteb",// 12
-		"admin_setew",// 7
-		"admin_setes",// 8
-		"admin_setle",// 1
-		"admin_setre",// 2
-		"admin_setlf",// 4
-		"admin_setrf",// 5
-		"admin_seten",// 3
-		"admin_setun",// 0
-		"admin_setba",// 13
+		"admin_seteh", // 6
+		"admin_setec", // 10
+		"admin_seteg", // 9
+		"admin_setel", // 11
+		"admin_seteb", // 12
+		"admin_setew", // 7
+		"admin_setes", // 8
+		"admin_setle", // 1
+		"admin_setre", // 2
+		"admin_setlf", // 4
+		"admin_setrf", // 5
+		"admin_seten", // 3
+		"admin_setun", // 0
+		"admin_setba", // 13
 		"admin_setbe",
 		"admin_enchant"
 	};
@@ -222,9 +219,7 @@ public class AdminEnchant implements IAdminCommandHandler
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(itemInstance);
 			player.sendPacket(iu);
-			player.broadcastPacket(new CharInfo(player));
-			player.sendPacket(new UserInfo(player));
-			player.broadcastPacket(new ExBrExtraUserInfo(player));
+			player.broadcastUserInfo();
 			
 			// informations
 			activeChar.sendMessage("Changed enchantment of " + player.getName() + "'s " + itemInstance.getItem().getName() + " from " + curEnchant + " to " + ench + ".");
