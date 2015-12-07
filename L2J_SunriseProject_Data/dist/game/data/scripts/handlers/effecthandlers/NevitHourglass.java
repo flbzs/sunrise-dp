@@ -6,9 +6,9 @@ import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 
-public class RecoBonus extends L2Effect
+public class NevitHourglass extends L2Effect
 {
-	public RecoBonus(Env env, EffectTemplate template)
+	public NevitHourglass(Env env, EffectTemplate template)
 	{
 		super(env, template);
 	}
@@ -27,13 +27,13 @@ public class RecoBonus extends L2Effect
 			return false;
 		}
 		
-		((L2PcInstance) getEffected()).setRecomBonusType(1).setRecoBonusActive(true);
+		((L2PcInstance) getEffected()).startHourglassEffect();
 		return true;
 	}
 	
 	@Override
 	public void onExit()
 	{
-		((L2PcInstance) getEffected()).setRecomBonusType(0).setRecoBonusActive(false);
+		((L2PcInstance) getEffected()).stopHourglassEffect();
 	}
 }
