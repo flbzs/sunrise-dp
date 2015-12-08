@@ -685,7 +685,6 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="stun" />
-		<set name="activateRate" val="50" />
 		<set name="affectRange" val="300" />
 		<set name="basicProperty" val="CON" />
 		<set name="effectPoint" val="-1300" />
@@ -705,7 +704,7 @@
 			<player active_effect_id_lvl="#effect" />
 		</cond>
 		<for>
-			<effect self="1" name="Cancel" noicon="1" val="0" effectPower="-1" effectType="CANCEL" />
+			<effect self="1" name="Cancel" noicon="1" val="0" effectPower="50" effectType="CANCEL" />
 			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="1" abnormalType="stun" effectPower="50" effectType="STUN" />
 		</for>
 	</skill>
