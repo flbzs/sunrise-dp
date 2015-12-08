@@ -24,7 +24,6 @@ import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
-import l2r.gameserver.network.serverpackets.StatusUpdate;
 import l2r.gameserver.util.Util;
 
 /**
@@ -103,9 +102,6 @@ public class RebalanceHP extends L2Effect
 				}
 				
 				member.getSummon().setCurrentHp(newHP);
-				StatusUpdate su = new StatusUpdate(member.getSummon());
-				su.addAttribute(StatusUpdate.CUR_HP, (int) member.getSummon().getCurrentHp());
-				member.getSummon().sendPacket(su);
 			}
 			
 			double newHP = member.getMaxHp() * percentHP;
@@ -123,9 +119,6 @@ public class RebalanceHP extends L2Effect
 			}
 			
 			member.setCurrentHp(newHP);
-			StatusUpdate su = new StatusUpdate(member);
-			su.addAttribute(StatusUpdate.CUR_HP, (int) member.getCurrentHp());
-			member.sendPacket(su);
 		}
 		return true;
 	}

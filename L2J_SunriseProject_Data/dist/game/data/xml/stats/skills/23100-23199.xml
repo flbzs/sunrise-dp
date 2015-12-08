@@ -775,6 +775,7 @@
 		<for>
 			<effect name="ResurrectionSpecial" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="resurrection_special">
 				<param power="100" />
+				<param heal="true" />
 			</effect>
 		</for>
 	</skill>

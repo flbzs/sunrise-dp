@@ -18,16 +18,12 @@
  */
 package quests.Q00350_EnhanceYourWeapon;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import l2r.Config;
 import l2r.gameserver.model.AbsorberInfo;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Attackable;
@@ -41,6 +37,7 @@ import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.InventoryUpdate;
 import l2r.gameserver.network.serverpackets.SystemMessage;
+import l2r.util.data.xml.IXmlReader.IXmlReader;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -48,9 +45,9 @@ import org.w3c.dom.Node;
 
 /**
  * Enhance Your Weapon (350)
- * @author Gigiikun
+ * @author Gigiikun reworked vGodFather
  */
-public class Q00350_EnhanceYourWeapon extends Quest
+public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 {
 	private static enum AbsorbCrystalType
 	{
@@ -140,10 +137,151 @@ public class Q00350_EnhanceYourWeapon extends Quest
 		addStartNpc(STARTING_NPCS);
 		addTalkId(STARTING_NPCS);
 		load();
-		for (int npcId : NPC_LEVELING_INFO.keySet())
+		addSkillSeeId(NPC_LEVELING_INFO.keySet());
+		addKillId(NPC_LEVELING_INFO.keySet());
+	}
+	
+	@Override
+	public void load()
+	{
+		NPC_LEVELING_INFO.clear();
+		SOUL_CRYSTALS.clear();
+		parseDatapackFile("data/xml/other/levelUpCrystalData.xml");
+		LOGGER.info("EnhanceYourWeapon: Loaded " + SOUL_CRYSTALS.size() + " Soul Crystal data.");
+		LOGGER.info("EnhanceYourWeapon: Loaded " + NPC_LEVELING_INFO.size() + " npc Leveling info data.");
+	}
+	
+	@Override
+	public void parseDocument(Document doc)
+	{
+		Node first = doc.getFirstChild();
+		if ((first != null) && "list".equalsIgnoreCase(first.getNodeName()))
 		{
-			addSkillSeeId(npcId);
-			addKillId(npcId);
+			for (Node n = first.getFirstChild(); n != null; n = n.getNextSibling())
+			{
+				if ("crystal".equalsIgnoreCase(n.getNodeName()))
+				{
+					for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+					{
+						if ("item".equalsIgnoreCase(d.getNodeName()))
+						{
+							NamedNodeMap attrs = d.getAttributes();
+							Node att = attrs.getNamedItem("itemId");
+							if (att == null)
+							{
+								_log.error("EnhanceYourWeapon: Missing itemId in Crystal List, skipping");
+								continue;
+							}
+							int itemId = Integer.parseInt(attrs.getNamedItem("itemId").getNodeValue());
+							
+							att = attrs.getNamedItem("level");
+							if (att == null)
+							{
+								_log.error("EnhanceYourWeapon: Missing level in Crystal List itemId: " + itemId + ", skipping");
+								continue;
+							}
+							int level = Integer.parseInt(attrs.getNamedItem("level").getNodeValue());
+							
+							att = attrs.getNamedItem("leveledItemId");
+							if (att == null)
+							{
+								_log.error("EnhanceYourWeapon: Missing leveledItemId in Crystal List itemId: " + itemId + ", skipping");
+								continue;
+							}
+							int leveledItemId = Integer.parseInt(attrs.getNamedItem("leveledItemId").getNodeValue());
+							
+							SOUL_CRYSTALS.put(itemId, new SoulCrystal(level, itemId, leveledItemId));
+						}
+					}
+				}
+				else if ("npc".equalsIgnoreCase(n.getNodeName()))
+				{
+					for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+					{
+						if ("item".equalsIgnoreCase(d.getNodeName()))
+						{
+							NamedNodeMap attrs = d.getAttributes();
+							Node att = attrs.getNamedItem("npcId");
+							if (att == null)
+							{
+								_log.error("EnhanceYourWeapon: Missing npcId in NPC List, skipping");
+								continue;
+							}
+							
+							int npcId = Integer.parseInt(att.getNodeValue());
+							Map<Integer, LevelingInfo> temp = new HashMap<>();
+							for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
+							{
+								boolean isSkillNeeded = false;
+								int chance = 5;
+								AbsorbCrystalType absorbType = AbsorbCrystalType.LAST_HIT;
+								
+								if ("detail".equalsIgnoreCase(cd.getNodeName()))
+								{
+									attrs = cd.getAttributes();
+									
+									att = attrs.getNamedItem("absorbType");
+									if (att != null)
+									{
+										absorbType = Enum.valueOf(AbsorbCrystalType.class, att.getNodeValue());
+									}
+									
+									att = attrs.getNamedItem("chance");
+									if (att != null)
+									{
+										chance = Integer.parseInt(att.getNodeValue());
+									}
+									
+									att = attrs.getNamedItem("skill");
+									if (att != null)
+									{
+										isSkillNeeded = Boolean.parseBoolean(att.getNodeValue());
+									}
+									
+									Node att1 = attrs.getNamedItem("maxLevel");
+									Node att2 = attrs.getNamedItem("levelList");
+									if ((att1 == null) && (att2 == null))
+									{
+										_log.error("EnhanceYourWeapon: Missing maxlevel/levelList in NPC List npcId: " + npcId + ", skipping");
+										continue;
+									}
+									LevelingInfo info = new LevelingInfo(absorbType, isSkillNeeded, chance);
+									if (att1 != null)
+									{
+										int maxLevel = Integer.parseInt(att1.getNodeValue());
+										for (int i = 0; i <= maxLevel; i++)
+										{
+											temp.put(i, info);
+										}
+									}
+									else if (att2 != null)
+									{
+										StringTokenizer st = new StringTokenizer(att2.getNodeValue(), ",");
+										int tokenCount = st.countTokens();
+										for (int i = 0; i < tokenCount; i++)
+										{
+											Integer value = Integer.decode(st.nextToken().trim());
+											if (value == null)
+											{
+												_log.error("EnhanceYourWeapon: Bad Level value!! npcId: " + npcId + " token: " + i);
+												value = 0;
+											}
+											temp.put(value, info);
+										}
+									}
+								}
+							}
+							
+							if (temp.isEmpty())
+							{
+								_log.error("EnhanceYourWeapon: No leveling info for npcId: " + npcId + ", skipping");
+								continue;
+							}
+							NPC_LEVELING_INFO.put(npcId, temp);
+						}
+					}
+				}
+			}
 		}
 	}
 	
@@ -407,10 +545,8 @@ public class Q00350_EnhanceYourWeapon extends Quest
 		}
 		// Init some useful vars
 		LevelingInfo mainlvlInfo = NPC_LEVELING_INFO.get(mob.getId()).get(maxSCLevel);
-		
 		if (mainlvlInfo == null)
 		{
-			/* throw new NullPointerException("Target: "+mob+ " player: "+killer+" level: "+maxSCLevel); */
 			return;
 		}
 		
@@ -418,7 +554,7 @@ public class Q00350_EnhanceYourWeapon extends Quest
 		if (mainlvlInfo.isSkillNeeded())
 		{
 			// Fail if this L2Attackable isn't absorbed or there's no one in its _absorbersList
-			if (!mob.isAbsorbed() /* || _absorbersList == null */)
+			if (!mob.isAbsorbed())
 			{
 				mob.resetAbsorbList();
 				return;
@@ -497,162 +633,5 @@ public class Q00350_EnhanceYourWeapon extends Quest
 				levelCrystal(killer, players.get(killer), mob);
 				break;
 		}
-	}
-	
-	/**
-	 * TODO: Implement using DocumentParser.
-	 */
-	private static void load()
-	{
-		try
-		{
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			factory.setValidating(false);
-			factory.setIgnoringComments(true);
-			
-			File file = new File(Config.DATAPACK_ROOT, "data/xml/other/levelUpCrystalData.xml");
-			if (!file.exists())
-			{
-				_log.error("EnhanceYourWeapon: Missing data/xml/other/levelUpCrystalData.xml.");
-				return;
-			}
-			
-			Document doc = factory.newDocumentBuilder().parse(file);
-			Node first = doc.getFirstChild();
-			if ((first != null) && "list".equalsIgnoreCase(first.getNodeName()))
-			{
-				for (Node n = first.getFirstChild(); n != null; n = n.getNextSibling())
-				{
-					if ("crystal".equalsIgnoreCase(n.getNodeName()))
-					{
-						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-						{
-							if ("item".equalsIgnoreCase(d.getNodeName()))
-							{
-								NamedNodeMap attrs = d.getAttributes();
-								Node att = attrs.getNamedItem("itemId");
-								if (att == null)
-								{
-									_log.error("EnhanceYourWeapon: Missing itemId in Crystal List, skipping");
-									continue;
-								}
-								int itemId = Integer.parseInt(attrs.getNamedItem("itemId").getNodeValue());
-								
-								att = attrs.getNamedItem("level");
-								if (att == null)
-								{
-									_log.error("EnhanceYourWeapon: Missing level in Crystal List itemId: " + itemId + ", skipping");
-									continue;
-								}
-								int level = Integer.parseInt(attrs.getNamedItem("level").getNodeValue());
-								
-								att = attrs.getNamedItem("leveledItemId");
-								if (att == null)
-								{
-									_log.error("EnhanceYourWeapon: Missing leveledItemId in Crystal List itemId: " + itemId + ", skipping");
-									continue;
-								}
-								int leveledItemId = Integer.parseInt(attrs.getNamedItem("leveledItemId").getNodeValue());
-								
-								SOUL_CRYSTALS.put(itemId, new SoulCrystal(level, itemId, leveledItemId));
-							}
-						}
-					}
-					else if ("npc".equalsIgnoreCase(n.getNodeName()))
-					{
-						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-						{
-							if ("item".equalsIgnoreCase(d.getNodeName()))
-							{
-								NamedNodeMap attrs = d.getAttributes();
-								Node att = attrs.getNamedItem("npcId");
-								if (att == null)
-								{
-									_log.error("EnhanceYourWeapon: Missing npcId in NPC List, skipping");
-									continue;
-								}
-								
-								int npcId = Integer.parseInt(att.getNodeValue());
-								Map<Integer, LevelingInfo> temp = new HashMap<>();
-								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-								{
-									boolean isSkillNeeded = false;
-									int chance = 5;
-									AbsorbCrystalType absorbType = AbsorbCrystalType.LAST_HIT;
-									
-									if ("detail".equalsIgnoreCase(cd.getNodeName()))
-									{
-										attrs = cd.getAttributes();
-										
-										att = attrs.getNamedItem("absorbType");
-										if (att != null)
-										{
-											absorbType = Enum.valueOf(AbsorbCrystalType.class, att.getNodeValue());
-										}
-										
-										att = attrs.getNamedItem("chance");
-										if (att != null)
-										{
-											chance = Integer.parseInt(att.getNodeValue());
-										}
-										
-										att = attrs.getNamedItem("skill");
-										if (att != null)
-										{
-											isSkillNeeded = Boolean.parseBoolean(att.getNodeValue());
-										}
-										
-										Node att1 = attrs.getNamedItem("maxLevel");
-										Node att2 = attrs.getNamedItem("levelList");
-										if ((att1 == null) && (att2 == null))
-										{
-											_log.error("EnhanceYourWeapon: Missing maxlevel/levelList in NPC List npcId: " + npcId + ", skipping");
-											continue;
-										}
-										LevelingInfo info = new LevelingInfo(absorbType, isSkillNeeded, chance);
-										if (att1 != null)
-										{
-											int maxLevel = Integer.parseInt(att1.getNodeValue());
-											for (int i = 0; i <= maxLevel; i++)
-											{
-												temp.put(i, info);
-											}
-										}
-										else if (att2 != null)
-										{
-											StringTokenizer st = new StringTokenizer(att2.getNodeValue(), ",");
-											int tokenCount = st.countTokens();
-											for (int i = 0; i < tokenCount; i++)
-											{
-												Integer value = Integer.decode(st.nextToken().trim());
-												if (value == null)
-												{
-													_log.error("EnhanceYourWeapon: Bad Level value!! npcId: " + npcId + " token: " + i);
-													value = 0;
-												}
-												temp.put(value, info);
-											}
-										}
-									}
-								}
-								
-								if (temp.isEmpty())
-								{
-									_log.error("EnhanceYourWeapon: No leveling info for npcId: " + npcId + ", skipping");
-									continue;
-								}
-								NPC_LEVELING_INFO.put(npcId, temp);
-							}
-						}
-					}
-				}
-			}
-		}
-		catch (Exception e)
-		{
-			_log.warn("EnhanceYourWeapon: Could not parse levelUpCrystalData.xml file: " + e.getMessage(), e);
-		}
-		_log.info("EnhanceYourWeapon: Loaded " + SOUL_CRYSTALS.size() + " Soul Crystal data.");
-		_log.info("EnhanceYourWeapon: Loaded " + NPC_LEVELING_INFO.size() + " npc Leveling info data.");
 	}
 }

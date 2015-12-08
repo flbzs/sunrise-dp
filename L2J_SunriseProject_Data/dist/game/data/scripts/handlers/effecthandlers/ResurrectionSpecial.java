@@ -24,7 +24,6 @@ import l2r.gameserver.model.effects.EffectFlag;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
-import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.stats.Env;
 
 /**
@@ -34,12 +33,14 @@ import l2r.gameserver.model.stats.Env;
 public final class ResurrectionSpecial extends L2Effect
 {
 	private final int _power;
+	private final boolean _heal;
 	
 	public ResurrectionSpecial(Env env, EffectTemplate template)
 	{
 		super(env, template);
 		
 		_power = template.getParameters().getInt("power", 0);
+		_heal = template.getParameters().getBoolean("heal", false);
 	}
 	
 	@Override
@@ -61,19 +62,18 @@ public final class ResurrectionSpecial extends L2Effect
 		{
 			return;
 		}
+		
 		L2PcInstance caster = getEffector().getActingPlayer();
-		
-		L2Skill skill = getSkill();
-		
 		if (getEffected().isPlayer())
 		{
-			getEffected().getActingPlayer().reviveRequest(caster, skill, false, _power);
+			getEffected().getActingPlayer().reviveRequest(caster, getSkill(), false, _power, _heal);
 			return;
 		}
+		
 		if (getEffected().isPet())
 		{
 			L2PetInstance pet = (L2PetInstance) getEffected();
-			getEffected().getActingPlayer().reviveRequest(pet.getActingPlayer(), skill, true, _power);
+			getEffected().getActingPlayer().reviveRequest(pet.getActingPlayer(), getSkill(), true, _power, _heal);
 		}
 	}
 }
