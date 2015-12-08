@@ -397,12 +397,8 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="DeleteHateOfMe" noicon="1" val="0">
-				<param chance="80" />
-			</effect>
-			<effect name="RemoveTarget" val="0">
-				<param chance="80" />
-			</effect>
+			<effect name="DeleteHateOfMe" noicon="1" val="0" />
+			<effect name="RemoveTarget" val="0" />
 		</for>
 	</skill>
 	<skill id="12" levels="14" name="Switch">
@@ -426,12 +422,8 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="RandomizeHate" noicon="1" val="0">
-				<param chance="80" />
-			</effect>
-			<effect name="RemoveTarget" val="0">
-				<param chance="80" />
-			</effect>
+			<effect name="DeleteHateOfMe" noicon="1" val="0" />
+			<effect name="RemoveTarget" val="0" />
 		</for>
 	</skill>
 	<skill id="13" levels="1" name="Summon Siege Golem" enchantGroup1="1">
