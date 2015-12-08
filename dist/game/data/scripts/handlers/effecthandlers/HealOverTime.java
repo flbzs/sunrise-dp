@@ -23,7 +23,6 @@ import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.serverpackets.ExRegMax;
-import l2r.gameserver.network.serverpackets.StatusUpdate;
 
 public class HealOverTime extends L2Effect
 {
@@ -81,9 +80,6 @@ public class HealOverTime extends L2Effect
 		hp = Math.min(hp, maxhp);
 		
 		getEffected().setCurrentHp(hp);
-		StatusUpdate suhp = new StatusUpdate(getEffected());
-		suhp.addAttribute(StatusUpdate.CUR_HP, (int) hp);
-		getEffected().sendPacket(suhp);
 		return true;
 	}
 }

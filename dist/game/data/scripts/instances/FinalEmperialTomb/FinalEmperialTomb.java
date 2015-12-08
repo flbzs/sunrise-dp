@@ -18,7 +18,6 @@
  */
 package instances.FinalEmperialTomb;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,8 +27,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-
-import javax.xml.parsers.DocumentBuilderFactory;
 
 import l2r.Config;
 import l2r.gameserver.GeoData;
@@ -55,7 +52,6 @@ import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.AbstractNpcInfo.NpcInfo;
 import l2r.gameserver.network.serverpackets.Earthquake;
 import l2r.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2r.gameserver.network.serverpackets.L2GameServerPacket;
@@ -65,6 +61,7 @@ import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.gameserver.network.serverpackets.SpecialCamera;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
+import l2r.util.data.xml.IXmlReader.IXmlReader;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -79,7 +76,7 @@ import instances.AbstractInstance;
  * Use proper zone spawn system.
  * @author Gigiikun
  */
-public final class FinalEmperialTomb extends AbstractInstance
+public final class FinalEmperialTomb extends AbstractInstance implements IXmlReader
 {
 	protected class FETWorld extends InstanceWorld
 	{
@@ -189,6 +186,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 	private static final boolean debug = false;
 	private final Map<Integer, L2Territory> _spawnZoneList = new HashMap<>();
 	private final Map<Integer, List<FETSpawn>> _spawnList = new HashMap<>();
+	private int _spawnsCount = 0;
 	private final List<Integer> _mustKillMobsId = new ArrayList<>();
 	protected static final int[] FIRST_ROOM_DOORS =
 	{
@@ -249,223 +247,212 @@ public final class FinalEmperialTomb extends AbstractInstance
 		addSpellFinishedId(HALL_KEEPER_SUICIDAL_SOLDIER);
 	}
 	
-	private void load()
+	@Override
+	public void load()
 	{
-		int spawnCount = 0;
-		try
+		_spawnsCount = 0;
+		_spawnList.clear();
+		_spawnZoneList.clear();
+		parseDatapackFile("data/xml/spawnZones/final_emperial_tomb.xml");
+		LOGGER.info(FinalEmperialTomb.class.getSimpleName() + " Loaded " + _spawnZoneList.size() + " spawn zones data.");
+		LOGGER.info(FinalEmperialTomb.class.getSimpleName() + " Loaded " + _spawnsCount + " spawns data.");
+	}
+	
+	@Override
+	public void parseDocument(Document doc)
+	{
+		Node first = doc.getFirstChild();
+		if ((first != null) && "list".equalsIgnoreCase(first.getNodeName()))
 		{
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			factory.setValidating(false);
-			factory.setIgnoringComments(true);
-			
-			File file = new File(Config.DATAPACK_ROOT + "/data/xml/spawnZones/final_emperial_tomb.xml");
-			if (!file.exists())
+			for (Node n = first.getFirstChild(); n != null; n = n.getNextSibling())
 			{
-				_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing final_emperial_tomb.xml. The quest wont work without it!");
-				return;
-			}
-			
-			Document doc = factory.newDocumentBuilder().parse(file);
-			Node first = doc.getFirstChild();
-			if ((first != null) && "list".equalsIgnoreCase(first.getNodeName()))
-			{
-				for (Node n = first.getFirstChild(); n != null; n = n.getNextSibling())
+				if ("npc".equalsIgnoreCase(n.getNodeName()))
 				{
-					if ("npc".equalsIgnoreCase(n.getNodeName()))
+					for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 					{
-						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+						if ("spawn".equalsIgnoreCase(d.getNodeName()))
 						{
-							if ("spawn".equalsIgnoreCase(d.getNodeName()))
+							NamedNodeMap attrs = d.getAttributes();
+							Node att = attrs.getNamedItem("npcId");
+							if (att == null)
 							{
-								NamedNodeMap attrs = d.getAttributes();
-								Node att = attrs.getNamedItem("npcId");
-								if (att == null)
+								_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing npcId in npc List, skipping");
+								continue;
+							}
+							int npcId = Integer.parseInt(attrs.getNamedItem("npcId").getNodeValue());
+							
+							att = attrs.getNamedItem("flag");
+							if (att == null)
+							{
+								_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing flag in npc List npcId: " + npcId + ", skipping");
+								continue;
+							}
+							
+							int flag = Integer.parseInt(attrs.getNamedItem("flag").getNodeValue());
+							_spawnList.putIfAbsent(flag, new ArrayList<FETSpawn>());
+							
+							for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
+							{
+								if ("loc".equalsIgnoreCase(cd.getNodeName()))
 								{
-									_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing npcId in npc List, skipping");
-									continue;
-								}
-								int npcId = Integer.parseInt(attrs.getNamedItem("npcId").getNodeValue());
-								
-								att = attrs.getNamedItem("flag");
-								if (att == null)
-								{
-									_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing flag in npc List npcId: " + npcId + ", skipping");
-									continue;
-								}
-								
-								int flag = Integer.parseInt(attrs.getNamedItem("flag").getNodeValue());
-								_spawnList.putIfAbsent(flag, new ArrayList<FETSpawn>());
-								
-								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-								{
-									if ("loc".equalsIgnoreCase(cd.getNodeName()))
+									attrs = cd.getAttributes();
+									FETSpawn spw = new FETSpawn();
+									spw.npcId = npcId;
+									
+									att = attrs.getNamedItem("x");
+									if (att != null)
 									{
-										attrs = cd.getAttributes();
-										FETSpawn spw = new FETSpawn();
-										spw.npcId = npcId;
-										
-										att = attrs.getNamedItem("x");
-										if (att != null)
-										{
-											spw.x = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("y");
-										if (att != null)
-										{
-											spw.y = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("z");
-										if (att != null)
-										{
-											spw.z = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("heading");
-										if (att != null)
-										{
-											spw.h = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("mustKill");
-										if (att != null)
-										{
-											spw.isNeededNextFlag = Boolean.parseBoolean(att.getNodeValue());
-										}
-										if (spw.isNeededNextFlag)
-										{
-											_mustKillMobsId.add(npcId);
-										}
-										_spawnList.get(flag).add(spw);
-										spawnCount++;
+										spw.x = Integer.parseInt(att.getNodeValue());
 									}
-									else if ("zone".equalsIgnoreCase(cd.getNodeName()))
+									else
 									{
-										attrs = cd.getAttributes();
-										FETSpawn spw = new FETSpawn();
-										spw.npcId = npcId;
-										spw.isZone = true;
-										
-										att = attrs.getNamedItem("id");
-										if (att != null)
-										{
-											spw.zone = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("count");
-										if (att != null)
-										{
-											spw.count = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("mustKill");
-										if (att != null)
-										{
-											spw.isNeededNextFlag = Boolean.parseBoolean(att.getNodeValue());
-										}
-										if (spw.isNeededNextFlag)
-										{
-											_mustKillMobsId.add(npcId);
-										}
-										_spawnList.get(flag).add(spw);
-										spawnCount++;
+										continue;
 									}
+									att = attrs.getNamedItem("y");
+									if (att != null)
+									{
+										spw.y = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									att = attrs.getNamedItem("z");
+									if (att != null)
+									{
+										spw.z = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									att = attrs.getNamedItem("heading");
+									if (att != null)
+									{
+										spw.h = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									att = attrs.getNamedItem("mustKill");
+									if (att != null)
+									{
+										spw.isNeededNextFlag = Boolean.parseBoolean(att.getNodeValue());
+									}
+									if (spw.isNeededNextFlag)
+									{
+										_mustKillMobsId.add(npcId);
+									}
+									_spawnList.get(flag).add(spw);
+									_spawnsCount++;
+								}
+								else if ("zone".equalsIgnoreCase(cd.getNodeName()))
+								{
+									attrs = cd.getAttributes();
+									FETSpawn spw = new FETSpawn();
+									spw.npcId = npcId;
+									spw.isZone = true;
+									
+									att = attrs.getNamedItem("id");
+									if (att != null)
+									{
+										spw.zone = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									att = attrs.getNamedItem("count");
+									if (att != null)
+									{
+										spw.count = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									att = attrs.getNamedItem("mustKill");
+									if (att != null)
+									{
+										spw.isNeededNextFlag = Boolean.parseBoolean(att.getNodeValue());
+									}
+									if (spw.isNeededNextFlag)
+									{
+										_mustKillMobsId.add(npcId);
+									}
+									_spawnList.get(flag).add(spw);
+									_spawnsCount++;
 								}
 							}
 						}
 					}
-					else if ("spawnZones".equalsIgnoreCase(n.getNodeName()))
+				}
+				else if ("spawnZones".equalsIgnoreCase(n.getNodeName()))
+				{
+					for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 					{
-						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+						if ("zone".equalsIgnoreCase(d.getNodeName()))
 						{
-							if ("zone".equalsIgnoreCase(d.getNodeName()))
+							NamedNodeMap attrs = d.getAttributes();
+							Node att = attrs.getNamedItem("id");
+							if (att == null)
 							{
-								NamedNodeMap attrs = d.getAttributes();
-								Node att = attrs.getNamedItem("id");
-								if (att == null)
-								{
-									_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing id in spawnZones List, skipping");
-									continue;
-								}
-								int id = Integer.parseInt(att.getNodeValue());
-								att = attrs.getNamedItem("minZ");
-								if (att == null)
-								{
-									_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing minZ in spawnZones List id: " + id + ", skipping");
-									continue;
-								}
-								int minz = Integer.parseInt(att.getNodeValue());
-								att = attrs.getNamedItem("maxZ");
-								if (att == null)
-								{
-									_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing maxZ in spawnZones List id: " + id + ", skipping");
-									continue;
-								}
-								int maxz = Integer.parseInt(att.getNodeValue());
-								L2Territory ter = new L2Territory(id);
-								
-								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-								{
-									if ("point".equalsIgnoreCase(cd.getNodeName()))
-									{
-										attrs = cd.getAttributes();
-										int x, y;
-										att = attrs.getNamedItem("x");
-										if (att != null)
-										{
-											x = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("y");
-										if (att != null)
-										{
-											y = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										
-										ter.add(x, y, minz, maxz, 0);
-									}
-								}
-								
-								_spawnZoneList.put(id, ter);
+								_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing id in spawnZones List, skipping");
+								continue;
 							}
+							int id = Integer.parseInt(att.getNodeValue());
+							att = attrs.getNamedItem("minZ");
+							if (att == null)
+							{
+								_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing minZ in spawnZones List id: " + id + ", skipping");
+								continue;
+							}
+							int minz = Integer.parseInt(att.getNodeValue());
+							att = attrs.getNamedItem("maxZ");
+							if (att == null)
+							{
+								_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing maxZ in spawnZones List id: " + id + ", skipping");
+								continue;
+							}
+							int maxz = Integer.parseInt(att.getNodeValue());
+							L2Territory ter = new L2Territory(id);
+							
+							for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
+							{
+								if ("point".equalsIgnoreCase(cd.getNodeName()))
+								{
+									attrs = cd.getAttributes();
+									int x, y;
+									att = attrs.getNamedItem("x");
+									if (att != null)
+									{
+										x = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									att = attrs.getNamedItem("y");
+									if (att != null)
+									{
+										y = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									
+									ter.add(x, y, minz, maxz, 0);
+								}
+							}
+							
+							_spawnZoneList.put(id, ter);
 						}
 					}
 				}
 			}
 		}
-		catch (Exception e)
-		{
-			_log.warn(FinalEmperialTomb.class.getSimpleName() + " Could not parse final_emperial_tomb.xml file: " + e.getMessage(), e);
-		}
-		
-		_log.info(FinalEmperialTomb.class.getSimpleName() + " Loaded " + _spawnZoneList.size() + " spawn zones data.");
-		_log.info(FinalEmperialTomb.class.getSimpleName() + " Loaded " + spawnCount + " spawns data.");
 	}
 	
 	@Override
@@ -924,7 +911,6 @@ public final class FinalEmperialTomb extends AbstractInstance
 					_world.overheadDummy.setIsInvul(true);
 					_world.overheadDummy.setIsImmobilized(true);
 					_world.overheadDummy.setCollisionHeight(600);
-					broadCastPacket(_world, new NpcInfo(_world.overheadDummy, null));
 					
 					_world.portraitDummy1 = addSpawn(29052, -89566, -153168, -9165, 16048, false, 0, false, _world.getInstanceId());
 					_world.portraitDummy1.setIsImmobilized(true);

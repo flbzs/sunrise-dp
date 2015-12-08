@@ -29,7 +29,6 @@ import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.model.stats.Formulas;
 import l2r.gameserver.model.stats.Stats;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.StatusUpdate;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -110,9 +109,6 @@ public class Heal extends L2Effect
 		if (amount != 0)
 		{
 			target.setCurrentHp(amount + target.getCurrentHp());
-			StatusUpdate su = new StatusUpdate(target);
-			su.addAttribute(StatusUpdate.CUR_HP, (int) target.getCurrentHp());
-			target.sendPacket(su);
 		}
 		
 		if (target.isPlayer())

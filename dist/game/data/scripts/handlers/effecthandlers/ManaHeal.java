@@ -24,7 +24,6 @@ import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.model.stats.Stats;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.StatusUpdate;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -64,9 +63,6 @@ public class ManaHeal extends L2Effect
 		if (amount != 0)
 		{
 			target.setCurrentMp(amount + target.getCurrentMp());
-			StatusUpdate su = new StatusUpdate(target);
-			su.addAttribute(StatusUpdate.CUR_MP, (int) target.getCurrentMp());
-			target.sendPacket(su);
 		}
 		SystemMessage sm;
 		if (getEffector().getObjectId() != target.getObjectId())

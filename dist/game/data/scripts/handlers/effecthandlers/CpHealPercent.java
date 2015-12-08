@@ -24,7 +24,6 @@ import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.StatusUpdate;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 
 /**
@@ -68,9 +67,6 @@ public class CpHealPercent extends L2Effect
 		if (amount != 0)
 		{
 			target.setCurrentCp(amount + target.getCurrentCp());
-			StatusUpdate su = new StatusUpdate(target);
-			su.addAttribute(StatusUpdate.CUR_CP, (int) target.getCurrentCp());
-			target.sendPacket(su);
 		}
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CP_WILL_BE_RESTORED);
 		sm.addInt((int) amount);

@@ -22,7 +22,6 @@ import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
-import l2r.gameserver.network.serverpackets.StatusUpdate;
 
 public class ManaHealOverTime extends L2Effect
 {
@@ -64,9 +63,6 @@ public class ManaHealOverTime extends L2Effect
 		mp = Math.min(mp, maxmp);
 		
 		getEffected().setCurrentMp(mp);
-		StatusUpdate sump = new StatusUpdate(getEffected());
-		sump.addAttribute(StatusUpdate.CUR_MP, (int) mp);
-		getEffected().sendPacket(sump);
 		return true;
 	}
 }
