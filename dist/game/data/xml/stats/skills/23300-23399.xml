@@ -170,7 +170,6 @@
 		<set name="abnormalLvl" val="7" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="bleeding" />
-		<set name="activateRate" val="80" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="40" />
 		<set name="hitTime" val="1500" />
@@ -189,7 +188,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<for>
-			<effect count="3" name="DamOverTime" abnormalTime="6" val="105" abnormalLvl="7" abnormalType="bleeding" abnormalVisualEffect="bleed" />
+			<effect count="3" name="DamOverTime" abnormalTime="6" val="105" abnormalLvl="7" abnormalType="bleeding" abnormalVisualEffect="bleed" effectPower="80" />
 		</for>
 	</skill>
 	<skill id="23320" levels="1" name="Greedy Throat">
