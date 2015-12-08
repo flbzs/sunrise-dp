@@ -133,12 +133,15 @@ public class RepairVCmd implements IVoicedCommandHandler
 			PreparedStatement statement = con.prepareStatement("SELECT char_name FROM characters WHERE account_name=?"))
 		{
 			statement.setString(1, repCharAcc);
-			ResultSet rset = statement.executeQuery();
-			while (rset.next())
+			
+			try (ResultSet rset = statement.executeQuery())
 			{
-				if (activeChar.getName().compareTo(rset.getString(1)) != 0)
+				while (rset.next())
 				{
-					result += rset.getString(1) + ";";
+					if (activeChar.getName().compareTo(rset.getString(1)) != 0)
+					{
+						result += rset.getString(1) + ";";
+					}
 				}
 			}
 		}
@@ -159,10 +162,13 @@ public class RepairVCmd implements IVoicedCommandHandler
 			PreparedStatement statement = con.prepareStatement("SELECT account_name FROM characters WHERE char_name=?"))
 		{
 			statement.setString(1, repairChar);
-			ResultSet rset = statement.executeQuery();
-			if (rset.next())
+			
+			try (ResultSet rset = statement.executeQuery())
 			{
-				repCharAcc = rset.getString(1);
+				if (rset.next())
+				{
+					repCharAcc = rset.getString(1);
+				}
 			}
 		}
 		catch (SQLException e)
@@ -200,10 +206,13 @@ public class RepairVCmd implements IVoicedCommandHandler
 			PreparedStatement statement = con.prepareStatement("SELECT karma FROM characters WHERE char_name=?"))
 		{
 			statement.setString(1, repairChar);
-			ResultSet rset = statement.executeQuery();
-			if (rset.next())
+			
+			try (ResultSet rset = statement.executeQuery())
 			{
-				repCharKarma = rset.getInt(1);
+				if (rset.next())
+				{
+					repCharKarma = rset.getInt(1);
+				}
 			}
 		}
 		catch (SQLException e)
@@ -237,9 +246,9 @@ public class RepairVCmd implements IVoicedCommandHandler
 			try (PreparedStatement statement = con.prepareStatement("SELECT charId FROM characters WHERE char_name=?"))
 			{
 				statement.setString(1, charName);
+				
 				try (ResultSet rset = statement.executeQuery())
 				{
-					
 					if (rset.next())
 					{
 						objId = rset.getInt(1);
@@ -252,6 +261,7 @@ public class RepairVCmd implements IVoicedCommandHandler
 				con.close();
 				return;
 			}
+			
 			try (PreparedStatement statement = con.prepareStatement("UPDATE characters SET x=17867, y=170259, z=-3503 WHERE charId=?"))
 			{
 				statement.setInt(1, objId);
@@ -265,6 +275,18 @@ public class RepairVCmd implements IVoicedCommandHandler
 			}
 			
 			try (PreparedStatement statement = con.prepareStatement("UPDATE items SET loc=\"WAREHOUSE\" WHERE owner_id=? AND loc=\"PAPERDOLL\""))
+			{
+				statement.setInt(1, objId);
+				statement.execute();
+			}
+			
+			try (PreparedStatement statement = con.prepareStatement("DELETE FROM character_ui_actions WHERE charId=?"))
+			{
+				statement.setInt(1, objId);
+				statement.execute();
+			}
+			
+			try (PreparedStatement statement = con.prepareStatement("DELETE FROM character_ui_categories WHERE charId=?"))
 			{
 				statement.setInt(1, objId);
 				statement.execute();
