@@ -347,6 +347,7 @@ import quests.Q00381_LetsBecomeARoyalMember.Q00381_LetsBecomeARoyalMember;
 import quests.Q00382_KailsMagicCoin.Q00382_KailsMagicCoin;
 import quests.Q00383_TreasureHunt.Q00383_TreasureHunt;
 import quests.Q00385_YokeOfThePast.Q00385_YokeOfThePast;
+import quests.Q00386_StolenDignity.Q00386_StolenDignity;
 import quests.Q00401_PathToWarrior.Q00401_PathToWarrior;
 import quests.Q00402_PathOfTheHumanKnight.Q00402_PathOfTheHumanKnight;
 import quests.Q00403_PathOfTheRogue.Q00403_PathOfTheRogue;
@@ -859,6 +860,7 @@ public class QuestLoader
 		Q00382_KailsMagicCoin.class,
 		Q00383_TreasureHunt.class,
 		Q00385_YokeOfThePast.class,
+		Q00386_StolenDignity.class,
 		Q00401_PathToWarrior.class,
 		Q00402_PathOfTheHumanKnight.class,
 		Q00403_PathOfTheRogue.class,

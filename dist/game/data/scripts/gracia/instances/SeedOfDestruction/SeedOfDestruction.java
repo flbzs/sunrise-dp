@@ -18,7 +18,6 @@
  */
 package gracia.instances.SeedOfDestruction;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -26,8 +25,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-
-import javax.xml.parsers.DocumentBuilderFactory;
 
 import l2r.Config;
 import l2r.gameserver.GeoData;
@@ -50,8 +47,6 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.instance.L2TrapInstance;
 import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.instancezone.InstanceWorld;
-import l2r.gameserver.model.quest.Quest;
-import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
@@ -59,10 +54,13 @@ import l2r.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
+import l2r.util.data.xml.IXmlReader.IXmlReader;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Seed of Destruction instance zone.<br>
@@ -75,7 +73,7 @@ import org.w3c.dom.Node;
  * Please maintain consistency between the Seed scripts.
  * @author Gigiikun
  */
-public final class Stage1 extends Quest
+public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 {
 	protected class SOD1World extends InstanceWorld
 	{
@@ -83,6 +81,11 @@ public final class Stage1 extends Quest
 		public int deviceSpawnedMobCount = 0;
 		public Lock lock = new ReentrantLock();
 		public L2MonsterInstance tiat;
+		
+		public int _tiatCounter = 0;
+		public long _lastTiatSpeech = -1;
+		public int _thronePowerfullDevices = 0;
+		protected boolean _throneDoorClosed = false;
 	}
 	
 	protected static class SODSpawn
@@ -99,13 +102,14 @@ public final class Stage1 extends Quest
 	}
 	
 	private static final int INSTANCEID = 110; // this is the client number
-	private static final int MIN_PLAYERS = 36;
-	private static final int MAX_PLAYERS = 45;
+	private static final int MIN_PLAYERS = Config.MIN_PLAYER_TO_TIAT;
+	private static final int MAX_PLAYERS = Config.MAX_PLAYER_TO_TIAT;
 	private static final int MAX_DEVICESPAWNEDMOBCOUNT = 100; // prevent too much mob spawn
 	
 	private final Map<Integer, L2Territory> _spawnZoneList = new HashMap<>();
 	private final Map<Integer, List<SODSpawn>> _spawnList = new HashMap<>();
 	private final List<Integer> _mustKillMobsId = new ArrayList<>();
+	private int _spawnsCount = 0;
 	
 	// teleports
 	private static final Location ENTER_TELEPORT_1 = new Location(-242759, 219981, -9986);
@@ -216,14 +220,15 @@ public final class Stage1 extends Quest
 	private static final int RESET_DAY_1 = 4;
 	private static final int RESET_DAY_2 = 7;
 	
-	public Stage1()
+	public SeedOfDestruction()
 	{
-		super(-1, Stage1.class.getSimpleName(), "gracia/instances");
+		super(SeedOfDestruction.class.getSimpleName(), "gracia/instances");
 		load();
 		addStartNpc(ALENOS);
 		addTalkId(ALENOS);
 		addStartNpc(TELEPORT);
 		addTalkId(TELEPORT);
+		addFirstTalkId(TELEPORT);
 		addAttackId(OBELISK);
 		addSpawnId(OBELISK);
 		addKillId(OBELISK);
@@ -245,231 +250,223 @@ public final class Stage1 extends Quest
 		addKillId(_mustKillMobsId);
 	}
 	
-	private void load()
+	@Override
+	public void load()
 	{
-		int spawnCount = 0;
-		try
+		_spawnsCount = 0;
+		_spawnList.clear();
+		_spawnZoneList.clear();
+		parseDatapackFile("data/xml/spawnZones/seed_of_destruction.xml");
+		LOGGER.info(SeedOfDestruction.class.getSimpleName() + ": SeedOfDestruction Loaded " + _spawnZoneList.size() + " spawn zones data.");
+		LOGGER.info(SeedOfDestruction.class.getSimpleName() + ": Loaded " + _spawnsCount + " spawns data.");
+	}
+	
+	@Override
+	public void parseDocument(Document doc)
+	{
+		Node first = doc.getFirstChild();
+		if ((first != null) && "list".equalsIgnoreCase(first.getNodeName()))
 		{
-			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-			factory.setValidating(false);
-			factory.setIgnoringComments(true);
-			
-			File file = new File(Config.DATAPACK_ROOT + "/data/xml/spawnZones/seed_of_destruction.xml");
-			if (!file.exists())
+			for (Node n = first.getFirstChild(); n != null; n = n.getNextSibling())
 			{
-				_log.error("[Seed of Destruction] Missing seed_of_destruction.xml. The quest wont work without it!");
-				return;
-			}
-			
-			Document doc = factory.newDocumentBuilder().parse(file);
-			Node first = doc.getFirstChild();
-			if ((first != null) && "list".equalsIgnoreCase(first.getNodeName()))
-			{
-				for (Node n = first.getFirstChild(); n != null; n = n.getNextSibling())
+				if ("npc".equalsIgnoreCase(n.getNodeName()))
 				{
-					if ("npc".equalsIgnoreCase(n.getNodeName()))
+					for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 					{
-						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+						if ("spawn".equalsIgnoreCase(d.getNodeName()))
 						{
-							if ("spawn".equalsIgnoreCase(d.getNodeName()))
+							NamedNodeMap attrs = d.getAttributes();
+							Node att = attrs.getNamedItem("npcId");
+							if (att == null)
 							{
-								NamedNodeMap attrs = d.getAttributes();
-								Node att = attrs.getNamedItem("npcId");
-								if (att == null)
+								_log.error(SeedOfDestruction.class.getSimpleName() + ": Missing npcId in npc List, skipping");
+								continue;
+							}
+							int npcId = Integer.parseInt(attrs.getNamedItem("npcId").getNodeValue());
+							
+							att = attrs.getNamedItem("flag");
+							if (att == null)
+							{
+								_log.error(SeedOfDestruction.class.getSimpleName() + ": Missing flag in npc List npcId: " + npcId + ", skipping");
+								continue;
+							}
+							int flag = Integer.parseInt(attrs.getNamedItem("flag").getNodeValue());
+							if (!_spawnList.containsKey(flag))
+							{
+								_spawnList.put(flag, new ArrayList<SODSpawn>());
+							}
+							
+							for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
+							{
+								if ("loc".equalsIgnoreCase(cd.getNodeName()))
 								{
-									_log.error("[Seed of Destruction] Missing npcId in npc List, skipping");
-									continue;
-								}
-								int npcId = Integer.parseInt(attrs.getNamedItem("npcId").getNodeValue());
-								
-								att = attrs.getNamedItem("flag");
-								if (att == null)
-								{
-									_log.error("[Seed of Destruction] Missing flag in npc List npcId: " + npcId + ", skipping");
-									continue;
-								}
-								int flag = Integer.parseInt(attrs.getNamedItem("flag").getNodeValue());
-								if (!_spawnList.containsKey(flag))
-								{
-									_spawnList.put(flag, new ArrayList<SODSpawn>());
-								}
-								
-								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-								{
-									if ("loc".equalsIgnoreCase(cd.getNodeName()))
+									attrs = cd.getAttributes();
+									SODSpawn spw = new SODSpawn();
+									spw.npcId = npcId;
+									
+									att = attrs.getNamedItem("x");
+									if (att != null)
 									{
-										attrs = cd.getAttributes();
-										SODSpawn spw = new SODSpawn();
-										spw.npcId = npcId;
-										
-										att = attrs.getNamedItem("x");
-										if (att != null)
-										{
-											spw.x = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("y");
-										if (att != null)
-										{
-											spw.y = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("z");
-										if (att != null)
-										{
-											spw.z = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("heading");
-										if (att != null)
-										{
-											spw.h = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("mustKill");
-										if (att != null)
-										{
-											spw.isNeededNextFlag = Boolean.parseBoolean(att.getNodeValue());
-										}
-										if (spw.isNeededNextFlag)
-										{
-											_mustKillMobsId.add(npcId);
-										}
-										_spawnList.get(flag).add(spw);
-										spawnCount++;
+										spw.x = Integer.parseInt(att.getNodeValue());
 									}
-									else if ("zone".equalsIgnoreCase(cd.getNodeName()))
+									else
 									{
-										attrs = cd.getAttributes();
-										SODSpawn spw = new SODSpawn();
-										spw.npcId = npcId;
-										spw.isZone = true;
-										
-										att = attrs.getNamedItem("id");
-										if (att != null)
-										{
-											spw.zone = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("count");
-										if (att != null)
-										{
-											spw.count = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("mustKill");
-										if (att != null)
-										{
-											spw.isNeededNextFlag = Boolean.parseBoolean(att.getNodeValue());
-										}
-										if (spw.isNeededNextFlag)
-										{
-											_mustKillMobsId.add(npcId);
-										}
-										_spawnList.get(flag).add(spw);
-										spawnCount++;
+										continue;
 									}
+									att = attrs.getNamedItem("y");
+									if (att != null)
+									{
+										spw.y = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									att = attrs.getNamedItem("z");
+									if (att != null)
+									{
+										spw.z = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									att = attrs.getNamedItem("heading");
+									if (att != null)
+									{
+										spw.h = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									att = attrs.getNamedItem("mustKill");
+									if (att != null)
+									{
+										spw.isNeededNextFlag = Boolean.parseBoolean(att.getNodeValue());
+									}
+									if (spw.isNeededNextFlag)
+									{
+										_mustKillMobsId.add(npcId);
+									}
+									_spawnList.get(flag).add(spw);
+									_spawnsCount++;
+								}
+								else if ("zone".equalsIgnoreCase(cd.getNodeName()))
+								{
+									attrs = cd.getAttributes();
+									SODSpawn spw = new SODSpawn();
+									spw.npcId = npcId;
+									spw.isZone = true;
+									
+									att = attrs.getNamedItem("id");
+									if (att != null)
+									{
+										spw.zone = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									att = attrs.getNamedItem("count");
+									if (att != null)
+									{
+										spw.count = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									att = attrs.getNamedItem("mustKill");
+									if (att != null)
+									{
+										spw.isNeededNextFlag = Boolean.parseBoolean(att.getNodeValue());
+									}
+									if (spw.isNeededNextFlag)
+									{
+										_mustKillMobsId.add(npcId);
+									}
+									_spawnList.get(flag).add(spw);
+									_spawnsCount++;
 								}
 							}
 						}
 					}
-					else if ("spawnZones".equalsIgnoreCase(n.getNodeName()))
+				}
+				else if ("spawnZones".equalsIgnoreCase(n.getNodeName()))
+				{
+					for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 					{
-						for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+						if ("zone".equalsIgnoreCase(d.getNodeName()))
 						{
-							if ("zone".equalsIgnoreCase(d.getNodeName()))
+							NamedNodeMap attrs = d.getAttributes();
+							Node att = attrs.getNamedItem("id");
+							if (att == null)
 							{
-								NamedNodeMap attrs = d.getAttributes();
-								Node att = attrs.getNamedItem("id");
-								if (att == null)
-								{
-									_log.error("[Seed of Destruction] Missing id in spawnZones List, skipping");
-									continue;
-								}
-								int id = Integer.parseInt(att.getNodeValue());
-								att = attrs.getNamedItem("minZ");
-								if (att == null)
-								{
-									_log.error("[Seed of Destruction] Missing minZ in spawnZones List id: " + id + ", skipping");
-									continue;
-								}
-								int minz = Integer.parseInt(att.getNodeValue());
-								att = attrs.getNamedItem("maxZ");
-								if (att == null)
-								{
-									_log.error("[Seed of Destruction] Missing maxZ in spawnZones List id: " + id + ", skipping");
-									continue;
-								}
-								int maxz = Integer.parseInt(att.getNodeValue());
-								L2Territory ter = new L2Territory(id);
-								
-								for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
-								{
-									if ("point".equalsIgnoreCase(cd.getNodeName()))
-									{
-										attrs = cd.getAttributes();
-										int x, y;
-										att = attrs.getNamedItem("x");
-										if (att != null)
-										{
-											x = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										att = attrs.getNamedItem("y");
-										if (att != null)
-										{
-											y = Integer.parseInt(att.getNodeValue());
-										}
-										else
-										{
-											continue;
-										}
-										
-										ter.add(x, y, minz, maxz, 0);
-									}
-								}
-								
-								_spawnZoneList.put(id, ter);
+								_log.error(SeedOfDestruction.class.getSimpleName() + ": Missing id in spawnZones List, skipping");
+								continue;
 							}
+							int id = Integer.parseInt(att.getNodeValue());
+							att = attrs.getNamedItem("minZ");
+							if (att == null)
+							{
+								_log.error(SeedOfDestruction.class.getSimpleName() + ": Missing minZ in spawnZones List id: " + id + ", skipping");
+								continue;
+							}
+							int minz = Integer.parseInt(att.getNodeValue());
+							att = attrs.getNamedItem("maxZ");
+							if (att == null)
+							{
+								_log.error(SeedOfDestruction.class.getSimpleName() + ": Missing maxZ in spawnZones List id: " + id + ", skipping");
+								continue;
+							}
+							int maxz = Integer.parseInt(att.getNodeValue());
+							L2Territory ter = new L2Territory(id);
+							
+							for (Node cd = d.getFirstChild(); cd != null; cd = cd.getNextSibling())
+							{
+								if ("point".equalsIgnoreCase(cd.getNodeName()))
+								{
+									attrs = cd.getAttributes();
+									int x, y;
+									att = attrs.getNamedItem("x");
+									if (att != null)
+									{
+										x = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									att = attrs.getNamedItem("y");
+									if (att != null)
+									{
+										y = Integer.parseInt(att.getNodeValue());
+									}
+									else
+									{
+										continue;
+									}
+									
+									ter.add(x, y, minz, maxz, 0);
+								}
+							}
+							
+							_spawnZoneList.put(id, ter);
 						}
 					}
 				}
 			}
 		}
-		catch (Exception e)
-		{
-			_log.warn("[Seed of Destruction] Could not parse data.xml file: " + e.getMessage(), e);
-		}
-		if (Config.DEBUG)
-		{
-			_log.info("[Seed of Destruction] Loaded " + spawnCount + " spawns data.");
-			_log.info("[Seed of Destruction] Loaded " + _spawnZoneList.size() + " spawn zones data.");
-		}
 	}
 	
 	private boolean checkConditions(L2PcInstance player)
 	{
+		if (player.isGM())
+		{
+			return true;
+		}
+		
 		final L2Party party = player.getParty();
 		if (party == null)
 		{
@@ -494,7 +491,7 @@ public final class Stage1 extends Quest
 		}
 		for (L2PcInstance partyMember : channel.getMembers())
 		{
-			if (partyMember.getLevel() < 75)
+			if (partyMember.getLevel() < Config.MIN_LEVEL_TO_TIAT)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_S_LEVEL_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED);
 				sm.addPcName(partyMember);
@@ -553,6 +550,11 @@ public final class Stage1 extends Quest
 			if (Util.contains(ATTACKABLE_DOORS, door.getId()))
 			{
 				door.setIsAttackableDoor(true);
+				closeDoor(door.getId(), instanceId);
+			}
+			else if (door.getId() == THRONE_DOOR)
+			{
+				closeDoor(door.getId(), instanceId);
 			}
 		}
 		_log.info("Seed of Destruction started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
@@ -611,7 +613,7 @@ public final class Stage1 extends Quest
 							}
 							else
 							{
-								_log.info("[Seed of Destruction] Missing zone: " + spw.zone);
+								_log.info(SeedOfDestruction.class.getSimpleName() + ": Missing zone: " + spw.zone);
 							}
 						}
 					}
@@ -641,7 +643,7 @@ public final class Stage1 extends Quest
 						spawnFlaggedNPCs(world, 0);
 						break;
 					case 1:
-						ExShowScreenMessage message1 = new ExShowScreenMessage(NpcStringId.THE_ENEMIES_HAVE_ATTACKED_EVERYONE_COME_OUT_AND_FIGHT_URGH, 5, 1);
+						ExShowScreenMessage message1 = new ExShowScreenMessage(NpcStringId.THE_ENEMIES_HAVE_ATTACKED_EVERYONE_COME_OUT_AND_FIGHT_URGH, 5, 3000);
 						sendScreenMessage(world, message1);
 						for (int i : ENTRANCE_ROOM_DOORS)
 						{
@@ -654,7 +656,7 @@ public final class Stage1 extends Quest
 						// handled elsewhere
 						return true;
 					case 4:
-						ExShowScreenMessage message2 = new ExShowScreenMessage(NpcStringId.OBELISK_HAS_COLLAPSED_DONT_LET_THE_ENEMIES_JUMP_AROUND_WILDLY_ANYMORE, 5, 1);
+						ExShowScreenMessage message2 = new ExShowScreenMessage(NpcStringId.OBELISK_HAS_COLLAPSED_DONT_LET_THE_ENEMIES_JUMP_AROUND_WILDLY_ANYMORE, 5, 3000);
 						sendScreenMessage(world, message2);
 						for (int i : SQUARE_DOORS)
 						{
@@ -674,7 +676,7 @@ public final class Stage1 extends Quest
 						spawnFlaggedNPCs(world, 7);
 						break;
 					case 8:
-						ExShowScreenMessage message4 = new ExShowScreenMessage(NpcStringId.COME_OUT_WARRIORS_PROTECT_SEED_OF_DESTRUCTION, 5, 1);
+						ExShowScreenMessage message4 = new ExShowScreenMessage(NpcStringId.COME_OUT_WARRIORS_PROTECT_SEED_OF_DESTRUCTION, 5, 3000);
 						sendScreenMessage(world, message4);
 						world.deviceSpawnedMobCount = 0;
 						spawnFlaggedNPCs(world, 8);
@@ -740,6 +742,7 @@ public final class Stage1 extends Quest
 		}
 		else if (npcId == TIAT)
 		{
+			npc.setIsImmobilized(true);
 			world.tiat = (L2MonsterInstance) npc;
 			for (int i = 0; i < TIAT_GUARD_NUMBER; i++)
 			{
@@ -908,7 +911,7 @@ public final class Stage1 extends Quest
 				{
 					world.deviceSpawnedMobCount = 0;
 					spawnFlaggedNPCs(world, 6);
-					ExShowScreenMessage message3 = new ExShowScreenMessage(NpcStringId.ENEMIES_ARE_TRYING_TO_DESTROY_THE_FORTRESS_EVERYONE_DEFEND_THE_FORTRESS, 5, 1);
+					ExShowScreenMessage message3 = new ExShowScreenMessage(NpcStringId.ENEMIES_ARE_TRYING_TO_DESTROY_THE_FORTRESS_EVERYONE_DEFEND_THE_FORTRESS, 5, 3000);
 					sendScreenMessage(world, message3);
 				}
 				else
@@ -983,9 +986,13 @@ public final class Stage1 extends Quest
 			}
 			else if ((world.getStatus() == 6) && (npc.getId() == THRONE_POWERFUL_DEVICE))
 			{
-				if (checkKillProgress(npc, world))
+				world._thronePowerfullDevices++;
+				if (world._thronePowerfullDevices >= 2)
 				{
-					spawnState(world);
+					if (checkKillProgress(npc, world))
+					{
+						spawnState(world);
+					}
 				}
 			}
 			else if (world.getStatus() >= 7)
@@ -1020,29 +1027,30 @@ public final class Stage1 extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		int npcId = npc.getId();
-		QuestState st = player.getQuestState(getName());
-		if (st == null)
+		switch (npc.getId())
 		{
-			st = newQuestState(player);
-		}
-		if (npcId == ALENOS)
-		{
-			InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
-			if ((SoDManager.getInstance().getSoDState() == 1) || ((world != null) && (world instanceof SOD1World)))
-			{
-				enterInstance(player, "SeedOfDestructionStage1.xml", ENTER_TELEPORT_1);
-			}
-			else if (SoDManager.getInstance().getSoDState() == 2)
-			{
-				teleportPlayer(player, ENTER_TELEPORT_2, 0, false);
-			}
-		}
-		else if (npcId == TELEPORT)
-		{
-			teleportPlayer(player, CENTER_TELEPORT, player.getInstanceId(), false);
+			case ALENOS:
+				InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
+				if ((SoDManager.getInstance().getSoDState() == 1) || ((world != null) && (world instanceof SOD1World)))
+				{
+					enterInstance(player, "SeedOfDestructionStage1.xml", ENTER_TELEPORT_1);
+				}
+				else if (SoDManager.getInstance().getSoDState() == 2)
+				{
+					teleportPlayer(player, ENTER_TELEPORT_2, 0, false);
+				}
+				break;
+			case TELEPORT:
+				teleportPlayer(player, CENTER_TELEPORT, player.getInstanceId(), false);
+				break;
 		}
 		return "";
+	}
+	
+	@Override
+	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	{
+		return "32601.htm";
 	}
 	
 	@Override
