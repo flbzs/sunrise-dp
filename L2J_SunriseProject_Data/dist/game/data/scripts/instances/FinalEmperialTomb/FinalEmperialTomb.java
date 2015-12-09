@@ -36,6 +36,7 @@ import l2r.gameserver.enums.InstanceType;
 import l2r.gameserver.enums.PcCondOverride;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.L2CommandChannel;
+import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.L2Party;
 import l2r.gameserver.model.L2Territory;
 import l2r.gameserver.model.L2World;
@@ -244,6 +245,7 @@ public final class FinalEmperialTomb extends AbstractInstance implements IXmlRea
 		addKillId(PORTRAITS);
 		addKillId(DEMONS);
 		addKillId(_mustKillMobsId);
+		addSkillSeeId(PORTRAITS);
 		addSpellFinishedId(HALL_KEEPER_SUICIDAL_SOLDIER);
 	}
 	
@@ -254,8 +256,8 @@ public final class FinalEmperialTomb extends AbstractInstance implements IXmlRea
 		_spawnList.clear();
 		_spawnZoneList.clear();
 		parseDatapackFile("data/xml/spawnZones/final_emperial_tomb.xml");
-		LOGGER.info(FinalEmperialTomb.class.getSimpleName() + " Loaded " + _spawnZoneList.size() + " spawn zones data.");
-		LOGGER.info(FinalEmperialTomb.class.getSimpleName() + " Loaded " + _spawnsCount + " spawns data.");
+		LOGGER.info(FinalEmperialTomb.class.getSimpleName() + ": Loaded " + _spawnZoneList.size() + " spawn zones data.");
+		LOGGER.info(FinalEmperialTomb.class.getSimpleName() + ": Loaded " + _spawnsCount + " spawns data.");
 	}
 	
 	@Override
@@ -276,7 +278,7 @@ public final class FinalEmperialTomb extends AbstractInstance implements IXmlRea
 							Node att = attrs.getNamedItem("npcId");
 							if (att == null)
 							{
-								_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing npcId in npc List, skipping");
+								_log.error(FinalEmperialTomb.class.getSimpleName() + ": Missing npcId in npc List, skipping");
 								continue;
 							}
 							int npcId = Integer.parseInt(attrs.getNamedItem("npcId").getNodeValue());
@@ -284,7 +286,7 @@ public final class FinalEmperialTomb extends AbstractInstance implements IXmlRea
 							att = attrs.getNamedItem("flag");
 							if (att == null)
 							{
-								_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing flag in npc List npcId: " + npcId + ", skipping");
+								_log.error(FinalEmperialTomb.class.getSimpleName() + ": Missing flag in npc List npcId: " + npcId + ", skipping");
 								continue;
 							}
 							
@@ -398,21 +400,21 @@ public final class FinalEmperialTomb extends AbstractInstance implements IXmlRea
 							Node att = attrs.getNamedItem("id");
 							if (att == null)
 							{
-								_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing id in spawnZones List, skipping");
+								_log.error(FinalEmperialTomb.class.getSimpleName() + ": Missing id in spawnZones List, skipping");
 								continue;
 							}
 							int id = Integer.parseInt(att.getNodeValue());
 							att = attrs.getNamedItem("minZ");
 							if (att == null)
 							{
-								_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing minZ in spawnZones List id: " + id + ", skipping");
+								_log.error(FinalEmperialTomb.class.getSimpleName() + ": Missing minZ in spawnZones List id: " + id + ", skipping");
 								continue;
 							}
 							int minz = Integer.parseInt(att.getNodeValue());
 							att = attrs.getNamedItem("maxZ");
 							if (att == null)
 							{
-								_log.error(FinalEmperialTomb.class.getSimpleName() + " Missing maxZ in spawnZones List id: " + id + ", skipping");
+								_log.error(FinalEmperialTomb.class.getSimpleName() + ": Missing maxZ in spawnZones List id: " + id + ", skipping");
 								continue;
 							}
 							int maxz = Integer.parseInt(att.getNodeValue());
@@ -575,7 +577,7 @@ public final class FinalEmperialTomb extends AbstractInstance implements IXmlRea
 							}
 							else
 							{
-								_log.info(FinalEmperialTomb.class.getSimpleName() + " Missing zone: " + spw.zone);
+								_log.info(FinalEmperialTomb.class.getSimpleName() + ": Missing zone: " + spw.zone);
 							}
 						}
 					}
@@ -600,7 +602,7 @@ public final class FinalEmperialTomb extends AbstractInstance implements IXmlRea
 			{
 				if (debug)
 				{
-					_log.info(FinalEmperialTomb.class.getSimpleName() + " Starting " + world.getStatus() + ". status.");
+					_log.info(FinalEmperialTomb.class.getSimpleName() + ": Starting " + world.getStatus() + ". status.");
 				}
 				world.npcList.clear();
 				switch (world.getStatus())
@@ -732,7 +734,7 @@ public final class FinalEmperialTomb extends AbstractInstance implements IXmlRea
 			{
 				if (debug)
 				{
-					_log.info(FinalEmperialTomb.class.getSimpleName() + " Instance is deleted or all Portraits is killed.");
+					_log.info(FinalEmperialTomb.class.getSimpleName() + ": Instance is deleted or all Portraits is killed.");
 				}
 				return;
 			}
@@ -1340,12 +1342,22 @@ public final class FinalEmperialTomb extends AbstractInstance implements IXmlRea
 			{
 				controlStatus(world);
 			}
+		}
+		return null;
+	}
+	
+	@Override
+	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isSummon)
+	{
+		final InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
+		if (tmpworld instanceof FETWorld)
+		{
 			if (skill != null)
 			{
 				// When Dewdrop of Destruction is used on Portraits they suicide.
 				if (Util.contains(PORTRAITS, npc.getId()) && (skill.getId() == DEWDROP_OF_DESTRUCTION_SKILL_ID))
 				{
-					npc.doDie(attacker);
+					npc.doDie(caster);
 				}
 				else if ((npc.getId() == FRINTEZZA) && (skill.getId() == SOUL_BREAKING_ARROW_SKILL_ID))
 				{
@@ -1380,7 +1392,7 @@ public final class FinalEmperialTomb extends AbstractInstance implements IXmlRea
 				ThreadPoolManager.getInstance().scheduleGeneral(new StatusTask(world, 0), 2000);
 				if (debug)
 				{
-					_log.info(FinalEmperialTomb.class.getSimpleName() + " Hall alarm is disabled, doors will open!");
+					_log.info(FinalEmperialTomb.class.getSimpleName() + ": Hall alarm is disabled, doors will open!");
 				}
 			}
 			else if (npc.getId() == DARK_CHOIR_PLAYER)
@@ -1391,7 +1403,7 @@ public final class FinalEmperialTomb extends AbstractInstance implements IXmlRea
 					ThreadPoolManager.getInstance().scheduleGeneral(new StatusTask(world, 2), 2000);
 					if (debug)
 					{
-						_log.info(FinalEmperialTomb.class.getSimpleName() + " All Dark Choir Players are killed, doors will open!");
+						_log.info(FinalEmperialTomb.class.getSimpleName() + ": All Dark Choir Players are killed, doors will open!");
 					}
 				}
 			}

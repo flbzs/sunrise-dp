@@ -40,7 +40,7 @@ import gracia.instances.HallOfSufferingDefence.HallOfSufferingDefence;
 import gracia.instances.HeartInfinityAttack.HeartInfinityAttack;
 import gracia.instances.HeartInfinityDefence.HeartInfinityDefence;
 import gracia.instances.SecretArea.SecretArea;
-import gracia.instances.SeedOfDestruction.Stage1;
+import gracia.instances.SeedOfDestruction.SeedOfDestruction;
 import gracia.vehicles.AirShipGludioGracia.AirShipGludioGracia;
 import gracia.vehicles.KeucereusNorthController.KeucereusNorthController;
 import gracia.vehicles.KeucereusSouthController.KeucereusSouthController;
@@ -80,7 +80,7 @@ public final class GraciaLoader
 		HeartInfinityAttack.class,
 		HeartInfinityDefence.class,
 		SecretArea.class,
-		Stage1.class, // Seed of Destruction
+		SeedOfDestruction.class,
 		// Vehicles
 		AirShipGludioGracia.class,
 		KeucereusNorthController.class,

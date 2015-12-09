@@ -1026,10 +1026,15 @@
 	</skill>
 	<skill id="9074" levels="1" name="Salmon Soup">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="magicLvl" val="1" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="15492" /> <!-- Key of Splendor Room -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="600000" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Heal" noicon="1" val="2300" />
+		</for>
 	</skill>
 	<skill id="9075" levels="1" name="Awful Soup">
 		<set name="castRange" val="150" />
