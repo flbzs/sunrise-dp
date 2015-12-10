@@ -550,6 +550,7 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 			if (Util.contains(ATTACKABLE_DOORS, door.getId()))
 			{
 				door.setIsAttackableDoor(true);
+				door.setTargetable(true);
 				closeDoor(door.getId(), instanceId);
 			}
 			else if (door.getId() == THRONE_DOOR)
