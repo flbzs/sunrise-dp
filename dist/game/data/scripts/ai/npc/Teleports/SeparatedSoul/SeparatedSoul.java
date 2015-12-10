@@ -67,7 +67,7 @@ public final class SeparatedSoul extends AbstractNpcAI
 		LOCATIONS.put(8, new Location(131116, 114333, -3704)); // Entrance of Antharas' Lair
 	}
 	
-	private SeparatedSoul()
+	public SeparatedSoul()
 	{
 		super(SeparatedSoul.class.getSimpleName(), "ai/npc/Teleports");
 		addStartNpc(SEPARATED_SOULS);
@@ -125,10 +125,5 @@ public final class SeparatedSoul extends AbstractNpcAI
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	public static void main(String[] args)
-	{
-		new SeparatedSoul();
 	}
 }
