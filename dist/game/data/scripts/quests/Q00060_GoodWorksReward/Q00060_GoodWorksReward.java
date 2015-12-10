@@ -337,77 +337,44 @@ public final class Q00060_GoodWorksReward extends Quest
 			{
 				if (qs.isMemoState(10))
 				{
-					if ((player.getClassId() == ClassId.warrior))
+					switch (player.getClassId())
 					{
-						htmltext = "31092-05.html";
-					}
-					else if ((player.getClassId() == ClassId.knight))
-					{
-						htmltext = "31092-06.html";
-					}
-					else if ((player.getClassId() == ClassId.rogue))
-					{
-						htmltext = "31092-07.html";
-					}
-					else if ((player.getClassId() == ClassId.wizard))
-					{
-						htmltext = "31092-08.html";
-					}
-					else if ((player.getClassId() == ClassId.cleric))
-					{
-						htmltext = "31092-09.html";
-					}
-					else if ((player.getClassId() == ClassId.elvenKnight))
-					{
-						htmltext = "31092-10.html";
-					}
-					else if ((player.getClassId() == ClassId.elvenScout))
-					{
-						htmltext = "31092-11.html";
-					}
-					else if ((player.getClassId() == ClassId.elvenWizard))
-					{
-						htmltext = "31092-12.html";
-					}
-					else if ((player.getClassId() == ClassId.oracle))
-					{
-						htmltext = "31092-13.html";
-					}
-					else if ((player.getClassId() == ClassId.palusKnight))
-					{
-						htmltext = "31092-14.html";
-					}
-					else if ((player.getClassId() == ClassId.assassin))
-					{
-						htmltext = "31092-15.html";
-					}
-					else if ((player.getClassId() == ClassId.darkWizard))
-					{
-						htmltext = "31092-16.html";
-					}
-					else if ((player.getClassId() == ClassId.shillienOracle))
-					{
-						htmltext = "31092-17.html";
-					}
-					else if ((player.getClassId() == ClassId.orcRaider))
-					{
-						htmltext = "31092-18.html";
-					}
-					else if ((player.getClassId() == ClassId.orcMonk))
-					{
-						htmltext = "31092-19.html";
-					}
-					else if ((player.getClassId() == ClassId.orcShaman))
-					{
-						htmltext = "31092-20.html";
-					}
-					else if ((player.getClassId() == ClassId.scavenger))
-					{
-						htmltext = "31092-21.html";
-					}
-					else if ((player.getClassId() == ClassId.artisan))
-					{
-						htmltext = "31092-22.html";
+						case warrior:
+							return "31092-05.html";
+						case knight:
+							return "31092-06.html";
+						case rogue:
+							return "31092-07.html";
+						case wizard:
+							return "31092-08.html";
+						case cleric:
+							return "31092-09.html";
+						case elvenKnight:
+							return "31092-10.html";
+						case elvenScout:
+							return "31092-11.html";
+						case elvenWizard:
+							return "31092-12.html";
+						case oracle:
+							return "31092-13.html";
+						case palusKnight:
+							return "31092-14.html";
+						case assassin:
+							return "31092-15.html";
+						case darkWizard:
+							return "31092-16.html";
+						case shillienOracle:
+							return "31092-17.html";
+						case orcRaider:
+							return "31092-18.html";
+						case orcMonk:
+							return "31092-19.html";
+						case orcShaman:
+							return "31092-20.html";
+						case scavenger:
+							return "31092-21.html";
+						case artisan:
+							return "31092-22.html";
 					}
 					qs.exitQuest(false, true);
 				}
@@ -417,77 +384,44 @@ public final class Q00060_GoodWorksReward extends Quest
 			{
 				if (player.isInCategory(CategoryType.SECOND_CLASS_GROUP))
 				{
-					if ((player.getClassId() == ClassId.warrior))
+					switch (player.getClassId())
 					{
-						htmltext = "31092-05a.html";
-					}
-					else if ((player.getClassId() == ClassId.knight))
-					{
-						htmltext = "31092-06a.html";
-					}
-					else if ((player.getClassId() == ClassId.rogue))
-					{
-						htmltext = "31092-07a.html";
-					}
-					else if ((player.getClassId() == ClassId.wizard))
-					{
-						htmltext = "31092-08a.html";
-					}
-					else if ((player.getClassId() == ClassId.cleric))
-					{
-						htmltext = "31092-09a.html";
-					}
-					else if ((player.getClassId() == ClassId.elvenKnight))
-					{
-						htmltext = "31092-10a.html";
-					}
-					else if ((player.getClassId() == ClassId.elvenScout))
-					{
-						htmltext = "31092-11a.html";
-					}
-					else if ((player.getClassId() == ClassId.elvenWizard))
-					{
-						htmltext = "31092-12a.html";
-					}
-					else if ((player.getClassId() == ClassId.oracle))
-					{
-						htmltext = "31092-13a.html";
-					}
-					else if ((player.getClassId() == ClassId.palusKnight))
-					{
-						htmltext = "31092-14a.html";
-					}
-					else if ((player.getClassId() == ClassId.assassin))
-					{
-						htmltext = "31092-15a.html";
-					}
-					else if ((player.getClassId() == ClassId.darkWizard))
-					{
-						htmltext = "31092-16a.html";
-					}
-					else if ((player.getClassId() == ClassId.shillienOracle))
-					{
-						htmltext = "31092-17a.html";
-					}
-					else if ((player.getClassId() == ClassId.orcRaider))
-					{
-						htmltext = "31092-18a.html";
-					}
-					else if ((player.getClassId() == ClassId.orcMonk))
-					{
-						htmltext = "31092-19a.html";
-					}
-					else if ((player.getClassId() == ClassId.orcShaman))
-					{
-						htmltext = "31092-20a.html";
-					}
-					else if ((player.getClassId() == ClassId.scavenger))
-					{
-						htmltext = "31092-21a.html";
-					}
-					else if ((player.getClassId() == ClassId.artisan))
-					{
-						htmltext = "31092-22a.html";
+						case warrior:
+							return "31092-05a.html";
+						case knight:
+							return "31092-06a.html";
+						case rogue:
+							return "31092-07a.html";
+						case wizard:
+							return "31092-08a.html";
+						case cleric:
+							return "31092-09a.html";
+						case elvenKnight:
+							return "31092-10a.html";
+						case elvenScout:
+							return "31092-11a.html";
+						case elvenWizard:
+							return "31092-12a.html";
+						case oracle:
+							return "31092-13a.html";
+						case palusKnight:
+							return "31092-14a.html";
+						case assassin:
+							return "31092-15a.html";
+						case darkWizard:
+							return "31092-16a.html";
+						case shillienOracle:
+							return "31092-17a.html";
+						case orcRaider:
+							return "31092-18a.html";
+						case orcMonk:
+							return "31092-19a.html";
+						case orcShaman:
+							return "31092-20a.html";
+						case scavenger:
+							return "31092-21a.html";
+						case artisan:
+							return "31092-22a.html";
 					}
 				}
 				break;

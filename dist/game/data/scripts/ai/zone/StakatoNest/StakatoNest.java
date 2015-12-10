@@ -57,6 +57,9 @@ public class StakatoNest extends AbstractNpcAI
 	// Cannibalistic Stakato Leader
 	private static final int STAKATO_LEADER = 22625;
 	
+	// Minion sacrifice chance
+	private static int HEAL_CHANCE = 10;
+	
 	// Spike Stakato Nurse
 	private static final int STAKATO_NURSE = 22630;
 	// Spike Stakato Nurse (Changed)
@@ -95,10 +98,9 @@ public class StakatoNest extends AbstractNpcAI
 	{
 		L2MonsterInstance mob = (L2MonsterInstance) npc;
 		
-		if ((mob.getId() == STAKATO_LEADER) && (getRandom(1000) < 100) && (mob.getCurrentHp() < (mob.getMaxHp() * 0.3)))
+		if ((mob.getId() == STAKATO_LEADER) && (getRandom(1000) < (HEAL_CHANCE * 10)) && (mob.getCurrentHp() < (mob.getMaxHp() * 0.3)))
 		{
 			L2MonsterInstance _follower = checkMinion(npc);
-			
 			if (_follower != null)
 			{
 				double _hp = _follower.getCurrentHp();
