@@ -72,7 +72,7 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="109">
-			<target npcId="12774" />
+			<target npcId="12774,12777,12775,12778" />
 		</cond>
 	</skill>
 	<skill id="2006" levels="1" name="Scroll: Enchant Weapon (Grade A)">

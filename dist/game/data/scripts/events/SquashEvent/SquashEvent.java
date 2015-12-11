@@ -14,6 +14,9 @@
  */
 package events.SquashEvent;
 
+import java.util.Arrays;
+import java.util.List;
+
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2MonsterInstance;
@@ -30,11 +33,13 @@ import ai.npc.AbstractNpcAI;
  */
 public class SquashEvent extends AbstractNpcAI
 {
-	//@formatter:off
 	private static final int MANAGER = 31860;
 	private static final int NECTAR_SKILL = 2005;
-	private static final int[] CHRONO_LIST = { 4202, 5133, 5817, 7058, 8350 };
-	private static final int[] SQUASH_LIST ={  12774, 12775, 12776, 12777, 12778, 12779, 13016, 13017 };
+	
+	private static final List<Integer> SQUASH_LIST = Arrays.asList(12774, 12775, 12776, 12777, 12778, 12779, 13016, 13017);
+	private static final List<Integer> CHRONO_LIST = Arrays.asList(4202, 5133, 5817, 7058, 8350);
+	
+	//@formatter:off
 	private static final String[] _NOCHRONO_TEXT =
 	{
 		"You cannot kill me without Chrono",
@@ -167,9 +172,9 @@ public class SquashEvent extends AbstractNpcAI
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
-		if (contains(SQUASH_LIST, npc.getId()))
+		if (SQUASH_LIST.contains(npc.getId()))
 		{
-			if ((attacker.getActiveWeaponItem() != null) && contains(CHRONO_LIST, attacker.getActiveWeaponItem().getId()))
+			if ((attacker.getActiveWeaponItem() != null) && CHRONO_LIST.contains(attacker.getActiveWeaponItem().getId()))
 			{
 				ChronoText(npc);
 				npc.setIsInvul(false);
@@ -188,7 +193,7 @@ public class SquashEvent extends AbstractNpcAI
 	@Override
 	public String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isPet)
 	{
-		if (contains(targets, npc) && contains(SQUASH_LIST, npc.getId()) && (skill.getId() == NECTAR_SKILL))
+		if (SQUASH_LIST.contains(npc.getId()) && (skill.getId() == NECTAR_SKILL))
 		{
 			switch (npc.getId())
 			{
@@ -332,30 +337,6 @@ public class SquashEvent extends AbstractNpcAI
 	{
 		addSpawn(npcId, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 60000);
 		npc.deleteMe();
-	}
-	
-	public static <T> boolean contains(T[] array, T obj)
-	{
-		for (T element : array)
-		{
-			if (element == obj)
-			{
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public static boolean contains(int[] array, int obj)
-	{
-		for (int element : array)
-		{
-			if (element == obj)
-			{
-				return true;
-			}
-		}
-		return false;
 	}
 	
 	@Override

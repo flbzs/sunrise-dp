@@ -22,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import events.CharacterBirthday.CharacterBirthday;
+import events.SquashEvent.SquashEvent;
 
 /**
  * @author L2jSunrise Team
@@ -42,7 +43,7 @@ public final class EventsLoader
 		// LoveYourGatekeeper.class,
 		// MasterOfEnchanting.class,
 		// SavingSanta.class,
-		// SquashEvent.class,
+		SquashEvent.class,
 		// TheValentineEvent.class,
 	};
 	
