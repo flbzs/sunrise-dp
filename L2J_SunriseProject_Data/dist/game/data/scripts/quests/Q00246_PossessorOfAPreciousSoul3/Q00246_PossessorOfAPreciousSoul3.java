@@ -212,7 +212,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				}
 				else
 				{
-					pst = player.getQuestState(getName());
+					pst = getQuestState(player, false);
 					if (pst != null)
 					{
 						if (pst.isCond(4) && !pst.hasQuestItems(RAIN_SONG))
@@ -224,7 +224,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 				}
 				break;
 			default:
-				st = player.getQuestState(getName());
+				st = getQuestState(player, false);
 				if ((st == null))
 				{
 					return super.onKill(npc, player, isSummon);

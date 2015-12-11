@@ -283,14 +283,15 @@ public final class DarkCloudMansion extends AbstractInstance
 		if (firstEntrance)
 		{
 			runStartRoom((DMCWorld) world);
-			for (L2PcInstance partyMember : player.getParty().getMembers())
+			final L2Party party = player.getParty();
+			if (party != null)
 			{
-				if (partyMember.getQuestState(getName()) == null)
+				for (L2PcInstance partyMember : party.getMembers())
 				{
-					newQuestState(partyMember);
+					getQuestState(partyMember, true);
+					world.addAllowed(partyMember.getObjectId());
+					teleportPlayer(partyMember, new Location(146534, 180464, -6117), world.getInstanceId());
 				}
-				world.addAllowed(partyMember.getObjectId());
-				teleportPlayer(partyMember, new Location(146534, 180464, -6117), world.getInstanceId());
 			}
 		}
 		else

@@ -53,9 +53,9 @@ public final class LuckyPig extends AbstractNpcAI
 	private boolean isLuckyPigLevel70 = false;
 	private boolean isLuckyPigLevel80 = false;
 	// Lucky Pig Spawn Chances %
-	private final int Lucky_Pig_Level_52_Spawn_Chance = 3;
-	private final int Lucky_Pig_Level_70_Spawn_Chance = 3;
-	private final int Lucky_Pig_Level_80_Spawn_Chance = 3;
+	private final int Lucky_Pig_Level_52_Spawn_Chance = 1;
+	private final int Lucky_Pig_Level_70_Spawn_Chance = 1;
+	private final int Lucky_Pig_Level_80_Spawn_Chance = 1;
 	
 	//@formatter:off
 	// Monsters IDs
