@@ -108,9 +108,9 @@ public final class Q00367_ElectrifyingRecharge extends Quest
 		npc.setScriptValue(367);
 		
 		if ((NPC_THUNDER_STORM != null) //
-			&& (NPC_THUNDER_STORM.getMpConsume() < npc.getCurrentMp()) // has enough MP
-			&& (NPC_THUNDER_STORM.getHpConsume() < npc.getCurrentHp()) // has enough HP
-			&& (npc.getSkillRemainingReuseTime(NPC_THUNDER_STORM.getReuseHashCode()) <= 0)) // no reuse delay
+		&& (NPC_THUNDER_STORM.getMpConsume() < npc.getCurrentMp()) // has enough MP
+		&& (NPC_THUNDER_STORM.getHpConsume() < npc.getCurrentHp()) // has enough HP
+		&& (npc.getSkillRemainingReuseTime(NPC_THUNDER_STORM.getReuseHashCode()) <= 0)) // no reuse delay
 		{
 			npc.doCast(NPC_THUNDER_STORM, attacker, null);
 		}
@@ -149,7 +149,7 @@ public final class Q00367_ElectrifyingRecharge extends Quest
 				{
 					giveItems(luckyPlayer, TITAN_LAMP5, 1);
 					takeItems(luckyPlayer, TITAN_LAMP4, -1);
-					luckyPlayer.getQuestState(getName()).setCond(2, true);
+					getQuestState(luckyPlayer, false).setCond(2, true);
 				}
 			}
 			else if ((random == 1) && !hasQuestItems(luckyPlayer, BROKEN_TITAN_LAMP))

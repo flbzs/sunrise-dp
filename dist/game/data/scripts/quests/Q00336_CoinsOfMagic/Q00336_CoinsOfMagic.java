@@ -1789,7 +1789,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 	
 	private QuestState getRandomPlayerFromParty(L2PcInstance player, L2Npc npc, int memoState)
 	{
-		QuestState qs = player.getQuestState(getName());
+		QuestState qs = getQuestState(player, false);
 		final List<QuestState> candidates = new ArrayList<>();
 		
 		if ((qs != null) && qs.isStarted() && (qs.getMemoState() == memoState))
@@ -1802,8 +1802,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 		{
 			player.getParty().getMembers().stream().forEach(pm ->
 			{
-				
-				QuestState qss = pm.getQuestState(getName());
+				QuestState qss = getQuestState(pm, false);
 				if ((qss != null) && qss.isStarted() && (qss.getMemoState() == memoState) && Util.checkIfInRange(1500, npc, pm, true))
 				{
 					candidates.add(qss);
@@ -1815,7 +1814,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 	
 	private QuestState getRandomPlayerFromPartyCoin(L2PcInstance player, L2Npc npc, int memoState)
 	{
-		QuestState qs = player.getQuestState(getName());
+		QuestState qs = getQuestState(player, false);
 		final List<QuestState> candidates = new ArrayList<>();
 		if ((qs != null) && qs.isStarted() && (qs.getMemoState() == memoState) && !qs.hasQuestItems(Q_KALDIS_GOLD_DRAGON))
 		{
@@ -1827,8 +1826,7 @@ public final class Q00336_CoinsOfMagic extends Quest
 		{
 			player.getParty().getMembers().stream().forEach(pm ->
 			{
-				
-				QuestState qss = pm.getQuestState(getName());
+				QuestState qss = getQuestState(pm, false);
 				if ((qss != null) && qss.isStarted() && (qss.getMemoState() == memoState) && !qss.hasQuestItems(Q_KALDIS_GOLD_DRAGON) && Util.checkIfInRange(1500, npc, pm, true))
 				{
 					candidates.add(qss);

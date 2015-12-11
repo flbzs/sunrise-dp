@@ -25,67 +25,23 @@ import ai.npc.AbstractNpcAI;
 
 public class CryptsOfDisgrace extends AbstractNpcAI
 {
+	//@formatter:off
 	public static final int[] MOBS =
 	{
-		22703,
-		22704,
-		22705,
-		22706,
-		22707
+		22703, 22704, 22705, 22706, 22707
 	};
 	
 	private static final int[][] MobSpawns =
 	{
-		{
-			18464,
-			-28681,
-			255110,
-			-2160,
-			10
-		},
-		{
-			18464,
-			-26114,
-			254708,
-			-2139,
-			10
-		},
-		{
-			18463,
-			-28457,
-			256584,
-			-1926,
-			10
-		},
-		{
-			18463,
-			-26482,
-			257663,
-			-1925,
-			10
-		},
-		{
-			18464,
-			-26453,
-			256745,
-			-1930,
-			10
-		},
-		{
-			18463,
-			-27362,
-			256282,
-			-1935,
-			10
-		},
-		{
-			18464,
-			-25441,
-			256441,
-			-2147,
-			10
-		}
+		{ 18464, -28681, 255110, -2160, 10 },
+		{ 18464, -26114, 254708, -2139, 10 },
+		{ 18463, -28457, 256584, -1926, 10 },
+		{ 18463, -26482, 257663, -1925, 10 },
+		{ 18464, -26453, 256745, -1930, 10 },
+		{ 18463, -27362, 256282, -1935, 10 },
+		{ 18464, -25441, 256441, -2147, 10 }
 	};
+	//@formatter:on
 	
 	public CryptsOfDisgrace()
 	{
@@ -120,7 +76,6 @@ public class CryptsOfDisgrace extends AbstractNpcAI
 			spawn.setHeading(-1);
 			spawn.setRespawnDelay(respTime);
 			spawn.setInstanceId(0);
-			spawn.setOnKillDelay(0);
 			SpawnTable.getInstance().addNewSpawn(spawn, false);
 			spawn.init();
 			spawn.startRespawn();

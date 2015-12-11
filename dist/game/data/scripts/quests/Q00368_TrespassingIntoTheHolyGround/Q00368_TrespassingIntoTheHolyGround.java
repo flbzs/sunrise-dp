@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -40,6 +40,7 @@ public final class Q00368_TrespassingIntoTheHolyGround extends Quest
 	private static final int MIN_LEVEL = 36;
 	// Mobs
 	private static final Map<Integer, Double> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20794, 0.60); // blade_stakato
@@ -60,7 +61,7 @@ public final class Q00368_TrespassingIntoTheHolyGround extends Quest
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		final QuestState st = player.getQuestState(getName());
+		final QuestState st = getQuestState(player, false);
 		if (st == null)
 		{
 			return null;
@@ -112,7 +113,7 @@ public final class Q00368_TrespassingIntoTheHolyGround extends Quest
 		final QuestState st = getRandomPartyMemberState(player, -1, i, npc);
 		if (st != null)
 		{
-			giveItemRandomly(player, npc, BLADE_STAKATO_FANG, 1, 0, MOBS.get(npc.getId()), true);
+			st.giveItemRandomly(npc, BLADE_STAKATO_FANG, 1, 0, MOBS.get(npc.getId()), true);
 		}
 		return super.onKill(npc, player, isSummon);
 	}
@@ -120,7 +121,7 @@ public final class Q00368_TrespassingIntoTheHolyGround extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		QuestState st = getQuestState(player, true);
+		final QuestState st = getQuestState(player, true);
 		String htmltext = getNoQuestMsg(player);
 		if (st == null)
 		{
