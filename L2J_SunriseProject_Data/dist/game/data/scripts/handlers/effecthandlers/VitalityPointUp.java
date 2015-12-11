@@ -21,6 +21,7 @@ package handlers.effecthandlers;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.stats.Env;
+import l2r.gameserver.network.serverpackets.UserInfo;
 
 /**
  * Vitality Point Up effect implementation.
@@ -43,7 +44,7 @@ public final class VitalityPointUp extends L2Effect
 		if ((getEffected() != null) && getEffected().isPlayer())
 		{
 			getEffected().getActingPlayer().updateVitalityPoints(_value, false, false);
-			getEffected().getActingPlayer().sendUserInfo(true);
+			getEffected().getActingPlayer().sendPacket(new UserInfo(getEffected().getActingPlayer()));
 		}
 		return true;
 	}

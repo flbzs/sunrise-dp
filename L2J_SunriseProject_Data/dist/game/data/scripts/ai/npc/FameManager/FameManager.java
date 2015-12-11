@@ -21,6 +21,7 @@ package ai.npc.FameManager;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.SystemMessageId;
+import l2r.gameserver.network.serverpackets.UserInfo;
 
 import ai.npc.AbstractNpcAI;
 
@@ -75,7 +76,7 @@ public class FameManager extends AbstractNpcAI
 					{
 						player.setFame(player.getFame() - DECREASE_COST);
 						player.setPkKills(player.getPkKills() - 1);
-						player.sendUserInfo(true);
+						player.sendPacket(new UserInfo(player));
 						htmltext = npc.getId() + "-06.html";
 					}
 					else
@@ -97,7 +98,7 @@ public class FameManager extends AbstractNpcAI
 					{
 						player.setFame(player.getFame() - REPUTATION_COST);
 						player.getClan().addReputationScore(50, true);
-						player.sendUserInfo(true);
+						player.sendPacket(new UserInfo(player));
 						player.sendPacket(SystemMessageId.ACQUIRED_50_CLAN_FAME_POINTS);
 						htmltext = npc.getId() + "-04.html";
 					}

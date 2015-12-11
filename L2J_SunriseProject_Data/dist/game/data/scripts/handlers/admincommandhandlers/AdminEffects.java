@@ -34,7 +34,9 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.AbnormalEffect;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.SystemMessageId;
+import l2r.gameserver.network.serverpackets.CharInfo;
 import l2r.gameserver.network.serverpackets.Earthquake;
+import l2r.gameserver.network.serverpackets.ExBrExtraUserInfo;
 import l2r.gameserver.network.serverpackets.ExRedSky;
 import l2r.gameserver.network.serverpackets.L2GameServerPacket;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
@@ -44,24 +46,14 @@ import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.gameserver.network.serverpackets.SunRise;
 import l2r.gameserver.network.serverpackets.SunSet;
 import l2r.gameserver.network.serverpackets.SystemMessage;
+import l2r.gameserver.network.serverpackets.UserInfo;
 import l2r.gameserver.util.Broadcast;
 
 /**
- * This class handles following admin commands:
- * <li>invis/invisible/vis/visible = makes yourself invisible or visible
- * <li>earthquake = causes an earthquake of a given intensity and duration around you
- * <li>bighead/shrinkhead = changes head size
- * <li>gmspeed = temporary Super Haste effect.
- * <li>para/unpara = paralyze/remove paralysis from target
- * <li>para_all/unpara_all = same as para/unpara, affects the whole world.
- * <li>polyself/unpolyself = makes you look as a specified mob.
- * <li>changename = temporary change name
- * <li>clearteams/setteam_close/setteam = team related commands
- * <li>social = forces an L2Character instance to broadcast social action packets.
- * <li>effect = forces an L2Character instance to broadcast MSU packets.
- * <li>abnormal = force changes over an L2Character instance's abnormal state.
- * <li>play_sound/play_sounds = Music broadcasting related commands
- * <li>atmosphere = sky change related commands.
+ * This class handles following admin commands: <li>invis/invisible/vis/visible = makes yourself invisible or visible <li>earthquake = causes an earthquake of a given intensity and duration around you <li>bighead/shrinkhead = changes head size <li>gmspeed = temporary Super Haste effect. <li>
+ * para/unpara = paralyze/remove paralysis from target <li>para_all/unpara_all = same as para/unpara, affects the whole world. <li>polyself/unpolyself = makes you look as a specified mob. <li>changename = temporary change name <li>clearteams/setteam_close/setteam = team related commands <li>social =
+ * forces an L2Character instance to broadcast social action packets. <li>effect = forces an L2Character instance to broadcast MSU packets. <li>abnormal = force changes over an L2Character instance's abnormal state. <li>play_sound/play_sounds = Music broadcasting related commands <li>atmosphere =
+ * sky change related commands.
  */
 public class AdminEffects implements IAdminCommandHandler
 {
@@ -121,14 +113,15 @@ public class AdminEffects implements IAdminCommandHandler
 			if (!activeChar.isInvisible())
 			{
 				activeChar.setInvisible(true);
+				activeChar.broadcastUserInfo();
 				activeChar.decayMe();
 				activeChar.spawnMe();
 			}
 			else
 			{
 				activeChar.setInvisible(false);
+				activeChar.broadcastUserInfo();
 			}
-			activeChar.broadcastUserInfo();
 			command = "";
 			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
 		}
@@ -378,7 +371,11 @@ public class AdminEffects implements IAdminCommandHandler
 				String id = st.nextToken();
 				activeChar.getPoly().setPolyInfo("npc", id);
 				activeChar.teleToLocation(activeChar.getX(), activeChar.getY(), activeChar.getZ(), false);
-				activeChar.broadcastUserInfo();
+				CharInfo info1 = new CharInfo(activeChar);
+				activeChar.broadcastPacket(info1);
+				UserInfo info2 = new UserInfo(activeChar);
+				activeChar.sendPacket(info2);
+				activeChar.broadcastPacket(new ExBrExtraUserInfo(activeChar));
 			}
 			catch (Exception e)
 			{
@@ -390,7 +387,11 @@ public class AdminEffects implements IAdminCommandHandler
 			activeChar.getPoly().setPolyInfo(null, "1");
 			activeChar.decayMe();
 			activeChar.spawnMe(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-			activeChar.broadcastUserInfo();
+			CharInfo info1 = new CharInfo(activeChar);
+			activeChar.broadcastPacket(info1);
+			UserInfo info2 = new UserInfo(activeChar);
+			activeChar.sendPacket(info2);
+			activeChar.broadcastPacket(new ExBrExtraUserInfo(activeChar));
 		}
 		else if (command.equals("admin_clearteams"))
 		{
