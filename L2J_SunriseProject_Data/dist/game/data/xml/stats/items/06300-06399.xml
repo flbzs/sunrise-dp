@@ -1563,7 +1563,6 @@
 	<item id="6391" type="EtcItem" name="Nectar">
 		<set name="icon" val="icon.etc_nectar_i00" />
 		<set name="default_action" val="SKILL_REDUCE" />
-		<set name="immediate_effect" val="true" />
 		<set name="material" val="PAPER" />
 		<set name="is_stackable" val="true" />
 		<set name="is_oly_restricted" val="true" />
