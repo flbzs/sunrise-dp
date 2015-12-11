@@ -5,6 +5,7 @@ import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2r.gameserver.network.serverpackets.UserInfo;
 
 import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
 
@@ -60,7 +61,7 @@ public class NoblesseManager extends AbstractNpcAI
 			{
 				player.addItem("Tiara", 7694, 1, null, true);
 				player.setNoble(true);
-				player.sendUserInfo(true);
+				player.sendPacket(new UserInfo(player));
 				player.sendMessage("Congratulations! You are now Noblesse!");
 			}
 			else

@@ -7,6 +7,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.PledgeShowInfoUpdate;
+import l2r.gameserver.network.serverpackets.UserInfo;
 
 import gr.sr.aioItem.runnable.TransformFinalizer;
 import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
@@ -147,7 +148,7 @@ public class BetaManager extends AbstractNpcAI
 		else if (event.equalsIgnoreCase("fame"))
 		{
 			player.setFame(player.getFame() + 10000);
-			player.sendUserInfo(true);
+			player.sendPacket(new UserInfo(player));
 			player.sendMessage("You received 10 000 fame points!");
 			return "character.htm";
 		}
@@ -219,63 +220,63 @@ public class BetaManager extends AbstractNpcAI
 		else if (event.equalsIgnoreCase("1"))
 		{
 			st.getPlayer().getAppearance().setTitleColor(0x009900);
-			player.sendUserInfo(true);
+			player.sendPacket(new UserInfo(player));
 			player.sendMessage("Your title color has been changed!");
 			return "main.htm";
 		}
 		else if (event.equalsIgnoreCase("2"))
 		{
 			st.getPlayer().getAppearance().setTitleColor(0xff7f00);
-			player.sendUserInfo(true);
+			player.sendPacket(new UserInfo(player));
 			player.sendMessage("Your title color has been changed!");
 			return "main.htm";
 		}
 		else if (event.equalsIgnoreCase("3"))
 		{
 			st.getPlayer().getAppearance().setTitleColor(0xff00ff);
-			player.sendUserInfo(true);
+			player.sendPacket(new UserInfo(player));
 			player.sendMessage("Your title color has been changed!");
 			return "main.htm";
 		}
 		else if (event.equalsIgnoreCase("4"))
 		{
 			st.getPlayer().getAppearance().setTitleColor(0x00ffff);
-			player.sendUserInfo(true);
+			player.sendPacket(new UserInfo(player));
 			player.sendMessage("Your title color has been changed!");
 			return "main.htm";
 		}
 		else if (event.equalsIgnoreCase("5"))
 		{
 			st.getPlayer().getAppearance().setTitleColor(0x0000ff);
-			player.sendUserInfo(true);
+			player.sendPacket(new UserInfo(player));
 			player.sendMessage("Your title color has been changed!");
 			return "main.htm";
 		}
 		else if (event.equalsIgnoreCase("6"))
 		{
 			st.getPlayer().getAppearance().setTitleColor(0x0099ff);
-			player.sendUserInfo(true);
+			player.sendPacket(new UserInfo(player));
 			player.sendMessage("Your title color has been changed!");
 			return "main.htm";
 		}
 		else if (event.equalsIgnoreCase("7"))
 		{
 			st.getPlayer().getAppearance().setTitleColor(0x70db93);
-			player.sendUserInfo(true);
+			player.sendPacket(new UserInfo(player));
 			player.sendMessage("Your title color has been changed!");
 			return "main.htm";
 		}
 		else if (event.equalsIgnoreCase("8"))
 		{
 			st.getPlayer().getAppearance().setTitleColor(0x9f9f9f);
-			player.sendUserInfo(true);
+			player.sendPacket(new UserInfo(player));
 			player.sendMessage("Your title color has been changed!");
 			return "main.htm";
 		}
 		else if (event.equalsIgnoreCase("9"))
 		{
 			st.getPlayer().getAppearance().setTitleColor(0xffff00);
-			player.sendUserInfo(true);
+			player.sendPacket(new UserInfo(player));
 			player.sendMessage("Your title color has been changed!");
 			return "main.htm";
 		}
