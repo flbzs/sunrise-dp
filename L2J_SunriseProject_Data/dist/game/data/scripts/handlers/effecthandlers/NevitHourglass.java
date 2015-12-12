@@ -1,6 +1,5 @@
 package handlers.effecthandlers;
 
-import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
@@ -22,18 +21,23 @@ public class NevitHourglass extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if (!(getEffected() instanceof L2PcInstance))
+		if (!getEffected().isPlayer())
 		{
 			return false;
 		}
 		
-		((L2PcInstance) getEffected()).startHourglassEffect();
+		getEffected().getActingPlayer().startHourglassEffect();
 		return true;
 	}
 	
 	@Override
 	public void onExit()
 	{
-		((L2PcInstance) getEffected()).stopHourglassEffect();
+		if (!getEffected().isPlayer())
+		{
+			return;
+		}
+		
+		getEffected().getActingPlayer().stopHourglassEffect();
 	}
 }
