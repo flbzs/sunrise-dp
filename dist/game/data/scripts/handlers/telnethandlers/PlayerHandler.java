@@ -35,11 +35,8 @@ import l2r.gameserver.model.punishment.PunishmentAffect;
 import l2r.gameserver.model.punishment.PunishmentTask;
 import l2r.gameserver.model.punishment.PunishmentType;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.CharInfo;
-import l2r.gameserver.network.serverpackets.ExBrExtraUserInfo;
 import l2r.gameserver.network.serverpackets.InventoryUpdate;
 import l2r.gameserver.network.serverpackets.SystemMessage;
-import l2r.gameserver.network.serverpackets.UserInfo;
 import l2r.gameserver.util.GMAudit;
 import l2r.gameserver.util.Util;
 
@@ -319,9 +316,7 @@ public class PlayerHandler implements ITelnetHandler
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(itemInstance);
 			activeChar.sendPacket(iu);
-			activeChar.broadcastPacket(new CharInfo(activeChar));
-			activeChar.sendPacket(new UserInfo(activeChar));
-			activeChar.broadcastPacket(new ExBrExtraUserInfo(activeChar));
+			activeChar.broadcastUserInfo();
 			
 			// informations
 			activeChar.sendMessage("Changed enchantment of " + activeChar.getName() + "'s " + itemInstance.getItem().getName() + " from " + curEnchant + " to " + ench + ".");

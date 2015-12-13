@@ -4,9 +4,7 @@ import l2r.gameserver.data.xml.impl.ItemData;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.ExBrExtraUserInfo;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2r.gameserver.network.serverpackets.UserInfo;
 
 import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
 
@@ -71,9 +69,7 @@ public final class PointsManager extends AbstractNpcAI
 			if (player.destroyItemByItemId("fame", FAME_ITEM_ID, FAME_PRICE, player, true))
 			{
 				player.setFame(player.getFame() + FAME_SCORE);
-				player.broadcastUserInfo();
-				player.sendPacket(new UserInfo(player));
-				player.sendPacket(new ExBrExtraUserInfo(player));
+				player.sendUserInfo(true);
 				player.sendMessage("You have successfully add " + FAME_SCORE + " fame point(s).");
 			}
 			else
