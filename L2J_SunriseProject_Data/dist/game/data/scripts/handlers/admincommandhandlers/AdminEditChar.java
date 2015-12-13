@@ -49,14 +49,12 @@ import l2r.gameserver.model.actor.instance.L2PetInstance;
 import l2r.gameserver.model.base.ClassId;
 import l2r.gameserver.network.L2GameClient;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.ExBrExtraUserInfo;
 import l2r.gameserver.network.serverpackets.ExVoteSystemInfo;
 import l2r.gameserver.network.serverpackets.GMViewItemList;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2r.gameserver.network.serverpackets.PartySmallWindowAll;
 import l2r.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
 import l2r.gameserver.network.serverpackets.SystemMessage;
-import l2r.gameserver.network.serverpackets.UserInfo;
 import l2r.gameserver.util.HtmlUtil;
 import l2r.gameserver.util.Util;
 import l2r.util.StringUtil;
@@ -240,8 +238,6 @@ public class AdminEditChar implements IAdminCommandHandler
 					L2PcInstance player = (L2PcInstance) target;
 					player.setPkKills(pk);
 					player.broadcastUserInfo();
-					player.sendPacket(new UserInfo(player));
-					player.sendPacket(new ExBrExtraUserInfo(player));
 					player.sendMessage("A GM changed your PK count to " + pk);
 					activeChar.sendMessage(player.getName() + "'s PK count changed to " + pk);
 				}
@@ -271,8 +267,6 @@ public class AdminEditChar implements IAdminCommandHandler
 					L2PcInstance player = (L2PcInstance) target;
 					player.setPvpKills(pvp);
 					player.broadcastUserInfo();
-					player.sendPacket(new UserInfo(player));
-					player.sendPacket(new ExBrExtraUserInfo(player));
 					player.sendMessage("A GM changed your PVP count to " + pvp);
 					activeChar.sendMessage(player.getName() + "'s PVP count changed to " + pvp);
 				}
@@ -302,8 +296,6 @@ public class AdminEditChar implements IAdminCommandHandler
 					L2PcInstance player = (L2PcInstance) target;
 					player.setFame(fame);
 					player.broadcastUserInfo();
-					player.sendPacket(new UserInfo(player));
-					player.sendPacket(new ExBrExtraUserInfo(player));
 					player.sendMessage("A GM changed your Reputation points to " + fame);
 					activeChar.sendMessage(player.getName() + "'s Fame changed to " + fame);
 				}
@@ -333,8 +325,6 @@ public class AdminEditChar implements IAdminCommandHandler
 					L2PcInstance player = (L2PcInstance) target;
 					player.setRecomHave(recVal);
 					player.broadcastUserInfo();
-					player.sendPacket(new UserInfo(player));
-					player.sendPacket(new ExBrExtraUserInfo(player));
 					player.sendPacket(new ExVoteSystemInfo(player));
 					player.sendMessage("A GM changed your Recommend points to " + recVal);
 					activeChar.sendMessage(player.getName() + "'s Recommend changed to " + recVal);

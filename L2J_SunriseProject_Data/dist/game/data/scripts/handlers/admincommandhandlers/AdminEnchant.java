@@ -25,10 +25,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.itemcontainer.Inventory;
 import l2r.gameserver.model.items.instance.L2ItemInstance;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.CharInfo;
-import l2r.gameserver.network.serverpackets.ExBrExtraUserInfo;
 import l2r.gameserver.network.serverpackets.InventoryUpdate;
-import l2r.gameserver.network.serverpackets.UserInfo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -222,9 +219,7 @@ public class AdminEnchant implements IAdminCommandHandler
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(itemInstance);
 			player.sendPacket(iu);
-			player.broadcastPacket(new CharInfo(player));
-			player.sendPacket(new UserInfo(player));
-			player.broadcastPacket(new ExBrExtraUserInfo(player));
+			player.broadcastUserInfo();
 			
 			// informations
 			activeChar.sendMessage("Changed enchantment of " + player.getName() + "'s " + itemInstance.getItem().getName() + " from " + curEnchant + " to " + ench + ".");
