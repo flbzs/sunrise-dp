@@ -644,23 +644,24 @@
 		</cond>
 	</skill>
 	<skill id="21" levels="3" name="Poison Recovery">
+		<table name="#dispelAbnormals"> POISON,3 POISON,7 POISON,9 </table>
 		<table name="#aggro"> 204 379 566 </table>
 		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#mpConsume"> 16 28 44 </table>
 		<table name="#mpInitialConsume"> 4 7 11 </table>
-		<table name="#negateAbnormals"> poison,3 poison,7 poison,9 </table>
 		<set name="aggroPoints" val="#aggro" />
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="negateAbnormals" val="#negateAbnormals" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="#dispelAbnormals" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="22" levels="7" name="Summon Vampiric Cubic" enchantGroup1="2">
