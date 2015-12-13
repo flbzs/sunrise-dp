@@ -28,20 +28,23 @@ import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
+import l2r.util.Rnd;
 
 /**
  * @author vGodFather
  */
-public class DispelBySlot extends L2Effect
+public class DispelBySlotProbability extends L2Effect
 {
 	private final String _dispel;
 	private final Map<String, Short> _dispelAbnormals;
+	private final int _rate;
 	
-	public DispelBySlot(Env env, EffectTemplate template)
+	public DispelBySlotProbability(Env env, EffectTemplate template)
 	{
 		super(env, template);
 		
 		_dispel = template.getParameters().getString("dispel", null);
+		_rate = template.getParameters().getInt("rate", 0);
 		if ((_dispel != null) && !_dispel.isEmpty())
 		{
 			_dispelAbnormals = new ConcurrentHashMap<>();
@@ -60,7 +63,7 @@ public class DispelBySlot extends L2Effect
 	@Override
 	public L2EffectType getEffectType()
 	{
-		return L2EffectType.DISPEL_BY_SLOT;
+		return L2EffectType.DISPEL;
 	}
 	
 	@Override
@@ -89,23 +92,26 @@ public class DispelBySlot extends L2Effect
 			float stackOrder = value.getValue();
 			int skillCast = getSkill().getId();
 			
-			for (L2Effect e : target.getAllEffects())
+			if (Rnd.get(100) < _rate)
 			{
-				if (!e.getSkill().canBeDispeled())
+				for (L2Effect e : target.getAllEffects())
 				{
-					continue;
-				}
-				
-				// Fist check for stacktype
-				if (stackType.equalsIgnoreCase(e.getAbnormalType()) && (e.getSkill().getId() != skillCast))
-				{
-					if (stackOrder == -1)
+					if (!e.getSkill().canBeDispeled())
 					{
-						e.exit();
+						continue;
 					}
-					else if (stackOrder >= e.getAbnormalLvl())
+					
+					// Fist check for stacktype
+					if (stackType.equalsIgnoreCase(e.getAbnormalType()) && (e.getSkill().getId() != skillCast))
 					{
-						e.exit();
+						if (stackOrder == -1)
+						{
+							e.exit();
+						}
+						else if (stackOrder >= e.getAbnormalLvl())
+						{
+							e.exit();
+						}
 					}
 				}
 			}

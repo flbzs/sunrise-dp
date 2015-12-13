@@ -268,7 +268,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="-1" val="0" abnormalLvl="100" abnormalType="limit" /> <!-- FIXME: Temp Fix until support for blockBuff by abnormalType is done -->
+			<effect name="BlockBuffSlot" noicon="1" val="0">
+				<param slot="LIMIT" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6128" levels="1" name="Presentation - Cow Rage">
