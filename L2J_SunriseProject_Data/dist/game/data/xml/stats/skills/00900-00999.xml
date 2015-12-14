@@ -1054,7 +1054,6 @@
 				<using kind="SWORD,BLUNT" />
 			</add>
 			<mul stat="rShld" val="#rShld" />
-			<!-- FIXME: activationChance value unconfirmed -->
 			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="30" activationSkills="997" chanceType="ON_CAST" triggeredId="6920" />
 		</for>
 	</skill>
