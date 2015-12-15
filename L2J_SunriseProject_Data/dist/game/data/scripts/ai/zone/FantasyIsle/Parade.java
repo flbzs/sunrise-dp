@@ -1,22 +1,24 @@
 /*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
+ * This file is part of L2J DataPack.
  * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
+ * L2J DataPack is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * L2J DataPack is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 package ai.zone.FantasyIsle;
 
 import java.text.SimpleDateFormat;
-import java.util.Iterator;
-import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ScheduledFuture;
 
@@ -25,336 +27,117 @@ import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
-import l2r.gameserver.network.serverpackets.NpcSay;
 
 import ai.npc.AbstractNpcAI;
 
 /**
  * Fantasy Isle Parade
- * @author JOJO
+ * @author JOJO, Pandragon
  */
 public class Parade extends AbstractNpcAI
 {
-	private static final boolean DEBUG = false;
+	// @formatter:off
 	protected final int[] ACTORS =
 	{
-		32381,
-		32379,
-		32381,
-		32382,
-		32383,
-		32384,
-		32381,
-		32385,
-		32381,
-		32384,
-		32383,
-		32382,
-		
-		32386,
-		32387,
-		32388,
-		32389,
-		32390,
-		
-		32391,
-		32392,
-		32393,
-		32394,
-		32395,
-		
-		32396,
-		32397,
-		32398,
-		32399,
-		32400,
-		
-		32401,
-		32402,
-		32403,
-		32404,
-		
-		32405,
-		32406,
-		32407,
-		32408,
-		
-		32409,
-		32411,
-		32412,
-		32413,
-		32414,
-		32415,
-		
-		32416,
-		32417,
-		32418,
-		32419,
-		32420,
-		
-		32421,
-		32422,
-		32423,
-		32429,
-		32430,
-		
-		32447,
-		32448,
-		32449,
-		32450,
-		
-		32451,
-		32452,
-		32453,
-		32454,
-		32455,
-		32456,
-		
-		0,
-		0,
-		0,
-		32415,
+		32379, 0, 32379,
+		32379, 0, 32379,
+		32379, 0, 32379,
+		0, 0, 0,
+		32380, 0, 32380,
+		32380, 32381, 32380,
+		32380, 0, 32380,
+		32380, 32381, 32380,
+		0, 0, 0,
+		32382, 32382, 32382,
+		32382, 32383, 32382,
+		32383, 32384, 32383,
+		32383, 32384, 32383,
+		0, 0, 0,
+		0, 32385, 0,
+		32385, 0, 32385,
+		0, 32385, 0,
+		0, 0, 0,
+		32412, 0, 32411,
+		0, 0, 0,
+		32421, 0, 32409,
+		32423, 0, 32422,
+		0, 0, 0,
+		32420, 32419, 32417,
+		32418, 0, 32416,
+		0, 0, 0,
+		32414, 0, 32414,
+		0, 32413, 0,
+		32414, 0, 32414,
+		0, 0, 0,
+		32393, 0, 32394,
+		0, 32430, 0,
+		32392, 0, 32391,
+		0, 0, 0,
+		0, 32404, 0,
+		32403, 0, 32401,
+		0, 0, 0,
+		0, 32408, 0,
+		32406, 0, 32407,
+		0, 32405, 0,
+		0, 0, 0,
+		32390, 32389, 32387,
+		32388, 0, 32386,
+		0, 0, 0,
+		0, 32400, 0,
+		32397, 32398, 32396,
+		0, 0, 0,
+		0, 32450, 0,
+		32448, 32449, 32447,
+		0, 0, 0,
+		32380, 0, 32380,
+		32380, 32381, 32380,
+		32380, 0, 32380,
+		32380, 32381, 32380,
+		0, 0, 0,
+		32379, 0, 32379,
+		32379, 0, 32379,
+		32379, 0, 32379,
+		0, 0, 0,
+		0, 32415, 0
 	};
 	
-	// (Northbound 270 degrees) Route 1
-	private final int[][] START1 =
-	{
-		{
-			-54780,
-			-56810,
-			-2015,
-			49152
-		},
-		{
-			-54860,
-			-56810,
-			-2015,
-			49152
-		},
-		{
-			-54940,
-			-56810,
-			-2015,
-			49152
-		}
-	};
-	private final int[][] GOAL1 =
-	{
-		{
-			-54780,
-			-57965,
-			-2015,
-			49152
-		},
-		{
-			-54860,
-			-57965,
-			-2015,
-			49152
-		},
-		{
-			-54940,
-			-57965,
-			-2015,
-			49152
-		}
-	};
-	// (Westbound 180 degrees) Route 2
-	private final int[][] START2 =
-	{
-		{
-			-55715,
-			-58900,
-			-2015,
-			32768
-		},
-		{
-			-55715,
-			-58820,
-			-2015,
-			32768
-		},
-		{
-			-55715,
-			-58740,
-			-2015,
-			32768
-		}
-	};
-	private final int[][] GOAL2 =
-	{
-		{
-			-60850,
-			-58900,
-			-2015,
-			32768
-		},
-		{
-			-60850,
-			-58820,
-			-2015,
-			32768
-		},
-		{
-			-60850,
-			-58740,
-			-2015,
-			32768
-		}
-	};
-	// (Southbound 90 degrees) Route 3
-	private final int[][] START3 =
-	{
-		{
-			-61790,
-			-57965,
-			-2015,
-			16384
-		},
-		{
-			-61710,
-			-57965,
-			-2015,
-			16384
-		},
-		{
-			-61630,
-			-57965,
-			-2015,
-			16384
-		}
-	};
-	private final int[][] GOAL3 =
-	{
-		{
-			-61790,
-			-53890,
-			-2116,
-			16384
-		},
-		{
-			-61710,
-			-53890,
-			-2116,
-			16384
-		},
-		{
-			-61630,
-			-53890,
-			-2116,
-			16384
-		}
-	};
-	// (Eastbound 0 degrees) Route 4
-	private final int[][] START4 =
-	{
-		{
-			-60840,
-			-52990,
-			-2108,
-			0
-		},
-		{
-			-60840,
-			-53070,
-			-2108,
-			0
-		},
-		{
-			-60840,
-			-53150,
-			-2108,
-			0
-		}
-	};
-	private final int[][] GOAL4 =
-	{
-		{
-			-58620,
-			-52990,
-			-2015,
-			0
-		},
-		{
-			-58620,
-			-53070,
-			-2015,
-			0
-		},
-		{
-			-58620,
-			-53150,
-			-2015,
-			0
-		}
-	};
-	// (To 315 degrees northeast) Route 5
-	private final int[][] START5 =
-	{
-		{
-			-57233,
-			-53554,
-			-2015,
-			57344
-		},
-		{
-			-57290,
-			-53610,
-			-2015,
-			57344
-		},
-		{
-			-57346,
-			-53667,
-			-2015,
-			57344
-		}
-	};
-	private final int[][] GOAL5 =
-	{
-		{
-			-55338,
-			-55435,
-			-2015,
-			57344
-		},
-		{
-			-55395,
-			-55491,
-			-2015,
-			57344
-		},
-		{
-			-55451,
-			-55547,
-			-2015,
-			57344
-		}
-	};
+	//(Northbound 270 degrees) Route 1
+	private final int[][] START1 = {{-54780, -56810, -2015, 49152},{-54860, -56810, -2015, 49152},{-54940, -56810, -2015, 49152}};
+	private final int[][] GOAL1  = {{-54780, -57965, -2015, 49152},{-54860, -57965, -2015, 49152},{-54940, -57965, -2015, 49152}};
+	//(Westbound 180 degrees) Route 2
+	private final int[][] START2 = {{-55715, -58900, -2015, 32768},{-55715, -58820, -2015, 32768},{-55715, -58740, -2015, 32768}};
+	private final int[][] GOAL2  = {{-60850, -58900, -2015, 32768},{-60850, -58820, -2015, 32768},{-60850, -58740, -2015, 32768}};
+	//(Southbound 90 degrees) Route 3
+	private final int[][] START3 = {{-61790, -57965, -2015, 16384},{-61710, -57965, -2015, 16384},{-61630, -57965, -2015, 16384}};
+	private final int[][] GOAL3  = {{-61790, -53890, -2116, 16384},{-61710, -53890, -2116, 16384},{-61630, -53890, -2116, 16384}};
+	//(Eastbound 0 degrees) Route 4
+	private final int[][] START4 = {{-60840, -52990, -2108, 0},{-60840, -53070, -2108, 0},{-60840, -53150, -2108, 0}};
+	private final int[][] GOAL4  = {{-58620, -52990, -2015, 0},{-58620, -53070, -2015, 0},{-58620, -53150, -2015, 0}};
+	//(To 315 degrees northeast) Route 5
+	private final int[][] START5 = {{-57233, -53554, -2015, 57344},{-57290, -53610, -2015, 57344},{-57346, -53667, -2015, 57344}};
+	private final int[][] GOAL5  = {{-55338, -55435, -2015, 57344},{-55395, -55491, -2015, 57344},{-55451, -55547, -2015, 57344}};
 	
-	protected final int[][][] START =
-	{
-		START1,
-		START2,
-		START3,
-		START4,
-		START5
-	};
-	protected final int[][][] GOAL =
-	{
-		GOAL1,
-		GOAL2,
-		GOAL3,
-		GOAL4,
-		GOAL5
-	};
+	final int[][][] START = {START1, START2, START3, START4, START5};
+	final int[][][] GOAL  = {GOAL1, GOAL2, GOAL3, GOAL4, GOAL5};
+	// @formatter:on
 	
-	protected ScheduledFuture<?> spawnTask;
-	protected ScheduledFuture<?> deleteTask;
-	protected ScheduledFuture<?> cleanTask;
+	int npcIndex;
+	CopyOnWriteArrayList<L2Npc> spawns;
+	ScheduledFuture<?> spawnTask;
+	ScheduledFuture<?> deleteTask;
+	ScheduledFuture<?> cleanTask;
 	
-	protected int npcIndex;
-	protected List<L2Npc> spawns;
+	public Parade()
+	{
+		super(Parade.class.getSimpleName(), "ai/zone/FantasyIsle");
+		
+		// Starts at 8:00 and repeats every 6 hours.
+		final long diff = timeLeftMilli(8, 0, 0), cycle = 3600000L;
+		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Start(), diff, cycle);
+		
+		final SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+		_log.info("Fantasy Isle: Parade starting at " + format.format(System.currentTimeMillis() + diff) + " and is scheduled each next " + (cycle / 3600000) + " hours.");
+	}
 	
 	protected void load()
 	{
@@ -364,29 +147,11 @@ public class Parade extends AbstractNpcAI
 	
 	protected void clean()
 	{
-		for (Iterator<L2Npc> it = spawns.iterator(); it.hasNext();)
+		if (spawns != null)
 		{
-			L2Npc actor = it.next();
-			if (actor != null)
-			{
-				actor.deleteMe();
-				it.remove();
-			}
+			spawns.forEach(L2Npc::deleteMe);
 		}
 		spawns = null;
-	}
-	
-	public Parade()
-	{
-		super(Parade.class.getSimpleName(), "ai/zone/FantasyIsle");
-		
-		final long diff = timeLeftMilli(8, 0, 0), cycle = 3600000L; // 8:00 start time, repeated every 6 hours
-		if (DEBUG)
-		{
-			SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm");
-			_log.info("Fantasy Isle: Parade script starting at " + format.format(System.currentTimeMillis() + diff) + " and is scheduled each next " + (cycle / 3600000) + " hours.");
-		}
-		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Start(), diff, cycle);
 	}
 	
 	private long timeLeftMilli(int hh, int mm, int ss)
@@ -422,10 +187,7 @@ public class Parade extends AbstractNpcAI
 			{
 				if (npcIndex >= ACTORS.length)
 				{
-					if (spawnTask != null)
-					{
-						spawnTask.cancel(false);
-					}
+					spawnTask.cancel(false);
 					break;
 				}
 				int npcId = ACTORS[npcIndex++];
@@ -434,12 +196,12 @@ public class Parade extends AbstractNpcAI
 					continue;
 				}
 				for (int route = 0; route < 5; ++route)
-				{ // TODO:Provisional
+				{
 					int[] start = START[route][i];
 					int[] goal = GOAL[route][i];
 					L2Npc actor = addSpawn(npcId, start[0], start[1], start[2], start[3], false, 0);
 					actor.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(goal[0], goal[1], goal[2], goal[3]));
-					spawns.add(actor);// TODO:NPE
+					spawns.add(actor);
 				}
 			}
 		}
@@ -450,32 +212,26 @@ public class Parade extends AbstractNpcAI
 		@Override
 		public void run()
 		{
-			if (spawns != null)
+			if (spawns.size() > 0)
 			{
-				if (spawns.size() > 0)
+				for (L2Npc actor : spawns)
 				{
-					for (Iterator<L2Npc> it = spawns.iterator(); it.hasNext();)
+					if (actor != null)
 					{
-						L2Npc actor = it.next();
-						if (actor != null)
+						if (actor.calculateDistance(actor.getXdestination(), actor.getYdestination(), 0, false, true) < (100 * 100))
 						{
-							if (actor.getPlanDistanceSq(actor.getXdestination(), actor.getYdestination()) < (100 * 100)) // TODO:NPE
-							{
-								actor.deleteMe();
-								it.remove();
-							}
-							else if (!actor.isMoving())
-							{
-								actor.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(actor.getXdestination(), actor.getYdestination(), actor.getZdestination(), actor.getHeading()));
-								System.out.println("__BASENAME__:__LINE__: " + actor.getId() + " " + actor.getX() + "," + actor.getY() + "," + actor.getZ() + "," + actor.getHeading() + " -> " + actor.getXdestination() + "," + actor.getYdestination() + "," + actor.getZdestination() + " " + (actor.hasAI() ? actor.getAI().getIntention().name() : "NOAI"));
-								actor.broadcastPacket(new NpcSay(actor.getObjectId(), 0, actor.getId(), actor.getId() + "/" + actor.getXdestination() + "," + actor.getYdestination() + "," + actor.getZdestination()));
-							}
+							actor.deleteMe();
+							spawns.remove(actor);
+						}
+						else if (!actor.isMoving())
+						{
+							actor.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(actor.getXdestination(), actor.getYdestination(), actor.getZdestination(), actor.getHeading()));
 						}
 					}
-					if (spawns.size() == 0)
-					{
-						deleteTask.cancel(false);// TODO:NPE
-					}
+				}
+				if (spawns.size() == 0)
+				{
+					deleteTask.cancel(false);
 				}
 			}
 		}

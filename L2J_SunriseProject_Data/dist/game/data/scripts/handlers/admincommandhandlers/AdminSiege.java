@@ -323,10 +323,9 @@ public class AdminSiege implements IAdminCommandHandler
 					case "admin_startsiege":
 						castle.getSiege().startSiege();
 						break;
-					default:
-						showSiegePage(activeChar, castle.getName());
-						break;
 				}
+				
+				showSiegePage(activeChar, castle.getName());
 			}
 		}
 		else
