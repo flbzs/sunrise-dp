@@ -51,7 +51,7 @@ public class DispelBySlotProbability extends L2Effect
 			for (String ngtStack : _dispel.split(";"))
 			{
 				String[] ngt = ngtStack.split(",");
-				_dispelAbnormals.put(ngt[0].toLowerCase(), Short.parseShort(ngt[1]));
+				_dispelAbnormals.put(ngt[0].toLowerCase(), Short.MAX_VALUE);
 			}
 		}
 		else
