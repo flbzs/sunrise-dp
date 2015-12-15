@@ -3,7 +3,9 @@ package instances.Zaken;
 import static l2r.gameserver.enums.CtrlIntention.AI_INTENTION_ATTACK;
 
 import java.util.Calendar;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import l2r.Config;
 import l2r.gameserver.data.xml.impl.SkillData;
@@ -33,7 +35,6 @@ import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
 
 import ai.npc.AbstractNpcAI;
-import javolution.util.FastList;
 
 public class Zaken extends AbstractNpcAI
 {
@@ -62,7 +63,8 @@ public class Zaken extends AbstractNpcAI
 	private static final int PATHFINDER = 32713;
 	private static final Location ENTER_TELEPORT = new Location(52680, 219088, -3232);
 	
-	private static final FastList<Location> _spawnPcLocationNighttime = new FastList<>();
+	private static final List<Location> _spawnPcLocationNighttime = new CopyOnWriteArrayList<>();
+	
 	static
 	{
 		_spawnPcLocationNighttime.add(new Location(54469, 219798, -3488));
@@ -78,7 +80,8 @@ public class Zaken extends AbstractNpcAI
 		_spawnPcLocationNighttime.add(new Location(54469, 220463, -3488));
 	}
 	
-	private static final FastList<Location> _spawnsZaken = new FastList<>();
+	private static final List<Location> _spawnsZaken = new CopyOnWriteArrayList<>();
+	
 	static
 	{
 		_spawnsZaken.add(new Location(54237, 218135, -3496));
@@ -213,11 +216,10 @@ public class Zaken extends AbstractNpcAI
 		}
 		
 		// teleport players
-		List<L2PcInstance> players;
+		List<L2PcInstance> players = new LinkedList<>();
 		L2Party party = player.getParty();
 		if (party == null)
 		{
-			players = new FastList<>();
 			players.add(player);
 		}
 		else if (party.isInCommandChannel())
