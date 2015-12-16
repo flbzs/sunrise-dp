@@ -118,7 +118,7 @@
 			<point x="-88466" y="-140046" /> <!-- Up Right -->
 			<point x="-89143" y="-140741" /> <!-- Down Right -->
 		</zone>
-		<zone id="16" minZ="-9184" maxZ="-8984">
+		<zone id="16" minZ="-9168" maxZ="-8984">
 			<point x="-88059" y="-147379" />
 			<point x="-87699" y="-147371" />
 			<point x="-87707" y="-146959" />

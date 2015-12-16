@@ -316,7 +316,7 @@ public class AdminSiege implements IAdminCommandHandler
 							}
 						}
 						showSiegeTimePage(activeChar, castle);
-						break;
+						return true;
 					case "admin_spawn_doors":
 						castle.spawnDoor();
 						break;
