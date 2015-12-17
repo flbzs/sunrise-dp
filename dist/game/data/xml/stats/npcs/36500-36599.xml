@@ -2960,7 +2960,7 @@
 			<height normal="25" />
 		</collision>
 	</npc>
-	<npc id="36562" level="83" type="L2Npc" name="Seduced Knight" title="Investigator">
+	<npc id="36562" level="83" type="L2QuestGuard" name="Seduced Knight" title="Investigator">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3019,7 +3019,7 @@
 			<height normal="23.75" />
 		</collision>
 	</npc>
-	<npc id="36563" level="83" type="L2Npc" name="Seduced Ranger" title="Investigator">
+	<npc id="36563" level="83" type="L2QuestGuard" name="Seduced Ranger" title="Investigator">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3076,7 +3076,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="36564" level="83" type="L2Npc" name="Seduced Mage" title="Investigator">
+	<npc id="36564" level="83" type="L2QuestGuard" name="Seduced Mage" title="Investigator">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3131,7 +3131,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="36565" level="83" type="L2Npc" name="Seduced Warrior" title="Investigator">
+	<npc id="36565" level="83" type="L2QuestGuard" name="Seduced Warrior" title="Investigator">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3188,7 +3188,7 @@
 			<height normal="30" />
 		</collision>
 	</npc>
-	<npc id="36566" level="77" type="L2Npc" name="Seduced Knight" title="Investigator">
+	<npc id="36566" level="77" type="L2QuestGuard" name="Seduced Knight" title="Investigator">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3247,7 +3247,7 @@
 			<height normal="23.75" />
 		</collision>
 	</npc>
-	<npc id="36567" level="77" type="L2Npc" name="Seduced Ranger" title="Investigator">
+	<npc id="36567" level="77" type="L2QuestGuard" name="Seduced Ranger" title="Investigator">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3304,7 +3304,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="36568" level="77" type="L2Npc" name="Seduced Mage" title="Investigator">
+	<npc id="36568" level="77" type="L2QuestGuard" name="Seduced Mage" title="Investigator">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />
@@ -3359,7 +3359,7 @@
 			<height normal="23.5" />
 		</collision>
 	</npc>
-	<npc id="36569" level="77" type="L2Npc" name="Seduced Warrior" title="Investigator">
+	<npc id="36569" level="77" type="L2QuestGuard" name="Seduced Warrior" title="Investigator">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="0" />

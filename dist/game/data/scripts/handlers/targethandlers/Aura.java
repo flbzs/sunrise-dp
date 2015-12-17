@@ -26,6 +26,7 @@ import l2r.gameserver.handler.ITargetTypeHandler;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.instance.L2DoorInstance;
+import l2r.gameserver.model.actor.instance.L2GuardInstance;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.targets.L2TargetType;
 
@@ -51,6 +52,11 @@ public class Aura implements ITargetTypeHandler
 					{
 						continue;
 					}
+				}
+				
+				if ((obj instanceof L2GuardInstance) && !obj.isAutoAttackable(activeChar))
+				{
+					continue;
 				}
 				
 				if (!L2Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena))

@@ -45,6 +45,7 @@ import l2r.gameserver.model.actor.instance.L2DoorInstance;
 import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.instance.L2TrapInstance;
+import l2r.gameserver.model.entity.Instance;
 import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.skills.L2Skill;
@@ -1015,6 +1016,11 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 					}
 					
 					SoDManager.getInstance().increaseSoDTiatKilled();
+					
+					// Destroy instance after 5 minutes
+					Instance inst = InstanceManager.getInstance().getInstance(tmpworld.getInstanceId());
+					inst.setDuration(15 * 60000);
+					inst.setEmptyDestroyTime(0);
 				}
 				else if (npc.getId() == TIAT_GUARD)
 				{
