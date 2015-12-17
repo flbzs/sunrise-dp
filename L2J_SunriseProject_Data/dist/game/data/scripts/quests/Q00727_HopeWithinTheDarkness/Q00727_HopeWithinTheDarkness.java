@@ -95,7 +95,7 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 	private static final long REENTER_INTERVAL = 14400000;
 	private static final long INITIAL_SPAWN_DELAY = 120000; // Spawn NPC's and 1'st Wave bosses (2 min)
 	private static final long WAVE_SPAWN_DELAY = 480000; // Spawn next wave's bosses (8 min)
-	private static final long PRIVATE_SPAWN_DELAY = 180000; // Spawn monsters (3 min after boss had been spawned)
+	private static final long PRIVATE_SPAWN_DELAY = 5000; // Spawn monsters (3 min after boss had been spawned)
 	
 	public static final Logger _log = LoggerFactory.getLogger(Q00727_HopeWithinTheDarkness.class);
 	
@@ -110,293 +110,69 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 	private static final int NPC_MAGE = 36564;
 	private static final int NPC_WARRIOR = 36565;
 	
-	private static final int[] BOSSES =
-	{
-		25653,
-		25654,
-		25655
-	};
-	private static final int[] MONSTERS =
-	{
-		25656,
-		25657,
-		25658
-	};
+	//@formatter:off
+	private static final int[] BOSSES = { 25653, 25654, 25655 };
+	private static final int[] MONSTERS ={ 25656, 25657, 25658 };
 	
 	// Spawns
-	public static final int[][] BOSSES_FIRST_WAVE =
-	{
-		{
-			BOSSES[0],
-			50943,
-			-12224,
-			-9321,
-			32768
-		}
-	};
+	public static final int[][] BOSSES_FIRST_WAVE = {{ BOSSES[0], 50943, -12224, -9321, 32768 }};
 	
-	public static final int[][] BOSSES_SECOND_WAVE =
-	{
-		{
-			BOSSES[1],
-			50943,
-			-12224,
-			-9321,
-			32768
-		}
-	};
+	public static final int[][] BOSSES_SECOND_WAVE = {{ BOSSES[1], 50943, -12224, -9321, 32768 }};
 	
 	public static final int[][] BOSSES_THIRD_WAVE =
 	{
-		{
-			BOSSES[2],
-			50943,
-			-12004,
-			-9321,
-			32768
-		},
-		{
-			BOSSES[2],
-			50943,
-			-12475,
-			-9321,
-			32768
-		}
+		{ BOSSES[2], 50943, -12004, -9321, 32768 },
+		{ BOSSES[2], 50943, -12475, -9321, 32768 }
 	};
 	
 	public static final int[][] MONSTERS_FIRST_WAVE =
 	{
-		{
-			MONSTERS[0],
-			50343,
-			-12552,
-			-9388,
-			32768
-		},
-		{
-			MONSTERS[0],
-			50344,
-			-12340,
-			-9380,
-			32768
-		},
-		{
-			MONSTERS[0],
-			50341,
-			-12134,
-			-9381,
-			32768
-		},
-		{
-			MONSTERS[0],
-			50342,
-			-11917,
-			-9389,
-			32768
-		},
-		{
-			MONSTERS[0],
-			50476,
-			-12461,
-			-9392,
-			32768
-		},
-		{
-			MONSTERS[0],
-			50481,
-			-12021,
-			-9390,
-			32768
-		},
-		{
-			MONSTERS[0],
-			50605,
-			-12407,
-			-9392,
-			32768
-		},
-		{
-			MONSTERS[0],
-			50602,
-			-12239,
-			-9380,
-			32768
-		},
-		{
-			MONSTERS[0],
-			50606,
-			-12054,
-			-9390,
-			32768
-		}
+		{ MONSTERS[0], 50343, -12552, -9388, 32768 },
+		{ MONSTERS[0], 50344, -12340, -9380, 32768 },
+		{ MONSTERS[0], 50341, -12134, -9381, 32768 },
+		{ MONSTERS[0], 50342, -11917, -9389, 32768 },
+		{ MONSTERS[0], 50476, -12461, -9392, 32768 },
+		{ MONSTERS[0], 50481, -12021, -9390, 32768 },
+		{ MONSTERS[0], 50605, -12407, -9392, 32768 },
+		{ MONSTERS[0], 50602, -12239, -9380, 32768 },
+		{ MONSTERS[0], 50606, -12054, -9390, 32768 }
 	};
 	
 	public static final int[][] MONSTERS_SECOND_WAVE =
 	{
-		{
-			MONSTERS[1],
-			50343,
-			-12552,
-			-9388,
-			32768
-		},
-		{
-			MONSTERS[1],
-			50344,
-			-12340,
-			-9380,
-			32768
-		},
-		{
-			MONSTERS[1],
-			50341,
-			-12134,
-			-9381,
-			32768
-		},
-		{
-			MONSTERS[1],
-			50342,
-			-11917,
-			-9389,
-			32768
-		},
-		{
-			MONSTERS[1],
-			50476,
-			-12461,
-			-9392,
-			32768
-		},
-		{
-			MONSTERS[1],
-			50481,
-			-12021,
-			-9390,
-			32768
-		},
-		{
-			MONSTERS[1],
-			50605,
-			-12407,
-			-9392,
-			32768
-		},
-		{
-			MONSTERS[1],
-			50602,
-			-12239,
-			-9380,
-			32768
-		},
-		{
-			MONSTERS[1],
-			50606,
-			-12054,
-			-9390,
-			32768
-		}
+		{ MONSTERS[1], 50343, -12552, -9388, 32768 },
+		{ MONSTERS[1], 50344, -12340, -9380, 32768 },
+		{ MONSTERS[1], 50341, -12134, -9381, 32768 },
+		{ MONSTERS[1], 50342, -11917, -9389, 32768 },
+		{ MONSTERS[1], 50476, -12461, -9392, 32768 },
+		{ MONSTERS[1], 50481, -12021, -9390, 32768 },
+		{ MONSTERS[1], 50605, -12407, -9392, 32768 },
+		{ MONSTERS[1], 50602, -12239, -9380, 32768 },
+		{ MONSTERS[1], 50606, -12054, -9390, 32768}
 	};
 	
 	public static final int[][] MONSTERS_THIRD_WAVE =
 	{
-		{
-			MONSTERS[1],
-			50343,
-			-12552,
-			-9388,
-			32768
-		},
-		{
-			MONSTERS[1],
-			50344,
-			-12340,
-			-9380,
-			32768
-		},
-		{
-			MONSTERS[1],
-			50341,
-			-12134,
-			-9381,
-			32768
-		},
-		{
-			MONSTERS[1],
-			50342,
-			-11917,
-			-9389,
-			32768
-		},
-		{
-			MONSTERS[2],
-			50476,
-			-12461,
-			-9392,
-			32768
-		},
-		{
-			MONSTERS[2],
-			50481,
-			-12021,
-			-9390,
-			32768
-		},
-		{
-			MONSTERS[2],
-			50605,
-			-12407,
-			-9392,
-			32768
-		},
-		{
-			MONSTERS[2],
-			50602,
-			-12239,
-			-9380,
-			32768
-		},
-		{
-			MONSTERS[2],
-			50606,
-			-12054,
-			-9390,
-			32768
-		}
+		{ MONSTERS[1], 50343, -12552, -9388, 32768 },
+		{ MONSTERS[1], 50344, -12340, -9380, 32768 },
+		{ MONSTERS[1], 50341, -12134, -9381, 32768 },
+		{ MONSTERS[1], 50342, -11917, -9389, 32768 },
+		{ MONSTERS[2], 50476, -12461, -9392, 32768 },
+		{ MONSTERS[2], 50481, -12021, -9390, 32768 },
+		{ MONSTERS[2], 50605, -12407, -9392, 32768 },
+		{ MONSTERS[2], 50602, -12239, -9380, 32768 },
+		{ MONSTERS[2], 50606, -12054, -9390, 32768 }
 	};
 	
 	// NPCs'_SPAWNS (id, x, y, z, heading)
 	public static final int[][] NPCS =
 	{
-		{
-			NPC_WARRIOR,
-			49093,
-			-12077,
-			-9395,
-			0
-		},
-		{
-			NPC_RANGER,
-			49094,
-			-12238,
-			-9386,
-			0
-		},
-		{
-			NPC_MAGE,
-			49093,
-			-12401,
-			-9388,
-			0
-		},
-		{
-			NPC_KNIGHT,
-			49232,
-			-12239,
-			-9386,
-			0
-		}
+		{ NPC_WARRIOR, 49093, -12077, -9395, 0 },
+		{ NPC_RANGER, 49094, -12238, -9386, 0 },
+		{ NPC_MAGE, 49093, -12401, -9388, 0 },
+		{ NPC_KNIGHT, 49232, -12239, -9386, 0 }
 	};
+	//@formatter:on
 	
 	// Strings
 	private static final NpcStringId[] NPC_INJURED_FSTRINGID =
@@ -540,7 +316,6 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 			return ret;
 		}
 		
-		L2Party party = player.getParty();
 		int instanceId = InstanceManager.getInstance().createDynamicInstance(template);
 		Instance ins = InstanceManager.getInstance().getInstance(instanceId);
 		ins.setExitLoc(new Location(player));
@@ -553,13 +328,23 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 		_log.info("Castle HopeWithinTheDarkness started " + template + " Instance: " + instanceId + " created by player: " + player.getName());
 		ThreadPoolManager.getInstance().scheduleGeneral(new spawnNpcs((CAUWorld) world), INITIAL_SPAWN_DELAY);
 		
-		// teleport players
-		if (player.getParty() == null)
+		if (debug)
 		{
-			return "CastleWarden-09.htm";
+			teleportPlayer(player, coords, instanceId);
+			world.addAllowed(player.getObjectId());
+			if (player.getQuestState(getName()) == null)
+			{
+				newQuestState(player);
+			}
 		}
-		else if ((player.getParty() != null))
+		else
 		{
+			L2Party party = player.getParty();
+			if (party == null)
+			{
+				return "CastleWarden-09.htm";
+			}
+			
 			for (L2PcInstance partyMember : party.getMembers())
 			{
 				teleportPlayer(partyMember, coords, instanceId);
@@ -772,11 +557,8 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 		NPC_BUFFS.put(NPC_MAGE, new SkillHolder(5972, 1));
 		NPC_BUFFS.put(NPC_WARRIOR, new SkillHolder(5973, 1));
 		
-		for (int i : _castleDungeons.keySet())
-		{
-			addStartNpc(i);
-			addTalkId(i);
-		}
+		addStartNpc(_castleDungeons.keySet());
+		addTalkId(_castleDungeons.keySet());
 		
 		for (int i = NPC_KNIGHT; i <= NPC_WARRIOR; i++)
 		{
@@ -787,18 +569,12 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 			addFirstTalkId(i);
 		}
 		
-		for (int i : BOSSES)
-		{
-			addSpawnId(i);
-			addKillId(i);
-			addAttackId(i);
-		}
+		addSpawnId(BOSSES);
+		addKillId(BOSSES);
+		addAttackId(BOSSES);
 		
-		for (int i : MONSTERS)
-		{
-			addKillId(i);
-			addAttackId(i);
-		}
+		addKillId(MONSTERS);
+		addAttackId(MONSTERS);
 	}
 	
 	@Override
@@ -813,7 +589,6 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 			
 			return enterInstance(player, "Castlepailaka.xml", tele, _castleDungeons.get(npc.getId()), checkEnterConditions(player, npc));
 		}
-		
 		else if (event.equalsIgnoreCase("suicide"))
 		{
 			InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
@@ -842,7 +617,6 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 			
 			return null;
 		}
-		
 		else if (event.equalsIgnoreCase("buff"))
 		{
 			Collection<L2PcInstance> players = npc.getKnownList().getKnownPlayers().values();
@@ -857,7 +631,6 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 			startQuestTimer("buff", 120000, npc, null);
 			return null;
 		}
-		
 		else if (event.equalsIgnoreCase("check_for_foes"))
 		{
 			if (npc.getAI().getIntention() != CtrlIntention.AI_INTENTION_ATTACK)
