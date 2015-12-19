@@ -269,7 +269,7 @@ public class SeerUgoros extends AbstractNpcAI
 			startQuestTimer("ugoros_expel", 50000, null, null);
 			startQuestTimer("ugoros_respawn", 60000, null, null);
 			
-			QuestState st = player.getQuestState("Q288_HandleWithCare");
+			QuestState st = player.getQuestState(Q00288_HandleWithCare.class.getSimpleName());
 			if ((st != null) && (st.getInt("cond") == 1) && (st.getInt("drop") == 1))
 			{
 				if (_killed_one_weed)

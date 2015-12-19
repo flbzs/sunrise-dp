@@ -1662,10 +1662,16 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<mul stat="critRate" val="#rCrit">
-				<using kind="DAGGER,DUALDAGGER" />
+				<and>
+					<using kind="LIGHT" />
+					<using kind="DAGGER,DUALDAGGER" />
+				</and>
 			</mul>
 			<add stat="critDmgAdd" val="#cAtkAdd">
-				<using kind="DAGGER,DUALDAGGER" />
+				<and>
+					<using kind="LIGHT" />
+					<using kind="DAGGER,DUALDAGGER" />
+				</and>
 			</add>
 		</for>
 	</skill>

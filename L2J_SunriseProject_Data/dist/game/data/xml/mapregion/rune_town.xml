@@ -40,10 +40,10 @@
 		<map X="16" Y="11" />
 		<map X="17" Y="10" />
 		<map X="17" Y="11" />
+		<map X="19" Y="16" />
 		<map X="19" Y="17" />
 		<map X="20" Y="16" />
 		<!-- <map X="20" Y="17" /> NOTE: Commented due possible retail typo interfering with Primeval Isle mapregion -->
-		<map X="19" Y="16" />
 	</region>
 	<!-- Olympiad Stadium02 -->
 	<region name="olympiad_stadium02" town="Rune Town" castle="8" locId="1537" bbs="14">

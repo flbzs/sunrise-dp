@@ -4855,14 +4855,14 @@ INSERT INTO npcaidata VALUES ('22771', '7', '15', '0', '300', '1', '1', '1', '0'
 INSERT INTO npcaidata VALUES ('22772', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'archer');
 INSERT INTO npcaidata VALUES ('22773', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '800', '0', null, '300', null, '0', '0', 'mage');
 INSERT INTO npcaidata VALUES ('22774', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'mage');
-INSERT INTO npcaidata VALUES ('22775', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sel_mahum_clan', '300', null, '0', '0', 'fighter');
+INSERT INTO npcaidata VALUES ('22775', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sel_mahum_clan', '650', null, '0', '0', 'fighter');
 INSERT INTO npcaidata VALUES ('22776', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sel_mahum_clan', '300', null, '0', '0', 'fighter');
 INSERT INTO npcaidata VALUES ('22777', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'fighter');
 INSERT INTO npcaidata VALUES ('22778', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sel_mahum_clan', '300', null, '0', '0', 'fighter');
 INSERT INTO npcaidata VALUES ('22779', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'fighter');
 INSERT INTO npcaidata VALUES ('22780', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sel_mahum_clan', '400', null, '0', '0', 'fighter');
 INSERT INTO npcaidata VALUES ('22781', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', null, '300', null, '0', '0', 'fighter');
-INSERT INTO npcaidata VALUES ('22782', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sel_mahum_clan', '400', null, '0', '0', 'fighter');
+INSERT INTO npcaidata VALUES ('22782', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sel_mahum_clan', '650', null, '0', '0', 'fighter');
 INSERT INTO npcaidata VALUES ('22783', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sel_mahum_clan', '300', null, '0', '0', 'fighter');
 INSERT INTO npcaidata VALUES ('22784', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sel_mahum_clan', '300', null, '0', '0', 'fighter');
 INSERT INTO npcaidata VALUES ('22785', '7', '15', '0', '300', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sel_mahum_clan', '300', null, '0', '0', 'fighter');
