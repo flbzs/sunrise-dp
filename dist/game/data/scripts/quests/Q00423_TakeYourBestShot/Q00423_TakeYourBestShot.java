@@ -18,6 +18,11 @@
  */
 package quests.Q00423_TakeYourBestShot;
 
+import java.util.Arrays;
+import java.util.List;
+
+import l2r.gameserver.enums.CtrlIntention;
+import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -28,22 +33,21 @@ import quests.Q00249_PoisonedPlainsOfTheLizardmen.Q00249_PoisonedPlainsOfTheLiza
 
 /**
  * Take Your Best Shot (423)
- * @author Gnacik
- * @version 2010-06-26 Based on official server Franz
+ * @author vGodFather
  */
 public class Q00423_TakeYourBestShot extends Quest
 {
-	// NPCs
+	// NPC
 	private static final int BATRACOS = 32740;
 	private static final int JOHNNY = 32744;
-	
-	// Monster
-	private static final int TANTA_GUARD = 18862;
-	
 	// Item
 	private static final int SEER_UGOROS_PASS = 15496;
-	
+	// Guard
+	private static final int TANTA_GUARD = 18862;
+	// Mobs
+	private static final List<Integer> MONSTERS = Arrays.asList(22768, 22769, 22770, 22771, 22772, 22773, 22774);
 	// Misc
+	private static final int SPAWN_CHANCE = 5; // Spawn chance x/1000
 	private static final int MIN_LEVEL = 82;
 	
 	public Q00423_TakeYourBestShot()
@@ -52,58 +56,35 @@ public class Q00423_TakeYourBestShot extends Quest
 		addStartNpc(JOHNNY, BATRACOS);
 		addTalkId(JOHNNY, BATRACOS);
 		addFirstTalkId(BATRACOS);
+		
 		addKillId(TANTA_GUARD);
+		addKillId(MONSTERS);
 	}
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		final QuestState st = getQuestState(player, false);
+		String htmltext = event;
+		QuestState st = player.getQuestState(getName());
 		if (st == null)
 		{
-			return null;
+			return htmltext;
 		}
 		
-		String htmltext = event;
-		switch (event)
+		if (npc.getId() == JOHNNY)
 		{
-			case "32740.html":
-			case "32740-01.html":
-			case "32744-02.html":
-			case "32744-03.htm":
-				break;
-			case "32744-04.htm":
-				st.startQuest();
-				break;
-			case "32744-quit.html":
+			if (event.equalsIgnoreCase("32744-04.htm"))
+			{
+				st.setState(State.STARTED);
+				st.set("cond", "1");
+				st.playSound("ItemSound.quest_accept");
+			}
+			else if (event.equalsIgnoreCase("32744-quit.htm"))
+			{
 				st.exitQuest(true);
-				break;
-			default:
-				htmltext = null;
-				break;
+			}
 		}
 		return htmltext;
-	}
-	
-	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		if (npc.isInsideRadius(96782, 85918, 0, 100, false, true))
-		{
-			return "32740-ugoros.html";
-		}
-		return "32740.html";
-	}
-	
-	@Override
-	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
-	{
-		final QuestState st = getQuestState(killer, false);
-		if ((st != null) && st.isCond(1))
-		{
-			st.setCond(2, true);
-		}
-		return super.onKill(npc, killer, isSummon);
 	}
 	
 	@Override
@@ -122,10 +103,10 @@ public class Q00423_TakeYourBestShot extends Quest
 				switch (st.getState())
 				{
 					case State.CREATED:
-						final QuestState qs249 = player.getQuestState(Q00249_PoisonedPlainsOfTheLizardmen.class.getSimpleName());
-						if ((qs249 != null) && qs249.isCompleted() && (player.getLevel() >= MIN_LEVEL))
+						QuestState _prev = player.getQuestState(Q00249_PoisonedPlainsOfTheLizardmen.class.getSimpleName());
+						if ((_prev != null) && _prev.isCompleted() && (player.getLevel() >= MIN_LEVEL))
 						{
-							htmltext = (st.hasQuestItems(SEER_UGOROS_PASS)) ? "32744-07.htm" : "32744-01.htm";
+							htmltext = st.hasQuestItems(SEER_UGOROS_PASS) ? "32744-07.htm" : "32744-01.htm";
 						}
 						else
 						{
@@ -133,13 +114,13 @@ public class Q00423_TakeYourBestShot extends Quest
 						}
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
+						if (st.getInt("cond") == 1)
 						{
-							htmltext = "32744-05.html";
+							htmltext = "32744-05.htm";
 						}
-						else if (st.isCond(2))
+						else if (st.getInt("cond") == 2)
 						{
-							htmltext = "32744-06.html";
+							htmltext = "32744-06.htm";
 						}
 						break;
 				}
@@ -148,22 +129,72 @@ public class Q00423_TakeYourBestShot extends Quest
 				switch (st.getState())
 				{
 					case State.CREATED:
-						htmltext = (st.hasQuestItems(SEER_UGOROS_PASS)) ? "32740-05.html" : "32740-00.html";
+						htmltext = st.hasQuestItems(SEER_UGOROS_PASS) ? "32740-05.htm" : "32740-00.htm";
 						break;
 					case State.STARTED:
-						if (st.isCond(1))
+						if (st.getInt("cond") == 1)
 						{
-							htmltext = "32740-02.html";
+							htmltext = "32740-02.htm";
 						}
-						else if (st.isCond(2))
+						else if (st.getInt("cond") == 2)
 						{
 							st.giveItems(SEER_UGOROS_PASS, 1);
-							st.exitQuest(true, true);
-							htmltext = "32740-04.html";
+							st.playSound("ItemSound.quest_finish");
+							st.unset("cond");
+							st.exitQuest(true);
+							htmltext = "32740-04.htm";
 						}
 						break;
 				}
+				break;
 		}
+		
 		return htmltext;
+	}
+	
+	@Override
+	public String onFirstTalk(L2Npc npc, L2PcInstance player)
+	{
+		final QuestState st = getQuestState(player, true);
+		String htmltext = getNoQuestMsg(player);
+		if (st == null)
+		{
+			return htmltext;
+		}
+		
+		if (npc.isInsideRadius(96782, 85918, 0, 100, false, true))
+		{
+			return "32740-ugoros.htm";
+		}
+		return "32740.htm";
+	}
+	
+	@Override
+	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
+	{
+		final QuestState st = getQuestState(player, false);
+		if (st == null)
+		{
+			return null;
+		}
+		
+		if (MONSTERS.contains(npc.getId()) && (getRandom(1000) <= SPAWN_CHANCE))
+		{
+			L2Npc guard = addSpawn(TANTA_GUARD, npc, false);
+			attackPlayer((L2Attackable) guard, player);
+		}
+		else if ((npc.getId() == TANTA_GUARD) && (st.getInt("cond") == 1))
+		{
+			st.set("cond", "2");
+			st.playSound("ItemSound.quest_middle");
+		}
+		return null;
+	}
+	
+	private void attackPlayer(L2Attackable npc, L2PcInstance player)
+	{
+		npc.setIsRunning(true);
+		npc.addDamageHate(player, 0, 999);
+		npc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 	}
 }

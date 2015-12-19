@@ -548,7 +548,7 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 		spawnState((SOD1World) world);
 		for (L2DoorInstance door : InstanceManager.getInstance().getInstance(instanceId).getDoors())
 		{
-			if (Util.contains(ATTACKABLE_DOORS, door.getId()))
+			if (Util.contains(ATTACKABLE_DOORS, door.getId()) || (door.getId() == FORTRESS_DOOR))
 			{
 				door.setIsAttackableDoor(true);
 				door.setTargetable(true);

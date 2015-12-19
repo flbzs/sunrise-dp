@@ -36,7 +36,6 @@ import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.data.sql.CharNameTable;
 import l2r.gameserver.data.xml.impl.ClassListData;
 import l2r.gameserver.data.xml.impl.TransformData;
-import l2r.gameserver.enums.Race;
 import l2r.gameserver.handler.IAdminCommandHandler;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.L2World;
@@ -365,8 +364,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				}
 				if (valid && (player.getClassId().getId() != classidval))
 				{
-					Race race = player.getRace();
-					boolean isMage = player.isMageClass();
+					TransformData.getInstance().transformPlayer(255, player);
 					player.setClassId(classidval);
 					if (!player.isSubClassActive())
 					{
@@ -375,14 +373,11 @@ public class AdminEditChar implements IAdminCommandHandler
 					String newclass = ClassListData.getInstance().getClass(player.getClassId()).getClassName();
 					player.store();
 					player.sendMessage("A GM changed your class to " + newclass + ".");
+					player.untransform();
 					player.broadcastUserInfo();
+					activeChar.setTarget(null);
+					activeChar.setTarget(player);
 					activeChar.sendMessage(player.getName() + " is a " + newclass + ".");
-					// If necessary transform-untransform player quickly to force the client to reload the character textures
-					if ((race != player.getRace()) || (((race == Race.HUMAN) || (race == Race.ORC)) && (isMage != player.isMageClass())))
-					{
-						TransformData.getInstance().transformPlayer(105, player);
-						ThreadPoolManager.getInstance().scheduleGeneral(new Untransform(player), 200);
-					}
 				}
 				else
 				{

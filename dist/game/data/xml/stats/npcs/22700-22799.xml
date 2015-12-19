@@ -6399,7 +6399,7 @@
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
 		<sNpcPropHpRate>2</sNpcPropHpRate>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="650" isAggressive="false" />
 		<dropLists>
 			<death>
 				<group chance="70">
@@ -7181,7 +7181,7 @@
 			<skill id="6340" level="1" /> <!--Shock -->
 		</skillList>
 		<exCrtEffect>false</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="400" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="650" isAggressive="false" />
 		<dropLists>
 			<death>
 				<group chance="70">
