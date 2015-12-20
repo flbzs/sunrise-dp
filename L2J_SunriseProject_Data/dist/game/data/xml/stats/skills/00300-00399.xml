@@ -546,6 +546,7 @@
 		<set name="coolTime" val="1000" />
 		<set name="effectRange" val="1400" />
 		<set name="hitTime" val="3000" />
+		<set name="icon" val="icon.skill0314" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="offensive" val="true" />
@@ -553,7 +554,7 @@
 		<set name="overHit" val="true" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="5000" />
-		<set name="skillType" val="FATAL" />
+		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="power" val="#ench1Power" />
@@ -576,6 +577,9 @@
 		<cond msgId="113" addName="1">
 			<using kind="BOW" />
 		</cond>
+		<for>
+			<effect name="PhysicalAttackHpLink" val="0" />
+		</for>
 	</skill>
 	<skill id="315" levels="16" name="Crush of Doom" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
 		<table name="#hpConsume"> 208 212 212 217 221 225 229 233 237 240 244 248 251 255 258 261 </table>

@@ -617,8 +617,10 @@
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="8000" />
-		<set name="skillType" val="MANADAM" />
 		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="MagicalAttackMp" val="0" />
+		</for>
 	</skill>
 	<skill id="4040" levels="12" name="NPC Bow Attack">
 		<!-- Freya retail confirmed -->
@@ -1600,7 +1602,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="CancelAll" noicon="1" val="0" />
+			<effect name="DispelAll" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="4095" levels="1" name="Damage Shield">

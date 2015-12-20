@@ -21,12 +21,12 @@ package handlers.effecthandlers;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 
 /**
+ * Cp Heal Percent effect implementation.
  * @author UnAfraid
  */
 public class CpHealPercent extends L2Effect
@@ -40,12 +40,6 @@ public class CpHealPercent extends L2Effect
 	public boolean isInstant()
 	{
 		return true;
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.CPHEAL_PERCENT;
 	}
 	
 	@Override

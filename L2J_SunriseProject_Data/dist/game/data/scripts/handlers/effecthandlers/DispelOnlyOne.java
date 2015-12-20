@@ -37,7 +37,7 @@ public class DispelOnlyOne extends L2Effect
 	@Override
 	public L2EffectType getEffectType()
 	{
-		return L2EffectType.NEGATE;
+		return L2EffectType.DISPEL;
 	}
 	
 	@Override
@@ -55,7 +55,6 @@ public class DispelOnlyOne extends L2Effect
 			return false;
 		}
 		
-		int _dispelledCount = 0;
 		for (L2Effect e : target.getAllEffects())
 		{
 			if (!e.getSkill().canBeDispeled())
@@ -63,13 +62,8 @@ public class DispelOnlyOne extends L2Effect
 				continue;
 			}
 			
-			if (_dispelledCount != 0)
-			{
-				break;
-			}
-			
-			_dispelledCount++;
 			e.exit();
+			break;
 		}
 		return true;
 	}

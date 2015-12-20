@@ -21,7 +21,6 @@ package handlers.effecthandlers;
 import l2r.gameserver.data.xml.impl.TransformData;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 
 /**
@@ -49,12 +48,6 @@ public class Transformation extends L2Effect
 	public Transformation(Env env, L2Effect effect)
 	{
 		super(env, effect);
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.TRANSFORMATION;
 	}
 	
 	@Override

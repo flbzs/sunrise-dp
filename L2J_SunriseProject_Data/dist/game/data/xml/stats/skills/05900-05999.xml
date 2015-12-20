@@ -4,31 +4,65 @@
 		<set name="abnormalLvl" val="8" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="oblivion" />
+		<set name="abnormalVisualEffect" val="DOT_POISON" />
+		<set name="activateRate" val="90" />
 		<set name="affectLimit" val="5-15" />
+		<set name="basicProperty" val="MEN" />
+		<set name="effectPoint" val="-100" />
 		<set name="fanRange" val="0,0,150,90" />
 		<set name="hitTime" val="2000" />
+		<set name="icon" val="icon.skill1481" />
+		<set name="isDebuff" val="true" />
+		<set name="offensive" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="NOTDONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="FRONT_AREA" />
 		<set name="trait" val="DERANGEMENT" />
+		<for>
+			<effect name="TriggerSkillByAttack" abnormalTime="10" val="0" abnormalLvl="8" abnormalType="oblivion">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="90" />
+				<param skillId="5902" skillLevel="1" /> <!-- NPC Trigger Target Cancel -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="5901" levels="2" name="Mist of Oblivion">
 		<table name="#hitTime"> 2000 22940 </table>
 		<set name="abnormalLvl" val="8" />
 		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="oblivion" />
+		<set name="abnormalVisualEffect" val="dot_poison" />
+		<set name="activateRate" val="90" />
 		<set name="affectLimit" val="10-10" />
+		<set name="basicProperty" val="MEN" />
+		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="#hitTime" />
+		<set name="icon" val="icon.skill1481" />
+		<set name="isDebuff" val="true" />
+		<set name="offensive" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A2" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="NOTDONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="NONE" />
 		<set name="trait" val="DERANGEMENT" />
+		<for>
+			<effect name="TriggerSkillByAttack" abnormalTime="10" val="0" abnormalLvl="8" abnormalType="oblivion">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="90" />
+				<param skillId="5902" skillLevel="1" /> <!-- NPC Trigger Target Cancel -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="5902" levels="1" name="NPC Trigger Target Cancel">
 		<!-- Confirmed CT2.5 -->
@@ -180,9 +214,19 @@
 		<set name="trait" val="DERANGEMENT" />
 	</skill>
 	<skill id="5913" levels="1" name="Putrefection Cleanse">
+		<set name="magicLvl" val="83" />
 		<set name="operateType" val="P" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="100" />
+				<param skillId="5914" skillLevel="1" /> <!-- Putrefaction Cleanse -->
+				<param targetType="ONE" />
+				<param allowWeapons="ALL" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="5914" levels="1" name="Putrefaction Cleanse">
 		<set name="abnormalLvl" val="1" />
@@ -1175,7 +1219,13 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="10" val="0" abnormalVisualEffect="poison" effectPower="90" activationChance="90" chanceType="ON_ATTACKED_HIT" triggeredId="5902" abnormalLvl="8" abnormalType="oblivion" />
+			<effect name="TriggerSkillByDamage" abnormalTime="10" val="0" abnormalVisualEffect="poison" effectPower="90" abnormalLvl="8" abnormalType="oblivion">
+				<param attackerType="L2Attackable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="90" />
+				<param skillId="5902" skillLevel="1" /> <!-- NPC Trigger Target Cancel -->
+				<param targetType="SELF" />
+			</effect>
 			<effect name="Mute" abnormalTime="10" noicon="1" val="0" effectPower="90" />
 			<effect name="PhysicalMute" abnormalTime="10" noicon="1" val="0" effectPower="90" />
 		</for>

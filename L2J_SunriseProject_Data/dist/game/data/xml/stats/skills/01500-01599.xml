@@ -337,10 +337,22 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="power" val="#ench2Chance" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="30" val="0" abnormalVisualEffect="poison" activationChance="30" activationMinDamage="100" chanceType="ON_ATTACKED_HIT" triggeredId="5591" triggeredLevel="#triggeredLevel" abnormalLvl="#triggeredLevel" abnormalType="curse_life_flow" />
+			<effect name="TriggerSkillByDamage" abnormalTime="30" val="0" abnormalVisualEffect="poison" abnormalLvl="#triggeredLevel" abnormalType="curse_life_flow">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="30" />
+				<param skillId="5591" skillLevel="#triggeredLevel" /> <!-- Light Flow -->
+				<param targetType="ONE" />
+			</effect>
 		</for>
 		<enchant1for>
-			<effect name="ChanceSkillTrigger" abnormalTime="#ench1Time" val="0" abnormalVisualEffect="poison" activationChance="30" activationMinDamage="100" chanceType="ON_ATTACKED_HIT" triggeredId="5591" triggeredLevel="8" abnormalLvl="8" abnormalType="curse_life_flow" />
+			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="curse_life_flow">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="30" />
+				<param skillId="5591" skillLevel="8" /> <!-- Light Flow -->
+				<param targetType="ONE" />
+			</effect>
 		</enchant1for>
 	</skill>
 	<skill id="1512" levels="1" name="Soul Vortex" enchantGroup1="6" enchantGroup2="6" enchantGroup3="6" enchantGroup4="6">
@@ -409,7 +421,6 @@
 		<set name="magicLvl" val="79" />
 		<set name="mpConsume" val="68" />
 		<set name="mpInitialConsume" val="17" />
-		<set name="negateAbnormals" val="multi_debuff_soul,9" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="195" />
@@ -428,7 +439,9 @@
 			<target active_effect_id="1512" />
 		</cond>
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="MULTI_DEBUFF_SOUL,9" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1514" levels="1" name="Soul Barrier" enchantGroup1="1" enchantGroup2="1">
@@ -505,16 +518,40 @@
 		<enchant2 name="mpInitialConsume" val="#ench2MpInitialConsume" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="1200" val="0" activationChance="20" activationMinDamage="100" chanceType="ON_ATTACKED_HIT" triggeredId="5592" abnormalLvl="1" abnormalType="elemental_armor" />
+			<effect name="TriggerSkillByDamage" abnormalTime="1200" val="0" abnormalLvl="1" abnormalType="elemental_armor">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="20" />
+				<param skillId="5592" skillLevel="1" /> <!-- Lightning Barrier -->
+				<param targetType="ONE" />
+			</effect>
 		</for>
 		<enchant1for>
-			<effect name="ChanceSkillTrigger" abnormalTime="1200" val="0" activationChance="#ench1Chance" activationMinDamage="100" chanceType="ON_ATTACKED_HIT" triggeredId="5592" abnormalLvl="1" abnormalType="elemental_armor" />
+			<effect name="TriggerSkillByDamage" abnormalTime="1200" val="0" abnormalLvl="1" abnormalType="elemental_armor">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="#ench1Chance" />
+				<param skillId="5592" skillLevel="1" /> <!-- Lightning Barrier -->
+				<param targetType="ONE" />
+			</effect>
 		</enchant1for>
 		<enchant2for>
-			<effect name="ChanceSkillTrigger" abnormalTime="1200" val="0" activationChance="#ench2Chance" activationMinDamage="100" chanceType="ON_ATTACKED_HIT" triggeredId="5592" triggeredLevel="#ench2Trigger" abnormalLvl="1" abnormalType="elemental_armor" />
+			<effect name="TriggerSkillByDamage" abnormalTime="1200" val="0" abnormalLvl="1" abnormalType="elemental_armor">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="#ench2Chance" />
+				<param skillId="5592" skillLevel="#ench2Trigger" /> <!-- Lightning Barrier -->
+				<param targetType="ONE" />
+			</effect>
 		</enchant2for>
 		<enchant3for>
-			<effect name="ChanceSkillTrigger" abnormalTime="1200" val="0" abnormalLvl="1" activationChance="20" activationMinDamage="100" chanceType="ON_ATTACKED_HIT" triggeredId="5592" triggeredLevel="#ench3Trigger" abnormalType="elemental_armor" />
+			<effect name="TriggerSkillByDamage" abnormalTime="1200" val="0" abnormalLvl="1" abnormalType="elemental_armor">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="20" />
+				<param skillId="5592" skillLevel="#ench3Trigger" /> <!-- Lightning Barrier -->
+				<param targetType="ONE" />
+			</effect>
 		</enchant3for>
 	</skill>
 	<skill id="1516" levels="1" name="Soul Strike" enchantGroup1="6" enchantGroup2="6">
@@ -784,14 +821,22 @@
 	</skill>
 	<skill id="1526" levels="3" name="Steal Mana">
 		<!-- Confirmed CT2.5 -->
-		<table name="#activationMinDamage"> 41 51 49 </table>
+		<table name="#minDamage"> 41 51 49 </table>
 		<table name="#magicLvl"> 44 56 64 </table>
 		<table name="#triggeredId"> 5676 5677 5678 </table>
+		<set name="icon" val="icon.skill1526" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="10" activationMinDamage="#activationMinDamage" chanceType="ON_HIT" triggeredId="#triggeredId" />
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param isCritical="true" />
+				<param minDamage="#minDamage" chance="10" />
+				<param skillId="#triggeredId" skillLevel="1" /> <!-- Steal Mana -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1527" levels="3" name="Expert Casting">
@@ -945,13 +990,31 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="54" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="15" val="0" activationChance="60" activationMinDamage="60" chanceType="ON_ATTACKED_HIT" triggeredId="5698" triggeredLevel="#triggeredLevel" abnormalLvl="1" abnormalType="bless_the_blood" />
+			<effect name="TriggerSkillByDamage" abnormalTime="15" val="0" abnormalLvl="1" abnormalType="bless_the_blood">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="60" />
+				<param chance="60" />
+				<param skillId="5698" skillLevel="#triggeredLevel" /> <!-- Bless the Blood -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 		<enchant1for>
-			<effect name="ChanceSkillTrigger" abnormalTime="15" val="0" activationChance="60" activationMinDamage="60" chanceType="ON_ATTACKED_HIT" triggeredId="5698" triggeredLevel="#ench1triggeredLevel" abnormalLvl="1" abnormalType="bless_the_blood" />
+			<effect name="TriggerSkillByDamage" abnormalTime="15" val="0" abnormalLvl="1" abnormalType="bless_the_blood">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="60" />
+				<param chance="60" />
+				<param skillId="5698" skillLevel="#ench1triggeredLevel" /> <!-- Bless the Blood -->
+				<param targetType="SELF" />
+			</effect>
 		</enchant1for>
 		<enchant2for>
-			<effect name="ChanceSkillTrigger" abnormalTime="#ench2time" val="0" activationChance="60" activationMinDamage="60" chanceType="ON_ATTACKED_HIT" triggeredId="5698" triggeredLevel="7" abnormalLvl="1" abnormalType="bless_the_blood" />
+			<effect name="TriggerSkillByDamage" abnormalTime="#ench2time" val="0" abnormalLvl="1" abnormalType="bless_the_blood">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="60" />
+				<param chance="60" />
+				<param skillId="5698" skillLevel="7" /> <!-- Bless the Blood -->
+				<param targetType="SELF" />
+			</effect>
 		</enchant2for>
 	</skill>
 	<skill id="1532" levels="1" name="Enlightenment">
@@ -1262,7 +1325,12 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="1200" val="0" activationChance="80" activationMinDamage="300" chanceType="ON_ATTACKED_HIT" triggeredId="6059" abnormalLvl="1" abnormalType="counter_critical">
+			<effect name="TriggerSkillByDamage" abnormalTime="1200" val="0" abnormalLvl="1" abnormalType="counter_critical">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="300" />
+				<param chance="80" />
+				<param skillId="6059" skillLevel="1" /> <!-- Counter Critical -->
+				<param targetType="SELF" />
 				<mul stat="defCritDamage" val="0.7" />
 			</effect>
 		</for>
@@ -1273,7 +1341,12 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="30" activationSkills="927" chanceType="ON_CAST" triggeredId="6060" />
+			<effect name="TriggerSkillBySkill" noicon="1" val="0">
+				<param castSkillId="927" /> <!-- Burning Chop -->
+				<param chance="30" />
+				<param skillId="6060" skillLevel="1" /> <!-- Great Fury -->
+				<param targetType="PARTY" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1544" levels="7" name="Death Beam">
@@ -1799,7 +1872,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="50" chanceType="ON_HIT" triggeredId="6706" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="50" />
+				<param skillId="6921" skillLevel="1" /> <!-- Penetration Attack -->
+				<param targetType="ONE" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1565" levels="6" name="Mana Pump" enchantGroup1="1">

@@ -13,7 +13,13 @@
 			<mul stat="pvpPhysDef" val="1.05" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="8201" levels="1" name="Major Arcana Robe Set - PvP">
@@ -30,7 +36,13 @@
 			<mul stat="pvpPhysDef" val="1.05" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5691" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="8202" levels="1" name="Dynasty Breastplate - PvP">
@@ -45,7 +57,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5693" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -63,7 +81,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5693" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -81,7 +105,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5693" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -98,7 +128,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5693" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -115,7 +151,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5693" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -132,7 +174,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -150,7 +198,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -168,7 +222,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -184,7 +244,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5691" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
+				<param targetType="SELF" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -202,7 +268,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5691" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
+				<param targetType="SELF" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -220,7 +292,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5691" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
+				<param targetType="SELF" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -238,7 +316,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5691" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
+				<param targetType="SELF" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -255,7 +339,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5691" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
+				<param targetType="SELF" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -272,7 +362,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -290,7 +386,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -308,7 +410,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -326,7 +434,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -344,7 +458,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5693" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -362,7 +482,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5693" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -379,7 +505,13 @@
 			<mul stat="pvpPhysDef" val="1.05" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5693" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -396,7 +528,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5693" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -414,7 +552,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -432,7 +576,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -449,7 +599,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -467,7 +623,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -485,7 +647,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -503,7 +671,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -521,7 +695,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5691" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
+				<param targetType="SELF" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -539,7 +719,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5691" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
+				<param targetType="SELF" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -557,7 +743,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5691" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
+				<param targetType="SELF" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -574,7 +766,13 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5691" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
+				<param targetType="SELF" />
+			</effect>
 			<effect name="EnableCloak" noicon="1" val="0" />
 		</for>
 	</skill>
@@ -663,17 +861,13 @@
 				<mul stat="critRate" val="1.3" />
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-			<effect name="ChanceSkillTrigger" abnormalTime="3600" val="0" activationChance="99" chanceType="ON_CRIT" triggeredId="5760" triggeredLevel="1" abnormalLvl="1" abnormalType="seed_of_critical">
-				<mul stat="critRate" val="1.05" >
-					<and>
-						<using kind="POLE" />
-					</and>
-				</mul>
-				<mul stat="pAtkSpd" val="1.05" >
-					<and>
-						<using kind="POLE" />
-					</and>
-				</mul>
+			<effect name="TriggerSkillByAttack" abnormalTime="3600" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="99" />
+				<param skillId="5760" skillLevel="1" /> <!-- Critical Hit -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
 			</effect>
 		</for>
 	</skill>

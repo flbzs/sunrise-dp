@@ -408,13 +408,16 @@
 		</for>
 	</skill>
 	<skill id="5124" levels="1" name="Anti-Music">
+		<set name="affectRange" val="200" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="80" />
-		<set name="affectRange" val="200" />
-		<set name="affectLimit" val="5-12" />
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="CONT" />
-		<set name="targetType" val="AREA_FRIENDLY" />
+		<set name="targetType" val="AURA" />
+		<for>
+			<effect name="DispelBySlotProbability" noicon="1" val="0">
+				<param dispel="DANCE_OF_AQUA_GUARD;DANCE_OF_CONCENTRATION;DANCE_OF_CONCENTRATION;DANCE_OF_EARTH_GUARD;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_LIGHT;DANCE_OF_MYSTIC;DANCE_OF_PROTECTION;DANCE_OF_SHADOW;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_FLAME_GUARD;SONG_OF_HUNTER;SONG_OF_INVOCATION;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_STORM_GUARD;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BLADESTORM;DANCE_OF_ALIGNMENT;SONG_OF_ELEMENTAL;SONG_OF_WINDSTORM" rate="100" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="5125" levels="1" name="Maximum Resist Status">
 		<set name="abnormalLvl" val="1" />
@@ -764,7 +767,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="multi_debuff">
+			<effect name="BlockBuff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="multi_debuff">
 				<mul stat="pAtk" val="0.5" />
 				<mul stat="pDef" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
@@ -775,7 +778,6 @@
 				<sub stat="windRes" val="50" />
 				<sub stat="waterRes" val="50" />
 				<sub stat="earthRes" val="50" />
-				<!-- set stat="buffImmunity" val="1" / TODO: Needs Support -->
 				<mul stat="regHp" val="0.1" />
 			</effect>
 		</for>

@@ -20,20 +20,29 @@ package handlers.effecthandlers;
 
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 
 public class CubicMastery extends L2Effect
 {
+	private final int _cubicCount;
+	
 	public CubicMastery(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		
+		_cubicCount = template.getParameters().getInt("cubicCount", 1);
 	}
 	
 	@Override
-	public L2EffectType getEffectType()
+	public boolean onStart()
 	{
-		return L2EffectType.CUBIC_MASTERY;
+		if ((getEffector() == null) || (getEffected() == null) || !getEffected().isPlayer())
+		{
+			return false;
+		}
+		
+		getEffected().getActingPlayer().getStat().setMaxCubicCount(_cubicCount);
+		return true;
 	}
 	
 	@Override
@@ -43,8 +52,8 @@ public class CubicMastery extends L2Effect
 	}
 	
 	@Override
-	public boolean onStart()
+	public void onExit()
 	{
-		return (getEffector() != null) && (getEffected() != null) && getEffected().isPlayer();
+		getEffected().getActingPlayer().getStat().setMaxCubicCount(1);
 	}
 }

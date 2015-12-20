@@ -927,7 +927,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="CancelAll" noicon="1" val="0" />
+			<effect name="DispelAll" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="4148" levels="12" name="Poison">
@@ -1091,8 +1091,10 @@
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="skillType" val="MANADAM" />
 		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="MagicalAttackMp" val="0" />
+		</for>
 	</skill>
 	<skill id="4155" levels="12" name="NPC Twister - Magic">
 		<!-- Freya retail confirmed -->
@@ -1553,7 +1555,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="CancelAll" noicon="1" val="0" />
+			<effect name="DispelAll" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="4178" levels="12" name="BOSS Flame Strike">

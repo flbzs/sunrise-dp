@@ -45,7 +45,6 @@ public class Mdam implements ISkillHandler
 	private static final L2SkillType[] SKILL_IDS =
 	{
 		L2SkillType.MDAM,
-		L2SkillType.DEATHLINK
 	};
 	
 	@Override

@@ -764,11 +764,19 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- NOTE: Description says "Excludes damage caused by a skill or ranged attack" but is client typo -->
 		<set name="excludedFromCheck" val="true" />
+		<set name="icon" val="icon.skill1086" />
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_HIT" triggeredId="5572" />
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="2" />
+				<param skillId="5572" skillLevel="1" /> <!-- Warrior Ability - Haste -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="652" levels="1" name="Knight Ability - Defense">
@@ -778,27 +786,49 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5573" />
+			<effect name="TriggerSkillByDamage" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5573" skillLevel="1" /> <!-- Knight Ability - Defense -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="653" levels="1" name="Rogue Ability - Critical Chance">
 		<!-- Confirmed CT2.5 -->
 		<set name="excludedFromCheck" val="true" />
+		<set name="icon" val="icon.skill1077" />
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_HIT" triggeredId="5574" />
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="2" />
+				<param skillId="5574" skillLevel="1" /> <!-- Log Ability - Critical Chance -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="654" levels="1" name="Wizard Ability - Mana Steal">
 		<!-- Confirmed CT2.5 -->
 		<set name="excludedFromCheck" val="true" />
+		<set name="icon" val="icon.skill1398" />
 		<set name="magicLvl" val="75" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_HIT" triggeredId="5575" />
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="2" />
+				<param skillId="5575" skillLevel="1" /> <!-- Wizard Ability - Mana Steal -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="655" levels="1" name="Enchanter Ability - Barrier">
@@ -808,7 +838,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" chanceType="ON_ATTACKED_HIT" triggeredId="5576" />
+			<effect name="TriggerSkillByDamage" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="1" />
+				<param chance="2" />
+				<param skillId="5576" skillLevel="1" /> <!-- Enchanter Ability - Barrier -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="656" levels="3" name="Transform Divine Warrior">

@@ -1230,7 +1230,13 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<mul stat="mDef" val="1.15" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="20" activationMinDamage="300" chanceType="ON_ATTACKED" triggeredId="5556" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="300" />
+				<param chance="20" />
+				<param skillId="5556" skillLevel="1" /> <!-- Protection Power -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="756" levels="1" name="Protection of Elemental">
@@ -1243,7 +1249,13 @@
 			<add stat="waterRes" val="20" />
 			<add stat="windRes" val="20" />
 			<add stat="earthRes" val="20" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="20" activationMinDamage="100" chanceType="ON_ATTACKED" triggeredId="5556" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="20" />
+				<param skillId="5556" skillLevel="1" /> <!-- Protection Power -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="757" levels="1" name="Protection of Alignment">
@@ -1254,21 +1266,21 @@
 		<for>
 			<add stat="holyRes" val="20" />
 			<add stat="darkRes" val="20" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="20" activationMinDamage="100" chanceType="ON_ATTACKED" triggeredId="5556" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="20" />
+				<param skillId="5556" skillLevel="1" /> <!-- Protection Power -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="758" levels="1" name="Fighter's Will">
 		<!-- Confirmed CT2.5 -->
-		<set name="activationChance" val="3" /> <!-- TODO: Remove when support for effects using conditions is done -->
-		<set name="chanceType" val="ON_HIT" /> <!-- TODO: Remove when support for effects using conditions is done -->
+		<set name="icon" val="icon.skill0758" />
 		<set name="magicLvl" val="81" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="triggeredId" val="5559" /> <!-- TODO: Remove when support for effects using conditions is done -->
-		<!-- TODO: Remove when support for effects using conditions is done -->
-		<cond>
-			<using kind="SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER" />
-		</cond>
 		<for>
 			<add stat="pAtk" val="100">
 				<using kind="SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER" />
@@ -1276,24 +1288,22 @@
 			<mul stat="pAtkSpd" val="1.1">
 				<using kind="SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER" />
 			</mul>
-			<!-- TODO: Require support for effects using conditions -->
-			<!-- <effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="3" chanceType="ON_HIT" triggeredId="5559"> -->
-			<!-- <using kind="SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER" /> -->
-			<!-- </effect> -->
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="3" />
+				<param skillId="5559" skillLevel="1" /> <!-- Physical Pose -->
+				<param targetType="SELF" />
+				<param allowWeapons="SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="759" levels="1" name="Archer's Will">
 		<!-- Confirmed CT2.5 -->
-		<set name="activationChance" val="3" /> <!-- TODO: Remove when support for effects using conditions is done -->
-		<set name="chanceType" val="ON_HIT" /> <!-- TODO: Remove when support for effects using conditions is done -->
+		<set name="icon" val="icon.skill0759" />
 		<set name="magicLvl" val="81" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="triggeredId" val="5559" /> <!-- TODO: Remove when support for effects using conditions is done -->
-		<!-- TODO: Remove when support for effects using conditions is done -->
-		<cond>
-			<using kind="BOW,CROSSBOW" />
-		</cond>
 		<for>
 			<add stat="accCombat" val="8">
 				<using kind="BOW,CROSSBOW" />
@@ -1301,10 +1311,14 @@
 			<add stat="pAtkRange" val="50">
 				<using kind="BOW,CROSSBOW" />
 			</add>
-			<!-- TODO: Require support for effects using conditions -->
-			<!-- <effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="3" chanceType="ON_HIT" triggeredId="5559"> -->
-			<!-- <using kind="BOW,CROSSBOW" /> -->
-			<!-- </effect> -->
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="3" />
+				<param skillId="5559" skillLevel="1" /> <!-- Physical Pose -->
+				<param targetType="SELF" />
+				<param allowWeapons="CROSSBOW,BOW" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="760" levels="1" name="Anti Magic Armor">
@@ -1340,7 +1354,12 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="60" val="0" activationChance="8" chanceType="ON_ATTACKED_HIT" triggeredId="5561" abnormalLvl="1" abnormalType="seed_of_knight">
+			<effect name="TriggerSkillByDamage" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="seed_of_knight">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="1" />
+				<param chance="8" />
+				<param skillId="5561" skillLevel="1" /> <!-- Seed of Revenge -->
+				<param targetType="SELF" />
 				<add stat="pAtk" val="100" />
 			</effect>
 		</for>
@@ -1383,7 +1402,7 @@
 				<mul stat="healEffect" val="0.7" />
 			</effect>
 			<effect name="Cancel" noicon="1" val="0" effectPower="25" />
-			<effect name="DispelOnlyOne" noicon="1" val="0" effectPower="-1" />
+			<effect name="DispelOnlyOne" noicon="1" val="0" />
 		</for>
 	</skill>
 	<skill id="763" levels="1" name="Hell Scream">
@@ -1499,7 +1518,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="5" chanceType="ON_ATTACKED_HIT" triggeredId="5565" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="1" />
+				<param chance="5" />
+				<param skillId="5565" skillLevel="1" /> <!-- Expose Weak Point -->
+				<param targetType="ONE" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="768" levels="1" name="Exciting Adventure">
@@ -1797,7 +1822,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic" noicon="1" val="0">
-				<param npcId="10" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
+				<param cubicId="10" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
 		</for>
@@ -1817,7 +1842,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic" noicon="1" val="0">
-				<param npcId="11" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
+				<param cubicId="11" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
 		</for>
@@ -1837,7 +1862,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic" noicon="1" val="0">
-				<param npcId="12" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
+				<param cubicId="12" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
 		</for>
@@ -1857,7 +1882,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic" noicon="1" val="0">
-				<param npcId="13" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
+				<param cubicId="13" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
 		</for>
@@ -1877,7 +1902,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="SummonCubic" noicon="1" val="0">
-				<param npcId="14" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
+				<param cubicId="14" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
 		</for>
@@ -1898,7 +1923,12 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="60" val="0" activationChance="20" chanceType="ON_ATTACKED_HIT" triggeredId="5562" abnormalLvl="1" abnormalType="seed_of_knight">
+			<effect name="TriggerSkillByDamage" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="seed_of_knight">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="1" />
+				<param chance="20" />
+				<param skillId="5562" skillLevel="1" /> <!-- Spirit of Phoenix -->
+				<param targetType="SELF" />
 				<add stat="pDef" val="200" />
 			</effect>
 		</for>
@@ -1955,7 +1985,12 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="60" val="0" activationChance="20" chanceType="ON_ATTACKED_HIT" triggeredId="5563" abnormalLvl="1" abnormalType="seed_of_knight">
+			<effect name="TriggerSkillByDamage" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="seed_of_knight">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="1" />
+				<param chance="20" />
+				<param skillId="5563" skillLevel="1" /> <!-- Eva's Will -->
+				<param targetType="SELF" />
 				<add stat="mDef" val="200" />
 			</effect>
 		</for>
@@ -2008,7 +2043,12 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="60" val="0" activationChance="20" chanceType="ON_ATTACKED_HIT" triggeredId="5564" abnormalLvl="1" abnormalType="seed_of_knight">
+			<effect name="TriggerSkillByDamage" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="seed_of_knight">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="1" />
+				<param chance="20" />
+				<param skillId="5564" skillLevel="1" /> <!-- Pain of Shillien -->
+				<param targetType="SELF" />
 				<mul stat="critDmg" val="1.1" />
 			</effect>
 		</for>
@@ -2123,7 +2163,13 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="30" val="0" abnormalVisualEffect="poison" activationChance="10" chanceType="ON_ATTACKED_HIT" triggeredId="5600" abnormalLvl="1" abnormalType="betrayal_mark" />
+			<effect name="TriggerSkillByDamage" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="betrayal_mark">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="1" />
+				<param chance="10" />
+				<param skillId="5600" skillLevel="1" /> <!-- Betrayal Mark -->
+				<param targetType="PARTY" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="793" levels="1" name="Rush Impact" enchantGroup1="6" enchantGroup2="6" enchantGroup3="6" enchantGroup4="6" enchantGroup5="6" enchantGroup6="6" enchantGroup7="6" enchantGroup8="6">

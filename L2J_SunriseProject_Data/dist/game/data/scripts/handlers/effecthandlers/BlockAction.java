@@ -18,7 +18,8 @@
  */
 package handlers.effecthandlers;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import l2r.gameserver.data.sql.BotReportTable;
 import l2r.gameserver.instancemanager.PunishmentManager;
@@ -35,7 +36,7 @@ import l2r.gameserver.model.stats.Env;
  */
 public final class BlockAction extends L2Effect
 {
-	private final ArrayList<Integer> _blockedActions;
+	private final Set<Integer> _blockedActions = new HashSet<>();
 	
 	/**
 	 * @param env
@@ -44,19 +45,11 @@ public final class BlockAction extends L2Effect
 	public BlockAction(Env env, EffectTemplate template)
 	{
 		super(env, template);
-		String[] rawActions = template.getParameters().getString("blockedActions").split(",");
-		_blockedActions = new ArrayList<>(rawActions.length);
-		for (String act : rawActions)
+		
+		final String[] actions = template.getParameters().getString("blockedActions").split(",");
+		for (String action : actions)
 		{
-			int id = -1;
-			try
-			{
-				id = Integer.parseInt(act);
-				_blockedActions.add(id);
-			}
-			catch (Exception e)
-			{
-			}
+			_blockedActions.add(Integer.parseInt(action));
 		}
 	}
 	

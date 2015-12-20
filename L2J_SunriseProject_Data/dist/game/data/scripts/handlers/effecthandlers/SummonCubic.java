@@ -22,25 +22,30 @@ import l2r.gameserver.model.actor.instance.L2CubicInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 import l2r.util.Rnd;
 
 public class SummonCubic extends L2Effect
 {
-	private final int _npcId;
+	/** Cubic ID. */
+	private final int _cubicId;
+	/** Cubic power. */
 	private final int _cubicPower;
+	/** Cubic duration. */
 	private final int _cubicDuration;
+	/** Cubic activation delay. */
 	private final int _cubicDelay;
+	/** Cubic maximum casts before going idle. */
 	private final int _cubicMaxCount;
+	/** Cubic activation chance. */
 	private final int _cubicSkillChance;
 	
 	public SummonCubic(Env env, EffectTemplate template)
 	{
 		super(env, template);
 		
-		_npcId = template.getParameters().getInt("npcId", 0);
-		
+		_cubicId = template.getParameters().getInt("cubicId", -1);
+		// Custom AI data.
 		_cubicPower = template.getParameters().getInt("cubicPower", 0);
 		_cubicDuration = template.getParameters().getInt("cubicDuration", 0);
 		_cubicDelay = template.getParameters().getInt("cubicDelay", 0);
@@ -62,9 +67,9 @@ public class SummonCubic extends L2Effect
 			return false;
 		}
 		
-		if (_npcId <= 0)
+		if (_cubicId < 0)
 		{
-			_log.warn(SummonCubic.class.getSimpleName() + ": Invalid NPC Id:" + _npcId + " in skill Id: " + getSkill().getId());
+			_log.warn(SummonCubic.class.getSimpleName() + ": Invalid NPC Id:" + _cubicId + " in skill Id: " + getSkill().getId());
 			return false;
 		}
 		
@@ -80,29 +85,31 @@ public class SummonCubic extends L2Effect
 			_cubicSkillLevel = ((getSkill().getLevel() - 100) / 7) + 8;
 		}
 		
-		final L2CubicInstance cubic = player.getCubicById(_npcId);
+		final L2CubicInstance cubic = player.getCubicById(_cubicId);
 		if (cubic != null)
 		{
 			cubic.stopAction();
 			cubic.cancelDisappear();
-			player.getCubics().remove(_npcId);
+			player.getCubics().remove(_cubicId);
 		}
 		else
 		{
-			final L2Effect cubicMastery = player.getFirstPassiveEffect(L2EffectType.CUBIC_MASTERY);
-			final int cubicCount = (int) (cubicMastery != null ? cubicMastery.calc() : 1);
-			final int currectCubicCount = player.getCubics().size();
-			
-			if (currectCubicCount >= cubicCount)
+			// If maximum amount is reached, random cubic is removed.
+			// Players with no mastery can have only one cubic.
+			final int allowedCubicCount = getEffected().getActingPlayer().getStat().getMaxCubicCount();
+			final int currentCubicCount = player.getCubics().size();
+			// Extra cubics are removed, one by one, randomly.
+			for (int i = 0; i <= (currentCubicCount - allowedCubicCount); i++)
 			{
-				final int removedCubicId = (int) player.getCubics().keySet().toArray()[Rnd.get(currectCubicCount)];
+				final int removedCubicId = (int) player.getCubics().keySet().toArray()[Rnd.get(currentCubicCount)];
 				final L2CubicInstance removedCubic = player.getCubicById(removedCubicId);
 				removedCubic.stopAction();
 				removedCubic.cancelDisappear();
 				player.getCubics().remove(removedCubic.getId());
 			}
 		}
-		player.addCubic(_npcId, _cubicSkillLevel, _cubicPower, _cubicDelay, _cubicSkillChance, _cubicMaxCount, _cubicDuration, getEffected() != getEffector());
+		// Adding a new cubic.
+		player.addCubic(_cubicId, _cubicSkillLevel, _cubicPower, _cubicDelay, _cubicSkillChance, _cubicMaxCount, _cubicDuration, getEffected() != getEffector());
 		player.broadcastUserInfo();
 		return true;
 	}

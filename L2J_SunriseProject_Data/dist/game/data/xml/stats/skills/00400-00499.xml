@@ -1577,7 +1577,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="60" val="0" activationChance="80" chanceType="ON_ATTACKED_HIT" triggeredId="5144" abnormalLvl="1" abnormalType="mirage" />
+			<effect name="TriggerSkillByDamage" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="mirage">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="80" />
+				<param skillId="5144" skillLevel="1" /> <!-- Mirage -->
+				<param targetType="ONE" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="446" levels="1" name="Dodge">
@@ -1664,13 +1670,13 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="SummonCubic" noicon="1" val="0">
-				<param npcId="9" cubicDelay="8" cubicDuration="900" cubicMaxCount="300" cubicSkillChance="50" cubicPower="#cubicPower" />
+				<param cubicId="9" cubicDelay="8" cubicDuration="900" cubicMaxCount="300" cubicSkillChance="50" cubicPower="#cubicPower" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
 		</for>
 		<enchant1for>
 			<effect name="SummonCubic" noicon="1" val="0">
-				<param npcId="9" cubicDelay="8" cubicDuration="900" cubicMaxCount="300" cubicSkillChance="50" cubicPower="#ench1Power" />
+				<param cubicId="9" cubicDelay="8" cubicDuration="900" cubicMaxCount="300" cubicSkillChance="50" cubicPower="#ench1Power" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
 		</enchant1for>
@@ -1800,14 +1806,16 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="aggroPoints" val="597" />
 		<set name="hitTime" val="1000" />
+		<set name="icon" val="icon.skill0453" />
 		<set name="magicLvl" val="60" />
 		<set name="mpConsume" val="60" />
-		<set name="negateAbnormals" val="root_physically,3" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="ROOT_PHYSICALLY,3" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="454" levels="1" name="Symbol of Defense">
@@ -1961,14 +1969,13 @@
 	</skill>
 	<skill id="461" levels="2" name="Break Duress">
 		<table name="#chargeConsume"> 2 3 </table>
+		<table name="#dispelAbnormals"> ROOT_PHYSICALLY,3;ROOT_MAGICALLY,3 SPEED_DOWN,3;ROOT_PHYSICALLY,3;ROOT_MAGICALLY,3 </table>
 		<table name="#magicLvl"> 60 66 </table>
 		<table name="#mpConsume"> 33 37 </table>
-		<table name="#negateAbnormals"> root_physically,3;root_magically,3 speed_down,3;root_physically,3;root_magically,3 </table>
 		<set name="chargeConsume" val="#chargeConsume" />
 		<set name="hitTime" val="3000" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
-		<set name="negateAbnormals" val="#negateAbnormals" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="4000" />
 		<set name="targetType" val="SELF" />
@@ -1976,7 +1983,9 @@
 			<player Charges="#chargeConsume" /> <!-- Level 2 3 Focused Force charge required. -->
 		</cond>
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="#dispelAbnormals" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="462" levels="1" name="Guilted Body">
@@ -2107,7 +2116,14 @@
 			<effect name="SoulEating" abnormalTime="-1" val="0">
 				<param expNeeded="#expNeeded" />
 			</effect>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="#activationChance" chanceType="ON_HIT" triggeredId="5548" />
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="#activationChance" />
+				<param skillId="5548" skillLevel="1" /> <!-- Critical Spiritual Energy Attack -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="468" levels="9" name="Fallen Attack">

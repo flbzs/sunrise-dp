@@ -672,13 +672,15 @@
 		<set name="hitTime" val="1000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="6654" /> <!-- Scroll: Flames of Valakas -->
 		<set name="magicLvl" val="75" />
-		<set name="negateAbnormals" val="dragon_breath,1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="DRAGON_BREATH,1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="2234" levels="1" name="Soul Breaking Arrow">
@@ -1469,14 +1471,16 @@
 	</skill>
 	<skill id="2275" levels="1" name="Fisherman's Recovery Potion">
 		<!-- Confirmed CT2.5 -->
+		<set name="icon" val="icon.etc_oblivion_black_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="magicLvl" val="1" />
-		<set name="negateAbnormals" val="fishing_mastery_down,1" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="FISHING_MASTERY_DOWN,1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="2276" levels="1" name="Dewdrop of Destruction">

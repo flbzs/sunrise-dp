@@ -42,7 +42,6 @@ public class Pdam implements ISkillHandler
 	private static final L2SkillType[] SKILL_IDS =
 	{
 		L2SkillType.PDAM,
-		L2SkillType.FATAL
 	};
 	
 	@Override
@@ -68,7 +67,6 @@ public class Pdam implements ISkillHandler
 				continue;
 			}
 			
-			final boolean dual = activeChar.isUsingDualWeapon();
 			final byte shld = Formulas.calcShldUse(activeChar, target, skill);
 			// PDAM critical chance not affected by buffs, only by STR. Only some skills are meant to crit.
 			boolean crit = false;
@@ -83,7 +81,7 @@ public class Pdam implements ISkillHandler
 			}
 			else
 			{
-				damage = skill.isStaticDamage() ? (int) skill.getPower() : (int) Formulas.calcPhysDam(activeChar, target, skill, shld, false, dual, ss);
+				damage = skill.isStaticDamage() ? (int) skill.getPower() : (int) Formulas.calcPhysDam(activeChar, target, skill, shld, false, ss);
 			}
 			if (!skill.isStaticDamage() && (skill.getMaxSoulConsumeCount() > 0) && activeChar.isPlayer())
 			{
@@ -96,9 +94,7 @@ public class Pdam implements ISkillHandler
 				damage *= 2; // PDAM Critical damage always 2x and not affected by buffs
 			}
 			
-			final boolean skillIsEvaded = Formulas.calcPhysicalSkillEvasion(target, skill);
-			
-			if (!skillIsEvaded)
+			if (!Formulas.calcPhysicalSkillEvasion(activeChar, target, skill))
 			{
 				if (skill.hasEffects())
 				{
@@ -135,9 +131,6 @@ public class Pdam implements ISkillHandler
 						_logDamage.log(record);
 					}
 					
-					// Possibility of a lethal strike
-					Formulas.calcLethalHit(activeChar, target, skill);
-					
 					target.reduceCurrentHp(damage, activeChar, skill);
 					
 					// Maybe launch chance skills on us
@@ -160,24 +153,9 @@ public class Pdam implements ISkillHandler
 					activeChar.sendPacket(SystemMessageId.ATTACK_FAILED);
 				}
 			}
-			else
-			{
-				if (activeChar.isPlayer())
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_DODGES_ATTACK);
-					sm.addString(target.getName());
-					activeChar.getActingPlayer().sendPacket(sm);
-				}
-				if (target.isPlayer())
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.AVOIDED_C1_ATTACK);
-					sm.addString(activeChar.getName());
-					target.getActingPlayer().sendPacket(sm);
-				}
-				
-				// Possibility of a lethal strike despite skill is evaded
-				Formulas.calcLethalHit(activeChar, target, skill);
-			}
+			
+			// Possibility of a lethal strike despite skill is evaded
+			Formulas.calcLethalHit(activeChar, target, skill);
 		}
 		
 		// self Effect :]

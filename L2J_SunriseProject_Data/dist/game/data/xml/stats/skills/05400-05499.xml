@@ -721,8 +721,10 @@
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="skillType" val="MANADAM" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="MagicalAttackMp" val="0" />
+		</for>
 	</skill>
 	<skill id="5454" levels="1" name="Shadow Bind">
 		<!-- Immobilized. -->
@@ -928,11 +930,12 @@
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="85" />
-		<set name="negateAbnormals" val="invincibility,9" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="INVINCIBILITY,9" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5481" levels="1" name="Transform Penalty">

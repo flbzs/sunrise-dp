@@ -205,8 +205,10 @@
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="30000" />
-		<set name="skillType" val="MANADAM" />
 		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="MagicalAttackMp" val="0" />
+		</for>
 	</skill>
 	<skill id="3111" levels="10" name="Item Skill: Slow">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
@@ -1147,9 +1149,11 @@
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="300000" />
-		<set name="skillType" val="MANADAM" />
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="MagicalAttackMp" val="0" />
+		</for>
 	</skill>
 	<skill id="3155" levels="10" name="Item Skill: Unlock">
 		<table name="#itemConsumeCount"> 4 5 6 7 8 10 11 13 15 17 </table>
