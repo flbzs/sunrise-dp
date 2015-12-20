@@ -30,7 +30,6 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.events.EventDispatcher;
 import l2r.gameserver.model.events.EventType;
 import l2r.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
-import l2r.gameserver.network.serverpackets.MoveToPawn;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
 
@@ -120,7 +119,7 @@ public class L2NpcAction implements IActionHandler
 					}
 					
 					// Turn NPC to the player.
-					activeChar.sendPacket(new MoveToPawn(activeChar, npc, 100));
+					activeChar.moveToPawn(activeChar, npc, 100);
 					if (npc.hasRandomAnimation())
 					{
 						npc.onRandomAnimation(Rnd.get(8));
