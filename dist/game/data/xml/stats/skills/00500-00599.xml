@@ -959,14 +959,16 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="aggroPoints" val="204" />
 		<set name="hitTime" val="1500" />
+		<set name="icon" val="icon.skill0524" />
 		<set name="magicLvl" val="64" />
 		<set name="mpConsume" val="59" />
-		<set name="negateAbnormals" val="dark_seed,9" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="DARK_SEED,9" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="525" levels="6" name="Decoy" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
@@ -1058,7 +1060,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="1200" val="0" activationChance="30" activationMinDamage="100" chanceType="ON_ATTACKED_HIT" triggeredId="5425" abnormalLvl="1" abnormalType="iron_shield" />
+			<effect name="TriggerSkillByDamage" abnormalTime="1200" val="0" abnormalLvl="1" abnormalType="iron_shield">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="30" />
+				<param skillId="5425" skillLevel="1" /> <!-- Iron Shield -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="528" levels="1" name="Shield of Faith" enchantGroup1="5" enchantGroup2="5" enchantGroup3="5">
@@ -1204,7 +1212,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="5" activationMinDamage="100" chanceType="ON_ATTACKED_HIT" triggeredId="5426" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="5" />
+				<param skillId="5426" skillLevel="1" /> <!-- Counter Chance -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="533" levels="1" name="Counter Rapid Shot">
@@ -1213,7 +1227,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="5" activationMinDamage="100" chanceType="ON_ATTACKED_HIT" triggeredId="5427" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="5" />
+				<param skillId="5427" skillLevel="1" /> <!-- Counter Rapid Shot -->
+				<param targetType="PARTY" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="534" levels="1" name="Counter Dash">
@@ -1222,7 +1242,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="5" activationMinDamage="100" chanceType="ON_ATTACKED_HIT" triggeredId="5428" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="5" />
+				<param skillId="5428" skillLevel="1" /> <!-- Counter Dash -->
+				<param targetType="PARTY" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="535" levels="1" name="Counter Mind">
@@ -1231,7 +1257,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="5" activationMinDamage="100" chanceType="ON_ATTACKED_HIT" triggeredId="5429" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
+				<param minDamage="100" />
+				<param chance="5" />
+				<param skillId="5429" skillLevel="1" /> <!-- Counter Mind -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="536" levels="1" name="Over the Body">

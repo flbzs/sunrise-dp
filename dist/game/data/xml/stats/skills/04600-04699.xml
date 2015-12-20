@@ -432,11 +432,12 @@
 		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="58" />
 		<set name="mpInitialConsume" val="15" />
-		<set name="negateAbnormals" val="turn_stone,2" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="TURN_STONE,2" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4618" levels="1" name="NPC Cancel PC Target">
@@ -463,12 +464,13 @@
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="40" />
 		<set name="mpConsume" val="35" />
-		<set name="negateAbnormals" val="sleep,1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="SLEEP,1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4620" levels="12" name="Paralysis">
@@ -1188,28 +1190,30 @@
 		<set name="magicLvl" val="40" />
 		<set name="mpConsume" val="42" />
 		<set name="mpInitialConsume" val="11" />
-		<set name="negateAbnormals" val="root_magically,1" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="ROOT_MAGICALLY,1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4651" levels="3" name="NPC AE - Dispel Slow">
+		<table name="#dispelAbnormals"> SPEED_DOWN,1 SPEED_DOWN,2 SPEED_DOWN,3 </table>
 		<table name="#magicLvl"> 20 40 60 </table>
 		<table name="#mpConsume"> 23 42 66 </table>
 		<table name="#mpInitialConsume"> 6 11 17 </table>
-		<table name="#negateAbnormals"> speed_down,1 speed_down,2 speed_down,3 </table>
 		<set name="affectRange" val="200" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
-		<set name="negateAbnormals" val="#negateAbnormals" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="#dispelAbnormals" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4652" levels="1" name="NPC AE - Dispel Silence">
@@ -1218,11 +1222,12 @@
 		<set name="magicLvl" val="40" />
 		<set name="mpConsume" val="42" />
 		<set name="mpInitialConsume" val="11" />
-		<set name="negateAbnormals" val="silence,1" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="SILENCE,1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4653" levels="12" name="NPC Corpse Life Drain">
@@ -1261,8 +1266,10 @@
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="reuseDelay" val="6000" />
-		<set name="skillType" val="DEATHLINK" />
 		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="DeathLink" val="0" />
+		</for>
 	</skill>
 	<skill id="4655" levels="12" name="NPC Death Link - Magic">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1277,8 +1284,10 @@
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="skillType" val="DEATHLINK" />
 		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="DeathLink" val="0" />
+		</for>
 	</skill>
 	<skill id="4656" levels="12" name="NPC Death Link - Slow">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1293,8 +1302,10 @@
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="skillType" val="DEATHLINK" />
 		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="DeathLink" val="0" />
+		</for>
 	</skill>
 	<skill id="4657" levels="12" name="Hold">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -1667,14 +1678,15 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="maxNegated" val="-1" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="#power" />
+			<effect name="DispelBySlotProbability" noicon="1" val="0">
+				<param dispel="PA_UP;BERSERKER;MA_UP;ATTACK_TIME_DOWN;DANCE_OF_FURY;SONG_OF_HUNTER" rate="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4674" levels="12" name="NPC Dispel Defensive Buff">
@@ -1686,14 +1698,15 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="maxNegated" val="-1" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="#power" />
+			<effect name="DispelBySlotProbability" noicon="1" val="0">
+				<param dispel="PD_UP;MAX_HP_UP;SPEED_UP;CASTING_TIME_DOWN;SONG_OF_EARTH;DANCE_OF_FIRE" rate="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4675" levels="12" name="NPC Dispel Fighter Buff">
@@ -1705,14 +1718,15 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="maxNegated" val="-1" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="#power" />
+			<effect name="DispelBySlotProbability" noicon="1" val="0">
+				<param dispel="HIT_UP;CRITICAL_PROB_UP;CRITICAL_DMG_UP;ATTACK_TIME_DOWN" rate="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4676" levels="12" name="NPC Dispel Mage Offensive Buff">
@@ -1724,14 +1738,15 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="maxNegated" val="-1" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="#power" />
+			<effect name="DispelBySlotProbability" noicon="1" val="0">
+				<param dispel="MA_UP;BERSERKER;CASTING_TIME_DOWN;MAX_MP_UP" rate="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4677" levels="12" name="NPC Dispel Fighter Defensive Buff">
@@ -1743,14 +1758,15 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="maxNegated" val="-1" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="#power" />
+			<effect name="DispelBySlotProbability" noicon="1" val="0">
+				<param dispel="MAX_HP_UP;SHIELD_PROB_UP;VAMPIRIC_ATTACK;MD_UP" rate="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4678" levels="12" name="NPC Dispel Mage Defensive Buff">
@@ -1762,14 +1778,15 @@
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="maxNegated" val="-1" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="operateType" val="A1" />
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="#power" />
+			<effect name="DispelBySlotProbability" noicon="1" val="0">
+				<param dispel="RESIST_DERANGEMENT;MAX_HP_UP;CANCEL_PROB_DOWN;SPEED_UP" rate="#power" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4679" levels="1" name="Valakas">
@@ -2054,11 +2071,12 @@
 		<set name="aggroPoints" val="100" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="76" />
-		<set name="negateAbnormals" val="big_body,1" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="BIG_BODY,1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4694" levels="1" name="Ultimate Debuff">

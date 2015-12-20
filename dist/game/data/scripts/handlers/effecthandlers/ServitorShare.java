@@ -54,6 +54,7 @@ public class ServitorShare extends L2Effect
 		if (getEffected().getActingPlayer().getSummon() != null)
 		{
 			getEffected().getActingPlayer().getSummon().broadcastInfo();
+			getEffected().getActingPlayer().getSummon().getStatus().startHpMpRegeneration();
 		}
 		return true;
 	}
@@ -76,6 +77,14 @@ public class ServitorShare extends L2Effect
 		getEffected().getActingPlayer().setServitorShare(null);
 		if (getEffected().getSummon() != null)
 		{
+			if (getEffected().getSummon().getCurrentHp() > getEffected().getSummon().getMaxHp())
+			{
+				getEffected().getSummon().setCurrentHp(getEffected().getSummon().getMaxHp());
+			}
+			if (getEffected().getSummon().getCurrentMp() > getEffected().getSummon().getMaxMp())
+			{
+				getEffected().getSummon().setCurrentMp(getEffected().getSummon().getMaxMp());
+			}
 			getEffected().getSummon().broadcastInfo();
 		}
 	}

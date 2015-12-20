@@ -1354,8 +1354,10 @@
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
-		<set name="skillType" val="MANADAM" />
 		<set name="targetType" val="AURA" />
+		<for>
+			<effect name="MagicalAttackMp" val="0" />
+		</for>
 	</skill>
 	<skill id="4490" levels="12" name="NPC Holy Wall">
 		<!-- Confirmed CT2.5 -->
@@ -1450,10 +1452,15 @@
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="8000" />
-		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="debuff_shield" triggeredId="5520" triggeredLevel="#triggeredLevel" chanceType="ON_ATTACKED_HIT" activationChance="50" />
+			<effect name="TriggerSkillByDamage" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="debuff_shield">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="50" />
+				<param skillId="5022" skillLevel="#triggeredLevel" /> <!-- Decrease Speed -->
+				<param targetType="ONE" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="4494" levels="2" name="Raid Boss">

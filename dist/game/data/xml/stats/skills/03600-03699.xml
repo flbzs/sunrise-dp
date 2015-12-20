@@ -161,7 +161,13 @@
 			<mul stat="physicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="magicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="danceMpConsumeRate" val="#mpConsumeRate" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="10" activationMinDamage="50" chanceType="ON_ATTACKED_HIT" triggeredId="5605" triggeredLevel="#triggeredLevel" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="50" />
+				<param chance="10" />
+				<param skillId="5605" skillLevel="#triggeredLevel" /> <!-- Power of Apella -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3609" levels="3" name="Apella Light Armor Set">
@@ -180,7 +186,13 @@
 			<mul stat="physicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="magicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="danceMpConsumeRate" val="#mpConsumeRate" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="10" activationMinDamage="50" chanceType="ON_ATTACKED_HIT" triggeredId="5607" triggeredLevel="#triggeredLevel" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="50" />
+				<param chance="10" />
+				<param skillId="5607" skillLevel="#triggeredLevel" /> <!-- Power of Apella -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3610" levels="3" name="Apella Robe Set">
@@ -199,7 +211,13 @@
 			<mul stat="physicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="magicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="danceMpConsumeRate" val="#mpConsumeRate" />
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="10" activationMinDamage="50" chanceType="ON_ATTACKED_HIT" triggeredId="5608" triggeredLevel="#triggeredLevel" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="50" />
+				<param chance="10" />
+				<param skillId="5608" skillLevel="#triggeredLevel" /> <!-- Power of Apella -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3611" levels="1" name="Enchant Heavy Armor (Grade D)">
@@ -805,29 +823,53 @@
 	</skill>
 	<skill id="3650" levels="1" name="PvP Weapon - CP Drain">
 		<!-- Confirmed CT2.5 -->
+		<set name="icon" val="icon.skill1306" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="20" activationMinDamage="50" chanceType="ON_HIT" triggeredId="5681" />
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="50" chance="20" />
+				<param skillId="5681" skillLevel="1" /> <!-- PvP Weapon - CP Drain -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3651" levels="1" name="PvP Weapon - Cancel">
 		<!-- Confirmed CT2.5 -->
+		<set name="icon" val="icon.skill1056" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="10" activationMinDamage="50" chanceType="ON_HIT" triggeredId="5682" />
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="50" chance="10" />
+				<param skillId="5682" skillLevel="1" /> <!-- PvP Weapon - Cancel -->
+				<param targetType="ONE" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3652" levels="1" name="PvP Weapon - Ignore Shield Defense">
 		<!-- Confirmed CT2.5 -->
+		<set name="icon" val="icon.skill1304" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="20" activationMinDamage="50" chanceType="ON_HIT" triggeredId="5683" />
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="50" chance="20" />
+				<param skillId="5683" skillLevel="1" /> <!-- PvP Weapon - Ignore Shield Defense -->
+				<param targetType="ONE" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3653" levels="1" name="PvP Weapon - Attack Chance">
@@ -836,7 +878,14 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="10" activationMinDamage="50" chanceType="ON_HIT" triggeredId="5684" />
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="50" chance="10" />
+				<param skillId="5684" skillLevel="1" /> <!-- PvP Weapon - Attack Chance -->
+				<param targetType="ONE" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3654" levels="1" name="PvP Weapon - Casting">
@@ -845,16 +894,30 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="5" activationMinDamage="50" chanceType="ON_ATTACKED_HIT" triggeredId="5685" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="50" />
+				<param chance="5" />
+				<param skillId="5685" skillLevel="1" /> <!-- PvP Weapon - Casting -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3655" levels="1" name="PvP Weapon - Rapid Fire">
 		<!-- Confirmed CT2.5 -->
+		<set name="icon" val="icon.skill0413" />
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="10" activationMinDamage="50" chanceType="ON_HIT" triggeredId="5686" />
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="50" chance="10" />
+				<param skillId="5686" skillLevel="1" /> <!-- PvP Weapon - Rapid Fire -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3656" levels="1" name="PvP Weapon - Decrease Range">
@@ -863,7 +926,14 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="10" activationMinDamage="50" chanceType="ON_HIT" triggeredId="5687" />
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="50" chance="10" />
+				<param skillId="5687" skillLevel="1" /> <!-- PvP Weapon - Decrease Range -->
+				<param targetType="ONE" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3657" levels="1" name="PvP Weapon - Decrease Resist">
@@ -872,7 +942,14 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="10" activationMinDamage="50" chanceType="ON_HIT" triggeredId="5688" />
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="50" chance="10" />
+				<param skillId="5688" skillLevel="1" /> <!-- PvP Weapon - Decrease Resist -->
+				<param targetType="ONE" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3658" levels="1" name="PvP Shield - Reflect Damage">
@@ -881,7 +958,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="10" activationMinDamage="40" chanceType="ON_ATTACKED_HIT" triggeredId="5689" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="40" />
+				<param chance="10" />
+				<param skillId="5689" skillLevel="1" /> <!-- PvP Shield - Reflect Damage -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3659" levels="1" name="PvP Armor - Damage Down">
@@ -890,7 +973,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="20" activationMinDamage="50" chanceType="ON_ATTACKED_HIT" triggeredId="5690" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="50" />
+				<param chance="20" />
+				<param skillId="5690" skillLevel="1" /> <!-- PvP Armor - Damage Down -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3660" levels="1" name="PvP Armor - Critical Down">
@@ -899,7 +988,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="20" activationMinDamage="50" chanceType="ON_ATTACKED_HIT" triggeredId="5691" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="50" />
+				<param chance="20" />
+				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3661" levels="1" name="PvP Armor - Heal">
@@ -908,7 +1003,12 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="5" activationSkills="1401" chanceType="ON_CAST" triggeredId="5692" />
+			<effect name="TriggerSkillBySkill" noicon="1" val="0">
+				<param castSkillId="1401" /> <!-- Major Heal -->
+				<param chance="5" />
+				<param skillId="5692" skillLevel="1" /> <!-- PvP Armor - Heal -->
+				<param targetType="ONE" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3662" levels="1" name="PvP Armor - Speed Down">
@@ -917,7 +1017,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="10" activationMinDamage="50" chanceType="ON_ATTACKED_HIT" triggeredId="5693" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="50" />
+				<param chance="10" />
+				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
+				<param targetType="ONE" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3663" levels="1" name="PvP Armor - Mirage">
@@ -926,7 +1032,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="25" activationMinDamage="50" chanceType="ON_ATTACKED_HIT" triggeredId="5694" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="50" />
+				<param chance="25" />
+				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
+				<param targetType="ONE" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3664" levels="1" name="Red Talisman - Max. CP">
@@ -978,7 +1090,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="2" activationMinDamage="20" chanceType="ON_ATTACKED_HIT" triggeredId="5695" />
+			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="20" />
+				<param chance="2" />
+				<param skillId="5695" skillLevel="1" /> <!-- Talisman - Increase Force -->
+				<param targetType="SELF" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3667" levels="1" name="Yellow Talisman - Damage Transition">

@@ -414,14 +414,15 @@
 		</cond>
 	</skill>
 	<skill id="2530" levels="1" name="Recovery Item for Battlefield Use">
-		<set name="negateAbnormals" val="death_penalty,1" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="12819" /> <!-- Recovery Spellbook for Combat Use -->
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="DEATH_PENALTY,-1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="2531" levels="1" name="Adventurer's Scroll of Escape">
@@ -1400,22 +1401,24 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="negateAbnormals" val="poison,9" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="POISON,9" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="2579" levels="1" name="Cure Death Clock">
 		<!-- Confirmed CT2.5 -->
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="1" />
-		<set name="negateAbnormals" val="death_clack,1" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="DEATH_CLACK,1" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="2580" levels="1" name="Vitality Replenishing Herb">

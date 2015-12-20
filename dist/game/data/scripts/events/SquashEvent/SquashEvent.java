@@ -37,6 +37,7 @@ public class SquashEvent extends AbstractNpcAI
 	private static final int NECTAR_SKILL = 2005;
 	
 	private static final List<Integer> SQUASH_LIST = Arrays.asList(12774, 12775, 12776, 12777, 12778, 12779, 13016, 13017);
+	private static final List<Integer> CHRONO_SQUASH_LIST = Arrays.asList(12777, 12778, 12779, 13017);
 	private static final List<Integer> CHRONO_LIST = Arrays.asList(4202, 5133, 5817, 7058, 8350);
 	
 	//@formatter:off
@@ -162,6 +163,7 @@ public class SquashEvent extends AbstractNpcAI
 		addAttackId(SQUASH_LIST);
 		addKillId(SQUASH_LIST);
 		addSpawnId(SQUASH_LIST);
+		addSpawnId(CHRONO_SQUASH_LIST);
 		addSkillSeeId(SQUASH_LIST);
 		
 		addStartNpc(MANAGER);
@@ -170,9 +172,21 @@ public class SquashEvent extends AbstractNpcAI
 	}
 	
 	@Override
+	public String onSpawn(L2Npc npc)
+	{
+		npc.setIsImmobilized(true);
+		npc.disableCoreAI(true);
+		if (CHRONO_SQUASH_LIST.contains(npc.getId()))
+		{
+			npc.setIsInvul(true);
+		}
+		return null;
+	}
+	
+	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
-		if (SQUASH_LIST.contains(npc.getId()))
+		if (CHRONO_SQUASH_LIST.contains(npc.getId()))
 		{
 			if ((attacker.getActiveWeaponItem() != null) && CHRONO_LIST.contains(attacker.getActiveWeaponItem().getId()))
 			{
@@ -197,17 +211,11 @@ public class SquashEvent extends AbstractNpcAI
 		{
 			switch (npc.getId())
 			{
-				case 12774:
-					randomSpawn(12775, 12776, npc, true);
+				case 12774: // Young Squash
+					randomSpawn(13016, 12775, 12776, npc, true);
 					break;
-				case 12777:
-					randomSpawn(12778, 12779, npc, true);
-					break;
-				case 12775:
-					randomSpawn(13016, npc, true);
-					break;
-				case 12778:
-					randomSpawn(13017, npc, true);
+				case 12777: // Large Young Squash
+					randomSpawn(13017, 12778, 12779, npc, true);
 					break;
 			}
 		}
@@ -217,23 +225,17 @@ public class SquashEvent extends AbstractNpcAI
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		for (int ID : SQUASH_LIST)
+		if (SQUASH_LIST.contains(npc.getId()))
 		{
-			if (npc.getId() == ID)
-			{
-				dropItem(npc, killer);
-			}
+			dropItem(npc, killer);
 		}
 		return super.onKill(npc, killer, isPet);
 	}
 	
 	@Override
-	public String onSpawn(L2Npc npc)
+	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		npc.setIsImmobilized(true);
-		npc.disableCoreAI(true);
-		npc.setIsInvul(true);
-		return null;
+		return npc.getId() + ".htm";
 	}
 	
 	private static final void dropItem(L2Npc mob, L2PcInstance player)
@@ -280,28 +282,20 @@ public class SquashEvent extends AbstractNpcAI
 		}
 	}
 	
-	private void randomSpawn(int lower, int higher, L2Npc npc, boolean delete)
+	private void randomSpawn(int low, int medium, int high, L2Npc npc, boolean delete)
 	{
 		final int _random = Rnd.get(100);
+		if (_random < 5)
+		{
+			spawnNext(low, npc);
+		}
 		if (_random < 10)
 		{
-			spawnNext(lower, npc);
+			spawnNext(medium, npc);
 		}
 		else if (_random < 30)
 		{
-			spawnNext(higher, npc);
-		}
-		else
-		{
-			nectarText(npc);
-		}
-	}
-	
-	private void randomSpawn(int npcId, L2Npc npc, boolean delete)
-	{
-		if (Rnd.get(100) < 10)
-		{
-			spawnNext(npcId, npc);
+			spawnNext(high, npc);
 		}
 		else
 		{
@@ -337,11 +331,5 @@ public class SquashEvent extends AbstractNpcAI
 	{
 		addSpawn(npcId, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 60000);
 		npc.deleteMe();
-	}
-	
-	@Override
-	public String onFirstTalk(L2Npc npc, L2PcInstance player)
-	{
-		return npc.getId() + ".htm";
 	}
 }

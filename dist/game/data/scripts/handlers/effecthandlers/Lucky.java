@@ -20,7 +20,6 @@ package handlers.effecthandlers;
 
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 
 /**
@@ -44,11 +43,5 @@ public class Lucky extends L2Effect
 	public boolean onActionTime()
 	{
 		return getSkill().isPassive();
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.LUCKY;
 	}
 }

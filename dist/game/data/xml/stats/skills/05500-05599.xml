@@ -406,8 +406,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="armor_unholy">
-				<!-- set stat="buffImmunity" val="1" / TODO: Needs Support -->
+			<effect name="BlockBuff" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="armor_unholy">
 				<sub stat="darkRes" val="50" />
 			</effect>
 			<effect name="Cancel" noicon="1" val="0" effectPower="100" />
@@ -778,13 +777,19 @@
 	<skill id="5550" levels="12" name="NPC Trigger Stun">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
 		<table name="#triggeredLvl"> 1 2 3 4 5 6 7 8 9 10 11 12 </table>
-		<set name="activationChance" val="15" />
-		<set name="chanceType" val="ON_HIT" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="triggeredId" val="5551" />
-		<set name="triggeredLevel" val="#triggeredLvl" />
+		<for>
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="15" />
+				<param skillId="5551" skillLevel="#triggeredLvl" /> <!-- Stun -->
+				<param targetType="ONE" />
+				<param allowWeapons="ALL" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="5551" levels="12" name="Stun">
 		<table name="#magicLvl"> 10 20 30 40 50 60 70 75 80 85 90 95 </table>
@@ -935,19 +940,25 @@
 		<table name="#abnormalLvls"> 2 3 4 </table>
 		<table name="#activationChance"> 10 10 0 </table>
 		<table name="#cAtk"> 1 1 1.25 </table>
+		<table name="#icons"> icon.skill0761 icon.skill0761_2 icon.skill0761_3 </table>
 		<table name="#rCrit"> 1 1.3 1.3 </table>
 		<table name="#triggeredLevel"> 2 3 0 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="seed_of_knight" />
+		<set name="icon" val="#icons" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
-		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="20" val="0" activationChance="#activationChance" chanceType="ON_ATTACKED_HIT" triggeredId="5561" triggeredLevel="#triggeredLevel" abnormalLvl="#abnormalLvls" abnormalType="seed_of_knight">
+			<effect name="TriggerSkillByDamage" abnormalTime="20" val="0" abnormalLvl="#abnormalLvls" abnormalType="seed_of_knight">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="#activationChance" />
+				<param skillId="5561" skillLevel="#triggeredLevel" /> <!-- Seed of Revenge -->
+				<param targetType="SELF" />
 				<add stat="pAtk" val="300" />
 				<mul stat="critRate" val="#rCrit" />
 				<mul stat="critDmg" val="#cAtk" />
@@ -960,18 +971,24 @@
 		<table name="#activationChance"> 10 10 0 </table>
 		<table name="#elementRes"> 0 30 30 </table>
 		<table name="#healEffect"> 1 1 1.3 </table>
+		<table name="#icons"> icon.skill0784 icon.skill0784_2 icon.skill0784_3 </table>
 		<table name="#triggeredLevel"> 2 3 0 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="seed_of_knight" />
+		<set name="icon" val="#icons" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
-		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="20" val="0" activationChance="#activationChance" chanceType="ON_ATTACKED_HIT" triggeredId="5562" triggeredLevel="#triggeredLevel" abnormalLvl="#abnormalLvls" abnormalType="seed_of_knight">
+			<effect name="TriggerSkillByDamage" abnormalTime="20" val="0" abnormalLvl="#abnormalLvls" abnormalType="seed_of_knight">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="#activationChance" />
+				<param skillId="5562" skillLevel="#triggeredLevel" /> <!-- Spirit of Phoenix -->
+				<param targetType="SELF" />
 				<add stat="pDef" val="500" />
 				<add stat="fireRes" val="#elementRes" />
 				<add stat="darkRes" val="#elementRes" />
@@ -983,20 +1000,26 @@
 		<!-- Confirmed CT2.5 and Updated to H5 -->
 		<table name="#abnormalLvls"> 2 3 4 </table>
 		<table name="#activationChance"> 10 10 0 </table>
+		<table name="#icons"> icon.skill0786 icon.skill0786_2 icon.skill0786_3 </table>
 		<table name="#rCrit"> 1 1 1.2 </table>
 		<table name="#triggeredLevel"> 2 3 0 </table>
 		<table name="#waterPower"> 0 20 20 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="seed_of_knight" />
+		<set name="icon" val="#icons" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
-		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="20" val="0" activationChance="#activationChance" chanceType="ON_ATTACKED_HIT" triggeredId="5563" triggeredLevel="#triggeredLevel" abnormalLvl="#abnormalLvls" abnormalType="seed_of_knight">
+			<effect name="TriggerSkillByDamage" abnormalTime="20" val="0" abnormalLvl="#abnormalLvls" abnormalType="seed_of_knight">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="#activationChance" />
+				<param skillId="5563" skillLevel="#triggeredLevel" /> <!-- Eva's Will -->
+				<param targetType="SELF" />
 				<add stat="mDef" val="400" />
 				<add stat="waterPower" val="#waterPower" />
 				<mul stat="critRate" val="#rCrit" />
@@ -1008,19 +1031,25 @@
 		<table name="#abnormalLvls"> 2 3 4 </table>
 		<table name="#absorbDam"> 0 0 8 </table>
 		<table name="#activationChance"> 10 10 0 </table>
+		<table name="#icons"> icon.skill0788 icon.skill0788_2 icon.skill0788_3 </table>
 		<table name="#triggeredLevel"> 2 3 0 </table>
 		<table name="#windPower"> 0 20 20 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="20" />
 		<set name="abnormalType" val="seed_of_knight" />
+		<set name="icon" val="#icons" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="isTriggeredSkill" val="true" />
 		<set name="magicLvl" val="83" />
 		<set name="operateType" val="A2" />
-		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="20" val="0" activationChance="#activationChance" chanceType="ON_ATTACKED" triggeredId="5564" triggeredLevel="#triggeredLevel" abnormalLvl="#abnormalLvls" abnormalType="seed_of_knight">
+			<effect name="TriggerSkillByDamage" abnormalTime="20" val="0" abnormalLvl="#abnormalLvls" abnormalType="seed_of_knight">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param minDamage="1" />
+				<param chance="#activationChance" />
+				<param skillId="5564" skillLevel="#triggeredLevel" /> <!-- Pain of Shillien -->
+				<param targetType="SELF" />
 				<mul stat="critDmg" val="1.2" />
 				<add stat="windPower" val="#windPower" />
 				<add stat="absorbDam" val="#absorbDam" />

@@ -9,27 +9,25 @@
 		<table name="#ench2cAtkAdd"> 65 81 96 112 127 143 158 174 189 205 220 236 251 267 282 298 313 329 344 360 375 391 406 422 437 453 468 484 499 515 </table>
 		<table name="#ench3pAtkSpd"> 1 1 1 1 1 1 1 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 5 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
-		<set name="activationChance" val="50" /> <!-- TODO: Remove when support for effects using conditions is done -->
-		<set name="chanceType" val="ON_HIT" /> <!-- TODO: Remove when support for effects using conditions is done -->
+		<set name="icon" val="icon.skill0217" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="triggeredId" val="#triggeredId" /> <!-- TODO: Remove when support for effects using conditions is done -->
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<!-- TODO: Remove when support for effects using conditions is done -->
-		<cond>
-			<using kind="SWORD,BLUNT" />
-		</cond>
 		<for>
 			<add stat="pAtk" val="#pAtk">
 				<using kind="SWORD,BLUNT" />
 			</add>
-			<!-- TODO: Require support for effects using conditions -->
-			<!-- <effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="50" chanceType="ON_HIT" triggeredId="#triggeredId"> -->
-			<!-- <using kind="SWORD,BLUNT" /> -->
-			<!-- </effect> -->
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="50" />
+				<param skillId="#triggeredId" skillLevel="1" /> <!-- Blunt Mastery -->
+				<param targetType="SELF" />
+				<param allowWeapons="SWORD,BLUNT" />
+			</effect>
 		</for>
 		<enchant1for>
 			<add stat="pAtk" val="129.3">
@@ -38,10 +36,14 @@
 			<add stat="runSpd" val="#ench1runSpd">
 				<using kind="SWORD,BLUNT" />
 			</add>
-			<!-- TODO: Require support for effects using conditions -->
-			<!-- <effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="50" chanceType="ON_HIT" triggeredId="5604"> -->
-			<!-- <using kind="SWORD,BLUNT" /> -->
-			<!-- </effect> -->
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="50" />
+				<param skillId="5604" skillLevel="1" /> <!-- Blunt Mastery -->
+				<param targetType="SELF" />
+				<param allowWeapons="SWORD,BLUNT" />
+			</effect>
 		</enchant1for>
 		<enchant2for>
 			<add stat="pAtk" val="129.3">
@@ -50,10 +52,14 @@
 			<add stat="critDmgAdd" val="#ench2cAtkAdd">
 				<using kind="SWORD,BLUNT" />
 			</add>
-			<!-- TODO: Require support for effects using conditions -->
-			<!-- <effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="50" chanceType="ON_HIT" triggeredId="5604"> -->
-			<!-- <using kind="SWORD,BLUNT" /> -->
-			<!-- </effect> -->
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="50" />
+				<param skillId="5604" skillLevel="1" /> <!-- Blunt Mastery -->
+				<param targetType="SELF" />
+				<param allowWeapons="SWORD,BLUNT" />
+			</effect>
 		</enchant2for>
 		<enchant3for>
 			<add stat="pAtk" val="129.3">
@@ -62,10 +68,14 @@
 			<add stat="pAtkSpd" val="#ench3pAtkSpd">
 				<using kind="SWORD,BLUNT" />
 			</add>
-			<!-- TODO: Require support for effects using conditions -->
-			<!-- <effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="50" chanceType="ON_HIT" triggeredId="5604"> -->
-			<!-- <using kind="SWORD,BLUNT" /> -->
-			<!-- </effect> -->
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="50" />
+				<param skillId="5604" skillLevel="1" /> <!-- Blunt Mastery -->
+				<param targetType="SELF" />
+				<param allowWeapons="SWORD,BLUNT" />
+			</effect>
 		</enchant3for>
 	</skill>
 	<skill id="208" levels="52" name="Bow Mastery" enchantGroup1="1" enchantGroup2="1">
@@ -104,36 +114,38 @@
 		<table name="#ench2rCrit"> 1.0019 1.0029 1.0039 1.0048 1.0058 1.0068 1.0077 1.0087 1.0097 1.0106 1.0116 1.0126 1.0135 1.0145 1.0155 1.0164 1.0174 1.0184 1.0193 1.0203 1.0213 1.0222 1.0232 1.0242 1.0251 1.0261 1.0271 1.028 1.029 1.03 </table>
 		<table name="#ench3cAtk"> 1.0019 1.0029 1.0039 1.0048 1.0058 1.0068 1.0077 1.0087 1.0097 1.0106 1.0116 1.0126 1.0135 1.0145 1.0155 1.0164 1.0174 1.0184 1.0193 1.0203 1.0213 1.0222 1.0232 1.0242 1.0251 1.0261 1.0271 1.028 1.029 1.03 </table>
 		<table name="#enchMagicLvl"> 76 76 76 77 77 77 78 78 78 79 79 79 80 80 80 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
-		<set name="activationChance" val="33" /> <!-- TODO: Remove when support for effects using conditions is done -->
-		<set name="chanceType" val="ON_HIT" /> <!-- TODO: Remove when support for effects using conditions is done -->
+		<set name="icon" val="icon.skill0209" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="triggeredId" val="#triggeredId" /> <!-- TODO: Remove when support for effects using conditions is done -->
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
-		<!-- TODO: Remove when support for effects using conditions is done -->
-		<cond>
-			<using kind="DAGGER,DUALDAGGER" />
-		</cond>
 		<for>
 			<add stat="pAtk" val="#pAtk">
 				<using kind="DAGGER,DUALDAGGER" />
 			</add>
-			<!-- TODO: Require support for effects using conditions -->
-			<!-- <effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="33" chanceType="ON_HIT" triggeredId="#triggeredId"> -->
-			<!-- <using kind="DAGGER,DUALDAGGER" /> -->
-			<!-- </effect> -->
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="33" />
+				<param skillId="#triggeredId" skillLevel="1" /> <!-- Dagger Mastery -->
+				<param targetType="SELF" />
+				<param allowWeapons="DAGGER,DUALDAGGER" />
+			</effect>
 		</for>
 		<enchant1for>
 			<add stat="pAtk" val="#ench1pAtk">
 				<using kind="DAGGER,DUALDAGGER" />
 			</add>
-			<!-- TODO: Require support for effects using conditions -->
-			<!-- <effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="33" chanceType="ON_HIT" triggeredId="5603"> -->
-			<!-- <using kind="DAGGER,DUALDAGGER" /> -->
-			<!-- </effect> -->
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="33" />
+				<param skillId="5603" skillLevel="1" /> <!-- Dagger Mastery -->
+				<param targetType="SELF" />
+				<param allowWeapons="DAGGER,DUALDAGGER" />
+			</effect>
 		</enchant1for>
 		<enchant2for>
 			<add stat="pAtk" val="112.8">
@@ -142,10 +154,14 @@
 			<mul stat="critRate" val="#ench2rCrit">
 				<using kind="DAGGER,DUALDAGGER" />
 			</mul>
-			<!-- TODO: Require support for effects using conditions -->
-			<!-- <effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="33" chanceType="ON_HIT" triggeredId="5603"> -->
-			<!-- <using kind="DAGGER,DUALDAGGER" /> -->
-			<!-- </effect> -->
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="33" />
+				<param skillId="5603" skillLevel="1" /> <!-- Dagger Mastery -->
+				<param targetType="SELF" />
+				<param allowWeapons="DAGGER,DUALDAGGER" />
+			</effect>
 		</enchant2for>
 		<enchant3for>
 			<add stat="pAtk" val="112.8">
@@ -154,10 +170,14 @@
 			<mul stat="critDmg" val="#ench3cAtk">
 				<using kind="DAGGER,DUALDAGGER" />
 			</mul>
-			<!-- TODO: Require support for effects using conditions -->
-			<!-- <effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" activationChance="33" chanceType="ON_HIT" triggeredId="5603"> -->
-			<!-- <using kind="DAGGER,DUALDAGGER" /> -->
-			<!-- </effect> -->
+			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="33" />
+				<param skillId="5603" skillLevel="1" /> <!-- Dagger Mastery -->
+				<param targetType="SELF" />
+				<param allowWeapons="DAGGER,DUALDAGGER" />
+			</effect>
 		</enchant3for>
 	</skill>
 	<skill id="210" levels="45" name="Fist Weapon Mastery" enchantGroup1="1" enchantGroup2="1">
@@ -1444,10 +1464,8 @@
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="mpConsume" val="#ench34MpConsume" />
-		<enchant3 name="negateAbnormals" val="poison,9" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<enchant4 name="mpConsume" val="#ench34MpConsume" />
-		<enchant4 name="negateAbnormals" val="bleeding,9" />
 		<for>
 			<effect name="Heal" noicon="1" val="#amount" />
 		</for>
@@ -1456,11 +1474,15 @@
 		</enchant1for>
 		<enchant3for>
 			<effect name="Heal" noicon="1" val="546" />
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="POISON,9" />
+			</effect>
 		</enchant3for>
 		<enchant4for>
 			<effect name="Heal" noicon="1" val="546" />
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="BLEEDING,9" />
+			</effect>
 		</enchant4for>
 	</skill>
 	<skill id="263" levels="37" name="Deadly Blow" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
@@ -2053,12 +2075,12 @@
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="SummonCubic" noicon="1" val="0">
-				<param npcId="4" cubicDelay="20" cubicDuration="900" cubicMaxCount="15" cubicSkillChance="20" cubicPower="#cubicPower" />
+				<param cubicId="4" cubicDelay="20" cubicDuration="900" cubicMaxCount="15" cubicSkillChance="20" cubicPower="#cubicPower" />
 			</effect>
 		</for>
 		<enchant1for>
 			<effect name="SummonCubic" noicon="1" val="0">
-				<param npcId="4" cubicDelay="20" cubicDuration="900" cubicMaxCount="15" cubicSkillChance="20" cubicPower="#ench1Power" />
+				<param cubicId="4" cubicDelay="20" cubicDuration="900" cubicMaxCount="15" cubicSkillChance="20" cubicPower="#ench1Power" />
 			</effect>
 		</enchant1for>
 	</skill>

@@ -49,12 +49,13 @@
 		<set name="aggroPoints" val="566" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="60" />
-		<set name="negateAbnormals" val="turn_stone,2" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Negate" noicon="1" val="0" />
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="TURN_STONE,2" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="7005" levels="4" name="Greater Chant of Vampire">

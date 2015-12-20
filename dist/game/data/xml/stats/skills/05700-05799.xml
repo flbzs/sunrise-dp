@@ -980,7 +980,14 @@
 				<mul stat="critRate" val="1.3" />
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-			<effect name="ChanceSkillTrigger" abnormalTime="3600" val="0" activationChance="99" chanceType="ON_CRIT" triggeredId="5760" triggeredLevel="#level" abnormalLvl="1" abnormalType="seed_of_critical" />
+			<effect name="TriggerSkillByAttack" abnormalTime="3600" noicon="1" val="0" abnormalLvl="1">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="true" />
+				<param minDamage="1" chance="99" />
+				<param skillId="5760" skillLevel="#level" />
+				<param targetType="SELF" />
+				<param allowWeapons="DAGGER,DUALDAGGER" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5761" levels="2" name="Power Strike">

@@ -1335,7 +1335,14 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="mirage_trap" triggeredId="5680" chanceType="ON_ATTACKED" activationChance="30" />
+			<effect name="TriggerSkillByAttack" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="mirage_trap">
+				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
+				<param isCritical="false" />
+				<param minDamage="1" chance="60" />
+				<param skillId="5680" skillLevel="1" /> <!-- Oblivion Trap -->
+				<param targetType="SELF" />
+				<param allowWeapons="ALL" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5680" levels="1" name="Oblivion Trap">

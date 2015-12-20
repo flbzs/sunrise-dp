@@ -68,8 +68,7 @@ public class Blow implements ISkillHandler
 			}
 			
 			// Check firstly if target dodges skill
-			final boolean skillIsEvaded = Formulas.calcPhysicalSkillEvasion(target, skill);
-			
+			final boolean skillIsEvaded = Formulas.calcPhysicalSkillEvasion(activeChar, target, skill);
 			if (!skillIsEvaded && Formulas.calcBlowSuccess(activeChar, target, skill))
 			{
 				if (skill.hasEffects())
@@ -152,23 +151,6 @@ public class Blow implements ISkillHandler
 				
 				// Check if damage should be reflected
 				Formulas.calcDamageReflected(activeChar, target, skill, damage);
-			}
-			
-			// Sending system messages
-			if (skillIsEvaded)
-			{
-				if (activeChar.isPlayer())
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_DODGES_ATTACK);
-					sm.addString(target.getName());
-					activeChar.getActingPlayer().sendPacket(sm);
-				}
-				if (target.isPlayer())
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.AVOIDED_C1_ATTACK);
-					sm.addString(activeChar.getName());
-					target.getActingPlayer().sendPacket(sm);
-				}
 			}
 			
 			// Possibility of a lethal strike

@@ -25,7 +25,6 @@ import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.entity.Instance;
 import l2r.gameserver.model.entity.olympiad.OlympiadManager;
 import l2r.gameserver.model.holders.SummonRequestHolder;
@@ -48,12 +47,6 @@ public class CallPc extends L2Effect
 		super(env, template);
 		_itemId = template.getParameters().getInt("itemId", 0);
 		_itemCount = template.getParameters().getInt("itemCount", 0);
-	}
-	
-	@Override
-	public L2EffectType getEffectType()
-	{
-		return L2EffectType.CALLPC;
 	}
 	
 	@Override

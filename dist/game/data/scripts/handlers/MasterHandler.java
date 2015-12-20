@@ -230,7 +230,6 @@ import handlers.skillhandlers.ChainHeal;
 import handlers.skillhandlers.Continuous;
 import handlers.skillhandlers.Disablers;
 import handlers.skillhandlers.Dummy;
-import handlers.skillhandlers.Manadam;
 import handlers.skillhandlers.Mdam;
 import handlers.skillhandlers.Pdam;
 import handlers.skillhandlers.Sow;
@@ -541,7 +540,6 @@ public class MasterHandler
 			Continuous.class,
 			Disablers.class,
 			Dummy.class,
-			Manadam.class,
 			Mdam.class,
 			Pdam.class,
 			Sow.class,
