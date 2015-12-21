@@ -227,8 +227,15 @@
 		<set name="hitTime" val="2500" />
 		<set name="magicLvl" val="56" />
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="TRANSFORMDISPEL" />
 		<set name="targetType" val="SELF" />
+		<cond>
+			<player canUntransform="true" />
+		</cond>
+		<for>
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="TRANSFORM,-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="620" levels="1" name="Quiver of Bolts - Grade B">
 		<!-- Confirmed CT2.5 -->

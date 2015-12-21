@@ -233,7 +233,6 @@ import handlers.skillhandlers.Dummy;
 import handlers.skillhandlers.Mdam;
 import handlers.skillhandlers.Pdam;
 import handlers.skillhandlers.Sow;
-import handlers.skillhandlers.TransformDispel;
 import handlers.skillhandlers.Unlock;
 import handlers.targethandlers.Area;
 import handlers.targethandlers.AreaCorpseMob;
@@ -543,7 +542,6 @@ public class MasterHandler
 			Mdam.class,
 			Pdam.class,
 			Sow.class,
-			TransformDispel.class,
 			Unlock.class,
 		},
 		{
