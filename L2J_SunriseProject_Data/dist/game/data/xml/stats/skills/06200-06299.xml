@@ -3,8 +3,15 @@
 	<skill id="6200" levels="1" name="NPC Transform Dispel">
 		<set name="hitTime" val="500" />
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="TRANSFORMDISPEL" />
 		<set name="targetType" val="ONE" />
+		<cond>
+			<player canUntransform="true" />
+		</cond>
+		<for>
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="TRANSFORM,-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="6201" levels="1" name="Transformation Condition - Frog">
 		<!-- Confirmed CT2.5 -->

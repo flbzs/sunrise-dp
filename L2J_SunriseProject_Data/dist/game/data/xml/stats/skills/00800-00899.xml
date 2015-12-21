@@ -761,14 +761,22 @@
 		<set name="hitTime" val="5000" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="15000" />
-		<set name="skillType" val="TRANSFORMDISPEL" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="TRANSFORM,-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="839" levels="1" name="Dismount">
 		<set name="hitTime" val="2500" />
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="TRANSFORMDISPEL" />
 		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="TRANSFORM,-1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="840" levels="1" name="Final Flying Form">
 		<set name="abnormalLvl" val="1" />
