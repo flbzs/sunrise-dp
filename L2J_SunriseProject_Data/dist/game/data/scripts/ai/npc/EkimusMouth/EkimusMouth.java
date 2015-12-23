@@ -21,7 +21,6 @@ package ai.npc.EkimusMouth;
 import l2r.gameserver.instancemanager.SoIManager;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.quest.QuestState;
 
 import ai.npc.AbstractNpcAI;
 
@@ -39,13 +38,6 @@ public class EkimusMouth extends AbstractNpcAI
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
-		
-		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
-		
 		if (event.equalsIgnoreCase("hos_enter"))
 		{
 			if (SoIManager.getCurrentStage() == 1)
@@ -74,16 +66,6 @@ public class EkimusMouth extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
-		
-		if (npc.getId() == 32537)
-		{
-			return "32537.htm";
-		}
-		return "";
+		return "32537.htm";
 	}
 }

@@ -100,8 +100,6 @@ public class HallOfSufferingDefence extends Quest
 	};
 	
 	// Doors/Walls/Zones
-	
-	// Doors/Walls/Zones
 	private static final int[][] ROOM_1_MOBS =
 	{
 		{
@@ -424,16 +422,13 @@ public class HallOfSufferingDefence extends Quest
 		addKillId(KLANIKUS);
 		addAttackId(KLODEKUS);
 		addAttackId(KLANIKUS);
-		for (int mobId : TUMOR_MOBIDS)
-		{
-			addSkillSeeId(mobId);
-			addKillId(mobId);
-		}
+		addSkillSeeId(TUMOR_MOBIDS);
+		addKillId(TUMOR_MOBIDS);
 	}
 	
 	private boolean checkConditions(L2PcInstance player)
 	{
-		if (debug)
+		if (debug || player.isGM())
 		{
 			return true;
 		}
@@ -512,7 +507,6 @@ public class HallOfSufferingDefence extends Quest
 		
 		if (checkConditions(player))
 		{
-			L2Party party = player.getParty();
 			world = new DHSWorld();
 			world.setInstanceId(InstanceManager.getInstance().createDynamicInstance(template));
 			world.setTemplateId(INSTANCEID);
@@ -524,7 +518,8 @@ public class HallOfSufferingDefence extends Quest
 			// teleport players
 			teleto.instanceId = world.getInstanceId();
 			
-			if (player.getParty() == null)
+			L2Party party = player.getParty();
+			if (party == null)
 			{
 				teleportplayer(player, teleto);
 				removeBuffs(player);

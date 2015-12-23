@@ -1265,6 +1265,7 @@
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
+		<set name="skillType" val="MDAM" />
 		<set name="reuseDelay" val="6000" />
 		<set name="targetType" val="ONE" />
 		<for>
@@ -1284,6 +1285,7 @@
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
+		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DeathLink" val="0" />
@@ -1302,6 +1304,7 @@
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
+		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="DeathLink" val="0" />

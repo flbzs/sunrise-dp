@@ -208,8 +208,7 @@ public class Q00288_HandleWithCare extends Quest
 				{
 					htmltext = "32741-06.html";
 				}
-				
-				if (st.isCond(2) && st.hasQuestItems(HIGH_GRADE_LIZARD_SCALE))
+				else if (st.isCond(3) && st.hasQuestItems(HIGH_GRADE_LIZARD_SCALE))
 				{
 					htmltext = "32741-07.html";
 				}
