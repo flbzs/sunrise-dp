@@ -36,16 +36,16 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.entity.Instance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 
+import ai.npc.AbstractNpcAI;
 import quests.Q00694_BreakThroughTheHallOfSuffering.Q00694_BreakThroughTheHallOfSuffering;
 
-public class HallOfSufferingAttack extends Quest
+public class HallOfSufferingAttack extends AbstractNpcAI
 {
 	private class HSWorld extends InstanceWorld
 	{
@@ -110,7 +110,6 @@ public class HallOfSufferingAttack extends Quest
 		}
 	}
 	
-	private static final String qn = "HallOfSufferingAttack";
 	private static final int INSTANCEID = 115;
 	
 	private static final int MOUTHOFEKIMUS = 32537;
@@ -128,58 +127,18 @@ public class HallOfSufferingAttack extends Quest
 	private static final int TUMOR_ALIVE = 18704;
 	private static final int TUMOR_DEAD = 32531;
 	
-	private static final int[] TUMOR_MOBIDS =
-	{
-		22509,
-		22510,
-		22511,
-		22512,
-		22513,
-		22514,
-		22515
-	};
+	//@formatter:off
+	private static final int[] TUMOR_MOBIDS = { 22509, 22510, 22511, 22512, 22513, 22514, 22515 };
 	
-	private static final int[] TWIN_MOBIDS =
-	{
-		22509,
-		22510,
-		22511,
-		22512,
-		22513
-	};
+	private static final int[] TWIN_MOBIDS = {  22509, 22510, 22511, 22512, 22513 };
 	
 	private static final int[][] ROOM_1_MOBS =
 	{
-		{
-			22509,
-			-186296,
-			208200,
-			-9544
-		},
-		{
-			22509,
-			-186161,
-			208345,
-			-9544
-		},
-		{
-			22509,
-			-186296,
-			208403,
-			-9544
-		},
-		{
-			22510,
-			-186107,
-			208113,
-			-9528
-		},
-		{
-			22510,
-			-186350,
-			208200,
-			-9544
-		}
+		{ 22509, -186296, 208200, -9544 },
+		{ 22509, -186161, 208345, -9544 },
+		{ 22509, -186296, 208403, -9544 },
+		{ 22510, -186107, 208113, -9528 },
+		{ 22510, -186350, 208200, -9544 }
 	};
 	
 	private static final int[][] ROOM_2_MOBS =
@@ -441,12 +400,8 @@ public class HallOfSufferingAttack extends Quest
 		}
 	};
 	
-	private static final int[] TEPIOS_SPAWN =
-	{
-		-173727,
-		218109,
-		-9536
-	};
+	private static final int[] TEPIOS_SPAWN = { -173727, 218109, -9536 };
+	//@formatter:on
 	
 	private static final int BOSS_INVUL_TIME = 30000;
 	private static final int BOSS_MINION_SPAWN_TIME = 60000;
@@ -456,7 +411,7 @@ public class HallOfSufferingAttack extends Quest
 	
 	public HallOfSufferingAttack()
 	{
-		super(-1, HallOfSufferingAttack.class.getSimpleName(), "gracia/instances");
+		super(HallOfSufferingAttack.class.getSimpleName(), "gracia/instances");
 		
 		addStartNpc(MOUTHOFEKIMUS);
 		addStartNpc(TEPIOS);
@@ -470,15 +425,17 @@ public class HallOfSufferingAttack extends Quest
 		addAttackId(KLODEKUS);
 		addAttackId(KLANIKUS);
 		
-		for (int mobId : TUMOR_MOBIDS)
-		{
-			addSkillSeeId(mobId);
-			addKillId(mobId);
-		}
+		addSkillSeeId(TUMOR_MOBIDS);
+		addKillId(TUMOR_MOBIDS);
 	}
 	
 	private boolean checkConditions(L2PcInstance player)
 	{
+		if (player.isGM())
+		{
+			return true;
+		}
+		
 		L2Party party = player.getParty();
 		if (party == null)
 		{
@@ -572,10 +529,6 @@ public class HallOfSufferingAttack extends Quest
 				{
 					teleportPlayer(partyMember, coords, world.getInstanceId());
 					world.addAllowed(partyMember.getObjectId());
-					if (partyMember.getQuestState(qn) == null)
-					{
-						newQuestState(partyMember);
-					}
 				}
 			}
 		}
@@ -845,14 +798,7 @@ public class HallOfSufferingAttack extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		int npcId = npc.getId();
-		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
-		
-		if (npcId == MOUTHOFEKIMUS)
+		if (npc.getId() == MOUTHOFEKIMUS)
 		{
 			enterInstance(player, "HallOfSufferingAttack.xml", ENTER_TELEPORT);
 			return null;

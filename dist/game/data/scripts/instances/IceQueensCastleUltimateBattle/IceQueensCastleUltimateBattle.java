@@ -393,8 +393,11 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 					}
 					case "FINISH_STAGE":
 					{
-						world.supp_Jinia.deleteMe();
-						world.supp_Jinia = null;
+						if (world.supp_Jinia != null)
+						{
+							world.supp_Jinia.deleteMe();
+							world.supp_Jinia = null;
+						}
 						world.freya.teleToLocation(FREYA_CORPSE);
 						world.supp_Kegor.teleToLocation(KEGOR_FINISH);
 						break;

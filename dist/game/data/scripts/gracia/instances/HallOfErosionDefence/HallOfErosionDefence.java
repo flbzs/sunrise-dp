@@ -35,7 +35,6 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.instance.L2QuestGuardInstance;
 import l2r.gameserver.model.entity.Instance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
@@ -47,9 +46,10 @@ import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
 
+import ai.npc.AbstractNpcAI;
 import quests.Q00697_DefendtheHallofErosion.Q00697_DefendtheHallofErosion;
 
-public class HallOfErosionDefence extends Quest
+public class HallOfErosionDefence extends AbstractNpcAI
 {
 	protected class HEDWorld extends InstanceWorld
 	{
@@ -71,7 +71,6 @@ public class HallOfErosionDefence extends Quest
 		}
 	}
 	
-	private static final String qn = "HallOfErosionDefence";
 	private static final int INSTANCEID = 120;
 	private static final int MOUTHOFEKIMUS = 32537;
 	private static final int TUMOR_ALIVE = 18708;
@@ -865,17 +864,14 @@ public class HallOfErosionDefence extends Quest
 	
 	public HallOfErosionDefence()
 	{
-		super(-1, HallOfErosionDefence.class.getSimpleName(), "gracia/instances");
+		super(HallOfErosionDefence.class.getSimpleName(), "gracia/instances");
 		
 		addStartNpc(MOUTHOFEKIMUS);
 		addTalkId(MOUTHOFEKIMUS);
 		addStartNpc(TUMOR_DEAD);
 		addTalkId(TUMOR_DEAD);
 		
-		for (int id : NOTMOVE)
-		{
-			addSpawnId(id);
-		}
+		addSpawnId(NOTMOVE);
 		addSpawnId(SEED);
 		
 		addAggroRangeEnterId(18668);
@@ -895,6 +891,11 @@ public class HallOfErosionDefence extends Quest
 	
 	private boolean checkConditions(L2PcInstance player)
 	{
+		if (player.isGM())
+		{
+			return true;
+		}
+		
 		L2Party party = player.getParty();
 		if (party == null)
 		{
@@ -1002,10 +1003,6 @@ public class HallOfErosionDefence extends Quest
 				{
 					teleportPlayer(partyMember, coords, world.getInstanceId());
 					world.addAllowed(partyMember.getObjectId());
-					if (partyMember.getQuestState(qn) == null)
-					{
-						newQuestState(partyMember);
-					}
 				}
 			}
 			((HEDWorld) world).finishTask = ThreadPoolManager.getInstance().scheduleGeneral(new FinishTask((HEDWorld) world), 20 * 60000);
@@ -1068,7 +1065,7 @@ public class HallOfErosionDefence extends Quest
 				}
 				broadCastPacket(world, new ExShowScreenMessage(NpcStringId.THE_TUMOR_INSIDE_S1_HAS_COMPLETELY_REVIVED_NRECOVERED_NEARBY_UNDEAD_ARE_SWARMING_TOWARD_SEED_OF_LIFE, 2, 8000));
 			}
-		}, 180 * 1000);
+		} , 180 * 1000);
 		broadCastPacket(world, new ExShowScreenMessage(NpcStringId.YOU_CAN_HEAR_THE_UNDEAD_OF_EKIMUS_RUSHING_TOWARD_YOU_S1_S2_IT_HAS_NOW_BEGUN, 2, 8000));
 	}
 	
@@ -1125,14 +1122,7 @@ public class HallOfErosionDefence extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		int npcId = npc.getId();
-		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
-		
-		if (npcId == MOUTHOFEKIMUS)
+		if (npc.getId() == MOUTHOFEKIMUS)
 		{
 			enterInstance(player, "HallOfErosionDefence.xml", ENTER_TELEPORT);
 			return "";
@@ -1207,7 +1197,7 @@ public class HallOfErosionDefence extends Quest
 					L2Npc tumor = spawnNpc(TUMOR_ALIVE, world.deadTumor.getLocation(), 0, world.getInstanceId());
 					world.alivetumor.add(tumor);
 					broadCastPacket(world, new ExShowScreenMessage(NpcStringId.THE_TUMOR_INSIDE_S1_HAS_COMPLETELY_REVIVED_NRECOVERED_NEARBY_UNDEAD_ARE_SWARMING_TOWARD_SEED_OF_LIFE, 2, 8000));
-				}, tumorRespawnTime);
+				} , tumorRespawnTime);
 			}
 			
 			if (npc.getId() == 18711)

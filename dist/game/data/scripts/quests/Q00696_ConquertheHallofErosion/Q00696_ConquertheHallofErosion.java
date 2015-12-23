@@ -37,12 +37,6 @@ public final class Q00696_ConquertheHallofErosion extends Quest
 		addStartNpc(TEPIOS);
 		addTalkId(TEPIOS);
 		addKillId(COHEMENES);
-		
-		questItemIds = new int[]
-		{
-			MARK_OF_KEUCEREUS_STAGE_1,
-			MARK_OF_KEUCEREUS_STAGE_2
-		};
 	}
 	
 	@Override

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2014 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -217,6 +217,7 @@ public final class Q00501_ProofOfClanAlliance extends Quest
 					giveItems(player, ANTIDOTE_RECIPE_LIST, 1);
 					npc.setTarget(player);
 					npc.doCast(POISON_OF_DEATH.getSkill());
+					POISON_OF_DEATH.getSkill().getEffects(player, player);
 					qs.setCond(3, true);
 					qs.setMemoState(3);
 					htmltext = event;

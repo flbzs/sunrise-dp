@@ -18,15 +18,10 @@
  */
 package handlers.effecthandlers;
 
-import l2r.gameserver.enums.ShotType;
-import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
-import l2r.gameserver.model.stats.Formulas;
-import l2r.gameserver.model.stats.Stats;
-import l2r.util.Rnd;
 
 /**
  * Death Link effect implementation.
@@ -43,76 +38,5 @@ public final class DeathLink extends L2Effect
 	public L2EffectType getEffectType()
 	{
 		return L2EffectType.DEATH_LINK;
-	}
-	
-	@Override
-	public boolean isInstant()
-	{
-		return true;
-	}
-	
-	@Override
-	public boolean onStart()
-	{
-		L2Character target = getEffected();
-		L2Character activeChar = getEffector();
-		
-		if (activeChar.isAlikeDead())
-		{
-			return false;
-		}
-		
-		boolean sps = getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
-		boolean bss = getSkill().useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
-		
-		if (target.isPlayer() && target.getActingPlayer().isFakeDeath())
-		{
-			target.stopFakeDeath(true);
-		}
-		
-		final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, getSkill()));
-		final byte shld = Formulas.calcShldUse(activeChar, target, getSkill());
-		int damage = (int) Formulas.calcMagicDam(activeChar, target, getSkill(), shld, sps, bss, mcrit);
-		
-		if (damage > 0)
-		{
-			// Manage attack or cast break of the target (calculating rate, sending message...)
-			if (!target.isRaid() && Formulas.calcAtkBreak(target, damage))
-			{
-				target.breakAttack();
-				target.breakCast();
-			}
-			
-			// Shield Deflect Magic: Reflect all damage on caster.
-			if (target.getStat().calcStat(Stats.VENGEANCE_SKILL_MAGIC_DAMAGE, 0, target, getSkill()) > Rnd.get(100))
-			{
-				activeChar.reduceCurrentHp(damage, target, getSkill());
-				activeChar.notifyDamageReceived(damage, target, getSkill(), mcrit, false);
-			}
-			else
-			{
-				target.reduceCurrentHp(damage, activeChar, getSkill());
-				target.notifyDamageReceived(damage, activeChar, getSkill(), mcrit, false);
-				activeChar.sendDamageMessage(target, damage, mcrit, false, false);
-			}
-			
-			// Maybe launch chance skills on us
-			if (activeChar.getChanceSkills() != null)
-			{
-				activeChar.getChanceSkills().onSkillHit(target, getSkill(), false, damage);
-			}
-			// Maybe launch chance skills on target
-			if (target.getChanceSkills() != null)
-			{
-				target.getChanceSkills().onSkillHit(activeChar, getSkill(), true, damage);
-			}
-		}
-		
-		if (getSkill().isSuicideAttack())
-		{
-			activeChar.doDie(activeChar);
-		}
-		
-		return true;
 	}
 }

@@ -34,7 +34,6 @@ import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.entity.Instance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.NpcStringId;
@@ -47,9 +46,10 @@ import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
 
+import ai.npc.AbstractNpcAI;
 import quests.Q00696_ConquertheHallofErosion.Q00696_ConquertheHallofErosion;
 
-public class HallOfErosionAttack extends Quest
+public class HallOfErosionAttack extends AbstractNpcAI
 {
 	protected class HEWorld extends InstanceWorld
 	{
@@ -822,7 +822,7 @@ public class HallOfErosionAttack extends Quest
 	
 	public HallOfErosionAttack()
 	{
-		super(-1, HallOfErosionAttack.class.getSimpleName(), "gracia/instances");
+		super(HallOfErosionAttack.class.getSimpleName(), "gracia/instances");
 		
 		addStartNpc(MOUTHOFEKIMUS);
 		addTalkId(MOUTHOFEKIMUS);
@@ -830,10 +830,7 @@ public class HallOfErosionAttack extends Quest
 		addTalkId(DEADTUMOR);
 		
 		addSpawnId(COHEMENES);
-		for (int id : NOTMOVE)
-		{
-			addSpawnId(id);
-		}
+		addSpawnId(NOTMOVE);
 		
 		addAggroRangeEnterId(18668);
 		
@@ -854,6 +851,11 @@ public class HallOfErosionAttack extends Quest
 	
 	private boolean checkConditions(L2PcInstance player)
 	{
+		if (player.isGM())
+		{
+			return true;
+		}
+		
 		L2Party party = player.getParty();
 		if (party == null)
 		{
@@ -962,10 +964,6 @@ public class HallOfErosionAttack extends Quest
 				{
 					teleportPlayer(partyMember, coords, world.getInstanceId());
 					world.addAllowed(partyMember.getObjectId());
-					if (partyMember.getQuestState(getName()) == null)
-					{
-						newQuestState(partyMember);
-					}
 				}
 			}
 			runTumors((HEWorld) world);
@@ -1066,14 +1064,7 @@ public class HallOfErosionAttack extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		int npcId = npc.getId();
-		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
-		
-		if (npcId == MOUTHOFEKIMUS)
+		if (npc.getId() == MOUTHOFEKIMUS)
 		{
 			enterInstance(player, "HallOfErosionAttack.xml", ENTER_TELEPORT);
 			return "";
