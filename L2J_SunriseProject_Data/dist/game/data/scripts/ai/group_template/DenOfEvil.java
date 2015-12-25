@@ -168,7 +168,14 @@ public class DenOfEvil extends AbstractNpcAI
 		@Override
 		public void run()
 		{
+			try
+			{
 			addSpawn(EYE_IDS[getRandom(EYE_IDS.length)], _loc, false, 0);
+			}
+			catch (Exception e)
+			{
+				
+			}
 		}
 	}
 	

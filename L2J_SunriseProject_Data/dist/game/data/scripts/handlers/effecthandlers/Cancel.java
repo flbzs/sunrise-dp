@@ -29,13 +29,17 @@ import l2r.gameserver.model.stats.Formulas;
 
 /**
  * Cancel effect.
- * @author DS
+ * @author vGodFather
  */
 public class Cancel extends L2Effect
 {
+	private final boolean _ordered;
+	
 	public Cancel(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		
+		_ordered = template.getParameters().getBoolean("ordered", false);
 	}
 	
 	@Override
@@ -50,14 +54,14 @@ public class Cancel extends L2Effect
 		return cancel(getEffector(), getEffected(), this);
 	}
 	
-	private static boolean cancel(L2Character activeChar, L2Character target, L2Effect effect)
+	private boolean cancel(L2Character activeChar, L2Character target, L2Effect effect)
 	{
 		if (target.isDead())
 		{
 			return false;
 		}
 		
-		final List<L2Effect> canceled = Formulas.calcCancelStealEffects(activeChar, target, effect.getSkill(), effect.getEffectPower(), true);
+		final List<L2Effect> canceled = Formulas.calcCancelStealEffects(activeChar, target, effect.getSkill(), effect.getEffectPower(), _ordered);
 		for (L2Effect eff : canceled)
 		{
 			eff.exit();

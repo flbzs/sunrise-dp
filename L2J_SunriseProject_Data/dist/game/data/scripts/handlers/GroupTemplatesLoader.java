@@ -54,7 +54,6 @@ import ai.group_template.extra.KarulBugbear;
 import ai.group_template.extra.LuckyPig;
 import ai.group_template.extra.Mutation;
 import ai.group_template.extra.OlMahumGeneral;
-import ai.group_template.extra.SpawnOnDeath;
 import ai.group_template.extra.TimakOrcOverlord;
 import ai.group_template.extra.TimakOrcTroopLeader;
 import ai.group_template.extra.TomlanKamos;
@@ -106,7 +105,6 @@ public final class GroupTemplatesLoader
 		LuckyPig.class,
 		Mutation.class,
 		OlMahumGeneral.class,
-		SpawnOnDeath.class,
 		TimakOrcOverlord.class,
 		TimakOrcTroopLeader.class,
 		TomlanKamos.class,

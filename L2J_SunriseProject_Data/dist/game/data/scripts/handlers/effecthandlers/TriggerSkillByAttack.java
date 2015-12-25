@@ -106,7 +106,7 @@ public final class TriggerSkillByAttack extends L2Effect
 			return;
 		}
 		
-		if ((event.getDamage() < _minDamage) || (Rnd.get(100) > _chance) || !event.getAttacker().getInstanceType().isType(_attackerType))
+		if ((event.getDamage() < _minDamage) || (Rnd.get(1000) > (_chance * 10)) || !event.getAttacker().getInstanceType().isType(_attackerType))
 		{
 			return;
 		}
@@ -140,11 +140,6 @@ public final class TriggerSkillByAttack extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if (getSkill().isPassive())
-		{
-			return;
-		}
-		
 		getEffected().removeListenerIf(EventType.ON_CREATURE_DAMAGE_DEALT, listener -> listener.getOwner() == this);
 	}
 	

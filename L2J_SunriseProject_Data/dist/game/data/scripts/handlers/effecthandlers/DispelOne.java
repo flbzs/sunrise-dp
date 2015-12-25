@@ -25,13 +25,17 @@ import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 
 /**
- * @author GodFather
+ * @author vGodFather
  */
-public class DispelOnlyOne extends L2Effect
+public class DispelOne extends L2Effect
 {
-	public DispelOnlyOne(Env env, EffectTemplate template)
+	private final boolean _ordered;
+	
+	public DispelOne(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		
+		_ordered = template.getParameters().getBoolean("ordered", false);
 	}
 	
 	@Override
@@ -55,15 +59,52 @@ public class DispelOnlyOne extends L2Effect
 			return false;
 		}
 		
-		for (L2Effect e : target.getAllEffects())
+		if (_ordered)
 		{
-			if (!e.getSkill().canBeDispeled())
+			L2Effect buff = null;
+			for (L2Effect e : target.getAllEffects())
 			{
-				continue;
+				if ((e != null) && !e.getSkill().canBeDispeled() && e.getSkill().isDance())
+				{
+					continue;
+				}
+				buff = e;
+				break;
 			}
 			
-			e.exit();
-			break;
+			if (buff != null)
+			{
+				buff.exit();
+				return true;
+			}
+			
+			for (L2Effect e : target.getAllEffects())
+			{
+				if ((e != null) && !e.getSkill().canBeDispeled())
+				{
+					continue;
+				}
+				buff = e;
+				break;
+			}
+			
+			if (buff != null)
+			{
+				buff.exit();
+				return true;
+			}
+		}
+		else
+		{
+			for (L2Effect e : target.getAllEffects())
+			{
+				if (!e.getSkill().canBeDispeled())
+				{
+					continue;
+				}
+				e.exit();
+				break;
+			}
 		}
 		return true;
 	}

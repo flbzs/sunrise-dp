@@ -39,7 +39,6 @@ public final class EffectMasterHandler
 	
 	private static final Class<?>[] _effects =
 	{
-		AbortCast.class,
 		AddHate.class,
 		RebalanceHP.class,
 		Betray.class,
@@ -49,6 +48,7 @@ public final class EffectMasterHandler
 		BlockBuff.class,
 		BlockBuffSlot.class,
 		BlockChat.class,
+		BlockDamage.class,
 		BlockDebuff.class,
 		BlockParty.class,
 		BlockResurrection.class,
@@ -85,7 +85,7 @@ public final class EffectMasterHandler
 		DispelAll.class,
 		DispelBySlot.class,
 		DispelBySlotProbability.class,
-		DispelOnlyOne.class,
+		DispelOne.class,
 		EnableCloak.class,
 		EnemyCharge.class,
 		EnergyAttack.class,
@@ -155,6 +155,7 @@ public final class EffectMasterHandler
 		SignetNoise.class,
 		SilentMove.class,
 		SingleTarget.class,
+		SkillTurning.class,
 		Sleep.class,
 		SoulEating.class,
 		Spoil.class,
