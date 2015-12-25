@@ -110,11 +110,6 @@ public final class TriggerSkillByDamage extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if (getSkill().isPassive())
-		{
-			return;
-		}
-		
 		getEffected().removeListenerIf(EventType.ON_CREATURE_DAMAGE_RECEIVED, listener -> listener.getOwner() == this);
 	}
 	

@@ -73,7 +73,7 @@ public final class TriggerSkillBySkill extends L2Effect
 			return;
 		}
 		
-		if (Rnd.get(100) > _chance)
+		if (Rnd.get(1000) > (_chance * 10))
 		{
 			return;
 		}
@@ -99,11 +99,6 @@ public final class TriggerSkillBySkill extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if (getSkill().isPassive())
-		{
-			return;
-		}
-		
 		getEffected().removeListenerIf(EventType.ON_CREATURE_SKILL_USE, listener -> listener.getOwner() == this);
 	}
 	

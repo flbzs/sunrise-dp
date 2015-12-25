@@ -14,22 +14,38 @@
  */
 package ai.group_template.extra;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import l2r.gameserver.data.SpawnTable;
 import l2r.gameserver.data.sql.NpcTable;
+import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.L2Spawn;
+import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.templates.L2NpcTemplate;
+import l2r.util.Rnd;
 
 import ai.npc.AbstractNpcAI;
 
 public class CryptsOfDisgrace extends AbstractNpcAI
 {
+	private static final Map<Integer, Integer> MOBSPAWNS5 = new ConcurrentHashMap<>();
+	private static final Map<Integer, Integer> MOBSPAWNS15 = new ConcurrentHashMap<>();
+	
 	//@formatter:off
 	public static final int[] MOBS =
 	{
 		22703, 22704, 22705, 22706, 22707
 	};
+	
+	static
+	{
+		MOBSPAWNS5.put(Integer.valueOf(22705), Integer.valueOf(22707));
+		MOBSPAWNS15.put(Integer.valueOf(22703), Integer.valueOf(22703));
+		MOBSPAWNS15.put(Integer.valueOf(22704), Integer.valueOf(22704));
+	}
 	
 	private static final int[][] MobSpawns =
 	{
@@ -58,6 +74,25 @@ public class CryptsOfDisgrace extends AbstractNpcAI
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
+		int npcId = npc.getId();
+		L2Attackable newNpc = null;
+		if (MOBSPAWNS15.containsKey(Integer.valueOf(npcId)))
+		{
+			if (Rnd.get(100) < 15)
+			{
+				newNpc = (L2Attackable) addSpawn(MOBSPAWNS15.get(Integer.valueOf(npcId)).intValue(), npc);
+				newNpc.setRunning();
+				newNpc.addDamageHate(player, 0, 999);
+				newNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
+			}
+		}
+		else if ((MOBSPAWNS5.containsKey(Integer.valueOf(npcId))) && (Rnd.get(100) < 5))
+		{
+			newNpc = (L2Attackable) addSpawn(MOBSPAWNS5.get(Integer.valueOf(npcId)).intValue(), npc);
+			newNpc.setRunning();
+			newNpc.addDamageHate(player, 0, 999);
+			newNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
+		}
 		return super.onKill(npc, player, isPet);
 	}
 	

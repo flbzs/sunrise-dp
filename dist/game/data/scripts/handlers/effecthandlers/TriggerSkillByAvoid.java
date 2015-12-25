@@ -66,7 +66,7 @@ public final class TriggerSkillByAvoid extends L2Effect
 			return;
 		}
 		
-		if (Rnd.get(100) > _chance)
+		if (Rnd.get(1000) > (_chance * 10))
 		{
 			return;
 		}
@@ -92,11 +92,6 @@ public final class TriggerSkillByAvoid extends L2Effect
 	@Override
 	public void onExit()
 	{
-		if (getSkill().isPassive())
-		{
-			return;
-		}
-		
 		getEffected().removeListenerIf(EventType.ON_CREATURE_ATTACK_AVOID, listener -> listener.getOwner() == this);
 	}
 	

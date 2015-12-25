@@ -1260,7 +1260,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 						broadcastNpcSay(_npc, Say2.NPC_SHOUT, NpcStringId.S1_SECONDS_REMAINING, Integer.toString((countdownTime / 1000)));
 					}
 				}
-			}, 60000, 10000);
+			} , 60000, 10000);
 			broadcastNpcSay(postMortemSpawn.get(0), Say2.NPC_SHOUT, NpcStringId.DETONATOR_INITIALIZATION_TIME_S1_MINUTES_FROM_NOW, Integer.toString((countdownTime / 60000)));
 		}
 		else if ((npcId == TIMETWISTER_GOLEM) && (_countdown != null))
@@ -1384,7 +1384,7 @@ public final class TullyWorkshop extends AbstractNpcAI
 		}
 		else if (npcId == DARION)
 		{
-			if (pillarSpawn != null)
+			if ((pillarSpawn != null) && (pillarSpawn.getLastSpawn() != null))
 			{
 				pillarSpawn.getLastSpawn().setIsInvul(false);
 			}
