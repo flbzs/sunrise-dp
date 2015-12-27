@@ -420,7 +420,14 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 			// Send system message
 			SystemMessage sms = SystemMessage.getSystemMessage(SystemMessageId.EARNED_ITEM_S1);
 			sms.addItemName(giveid);
-			player.sendPacket(sms);
+			if (player.isInParty())
+			{
+				player.sendPacket(sms);
+			}
+			else
+			{
+				player.getParty().broadcastToPartyMembers(sms);
+			}
 			
 			// Send inventory update packet
 			player.sendPacket(playerIU);

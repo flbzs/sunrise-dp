@@ -21,6 +21,7 @@ package handlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import custom.AutoAdenaToGoldBar.AutoAdenaToGoldBar;
 import custom.EchoCrystals.EchoCrystals;
 import custom.FifthAnniversary.FifthAnniversary;
 import custom.NewbieCoupons.NewbieCoupons;
@@ -41,6 +42,7 @@ public final class CustomsLoader
 	
 	private static final Class<?>[] CUSTOMS =
 	{
+		AutoAdenaToGoldBar.class,
 		EchoCrystals.class,
 		FifthAnniversary.class,
 		NewbieCoupons.class,

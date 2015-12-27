@@ -792,8 +792,11 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 						world.freya.disableCoreAI(true);
 						for (L2PcInstance players : world.playersInside)
 						{
-							players.setIsInvul(true);
-							players.abortAttack();
+							if (!players.isDead())
+							{
+								players.setIsInvul(true);
+								players.abortAttack();
+							}
 						}
 						manageMovie(world, ExStartScenePlayer.SCENE_BOSS_KEGOR_INTRUSION);
 						startQuestTimer("SPAWN_SUPPORT", 27000, world.controller, null);

@@ -25,11 +25,11 @@ import ai.grandboss.Beleth;
 import ai.grandboss.Core;
 import ai.grandboss.Orfen;
 import ai.grandboss.QueenAnt;
-import ai.grandboss.Valakas;
 import ai.grandboss.VanHalter;
 import ai.grandboss.Antharas.Antharas;
 import ai.grandboss.Baium.Baium;
 import ai.grandboss.Sailren.Sailren;
+import ai.grandboss.Valakas.Valakas;
 
 /**
  * @author L2jSunrise Team
@@ -45,11 +45,11 @@ public final class GrandBossLoader
 		Core.class,
 		Orfen.class,
 		QueenAnt.class,
-		Valakas.class,
 		VanHalter.class,
 		Antharas.class,
 		Baium.class,
 		Sailren.class,
+		Valakas.class,
 	};
 	
 	public GrandBossLoader()

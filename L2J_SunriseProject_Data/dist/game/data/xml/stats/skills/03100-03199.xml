@@ -3,55 +3,29 @@
 	<skill id="3100" levels="10" name="Item Skill: Sleep">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="sleep" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_MAGIC_OFFENSIVE" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="SLEEP" />
 		<set name="triggeredId" val="5170" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3101" levels="10" name="Item Skill: Paralyze">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="paralyze" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_MAGIC_OFFENSIVE" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="PARALYZE" />
 		<set name="triggeredId" val="5171" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3102" levels="10" name="Item Skill: Medusa">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="turn_stone" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_MAGIC_OFFENSIVE" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="triggeredId" val="5172" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
@@ -59,115 +33,61 @@
 	<skill id="3103" levels="10" name="Item Skill: Fear">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="turn_flee" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_MAGIC_OFFENSIVE" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="DERANGEMENT" />
 		<set name="triggeredId" val="5173" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3104" levels="10" name="Item Skill: Poison">
-		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 </table>
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalTime" val="30" />
-		<set name="abnormalType" val="poison" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_MAGIC_OFFENSIVE" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="CON" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="POISON" />
 		<set name="triggeredId" val="5174" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3105" levels="10" name="Item Skill: Bleed">
-		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 </table>
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="bleeding" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_MAGIC_OFFENSIVE" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
 		<set name="nextActionAttack" val="true" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="CON" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="BLEED" />
 		<set name="triggeredId" val="5175" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3106" levels="10" name="Item Skill: Silence">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="silence" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_MAGIC_OFFENSIVE" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="DERANGEMENT" />
 		<set name="triggeredId" val="5176" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3107" levels="10" name="Item Skill: Doom">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="silence_all" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_MAGIC_OFFENSIVE" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="DERANGEMENT" />
 		<set name="triggeredId" val="5177" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3108" levels="10" name="Item Skill: Aggression Up">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
-		<table name="#magicLvl"> 46 49 52 55 58 61 64 67 70 75 </table>
 		<table name="#power"> 438 467 495 523 549 574 597 617 635 659 </table>
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="offensive" val="true" />
-		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
+		<set name="operateType" val="P" />
 		<set name="reuseDelay" val="30000" />
-		<set name="skillType" val="AGGDAMAGE" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="TargetMe" abnormalTime="3" val="0" />
@@ -179,14 +99,9 @@
 		<table name="#power"> -219 -234 -248 -262 -275 -287 -299 -309 -318 -330 </table>
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isDebuff" val="true" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="offensive" val="true" />
-		<set name="operateType" val="A1" />
+		<set name="operateType" val="P" />
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="ONE" />
-		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="AddHate" noicon="1" val="0">
 				<param power="#power" />
@@ -199,11 +114,7 @@
 		<table name="#power"> 49 53 57 61 66 70 74 78 82 88 </table>
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="magicLvl" val="#magicLvl" />
-		<set name="offensive" val="true" />
-		<set name="operateType" val="A1" />
-		<set name="power" val="#power" />
+		<set name="operateType" val="P" />
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="ONE" />
 		<for>
@@ -213,17 +124,9 @@
 	<skill id="3111" levels="10" name="Item Skill: Slow">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="speed_down" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="triggeredId" val="5166" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
@@ -231,17 +134,9 @@
 	<skill id="3112" levels="10" name="Item Skill: Winter">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="attack_time_up" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="triggeredId" val="5167" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
@@ -249,93 +144,49 @@
 	<skill id="3113" levels="10" name="Item Skill: Stun">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="stun" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="CON" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="SHOCK" />
 		<set name="triggeredId" val="5168" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3114" levels="10" name="Item Skill: Hold">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="root_magically" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="HOLD" />
 		<set name="triggeredId" val="5169" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3115" levels="10" name="Item Skill: Sleep">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="sleep" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="SLEEP" />
 		<set name="triggeredId" val="5170" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3116" levels="10" name="Item Skill: Paralyze">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="15" />
-		<set name="abnormalType" val="paralyze" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="PARALYZE" />
 		<set name="triggeredId" val="5171" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3117" levels="10" name="Item Skill: Medusa">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="turn_stone" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<set name="triggeredId" val="5172" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
@@ -343,98 +194,50 @@
 	<skill id="3118" levels="10" name="Item Skill: Fear">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="turn_flee" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="DERANGEMENT" />
 		<set name="triggeredId" val="5173" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3119" levels="10" name="Item Skill: Poison">
-		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 </table>
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalTime" val="30" />
-		<set name="abnormalType" val="poison" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="CON" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="POISON" />
 		<set name="triggeredId" val="5174" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3120" levels="10" name="Item Skill: Bleed">
-		<table name="#abnormalLvls"> 5 5 6 6 6 7 7 7 8 8 </table>
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="#abnormalLvls" />
-		<set name="abnormalTime" val="20" />
-		<set name="abnormalType" val="bleeding" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="nextActionAttack" val="true" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="CON" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="BLEED" />
 		<set name="triggeredId" val="5175" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3121" levels="10" name="Item Skill: Silence">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="silence" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="DERANGEMENT" />
 		<set name="triggeredId" val="5176" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>
 	<skill id="3122" levels="10" name="Item Skill: Doom">
 		<table name="#activationChance"> 2 2 2 3 3 3 4 4 5 5 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 5 6 7 8 9 10 </table>
-		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="10" />
-		<set name="abnormalType" val="silence_all" />
 		<set name="activationChance" val="#activationChance" />
 		<set name="chanceType" val="ON_CRIT" />
-		<set name="isMagic" val="2" /> <!-- Static Skill -->
-		<set name="lvlBonusRate" val="1" />
-		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
-		<set name="basicProperty" val="MEN" />
-		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
-		<set name="trait" val="DERANGEMENT" />
 		<set name="triggeredId" val="5177" />
 		<set name="triggeredLevel" val="#triggeredLevel" />
 	</skill>

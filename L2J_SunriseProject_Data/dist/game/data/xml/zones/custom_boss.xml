@@ -54,13 +54,6 @@
 		<node X="174301" Y="-75214" />
 		<node X="172174" Y="-75213" />
 	</zone>
-	<zone name="Valakas Boss" id="12010" type="BossZone" shape="NPoly" minZ="-2572" maxZ="5428">
-		<stat name="InvadeTime" val="1800000" />
-		<node X="196866" Y="-130845" />
-		<node X="229289" Y="-130860" />
-		<node X="229176" Y="-98508" />
-		<node X="196880" Y="-98498" />
-	</zone>
 	<zone name="Queen Ant Boss" id="12012" type="BossZone" shape="NPoly" minZ="-5947" maxZ="-5547"> <!-- Not Verified -->
 		<stat name="default_enabled" val="false" />
 		<node X="-21490" Y="178613" />

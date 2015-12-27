@@ -34,7 +34,6 @@ import l2r.gameserver.instancemanager.SoDManager;
 import l2r.gameserver.instancemanager.SoIManager;
 import l2r.gameserver.instancemanager.ZoneManager;
 import l2r.gameserver.model.L2Object;
-import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
@@ -2156,7 +2155,7 @@ public class EnergySeeds extends AbstractNpcAI
 		{
 			for (int i = 0; i < spawn[6]; i++)
 			{
-				L2Npc npc = spawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4]);
+				L2Npc npc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4]);
 				npc.getSpawn().setRespawnDelay(spawn[5]);
 				npc.getSpawn().setAmount(1);
 				if (spawn[5] > 0)
@@ -2193,7 +2192,7 @@ public class EnergySeeds extends AbstractNpcAI
 		{
 			for (int i = 0; i < spawn[6]; i++)
 			{
-				L2Npc npc = spawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4]);
+				L2Npc npc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4]);
 				soiclosemouthList.add(npc);
 			}
 		}
@@ -2220,7 +2219,7 @@ public class EnergySeeds extends AbstractNpcAI
 		{
 			for (int i = 0; i < spawn[6]; i++)
 			{
-				L2Npc npc = spawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4]);
+				L2Npc npc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4]);
 				soimouthList.add(npc);
 			}
 		}
@@ -2247,7 +2246,7 @@ public class EnergySeeds extends AbstractNpcAI
 		{
 			for (int i = 0; i < spawn[6]; i++)
 			{
-				L2Npc npc = spawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4]);
+				L2Npc npc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4]);
 				soiabyssgaze2List.add(npc);
 			}
 		}
@@ -2274,7 +2273,7 @@ public class EnergySeeds extends AbstractNpcAI
 		{
 			for (int i = 0; i < spawn[6]; i++)
 			{
-				L2Npc npc = spawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4]);
+				L2Npc npc = addSpawn(spawn[0], spawn[1], spawn[2], spawn[3], spawn[4]);
 				soiabyssgaze1List.add(npc);
 			}
 		}
@@ -2293,27 +2292,5 @@ public class EnergySeeds extends AbstractNpcAI
 			}
 		}
 		soiabyssgaze1List.clear();
-	}
-	
-	private static L2Npc spawn(int npcId, int X, int Y, int Z, int head)
-	{
-		try
-		{
-			L2NpcTemplate template = NpcTable.getInstance().getTemplate(npcId);
-			if (template != null)
-			{
-				L2Spawn spawn = new L2Spawn(template);
-				spawn.setHeading(head);
-				spawn.setX(X);
-				spawn.setY(Y);
-				spawn.setZ(Z + 20);
-				spawn.setAmount(spawn.getAmount() + 1);
-				return spawn.doSpawn();
-			}
-		}
-		catch (Exception e1)
-		{
-		}
-		return null;
 	}
 }

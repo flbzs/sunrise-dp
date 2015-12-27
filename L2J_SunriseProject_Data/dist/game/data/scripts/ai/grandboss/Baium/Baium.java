@@ -126,6 +126,7 @@ public final class Baium extends AbstractNpcAI
 			case WAITING:
 			{
 				setStatus(ALIVE);
+				break;
 			}
 			case ALIVE:
 			{
@@ -375,21 +376,24 @@ public final class Baium extends AbstractNpcAI
 			}
 			case "CHECK_ATTACK":
 			{
-				if ((npc != null) && ((_lastAttack + 1800000) < System.currentTimeMillis()))
+				if (npc != null)
 				{
-					cancelQuestTimers("SELECT_TARGET");
-					notifyEvent("CLEAR_ZONE", null, null);
-					addSpawn(BAIUM_STONE, BAIUM_LOC, false, 0);
-					setStatus(ALIVE);
-				}
-				else if (npc != null)
-				{
-					if (((_lastAttack + 300000) < System.currentTimeMillis()) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.75)))
+					if ((_lastAttack + 1800000) < System.currentTimeMillis())
 					{
-						npc.setTarget(npc);
-						npc.doCast(HEAL_OF_BAIUM.getSkill());
+						cancelQuestTimers("SELECT_TARGET");
+						notifyEvent("CLEAR_ZONE", null, null);
+						addSpawn(BAIUM_STONE, BAIUM_LOC, false, 0);
+						setStatus(ALIVE);
 					}
-					startQuestTimer("CHECK_ATTACK", 60000, npc, null);
+					else
+					{
+						if (((_lastAttack + 300000) < System.currentTimeMillis()) && (npc.getCurrentHp() < (npc.getMaxHp() * 0.75)))
+						{
+							npc.setTarget(npc);
+							npc.doCast(HEAL_OF_BAIUM.getSkill());
+						}
+						startQuestTimer("CHECK_ATTACK", 60000, npc, null);
+					}
 				}
 				break;
 			}
@@ -427,7 +431,7 @@ public final class Baium extends AbstractNpcAI
 				}
 				else
 				{
-					player.sendMessage(getClass().getSimpleName() + ": You cant respawn Baium while Baium is alive!");
+					player.sendMessage(getClass().getSimpleName() + ": You can't respawn Baium while Baium is alive!");
 				}
 				break;
 			}
@@ -442,7 +446,7 @@ public final class Baium extends AbstractNpcAI
 				}
 				else
 				{
-					player.sendMessage(getClass().getSimpleName() + ": You cant abort attack right now!");
+					player.sendMessage(getClass().getSimpleName() + ": You can't abort attack right now!");
 				}
 				cancelQuestTimers("CHECK_ATTACK");
 				cancelQuestTimers("SELECT_TARGET");
@@ -466,7 +470,7 @@ public final class Baium extends AbstractNpcAI
 				}
 				else if (player != null)
 				{
-					player.sendMessage(getClass().getSimpleName() + ": You cant despawn archangels right now!");
+					player.sendMessage(getClass().getSimpleName() + ": You can't despawn archangels right now!");
 				}
 				break;
 			}
