@@ -153,64 +153,21 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 	private static final Location MOVE_TO_TIAT = new Location(-250403, 207273, -11952, 16384);
 	private static final Location MOVE_TO_DOOR = new Location(-251432, 214905, -12088, 16384);
 	
-	// TODO: handle this better
-	private static final int[] SPAWN_MOB_IDS =
-	{
-		22536,
-		22537,
-		22538,
-		22539,
-		22540,
-		22541,
-		22542,
-		22543,
-		22544,
-		22547,
-		22550,
-		22551,
-		22552,
-		22596
-	};
+	//@formatter:off
+	private static final int[] SPAWN_MOB_IDS = { 22536, 22537, 22538, 22539, 22540, 22541, 22542, 22543, 22544, 22547, 22550, 22551, 22552, 22596 };
 	
 	// Doors/Walls/Zones
 	private static final int[] ATTACKABLE_DOORS =
 	{
-		12240005,
-		12240006,
-		12240007,
-		12240008,
-		12240009,
-		12240010,
-		12240013,
-		12240014,
-		12240015,
-		12240016,
-		12240017,
-		12240018,
-		12240021,
-		12240022,
-		12240023,
-		12240024,
-		12240025,
-		12240026,
-		12240028,
-		12240029,
+		12240005, 12240006, 12240007, 12240008, 12240009,
+		12240010, 12240013, 12240014, 12240015, 12240016,
+		12240017, 12240018, 12240021, 12240022, 12240023,
+		12240024, 12240025, 12240026, 12240028, 12240029,
 		12240030
 	};
-	private static final int[] ENTRANCE_ROOM_DOORS =
-	{
-		12240001,
-		12240002
-	};
-	private static final int[] SQUARE_DOORS =
-	{
-		12240003,
-		12240004,
-		12240011,
-		12240012,
-		12240019,
-		12240020
-	};
+	private static final int[] ENTRANCE_ROOM_DOORS = { 12240001, 12240002 };
+	private static final int[] SQUARE_DOORS = { 12240003, 12240004, 12240011, 12240012, 12240019, 12240020 };
+	//@formatter:on
 	private static final int SCOUTPASS_DOOR = 12240027;
 	private static final int FORTRESS_DOOR = 12240030;
 	private static final int THRONE_DOOR = 12240031;
@@ -258,7 +215,7 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 		_spawnList.clear();
 		_spawnZoneList.clear();
 		parseDatapackFile("data/xml/spawnZones/seed_of_destruction.xml");
-		LOGGER.info(SeedOfDestruction.class.getSimpleName() + ": SeedOfDestruction Loaded " + _spawnZoneList.size() + " spawn zones data.");
+		LOGGER.info(SeedOfDestruction.class.getSimpleName() + ": Loaded " + _spawnZoneList.size() + " spawn zones data.");
 		LOGGER.info(SeedOfDestruction.class.getSimpleName() + ": Loaded " + _spawnsCount + " spawns data.");
 	}
 	

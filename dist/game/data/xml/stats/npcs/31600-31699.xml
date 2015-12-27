@@ -3518,7 +3518,7 @@
 			<height normal="20" grown="24" />
 		</collision>
 	</npc>
-	<npc id="31686" level="70" type="L2Npc" name="Gatekeeper of Fire Dragon">
+	<npc id="31686" level="70" type="L2Doormen" name="Gatekeeper of Fire Dragon">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="215" />
@@ -3562,7 +3562,7 @@
 			<height normal="25" />
 		</collision>
 	</npc>
-	<npc id="31687" level="70" type="L2Npc" name="Gatekeeper of Fire Dragon">
+	<npc id="31687" level="70" type="L2Doormen" name="Gatekeeper of Fire Dragon">
 		<!-- Confirmed CT2.5 -->
 		<parameters>
 			<param name="MoveAroundSocial" value="215" />

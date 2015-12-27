@@ -23,18 +23,19 @@ import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.network.SystemMessageId;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Secret Area in the Keucereus Fortress instance zone.
  * @author Gladicek
  */
-public final class SecretArea extends Quest
+public final class SecretArea extends AbstractNpcAI
 {
 	protected class SAWorld extends InstanceWorld
 	{
-		
+	
 	}
 	
 	private static final int TEMPLATE_ID = 117;
@@ -50,7 +51,7 @@ public final class SecretArea extends Quest
 	
 	public SecretArea()
 	{
-		super(-1, SecretArea.class.getSimpleName(), "gracia/instances");
+		super(SecretArea.class.getSimpleName(), "gracia/instances");
 		addStartNpc(GINBY);
 		addTalkId(GINBY);
 		addTalkId(LELRIKIA);

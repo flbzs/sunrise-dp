@@ -30,6 +30,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.events.EventDispatcher;
 import l2r.gameserver.model.events.EventType;
 import l2r.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
+import l2r.gameserver.network.serverpackets.MoveToPawn;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
 
@@ -106,7 +107,7 @@ public class L2NpcAction implements IActionHandler
 				if (!npc.canInteract(activeChar))
 				{
 					final Location destination = GeoData.getInstance().moveCheck(activeChar, npc);
-					activeChar.getAI().setIntention(npc.isWalker() ? CtrlIntention.AI_INTENTION_INTERACT : CtrlIntention.AI_INTENTION_MOVE_AND_INTERACT, npc, destination);
+					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_AND_INTERACT, npc, destination);
 				}
 				else
 				{
@@ -114,12 +115,12 @@ public class L2NpcAction implements IActionHandler
 					if (!activeChar.isInsideRadius(npc, 60, true, false) && npc.isWalker())
 					{
 						final Location destination = GeoData.getInstance().moveCheck(activeChar, npc);
-						activeChar.getAI().setIntention(npc.isWalker() ? CtrlIntention.AI_INTENTION_INTERACT : CtrlIntention.AI_INTENTION_MOVE_AND_INTERACT, npc, destination);
+						activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_AND_INTERACT, npc, destination);
 						return true;
 					}
 					
 					// Turn NPC to the player.
-					activeChar.moveToPawn(activeChar, npc, 100);
+					activeChar.sendPacket(new MoveToPawn(activeChar, npc, 100));
 					if (npc.hasRandomAnimation())
 					{
 						npc.onRandomAnimation(Rnd.get(8));

@@ -111,8 +111,6 @@ public abstract class AirShipController extends Quest
 	private static final int STARSTONE = 13277;
 	private static final int SUMMON_COST = 5;
 	
-	private static final SystemMessage SM_NEED_MORE = SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_NEED_MORE_S1).addItemName(STARSTONE);
-	
 	public AirShipController(int questId, String name, String descr)
 	{
 		super(questId, name, descr);
@@ -154,7 +152,7 @@ public abstract class AirShipController extends Quest
 			}
 			if (!player.destroyItemByItemId("AirShipSummon", STARSTONE, SUMMON_COST, npc, true))
 			{
-				player.sendPacket(SM_NEED_MORE);
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_NEED_MORE_S1).addItemName(STARSTONE));
 				return null;
 			}
 			
@@ -271,7 +269,7 @@ public abstract class AirShipController extends Quest
 			}
 			if (!player.destroyItemByItemId("AirShipLicense", LICENSE, 1, npc, true))
 			{
-				player.sendPacket(SM_NEED_MORE);
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_AIRSHIP_NEED_MORE_S1).addItemName(LICENSE));
 				return null;
 			}
 			

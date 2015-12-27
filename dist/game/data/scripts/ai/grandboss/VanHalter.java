@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -96,18 +97,7 @@ public class VanHalter extends AbstractNpcAI
 	private static final int ANDREAS_VAN_HALTER = 29062;
 	private static final int ANDREAS_CAPTAIN = 22188;
 	
-	private static final int[] TRIOLS =
-	{
-		32058,
-		32059,
-		32060,
-		32061,
-		32062,
-		32063,
-		32064,
-		32065,
-		32066
-	};
+	private static final List<Integer> TRIOLS = Arrays.asList(32058, 32059, 32060, 32061, 32062, 32063, 32064, 32065, 32066);
 	
 	protected static L2BossZone _zone;
 	private static int _state = 0;
@@ -154,7 +144,7 @@ public class VanHalter extends AbstractNpcAI
 	{
 		int npcId = npc.getId();
 		
-		if (isIntInArray(npcId, TRIOLS))
+		if (TRIOLS.contains(npcId))
 		{
 			removeBleeding(npcId);
 			checkTriolRevelationDestroy();
@@ -1000,7 +990,7 @@ public class VanHalter extends AbstractNpcAI
 		boolean isTriolRevelationDestroyed = true;
 		for (L2Spawn tra : _triolRevelationAlive)
 		{
-			if (!tra.getLastSpawn().isDead())
+			if ((tra != null) && (tra.getLastSpawn() != null) && !tra.getLastSpawn().isDead())
 			{
 				isTriolRevelationDestroyed = false;
 			}
@@ -1842,18 +1832,6 @@ public class VanHalter extends AbstractNpcAI
 	{
 		// FIXME
 		// player.sendPacket(new SpecialCamera(l2NpcInstance.getObjectId(), dist, yaw, pitch, time, duration));
-	}
-	
-	private static boolean isIntInArray(int i, int[] ia)
-	{
-		for (int v : ia)
-		{
-			if (i == v)
-			{
-				return true;
-			}
-		}
-		return false;
 	}
 	
 	private int getStatus()

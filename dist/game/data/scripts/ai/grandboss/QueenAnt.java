@@ -47,6 +47,7 @@ import ai.npc.AbstractNpcAI;
  */
 public final class QueenAnt extends AbstractNpcAI
 {
+	// NPC
 	private static final int QUEEN = 29001;
 	private static final int LARVA = 29002;
 	private static final int NURSE = 29003;

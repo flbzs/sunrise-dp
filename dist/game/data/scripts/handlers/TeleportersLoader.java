@@ -25,8 +25,8 @@ import ai.npc.Teleports.CrumaTower.CrumaTower;
 import ai.npc.Teleports.DelusionTeleport.DelusionTeleport;
 import ai.npc.Teleports.ElrokiTeleporters.ElrokiTeleporters;
 import ai.npc.Teleports.GatekeeperSpirit.GatekeeperSpirit;
-import ai.npc.Teleports.GrandBossTeleporters.GrandBossTeleporters;
 import ai.npc.Teleports.HuntingGroundsTeleport.HuntingGroundsTeleport;
+import ai.npc.Teleports.Klein.Klein;
 import ai.npc.Teleports.Klemis.Klemis;
 import ai.npc.Teleports.MithrilMinesTeleporter.MithrilMinesTeleporter;
 import ai.npc.Teleports.NewbieTravelToken.NewbieTravelToken;
@@ -58,8 +58,8 @@ public final class TeleportersLoader
 		DelusionTeleport.class,
 		ElrokiTeleporters.class,
 		GatekeeperSpirit.class,
-		GrandBossTeleporters.class,
 		HuntingGroundsTeleport.class,
+		Klein.class,
 		Klemis.class,
 		MithrilMinesTeleporter.class,
 		NewbieTravelToken.class,

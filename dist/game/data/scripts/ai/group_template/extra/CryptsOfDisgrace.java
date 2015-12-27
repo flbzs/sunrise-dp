@@ -17,14 +17,10 @@ package ai.group_template.extra;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import l2r.gameserver.data.SpawnTable;
-import l2r.gameserver.data.sql.NpcTable;
 import l2r.gameserver.enums.CtrlIntention;
-import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.actor.templates.L2NpcTemplate;
 import l2r.util.Rnd;
 
 import ai.npc.AbstractNpcAI;
@@ -94,34 +90,5 @@ public class CryptsOfDisgrace extends AbstractNpcAI
 			newNpc.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
 		}
 		return super.onKill(npc, player, isPet);
-	}
-	
-	public void addSpawn(int mobId, int x, int y, int z, int respTime)
-	{
-		L2NpcTemplate template1;
-		template1 = NpcTable.getInstance().getTemplate(mobId);
-		L2Spawn spawn = null;
-		try
-		{
-			spawn = new L2Spawn(template1);
-			spawn.setX(x);
-			spawn.setY(y);
-			spawn.setZ(z);
-			spawn.setAmount(1);
-			spawn.setHeading(-1);
-			spawn.setRespawnDelay(respTime);
-			spawn.setInstanceId(0);
-			SpawnTable.getInstance().addNewSpawn(spawn, false);
-			spawn.init();
-			spawn.startRespawn();
-			if (respTime == 0)
-			{
-				spawn.stopRespawn();
-			}
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
 	}
 }

@@ -142,6 +142,7 @@ public class TerritoryWarSuperClass extends Quest
 				TerritoryWarManager.getInstance().giveTWQuestPoint(player);
 				st.addExpAndSp(534000, 51000);
 				st.set("doneDate", String.valueOf(Calendar.getInstance().get(Calendar.DAY_OF_YEAR)));
+				st.setState(State.COMPLETED);
 				st.exitQuest(true);
 				player.sendPacket(new ExShowScreenMessage(npcString[1], 2, 10000));
 			}
@@ -153,7 +154,6 @@ public class TerritoryWarSuperClass extends Quest
 				message.addStringParameter(String.valueOf(max));
 				message.addStringParameter(String.valueOf(kill));
 				player.sendPacket(message);
-				
 			}
 		}
 		else if (st.getInt("doneDate") != Calendar.getInstance().get(Calendar.DAY_OF_YEAR))
