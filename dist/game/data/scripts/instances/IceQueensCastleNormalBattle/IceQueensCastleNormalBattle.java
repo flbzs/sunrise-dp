@@ -279,8 +279,11 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "STAGE_1_FINISH":
 					{
-						world.freya.deleteMe();
-						world.freya = null;
+						if (world.freya != null)
+						{
+							world.freya.deleteMe();
+							world.freya = null;
+						}
 						manageDespawnMinions(world);
 						manageMovie(world, ExStartScenePlayer.SCENE_BOSS_FREYA_PHASE_A);
 						startQuestTimer("STAGE_1_PAUSE", 24100 - 1000, world.controller, null);
@@ -415,8 +418,16 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							world.supp_Jinia.deleteMe();
 							world.supp_Jinia = null;
 						}
-						world.freya.teleToLocation(FREYA_CORPSE);
-						world.supp_Kegor.teleToLocation(KEGOR_FINISH);
+						
+						if (world.freya != null)
+						{
+							world.freya.teleToLocation(FREYA_CORPSE);
+						}
+						
+						if (world.supp_Kegor != null)
+						{
+							world.supp_Kegor.teleToLocation(KEGOR_FINISH);
+						}
 						break;
 					}
 					case "START_SPAWN":
