@@ -57,7 +57,9 @@ public class NoRandomWalkMobs extends AbstractNpcAI
 		// Krateis Cube
 		18601,18602,
 		// Ekimus Feral Hound
-		29151
+		29151,
+		// LOA MOBS
+		22848, 22849, 22850, 22851,
 	};
 	// @formatter:on
 	
