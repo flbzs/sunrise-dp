@@ -1602,7 +1602,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="DispelAll" noicon="1" val="0" />
+			<effect name="DispelAll" noicon="1" val="0" effectPower="5" />
 		</for>
 	</skill>
 	<skill id="4095" levels="1" name="Damage Shield">
