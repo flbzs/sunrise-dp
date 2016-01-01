@@ -647,7 +647,6 @@ public class SavingSanta extends AbstractNpcAI
 		}
 		else if (player != null)
 		{
-			// FIXME: Unhardcore html!
 			if (event.equalsIgnoreCase("Tree"))
 			{
 				int itemsOk = 0;
@@ -775,7 +774,6 @@ public class SavingSanta extends AbstractNpcAI
 				player.destroyItemByItemId(event, X_MAS_TREE1, 10, player, true);
 				player.addItem(event, SANTAS_HAT_ID, 1, player, true);
 			}
-			// FIXME: Unhardcore html!
 			else if (event.equalsIgnoreCase("SavingSantaHat") && SAVING_SANTA)
 			{
 				htmltext = "<html><title>Christmas Event</title><body><br><br><table width=260><tr><td></td><td width=40></td><td width=40></td></tr><tr><td><font color=LEVEL>Saving Santa's Hat</font></td><td width=40><img src=\"Icon.Accessory_santas_cap_i00\" width=32 height=32></td><td width=40></td></tr></table><br><br><table width=260>";

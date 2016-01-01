@@ -214,7 +214,7 @@ public class Q00552_OlympiadVeteran extends Quest
 		{
 			final long count = st.getQuestItemsCount(TEAM_EVENT_CERTIFICATE) + st.getQuestItemsCount(CLASS_FREE_BATTLE_CERTIFICATE) + st.getQuestItemsCount(CLASS_BATTLE_CERTIFICATE);
 			
-			if (count == 3)
+			if (count >= 3)
 			{
 				htmltext = "31688-04.html";
 				st.giveItems(OLY_CHEST, 4);

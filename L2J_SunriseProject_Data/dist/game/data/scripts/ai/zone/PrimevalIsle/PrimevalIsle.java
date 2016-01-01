@@ -298,7 +298,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 				}
 				catch (Exception e)
 				{
-					// FIXME
+				
 				}
 			}
 		}
@@ -459,7 +459,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 			}
 			catch (Exception e)
 			{
-				// FIXME
+			
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
@@ -515,7 +515,7 @@ public final class PrimevalIsle extends AbstractNpcAI
 			}
 			catch (Exception e)
 			{
-				// FIXME
+			
 			}
 		}
 		else

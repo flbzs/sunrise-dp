@@ -179,7 +179,7 @@ public class Q00553_OlympiadUndefeated extends Quest
 		else
 		{
 			final long count = st.getQuestItemsCount(WIN_CONF_2) + st.getQuestItemsCount(WIN_CONF_5) + st.getQuestItemsCount(WIN_CONF_10);
-			if ((count == 3) && st.isCond(2))
+			if ((count >= 3) && st.isCond(2))
 			{
 				st.giveItems(OLY_CHEST, 4);
 				st.giveItems(MEDAL_OF_GLORY, 5);

@@ -19,6 +19,10 @@ import l2r.gameserver.model.actor.L2Npc;
 
 import ai.npc.AbstractNpcAI;
 
+/**
+ * @author L2jSunrise Team
+ * @Website www.l2jsunrise.com
+ */
 public class NoChampionMobs extends AbstractNpcAI
 {
 	// @formatter:off

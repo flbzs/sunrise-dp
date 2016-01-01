@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -33,7 +33,7 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Chest AI implementation.
- * @author Fulminus
+ * @author Fulminus, vGodFather
  */
 public class Chests extends AbstractNpcAI
 {
@@ -157,7 +157,7 @@ public class Chests extends AbstractNpcAI
 				}
 				else
 				{
-					openChance = 100;
+					openChance = 90; // base chance
 				}
 			}
 		}

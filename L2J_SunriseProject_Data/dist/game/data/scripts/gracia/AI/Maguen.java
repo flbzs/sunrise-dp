@@ -176,7 +176,6 @@ public final class Maguen extends AbstractNpcAI
 		return super.onAdvEvent(event, npc, player);
 	}
 	
-	// TODO: FIXME
 	/**
 	 * @Override public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill) { final L2Effect b_info = player.getEffectList().getBuffInfoByAbnormalType(B_PLASMA1.getSkill().getAbnormalType()); final L2Effect c_info =
 	 *           player.getEffectList().getBuffInfoByAbnormalType(C_PLASMA1.getSkill().getAbnormalType()); final L2Effect r_info = player.getEffectList().getBuffInfoByAbnormalType(R_PLASMA1.getSkill().getAbnormalType()); final int b = b_info == null ? 0 : b_info.getSkill().getAbnormalLvl(); final
@@ -199,7 +198,6 @@ public final class Maguen extends AbstractNpcAI
 		{
 			if ((npc.getVariables().getInt("NPC_EFFECT") != 0) && (npc.getVariables().getInt("BLOCKED_SKILLSEE") == 0))
 			{
-				// TODO: FIXME
 				/**
 				 * final L2Effect i1_info = caster.getEffectList().getBuffInfoByAbnormalType(B_PLASMA1.getSkill().getAbnormalType()); final L2Effect i2_info = caster.getEffectList().getBuffInfoByAbnormalType(C_PLASMA1.getSkill().getAbnormalType()); final L2Effect i3_info =
 				 * caster.getEffectList().getBuffInfoByAbnormalType(R_PLASMA1.getSkill().getAbnormalType()); final int i1 = i1_info == null ? 0 : i1_info.getSkill().getAbnormalLvl(); final int i2 = i2_info == null ? 0 : i2_info.getSkill().getAbnormalLvl(); final int i3 = i3_info == null ? 0 :

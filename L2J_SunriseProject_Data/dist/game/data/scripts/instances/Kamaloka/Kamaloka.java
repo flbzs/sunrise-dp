@@ -88,7 +88,7 @@ public final class Kamaloka extends AbstractInstance
 	// Maximum party size for the instance
 	private static final int[] MAX_PARTY_SIZE =
 	{
-		6, 6, 9, 6, 6, 9, 6, 6, 9, 6, 6, 9, 6, 6, 9, 6, 9, 9, 9
+		9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9
 	};
 	
 	/**
