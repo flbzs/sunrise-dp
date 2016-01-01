@@ -229,7 +229,7 @@ public class Q00551_OlympiadStarter extends Quest
 		else if (st.isStarted())
 		{
 			final long count = st.getQuestItemsCount(CERT_3) + st.getQuestItemsCount(CERT_5) + st.getQuestItemsCount(CERT_10);
-			if (count == 3)
+			if (count >= 3)
 			{
 				htmltext = "31688-04.html";
 				st.giveItems(OLY_CHEST, 4);
