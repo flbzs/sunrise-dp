@@ -548,6 +548,8 @@ public final class Valakas extends AbstractNpcAI
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
+		_lastAttack = System.currentTimeMillis();
+		
 		if ((attacker.getMountType() == MountType.STRIDER) && !attacker.isAffectedBySkill(ANTI_STRIDER.getSkillId()))
 		{
 			if (!npc.isSkillDisabled(ANTI_STRIDER.getSkill()))
