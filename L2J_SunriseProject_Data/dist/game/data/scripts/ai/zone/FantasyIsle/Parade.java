@@ -185,7 +185,7 @@ public class Parade extends AbstractNpcAI
 		{
 			for (int i = 0; i < 3; ++i)
 			{
-				if (npcIndex >= ACTORS.length)
+				if ((npcIndex >= ACTORS.length) && (spawnTask != null))
 				{
 					spawnTask.cancel(false);
 					break;
