@@ -29,7 +29,7 @@ import l2r.gameserver.network.serverpackets.SystemMessage;
 import ai.npc.AbstractNpcAI;
 
 /**
- * @author pmq Update to HIGH FIVE
+ * @author pmq, vGodFather Update to HIGH FIVE
  */
 public class PcBangPoint extends AbstractNpcAI
 {
@@ -315,13 +315,22 @@ public class PcBangPoint extends AbstractNpcAI
 		}
 		else if (event.equalsIgnoreCase("wyvern"))
 		{
+			if (player.hasSummon())
+			{
+				// We must remove previous summon if there is.
+				player.getSummon().unSummon(player);
+			}
+			
+			if (player.isTransformed())
+			{
+				// We must remove tranform if there is.
+				player.untransform();
+			}
+			
 			if (player.getPcBangPoints() >= 2500)
 			{
-				final int cost = player.getPcBangPoints() - (2500);
-				player.setPcBangPoints(cost);
-				SystemMessage smsgpc = SystemMessage.getSystemMessage(SystemMessageId.USING_S1_PCPOINT);
-				smsgpc.addInt(2500);
-				player.sendPacket(smsgpc);
+				player.setPcBangPoints(player.getPcBangPoints() - 2500);
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.USING_S1_PCPOINT).addInt(2500));
 				player.sendPacket(new ExPCCafePointInfo(player.getPcBangPoints(), 2500, false, false, 1));
 				player.mount(12621, 0, true);
 				player.addSkill(CommonSkill.WYVERN_BREATH.getSkill());
