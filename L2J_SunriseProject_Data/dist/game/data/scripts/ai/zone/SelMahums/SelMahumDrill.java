@@ -25,6 +25,7 @@ import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
+import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
@@ -34,7 +35,7 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Sel Mahum Training Ground AI for drill groups.
- * @author GKR
+ * @author GKR, vGodFather
  */
 public final class SelMahumDrill extends AbstractNpcAI
 {
@@ -207,6 +208,30 @@ public final class SelMahumDrill extends AbstractNpcAI
 		{
 			npc.broadcastEvent("ATTACKED", 1000, null);
 		}
+		
+		switch (npc.getId())
+		{
+			case 22782:
+			{
+				for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(22782))
+				{
+					if ((spawn != null) && spawn.getName().equals(npc.getSpawn().getName()))
+					{
+						for (L2Npc temp : spawn.getSpawnedNpcs())
+						{
+							if ((temp != null) && !temp.isDead())
+							{
+								temp.setRunning();
+								((L2MonsterInstance) temp).addDamageHate(attacker, 0, 500);
+								temp.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);
+							}
+						}
+					}
+				}
+				break;
+			}
+		}
+		
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
