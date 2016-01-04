@@ -24,8 +24,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+import l2r.Config;
 import l2r.gameserver.model.AbsorberInfo;
 import l2r.gameserver.model.L2Object;
+import l2r.gameserver.model.L2Party;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -37,6 +39,7 @@ import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.InventoryUpdate;
 import l2r.gameserver.network.serverpackets.SystemMessage;
+import l2r.gameserver.util.Util;
 import l2r.util.data.xml.IXmlReader.IXmlReader;
 
 import org.w3c.dom.Document;
@@ -422,11 +425,13 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 			sms.addItemName(giveid);
 			if (player.isInParty())
 			{
-				player.sendPacket(sms);
+				final L2Party party = player.getParty();
+				final List<L2PcInstance> groupMembers = party.isInCommandChannel() ? party.getCommandChannel().getMembers() : party.getMembers();
+				groupMembers.stream().filter(member -> Util.checkIfInRange(Config.ALT_PARTY_RANGE, player, member, true)).forEach(member -> member.sendPacket(sms));
 			}
 			else
 			{
-				player.getParty().broadcastToPartyMembers(sms);
+				player.sendPacket(sms);
 			}
 			
 			// Send inventory update packet
