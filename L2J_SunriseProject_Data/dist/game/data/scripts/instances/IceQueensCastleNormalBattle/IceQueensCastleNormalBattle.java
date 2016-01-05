@@ -242,7 +242,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 						{
 							if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
 							{
-								final QuestState qs = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
+								final QuestState qs = players.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
 								if ((qs != null) && (qs.getState() == State.STARTED) && qs.isCond(6))
 								{
 									qs.setMemoState(10);
