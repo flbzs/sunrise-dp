@@ -218,7 +218,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 							}
 							for (L2PcInstance players : world.playersInside)
 							{
-								if ((players != null) && !players.isDead() && (players.getInstanceId() == world.getInstanceId()))
+								if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
 								{
 									final QuestState qs = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
 									if ((qs != null) && (qs.getState() == State.STARTED) && qs.isCond(5))
@@ -238,12 +238,19 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					}
 					case "killFreya":
 					{
-						final QuestState qs = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
-						if ((qs != null) && (qs.getState() == State.STARTED) && qs.isCond(6))
+						for (L2PcInstance players : world.playersInside)
 						{
-							qs.setMemoState(10);
-							qs.setCond(7, true);
+							if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
+							{
+								final QuestState qs = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
+								if ((qs != null) && (qs.getState() == State.STARTED) && qs.isCond(6))
+								{
+									qs.setMemoState(10);
+									qs.setCond(7, true);
+								}
+							}
 						}
+						
 						world.supp_Kegor.deleteMe();
 						world.freya.decayMe();
 						manageMovie(world, ExStartScenePlayer.SCENE_BOSS_FREYA_ENDING_B);

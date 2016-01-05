@@ -1193,10 +1193,13 @@ public class HallOfErosionAttack extends AbstractNpcAI
 				for (int objId : world.getAllowed())
 				{
 					L2PcInstance pl = L2World.getInstance().getPlayer(objId);
-					QuestState st = pl.getQuestState(Q00696_ConquertheHallofErosion.class.getSimpleName());
-					if ((st != null) && (st.getInt("cond") == 1))
+					if (pl != null)
 					{
-						st.set("cohemenes", "1");
+						QuestState st = pl.getQuestState(Q00696_ConquertheHallofErosion.class.getSimpleName());
+						if ((st != null) && (st.getInt("cond") == 1))
+						{
+							st.set("cohemenes", "1");
+						}
 					}
 				}
 				broadCastPacket(world, new ExShowScreenMessage(NpcStringId.CONGRATULATIONS_YOU_HAVE_SUCCEEDED_AT_S1_S2_THE_INSTANCE_WILL_SHORTLY_EXPIRE, 2, 8000));
