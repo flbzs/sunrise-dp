@@ -1208,7 +1208,6 @@ public class HallOfErosionDefence extends AbstractNpcAI
 		return super.onKill(npc, player, isSummon);
 	}
 	
-	// TODO: NEED FIX?
 	public String onKillByMob(L2Npc npc, L2Npc killer)
 	{
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());

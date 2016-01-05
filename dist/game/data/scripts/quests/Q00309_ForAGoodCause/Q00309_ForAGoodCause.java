@@ -45,6 +45,7 @@ public class Q00309_ForAGoodCause extends Quest
 	// Mobs
 	private static final int CORRUPTED_MUCROKIAN = 22654;
 	private static final Map<Integer, Integer> MUCROKIANS = new HashMap<>();
+	
 	static
 	{
 		MUCROKIANS.put(22650, 218); // Mucrokian Fanatic
@@ -204,11 +205,11 @@ public class Q00309_ForAGoodCause extends Quest
 				st.giveItems(item, 1);
 			}
 			st.playSound(QuestSound.ITEMSOUND_QUEST_FINISH);
-			htmltext = "32646-16.htm";
+			htmltext = "32647-16.htm";
 		}
 		else
 		{
-			htmltext = "32646-15.htm";
+			htmltext = "32647-15.htm";
 		}
 		return htmltext;
 	}
