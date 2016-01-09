@@ -1,18 +1,7 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package quests.Q10294_SevenSignToTheMonastery;
+
+import java.util.Arrays;
+import java.util.List;
 
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.model.actor.L2Npc;
@@ -22,10 +11,12 @@ import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
-import l2r.gameserver.util.Util;
 
 import quests.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom;
 
+/**
+ * @author vGodFather
+ */
 public class Q10294_SevenSignToTheMonastery extends Quest
 {
 	// NPC
@@ -34,21 +25,7 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 	private static final int Odd_Globe = 32815;
 	private static final int ErisEvilThoughts = 32792;
 	private static final int RelicGuardian = 32803;
-	private static final int[] WrongBook =
-	{
-		32822,
-		32823,
-		32824,
-		32826,
-		32827,
-		32828,
-		32830,
-		32831,
-		32832,
-		32834,
-		32835,
-		32836
-	};
+	private static final List<Integer> WrongBook = Arrays.asList(32822, 32823, 32824, 32826, 32827, 32828, 32830, 32831, 32832, 32834, 32835, 32836);
 	private static final int GoodBook1 = 32821;
 	private static final int GoodBook2 = 32825; // good 2
 	private static final int GoodBook3 = 32829; // good 3
@@ -89,11 +66,7 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 		addTalkId(NORTH_DEVICE);
 		addTalkId(WEST_DEVICE);
 		
-		for (int i : WrongBook)
-		{
-			addTalkId(i);
-		}
-		
+		addTalkId(WrongBook);
 	}
 	
 	@Override
@@ -180,56 +153,28 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 		{
 			if (event.equalsIgnoreCase("truexit"))
 			{
-				if (st.getInt("good1") == 1)
-				{
-					htmltext = "32804-05.html";
-				}
-				else
-				{
-					htmltext = "32804-03.html";
-				}
+				htmltext = st.getInt("good1") == 1 ? "32804-05.html" : "32804-03.html";
 			}
 		}
 		else if (npc.getId() == RelicWatcher1)
 		{
 			if (event.equalsIgnoreCase("truexit"))
 			{
-				if (st.getInt("good2") == 1)
-				{
-					htmltext = "32805-05.html";
-				}
-				else
-				{
-					htmltext = "32805-03.html";
-				}
+				htmltext = st.getInt("good2") == 1 ? "32805-05.html" : "32805-03.html";
 			}
 		}
 		else if (npc.getId() == RelicWatcher2)
 		{
 			if (event.equalsIgnoreCase("truexit"))
 			{
-				if (st.getInt("good3") == 1)
-				{
-					htmltext = "32806-05.html";
-				}
-				else
-				{
-					htmltext = "32806-03.html";
-				}
+				htmltext = st.getInt("good3") == 1 ? "32806-05.html" : "32806-03.html";
 			}
 		}
 		else if (npc.getId() == RelicWatcher3)
 		{
 			if (event.equalsIgnoreCase("truexit"))
 			{
-				if (st.getInt("good4") == 1)
-				{
-					htmltext = "32807-05.html";
-				}
-				else
-				{
-					htmltext = "32807-03.html";
-				}
+				htmltext = st.getInt("good4") == 1 ? "32807-05.html" : "32807-03.html";
 			}
 		}
 		return htmltext;
@@ -247,47 +192,19 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 		}
 		if (npc.getId() == WEST_DEVICE)
 		{
-			if ((st.getInt("good2") != 1) || (st.getInt("good3") != 1) || (st.getInt("good4") != 1))
-			{
-				htmltext = "passnotdone.html";
-			}
-			else
-			{
-				htmltext = "32816.html";
-			}
+			htmltext = ((st.getInt("good2") != 1) || (st.getInt("good3") != 1) || (st.getInt("good4") != 1)) ? "passnotdone.html" : "32816.html";
 		}
 		else if (npc.getId() == EAST_DEVICE)
 		{
-			if (st.getInt("good2") == 1)
-			{
-				htmltext = "passdone.html";
-			}
-			else
-			{
-				htmltext = "32817.html";
-			}
+			htmltext = st.getInt("good2") == 1 ? "passdone.html" : "32817.html";
 		}
 		else if (npc.getId() == NORTH_DEVICE)
 		{
-			if (st.getInt("good4") == 1)
-			{
-				htmltext = "passdone.html";
-			}
-			else
-			{
-				htmltext = "32819.html";
-			}
+			htmltext = st.getInt("good4") == 1 ? "passdone.html" : "32819.html";
 		}
 		else if (npc.getId() == SOUTH_DEVICE)
 		{
-			if (st.getInt("good3") == 1)
-			{
-				htmltext = "passdone.html";
-			}
-			else
-			{
-				htmltext = "32818.html";
-			}
+			htmltext = st.getInt("good3") == 1 ? "passdone.html" : "32818.html";
 		}
 		else if (npc.getId() == Elcadia)
 		{
@@ -447,7 +364,7 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 					break;
 			}
 		}
-		else if (Util.contains(WrongBook, npc.getId()))
+		else if (WrongBook.contains(npc.getId()))
 		{
 			if (st.getInt("cond") == 2)
 			{
@@ -456,47 +373,19 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 		}
 		else if (npc.getId() == GoodBook1)
 		{
-			if (st.getInt("good1") == 1)
-			{
-				htmltext = "already.html";
-			}
-			else
-			{
-				htmltext = "32821-01.html";
-			}
+			htmltext = st.getInt("good1") == 1 ? "already.html" : "32821-01.html";
 		}
 		else if (npc.getId() == GoodBook2)
 		{
-			if (st.getInt("good2") == 1)
-			{
-				htmltext = "already.html";
-			}
-			else
-			{
-				htmltext = "32825-01.html";
-			}
+			htmltext = st.getInt("good2") == 1 ? "already.html" : "32825-01.html";
 		}
 		else if (npc.getId() == GoodBook3)
 		{
-			if (st.getInt("good3") == 1)
-			{
-				htmltext = "already.html";
-			}
-			else
-			{
-				htmltext = "32829-01.html";
-			}
+			htmltext = st.getInt("good3") == 1 ? "already.html" : "32829-01.html";
 		}
 		else if (npc.getId() == GoodBook4)
 		{
-			if (st.getInt("good4") == 1)
-			{
-				htmltext = "already.html";
-			}
-			else
-			{
-				htmltext = "32833-01.html";
-			}
+			htmltext = st.getInt("good4") == 1 ? "already.html" : "32833-01.html";
 		}
 		else if (npc.getId() == SolinaEvilThoughts)
 		{

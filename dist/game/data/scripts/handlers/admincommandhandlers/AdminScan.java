@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -19,7 +19,7 @@
 package handlers.admincommandhandlers;
 
 import java.util.Collection;
-import java.util.StringTokenizer;
+import java.util.List;
 
 import l2r.gameserver.cache.HtmCache;
 import l2r.gameserver.data.SpawnTable;
@@ -30,10 +30,9 @@ import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2r.gameserver.util.Util;
 
 /**
- * @author UnAfraid
+ * @author UnAfraid, vGodFather
  */
 public class AdminScan implements IAdminCommandHandler
 {
@@ -46,72 +45,108 @@ public class AdminScan implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
-		StringTokenizer st = new StringTokenizer(command, " ");
-		
 		if (command.startsWith("admin_scan"))
 		{
-			int radius = 500;
-			if (st.hasMoreTokens())
+			String htm = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");
+			StringBuilder sb = new StringBuilder();
+			List<L2Character> npc = activeChar.getKnownList().getKnownCharactersInRadius(1000);
+			
+			final int size = npc.size();
+			int page = 1;
+			try
 			{
-				String obj = st.nextToken();
-				if (Util.isDigit(obj))
+				page = Integer.valueOf(command.split(" ")[1]);
+			}
+			catch (Exception e)
+			{
+				// nothing to log
+			}
+			
+			int maxItemsPerPage = 14;
+			int startIndex = (page - 1) * maxItemsPerPage;
+			startIndex = ((startIndex > (size - 1)) ? (size - 1) : startIndex);
+			int endIndex = startIndex + maxItemsPerPage;
+			endIndex = ((endIndex > (size - 1)) ? (size - 1) : endIndex);
+			int filled = 0;
+			
+			if (size > 0)
+			{
+				for (int index = startIndex; index <= endIndex; ++index)
 				{
-					radius = Integer.valueOf(obj);
+					L2Character character = npc.get(index);
+					if (character.isNpc())
+					{
+						sb.append("<tr>");
+						sb.append("<td width=\"20\">" + character.getId() + "</td>");
+						sb.append("<td width=\"150\">" + getName(character.getName()) + "</td>");
+						sb.append("<td width=\"20\">" + Math.round(activeChar.calculateDistance(character, false, false)) + "</td>");
+						sb.append("<td width=\"25\"><a action=\"bypass -h admin_deleteNpcByObjectId " + character.getObjectId() + " " + page + "\"><font color=\"LEVEL\">Delete</font></a></td>");
+						sb.append("<td width=\"20\"><a action=\"bypass -h admin_move_to " + character.getX() + " " + character.getY() + " " + character.getZ() + "\"><font color=\"LEVEL\">Go to</font></a></td>");
+						sb.append("</tr>");
+						filled++;
+					}
 				}
 			}
 			
-			String htm = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");
-			StringBuilder sb = new StringBuilder();
-			Collection<L2Character> npc = activeChar.getKnownList().getKnownCharactersInRadius(radius);
-			for (L2Character character : npc)
+			while (filled < maxItemsPerPage)
 			{
-				if (character instanceof L2Npc)
-				{
-					sb.append("<tr>");
-					sb.append("<td width=\"54\">" + ((L2Npc) character).getId() + "</td>");
-					sb.append("<td width=\"54\">" + character.getName() + "</td>");
-					sb.append("<td width=\"54\">" + Math.round(activeChar.calculateDistance(character, false, false)) + "</td>");
-					sb.append("<td width=\"54\"><a action=\"bypass -h admin_deleteNpcByObjectId " + character.getObjectId() + "\"><font color=\"LEVEL\">Delete</font></a></td>");
-					sb.append("<td width=\"54\"><a action=\"bypass -h admin_move_to " + character.getX() + " " + character.getY() + " " + character.getZ() + "\"><font color=\"LEVEL\">Go to</font></a></td>");
-					sb.append("</tr>");
-				}
+				sb.append("<tr>");
+				sb.append("<td width=\"20\">-----</td>");
+				sb.append("<td width=\"150\">-----</td>");
+				sb.append("<td width=\"20\">-----</td>");
+				sb.append("<td width=\"25\">-----</td>");
+				sb.append("<td width=\"20\">-----</td>");
+				sb.append("</tr>");
+				filled++;
 			}
 			
 			htm = htm.replaceAll("%data%", sb.toString());
+			htm = htm.replace("%prev%", startIndex > 0 ? "<button width=80 height=20 value=\"PrevPage\" action=\"bypass -h admin_scan " + (page - 1) + "\" back=\"\" fore=\"L2UI_CT1.ListCTRL_DF_Title\">" : "");
+			htm = htm.replace("%next%", endIndex < (size - 1) ? "<button width=80 height=20 value=\"NextPage\" action=\"bypass -h admin_scan " + (page + 1) + "\" back=\"\" fore=\"L2UI_CT1.ListCTRL_DF_Title\">" : "");
+			htm = htm.replace("%curPage%", String.valueOf(page));
+			
 			activeChar.sendPacket(new NpcHtmlMessage(0, htm));
 		}
-		else if (command.startsWith("admin_deleteNpcByObjectId") && st.hasMoreTokens())
+		else if (command.startsWith("admin_deleteNpcByObjectId"))
 		{
-			String objectId = st.nextToken();
-			if (Util.isDigit(objectId))
+			int objectId = Integer.parseInt(command.split(" ")[1]);
+			int page = Integer.parseInt(command.split(" ")[2]);
+			Collection<L2Character> npc = activeChar.getKnownList().getKnownCharacters();
+			for (L2Character character : npc)
 			{
-				Collection<L2Character> npc = activeChar.getKnownList().getKnownCharacters();
-				for (L2Character character : npc)
+				if (character.isNpc() && (character.getObjectId() == objectId))
 				{
-					if ((character instanceof L2Npc) && (character.getObjectId() == Integer.valueOf(objectId)))
+					character.deleteMe();
+					L2Spawn spawn = ((L2Npc) character).getSpawn();
+					if (spawn != null)
 					{
-						character.deleteMe();
-						L2Spawn spawn = ((L2Npc) character).getSpawn();
-						if (spawn != null)
+						spawn.stopRespawn();
+						
+						if (RaidBossSpawnManager.getInstance().isDefined(spawn.getId()))
 						{
-							spawn.stopRespawn();
-							
-							if (RaidBossSpawnManager.getInstance().isDefined(spawn.getId()))
-							{
-								RaidBossSpawnManager.getInstance().deleteSpawn(spawn, true);
-							}
-							else
-							{
-								SpawnTable.getInstance().deleteSpawn(spawn, true);
-							}
+							RaidBossSpawnManager.getInstance().deleteSpawn(spawn, true);
 						}
-						activeChar.sendMessage(character.getName() + " have been deleted.");
-						useAdminCommand("admin_scan", activeChar);
+						else
+						{
+							SpawnTable.getInstance().deleteSpawn(spawn, true);
+						}
 					}
+					activeChar.sendMessage(character.getName() + " have been deleted.");
+					useAdminCommand("admin_scan " + page, activeChar);
+					break;
 				}
 			}
 		}
 		return true;
+	}
+	
+	private String getName(String name)
+	{
+		if (name.length() > 15)
+		{
+			return name.substring(0, 14) + "...";
+		}
+		return name;
 	}
 	
 	@Override

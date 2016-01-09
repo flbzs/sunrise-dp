@@ -18,7 +18,6 @@
  */
 package quests.Q00698_BlocktheLordsEscape;
 
-import l2r.Config;
 import l2r.gameserver.instancemanager.SoIManager;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -90,7 +89,7 @@ public class Q00698_BlocktheLordsEscape extends Quest
 				if ((cond == 1) && (st.getInt("defenceDone") == 1))
 				{
 					htmltext = "32603-05.htm";
-					st.giveItems(VESPER_STONE, (int) Config.RATE_QUEST_REWARD * Rnd.get(5, 8));
+					rewardItems(player, VESPER_STONE, Rnd.get(5, 8));
 					st.playSound("ItemSound.quest_finish");
 					st.exitQuest(true);
 				}

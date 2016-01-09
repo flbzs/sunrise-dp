@@ -1,20 +1,7 @@
-/*
- * This program is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package instances.ToTheMonastery;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -43,6 +30,9 @@ import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
 import quests.Q10295_SevenSignsSolinasTomb.Q10295_SevenSignsSolinasTomb;
 import quests.Q10296_SevenSignsPowerOfTheSeal.Q10296_SevenSignsPowerOfTheSeal;
 
+/**
+ * @author vGodFather
+ */
 public class ToTheMonastery extends AbstractNpcAI
 {
 	private final Map<Integer, InstanceHolder> instanceWorlds = new ConcurrentHashMap<>();
@@ -83,16 +73,10 @@ public class ToTheMonastery extends AbstractNpcAI
 	
 	private static int ETISETINA = 18949;
 	
-	//@formatter:off
-	private static int[] TombGuardians =
-	{
-		18956, 18957, 18958, 18959
-	};
-	private static int[] Minions =
-	{
-		27403, 27404
-	};
+	private static List<Integer> TombGuardians = Arrays.asList(18956, 18957, 18958, 18959);
+	private static List<Integer> Minions = Arrays.asList(27403, 27404);
 	
+	//@formatter:off
 	private static final int[][] minions_1 =
 	{
 		{ 56504, -252840, -6760, 0 },
@@ -398,7 +382,6 @@ public class ToTheMonastery extends AbstractNpcAI
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		
 		final QuestState st = getQuestState(player, true);
 		if (st == null)
 		{
@@ -565,12 +548,11 @@ public class ToTheMonastery extends AbstractNpcAI
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		QuestState st = player.getQuestState("ToTheMonastery");
+		QuestState st = player.getQuestState(getName());
 		if (st == null)
 		{
 			return null;
 		}
-		int npcId = npc.getId();
 		
 		InstanceWorld tmpworld = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		
@@ -578,6 +560,7 @@ public class ToTheMonastery extends AbstractNpcAI
 		{
 			ToTheMonasteryWorld world = (ToTheMonasteryWorld) tmpworld;
 			
+			int npcId = npc.getId();
 			if (npcId == 27403)
 			{
 				if (world.firstgroup != null)
@@ -767,10 +750,7 @@ public class ToTheMonastery extends AbstractNpcAI
 		cancelQuestTimer("check_voice", npc, player);
 		if (holder != null)
 		{
-			for (L2Npc h : holder.mobs)
-			{
-				h.deleteMe();
-			}
+			holder.mobs.forEach(tmp -> tmp.deleteMe());
 			holder.mobs.clear();
 		}
 		if (instanceId > 0)
