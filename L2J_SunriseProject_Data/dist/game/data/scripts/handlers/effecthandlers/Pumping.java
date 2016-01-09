@@ -89,12 +89,9 @@ public final class Pumping extends L2Effect
 		{
 			return false;
 		}
-		int SS = 1;
+		int SS = activeChar.isChargedShot(ShotType.FISH_SOULSHOTS) ? 2 : 1;
 		int pen = 0;
-		if (activeChar.isChargedShot(ShotType.FISH_SOULSHOTS))
-		{
-			SS = 2;
-		}
+		
 		final L2FishingRod fishingRod = FishingRodsData.getInstance().getFishingRod(weaponItem.getId());
 		final double gradeBonus = fishingRod.getFishingRodLevel() * 0.1; // TODO: Check this formula (is guessed)
 		int dmg = (int) ((fishingRod.getFishingRodDamage() + player.calcStat(Stats.FISHING_EXPERTISE, 1, null, null) + _power) * gradeBonus * SS);

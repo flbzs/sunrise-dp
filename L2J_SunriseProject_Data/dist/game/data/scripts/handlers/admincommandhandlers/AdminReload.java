@@ -51,6 +51,7 @@ import l2r.gameserver.scripting.L2ScriptEngineManager;
 import l2r.gameserver.util.Util;
 
 import gr.sr.configsEngine.ConfigsController;
+import gr.sr.raidEngine.manager.RaidManager;
 
 /**
  * @author Nos
@@ -280,6 +281,12 @@ public class AdminReload implements IAdminCommandHandler
 				{
 					ProductItemData.getInstance().reload();
 					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded item mall data.");
+					break;
+				}
+				case "autoraid":
+				{
+					RaidManager.getInstance().reload();
+					AdminData.getInstance().broadcastMessageToGMs(activeChar.getName() + ": Reloaded auto raid data.");
 					break;
 				}
 				default:

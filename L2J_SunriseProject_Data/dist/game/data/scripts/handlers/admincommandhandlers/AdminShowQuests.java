@@ -332,15 +332,29 @@ public class AdminShowQuests implements IAdminCommandHandler
 			{
 				case "COMPLETED":
 				{
-					qs.exitQuest("1".equals(val[3]));
+					try
+					{
+						qs.exitQuest("1".equals(val[3]));
+					}
+					catch (Exception e)
+					{
+						// just in case quest already completed
+					}
 					break;
 				}
 				case "DELETE":
 				{
-					Quest.deleteQuestInDb(qs, true);
-					qs.exitQuest(true);
-					target.sendPacket(new QuestList());
-					target.sendPacket(new ExShowQuestMark(qs.getQuest().getId()));
+					try
+					{
+						Quest.deleteQuestInDb(qs, true);
+						qs.exitQuest(true);
+						target.sendPacket(new QuestList());
+						target.sendPacket(new ExShowQuestMark(qs.getQuest().getId()));
+					}
+					catch (Exception e)
+					{
+						// just in case quest already deleted
+					}
 					break;
 				}
 				case "CREATE":
