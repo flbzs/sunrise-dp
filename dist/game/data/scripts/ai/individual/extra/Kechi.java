@@ -118,7 +118,7 @@ public class Kechi extends AbstractNpcAI
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		if (npc.getId() == 25532)
+		if (npc.getId() == KECHI)
 		{
 			addSpawn(32279, 154077, 149527, -12159, 0, false, 0L, false, killer.getInstanceId());
 		}

@@ -740,7 +740,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="Paralyze" abnormalTime="#time2" val="0" special="freezing" abnormalLvl="#abnormalLvls" abnormalType="freezing">
-				<param mustCleanFreezingEffect="true" />
+				<param mustCleanEffect="freezing" />
 			</effect>
 			<!-- Level 1: 115HP * 1 during 7 seconds -->
 			<!-- Level 2: 115HP * 5 during 15 seconds -->
@@ -1251,7 +1251,7 @@
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Paralyze" abnormalTime="15" val="0" special="freezing" abnormalLvl="3" abnormalType="freezing">
-				<param mustCleanFreezingEffect="true" />
+				<param mustCleanEffect="freezing" />
 			</effect>
 			<!-- 115HP * 5 during 15 seconds -->
 			<effect count="3" name="DamOverTime" abnormalTime="5" noicon="1" val="575" />

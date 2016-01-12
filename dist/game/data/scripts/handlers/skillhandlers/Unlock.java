@@ -86,7 +86,7 @@ public class Unlock implements ISkillHandler
 					return;
 				}
 				
-				if (doorUnlock(skill) && (!door.getOpen()))
+				if (doorUnlock(skill) && door.isClosed())
 				{
 					door.openMe();
 				}

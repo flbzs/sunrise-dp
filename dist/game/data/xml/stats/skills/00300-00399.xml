@@ -1362,7 +1362,6 @@
 		<set name="power" val="5773" />
 		<set name="reuseDelay" val="4000" />
 		<set name="skillType" val="BLOW" />
-		<set name="SSBoost" val="1.5" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DEATH" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />

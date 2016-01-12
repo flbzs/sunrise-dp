@@ -332,7 +332,9 @@
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="Paralyze" abnormalTime="20" val="0" abnormalVisualEffect="floatroot" abnormalLvl="1" abnormalType="paralyze" />
+			<effect name="Paralyze" abnormalTime="20" val="0" abnormalVisualEffect="floatroot" abnormalLvl="1" abnormalType="paralyze">
+				<param mustCleanEffect="floatroot" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5017" levels="1" name="Frintezza's Daemon Morph">

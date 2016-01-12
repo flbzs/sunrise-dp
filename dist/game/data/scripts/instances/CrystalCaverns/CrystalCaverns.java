@@ -505,11 +505,8 @@ public final class CrystalCaverns extends AbstractInstance
 		addAttackId(TEARS);
 		addKillId(MOBLIST);
 		addKillId(CGMOBS);
-		for (int zones : ZONES)
-		{
-			addEnterZoneId(zones);
-			addExitZoneId(zones);
-		}
+		addEnterZoneId(ZONES);
+		addExitZoneId(ZONES);
 	}
 	
 	@Override
@@ -1997,7 +1994,7 @@ public final class CrystalCaverns extends AbstractInstance
 					{
 						if (door.getId() == (room + 24220000))
 						{
-							if (door.getOpen())
+							if (door.isOpened())
 							{
 								return "";
 							}
@@ -2052,7 +2049,7 @@ public final class CrystalCaverns extends AbstractInstance
 					{
 						if (door.getId() == doorId)
 						{
-							if (door.getOpen() && (world.openedDoors.get(door) == character))
+							if (door.isOpened() && (world.openedDoors.get(door) == character))
 							{
 								door.closeMe();
 								world.openedDoors.remove(door);

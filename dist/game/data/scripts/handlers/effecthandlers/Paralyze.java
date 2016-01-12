@@ -28,17 +28,17 @@ import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 
 /**
- * Paralyze effect implementation.
+ * Paralyze effect implementation. vGodFather
  */
 public class Paralyze extends L2Effect
 {
-	private final boolean _mustCleanFreezingEffect;
+	private final String _mustCleanEffect;
 	
 	public Paralyze(Env env, EffectTemplate template)
 	{
 		super(env, template);
 		
-		_mustCleanFreezingEffect = template.getParameters().getBoolean("mustCleanFreezingEffect", false);
+		_mustCleanEffect = template.getParameters().getString("mustCleanEffect", null);
 	}
 	
 	@Override
@@ -69,9 +69,10 @@ public class Paralyze extends L2Effect
 		
 		getEffected().stopAbnormalEffect(AbnormalEffect.HOLD_1);
 		
-		if (_mustCleanFreezingEffect)
+		if (_mustCleanEffect != null)
 		{
-			getEffected().stopSpecialEffect(AbnormalEffect.S_FREEZING.getMask());
+			getEffected().stopSpecialEffect(AbnormalEffect.getByName(_mustCleanEffect).getMask());
+			getEffected().stopAbnormalEffect(AbnormalEffect.getByName(_mustCleanEffect).getMask());
 		}
 	}
 	
