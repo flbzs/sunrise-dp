@@ -287,7 +287,7 @@ public final class HellboundEngine extends AbstractNpcAI
 			try
 			{
 				L2DoorInstance door = DoorData.getInstance().getDoor(doorData[0]);
-				if (door.getOpen())
+				if (door.isOpened())
 				{
 					if (newLevel < doorData[1])
 					{

@@ -237,7 +237,7 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 		QuestState st = player.getQuestState(getName());
 		
 		// check if player have quest
-		if ((st == null) || (st.getInt("cond") < 1))
+		if ((st == null) || (st.getCond() < 1))
 		{
 			// check if player is from clan, that owns castle
 			if ((player.getClan() == null) || (player.getClan().getCastleId() != castle.getResidenceId()))
@@ -270,7 +270,7 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 			st = partyMember.getQuestState(getName());
 			
 			// check if each party member has quest
-			if ((st == null) || (st.getInt("cond") < 1))
+			if ((st == null) || (st.getCond() < 1))
 			{
 				return getHtm(player.getHtmlPrefix(), "CastleWarden-12.htm").replace("%player%", partyMember.getName());
 			}
@@ -354,7 +354,7 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 					newQuestState(partyMember);
 				}
 				
-				partyMember.getQuestState(getName()).set("cond", "2");
+				partyMember.getQuestState(getName()).setCond(2);
 			}
 		}
 		return getHtm(player.getHtmlPrefix(), "CastleWarden-13.htm").replace("%clan%", player.getClan().getName());
@@ -533,9 +533,9 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 	public void rewardPlayer(L2PcInstance player)
 	{
 		QuestState st = player.getQuestState(getName());
-		if ((st != null) && (st.getInt("cond") == 2))
+		if ((st != null) && (st.getCond() == 2))
 		{
-			st.set("cond", "3");
+			st.setCond(3);
 		}
 	}
 	
@@ -649,18 +649,12 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 			return null;
 		}
 		
-		QuestState st = player.getQuestState(getName());
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
-		
-		int cond = st.getInt("cond");
+		final QuestState st = getQuestState(player, true);
 		if (event.equalsIgnoreCase("CastleWarden-05.htm"))
 		{
-			if (cond == 0)
+			if (st.getCond() == 0)
 			{
-				st.set("cond", "1");
+				st.setCond(1);
 				st.setState(State.STARTED);
 				st.playSound("ItemSound.quest_accept");
 			}
@@ -728,11 +722,11 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 			int cond = 0;
 			if (st.getState() == State.CREATED)
 			{
-				st.set("cond", "0");
+				st.setCond(0);
 			}
 			else
 			{
-				cond = st.getInt("cond");
+				cond = st.getCond();
 			}
 			if (_castleDungeons.containsKey(npcId) && (cond == 0))
 			{
