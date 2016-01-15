@@ -188,7 +188,14 @@ public class Q00553_OlympiadUndefeated extends Quest
 			}
 			else
 			{
-				htmltext = "31688-w" + count + ".html";
+				if (count > 2)
+				{
+					htmltext = "31688-w" + 2 + ".html";
+				}
+				else
+				{
+					htmltext = "31688-w" + count + ".html";
+				}
 			}
 		}
 		return htmltext;

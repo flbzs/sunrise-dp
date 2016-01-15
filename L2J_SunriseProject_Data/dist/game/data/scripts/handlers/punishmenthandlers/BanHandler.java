@@ -35,55 +35,62 @@ public class BanHandler implements IPunishmentHandler
 	@Override
 	public void onStart(PunishmentTask task)
 	{
-		switch (task.getAffect())
+		try
 		{
-			case CHARACTER:
+			switch (task.getAffect())
 			{
-				int objectId = Integer.parseInt(String.valueOf(task.getKey()));
-				final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
-				if (player != null)
+				case CHARACTER:
 				{
-					applyToPlayer(player);
-				}
-				break;
-			}
-			case ACCOUNT:
-			{
-				String account = String.valueOf(task.getKey());
-				final L2GameClient client = LoginServerThread.getInstance().getClient(account);
-				if (client != null)
-				{
-					final L2PcInstance player = client.getActiveChar();
+					int objectId = Integer.parseInt(String.valueOf(task.getKey()));
+					final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
 					if (player != null)
 					{
 						applyToPlayer(player);
 					}
-					else
-					{
-						client.closeNow();
-					}
+					break;
 				}
-				break;
-			}
-			case IP:
-			{
-				String ip = String.valueOf(task.getKey());
-				for (L2PcInstance player : L2World.getInstance().getPlayers())
+				case ACCOUNT:
 				{
-					if (player.getIPAddress().equals(ip))
+					String account = String.valueOf(task.getKey());
+					final L2GameClient client = LoginServerThread.getInstance().getClient(account);
+					if (client != null)
 					{
-						applyToPlayer(player);
+						final L2PcInstance player = client.getActiveChar();
+						if (player != null)
+						{
+							applyToPlayer(player);
+						}
+						else
+						{
+							client.closeNow();
+						}
 					}
+					break;
 				}
-				break;
+				case IP:
+				{
+					String ip = String.valueOf(task.getKey());
+					for (L2PcInstance player : L2World.getInstance().getPlayers())
+					{
+						if (player.getIPAddress().equals(ip))
+						{
+							applyToPlayer(player);
+						}
+					}
+					break;
+				}
 			}
+		}
+		catch (Exception e)
+		{
+		
 		}
 	}
 	
 	@Override
 	public void onEnd(PunishmentTask task)
 	{
-		
+	
 	}
 	
 	/**

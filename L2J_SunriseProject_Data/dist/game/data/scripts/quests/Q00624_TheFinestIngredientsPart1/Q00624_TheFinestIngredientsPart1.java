@@ -46,6 +46,7 @@ public final class Q00624_TheFinestIngredientsPart1 extends Quest
 	// Misc
 	private static final int MIN_LVL = 73;
 	private static final Map<Integer, Integer> MONSTER_DROPS = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROPS.put(21314, FOOT_OF_BANDERSNATCHLING); // Hot Springs Bandersnatchling
@@ -80,7 +81,7 @@ public final class Q00624_TheFinestIngredientsPart1 extends Quest
 				}
 				case "31521-05.html":
 				{
-					if (st.isCond(2) && (getQuestItemsCount(player, getRegisteredItemIds()) == 150))
+					if (st.isCond(2) && (getQuestItemsCount(player, getRegisteredItemIds()) >= 150))
 					{
 						st.giveItems(ICE_CRYSTAL, 1);
 						st.giveItems(SOY_SAUCE_JAR, 1);
@@ -113,7 +114,7 @@ public final class Q00624_TheFinestIngredientsPart1 extends Quest
 					giveItems(partyMember, item, 50 - count);
 					playSound(partyMember, QuestSound.ITEMSOUND_QUEST_FANFARE_MIDDLE);
 				}
-				if (getQuestItemsCount(partyMember, getRegisteredItemIds()) == 150)
+				if (getQuestItemsCount(partyMember, getRegisteredItemIds()) >= 150)
 				{
 					partyMember.getQuestState(getName()).setCond(2, true);
 				}
