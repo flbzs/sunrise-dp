@@ -298,7 +298,8 @@ public class OlympiadManagerLink implements IBypassHandler
 					html.setFile(activeChar.getHtmlPrefix(), Olympiad.OLYMPIAD_HTML_PATH + "olympiad_nobuffs.htm");
 					html.replace("%objectId%", String.valueOf(target.getObjectId()));
 					activeChar.sendPacket(html);
-					target.decayMe();
+					// Decay procedure handled from olympiad system when match starts
+					// target.decayMe();
 				}
 			}
 			else if (command.toLowerCase().startsWith("olympiad"))

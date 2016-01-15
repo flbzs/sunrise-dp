@@ -1113,7 +1113,6 @@ public final class Q00234_FatesWhisper extends Quest
 					break;
 				}
 			}
-			
 		}
 		return super.onKill(npc, killer, isSummon);
 	}
