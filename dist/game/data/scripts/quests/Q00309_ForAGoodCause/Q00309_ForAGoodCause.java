@@ -209,7 +209,7 @@ public class Q00309_ForAGoodCause extends Quest
 		}
 		else
 		{
-			htmltext = "32647-15.htm";
+			htmltext = "32647-15.html";
 		}
 		return htmltext;
 	}

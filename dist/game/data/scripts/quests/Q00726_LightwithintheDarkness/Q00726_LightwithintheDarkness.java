@@ -355,7 +355,7 @@ public class Q00726_LightwithintheDarkness extends Quest
 		}
 		if ((player.getClan() == null) || (player.getClan().getFortId() != fort.getResidenceId()))
 		{
-			return "FortressWarden-01.htm";
+			return "FortWarden-01.htm";
 		}
 		else if (fort.getFortState() == 0)
 		{

@@ -26,6 +26,7 @@ import l2r.gameserver.model.punishment.PunishmentTask;
 import l2r.gameserver.model.punishment.PunishmentType;
 import l2r.gameserver.network.L2GameClient;
 import l2r.gameserver.network.serverpackets.EtcStatusUpdate;
+import l2r.gameserver.util.Util;
 
 /**
  * This class handles chat ban punishment.
@@ -40,8 +41,13 @@ public class ChatBanHandler implements IPunishmentHandler
 		{
 			case CHARACTER:
 			{
-				int objectId = Integer.parseInt(String.valueOf(task.getKey()));
-				final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+				String value = String.valueOf(task.getKey());
+				if (!Util.isDigit(value))
+				{
+					return;
+				}
+				
+				final L2PcInstance player = L2World.getInstance().getPlayer(Integer.parseInt(value));
 				if (player != null)
 				{
 					applyToPlayer(task, player);
