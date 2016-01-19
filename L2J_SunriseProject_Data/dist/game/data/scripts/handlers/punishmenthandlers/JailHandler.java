@@ -36,6 +36,7 @@ import l2r.gameserver.model.punishment.PunishmentType;
 import l2r.gameserver.model.zone.type.L2JailZone;
 import l2r.gameserver.network.L2GameClient;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2r.gameserver.util.Util;
 
 /**
  * This class handles jail punishment.
@@ -65,51 +66,49 @@ public class JailHandler implements IPunishmentHandler
 	@Override
 	public void onStart(PunishmentTask task)
 	{
-		try
+		switch (task.getAffect())
 		{
-			switch (task.getAffect())
+			case CHARACTER:
 			{
-				case CHARACTER:
+				String value = String.valueOf(task.getKey());
+				if (!Util.isDigit(value))
 				{
-					int objectId = Integer.parseInt(String.valueOf(task.getKey()));
-					final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
+					return;
+				}
+				
+				final L2PcInstance player = L2World.getInstance().getPlayer(Integer.parseInt(value));
+				if (player != null)
+				{
+					applyToPlayer(task, player);
+				}
+				break;
+			}
+			case ACCOUNT:
+			{
+				String account = String.valueOf(task.getKey());
+				final L2GameClient client = LoginServerThread.getInstance().getClient(account);
+				if (client != null)
+				{
+					final L2PcInstance player = client.getActiveChar();
 					if (player != null)
 					{
 						applyToPlayer(task, player);
 					}
-					break;
 				}
-				case ACCOUNT:
-				{
-					String account = String.valueOf(task.getKey());
-					final L2GameClient client = LoginServerThread.getInstance().getClient(account);
-					if (client != null)
-					{
-						final L2PcInstance player = client.getActiveChar();
-						if (player != null)
-						{
-							applyToPlayer(task, player);
-						}
-					}
-					break;
-				}
-				case IP:
-				{
-					String ip = String.valueOf(task.getKey());
-					for (L2PcInstance player : L2World.getInstance().getPlayers())
-					{
-						if (player.getIPAddress().equals(ip))
-						{
-							applyToPlayer(task, player);
-						}
-					}
-					break;
-				}
+				break;
 			}
-		}
-		catch (Exception e)
-		{
-		
+			case IP:
+			{
+				String ip = String.valueOf(task.getKey());
+				for (L2PcInstance player : L2World.getInstance().getPlayers())
+				{
+					if (player.getIPAddress().equals(ip))
+					{
+						applyToPlayer(task, player);
+					}
+				}
+				break;
+			}
 		}
 	}
 	

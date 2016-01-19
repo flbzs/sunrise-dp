@@ -72,6 +72,9 @@ public class FrontArea implements ITargetTypeHandler
 			origin = activeChar;
 		}
 		
+		// vGodFather Small trick just in case we miss actor face the target
+		activeChar.setHeading(Util.calculateHeadingFrom(activeChar, target));
+		
 		final Collection<L2Character> objs = activeChar.getKnownList().getKnownCharacters();
 		int maxTargets = skill.getAffectLimit();
 		for (L2Character obj : objs)
