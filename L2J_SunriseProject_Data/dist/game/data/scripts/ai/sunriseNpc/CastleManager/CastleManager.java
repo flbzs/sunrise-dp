@@ -43,41 +43,10 @@ public final class CastleManager extends AbstractNpcAI
 			return "";
 		}
 		
-		int castleId = 0;
-		switch (event)
+		Castle castle = l2r.gameserver.instancemanager.CastleManager.getInstance().getCastleById(Integer.parseInt(event));
+		if (castle != null)
 		{
-			case "gludio":
-				castleId = 1;
-				break;
-			case "dion":
-				castleId = 2;
-				break;
-			case "giran":
-				castleId = 3;
-				break;
-			case "oren":
-				castleId = 4;
-				break;
-			case "aden":
-				castleId = 5;
-				break;
-			case "innadril":
-				castleId = 6;
-				break;
-			case "goddard":
-				castleId = 7;
-				break;
-			case "rune":
-				castleId = 8;
-				break;
-			case "schuttgart":
-				castleId = 9;
-				break;
-		}
-		
-		Castle castle = l2r.gameserver.instancemanager.CastleManager.getInstance().getCastleById(castleId);
-		if ((castle != null) && (castleId != 0))
-		{
+			sendMainHtmlWindow(player, npc);
 			player.sendPacket(new SiegeInfo(castle));
 		}
 		
