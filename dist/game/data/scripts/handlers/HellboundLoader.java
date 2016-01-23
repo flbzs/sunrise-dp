@@ -40,6 +40,7 @@ import hellbound.AI.Keltas;
 import hellbound.AI.NaiaLock;
 import hellbound.AI.OutpostCaptain;
 import hellbound.AI.Ranku;
+import hellbound.AI.RuinsGhosts;
 import hellbound.AI.Slaves;
 import hellbound.AI.Typhoon;
 import hellbound.AI.NPC.Bernarde.Bernarde;
@@ -90,6 +91,7 @@ public final class HellboundLoader
 		NaiaLock.class,
 		OutpostCaptain.class,
 		Ranku.class,
+		RuinsGhosts.class,
 		Slaves.class,
 		Typhoon.class,
 		// NPCs

@@ -39,7 +39,6 @@ import ai.group_template.PolymorphingOnAttack;
 import ai.group_template.PrisonGuards;
 import ai.group_template.RandomSpawn;
 import ai.group_template.RangeGuard;
-import ai.group_template.Remnants;
 import ai.group_template.Sandstorms;
 import ai.group_template.SilentValley;
 import ai.group_template.SummonPc;
@@ -88,7 +87,6 @@ public final class GroupTemplatesLoader
 		PrisonGuards.class,
 		RandomSpawn.class,
 		RangeGuard.class,
-		Remnants.class,
 		Sandstorms.class,
 		SilentValley.class,
 		SummonPc.class,

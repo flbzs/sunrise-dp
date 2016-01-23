@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -16,7 +16,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package ai.group_template;
+package hellbound.AI;
+
+import java.util.Arrays;
+import java.util.List;
 
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Npc;
@@ -26,28 +29,25 @@ import l2r.gameserver.model.skills.L2Skill;
 import ai.npc.AbstractNpcAI;
 
 /**
- * Remnants AI.
- * @author DS
+ * RuinsGhosts AI.
+ * @author vGodFather
  */
-public class Remnants extends AbstractNpcAI
+public class RuinsGhosts extends AbstractNpcAI
 {
-	private static final int[] NPCS =
-	{
-		18463,
-		18464,
-		18465
-	};
+	// NPCs
+	private static final List<Integer> NPCS = Arrays.asList(18463, 18464, 18465);
+	// Items
+	private static final int HOLY_WATER = 9673;
+	// Skills
 	private static final int SKILL_HOLY_WATER = 2358;
+	// Misc
+	private static final String MSG = "The holy water affects Remnants Ghost. You have freed his soul.";
 	
-	// TODO: Find retail strings.
-	// private static final String MSG = "The holy water affects Remnants Ghost. You have freed his soul.";
-	// private static final String MSG_DEREK = "The holy water affects Derek. You have freed his soul.";
-	public Remnants()
+	public RuinsGhosts()
 	{
-		super(Remnants.class.getSimpleName(), "ai/group_template");
+		super(RuinsGhosts.class.getSimpleName(), "ai/group_template");
 		addSpawnId(NPCS);
 		addSkillSeeId(NPCS);
-		// Do not override onKill for Derek here. Let's make global Hellbound manipulations in Engine where it is possible.
 	}
 	
 	@Override
@@ -60,27 +60,14 @@ public class Remnants extends AbstractNpcAI
 	@Override
 	public final String onSkillSee(L2Npc npc, L2PcInstance caster, L2Skill skill, L2Object[] targets, boolean isSummon)
 	{
-		if (skill.getId() == SKILL_HOLY_WATER)
+		if ((skill.getId() == SKILL_HOLY_WATER) && !npc.isDead() && (targets.length > 0) && (targets[0] == npc))
 		{
-			if (!npc.isDead())
+			if (npc.getCurrentHp() < (npc.getMaxHp() * 0.02)) // Lower, than 2%
 			{
-				if ((targets.length > 0) && (targets[0] == npc))
-				{
-					if (npc.getCurrentHp() < (npc.getMaxHp() * 0.02)) // Lower, than 2%
-					{
-						npc.doDie(caster);
-						//@formatter:off
-						/*if (npc.getId() == DEREK)
-						{
-							caster.sendMessage(MSG_DEREK);
-						}
-						else
-						{
-							caster.sendMessage(MSG);
-						}*/
-						//@formatter:on
-					}
-				}
+				takeItems(caster, HOLY_WATER, 1);
+				npc.setIsInvul(false);
+				npc.doDie(caster);
+				caster.sendMessage(MSG);
 			}
 		}
 		

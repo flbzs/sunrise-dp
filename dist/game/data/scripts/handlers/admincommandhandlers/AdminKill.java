@@ -67,7 +67,7 @@ public class AdminKill implements IAdminCommandHandler
 							int radius = Integer.parseInt(st.nextToken());
 							for (L2Character knownChar : plyr.getKnownList().getKnownCharactersInRadius(radius))
 							{
-								if ((knownChar instanceof L2ControllableMobInstance) || (knownChar == activeChar))
+								if ((knownChar instanceof L2ControllableMobInstance) || knownChar.isDoor() || (knownChar == activeChar))
 								{
 									continue;
 								}

@@ -218,11 +218,11 @@ public final class Kamaloka extends AbstractInstance
 			{ -12233, -174954, -10953 }
 		},
 		{
-			{  20409, -174827, -10912 }, {  20409, -174947, -10912 },
-			{  20494, -174887, -10912 }, {  20494, -174767, -10912 },
-			{  20614, -174887, -10912 }, {  20579, -174827, -10912 },
-			{  20579, -174947, -10912 }, {  20494, -175007, -10912 },
-			{  20374, -174887, -10912 }
+			{ 20409, -174827, -10912 }, {  20409, -174947, -10912 },
+			{ 20494, -174887, -10912 }, {  20494, -174767, -10912 },
+			{ 20614, -174887, -10912 }, {  20579, -174827, -10912 },
+			{ 20579, -174947, -10912 }, {  20494, -175007, -10912 },
+			{ 20374, -174887, -10912 }
 		}
 	};
 	
@@ -415,11 +415,9 @@ public final class Kamaloka extends AbstractInstance
 		super(Kamaloka.class.getSimpleName());
 		addFirstTalkId(TELEPORTER);
 		addTalkId(TELEPORTER);
-		for (int cap : CAPTAINS)
-		{
-			addStartNpc(cap);
-			addTalkId(cap);
-		}
+		addStartNpc(CAPTAINS);
+		addTalkId(CAPTAINS);
+		
 		for (int[] mob : FIRST_ROOM)
 		{
 			if (mob != null)
@@ -585,16 +583,7 @@ public final class Kamaloka extends AbstractInstance
 	 */
 	private final synchronized void enterInstance(L2PcInstance player, int index)
 	{
-		int templateId;
-		try
-		{
-			templateId = TEMPLATE_IDS[index];
-		}
-		catch (ArrayIndexOutOfBoundsException e)
-		{
-			throw e;
-		}
-		
+		int templateId = TEMPLATE_IDS[index];
 		// check for existing instances for this player
 		InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 		// player already in the instance
@@ -707,7 +696,6 @@ public final class Kamaloka extends AbstractInstance
 	 * Spawn all NPCs in kamaloka
 	 * @param world instanceWorld
 	 */
-	@SuppressWarnings("all")
 	private final void spawnKama(KamaWorld world)
 	{
 		int[] npcs;
@@ -720,7 +708,7 @@ public final class Kamaloka extends AbstractInstance
 		spawns = FIRST_ROOM_SPAWNS[index];
 		if (npcs != null)
 		{
-			world.firstRoom = new ArrayList<L2Spawn>(spawns.length - 1);
+			world.firstRoom = new ArrayList<>(spawns.length - 1);
 			int shaman = getRandom(spawns.length); // random position for shaman
 			
 			for (int i = 0; i < spawns.length; i++)
@@ -749,7 +737,7 @@ public final class Kamaloka extends AbstractInstance
 		spawns = SECOND_ROOM_SPAWNS[index];
 		if (npcs != null)
 		{
-			world.secondRoom = new ArrayList<Integer>(spawns.length);
+			world.secondRoom = new ArrayList<>(spawns.length);
 			
 			for (int[] spawn : spawns)
 			{
@@ -783,19 +771,7 @@ public final class Kamaloka extends AbstractInstance
 	@Override
 	public final String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		if (npc == null)
-		{
-			return "";
-		}
-		
-		try
-		{
-			enterInstance(player, Integer.parseInt(event));
-		}
-		catch (Exception e)
-		{
-			_log.warn("", e);
-		}
+		enterInstance(player, Integer.parseInt(event));
 		return "";
 	}
 	
@@ -806,7 +782,6 @@ public final class Kamaloka extends AbstractInstance
 	public final String onTalk(L2Npc npc, L2PcInstance player)
 	{
 		final int npcId = npc.getId();
-		
 		if (npcId == TELEPORTER)
 		{
 			final L2Party party = player.getParty();

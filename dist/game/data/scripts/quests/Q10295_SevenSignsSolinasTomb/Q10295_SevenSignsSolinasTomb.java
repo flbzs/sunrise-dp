@@ -6,6 +6,7 @@ import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
+import l2r.gameserver.model.quest.State;
 import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2r.gameserver.network.serverpackets.OnEventTrigger;
 import l2r.util.Rnd;
@@ -86,10 +87,6 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, final L2PcInstance player)
 	{
-		if ((npc == null) || (player == null))
-		{
-			return null;
-		}
 		QuestState st = player.getQuestState(getName());
 		String htmltext = event;
 		int progress = st.getInt("progress");
@@ -127,12 +124,12 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 				moving.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, st.getPlayer());
 				return null;
 			}
-			if (event.equalsIgnoreCase("teleport_out"))
+			else if (event.equalsIgnoreCase("teleport_out"))
 			{
 				player.teleToLocation(120664, -86968, -3392);
 				return null;
 			}
-			if (event.equalsIgnoreCase("use_staff"))
+			else if (event.equalsIgnoreCase("use_staff"))
 			{
 				if (st.getQuestItemsCount(StaffofBlessing) > 0L)
 				{
@@ -331,7 +328,11 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 		}
 		if (npcId == ErisEvilThoughts)
 		{
-			if (cond == 0)
+			if (st.getState() == State.COMPLETED)
+			{
+				htmltext = "32792-02.html";
+			}
+			else if (cond == 0)
 			{
 				QuestState qs = player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName());
 				if ((player.getLevel() >= 81) && (qs != null) && (qs.isCompleted()))
@@ -462,11 +463,16 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		int npcId = npc.getId();
 		QuestState st = player.getQuestState(getName());
+		if (st == null)
+		{
+			return super.onKill(npc, player, isPet);
+		}
+		
 		int solina = st.getInt("solina");
 		int tomb = st.getInt("tomb");
 		
+		int npcId = npc.getId();
 		if ((SolinaGuardians[0] == npcId) || (SolinaGuardians[1] == npcId) || (SolinaGuardians[2] == npcId) || (SolinaGuardians[3] == npcId))
 		{
 			solina++;
