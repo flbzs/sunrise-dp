@@ -30,6 +30,7 @@ import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
+import l2r.gameserver.taskmanager.DecayTaskManager;
 
 /**
  * @version $Revision: 1.2 $ $Date: 2004/06/27 08:12:59 $
@@ -40,7 +41,8 @@ public class AdminTest implements IAdminCommandHandler
 	{
 		"admin_stats",
 		"admin_skill_test",
-		"admin_known"
+		"admin_known",
+		"admin_dkmanager"
 	};
 	
 	@Override
@@ -52,6 +54,10 @@ public class AdminTest implements IAdminCommandHandler
 			{
 				activeChar.sendMessage(line);
 			}
+		}
+		else if (command.startsWith("admin_dkmanager"))
+		{
+			activeChar.sendMessage("DecayTaksk: " + DecayTaskManager.getInstance().getTasks().size());
 		}
 		else if (command.startsWith("admin_skill_test"))
 		{

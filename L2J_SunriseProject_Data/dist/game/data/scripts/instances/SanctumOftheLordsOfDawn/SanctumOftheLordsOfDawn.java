@@ -249,10 +249,6 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 	{
 		npc.broadcastPacket(new MagicSkillUse(npc, player, GUARD_SKILL.getSkillId(), 1, 2000, 1));
 		startQuestTimer("teleportPlayer", 2000, npc, player);
-		if (npc.getSpawn() != null)
-		{
-			npc.teleToLocation(npc.getSpawn().getLocation());
-		}
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 }

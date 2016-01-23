@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-import l2r.Config;
 import l2r.gameserver.model.AbsorberInfo;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.L2Party;
@@ -39,7 +38,6 @@ import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.InventoryUpdate;
 import l2r.gameserver.network.serverpackets.SystemMessage;
-import l2r.gameserver.util.Util;
 import l2r.util.data.xml.IXmlReader.IXmlReader;
 
 import org.w3c.dom.Document;
@@ -421,17 +419,16 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 			}
 			
 			// Send system message
-			SystemMessage sms = SystemMessage.getSystemMessage(SystemMessageId.EARNED_ITEM_S1);
-			sms.addItemName(giveid);
-			if (player.isInParty())
+			SystemMessage sms = SystemMessage.getSystemMessage(SystemMessageId.EARNED_ITEM_S1).addItemName(giveid);
+			player.sendPacket(sms);
+			
+			final L2Party party = player.getParty();
+			if (party != null)
 			{
-				final L2Party party = player.getParty();
-				final List<L2PcInstance> groupMembers = party.isInCommandChannel() ? party.getCommandChannel().getMembers() : party.getMembers();
-				groupMembers.stream().filter(member -> Util.checkIfInRange(Config.ALT_PARTY_RANGE, player, member, true)).forEach(member -> member.sendPacket(sms));
-			}
-			else
-			{
-				player.sendPacket(sms);
+				SystemMessage partysms = SystemMessage.getSystemMessage(SystemMessageId.C1_OBTAINED_S2);
+				partysms.addString(player.getName());
+				partysms.addItemName(giveid);
+				party.broadcastToPartyMembers(player, partysms);
 			}
 			
 			// Send inventory update packet
@@ -555,6 +552,7 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 				}
 			}
 		}
+		
 		// Init some useful vars
 		LevelingInfo mainlvlInfo = NPC_LEVELING_INFO.get(mob.getId()).get(maxSCLevel);
 		if (mainlvlInfo == null)
