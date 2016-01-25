@@ -45,6 +45,9 @@ import l2r.gameserver.network.serverpackets.SpecialCamera;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 
+/**
+ * @author vGodFather TODO: confirm stage1 and stage2 drop chance
+ */
 public class PailakaInjuredDragon extends Quest
 {
 	private static final String qn = "Q00144_PailakaInjuredDragon";
@@ -58,7 +61,8 @@ public class PailakaInjuredDragon extends Quest
 	//@formatter:off
 	protected static final int[] TELEPORT =
 	{
-		125757, -40928, -3736 };
+		125757, -40928, -3736
+	};
 	
 	private static final Map<Integer, int[]> NOEXIT_ZONES = new ConcurrentHashMap<>();
 	static
@@ -543,7 +547,7 @@ public class PailakaInjuredDragon extends Quest
 		{
 			case VARKA_SILENOS_FOOTMAN:
 			case VARKA_SILENOS_RECRUIT:
-				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (getRandom(100) < 10))
+				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (getRandom(100) < 70))
 				{
 					st.set("cond", "4");
 					st.giveItems(STAGE1, 1);
@@ -553,7 +557,7 @@ public class PailakaInjuredDragon extends Quest
 				checkIfLastInWall(npc);
 				break;
 			case VARKA_SILENOS_WARRIOR:
-				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (getRandom(100) < 15))
+				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (getRandom(100) < 70))
 				{
 					st.set("cond", "4");
 					st.giveItems(STAGE1, 1);
@@ -563,7 +567,7 @@ public class PailakaInjuredDragon extends Quest
 				checkIfLastInWall(npc);
 				break;
 			case VARKA_ELITE_GUARD:
-				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (getRandom(100) < 20))
+				if ((cond == 3) && st.hasQuestItems(SPEAR) && !st.hasQuestItems(STAGE1) && (getRandom(100) < 70))
 				{
 					st.set("cond", "4");
 					st.giveItems(STAGE1, 1);
@@ -585,7 +589,7 @@ public class PailakaInjuredDragon extends Quest
 				break;
 			case VARKA_SILENOS_GREAT_MAGUS:
 			case VARKA_SILENOS_GENERAL:
-				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (getRandom(100) < 10))
+				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (getRandom(100) < 70))
 				{
 					st.set("cond", "6");
 					st.giveItems(STAGE2, 1);
@@ -595,7 +599,7 @@ public class PailakaInjuredDragon extends Quest
 				checkIfLastInWall(npc);
 				break;
 			case VARKAS_PROPHET:
-				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (getRandom(100) < 15))
+				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (getRandom(100) < 70))
 				{
 					st.set("cond", "6");
 					st.giveItems(STAGE2, 1);
@@ -605,7 +609,7 @@ public class PailakaInjuredDragon extends Quest
 				checkIfLastInWall(npc);
 				break;
 			case VARKA_SILENOS_HEAD_GUARD:
-				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (getRandom(100) < 20))
+				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (getRandom(100) < 70))
 				{
 					st.set("cond", "6");
 					st.giveItems(STAGE2, 1);
@@ -615,7 +619,7 @@ public class PailakaInjuredDragon extends Quest
 				checkIfLastInWall(npc);
 				break;
 			case PROPHET_GUARD:
-				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (getRandom(100) < 30))
+				if ((cond == 5) && st.hasQuestItems(ENCHSPEAR) && !st.hasQuestItems(STAGE2) && (getRandom(100) < 70))
 				{
 					st.set("cond", "6");
 					st.giveItems(STAGE2, 1);

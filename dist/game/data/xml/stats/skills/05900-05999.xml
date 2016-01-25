@@ -971,11 +971,11 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5978" levels="1" name="Death Strike">
-		<set name="hitTime" val="1000" />
+		<set name="hitTime" val="1500" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="castRange" val="500" />
+		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="5979" levels="1" name="Forced Move">
 		<set name="hitTime" val="2500" />

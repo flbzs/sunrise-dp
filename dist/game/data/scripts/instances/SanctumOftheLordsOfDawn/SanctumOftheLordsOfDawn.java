@@ -35,7 +35,6 @@ import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
-import l2r.gameserver.network.serverpackets.MagicSkillUse;
 
 import instances.AbstractInstance;
 import quests.Q00195_SevenSignsSecretRitualOfThePriests.Q00195_SevenSignsSecretRitualOfThePriests;
@@ -142,6 +141,12 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 						}
 					}
 				}
+				
+				// vGodFather addon
+				if (npc.getSpawn() != null)
+				{
+					npc.teleToLocation(npc.getSpawn().getLocation());
+				}
 			}
 		}
 		return super.onAdvEvent(event, npc, player);
@@ -247,8 +252,9 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 	@Override
 	public String onAggroRangeEnter(L2Npc npc, L2PcInstance player, boolean isSummon)
 	{
-		npc.broadcastPacket(new MagicSkillUse(npc, player, GUARD_SKILL.getSkillId(), 1, 2000, 1));
-		startQuestTimer("teleportPlayer", 2000, npc, player);
+		npc.setTarget(player);
+		npc.doCast(GUARD_SKILL.getSkill());
+		startQuestTimer("teleportPlayer", 1500, npc, player);
 		return super.onAggroRangeEnter(npc, player, isSummon);
 	}
 }

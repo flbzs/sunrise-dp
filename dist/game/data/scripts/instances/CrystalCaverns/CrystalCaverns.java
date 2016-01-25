@@ -67,8 +67,7 @@ import quests.Q00131_BirdInACage.Q00131_BirdInACage;
 
 /**
  * Crystal Caverns instance zone.<br>
- * TODO: 1. Kechi's Henchmans spawn animation is missing.<br>
- * 2. NPC related Traps are not supported by core, so Darnels and Lahm door trap is not working.<br>
+ * TODO: 2. NPC related Traps are not supported by core, so Darnels and Lahm door trap is not working.<br>
  * 3. Need retail spawn for Coral Garden (EmeraldSteam/Square - done).<br>
  * 4. Baylor Raid is missing a lot of things This script takes the best elements of different versions and combines them into one script to get the most optimal and retail-like experience.<br>
  * Original sources: theone, L2JEmu, L2JOfficial, L2JFree Contributing authors: TGS, Lantoc, Janiii, Gigiikun, RosT Please maintain consistency between the Crystal Caverns scripts.
@@ -1173,15 +1172,15 @@ public final class CrystalCaverns extends AbstractInstance
 			else if (event.equalsIgnoreCase("spawnGuards"))
 			{
 				world.kechisHenchmanSpawn++;
-				world.guards.add(addSpawn(KECHIGUARD, 153622, 149699, -12131, 56890, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153609, 149622, -12131, 64023, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153606, 149428, -12131, 64541, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153601, 149534, -12131, 64901, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153620, 149354, -12131, 1164, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153637, 149776, -12131, 61733, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153638, 149292, -12131, 64071, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153647, 149857, -12131, 59402, false, 0, false, world.getInstanceId()));
-				world.guards.add(addSpawn(KECHIGUARD, 153661, 149227, -12131, 65275, false, 0, false, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIGUARD, 153622, 149699, -12131, 56890, false, 0, true, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIGUARD, 153609, 149622, -12131, 64023, false, 0, true, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIGUARD, 153606, 149428, -12131, 64541, false, 0, true, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIGUARD, 153601, 149534, -12131, 64901, false, 0, true, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIGUARD, 153620, 149354, -12131, 1164, false, 0, true, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIGUARD, 153637, 149776, -12131, 61733, false, 0, true, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIGUARD, 153638, 149292, -12131, 64071, false, 0, true, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIGUARD, 153647, 149857, -12131, 59402, false, 0, true, world.getInstanceId()));
+				world.guards.add(addSpawn(KECHIGUARD, 153661, 149227, -12131, 65275, false, 0, true, world.getInstanceId()));
 				if (world.kechisHenchmanSpawn <= 5)
 				{
 					startQuestTimer("spawnGuards", SPAWN[world.kechisHenchmanSpawn], npc, null);

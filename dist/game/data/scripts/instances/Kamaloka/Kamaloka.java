@@ -301,9 +301,9 @@ public final class Kamaloka extends AbstractInstance
 			{ -14410, -174904, -10690 }
 		},
 		{
-			{  18175, -174991, -10653 }, {  18070, -174890, -10655 },
-			{  18157, -174886, -10655 }, {  18249, -174885, -10653 },
-			{  18144, -174821, -10648 }
+			{ 18175, -174991, -10653 }, { 18070, -174890, -10655 },
+			{ 18157, -174886, -10655 }, { 18249, -174885, -10653 },
+			{ 18144, -174821, -10648 }
 		}
 	};
 	
@@ -460,6 +460,11 @@ public final class Kamaloka extends AbstractInstance
 	 */
 	private static final boolean checkPartyConditions(L2PcInstance player, int index)
 	{
+		if (player.isGM())
+		{
+			return true;
+		}
+		
 		final L2Party party = player.getParty();
 		// player must be in party
 		if (party == null)
@@ -642,13 +647,22 @@ public final class Kamaloka extends AbstractInstance
 		// spawn npcs
 		spawnKama((KamaWorld) world);
 		
-		// and finally teleport party into instance
-		final L2Party party = player.getParty();
-		for (L2PcInstance partyMember : party.getMembers())
+		if (player.isGM())
 		{
-			world.addAllowed(partyMember.getObjectId());
-			removeBuffs(partyMember);
-			teleportPlayer(partyMember, TELEPORTS[index], instanceId);
+			world.addAllowed(player.getObjectId());
+			removeBuffs(player);
+			teleportPlayer(player, TELEPORTS[index], instanceId);
+		}
+		else
+		{
+			// and finally teleport party into instance
+			final L2Party party = player.getParty();
+			for (L2PcInstance partyMember : party.getMembers())
+			{
+				world.addAllowed(partyMember.getObjectId());
+				removeBuffs(partyMember);
+				teleportPlayer(partyMember, TELEPORTS[index], instanceId);
+			}
 		}
 		return;
 	}
@@ -824,6 +838,11 @@ public final class Kamaloka extends AbstractInstance
 	{
 		if (npc.getId() == TELEPORTER)
 		{
+			if (player.isGM())
+			{
+				return "32496.htm";
+			}
+			
 			if (player.isInParty() && player.getParty().isLeader(player))
 			{
 				return "32496.htm";
