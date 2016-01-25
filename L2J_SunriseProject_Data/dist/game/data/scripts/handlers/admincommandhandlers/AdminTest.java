@@ -84,13 +84,9 @@ public class AdminTest implements IAdminCommandHandler
 				activeChar.sendMessage("Command format is //skill_test <ID>");
 			}
 		}
-		else if (command.equals("admin_known on"))
+		else if (command.equals("admin_known"))
 		{
-			Config.CHECK_KNOWN = true;
-		}
-		else if (command.equals("admin_known off"))
-		{
-			Config.CHECK_KNOWN = false;
+			Config.CHECK_KNOWN = Config.CHECK_KNOWN ? false : true;
 		}
 		return true;
 	}

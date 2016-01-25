@@ -42,6 +42,8 @@ public class SeeThroughSilentMove extends AbstractNpcAI
 		25718,25719,25720,25721,25722,25723,25724,
 		//LoA RBs
 		25725,25726,25727,
+		// Sanctum of the lords of dawn
+		27351,
 		// Doorman Zombie, Penance Guard, Chapel Guard
 		18343, 22137, 22138,
 		//Beleth

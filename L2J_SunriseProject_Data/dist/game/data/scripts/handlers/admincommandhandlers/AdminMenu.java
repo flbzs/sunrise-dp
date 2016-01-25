@@ -170,18 +170,23 @@ public class AdminMenu implements IAdminCommandHandler
 			if (st.countTokens() > 1)
 			{
 				st.nextToken();
-				String player = st.nextToken();
-				L2PcInstance plyr = L2World.getInstance().getPlayer(player);
+				String plyr = st.nextToken();
+				L2PcInstance player = L2World.getInstance().getPlayer(plyr);
 				String text;
-				if (plyr != null)
+				if (player == null)
 				{
-					plyr.logout();
-					text = "You kicked " + plyr.getName() + " from the game.";
+					text = "Player " + plyr + " was not found in the game.";
+				}
+				else if (player.getObjectId() == activeChar.getObjectId())
+				{
+					text = "You cannot kick yourself.";
 				}
 				else
 				{
-					text = "Player " + player + " was not found in the game.";
+					player.logout();
+					text = "You kicked " + player.getName() + " from the game.";
 				}
+				
 				activeChar.sendMessage(text);
 			}
 			showMainPage(activeChar);

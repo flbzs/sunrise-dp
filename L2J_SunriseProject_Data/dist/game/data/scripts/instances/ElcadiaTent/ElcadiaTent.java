@@ -31,7 +31,7 @@ public final class ElcadiaTent extends AbstractInstance
 {
 	protected class ETWorld extends InstanceWorld
 	{
-		
+	
 	}
 	
 	// NPCs
@@ -62,10 +62,10 @@ public final class ElcadiaTent extends AbstractInstance
 			final QuestState PowerOfTheSeal = talker.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName());
 			
 			if (((GirlOfDoubt != null) && GirlOfDoubt.isStarted()) //
-				|| ((GirlOfDoubt != null) && GirlOfDoubt.isCompleted() && (ForbiddenBook == null)) //
-				|| ((ForbiddenBook != null) && ForbiddenBook.isStarted()) //
-				|| ((ForbiddenBook != null) && ForbiddenBook.isCompleted() && (Monastery == null)) //
-				|| ((PowerOfTheSeal != null) && (PowerOfTheSeal.getCond() == 3)))
+			|| ((GirlOfDoubt != null) && GirlOfDoubt.isCompleted() && (ForbiddenBook == null)) //
+			|| ((ForbiddenBook != null) && ForbiddenBook.isStarted()) //
+			|| ((ForbiddenBook != null) && ForbiddenBook.isCompleted() && (Monastery == null)) //
+			|| ((PowerOfTheSeal != null) && (PowerOfTheSeal.getCond() == 3)))
 			{
 				enterInstance(talker, new ETWorld(), "ElcadiasTent.xml", TEMPLATE_ID);
 			}
@@ -77,7 +77,10 @@ public final class ElcadiaTent extends AbstractInstance
 		else
 		{
 			final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(talker);
-			world.removeAllowed(talker.getObjectId());
+			if (world != null)
+			{
+				world.removeAllowed(talker.getObjectId());
+			}
 			talker.setInstanceId(0);
 			talker.teleToLocation(EXIT_LOC);
 		}

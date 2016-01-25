@@ -332,6 +332,7 @@ public class PcBangPoint extends AbstractNpcAI
 				player.setPcBangPoints(player.getPcBangPoints() - 2500);
 				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.USING_S1_PCPOINT).addInt(2500));
 				player.sendPacket(new ExPCCafePointInfo(player.getPcBangPoints(), 2500, false, false, 1));
+				player.dismount();
 				player.mount(12621, 0, true);
 				player.addSkill(CommonSkill.WYVERN_BREATH.getSkill());
 				return null;

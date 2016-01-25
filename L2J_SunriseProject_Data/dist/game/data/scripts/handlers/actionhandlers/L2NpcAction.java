@@ -97,6 +97,7 @@ public class L2NpcAction implements IActionHandler
 			}
 			else if (!npc.isAutoAttackable(activeChar))
 			{
+				// vGodFather addon
 				if (!GeoData.getInstance().canSeeTarget(activeChar, npc) && (Util.calculateDistance(activeChar, npc, true) >= 80))
 				{
 					final Location destination = GeoData.getInstance().moveCheck(activeChar, npc);

@@ -23,7 +23,6 @@ import org.slf4j.LoggerFactory;
 
 import ai.group_template.BeastFarm;
 import ai.group_template.DenOfEvil;
-import ai.group_template.FairyTrees;
 import ai.group_template.FeedableBeasts;
 import ai.group_template.FleeMonsters;
 import ai.group_template.FrozenLabyrinth;
@@ -71,7 +70,6 @@ public final class GroupTemplatesLoader
 	{
 		BeastFarm.class,
 		DenOfEvil.class,
-		FairyTrees.class,
 		FeedableBeasts.class,
 		FleeMonsters.class,
 		FrozenLabyrinth.class,

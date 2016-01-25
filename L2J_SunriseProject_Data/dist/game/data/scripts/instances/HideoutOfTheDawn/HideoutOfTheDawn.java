@@ -34,7 +34,7 @@ public final class HideoutOfTheDawn extends AbstractInstance
 {
 	protected class HotDWorld extends InstanceWorld
 	{
-		
+	
 	}
 	
 	// NPCs
@@ -66,7 +66,10 @@ public final class HideoutOfTheDawn extends AbstractInstance
 			case JAINA:
 			{
 				final InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(talker);
-				world.removeAllowed(talker.getObjectId());
+				if (world != null)
+				{
+					world.removeAllowed(talker.getObjectId());
+				}
 				talker.setInstanceId(0);
 				talker.teleToLocation(JAINA_LOC);
 				return "32617-01.htm";
