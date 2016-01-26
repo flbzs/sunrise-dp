@@ -18,7 +18,6 @@
  */
 package handlers.admincommandhandlers;
 
-import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
 import l2r.Config;
@@ -42,7 +41,8 @@ public class AdminTest implements IAdminCommandHandler
 		"admin_stats",
 		"admin_skill_test",
 		"admin_known",
-		"admin_dkmanager"
+		"admin_dkmanager",
+		"admin_movie"
 	};
 	
 	@Override
@@ -75,11 +75,7 @@ public class AdminTest implements IAdminCommandHandler
 					adminTestSkill(activeChar, id, false);
 				}
 			}
-			catch (NumberFormatException e)
-			{
-				activeChar.sendMessage("Command format is //skill_test <ID>");
-			}
-			catch (NoSuchElementException nsee)
+			catch (Exception e)
 			{
 				activeChar.sendMessage("Command format is //skill_test <ID>");
 			}
@@ -87,6 +83,20 @@ public class AdminTest implements IAdminCommandHandler
 		else if (command.equals("admin_known"))
 		{
 			Config.CHECK_KNOWN = Config.CHECK_KNOWN ? false : true;
+		}
+		else if (command.startsWith("admin_movie"))
+		{
+			try
+			{
+				StringTokenizer st = new StringTokenizer(command);
+				st.nextToken();
+				int id = Integer.parseInt(st.nextToken());
+				activeChar.showQuestMovie(id);
+			}
+			catch (Exception e)
+			{
+				activeChar.sendMessage("Command format is //skill_test <ID>");
+			}
 		}
 		return true;
 	}

@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
@@ -209,6 +210,12 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 					{
 						player.abortAttack();
 						player.abortCast();
+						player.disableAllSkills();
+						player.setTarget(null);
+						player.stopMove(null);
+						player.setIsImmobilized(true);
+						player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+						
 						player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ_SEALING_EMPEROR_2ND);
 						startQuestTimer("TELEPORT", 27000, null, player);
 					}
@@ -216,6 +223,8 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 				}
 				case "TELEPORT":
 				{
+					player.enableAllSkills();
+					player.setIsImmobilized(false);
 					player.teleToLocation(ENTER, 0);
 					break;
 				}
