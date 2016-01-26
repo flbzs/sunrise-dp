@@ -1194,8 +1194,10 @@
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
-		<set name="skillType" val="SOW" />
 		<set name="targetType" val="ONE" />
+		<for>
+			<effect name="Sow" noicon="1" val="0" />
+		</for>
 	</skill>
 	<skill id="2098" levels="1" name="Harvesting">
 		<!-- Confirmed CT2.5 -->

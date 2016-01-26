@@ -21,8 +21,10 @@ import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
+import l2r.gameserver.network.serverpackets.MagicSkillUse;
 import l2r.gameserver.network.serverpackets.NpcSay;
 import l2r.gameserver.network.serverpackets.SystemMessage;
+import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
 
 import ai.npc.AbstractNpcAI;
@@ -249,10 +251,111 @@ public class ToTheMonastery extends AbstractNpcAI
 					SpawnFourthGroup(world);
 					return null;
 				}
-				if (event.equalsIgnoreCase("check_player"))
+			}
+		}
+		
+		if (event.equalsIgnoreCase("check_player"))
+		{
+			cancelQuestTimer("check_player", npc, player);
+			
+			if (player.getCurrentHp() < (player.getMaxHp() * 0.8D))
+			{
+				L2Skill skill = SkillData.getInstance().getInfo(6724, 1);
+				npc.setTarget(player);
+				npc.doCast(skill);
+			}
+			
+			if (player.getCurrentMp() < (player.getMaxMp() * 0.5D))
+			{
+				L2Skill skill = SkillData.getInstance().getInfo(6728, 1);
+				npc.setTarget(player);
+				npc.doCast(skill);
+			}
+			
+			if (player.getCurrentHp() < (player.getMaxHp() * 0.1D))
+			{
+				L2Skill skill = SkillData.getInstance().getInfo(6730, 1);
+				npc.setTarget(player);
+				npc.doCast(skill);
+			}
+			
+			if (player.isInCombat())
+			{
+				L2Skill skill = SkillData.getInstance().getInfo(6725, 1);
+				npc.setTarget(player);
+				npc.doCast(skill);
+			}
+			return "";
+		}
+		
+		if (event.equalsIgnoreCase("check_voice"))
+		{
+			cancelQuestTimer("check_voice", npc, player);
+			
+			QuestState qs = player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName());
+			if ((qs != null) && (!qs.isCompleted()))
+			{
+				if (qs.getInt("cond") == 2)
 				{
-					cancelQuestTimer("check_player", npc, player);
-					
+					if (Rnd.chance(5))
+					{
+						if (Rnd.chance(10))
+						{
+							npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.IT_SEEMS_THAT_YOU_CANNOT_REMEMBER_TO_THE_ROOM_OF_THE_WATCHER_WHO_FOUND_THE_BOOK));
+						}
+						else
+						{
+							npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.REMEMBER_THE_CONTENT_OF_THE_BOOKS_THAT_YOU_FOUND_YOU_CANT_TAKE_THEM_OUT_WITH_YOU));
+						}
+					}
+				}
+				else if ((qs.getInt("cond") == 3) && (Rnd.chance(8)))
+				{
+					npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.YOUR_WORK_HERE_IS_DONE_SO_RETURN_TO_THE_CENTRAL_GUARDIAN));
+				}
+			}
+			QuestState qs2 = player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName());
+			if ((qs2 != null) && (!qs2.isCompleted()))
+			{
+				if (qs2.getInt("cond") == 1)
+				{
+					if (Rnd.chance(5))
+					{
+						if (Rnd.chance(10))
+						{
+							npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.TO_REMOVE_THE_BARRIER_YOU_MUST_FIND_THE_RELICS_THAT_FIT_THE_BARRIER_AND_ACTIVATE_THE_DEVICE));
+						}
+						else if (Rnd.chance(15))
+						{
+							npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.THE_GUARDIAN_OF_THE_SEAL_DOESNT_SEEM_TO_GET_INJURED_AT_ALL_UNTIL_THE_BARRIER_IS_DESTROYED));
+						}
+						else
+						{
+							npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.THE_DEVICE_LOCATED_IN_THE_ROOM_IN_FRONT_OF_THE_GUARDIAN_OF_THE_SEAL_IS_DEFINITELY_THE_BARRIER_THAT_CONTROLS_THE_GUARDIANS_POWER));
+						}
+					}
+				}
+			}
+			startQuestTimer("check_voice", 100000L, npc, player);
+			return "";
+		}
+		
+		if (event.equalsIgnoreCase("check_follow"))
+		{
+			cancelQuestTimer("check_follow", npc, player);
+			if (Util.checkIfInRange(300, npc, player, true))
+			{
+				npc.sendPacket(new MagicSkillUse(npc, npc, 2036, 1, 500, 0));
+				npc.teleToLocation(player.getLocation());
+			}
+			npc.setIsRunning(true);
+			npc.getAI().startFollow(player);
+			
+			QuestState qs3 = player.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName());
+			if ((qs3 != null) && (!qs3.isCompleted()))
+			{
+				if (player.isInCombat())
+				{
 					if (player.getCurrentHp() < (player.getMaxHp() * 0.8D))
 					{
 						L2Skill skill = SkillData.getInstance().getInfo(6724, 1);
@@ -274,108 +377,15 @@ public class ToTheMonastery extends AbstractNpcAI
 						npc.doCast(skill);
 					}
 					
-					if (player.isInCombat())
-					{
-						L2Skill skill = SkillData.getInstance().getInfo(6725, 1);
-						npc.setTarget(player);
-						npc.doCast(skill);
-					}
-					return "";
-				}
-				if (event.equalsIgnoreCase("check_voice"))
-				{
-					cancelQuestTimer("check_voice", npc, player);
-					
-					QuestState qs = player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName());
-					if ((qs != null) && (!qs.isCompleted()))
-					{
-						if (qs.getInt("cond") == 2)
-						{
-							if (Rnd.chance(5))
-							{
-								if (Rnd.chance(10))
-								{
-									npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.IT_SEEMS_THAT_YOU_CANNOT_REMEMBER_TO_THE_ROOM_OF_THE_WATCHER_WHO_FOUND_THE_BOOK));
-								}
-								else
-								{
-									npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.REMEMBER_THE_CONTENT_OF_THE_BOOKS_THAT_YOU_FOUND_YOU_CANT_TAKE_THEM_OUT_WITH_YOU));
-								}
-							}
-						}
-						else if ((qs.getInt("cond") == 3) && (Rnd.chance(8)))
-						{
-							npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.YOUR_WORK_HERE_IS_DONE_SO_RETURN_TO_THE_CENTRAL_GUARDIAN));
-						}
-					}
-					QuestState qs2 = player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName());
-					if ((qs2 != null) && (!qs2.isCompleted()))
-					{
-						if (qs2.getInt("cond") == 1)
-						{
-							if (Rnd.chance(5))
-							{
-								if (Rnd.chance(10))
-								{
-									npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.TO_REMOVE_THE_BARRIER_YOU_MUST_FIND_THE_RELICS_THAT_FIT_THE_BARRIER_AND_ACTIVATE_THE_DEVICE));
-								}
-								else if (Rnd.chance(15))
-								{
-									npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.THE_GUARDIAN_OF_THE_SEAL_DOESNT_SEEM_TO_GET_INJURED_AT_ALL_UNTIL_THE_BARRIER_IS_DESTROYED));
-								}
-								else
-								{
-									npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NpcStringId.THE_DEVICE_LOCATED_IN_THE_ROOM_IN_FRONT_OF_THE_GUARDIAN_OF_THE_SEAL_IS_DEFINITELY_THE_BARRIER_THAT_CONTROLS_THE_GUARDIANS_POWER));
-								}
-							}
-						}
-					}
-					startQuestTimer("check_voice", 100000L, npc, player);
-					return "";
-				}
-				if (event.equalsIgnoreCase("check_follow"))
-				{
-					cancelQuestTimer("check_follow", npc, player);
-					npc.getAI().stopFollow();
-					npc.setIsRunning(true);
-					npc.getAI().startFollow(player);
-					
-					QuestState qs3 = player.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName());
-					if ((qs3 != null) && (!qs3.isCompleted()))
-					{
-						if (player.isInCombat())
-						{
-							if (player.getCurrentHp() < (player.getMaxHp() * 0.8D))
-							{
-								L2Skill skill = SkillData.getInstance().getInfo(6724, 1);
-								npc.setTarget(player);
-								npc.doCast(skill);
-							}
-							
-							if (player.getCurrentMp() < (player.getMaxMp() * 0.5D))
-							{
-								L2Skill skill = SkillData.getInstance().getInfo(6728, 1);
-								npc.setTarget(player);
-								npc.doCast(skill);
-							}
-							
-							if (player.getCurrentHp() < (player.getMaxHp() * 0.1D))
-							{
-								L2Skill skill = SkillData.getInstance().getInfo(6730, 1);
-								npc.setTarget(player);
-								npc.doCast(skill);
-							}
-							
-							L2Skill skill = SkillData.getInstance().getInfo(6725, 1);
-							npc.setTarget(player);
-							npc.doCast(skill);
-						}
-					}
-					startQuestTimer("check_follow", 5000L, npc, player);
-					return "";
+					L2Skill skill = SkillData.getInstance().getInfo(6725, 1);
+					npc.setTarget(player);
+					npc.doCast(skill);
 				}
 			}
+			startQuestTimer("check_follow", 5000L, npc, player);
+			return "";
 		}
+		
 		return htmltext;
 	}
 	
@@ -392,32 +402,18 @@ public class ToTheMonastery extends AbstractNpcAI
 		int npcId = npc.getId();
 		if (npcId == GLOBE)
 		{
-			if ((player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName()) != null) && (player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName()).getState() == 1))
+			//@formatter:off
+			if (
+				   ((player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName()) != null) && (player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName()).getState() == 1))
+				|| ((player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName()) != null) && (player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName()).getState() == 2) && (player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName()) == null))
+				|| ((player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName()) != null) && (player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName()).getState() != 2))
+				|| ((player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName()) != null) && (player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName()).getState() == 2) && (player.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName()) == null))
+				|| ((player.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName()) != null) && (player.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName()).getState() != 2)))
 			{
 				enterInstance(npc, player);
 				return null;
 			}
-			if ((player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName()) != null) && (player.getQuestState(Q10294_SevenSignToTheMonastery.class.getSimpleName()).getState() == 2) && (player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName()) == null))
-			{
-				enterInstance(npc, player);
-				return null;
-			}
-			if ((player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName()) != null) && (player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName()).getState() != 2))
-			{
-				enterInstance(npc, player);
-				return null;
-			}
-			if ((player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName()) != null) && (player.getQuestState(Q10295_SevenSignsSolinasTomb.class.getSimpleName()).getState() == 2) && (player.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName()) == null))
-			{
-				enterInstance(npc, player);
-				return null;
-			}
-			if ((player.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName()) != null) && (player.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName()).getState() != 2))
-			{
-				enterInstance(npc, player);
-				return null;
-			}
-			
+			//@formatter:on
 			htmltext = "32815-00.htm";
 		}
 		
