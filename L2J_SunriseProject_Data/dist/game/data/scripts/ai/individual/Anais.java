@@ -94,7 +94,7 @@ public final class Anais extends AbstractNpcAI
 					_nextTarget = target;
 					if (_nextTarget == null)
 					{
-						_nextTarget = (L2PcInstance) npc.getTarget();
+						_nextTarget = npc.getTarget().getActingPlayer();
 					}
 					L2Npc b = _divineBurners.get(_pot);
 					_pot = _pot + 1;
