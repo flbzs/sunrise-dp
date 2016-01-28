@@ -530,10 +530,18 @@
 		</for>
 	</skill>
 	<skill id="21250" levels="1" name="Academy Circlet">
-		<!-- "Characters between levels 40 to 75, when worn this item decreases death EXP. Penalty by 50%." -->
+		<!-- High Five Skill -->
+		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond msgId="113" addName="1">
+			<player levelRange="1;75" />
+		</cond>
+		<for>
+			<mul stat="reduceExpLostByPvp" val="0.5" />
+			<mul stat="reduceExpLostByMob" val="0.5" />
+			<mul stat="reduceExpLostByRaid" val="0.5" />
+		</for>
 	</skill>
 	<skill id="21251" levels="1" name="Shiny Party Hat - Greater Body">
 		<!-- Increases Max HP by 35% for 20 minutes. -->

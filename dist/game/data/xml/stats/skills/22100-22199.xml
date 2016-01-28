@@ -548,6 +548,7 @@
 	</skill>
 	<skill id="22128" levels="3" name="Rudolph's Joy">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<table name="#abnormalLvls"> 1 2 3 </table>
 		<table name="#AtkSpd"> 1.1 1.15 1.2 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
@@ -1045,6 +1046,7 @@
 	</skill>
 	<skill id="22158" levels="10" name="Rose Petal">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<table name="#abnormalLvls"> 1 2 3 4 5 6 7 8 9 10 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="300" />
@@ -1066,6 +1068,7 @@
 	</skill>
 	<skill id="22159" levels="1" name="Vesper Super Power">
 		<!-- Increases P. Atk. by 15%, M. Atk. by 20% and Speed by 10 for 10 minutes. -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="br_event_buf1" />
@@ -1086,6 +1089,7 @@
 	</skill>
 	<skill id="22160" levels="1" name="Vesper Critical Power">
 		<!-- Increases Physical critical attack rate by 15, Magical critical attack rate by 2 and Speed by 10 for 10 minutes. 5% of the standard short-range physical damage inflicted on the enemy is recovered as HP. -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="br_event_buf1" />
@@ -1107,6 +1111,7 @@
 	</skill>
 	<skill id="22161" levels="1" name="Invincible Vesper">
 		<!-- Increases Atk. Spd. by 20%, Casting Spd. by 20% and Speed by 20 for 10 minutes. -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="br_event_buf1" />
@@ -1127,6 +1132,7 @@
 	</skill>
 	<skill id="22162" levels="1" name="Mt. Fuji Herb">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="vp_up" />
@@ -1146,6 +1152,7 @@
 	</skill>
 	<skill id="22163" levels="1" name="Hawk Herb">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="br_event_buf1" />
@@ -1167,6 +1174,7 @@
 	</skill>
 	<skill id="22164" levels="1" name="Eggplant Herb">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="br_event_buf1" />

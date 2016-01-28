@@ -1559,6 +1559,7 @@
 	</skill>
 	<skill id="2280" levels="1" name="Herb of Power">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="pa_up" />
@@ -1580,6 +1581,7 @@
 	</skill>
 	<skill id="2281" levels="1" name="Herb of Magic">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="ma_up" />
@@ -1601,6 +1603,7 @@
 	</skill>
 	<skill id="2282" levels="1" name="Herb of Atk. Spd.">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="attack_time_down" />
@@ -1622,6 +1625,7 @@
 	</skill>
 	<skill id="2283" levels="1" name="Herb of Casting Spd.">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="casting_time_down" />
@@ -1643,6 +1647,7 @@
 	</skill>
 	<skill id="2284" levels="1" name="Herb of Critical Attack">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="3" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="critical_prob_up" />
@@ -1664,6 +1669,7 @@
 	</skill>
 	<skill id="2285" levels="1" name="Herb of Speed">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="speed_up" />

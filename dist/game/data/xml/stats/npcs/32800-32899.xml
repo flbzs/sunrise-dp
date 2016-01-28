@@ -1458,8 +1458,8 @@
 		</stats>
 		<status showName="false" canBeSown="true" />
 		<collision>
-			<radius normal="120" />
-			<height normal="50" />
+			<radius normal="200" />
+			<height normal="100" />
 		</collision>
 	</npc>
 	<npc id="32872" level="80" type="L2Npc" name="Tightly Shut Door">

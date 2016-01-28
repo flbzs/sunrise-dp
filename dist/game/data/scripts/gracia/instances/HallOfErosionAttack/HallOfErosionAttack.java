@@ -953,18 +953,18 @@ public class HallOfErosionAttack extends AbstractNpcAI
 			InstanceManager.getInstance().addWorld(world);
 			_log.info("Hall Of Erosion Attack started " + template + " Instance: " + world.getInstanceId() + " created by player: " + player.getName());
 			
-			if ((player.getParty() == null) || (player.getParty().getCommandChannel() == null))
+			if (player.isInParty())
 			{
-				teleportPlayer(player, coords, world.getInstanceId());
-				world.addAllowed(player.getObjectId());
-			}
-			else
-			{
-				for (L2PcInstance partyMember : player.getParty().getCommandChannel().getMembers())
+				for (L2PcInstance partyMember : player.getParty().isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() : player.getParty().getMembers())
 				{
 					teleportPlayer(partyMember, coords, world.getInstanceId());
 					world.addAllowed(partyMember.getObjectId());
 				}
+			}
+			else
+			{
+				teleportPlayer(player, coords, world.getInstanceId());
+				world.addAllowed(player.getObjectId());
 			}
 			runTumors((HEWorld) world);
 		}

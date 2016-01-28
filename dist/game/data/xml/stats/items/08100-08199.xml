@@ -1700,6 +1700,7 @@
 		<set name="is_dropable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="equip_condition" val="{{ec_academy;1}}" />
+		<set name="item_skill" val="21250-1" />
 	</item>
 	<item id="8182" type="Armor" name="Circlet of Rune">
 		<set name="icon" val="icon.accessory_pledge_cap1_i01" />

@@ -992,19 +992,20 @@ public class HallOfErosionDefence extends AbstractNpcAI
 			InstanceManager.getInstance().addWorld(world);
 			_log.info("Hall Of Erosion Defence started " + template + " Instance: " + world.getInstanceId() + " created by player: " + player.getName());
 			
-			if ((player.getParty() == null) || (player.getParty().getCommandChannel() == null))
+			if (player.isInParty())
 			{
-				teleportPlayer(player, coords, world.getInstanceId());
-				world.addAllowed(player.getObjectId());
-			}
-			else
-			{
-				for (L2PcInstance partyMember : player.getParty().getCommandChannel().getMembers())
+				for (L2PcInstance partyMember : player.getParty().isInCommandChannel() ? player.getParty().getCommandChannel().getMembers() : player.getParty().getMembers())
 				{
 					teleportPlayer(partyMember, coords, world.getInstanceId());
 					world.addAllowed(partyMember.getObjectId());
 				}
 			}
+			else
+			{
+				teleportPlayer(player, coords, world.getInstanceId());
+				world.addAllowed(player.getObjectId());
+			}
+			
 			((HEDWorld) world).finishTask = ThreadPoolManager.getInstance().scheduleGeneral(new FinishTask((HEDWorld) world), 20 * 60000);
 			runTumors((HEDWorld) world);
 		}
@@ -1313,21 +1314,20 @@ public class HallOfErosionDefence extends AbstractNpcAI
 			world.finishTask = null;
 		}
 		broadCastPacket(world, new ExShowScreenMessage(NpcStringId.YOU_HAVE_FAILED_AT_S1_S2_THE_INSTANCE_WILL_SHORTLY_EXPIRE, 2, 8000));
+		
+		conquestEnded = true;
+		final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
+		if (inst != null)
 		{
-			conquestEnded = true;
-			final Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
-			if (inst != null)
+			inst.removeNpcs();
+			if (inst.getPlayers().isEmpty())
 			{
-				inst.removeNpcs();
-				if (inst.getPlayers().isEmpty())
-				{
-					inst.setDuration(5 * 60000);
-				}
-				else
-				{
-					inst.setDuration(5 * 60000);
-					inst.setEmptyDestroyTime(5 * 60000);
-				}
+				inst.setDuration(5 * 60000);
+			}
+			else
+			{
+				inst.setDuration(5 * 60000);
+				inst.setEmptyDestroyTime(5 * 60000);
 			}
 		}
 	}

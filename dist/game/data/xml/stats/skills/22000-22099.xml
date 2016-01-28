@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/skills.xsd">
 	<skill id="22000" levels="1" name="Spicy Kimchee">
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="br_event_buf1" />
@@ -13,6 +14,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22001" levels="1" name="Spicy Kimchee">
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="br_event_buf1" />
@@ -25,6 +27,7 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="22002" levels="1" name="Spicy Kimchee">
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="br_event_buf1" />
@@ -47,6 +50,7 @@
 	</skill>
 	<skill id="22004" levels="1" name="Energy Ginseng">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="300" />
 		<set name="abnormalType" val="br_event_buf2" />
@@ -534,6 +538,7 @@
 		</for>
 	</skill>
 	<skill id="22029" levels="1" name="Baguette Herb">
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="br_event_buf1" />
@@ -554,6 +559,7 @@
 		</for>
 	</skill>
 	<skill id="22030" levels="1" name="Cream Puff Herb">
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="br_event_buf1" />
@@ -574,6 +580,7 @@
 		</for>
 	</skill>
 	<skill id="22031" levels="1" name="Cheesecake Herb">
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="600" />
 		<set name="abnormalType" val="br_event_buf1" />
@@ -1564,6 +1571,7 @@
 	</skill>
 	<skill id="22097" levels="1" name="Girl's Gift of Gratitude">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="br_event_buf5" />
@@ -1593,6 +1601,7 @@
 	</skill>
 	<skill id="22098" levels="1" name="Boy's Gift of Gratitude">
 		<!-- Confirmed CT2.5 -->
+		<set name="abnormalInstant" val="true" />
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="br_event_buf5" />

@@ -27,7 +27,6 @@ import l2r.gameserver.model.quest.State;
 public final class Q00696_ConquertheHallofErosion extends Quest
 {
 	private static final int TEPIOS = 32603;
-	private static final int COHEMENES = 25634;
 	private static final int MARK_OF_KEUCEREUS_STAGE_1 = 13691;
 	private static final int MARK_OF_KEUCEREUS_STAGE_2 = 13692;
 	
@@ -36,7 +35,6 @@ public final class Q00696_ConquertheHallofErosion extends Quest
 		super(696, Q00696_ConquertheHallofErosion.class.getSimpleName(), "Conquer the Hall of Erosion");
 		addStartNpc(TEPIOS);
 		addTalkId(TEPIOS);
-		addKillId(COHEMENES);
 	}
 	
 	@Override
@@ -90,7 +88,7 @@ public final class Q00696_ConquertheHallofErosion extends Quest
 				}
 				break;
 			case State.STARTED:
-				if (st.getInt("cohemenesDone") != 0)
+				if (st.getInt("cohemenes") != 0)
 				{
 					if (st.getQuestItemsCount(MARK_OF_KEUCEREUS_STAGE_2) < 1)
 					{
@@ -108,43 +106,5 @@ public final class Q00696_ConquertheHallofErosion extends Quest
 				break;
 		}
 		return htmltext;
-	}
-	
-	@Override
-	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
-	{
-		L2PcInstance partyMember = getRandomPartyMember(player, 1);
-		
-		if (partyMember == null)
-		{
-			return super.onKill(npc, player, isSummon);
-		}
-		
-		QuestState st = partyMember.getQuestState(getName());
-		if (st == null)
-		{
-			return null;
-		}
-		
-		int cond = st.getInt("cond");
-		
-		if (cond == 1)
-		{
-			st.set("cohemenesDone", 1);
-		}
-		
-		if (player.getParty() != null)
-		{
-			QuestState st2;
-			for (L2PcInstance pmember : player.getParty().getMembers())
-			{
-				st2 = pmember.getQuestState(getName());
-				if ((st2 != null) && (cond == 1) && (pmember.getObjectId() != partyMember.getObjectId()))
-				{
-					st.set("cohemenesDone", 1);
-				}
-			}
-		}
-		return super.onKill(npc, player, isSummon);
 	}
 }

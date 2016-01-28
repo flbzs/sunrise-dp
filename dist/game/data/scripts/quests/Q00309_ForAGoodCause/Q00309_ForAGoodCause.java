@@ -205,7 +205,7 @@ public class Q00309_ForAGoodCause extends Quest
 				st.giveItems(item, 1);
 			}
 			st.playSound(QuestSound.ITEMSOUND_QUEST_FINISH);
-			htmltext = "32647-16.htm";
+			htmltext = "32647-16.html";
 		}
 		else
 		{
