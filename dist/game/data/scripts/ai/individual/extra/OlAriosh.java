@@ -36,7 +36,7 @@ public class OlAriosh extends AbstractNpcAI
 	
 	public OlAriosh()
 	{
-		super(OlAriosh.class.getSimpleName(), "ai");
+		super(OlAriosh.class.getSimpleName(), "ai/individual/extra");
 		
 		addAttackId(ARIOSH);
 		addKillId(ARIOSH);

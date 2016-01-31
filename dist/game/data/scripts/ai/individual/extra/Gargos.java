@@ -29,7 +29,7 @@ public class Gargos extends AbstractNpcAI
 	
 	public Gargos()
 	{
-		super(Gargos.class.getSimpleName(), "ai");
+		super(Gargos.class.getSimpleName(), "ai/individual/extra");
 		addAttackId(GARGOS);
 		addKillId(GARGOS);
 	}

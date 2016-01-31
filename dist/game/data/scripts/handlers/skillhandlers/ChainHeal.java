@@ -29,7 +29,6 @@ import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.L2SkillType;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.StatusUpdate;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.util.ValueSortMap;
 
@@ -76,9 +75,6 @@ public class ChainHeal implements ISkillHandler
 			if (amount != 0)
 			{
 				character.setCurrentHp(amount + character.getCurrentHp());
-				StatusUpdate su = new StatusUpdate(character);
-				su.addAttribute(StatusUpdate.CUR_HP, (int) character.getCurrentHp());
-				character.sendPacket(su);
 			}
 			SystemMessage sm;
 			if (activeChar != character)

@@ -25,7 +25,7 @@ public class FollowerOfMontagnar extends AbstractNpcAI
 	
 	public FollowerOfMontagnar()
 	{
-		super(FollowerOfMontagnar.class.getSimpleName(), "ai");
+		super(FollowerOfMontagnar.class.getSimpleName(), "ai/individual/extra");
 		addAggroRangeEnterId(FOFMONTAGNAR);
 	}
 	

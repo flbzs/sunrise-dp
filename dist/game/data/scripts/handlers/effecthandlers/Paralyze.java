@@ -42,12 +42,6 @@ public class Paralyze extends L2Effect
 	}
 	
 	@Override
-	public boolean canBeStolen()
-	{
-		return true;
-	}
-	
-	@Override
 	public int getEffectFlags()
 	{
 		return EffectFlag.PARALYZED.getMask();

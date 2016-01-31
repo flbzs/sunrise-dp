@@ -33,7 +33,7 @@ public class EtisEtina extends AbstractNpcAI
 	
 	public EtisEtina()
 	{
-		super(EtisEtina.class.getSimpleName(), "ai");
+		super(EtisEtina.class.getSimpleName(), "ai/individual/extra");
 		addAttackId(ETIS);
 		addKillId(ETIS);
 	}

@@ -29,7 +29,7 @@ public class WhiteAllosce extends AbstractNpcAI
 	
 	public WhiteAllosce()
 	{
-		super(WhiteAllosce.class.getSimpleName(), "ai");
+		super(WhiteAllosce.class.getSimpleName(), "ai/individual/extra");
 		addAttackId(ALLOSCE);
 		addKillId(ALLOSCE);
 	}

@@ -13,7 +13,7 @@ public class ValakasMinions extends AbstractNpcAI
 	
 	public ValakasMinions()
 	{
-		super(ValakasMinions.class.getSimpleName(), "ai");
+		super(ValakasMinions.class.getSimpleName(), "ai/individual/extra");
 		addKillId(Valakas);
 		addAttackId(Valakas);
 		addSpawnId(Valakas);

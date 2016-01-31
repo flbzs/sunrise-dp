@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import l2r.gameserver.instancemanager.InstanceManager;
+import l2r.gameserver.instancemanager.WalkingManager;
 import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
@@ -91,6 +92,7 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 		addStartNpc(LIGHT_OF_DAWN);
 		addTalkId(LIGHT_OF_DAWN, IDENTITY_CONFIRM_DEVICE, PASSWORD_ENTRY_DEVICE, DARKNESS_OF_DAWN, SHELF);
 		addAggroRangeEnterId(GUARDS_OF_THE_DAWN, GUARDS_OF_THE_DAWN_2, GUARDS_OF_THE_DAWN_3);
+		addSpawnId(GUARDS_OF_THE_DAWN, GUARDS_OF_THE_DAWN_2, GUARDS_OF_THE_DAWN_3);
 	}
 	
 	@Override
@@ -146,6 +148,10 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 				if (npc.getSpawn() != null)
 				{
 					npc.teleToLocation(npc.getSpawn().getLocation());
+					if (npc.isWalker())
+					{
+						WalkingManager.getInstance().resumeMoving(npc);
+					}
 				}
 			}
 		}
@@ -165,6 +171,16 @@ public final class SanctumOftheLordsOfDawn extends AbstractInstance
 			save_point.put(3, spawnGroup("save_point4", world.getInstanceId()));
 		}
 		teleportPlayer(player, ENTER, world.getInstanceId());
+	}
+	
+	@Override
+	public final String onSpawn(L2Npc npc)
+	{
+		if (npc.isWalker())
+		{
+			WalkingManager.getInstance().resumeMoving(npc);
+		}
+		return super.onSpawn(npc);
 	}
 	
 	@Override

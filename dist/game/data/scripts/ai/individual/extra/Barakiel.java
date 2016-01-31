@@ -14,7 +14,7 @@ public class Barakiel extends AbstractNpcAI
 	
 	public Barakiel()
 	{
-		super(Barakiel.class.getSimpleName(), "ai");
+		super(Barakiel.class.getSimpleName(), "ai/individual/extra");
 		registerMobs(BARAKIEL);
 	}
 	

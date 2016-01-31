@@ -15,7 +15,7 @@ public class Lematan extends AbstractNpcAI
 	
 	public Lematan()
 	{
-		super(Lematan.class.getSimpleName(), "ai");
+		super(Lematan.class.getSimpleName(), "ai/individual/extra");
 		status = 0;
 		int mob[] =
 		{

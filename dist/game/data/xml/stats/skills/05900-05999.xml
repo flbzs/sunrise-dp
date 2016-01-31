@@ -988,7 +988,7 @@
 		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="300" />
 		<set name="hitTime" val="2500" />
-		<set name="power" val="2273"/>
+		<set name="power" val="200"/>
 		<set name="mpConsume" val="50" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000"/>

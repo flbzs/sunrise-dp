@@ -29,7 +29,7 @@ public class HolyBrazier extends AbstractNpcAI
 	
 	public HolyBrazier()
 	{
-		super(HolyBrazier.class.getSimpleName(), "ai");
+		super(HolyBrazier.class.getSimpleName(), "ai/individual/extra");
 		int[] mobs =
 		{
 			HolyBrazier,

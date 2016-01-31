@@ -33,7 +33,7 @@ public class BladeOtis extends AbstractNpcAI
 	
 	public BladeOtis()
 	{
-		super(BladeOtis.class.getSimpleName(), "ai");
+		super(BladeOtis.class.getSimpleName(), "ai/individual/extra");
 		addAttackId(BLADEO);
 		addKillId(BLADEO);
 		addKillId(GUARD);

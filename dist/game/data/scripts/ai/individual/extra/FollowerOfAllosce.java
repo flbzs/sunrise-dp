@@ -26,7 +26,7 @@ public class FollowerOfAllosce extends AbstractNpcAI
 	
 	public FollowerOfAllosce()
 	{
-		super(FollowerOfAllosce.class.getSimpleName(), "ai");
+		super(FollowerOfAllosce.class.getSimpleName(), "ai/individual/extra");
 		addAggroRangeEnterId(FOFALLOSCE);
 	}
 	

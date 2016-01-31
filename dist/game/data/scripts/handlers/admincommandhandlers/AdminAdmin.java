@@ -24,12 +24,8 @@ import l2r.Config;
 import l2r.gameserver.data.xml.impl.AdminData;
 import l2r.gameserver.handler.IAdminCommandHandler;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.entity.olympiad.Olympiad;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * This class handles following admin commands: - admin|admin1/admin2/admin3/admin4/admin5 = slots for the 5 starting admin menus - gmliston/gmlistoff = includes/excludes active character from /gmlist results - silence = toggles private messages acceptance mode - diet = toggles weight penalty mode -
@@ -38,8 +34,6 @@ import org.slf4j.LoggerFactory;
  */
 public class AdminAdmin implements IAdminCommandHandler
 {
-	private static final Logger _log = LoggerFactory.getLogger(AdminAdmin.class);
-	
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_admin",
@@ -57,10 +51,6 @@ public class AdminAdmin implements IAdminCommandHandler
 		"admin_tradeoff",
 		"admin_set",
 		"admin_set_mod",
-		"admin_saveolymp",
-		"admin_manualhero",
-		"admin_sethero",
-		"admin_endolympiad",
 		"admin_setconfig",
 		"admin_config_server",
 		"admin_gmon"
@@ -102,35 +92,6 @@ public class AdminAdmin implements IAdminCommandHandler
 				activeChar.sendPacket(SystemMessageId.MESSAGE_REFUSAL_MODE);
 			}
 			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
-		}
-		else if (command.startsWith("admin_saveolymp"))
-		{
-			Olympiad.getInstance().saveOlympiadStatus();
-			activeChar.sendMessage("olympiad system saved.");
-		}
-		else if (command.startsWith("admin_endolympiad"))
-		{
-			try
-			{
-				Olympiad.getInstance().manualSelectHeroes();
-			}
-			catch (Exception e)
-			{
-				_log.warn("An error occured while ending olympiad: " + e);
-			}
-			activeChar.sendMessage("Heroes formed.");
-		}
-		else if (command.startsWith("admin_manualhero") || command.startsWith("admin_sethero"))
-		{
-			if (activeChar.getTarget() == null)
-			{
-				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
-				return false;
-			}
-			
-			final L2PcInstance target = activeChar.getTarget().isPlayer() ? activeChar.getTarget().getActingPlayer() : activeChar;
-			target.setHero(!target.isHero());
-			target.broadcastUserInfo();
 		}
 		else if (command.startsWith("admin_diet"))
 		{

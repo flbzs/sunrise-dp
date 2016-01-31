@@ -15,38 +15,19 @@ public class ElcardiaBuff implements IBypassHandler
 		"Request_Blessing"
 	};
 	
+	//@formatter:off
 	private final int[][] BUFFS =
 	{
-		{
-			6714,
-			6715,
-			6716,
-			6718,
-			6719,
-			6720,
-			6727,
-			6729
-		},
-		{
-			6714,
-			6717,
-			6720,
-			6721,
-			6722,
-			6723,
-			6727,
-			6729
-		}
+		// Fighter Buffs
+		{ 6714, 6715, 6716, 6718, 6719, 6720, 6727, 6729 },
+		// Mage Buffs
+		{ 6714, 6717, 6720, 6721, 6722, 6723, 6727, 6729 }
 	};
+	//@formatter:on
 	
 	@Override
 	public boolean useBypass(String command, L2PcInstance activeChar, L2Character target)
 	{
-		if (!target.isNpc())
-		{
-			return false;
-		}
-		
 		final L2Npc npc = (L2Npc) target;
 		final StringTokenizer st = new StringTokenizer(command);
 		try
@@ -57,13 +38,8 @@ public class ElcardiaBuff implements IBypassHandler
 			{
 				for (int skillId : BUFFS[activeChar.isMageClass() ? 1 : 0])
 				{
-					SkillHolder skill = new SkillHolder(skillId, 1);
-					
-					if (skill.getSkill() != null)
-					{
-						npc.setTarget(activeChar);
-						npc.doCast(skill.getSkill());
-					}
+					npc.setTarget(activeChar);
+					npc.doSimultaneousCast(new SkillHolder(skillId, 1).getSkill());
 				}
 				return true;
 			}
