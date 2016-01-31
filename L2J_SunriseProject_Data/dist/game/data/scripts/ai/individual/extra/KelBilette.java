@@ -31,7 +31,7 @@ public class KelBilette extends AbstractNpcAI
 	
 	public KelBilette()
 	{
-		super(KelBilette.class.getSimpleName(), "ai");
+		super(KelBilette.class.getSimpleName(), "ai/individual/extra");
 		addAttackId(KEL);
 		addKillId(GUARD);
 		addKillId(KEL);

@@ -3,14 +3,12 @@ package instances.ToTheMonastery;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.data.xml.impl.SkillData;
-import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.Location;
+import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -37,7 +35,6 @@ import quests.Q10296_SevenSignsPowerOfTheSeal.Q10296_SevenSignsPowerOfTheSeal;
  */
 public class ToTheMonastery extends AbstractNpcAI
 {
-	private final Map<Integer, InstanceHolder> instanceWorlds = new ConcurrentHashMap<>();
 	private static final int INSTANCE_ID = 151;
 	private boolean progress1 = false;
 	private boolean progress2 = false;
@@ -46,8 +43,8 @@ public class ToTheMonastery extends AbstractNpcAI
 	private boolean active = false;
 	
 	private static int GLOBE = 32815;
-	private static int ELCARDIA2 = 32787;
 	private static int EVIL = 32792;
+	private static int ELCADIA_SUPPORT = 32787;
 	private static int GUARDIAN = 32803;
 	private static int WEST_WATCHER = 32804;
 	private static int NORTH_WATCHER = 32805;
@@ -189,27 +186,27 @@ public class ToTheMonastery extends AbstractNpcAI
 			{
 				if (event.equalsIgnoreCase("Enter3"))
 				{
-					teleportPlayer(npc, player, TELEPORTS[2], player.getInstanceId());
+					teleportPlayer(player, TELEPORTS[2], player.getInstanceId());
 					ThreadPoolManager.getInstance().scheduleGeneral(() -> player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_HOLY_BURIAL_GROUND_OPENING), 1000);
 					return null;
 				}
-				if (event.equalsIgnoreCase("teleport_in"))
+				else if (event.equalsIgnoreCase("teleport_in"))
 				{
-					teleportPlayer(npc, player, TELEPORTS[9], player.getInstanceId());
+					teleportPlayer(player, TELEPORTS[9], player.getInstanceId());
 					return null;
 				}
-				if (event.equalsIgnoreCase("start_scene"))
+				else if (event.equalsIgnoreCase("start_scene"))
 				{
 					QuestState check = player.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName());
 					
 					check.set("cond", "2");
-					ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(npc, player, TELEPORTS[13], world.getInstanceId()), 60500L);
+					ThreadPoolManager.getInstance().scheduleGeneral(() -> teleportPlayer(player, TELEPORTS[13], world.getInstanceId()), 60500L);
 					player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_BOSS_OPENING);
 					return null;
 				}
-				if (event.equalsIgnoreCase("teleport_back"))
+				else if (event.equalsIgnoreCase("teleport_back"))
 				{
-					teleportPlayer(npc, player, TELEPORTS[14], player.getInstanceId());
+					teleportPlayer(player, TELEPORTS[14], player.getInstanceId());
 					return null;
 				}
 			}
@@ -217,7 +214,7 @@ public class ToTheMonastery extends AbstractNpcAI
 			{
 				if (event.equalsIgnoreCase("ReturnToEris"))
 				{
-					teleportPlayer(npc, player, TELEPORTS[3], player.getInstanceId());
+					teleportPlayer(player, TELEPORTS[3], player.getInstanceId());
 					return null;
 				}
 			}
@@ -225,7 +222,7 @@ public class ToTheMonastery extends AbstractNpcAI
 			{
 				if (event.equalsIgnoreCase("teleport_solina"))
 				{
-					teleportPlayer(npc, player, TELEPORTS[11], player.getInstanceId());
+					teleportPlayer(player, TELEPORTS[11], player.getInstanceId());
 					return null;
 				}
 			}
@@ -233,22 +230,22 @@ public class ToTheMonastery extends AbstractNpcAI
 			{
 				if (event.equalsIgnoreCase("FirstGroupSpawn"))
 				{
-					SpawnFirstGroup(world);
+					spawnFirstGroup(world);
 					return null;
 				}
 				if (event.equalsIgnoreCase("SecondGroupSpawn"))
 				{
-					SpawnSecondGroup(world);
+					spawnSecondGroup(world);
 					return null;
 				}
 				if (event.equalsIgnoreCase("ThirdGroupSpawn"))
 				{
-					SpawnThirdGroup(world);
+					spawnThirdGroup(world);
 					return null;
 				}
 				if (event.equalsIgnoreCase("FourthGroupSpawn"))
 				{
-					SpawnFourthGroup(world);
+					spawnFourthGroup(world);
 					return null;
 				}
 			}
@@ -343,11 +340,42 @@ public class ToTheMonastery extends AbstractNpcAI
 		if (event.equalsIgnoreCase("check_follow"))
 		{
 			cancelQuestTimer("check_follow", npc, player);
-			if (Util.checkIfInRange(300, npc, player, true))
+			boolean decayed = false;
+			if (!Util.checkIfInRange(300, npc, player, true))
 			{
-				npc.sendPacket(new MagicSkillUse(npc, npc, 2036, 1, 500, 0));
-				npc.teleToLocation(player.getLocation());
+				if ((tmpworld instanceof ToTheMonasteryWorld) && (player.getInstanceId() > 0))
+				{
+					npc.sendPacket(new MagicSkillUse(npc, npc, 2036, 1, 500, 0));
+					npc.teleToLocation(player.getLocation(), true);
+				}
+				else
+				{
+					cancelQuestTimer("check_player", npc, player);
+					cancelQuestTimer("check_voice", npc, player);
+					cancelQuestTimer("check_follow", npc, player);
+					decayed = true;
+					npc.decayMe();
+				}
 			}
+			
+			// vGodFather small trick-hack just in case of double elcadia npc
+			// safety precaution
+			if (player.getInstanceId() > 0)
+			{
+				List<L2Character> npcs = player.getKnownList().getKnownCharactersById(ELCADIA_SUPPORT);
+				if (npcs.size() > 1)
+				{
+					for (L2Character newNpc : npcs)
+					{
+						cancelQuestTimer("check_player", (L2Npc) newNpc, player);
+						cancelQuestTimer("check_voice", (L2Npc) newNpc, player);
+						cancelQuestTimer("check_follow", (L2Npc) newNpc, player);
+						newNpc.decayMe();
+						break;
+					}
+				}
+			}
+			
 			npc.setIsRunning(true);
 			npc.getAI().startFollow(player);
 			
@@ -382,7 +410,10 @@ public class ToTheMonastery extends AbstractNpcAI
 					npc.doCast(skill);
 				}
 			}
-			startQuestTimer("check_follow", 5000L, npc, player);
+			if (!decayed)
+			{
+				startQuestTimer("check_follow", 5000L, npc, player);
+			}
 			return "";
 		}
 		
@@ -424,56 +455,47 @@ public class ToTheMonastery extends AbstractNpcAI
 			
 			if (npcId == EVIL)
 			{
-				InstanceHolder holder = instanceWorlds.get(player.getInstanceId());
-				if (holder != null)
-				{
-					for (L2Npc h : holder.mobs)
-					{
-						h.deleteMe();
-					}
-					holder.mobs.clear();
-				}
-				teleportPlayer(npc, player, TELEPORTS[1], 0);
+				teleportPlayer(player, TELEPORTS[1], 0);
 				player.setInstanceId(0);
 				return null;
 			}
-			if (npcId == WEST_DEVICE)
+			else if (npcId == WEST_DEVICE)
 			{
-				teleportPlayer(npc, player, TELEPORTS[5], player.getInstanceId());
+				teleportPlayer(player, TELEPORTS[5], player.getInstanceId());
 				return null;
 			}
-			if (npcId == NORTH_DEVICE)
+			else if (npcId == NORTH_DEVICE)
 			{
-				teleportPlayer(npc, player, TELEPORTS[6], player.getInstanceId());
+				teleportPlayer(player, TELEPORTS[6], player.getInstanceId());
 				return null;
 			}
-			if (npcId == EAST_DEVICE)
+			else if (npcId == EAST_DEVICE)
 			{
-				teleportPlayer(npc, player, TELEPORTS[7], player.getInstanceId());
+				teleportPlayer(player, TELEPORTS[7], player.getInstanceId());
 				return null;
 			}
-			if (npcId == SOUTH_DEVICE)
+			else if (npcId == SOUTH_DEVICE)
 			{
-				teleportPlayer(npc, player, TELEPORTS[8], player.getInstanceId());
+				teleportPlayer(player, TELEPORTS[8], player.getInstanceId());
 				return null;
 			}
-			if ((npcId == WEST_WATCHER) || (npcId == NORTH_WATCHER) || (npcId == EAST_WATCHER) || (npcId == SOUTH_WATCHER))
+			else if ((npcId == WEST_WATCHER) || (npcId == NORTH_WATCHER) || (npcId == EAST_WATCHER) || (npcId == SOUTH_WATCHER))
 			{
-				teleportPlayer(npc, player, TELEPORTS[4], player.getInstanceId());
+				teleportPlayer(player, TELEPORTS[4], player.getInstanceId());
 				return null;
 			}
-			if ((npcId == SOLINA) || (npcId == TELEPORT_DEVICE) || (npcId == TELEPORT_DEVICE_2))
+			else if ((npcId == SOLINA) || (npcId == TELEPORT_DEVICE) || (npcId == TELEPORT_DEVICE_2))
 			{
-				teleportPlayer(npc, player, TELEPORTS[10], player.getInstanceId());
+				teleportPlayer(player, TELEPORTS[10], player.getInstanceId());
 				return null;
 			}
-			if (npcId == TELEPORT_DEVICE_3)
+			else if (npcId == TELEPORT_DEVICE_3)
 			{
-				teleportPlayer(npc, player, TELEPORTS[12], player.getInstanceId());
+				teleportPlayer(player, TELEPORTS[12], player.getInstanceId());
 				player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_ELYSS_NARRATION);
 				return null;
 			}
-			if (npcId == POWERFUL_DEVICE_1)
+			else if (npcId == POWERFUL_DEVICE_1)
 			{
 				if (st.getQuestItemsCount(STAFF_OF_BLESSING) > 0L)
 				{
@@ -484,7 +506,7 @@ public class ToTheMonastery extends AbstractNpcAI
 				
 				htmltext = "no-item.htm";
 			}
-			if (npcId == POWERFUL_DEVICE_2)
+			else if (npcId == POWERFUL_DEVICE_2)
 			{
 				if (st.getQuestItemsCount(SCROLL_OF_ABSTINENCE) > 0L)
 				{
@@ -495,7 +517,7 @@ public class ToTheMonastery extends AbstractNpcAI
 				
 				htmltext = "no-item.htm";
 			}
-			if (npcId == POWERFUL_DEVICE_3)
+			else if (npcId == POWERFUL_DEVICE_3)
 			{
 				if (st.getQuestItemsCount(SWORD_OF_HOLYSPIRIT) > 0L)
 				{
@@ -506,7 +528,7 @@ public class ToTheMonastery extends AbstractNpcAI
 				
 				htmltext = "no-item.htm";
 			}
-			if (npcId == POWERFUL_DEVICE_4)
+			else if (npcId == POWERFUL_DEVICE_4)
 			{
 				if (st.getQuestItemsCount(SHIELD_OF_SACRIFICE) > 0L)
 				{
@@ -517,7 +539,7 @@ public class ToTheMonastery extends AbstractNpcAI
 				
 				htmltext = "no-item.htm";
 			}
-			if (npcId == TOMB_OF_SAINTESS)
+			else if (npcId == TOMB_OF_SAINTESS)
 			{
 				if (active)
 				{
@@ -529,10 +551,10 @@ public class ToTheMonastery extends AbstractNpcAI
 					openDoor(21100102, world.getInstanceId());
 					openDoor(21100103, world.getInstanceId());
 					openDoor(21100104, world.getInstanceId());
-					SpawnFirstGroup(world);
-					SpawnSecondGroup(world);
-					SpawnThirdGroup(world);
-					SpawnFourthGroup(world);
+					spawnFirstGroup(world);
+					spawnSecondGroup(world);
+					spawnThirdGroup(world);
+					spawnFourthGroup(world);
 					active = true;
 					htmltext = "32843-02.htm";
 				}
@@ -633,7 +655,7 @@ public class ToTheMonastery extends AbstractNpcAI
 			}
 			if (npcId == ETISETINA)
 			{
-				ThreadPoolManager.getInstance().scheduleGeneral(new Teleport(npc, player, TELEPORTS[0], world.getInstanceId()), 60500L);
+				ThreadPoolManager.getInstance().scheduleGeneral(() -> teleportPlayer(player, TELEPORTS[0], world.getInstanceId()), 60500L);
 				return null;
 			}
 			
@@ -695,7 +717,7 @@ public class ToTheMonastery extends AbstractNpcAI
 			Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
 			if (inst != null)
 			{
-				teleportPlayer(npc, player, TELEPORTS[0], world.getInstanceId());
+				teleportPlayer(player, TELEPORTS[0], world.getInstanceId());
 			}
 			return;
 		}
@@ -710,7 +732,8 @@ public class ToTheMonastery extends AbstractNpcAI
 		InstanceManager.getInstance().addWorld(world);
 		((ToTheMonasteryWorld) world).storeTime[0] = System.currentTimeMillis();
 		world.addAllowed(player.getObjectId());
-		teleportPlayer(npc, player, TELEPORTS[0], instanceId);
+		teleportPlayer(player, TELEPORTS[0], instanceId);
+		spawnElcadia(player, ((ToTheMonasteryWorld) world));
 		
 		openDoor(21100001, world.getInstanceId());
 		openDoor(21100002, world.getInstanceId());
@@ -730,39 +753,15 @@ public class ToTheMonastery extends AbstractNpcAI
 		openDoor(21100016, world.getInstanceId());
 	}
 	
-	protected void teleportPlayer(L2Npc npc, L2PcInstance player, Location loc, int instanceId)
+	protected void spawnElcadia(L2PcInstance player, ToTheMonasteryWorld world)
 	{
-		InstanceHolder holder = instanceWorlds.get(instanceId);
-		if ((holder == null) && (instanceId > 0))
-		{
-			holder = new InstanceHolder();
-			instanceWorlds.put(instanceId, holder);
-		}
-		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		player.setInstanceId(instanceId);
-		player.teleToLocation(loc, false);
-		cancelQuestTimer("check_follow", npc, player);
-		cancelQuestTimer("check_player", npc, player);
-		cancelQuestTimer("check_voice", npc, player);
-		if (holder != null)
-		{
-			holder.mobs.forEach(tmp -> tmp.deleteMe());
-			holder.mobs.clear();
-		}
-		if (instanceId > 0)
-		{
-			L2Npc support = addSpawn(ELCARDIA2, player.getX(), player.getY(), player.getZ(), 0, false, 0L, false, player.getInstanceId());
-			if (holder != null)
-			{
-				holder.mobs.add(support);
-			}
-			startQuestTimer("check_follow", 3000L, support, player);
-			startQuestTimer("check_player", 3000L, support, player);
-			startQuestTimer("check_voice", 3000L, support, player);
-		}
+		L2Npc npc = addSpawn(ELCADIA_SUPPORT, player.getX(), player.getY(), player.getZ(), 0, false, 0, false, player.getInstanceId());
+		startQuestTimer("check_follow", 3000, npc, player);
+		startQuestTimer("check_player", 3000, npc, player);
+		startQuestTimer("check_voice", 3000, npc, player);
 	}
 	
-	protected void SpawnFirstGroup(ToTheMonasteryWorld world)
+	protected void spawnFirstGroup(ToTheMonasteryWorld world)
 	{
 		world.firstgroup = new ArrayList<>();
 		for (int[] spawn : minions_1)
@@ -772,7 +771,7 @@ public class ToTheMonastery extends AbstractNpcAI
 		}
 	}
 	
-	protected void SpawnSecondGroup(ToTheMonasteryWorld world)
+	protected void spawnSecondGroup(ToTheMonasteryWorld world)
 	{
 		world.secondgroup = new ArrayList<>();
 		for (int[] spawn : minions_2)
@@ -782,7 +781,7 @@ public class ToTheMonastery extends AbstractNpcAI
 		}
 	}
 	
-	protected void SpawnThirdGroup(ToTheMonasteryWorld world)
+	protected void spawnThirdGroup(ToTheMonasteryWorld world)
 	{
 		world.thirdgroup = new ArrayList<>();
 		for (int[] spawn : minions_3)
@@ -792,7 +791,7 @@ public class ToTheMonastery extends AbstractNpcAI
 		}
 	}
 	
-	protected void SpawnFourthGroup(ToTheMonasteryWorld world)
+	protected void spawnFourthGroup(ToTheMonasteryWorld world)
 	{
 		world.fourthgroup = new ArrayList<>();
 		for (int[] spawn : minions_4)
@@ -800,34 +799,6 @@ public class ToTheMonastery extends AbstractNpcAI
 			L2Npc spawnedMob = addSpawn(27404, spawn[0], spawn[1], spawn[2], spawn[3], false, 0L, false, world.getInstanceId());
 			world.fourthgroup.add(spawnedMob);
 		}
-	}
-	
-	private class Teleport implements Runnable
-	{
-		private final L2Npc _npc;
-		private final L2PcInstance _player;
-		private final int _instanceId;
-		private final Location _cords;
-		
-		public Teleport(L2Npc npc, L2PcInstance player, Location loc, int id)
-		{
-			_npc = npc;
-			_player = player;
-			_cords = loc;
-			_instanceId = id;
-		}
-		
-		@Override
-		public void run()
-		{
-			teleportPlayer(_npc, _player, _cords, _instanceId);
-			startQuestTimer("check_follow", 3000L, _npc, _player);
-		}
-	}
-	
-	protected static class InstanceHolder
-	{
-		List<L2Npc> mobs = new ArrayList<>();
 	}
 	
 	private class ToTheMonasteryWorld extends InstanceWorld

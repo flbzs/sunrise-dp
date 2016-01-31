@@ -31,7 +31,7 @@ public class SelfExplosiveKamikaze extends AbstractNpcAI
 	
 	public SelfExplosiveKamikaze()
 	{
-		super(SelfExplosiveKamikaze.class.getSimpleName(), "ai");
+		super(SelfExplosiveKamikaze.class.getSimpleName(), "ai/individual/extra");
 		
 		for (Integer integer : MONSTERS.keySet())
 		{

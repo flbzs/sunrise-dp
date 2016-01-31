@@ -43,6 +43,8 @@ public class NoRandomAnimation extends AbstractNpcAI
 		22548, 22549, 22550, 22551, 22552, 22593, 22596, 22597, 29162,
 		// Frintezza Mobs
 		18329, 18330, 18331, 18333, 18334, 18335, 18336, 18337, 18338,
+		// Secret ritual of the priests
+		18834,
 	};
 	// @formatter:on
 	

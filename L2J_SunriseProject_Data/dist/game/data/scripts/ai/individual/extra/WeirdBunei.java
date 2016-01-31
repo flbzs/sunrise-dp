@@ -29,7 +29,7 @@ public class WeirdBunei extends AbstractNpcAI
 	
 	public WeirdBunei()
 	{
-		super(WeirdBunei.class.getSimpleName(), "ai");
+		super(WeirdBunei.class.getSimpleName(), "ai/individual/extra");
 		addAttackId(WEIRD);
 		addKillId(WEIRD);
 	}

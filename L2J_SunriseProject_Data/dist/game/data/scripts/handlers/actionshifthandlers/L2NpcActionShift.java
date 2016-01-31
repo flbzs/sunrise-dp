@@ -157,6 +157,7 @@ public class L2NpcActionShift implements IActionShiftHandler
 				html.replace("%ai_type%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>AIType</font></td><td align=right width=170>" + String.valueOf(((L2Npc) target).getAiType()) + "</td></tr></table></td></tr>");
 				html.replace("%ai_clan%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>Clan & Range:</font></td><td align=right width=170>" + String.valueOf(((L2Npc) target).getTemplate().getAIDataStatic().getClan()) + " " + String.valueOf(((L2Npc) target).getTemplate().getAIDataStatic().getClanRange()) + "</td></tr></table></td></tr>");
 				html.replace("%ai_enemy_clan%", "<tr><td><table width=270 border=0 bgcolor=131210><tr><td width=100><font color=FFAA00>Enemy & Range:</font></td><td align=right width=170>" + String.valueOf(((L2Npc) target).getTemplate().getAIDataStatic().getEnemyClan()) + " " + String.valueOf(((L2Npc) target).getTemplate().getAIDataStatic().getEnemyRange()) + "</td></tr></table></td></tr>");
+				html.replace("%ai_can_random_walk%", "<tr><td><table width=270 border=0><tr><td width=100><font color=FFAA00>Random Walk:</font></td><td align=right width=170>" + !((L2Npc) target).isNoRndWalk() + "</td></tr></table></td></tr>");
 			}
 			else
 			{
@@ -165,6 +166,7 @@ public class L2NpcActionShift implements IActionShiftHandler
 				html.replace("%ai_type%", "");
 				html.replace("%ai_clan%", "");
 				html.replace("%ai_enemy_clan%", "");
+				html.replace("%ai_can_random_walk%", "");
 			}
 			
 			final String routeName = WalkingManager.getInstance().getRouteName((L2Npc) target);

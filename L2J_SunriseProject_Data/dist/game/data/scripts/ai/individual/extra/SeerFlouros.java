@@ -21,7 +21,7 @@ public class SeerFlouros extends AbstractNpcAI
 	
 	public SeerFlouros()
 	{
-		super(SeerFlouros.class.getSimpleName(), "ai");
+		super(SeerFlouros.class.getSimpleName(), "ai/individual/extra");
 		
 		registerMobs(new int[]
 		{

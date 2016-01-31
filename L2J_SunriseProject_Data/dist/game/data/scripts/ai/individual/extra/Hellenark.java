@@ -58,7 +58,7 @@ public class Hellenark extends AbstractNpcAI
 	
 	public Hellenark()
 	{
-		super(Hellenark.class.getSimpleName(), "ai");
+		super(Hellenark.class.getSimpleName(), "ai/individual/extra");
 		status = 0;
 		spawnnaia = new ArrayList<>();
 		addAttackId(Hellenark);

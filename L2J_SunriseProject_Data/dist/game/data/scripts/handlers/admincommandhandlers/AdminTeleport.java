@@ -41,6 +41,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.instance.L2RaidBossInstance;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2r.gameserver.util.Util;
 import l2r.util.StringUtil;
 
 import org.slf4j.Logger;
@@ -61,6 +62,7 @@ public class AdminTeleport implements IAdminCommandHandler
 		"admin_show_teleport",
 		"admin_teleport_to_character",
 		"admin_teleportto",
+		"admin_move_to_id",
 		"admin_move_to",
 		"admin_teleport_character",
 		"admin_recall",
@@ -95,10 +97,12 @@ public class AdminTeleport implements IAdminCommandHandler
 		if (command.equals("admin_teleto r"))
 		{
 			activeChar.setTeleMode(2);
+			AdminHtml.showAdminHtml(activeChar, "teleports.htm");
 		}
 		if (command.equals("admin_teleto end"))
 		{
 			activeChar.setTeleMode(0);
+			AdminHtml.showAdminHtml(activeChar, "teleports.htm");
 		}
 		if (command.equals("admin_show_moves"))
 		{
@@ -137,6 +141,28 @@ public class AdminTeleport implements IAdminCommandHandler
 				{
 					_log.info("admin_walk: " + e);
 				}
+			}
+		}
+		else if (command.startsWith("admin_move_to_id"))
+		{
+			String val = command.substring(17);
+			if (!Util.isDigit(val))
+			{
+				activeChar.sendMessage("Usage: //admin_move_to_id ID");
+				AdminHtml.showAdminHtml(activeChar, "teleports.htm");
+				return false;
+			}
+			
+			L2Object npc = getAliveNpc(Integer.parseInt(val));
+			if (npc != null)
+			{
+				activeChar.teleToLocation(npc.getLocation());
+			}
+			else
+			{
+				activeChar.sendMessage("Npc id does not exist or all instances are dead.");
+				AdminHtml.showAdminHtml(activeChar, "teleports.htm");
+				return false;
 			}
 		}
 		else if (command.startsWith("admin_move_to"))
@@ -618,4 +644,15 @@ public class AdminTeleport implements IAdminCommandHandler
 		}
 	}
 	
+	private L2Object getAliveNpc(int npcId)
+	{
+		for (L2Object npc : L2World.getInstance().getVisibleObjects())
+		{
+			if (npc.getId() == npcId)
+			{
+				return npc;
+			}
+		}
+		return null;
+	}
 }

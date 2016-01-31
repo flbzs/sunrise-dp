@@ -56,7 +56,7 @@ public final class LuckyPig extends AbstractNpcAI
 	private final float Lucky_Pig_Level_52_Spawn_Chance = 0.3f;
 	private final float Lucky_Pig_Level_70_Spawn_Chance = 0.3f;
 	private final float Lucky_Pig_Level_80_Spawn_Chance = 0.3f;
-	private final int despawnTime = 10; // in minutes
+	private final int despawnTime = 5; // in minutes
 	
 	//@formatter:off
 	// Monsters IDs
@@ -124,13 +124,13 @@ public final class LuckyPig extends AbstractNpcAI
 	
 	public LuckyPig()
 	{
-		super(LuckyPig.class.getSimpleName(), "ai/npc");
+		super(LuckyPig.class.getSimpleName(), "ai/group_template/extra");
 		addKillId(Wingless_Lucky_Pig);
 		addKillId(Golden_Wingless_Lucky_Pig);
 		addKillId(Lucky_Pig_Level_52);
 		addKillId(Lucky_Pig_Level_70);
 		addKillId(Lucky_Pig_Level_80);
-		addSpawnId(Lucky_Pig, Wingless_Lucky_Pig, Golden_Wingless_Lucky_Pig);
+		addSpawnId(Lucky_Pig);
 	}
 	
 	@Override
@@ -173,17 +173,17 @@ public final class LuckyPig extends AbstractNpcAI
 								
 								if (isLuckyPigLevel52)
 								{
-									addSpawn(Wingless_Lucky_Pig, npc.getLocation(), true, 5 * 60 * 1000, true);
+									addSpawn(Wingless_Lucky_Pig, npc.getLocation(), true, despawnTime * 60 * 1000, true);
 									isLuckyPigLevel52 = true;
 								}
 								else if (isLuckyPigLevel70)
 								{
-									addSpawn(Wingless_Lucky_Pig, npc.getLocation(), true, 5 * 60 * 1000, true);
+									addSpawn(Wingless_Lucky_Pig, npc.getLocation(), true, despawnTime * 60 * 1000, true);
 									isLuckyPigLevel70 = true;
 								}
 								else if (isLuckyPigLevel80)
 								{
-									addSpawn(Wingless_Lucky_Pig, npc.getLocation(), true, 5 * 60 * 1000, true);
+									addSpawn(Wingless_Lucky_Pig, npc.getLocation(), true, despawnTime * 60 * 1000, true);
 									isLuckyPigLevel80 = true;
 								}
 							}
@@ -193,17 +193,17 @@ public final class LuckyPig extends AbstractNpcAI
 								
 								if (isLuckyPigLevel52)
 								{
-									addSpawn(Golden_Wingless_Lucky_Pig, npc.getLocation(), true, 5 * 60 * 1000, true);
+									addSpawn(Golden_Wingless_Lucky_Pig, npc.getLocation(), true, despawnTime * 60 * 1000, true);
 									isLuckyPigLevel52 = true;
 								}
 								else if (isLuckyPigLevel70)
 								{
-									addSpawn(Golden_Wingless_Lucky_Pig, npc.getLocation(), true, 5 * 60 * 1000, true);
+									addSpawn(Golden_Wingless_Lucky_Pig, npc.getLocation(), true, despawnTime * 60 * 1000, true);
 									isLuckyPigLevel70 = true;
 								}
 								else if (isLuckyPigLevel80)
 								{
-									addSpawn(Golden_Wingless_Lucky_Pig, npc.getLocation(), true, 5 * 60 * 1000, true);
+									addSpawn(Golden_Wingless_Lucky_Pig, npc.getLocation(), true, despawnTime * 60 * 1000, true);
 									isLuckyPigLevel80 = true;
 								}
 							}
@@ -219,24 +219,6 @@ public final class LuckyPig extends AbstractNpcAI
 			npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), getRandomBoolean() ? "Yum-yum, yum-yum" : "I'm still hungry~"));
 			cancelQuestTimer("startTalking", npc, null);
 		}
-		else if (event.equals("despawnLuckyPig"))
-		{
-			if (npc.getId() == Lucky_Pig)
-			{
-				npc.deleteMe();
-			}
-			
-			cancelQuestTimer("despawnLuckyPig", npc, null);
-		}
-		else if (event.equals("despawnWinglessLuckyPig"))
-		{
-			if ((npc.getId() == Wingless_Lucky_Pig) || (npc.getId() == Golden_Wingless_Lucky_Pig))
-			{
-				npc.deleteMe();
-			}
-			
-			cancelQuestTimer("despawnWinglessLuckyPig", npc, null);
-		}
 		
 		return super.onAdvEvent(event, npc, player);
 	}
@@ -246,17 +228,17 @@ public final class LuckyPig extends AbstractNpcAI
 	{
 		if (Util.contains(Lucky_Pig_Level_52, npc.getId()) && (Rnd.get(1000) < (Lucky_Pig_Level_52_Spawn_Chance * 10)))
 		{
-			addSpawn(Lucky_Pig, npc.getX() + 50, npc.getY() + 50, npc.getZ(), npc.getHeading(), true, 10 * 60 * 1000, true);
+			addSpawn(Lucky_Pig, npc.getX() + 50, npc.getY() + 50, npc.getZ(), npc.getHeading(), true, despawnTime * 60 * 1000, true);
 			isLuckyPigLevel52 = true;
 		}
 		else if (Util.contains(Lucky_Pig_Level_70, npc.getId()) && (Rnd.get(1000) < (Lucky_Pig_Level_70_Spawn_Chance * 10)))
 		{
-			addSpawn(Lucky_Pig, npc.getX() + 50, npc.getY() + 50, npc.getZ(), npc.getHeading(), true, 10 * 60 * 1000, true);
+			addSpawn(Lucky_Pig, npc.getX() + 50, npc.getY() + 50, npc.getZ(), npc.getHeading(), true, despawnTime * 60 * 1000, true);
 			isLuckyPigLevel70 = true;
 		}
 		else if (Util.contains(Lucky_Pig_Level_80, npc.getId()) && (Rnd.get(1000) < (Lucky_Pig_Level_80_Spawn_Chance * 10)))
 		{
-			addSpawn(Lucky_Pig, npc.getX() + 50, npc.getY() + 50, npc.getZ(), npc.getHeading(), true, 10 * 60 * 1000, true);
+			addSpawn(Lucky_Pig, npc.getX() + 50, npc.getY() + 50, npc.getZ(), npc.getHeading(), true, despawnTime * 60 * 1000, true);
 			isLuckyPigLevel80 = true;
 		}
 		
@@ -320,19 +302,12 @@ public final class LuckyPig extends AbstractNpcAI
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		switch (npc.getId())
+		if (npc.getId() == Lucky_Pig)
 		{
-			case Lucky_Pig:
-				List<Long> _Adena = new ArrayList<>();
-				Adena.put(npc.getObjectId(), _Adena);
-				startQuestTimer("checkForAdena", 1000, npc, null, true);
-				npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), "Now it's time to eat~"));
-				startQuestTimer("despawnLuckyPig", despawnTime, npc, null);
-				break;
-			case Wingless_Lucky_Pig:
-			case Golden_Wingless_Lucky_Pig:
-				startQuestTimer("despawnWinglessLuckyPig", despawnTime, npc, null);
-				break;
+			List<Long> _Adena = new ArrayList<>();
+			Adena.put(npc.getObjectId(), _Adena);
+			startQuestTimer("checkForAdena", 1000, npc, null, true);
+			npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), "Now it's time to eat~"));
 		}
 		
 		return super.onSpawn(npc);

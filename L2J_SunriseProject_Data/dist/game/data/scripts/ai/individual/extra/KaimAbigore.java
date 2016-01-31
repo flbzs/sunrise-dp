@@ -32,7 +32,7 @@ public class KaimAbigore extends AbstractNpcAI
 	
 	public KaimAbigore()
 	{
-		super(KaimAbigore.class.getSimpleName(), "ai");
+		super(KaimAbigore.class.getSimpleName(), "ai/individual/extra");
 		addAttackId(KAIM);
 		addKillId(KAIM);
 		addKillId(GUARD);

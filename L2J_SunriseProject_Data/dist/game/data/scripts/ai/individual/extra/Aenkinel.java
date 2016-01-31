@@ -37,7 +37,7 @@ public class Aenkinel extends AbstractNpcAI
 	
 	public Aenkinel()
 	{
-		super(Aenkinel.class.getSimpleName(), "ai");
+		super(Aenkinel.class.getSimpleName(), "ai/individual/extra");
 		addStartNpc(GK1);
 		addKillId(AENKINEL1);
 		addStartNpc(GK2);

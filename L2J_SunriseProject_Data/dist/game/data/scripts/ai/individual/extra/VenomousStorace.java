@@ -30,7 +30,7 @@ public class VenomousStorace extends AbstractNpcAI
 	
 	public VenomousStorace()
 	{
-		super(VenomousStorace.class.getSimpleName(), "ai");
+		super(VenomousStorace.class.getSimpleName(), "ai/individual/extra");
 		addAttackId(VENOMOUS);
 		addKillId(GUARD);
 		addKillId(VENOMOUS);

@@ -15,7 +15,7 @@ public class Kechi extends AbstractNpcAI
 	
 	public Kechi()
 	{
-		super(Kechi.class.getSimpleName(), "ai");
+		super(Kechi.class.getSimpleName(), "ai/individual/extra");
 		addKillId(KECHI);
 		addAttackId(KECHI);
 		addSpawnId(KECHI);

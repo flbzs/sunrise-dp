@@ -74,7 +74,7 @@ public class SeerUgoros extends AbstractNpcAI
 	
 	public SeerUgoros()
 	{
-		super(SeerUgoros.class.getSimpleName(), "ai");
+		super(SeerUgoros.class.getSimpleName(), "ai/individual/extra");
 		
 		addStartNpc(_batracos);
 		addTalkId(_batracos);
