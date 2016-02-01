@@ -130,7 +130,7 @@ public final class LuckyPig extends AbstractNpcAI
 		addKillId(Lucky_Pig_Level_52);
 		addKillId(Lucky_Pig_Level_70);
 		addKillId(Lucky_Pig_Level_80);
-		addSpawnId(Lucky_Pig, Wingless_Lucky_Pig, Golden_Wingless_Lucky_Pig);
+		addSpawnId(Lucky_Pig);
 	}
 	
 	@Override
@@ -308,10 +308,6 @@ public final class LuckyPig extends AbstractNpcAI
 			Adena.put(npc.getObjectId(), _Adena);
 			startQuestTimer("checkForAdena", 1000, npc, null, true);
 			npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), "Now it's time to eat~"));
-		}
-		else if ((npc.getId() == Wingless_Lucky_Pig) || (npc.getId() == Golden_Wingless_Lucky_Pig))
-		{
-			npc.setIsInvul(false);
 		}
 		
 		return super.onSpawn(npc);
