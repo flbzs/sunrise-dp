@@ -767,7 +767,7 @@
 	</skill>
 	<skill id="9058" levels="1" name="Black Freezing Core">
 		<set name="affectLimit" val="99-99" /> <!-- FIXME: value unconfirmed -->
-		<set name="affectRange" val="2000" /> <!-- FIXME: value unconfirmed -->
+		<set name="affectRange" val="2000" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="15470" /> <!-- Black Frozen Core -->
 		<set name="magicLvl" val="1" />
@@ -791,18 +791,24 @@
 	</skill>
 	<skill id="9059" levels="1" name="Torch Light">
 		<!-- Lights the Torch -->
+		<set name="castRange" val="40" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="400" />
+		<set name="hitTime" val="2000" />
+		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="9060" levels="1" name="Maguen Machine">
 		<!-- Skill that allows you to collect Plasma -->
+		<set name="affectRange" val="200" />
+		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="9000" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="9061" levels="1" name="Uldie Summon Scroll">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
