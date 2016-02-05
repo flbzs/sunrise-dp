@@ -54,12 +54,13 @@ public class NoRandomWalkMobs extends AbstractNpcAI
 		// 8th Seven Sing Epic Quest
 		27424, 27422,
 		// Solina Tomb Epic Quest
-		18956,18957,18958,18959,27403,27404,
+		18952, 18953, 18954, 18955, 18956, 18957, 18958, 18959, 27403, 27404,
 		22860, // Hungry Parasitic Leech
 		18256, // Four Sepulchers - Halishas chest
-		18231,18232,18233,18234,18235,18236,18237,18238,18239,18240,18241,18242,18243, // Four Sepulchers - Statue of Protection
+		// Four Sepulchers - Statue of Protection
+		18231, 18232, 18233, 18234, 18235, 18236, 18237, 18238, 18239, 18240, 18241, 18242, 18243,
 		// Krateis Cube
-		18601,18602,
+		18601, 18602,
 		// Ekimus Feral Hound
 		29151,
 		// LOA MOBS

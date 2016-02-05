@@ -379,37 +379,34 @@ public class ToTheMonastery extends AbstractNpcAI
 			npc.setIsRunning(true);
 			npc.getAI().startFollow(player);
 			
-			QuestState qs3 = player.getQuestState(Q10296_SevenSignsPowerOfTheSeal.class.getSimpleName());
-			if ((qs3 != null) && (!qs3.isCompleted()))
+			if (player.isInCombat())
 			{
-				if (player.isInCombat())
+				if (player.getCurrentHp() < (player.getMaxHp() * 0.8D))
 				{
-					if (player.getCurrentHp() < (player.getMaxHp() * 0.8D))
-					{
-						L2Skill skill = SkillData.getInstance().getInfo(6724, 1);
-						npc.setTarget(player);
-						npc.doCast(skill);
-					}
-					
-					if (player.getCurrentMp() < (player.getMaxMp() * 0.5D))
-					{
-						L2Skill skill = SkillData.getInstance().getInfo(6728, 1);
-						npc.setTarget(player);
-						npc.doCast(skill);
-					}
-					
-					if (player.getCurrentHp() < (player.getMaxHp() * 0.1D))
-					{
-						L2Skill skill = SkillData.getInstance().getInfo(6730, 1);
-						npc.setTarget(player);
-						npc.doCast(skill);
-					}
-					
-					L2Skill skill = SkillData.getInstance().getInfo(6725, 1);
+					L2Skill skill = SkillData.getInstance().getInfo(6724, 1);
 					npc.setTarget(player);
-					npc.doCast(skill);
+					npc.doSimultaneousCast(skill);
 				}
+				
+				if (player.getCurrentMp() < (player.getMaxMp() * 0.5D))
+				{
+					L2Skill skill = SkillData.getInstance().getInfo(6728, 1);
+					npc.setTarget(player);
+					npc.doSimultaneousCast(skill);
+				}
+				
+				if (player.getCurrentHp() < (player.getMaxHp() * 0.1D))
+				{
+					L2Skill skill = SkillData.getInstance().getInfo(6730, 1);
+					npc.setTarget(player);
+					npc.doSimultaneousCast(skill);
+				}
+				
+				L2Skill skill = SkillData.getInstance().getInfo(6725, 1);
+				npc.setTarget(player);
+				npc.doSimultaneousCast(skill);
 			}
+			
 			if (!decayed)
 			{
 				startQuestTimer("check_follow", 5000L, npc, player);
@@ -718,6 +715,7 @@ public class ToTheMonastery extends AbstractNpcAI
 			if (inst != null)
 			{
 				teleportPlayer(player, TELEPORTS[0], world.getInstanceId());
+				spawnElcadia(player, ((ToTheMonasteryWorld) world));
 			}
 			return;
 		}

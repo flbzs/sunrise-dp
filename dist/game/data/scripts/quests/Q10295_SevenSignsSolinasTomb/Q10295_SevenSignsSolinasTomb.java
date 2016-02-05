@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import l2r.gameserver.ThreadPoolManager;
-import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -13,7 +12,6 @@ import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
 import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2r.gameserver.network.serverpackets.OnEventTrigger;
-import l2r.util.Rnd;
 
 import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
 
@@ -95,9 +93,6 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 			st.set("tomb", "0");
 			st.set("progress", "0");
 			st.set("spawned", "0");
-			st.set("elcadia", "0");
-			st.set("elcadia1", "0");
-			st.set("elcadia2", "0");
 			st.set("entermovie", "0");
 			st.setState((byte) 1);
 			st.playSound("ItemSound.quest_accept");
@@ -125,14 +120,6 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					st.set("entermovie", "1");
 				}
 				
-				if (st.getInt("elcadia") == 0)
-				{
-					L2Npc moving = addSpawn(ElcardiaInzone1, player.getX() + Rnd.get(100), player.getY() + Rnd.get(100), player.getZ(), 0, false, 0L, false, player.getInstanceId());
-					moving.setTarget(player);
-					moving.setRunning();
-					moving.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, st.getPlayer());
-					st.set("elcadia", "1");
-				}
 				return null;
 			}
 			else if (event.equalsIgnoreCase("teleport_out"))
@@ -255,7 +242,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					progress++;
 					st.set("progress", String.valueOf(progress));
 					st.playSound("ItemSound.quest_middle");
-					if (progress == 4)
+					if (progress >= 4)
 					{
 						openDoor(21100001, player.getInstanceId());
 						openDoor(21100010, player.getInstanceId());
@@ -280,14 +267,6 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 						openDoor(21100018, player.getInstanceId());
 					}
 					
-					if (st.getInt("elcadia1") == 0)
-					{
-						L2Npc moving = addSpawn(ElcardiaInzone1, player.getX() + Rnd.get(100), player.getY() + Rnd.get(100), player.getZ(), 0, false, 0L, false, player.getInstanceId());
-						moving.setTarget(player);
-						moving.setRunning();
-						moving.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, st.getPlayer());
-						st.set("elcadia1", "1");
-					}
 					return null;
 				}
 				if (event.equalsIgnoreCase("tombsaintess_q10295_2.htm"))
@@ -307,14 +286,6 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					if (event.equalsIgnoreCase("teleport_realtomb"))
 					{
 						player.teleToLocation(REAL_TOMB);
-						if (st.getInt("elcadia2") == 0)
-						{
-							L2Npc moving = addSpawn(ElcardiaInzone1, player.getX() + Rnd.get(100), player.getY() + Rnd.get(100), player.getZ(), 0, false, 0L, false, player.getInstanceId());
-							moving.setTarget(player);
-							moving.setRunning();
-							moving.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, st.getPlayer());
-							st.set("elcadia2", "1");
-						}
 						return null;
 					}
 					if (event.equalsIgnoreCase("solina_q10295_4.htm"))
@@ -391,9 +362,6 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					st.unset("solina");
 					st.unset("tomb");
 					st.unset("spawned");
-					st.unset("elcadia");
-					st.unset("elcadia1");
-					st.unset("elcadia2");
 					st.unset("entermovie");
 					st.exitQuest(false);
 					st.playSound("ItemSound.quest_finish");
@@ -501,16 +469,14 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 			return super.onKill(npc, player, isPet);
 		}
 		
-		int solina = st.getInt("solina");
-		int tomb = st.getInt("tomb");
-		
 		int npcId = npc.getId();
 		if (SolinaGuardians.contains(npcId))
 		{
+			int solina = st.getInt("solina");
 			solina++;
 			st.set("solina", String.valueOf(solina));
 			st.playSound("ItemSound.quest_middle");
-			if (solina == 4)
+			if (solina >= 4)
 			{
 				player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_SOLINA_TOMB_CLOSING);
 				player.broadcastPacket(new OnEventTrigger(21100100, false));
@@ -519,6 +485,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 		}
 		else if (TombGuardians.contains(npcId))
 		{
+			int tomb = st.getInt("tomb");
 			tomb++;
 			st.set("tomb", String.valueOf(tomb));
 			st.playSound("ItemSound.quest_middle");

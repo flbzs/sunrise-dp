@@ -45,6 +45,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	protected class DIWorld extends InstanceWorld
 	{
 		protected L2Attackable _lematanNpc = null;
+		protected L2Npc _adventurerNpc = null;
 		protected List<L2Attackable> _followerslist = new CopyOnWriteArrayList<>();
 	}
 	
@@ -274,7 +275,10 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 				}
 				world._followerslist.clear();
 			}
-			addSpawn(ADVENTURER2, ADVENTURER_LOC, false, 0, false, npc.getInstanceId());
+			if (world._adventurerNpc == null)
+			{
+				world._adventurerNpc = addSpawn(ADVENTURER2, ADVENTURER_LOC, false, 0, false, npc.getInstanceId());
+			}
 		}
 		return super.onKill(npc, player, isSummon);
 	}
