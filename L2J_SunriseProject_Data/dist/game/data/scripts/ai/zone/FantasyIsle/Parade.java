@@ -183,26 +183,33 @@ public class Parade extends AbstractNpcAI
 		@Override
 		public void run()
 		{
-			for (int i = 0; i < 3; ++i)
+			try
 			{
-				if ((npcIndex >= ACTORS.length) && (spawnTask != null))
+				for (int i = 0; i < 3; ++i)
 				{
-					spawnTask.cancel(false);
-					break;
+					if ((npcIndex >= ACTORS.length) && (spawnTask != null))
+					{
+						spawnTask.cancel(false);
+						break;
+					}
+					int npcId = ACTORS[npcIndex++];
+					if (npcId == 0)
+					{
+						continue;
+					}
+					for (int route = 0; route < 5; ++route)
+					{
+						int[] start = START[route][i];
+						int[] goal = GOAL[route][i];
+						L2Npc actor = addSpawn(npcId, start[0], start[1], start[2], start[3], false, 0);
+						actor.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(goal[0], goal[1], goal[2], goal[3]));
+						spawns.add(actor);
+					}
 				}
-				int npcId = ACTORS[npcIndex++];
-				if (npcId == 0)
-				{
-					continue;
-				}
-				for (int route = 0; route < 5; ++route)
-				{
-					int[] start = START[route][i];
-					int[] goal = GOAL[route][i];
-					L2Npc actor = addSpawn(npcId, start[0], start[1], start[2], start[3], false, 0);
-					actor.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(goal[0], goal[1], goal[2], goal[3]));
-					spawns.add(actor);
-				}
+			}
+			catch (Exception e)
+			{
+				// nothing to log
 			}
 		}
 	}
@@ -212,27 +219,34 @@ public class Parade extends AbstractNpcAI
 		@Override
 		public void run()
 		{
-			if (spawns.size() > 0)
+			try
 			{
-				for (L2Npc actor : spawns)
+				if (spawns.size() > 0)
 				{
-					if (actor != null)
+					for (L2Npc actor : spawns)
 					{
-						if (actor.calculateDistance(actor.getXdestination(), actor.getYdestination(), 0, false, true) < (100 * 100))
+						if (actor != null)
 						{
-							actor.deleteMe();
-							spawns.remove(actor);
-						}
-						else if (!actor.isMoving())
-						{
-							actor.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(actor.getXdestination(), actor.getYdestination(), actor.getZdestination(), actor.getHeading()));
+							if (actor.calculateDistance(actor.getXdestination(), actor.getYdestination(), 0, false, true) < (100 * 100))
+							{
+								actor.deleteMe();
+								spawns.remove(actor);
+							}
+							else if (!actor.isMoving())
+							{
+								actor.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(actor.getXdestination(), actor.getYdestination(), actor.getZdestination(), actor.getHeading()));
+							}
 						}
 					}
+					if (spawns.size() == 0)
+					{
+						deleteTask.cancel(false);
+					}
 				}
-				if (spawns.size() == 0)
-				{
-					deleteTask.cancel(false);
-				}
+			}
+			catch (Exception e)
+			{
+				// nothing to log
 			}
 		}
 	}
@@ -242,12 +256,21 @@ public class Parade extends AbstractNpcAI
 		@Override
 		public void run()
 		{
-			spawnTask.cancel(false);
-			spawnTask = null;
-			deleteTask.cancel(false);
-			deleteTask = null;
-			cleanTask.cancel(false);
-			cleanTask = null;
+			if (spawnTask != null)
+			{
+				spawnTask.cancel(false);
+				spawnTask = null;
+			}
+			if (deleteTask != null)
+			{
+				deleteTask.cancel(false);
+				deleteTask = null;
+			}
+			if (cleanTask != null)
+			{
+				cleanTask.cancel(false);
+				cleanTask = null;
+			}
 			clean();
 		}
 	}

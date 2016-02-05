@@ -26,6 +26,7 @@ import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.instance.L2ControllableMobInstance;
+import l2r.gameserver.model.actor.instance.L2DoorInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.SystemMessageId;
 
@@ -67,7 +68,7 @@ public class AdminKill implements IAdminCommandHandler
 							int radius = Integer.parseInt(st.nextToken());
 							for (L2Character knownChar : plyr.getKnownList().getKnownCharactersInRadius(radius))
 							{
-								if ((knownChar instanceof L2ControllableMobInstance) || knownChar.isDoor() || (knownChar == activeChar))
+								if ((knownChar instanceof L2ControllableMobInstance) || (knownChar instanceof L2DoorInstance) || (knownChar == activeChar))
 								{
 									continue;
 								}
