@@ -96,15 +96,18 @@ public class AdminGrandBoss implements IAdminCommandHandler
 						{
 							antharasAi().notifyEvent("SKIP_WAITING", null, activeChar);
 							manageHtml(activeChar, grandBossId);
+							break;
 						}
 						case VALAKAS:
 						{
 							valakasAi().notifyEvent("SKIP_WAITING", null, activeChar);
 							manageHtml(activeChar, grandBossId);
+							break;
 						}
 						default:
 						{
 							activeChar.sendMessage("Wrong ID!");
+							break;
 						}
 					}
 				}

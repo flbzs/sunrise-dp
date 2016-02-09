@@ -27,6 +27,7 @@
 	<skill id="2604" levels="1" name="Gran Kain's Firework">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="13268" /> <!-- Gran Kain's Firework -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="SELF" />
@@ -34,6 +35,7 @@
 	<skill id="2605" levels="1" name="Gran Kain's Large Firework">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="13269" /> <!-- Gran Kain's Large Firework -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="targetType" val="SELF" />
@@ -63,6 +65,7 @@
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="13150" /> <!-- Pailaka All-Purpose Key -->
 		<set name="operateType" val="A1" />
 		<set name="power" val="100" />
 		<set name="reuseDelay" val="3000" />
@@ -108,6 +111,8 @@
 	</skill>
 	<skill id="2610" levels="1" name="Register Bookmark (Event)">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="13301" /> <!-- My Teleport Spellbook (Event) -->
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
@@ -146,6 +151,7 @@
 		<set name="create_item_id" val="13854" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="13853" /> <!-- Destroyed Darkness Fragment Powder -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3000" />
 		<set name="skillType" val="CREATE_ITEM" />
@@ -195,18 +201,24 @@
 	</skill>
 	<skill id="2619" levels="1" name="Extra Entrance Pass - Kamaloka (Hall of the Abyss) (Event)">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="13297" /> <!-- Extra Entrance Pass - Kamaloka (Hall of the Abyss) (Event) -->
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2620" levels="1" name="Extra Entrance Pass - Near Kamaloka (Event)">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="13298" /> <!-- Extra Entrance Pass - Near Kamaloka (Event) -->
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="2621" levels="1" name="Extra Entrance Pass - Kamaloka (Labyrinth of the Abyss) (Event)">
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="13299" /> <!-- Extra Entrance Pass - Kamaloka (Labyrinth of the Abyss) (Event) -->
 		<set name="operateType" val="A1" />
 		<set name="skillType" val="NOTDONE" />
 		<set name="targetType" val="NONE" />
@@ -582,7 +594,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="13277" />
+		<set name="itemConsumeId" val="13277" /> <!-- Energy Star Stone -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
@@ -597,7 +609,7 @@
 		<!-- Confirmed CT2.5 -->
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="13278" />
+		<set name="itemConsumeId" val="13278" /> <!-- Greater Quality Energy Star Stone -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />

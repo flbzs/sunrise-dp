@@ -33,7 +33,6 @@ import l2r.gameserver.model.skills.L2SkillType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.model.stats.Formulas;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.SystemMessage;
 
 public class Pdam implements ISkillHandler
 {
@@ -98,17 +97,9 @@ public class Pdam implements ISkillHandler
 			{
 				if (skill.hasEffects())
 				{
-					L2Effect[] effects;
-					
 					// activate attacked effects, if any
 					target.stopSkillEffects(skill.getId());
-					effects = skill.getEffects(activeChar, target, new Env(shld, false, false, false));
-					if ((effects != null) && (effects.length > 0))
-					{
-						SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
-						sm.addSkillName(skill);
-						target.sendPacket(sm);
-					}
+					skill.getEffects(activeChar, target, new Env(shld, false, false, false));
 				}
 				
 				if (damage > 0)
