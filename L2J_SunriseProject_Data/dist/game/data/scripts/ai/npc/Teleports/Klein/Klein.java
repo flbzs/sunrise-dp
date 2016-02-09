@@ -102,7 +102,7 @@ public final class Klein extends AbstractNpcAI
 				{
 					vars.set("i_ai0", vars.getInt("i_ai0", 0) + 1);
 					player.teleToLocation(TELE_LOC);
-					player.setVar("valakas_last_enter", String.valueOf(System.currentTimeMillis() + 3600000));
+					player.setVar("valakas_last_enter", String.valueOf(System.currentTimeMillis() + 7200000));
 				}
 				else
 				{

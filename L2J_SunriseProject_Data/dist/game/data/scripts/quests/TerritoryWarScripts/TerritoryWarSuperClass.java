@@ -281,10 +281,11 @@ public class TerritoryWarSuperClass extends Quest
 					}
 					player.addNotifyQuestOfDeath(st);
 				}
-				else
-				{
-					_log.warn("TerritoryWar: Missing Kill the quest for player " + player.getName() + " whose class id: " + player.getClassId().getId());
-				}
+				// vGodFather we no longer need this
+				// else
+				// {
+				// _log.warn("TerritoryWar: Missing Kill the quest for player " + player.getName() + " whose class id: " + player.getClassId().getId());
+				// }
 			}
 		}
 		return null;
@@ -409,10 +410,11 @@ public class TerritoryWarSuperClass extends Quest
 							}
 							player.addNotifyQuestOfDeath(st);
 						}
-						else
-						{
-							_log.warn("TerritoryWar: Missing Kill the quest for player " + player.getName() + " whose class id: " + player.getClassId().getId());
-						}
+						// vGodFather we no longer need this
+						// else
+						// {
+						// _log.warn("TerritoryWar: Missing Kill the quest for player " + player.getName() + " whose class id: " + player.getClassId().getId());
+						// }
 					}
 				}
 				else

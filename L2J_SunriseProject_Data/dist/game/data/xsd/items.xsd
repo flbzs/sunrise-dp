@@ -65,6 +65,7 @@
 					<xs:enumeration value="useWeaponSkillsOnly" />
 					<xs:enumeration value="weapon_type" />
 					<xs:enumeration value="weight" />
+					<xs:enumeration value="must_consume" />
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
