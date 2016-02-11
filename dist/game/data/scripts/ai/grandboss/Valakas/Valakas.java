@@ -205,7 +205,7 @@ public final class Valakas extends AbstractNpcAI
 							{
 								for (L2PcInstance member : members)
 								{
-									if (member.isInsideRadius(npc, 1000, true, false) && ((Long.parseLong(member.getVar("valakas_last_enter", "0")) + 3600000) < System.currentTimeMillis()))
+									if (member.isInsideRadius(npc, 1000, true, false) && ((Long.parseLong(member.getVar("valakas_last_enter", "0")) + 7200000) < System.currentTimeMillis()))
 									{
 										party.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.C1_S_QUEST_REQUIREMENT_IS_NOT_SUFFICIENT_AND_CANNOT_BE_ENTERED).addPcName(member));
 										break;

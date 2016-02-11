@@ -37,8 +37,10 @@ public final class Passive extends L2Effect
 	@Override
 	public void onExit()
 	{
-		getEffected().enableAllSkills();
-		getEffected().setIsImmobilized(false);
+		if (getEffected().isAttackable())
+		{
+			((L2Attackable) getEffected()).removeAggro(false);
+		}
 	}
 	
 	@Override
@@ -49,11 +51,7 @@ public final class Passive extends L2Effect
 			return false;
 		}
 		
-		L2Attackable target = (L2Attackable) getEffected();
-		target.abortAttack();
-		target.abortCast();
-		target.disableAllSkills();
-		target.setIsImmobilized(true);
+		((L2Attackable) getEffected()).removeAggro(true);
 		return true;
 	}
 }

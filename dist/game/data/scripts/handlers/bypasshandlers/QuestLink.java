@@ -270,6 +270,12 @@ public class QuestLink implements IBypassHandler
 	 */
 	public static void showQuestWindow(L2PcInstance player, L2Npc npc)
 	{
+		// Just in case
+		if ((player == null) || (npc == null))
+		{
+			return;
+		}
+		
 		boolean conditionMeet = false;
 		final Set<Quest> options = new HashSet<>();
 		for (QuestState state : getQuestsForTalk(player, npc.getId()))
