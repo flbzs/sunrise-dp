@@ -60,20 +60,11 @@ public class Time implements IUserCommandHandler
 			m = "" + (t % 60);
 		}
 		
-		SystemMessage sm;
-		if (GameTimeController.getInstance().isNight())
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.TIME_S1_S2_IN_THE_NIGHT);
-			sm.addString(h);
-			sm.addString(m);
-		}
-		else
-		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.TIME_S1_S2_IN_THE_DAY);
-			sm.addString(h);
-			sm.addString(m);
-		}
+		SystemMessage sm = GameTimeController.getInstance().isNight() ? SystemMessage.getSystemMessage(SystemMessageId.TIME_S1_S2_IN_THE_NIGHT) : SystemMessage.getSystemMessage(SystemMessageId.TIME_S1_S2_IN_THE_DAY);
+		sm.addString(h);
+		sm.addString(m);
 		activeChar.sendPacket(sm);
+		
 		if (Config.L2JMOD_DISPLAY_SERVER_TIME)
 		{
 			activeChar.sendMessage("Server time is " + fmt.format(new Date(System.currentTimeMillis())));
