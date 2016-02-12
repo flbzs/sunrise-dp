@@ -330,6 +330,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2487-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="10521" type="EtcItem" name="Rough Fire Ore">
 		<set name="icon" val="icon.etc_fire_stone_i00" />

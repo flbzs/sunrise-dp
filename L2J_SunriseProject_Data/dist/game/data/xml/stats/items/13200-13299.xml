@@ -1367,6 +1367,7 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2597-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="13262" type="EtcItem" name="Gran Kain's Echo Crystal - Theme of Battle">
 		<set name="icon" val="icon.etc_echo_crystal_i01" />
@@ -1382,6 +1383,7 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2598-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="13263" type="EtcItem" name="Gran Kain's Echo Crystal - Theme of Love">
 		<set name="icon" val="icon.etc_echo_crystal_i02" />
@@ -1397,6 +1399,7 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2599-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="13264" type="EtcItem" name="Gran Kain's Echo Crystal - Theme of Solitude">
 		<set name="icon" val="icon.etc_echo_crystal_i03" />
@@ -1412,6 +1415,7 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2600-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="13265" type="EtcItem" name="Gran Kain's Echo Crystal - Theme of the Feast">
 		<set name="icon" val="icon.etc_echo_crystal_i04" />
@@ -1427,6 +1431,7 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2601-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="13266" type="EtcItem" name="Gran Kain's Echo Crystal - Theme of Celebration">
 		<set name="icon" val="icon.etc_echo_crystal_i00" />
@@ -1442,6 +1447,7 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2602-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="13267" type="EtcItem" name="Gran Kain's Echo Crystal - Theme of Comedy">
 		<set name="icon" val="icon.etc_echo_crystal_i01" />
@@ -1457,6 +1463,7 @@
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2603-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="13268" type="EtcItem" name="Gran Kain's Firework">
 		<set name="icon" val="icon.etc_small_ultra_bomb_i00" />

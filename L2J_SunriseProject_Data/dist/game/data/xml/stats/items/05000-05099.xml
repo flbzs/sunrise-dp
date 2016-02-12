@@ -129,6 +129,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2066-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5011" type="EtcItem" name="Star of Destiny">
 		<set name="icon" val="icon.etc_badge_gold_i00" />
