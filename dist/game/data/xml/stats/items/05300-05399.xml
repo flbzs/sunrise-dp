@@ -712,6 +712,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2584-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5343" type="EtcItem" name="Echo Crystal - Holy Song">
 		<set name="icon" val="icon.etc_recipe_blue_i00" />
@@ -723,6 +724,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2585-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5344" type="EtcItem" name="Recipe: Inferno Earring(70%)">
 		<set name="icon" val="icon.etc_recipe_blue_i00" />

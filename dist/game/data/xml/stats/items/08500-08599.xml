@@ -700,6 +700,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2272-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="8556" type="EtcItem" name="Dewdrop of Destruction">
 		<set name="icon" val="icon.etc_lesser_potion_red_i00" />

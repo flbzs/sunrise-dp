@@ -715,6 +715,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2073-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="7062" type="EtcItem" name="Echo Crystal - Theme of Wedding">
 		<set name="icon" val="icon.etc_echo_crystal_i01" />
@@ -726,6 +727,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2230-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="7063" type="EtcItem" name="Map - Forest of the Dead">
 		<set name="icon" val="icon.etc_map_ivory_i00" />

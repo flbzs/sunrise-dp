@@ -571,6 +571,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2140-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5563" type="EtcItem" name="Echo Crystal - 2nd Carol">
 		<set name="icon" val="icon.etc_echo_crystal_i01" />
@@ -583,6 +584,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2141-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5564" type="EtcItem" name="Echo Crystal - 3rd Carol">
 		<set name="icon" val="icon.etc_echo_crystal_i02" />
@@ -595,6 +597,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2142-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5565" type="EtcItem" name="Echo Crystal - 4th Carol">
 		<set name="icon" val="icon.etc_echo_crystal_i03" />
@@ -607,6 +610,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2143-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5566" type="EtcItem" name="Echo Crystal - 5th Carol">
 		<set name="icon" val="icon.etc_echo_crystal_i04" />
@@ -619,6 +623,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2144-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5567" type="EtcItem" name="Letter of Greetings">
 		<set name="icon" val="icon.etc_piece_of_paper_gray_i00" />
@@ -764,6 +769,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2145-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5584" type="EtcItem" name="Echo Crystal - 7th Carol">
 		<set name="icon" val="icon.etc_echo_crystal_i01" />
@@ -776,6 +782,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2146-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5585" type="EtcItem" name="Echo Crystal - 8th Carol">
 		<set name="icon" val="icon.etc_echo_crystal_i02" />
@@ -788,6 +795,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2147-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5586" type="EtcItem" name="Echo Crystal - 9th Carol">
 		<set name="icon" val="icon.etc_echo_crystal_i03" />
@@ -800,6 +808,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2148-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5587" type="EtcItem" name="Echo Crystal - 10th Carol">
 		<set name="icon" val="icon.etc_echo_crystal_i04" />
@@ -812,6 +821,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="handler" val="ItemSkills" />
 		<set name="item_skill" val="2149-1" />
+		<set name="must_consume" val="true" />
 	</item>
 	<item id="5588" type="EtcItem" name="Tutorial Guide">
 		<set name="icon" val="icon.etc_spellbook_gray_i00" />

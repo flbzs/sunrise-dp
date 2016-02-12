@@ -66,8 +66,23 @@ public class PetFood implements IItemHandler
 		{
 			if (activeChar.isPet())
 			{
+				final L2PcInstance player = activeChar.getActingPlayer();
 				final L2PetInstance pet = (L2PetInstance) activeChar;
-				if (pet.destroyItem("Consume", item.getObjectId(), 1, null, false))
+				if (player.isMounted())
+				{
+					if (player.getSummon().destroyItem("Consume", item.getObjectId(), 1, null, false))
+					{
+						player.broadcastPacket(new MagicSkillUse(player, player, skillId, skillLevel, 0, 0));
+						player.setCurrentFeed(player.getCurrentFeed() + (skill.getFeed() * Config.PET_FOOD_RATE));
+						player.broadcastStatusUpdate();
+						if (pet.isHungry())
+						{
+							pet.sendPacket(SystemMessageId.YOUR_PET_ATE_A_LITTLE_BUT_IS_STILL_HUNGRY);
+						}
+						return true;
+					}
+				}
+				else if (pet.destroyItem("Consume", item.getObjectId(), 1, null, false))
 				{
 					pet.broadcastPacket(new MagicSkillUse(pet, pet, skillId, skillLevel, 0, 0));
 					pet.setCurrentFed(pet.getCurrentFed() + (skill.getFeed() * Config.PET_FOOD_RATE));
@@ -87,7 +102,13 @@ public class PetFood implements IItemHandler
 					final List<Integer> foodIds = PetData.getInstance().getPetData(player.getMountNpcId()).getFood();
 					if (foodIds.contains(Integer.valueOf(item.getId())))
 					{
-						if (player.destroyItem("Consume", item.getObjectId(), 1, null, false))
+						if (player.getSummon().destroyItem("Consume", item.getObjectId(), 1, null, false))
+						{
+							player.broadcastPacket(new MagicSkillUse(player, player, skillId, skillLevel, 0, 0));
+							player.setCurrentFeed(player.getCurrentFeed() + skill.getFeed());
+							return true;
+						}
+						else if (player.destroyItem("Consume", item.getObjectId(), 1, null, false))
 						{
 							player.broadcastPacket(new MagicSkillUse(player, player, skillId, skillLevel, 0, 0));
 							player.setCurrentFeed(player.getCurrentFeed() + skill.getFeed());
