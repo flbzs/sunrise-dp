@@ -70,7 +70,8 @@ public class AdminGraciaSeeds implements IAdminCommandHandler
 	{
 		NpcHtmlMessage html = new NpcHtmlMessage();
 		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/graciaseeds.htm");
-		html.replace("%sodstate%", String.valueOf(SoDManager.getInstance().getSoDState()));
+		// Seed of destruction
+		html.replace("%sodstage%", String.valueOf(SoDManager.getInstance().getSoDState()));
 		html.replace("%sodtiatkill%", String.valueOf(SoDManager.getInstance().getSoDTiatKilled()));
 		if (SoDManager.getInstance().getSoDTimeForNextStateChange() > 0)
 		{
@@ -82,7 +83,13 @@ public class AdminGraciaSeeds implements IAdminCommandHandler
 		{
 			html.replace("%sodtime%", "-1");
 		}
+		
+		// Seed of infinity
 		html.replace("%soistage%", SoIManager.getCurrentStage());
+		html.replace("%twinkills%", "N/A");
+		html.replace("%cohemeneskills%", SoIManager.getCohemenesCount());
+		html.replace("%ekimuskills%", SoIManager.getEkimusCount());
+		html.replace("%soitime%", "N/A");
 		activeChar.sendPacket(html);
 	}
 	
