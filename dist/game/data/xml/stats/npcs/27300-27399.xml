@@ -3697,7 +3697,7 @@
 				<run ground="1" />
 			</speed>
 		</stats>
-		<status />
+		<status undying="false" />
 		<skillList>
 			<skill id="4408" level="16" /> <!--HP Increase (8x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
