@@ -255,7 +255,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 						{
 							makeCast(caster, world.anakimGroup);
 						}
-						if ((caster != null) && (caster.getId() == 32715))
+						if ((caster != null) && (caster.getId() == LILITH))
 						{
 							if (caster.isScriptValue(0))
 							{

@@ -114,7 +114,7 @@ public final class Antharas extends AbstractNpcAI
 	private static final int IN_FIGHT = 2;
 	private static final int DEAD = 3;
 	// Misc
-	private static final int MAX_PEOPLE = 200; // Max allowed players
+	private static final int MAX_PEOPLE = Config.ANTHARAS_MAX_PLAYERS; // Max allowed players
 	private L2GrandBossInstance _antharas = null;
 	private static long _lastAttack = 0;
 	private static int _minionCount = 0;

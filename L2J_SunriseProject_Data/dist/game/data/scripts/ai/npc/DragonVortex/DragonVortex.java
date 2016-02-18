@@ -172,10 +172,6 @@ public final class DragonVortex extends AbstractNpcAI
 	 */
 	public boolean checkIfNpcSpawned(int npcId)
 	{
-		if (_spawnedList.contains(npcId))
-		{
-			return true;
-		}
-		return false;
+		return _spawnedList.contains(npcId);
 	}
 }

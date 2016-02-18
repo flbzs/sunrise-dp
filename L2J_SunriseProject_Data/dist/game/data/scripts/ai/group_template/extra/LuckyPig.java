@@ -135,7 +135,7 @@ public final class LuckyPig extends AbstractNpcAI
 	{
 		if (event.equals("checkForAdena"))
 		{
-			for (L2Object object : L2World.getInstance().getVisibleObjects(npc, 1000))
+			for (L2Object object : L2World.getInstance().getVisibleObjects(npc, 600))
 			{
 				if (!object.isItem())
 				{
@@ -208,6 +208,7 @@ public final class LuckyPig extends AbstractNpcAI
 							}
 							
 							cancelQuestTimer("checkForAdena", npc, null);
+							break;
 						}
 					}
 				}
