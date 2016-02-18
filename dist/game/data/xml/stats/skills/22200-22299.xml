@@ -206,6 +206,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="21190" /> <!-- Transformation Scroll: Kechi Event -->
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />

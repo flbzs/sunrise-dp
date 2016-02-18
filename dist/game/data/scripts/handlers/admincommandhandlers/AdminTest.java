@@ -24,6 +24,7 @@ import l2r.Config;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.handler.IAdminCommandHandler;
+import l2r.gameserver.idfactory.IdFactory;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -42,7 +43,9 @@ public class AdminTest implements IAdminCommandHandler
 		"admin_skill_test",
 		"admin_known",
 		"admin_dkmanager",
-		"admin_movie"
+		"admin_movie",
+		"admin_checkai",
+		"admin_checkid"
 	};
 	
 	@Override
@@ -54,6 +57,17 @@ public class AdminTest implements IAdminCommandHandler
 			{
 				activeChar.sendMessage(line);
 			}
+		}
+		else if (command.startsWith("admin_checkid"))
+		{
+			StringTokenizer st = new StringTokenizer(command);
+			st.nextToken();
+			int id = Integer.parseInt(st.nextToken());
+			activeChar.sendMessage("Your id is free: " + IdFactory.getInstance().checkId(id));
+		}
+		else if (command.startsWith("admin_checkai"))
+		{
+			activeChar.sendMessage("Your Intention is: " + activeChar.getAI().getIntention().toString());
 		}
 		else if (command.startsWith("admin_dkmanager"))
 		{

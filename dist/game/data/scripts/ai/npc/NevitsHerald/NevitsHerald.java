@@ -118,16 +118,7 @@ public class NevitsHerald extends AbstractNpcAI
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		ExShowScreenMessage message = null;
-		if (npc.getId() == Valakas)
-		{
-			message = new ExShowScreenMessage(NpcStringId.THE_EVIL_FIRE_DRAGON_VALAKAS_HAS_BEEN_DEFEATED, 2, 10000);
-		}
-		else
-		{
-			message = new ExShowScreenMessage(NpcStringId.THE_EVIL_LAND_DRAGON_ANTHARAS_HAS_BEEN_DEFEATED, 2, 10000);
-		}
-		
+		ExShowScreenMessage message = new ExShowScreenMessage(npc.getId() == Valakas ? NpcStringId.THE_EVIL_FIRE_DRAGON_VALAKAS_HAS_BEEN_DEFEATED : NpcStringId.THE_EVIL_LAND_DRAGON_ANTHARAS_HAS_BEEN_DEFEATED, 2, 10000);
 		// message.setUpperEffect(true);
 		
 		for (L2PcInstance onlinePlayer : L2World.getInstance().getPlayers())
