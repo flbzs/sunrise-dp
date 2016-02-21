@@ -762,9 +762,14 @@
 	<item id="21171" type="EtcItem" name="Transformation Scroll: Treasure Hunter - Event">
 		<!-- Description: Transformation scroll that transforms you into a Treasure Hunter for 10 minutes. If used on Fantasy Isle, you can find Event Treasure Chests. No effect if used while already transformed. -->
 		<set name="icon" val="icon.etc_trans_4f_s_b_01" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="SCROLL" />
 		<set name="material" val="PAPER" />
 		<set name="weight" val="120" />
 		<set name="is_stackable" val="true" />
+		<set name="is_oly_restricted" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="22191-1" />
 	</item>
 	<item id="21172" type="EtcItem" name="Transformation Scroll: Onyx Beast - Event">
 		<!-- Description: Transformation scroll that transforms you into an Onyx Beast for 30 minute(s). No effect if used while transformed. -->

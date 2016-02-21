@@ -40,6 +40,7 @@
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="25" />
 			<height normal="35" />
@@ -60,6 +61,7 @@
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="25" />
 			<height normal="35" />

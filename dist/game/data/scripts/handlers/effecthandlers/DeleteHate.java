@@ -33,12 +33,14 @@ import l2r.gameserver.model.stats.Formulas;
 public final class DeleteHate extends L2Effect
 {
 	private final int _chance;
+	private final boolean _onlyUndead;
 	
 	public DeleteHate(Env env, EffectTemplate template)
 	{
 		super(env, template);
 		
 		_chance = template.getParameters().getInt("chance", 100);
+		_onlyUndead = template.getParameters().getBoolean("onlyUndead", false);
 	}
 	
 	@Override
@@ -62,6 +64,11 @@ public final class DeleteHate extends L2Effect
 		}
 		
 		if (!getEffected().isAttackable())
+		{
+			return false;
+		}
+		
+		if (_onlyUndead && !getEffected().isUndead())
 		{
 			return false;
 		}

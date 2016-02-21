@@ -103,10 +103,6 @@
 		<spawn npcId="27407" x="43768" y="-248696" z="-6800" heading="0" respawn="0" />
 		<spawn npcId="27414" x="43784" y="-248040" z="-6800" heading="0" respawn="0" />
 		<spawn npcId="27407" x="44456" y="-248040" z="-6800" heading="0" respawn="0" />
-		<spawn npcId="18956" x="56728" y="-252776" z="-6760" heading="32768" respawn="0" />
-		<spawn npcId="18957" x="55464" y="-252776" z="-6760" heading="0" respawn="0" />
-		<spawn npcId="18958" x="55496" y="-252168" z="-6760" heading="0" respawn="0" />
-		<spawn npcId="18959" x="56680" y="-252168" z="-6760" heading="32768" respawn="0" />
 		<!-- ================    Seven Signs Power of the Seal	      ===============  -->
 		<spawn npcId="18949" x="76280" y="-241224" z="-10832" heading="0" respawn="0" />
 	</group>

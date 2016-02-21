@@ -39,6 +39,7 @@ import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.SystemMessageId;
+import l2r.gameserver.network.serverpackets.ExSendUIEvent;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 
@@ -547,6 +548,15 @@ public class HallOfSufferingAttack extends AbstractNpcAI
 					cancelQuestTimers("spawnBossGuards");
 					cancelQuestTimers("isTwinSeparated");
 					addSpawn(TEPIOS, TEPIOS_SPAWN[0], TEPIOS_SPAWN[1], TEPIOS_SPAWN[2], 0, false, 0, false, world.getInstanceId());
+					
+					for (Integer pc : world.getAllowed())
+					{
+						L2PcInstance killer = L2World.getInstance().getPlayer(pc);
+						if (killer != null)
+						{
+							killer.sendPacket(new ExSendUIEvent(killer, true, true, 0, 0, ""));
+						}
+					}
 					
 					Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
 					inst.setDuration(5 * 60000);

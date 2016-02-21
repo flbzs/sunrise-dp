@@ -6,6 +6,7 @@ import java.util.List;
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
+import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
@@ -15,6 +16,9 @@ import l2r.gameserver.network.serverpackets.OnEventTrigger;
 
 import quests.Q10294_SevenSignToTheMonastery.Q10294_SevenSignToTheMonastery;
 
+/**
+ * @author vGodFather
+ */
 public class Q10295_SevenSignsSolinasTomb extends Quest
 {
 	private static final int Odd_Globe = 32815;
@@ -75,8 +79,23 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 			TeleportControlDevice3,
 			Solina
 		});
+		registerQuestItems(ScrollofAbstinence, ShieldofSacrifice, SwordofHolySpirit, StaffofBlessing);
 		addKillId(SolinaGuardians);
 		addKillId(TombGuardians);
+		addSpawnId(TombGuardians);
+	}
+	
+	@Override
+	public String onSpawn(L2Npc npc)
+	{
+		if (TombGuardians.contains(npc.getId()))
+		{
+			L2MonsterInstance monster = (L2MonsterInstance) npc;
+			monster.setIsNoRndWalk(true);
+			monster.setIsImmobilized(true);
+		}
+		
+		return super.onSpawn(npc);
 	}
 	
 	@Override
@@ -89,11 +108,6 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 		if (event.equalsIgnoreCase("eris_q10295_5.htm"))
 		{
 			st.set("cond", "1");
-			st.set("solina", "0");
-			st.set("tomb", "0");
-			st.set("progress", "0");
-			st.set("spawned", "0");
-			st.set("entermovie", "0");
 			st.setState((byte) 1);
 			st.playSound("ItemSound.quest_accept");
 		}
@@ -114,6 +128,8 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 				openDoor(21100013, player.getInstanceId());
 				openDoor(21100011, player.getInstanceId());
 				openDoor(21100009, player.getInstanceId());
+				checkDoors(player, progress);
+				
 				if (st.getInt("entermovie") == 0)
 				{
 					ThreadPoolManager.getInstance().scheduleGeneral(() -> player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_SOLINA_TOMB_OPENING), 3000L);
@@ -173,19 +189,13 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 			}
 			else if (event.equalsIgnoreCase("altarstaff_q10295_2.htm"))
 			{
-				if (st.getQuestItemsCount(StaffofBlessing) == 0L)
+				if ((st.getQuestItemsCount(StaffofBlessing) == 0) && (progress < 4))
 				{
 					st.giveItems(StaffofBlessing, 1L);
 					progress++;
 					st.set("progress", String.valueOf(progress));
 					st.playSound("ItemSound.quest_middle");
-					if (progress == 4)
-					{
-						openDoor(21100001, player.getInstanceId());
-						openDoor(21100010, player.getInstanceId());
-						openDoor(21100014, player.getInstanceId());
-						openDoor(21100006, player.getInstanceId());
-					}
+					checkDoors(player, progress);
 				}
 				else
 				{
@@ -194,19 +204,13 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 			}
 			else if (event.equalsIgnoreCase("altarbook_q10295_2.htm"))
 			{
-				if (st.getQuestItemsCount(ScrollofAbstinence) == 0L)
+				if ((st.getQuestItemsCount(ScrollofAbstinence) == 0) && (progress < 4))
 				{
 					st.giveItems(ScrollofAbstinence, 1L);
 					progress++;
 					st.set("progress", String.valueOf(progress));
 					st.playSound("ItemSound.quest_middle");
-					if (progress == 4)
-					{
-						openDoor(21100001, player.getInstanceId());
-						openDoor(21100010, player.getInstanceId());
-						openDoor(21100014, player.getInstanceId());
-						openDoor(21100006, player.getInstanceId());
-					}
+					checkDoors(player, progress);
 				}
 				else
 				{
@@ -215,19 +219,13 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 			}
 			else if (event.equalsIgnoreCase("altarsword_q10295_2.htm"))
 			{
-				if (st.getQuestItemsCount(SwordofHolySpirit) == 0L)
+				if ((st.getQuestItemsCount(SwordofHolySpirit) == 0) && (progress < 4))
 				{
 					st.giveItems(SwordofHolySpirit, 1L);
 					progress++;
 					st.set("progress", String.valueOf(progress));
 					st.playSound("ItemSound.quest_middle");
-					if (progress == 4)
-					{
-						openDoor(21100001, player.getInstanceId());
-						openDoor(21100010, player.getInstanceId());
-						openDoor(21100014, player.getInstanceId());
-						openDoor(21100006, player.getInstanceId());
-					}
+					checkDoors(player, progress);
 				}
 				else
 				{
@@ -236,19 +234,13 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 			}
 			else if (event.equalsIgnoreCase("altarshield_q10295_2.htm"))
 			{
-				if (st.getQuestItemsCount(ShieldofSacrifice) == 0L)
+				if ((st.getQuestItemsCount(ShieldofSacrifice) == 0) && (progress < 4))
 				{
 					st.giveItems(ShieldofSacrifice, 1L);
 					progress++;
 					st.set("progress", String.valueOf(progress));
 					st.playSound("ItemSound.quest_middle");
-					if (progress >= 4)
-					{
-						openDoor(21100001, player.getInstanceId());
-						openDoor(21100010, player.getInstanceId());
-						openDoor(21100014, player.getInstanceId());
-						openDoor(21100006, player.getInstanceId());
-					}
+					checkDoors(player, progress);
 				}
 				else
 				{
@@ -262,7 +254,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					player.teleToLocation(SOLINA_LOC);
 					
 					// Just in case we die or exit and door is closed after teleport
-					if (st.getInt("tomb") >= 16)
+					if (st.getInt("tomb") >= 4)
 					{
 						openDoor(21100018, player.getInstanceId());
 					}
@@ -273,7 +265,22 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 				{
 					if (st.getInt("spawned") == 0)
 					{
-						activateTombGuards(player);
+						if (st.getInt("firstgroup") == 0)
+						{
+							spawnFirstGroup(player);
+						}
+						if (st.getInt("secondgroup") == 0)
+						{
+							spawnSecondGroup(player);
+						}
+						if (st.getInt("thirdgroup") == 0)
+						{
+							spawnThirdGroup(player);
+						}
+						if (st.getInt("fourthgroup") == 0)
+						{
+							spawnFourthGroup(player);
+						}
 						st.set("spawned", "1");
 					}
 					else
@@ -303,6 +310,17 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 			}
 		}
 		return htmltext;
+	}
+	
+	private void checkDoors(L2PcInstance player, int progress)
+	{
+		if (progress >= 4)
+		{
+			openDoor(21100001, player.getInstanceId());
+			openDoor(21100010, player.getInstanceId());
+			openDoor(21100014, player.getInstanceId());
+			openDoor(21100006, player.getInstanceId());
+		}
 	}
 	
 	@Override
@@ -362,6 +380,10 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					st.unset("solina");
 					st.unset("tomb");
 					st.unset("spawned");
+					st.unset("firstgroup");
+					st.unset("secondgroup");
+					st.unset("thirdgroup");
+					st.unset("fourthgroup");
 					st.unset("entermovie");
 					st.exitQuest(false);
 					st.playSound("ItemSound.quest_finish");
@@ -485,11 +507,32 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 		}
 		else if (TombGuardians.contains(npcId))
 		{
+			System.out.println("what????");
+			switch (npcId)
+			{
+				case 18956:
+					System.out.println("ENTER FIRST");
+					st.set("firstgroup", "1");
+					break;
+				case 18957:
+					System.out.println("ENTER SECOND");
+					st.set("secondgroup", "1");
+					break;
+				case 18958:
+					System.out.println("ENTER THIRD");
+					st.set("thirdgroup", "1");
+					break;
+				case 18959:
+					System.out.println("ENTER FOURTH");
+					st.set("fourthgroup", "1");
+					break;
+			}
+			
 			int tomb = st.getInt("tomb");
 			tomb++;
 			st.set("tomb", String.valueOf(tomb));
 			st.playSound("ItemSound.quest_middle");
-			if (tomb >= 16)
+			if (tomb >= 4)
 			{
 				openDoor(21100018, player.getInstanceId());
 			}
@@ -498,31 +541,47 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 		return super.onKill(npc, player, isPet);
 	}
 	
-	private void activateTombGuards(L2PcInstance player)
+	// First Group
+	private void spawnFirstGroup(L2PcInstance player)
 	{
 		openDoor(21100104, player.getInstanceId());
+		addSpawn(18956, 56728, -252776, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27403, 56504, -252840, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27403, 56504, -252728, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27403, 56392, -252728, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27403, 56408, -252840, -6760, 0, false, 0L, false, player.getInstanceId());
+	}
+	
+	// Second Group
+	private void spawnSecondGroup(L2PcInstance player)
+	{
 		openDoor(21100101, player.getInstanceId());
+		addSpawn(18957, 55464, -252776, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27403, 55672, -252728, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27403, 55752, -252840, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27403, 55768, -252840, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27403, 55752, -252712, -6760, 0, false, 0L, false, player.getInstanceId());
+	}
+	
+	// Third Group
+	private void spawnThirdGroup(L2PcInstance player)
+	{
 		openDoor(21100102, player.getInstanceId());
+		addSpawn(18958, 55496, -252168, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27404, 55672, -252120, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27404, 55752, -252120, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27404, 55656, -252216, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27404, 55736, -252216, -6760, 0, false, 0L, false, player.getInstanceId());
+	}
+	
+	// Fourth Group
+	private void spawnFourthGroup(L2PcInstance player)
+	{
 		openDoor(21100103, player.getInstanceId());
-		
-		addSpawn(18956, 56504, -252840, -6760, 0, false, 0L, false, player.getInstanceId());
-		addSpawn(18956, 56504, -252728, -6760, 0, false, 0L, false, player.getInstanceId());
-		addSpawn(18956, 56392, -252728, -6760, 0, false, 0L, false, player.getInstanceId());
-		addSpawn(18956, 56408, -252840, -6760, 0, false, 0L, false, player.getInstanceId());
-		
-		addSpawn(18957, 55672, -252728, -6760, 0, false, 0L, false, player.getInstanceId());
-		addSpawn(18957, 55752, -252840, -6760, 0, false, 0L, false, player.getInstanceId());
-		addSpawn(18957, 55768, -252840, -6760, 0, false, 0L, false, player.getInstanceId());
-		addSpawn(18957, 55752, -252712, -6760, 0, false, 0L, false, player.getInstanceId());
-		
-		addSpawn(18958, 55672, -252120, -6760, 0, false, 0L, false, player.getInstanceId());
-		addSpawn(18958, 55752, -252120, -6760, 0, false, 0L, false, player.getInstanceId());
-		addSpawn(18958, 55656, -252216, -6760, 0, false, 0L, false, player.getInstanceId());
-		addSpawn(18958, 55736, -252216, -6760, 0, false, 0L, false, player.getInstanceId());
-		
-		addSpawn(18959, 56520, -252232, -6760, 0, false, 0L, false, player.getInstanceId());
-		addSpawn(18959, 56520, -252104, -6760, 0, false, 0L, false, player.getInstanceId());
-		addSpawn(18959, 56424, -252104, -6760, 0, false, 0L, false, player.getInstanceId());
-		addSpawn(18959, 56440, -252216, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(18959, 56680, -252168, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27404, 56520, -252232, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27404, 56520, -252104, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27404, 56424, -252104, -6760, 0, false, 0L, false, player.getInstanceId());
+		addSpawn(27404, 56440, -252216, -6760, 0, false, 0L, false, player.getInstanceId());
 	}
 }

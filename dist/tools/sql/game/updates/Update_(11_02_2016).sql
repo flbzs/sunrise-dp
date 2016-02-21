@@ -1,1 +1,0 @@
-ALTER TABLE character_reco_bonus MODIFY rec_have tinyint(3) NOT NULL default '0';

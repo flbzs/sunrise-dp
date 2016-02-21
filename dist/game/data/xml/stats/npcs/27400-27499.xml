@@ -215,23 +215,43 @@
 		</collision>
 	</npc>
 	<npc id="27407" level="80" type="L2Monster" name="Solina Lay Brother">
-		<!-- TODO: Must be confirmed -->
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment rhand="8212" /> <!-- rhand: Monster Only (Solina Brother Mace) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1891" mp="1778.0" />
+			<attack physical="3845" magical="1124" attackSpeed="253" random="30" critical="4" accuracy="5" type="BLUNT" range="40" />
+			<defence physical="686" magical="320" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="20" />
+				<defence fire="20" water="20" wind="20" earth="20" holy="103" dark="20" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
+				<walk ground="27" />
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
+			<skill id="4336" level="2" /> <!-- Dark Attack Weak Point -->
+			<skill id="4563" level="9" /> <!-- NPC Solar Flare - Magic -->
+			<skill id="4613" level="9" /> <!-- NPC Clan Heal -->
+			<skill id="4789" level="9" /> <!-- NPC High Level -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4417" level="17" /> <!-- Angels -->
+			<skill id="4423" level="3" /> <!-- Sacred Attacks -->
+		</skillList>
+		<ai aggroRange="400" clanHelpRange="300" isAggressive="true" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="9" />
+			<height normal="23" />
 		</collision>
 	</npc>
 	<npc id="27408" level="80" type="L2Monster" name="Savior Solina">
@@ -249,49 +269,85 @@
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="25" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="27409" level="80" type="L2Monster" name="Solina Knight Captain">
-		<!-- TODO: Must be confirmed -->
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1891" mp="1778.0" />
+			<attack physical="3845" magical="1124" attackSpeed="253" random="30" critical="4" accuracy="5" type="BLUNT" range="40" />
+			<defence physical="686" magical="320" />
 			<attribute>
 				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
+				<walk ground="30" />
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4336" level="2" /> <!-- Dark Attack Weak Point -->
+			<skill id="4789" level="9" /> <!-- NPC High Level -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4417" level="17" /> <!-- Angels -->
+			<skill id="4423" level="3" /> <!-- Sacred Attacks -->
+			<skill id="6312" level="1" /> <!-- Launch Sacred Sword Energy -->
+			<skill id="6313" level="1" /> <!-- Solina Bless -->
+		</skillList>
+		<ai aggroRange="400" clanHelpRange="300" isAggressive="true" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="14" />
+			<height normal="32" />
 		</collision>
 	</npc>
 	<npc id="27410" level="80" type="L2Monster" name="Solina Knights">
-		<!-- TODO: Must be confirmed -->
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment rhand="8211" lhand="8210" /> <!-- rhand: Monster Only (Monk Warrior Sword) lhand: Monster Only (Monk Warrior Shield) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1891" mp="1778.0" />
+			<attack physical="3845" magical="1124" attackSpeed="253" random="30" critical="4" accuracy="5" type="BLUNT" range="40" />
+			<defence physical="686" magical="320" />
 			<attribute>
 				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
+				<walk ground="30" />
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4336" level="2" /> <!-- Dark Attack Weak Point -->
+			<skill id="4789" level="9" /> <!-- NPC High Level -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4417" level="17" /> <!-- Angels -->
+			<skill id="4423" level="3" /> <!-- Sacred Attacks -->
+			<skill id="6494" level="13" /> <!-- NPC holy attack -->
+			<skill id="6711" level="1" /> <!-- Etis Power Up -->
+		</skillList>
+		<ai aggroRange="400" clanHelpRange="300" isAggressive="true" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="12" />
+			<height normal="28" />
 		</collision>
 	</npc>
 	<npc id="27411" level="80" type="L2Monster" name="Divinity Manager">
@@ -309,69 +365,125 @@
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="25" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="27412" level="80" type="L2Monster" name="Divinity Supervisor">
-		<!-- TODO: Must be confirmed -->
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment rhand="8221" /> <!-- rhand: Monster Only (Grail Apostle Spear) -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1891" mp="1778.0" />
+			<attack physical="3845" magical="1124" attackSpeed="253" random="30" critical="4" accuracy="5" type="BLUNT" range="40" />
+			<defence physical="686" magical="320" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="250" />
+				<defence fire="120" water="120" wind="120" earth="120" holy="150" dark="100" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
+				<walk ground="30" />
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4336" level="2" /> <!-- Dark Attack Weak Point -->
+			<skill id="4789" level="9" /> <!-- NPC High Level -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4417" level="17" /> <!-- Angels -->
+			<skill id="4423" level="3" /> <!-- Sacred Attacks -->
+			<skill id="6317" level="1" /> <!-- Sacred Tacit -->
+		</skillList>
+		<ai aggroRange="400" clanHelpRange="300" isAggressive="true" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="13" />
+			<height normal="47" />
 		</collision>
 	</npc>
 	<npc id="27413" level="80" type="L2Monster" name="Divinity Fighter">
-		<!-- TODO: Must be confirmed -->
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1891" mp="1778.0" />
+			<attack physical="3845" magical="1124" attackSpeed="253" random="30" critical="4" accuracy="5" type="BLUNT" range="40" />
+			<defence physical="686" magical="320" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="250" />
+				<defence fire="120" water="120" wind="120" earth="120" holy="150" dark="100" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
+				<walk ground="30" />
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4336" level="2" /> <!-- Dark Attack Weak Point -->
+			<skill id="4789" level="9" /> <!-- NPC High Level -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4417" level="17" /> <!-- Angels -->
+			<skill id="4423" level="3" /> <!-- Sacred Attacks -->
+			<skill id="6328" level="1" /> <!-- NPC Fighter Judgement -->
+			<skill id="6329" level="1" /> <!-- NPC Fighter Strike -->
+		</skillList>
+		<ai aggroRange="400" clanHelpRange="300" isAggressive="true" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="24" />
+			<height normal="49" />
 		</collision>
 	</npc>
 	<npc id="27414" level="80" type="L2Monster" name="Divinity Magus">
-		<!-- TODO: Must be confirmed -->
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1891" mp="1778.0" />
+			<attack physical="3845" magical="1124" attackSpeed="253" random="30" critical="4" accuracy="5" type="BLUNT" range="40" />
+			<defence physical="686" magical="320" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="250" />
+				<defence fire="120" water="120" wind="120" earth="120" holy="150" dark="100" />
 			</attribute>
 			<speed>
 				<walk ground="60" />
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4336" level="2" /> <!-- Dark Attack Weak Point -->
+			<skill id="4789" level="9" /> <!-- NPC High Level -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4417" level="17" /> <!-- Angels -->
+			<skill id="4423" level="3" /> <!-- Sacred Attacks -->
+			<skill id="6320" level="1" /> <!-- NPC Summon Sacred Magic Force -->
+			<skill id="6321" level="1" /> <!-- NPC Divine Flash -->
+			<skill id="6322" level="1" /> <!-- NPC Divine Impact -->
+		</skillList>
+		<ai aggroRange="400" clanHelpRange="300" isAggressive="true" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="18" />
+			<height normal="44" />
 		</collision>
 	</npc>
 	<npc id="27415" level="80" type="L2Monster" name="Guide Solina">
@@ -390,6 +502,7 @@
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="9" />
 			<height normal="23.4" />
@@ -410,49 +523,88 @@
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="25" />
 			<height normal="35" />
 		</collision>
 	</npc>
 	<npc id="27417" level="80" type="L2Monster" name="Mutant Archer">
-		<!-- TODO: Must be confirmed -->
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment rhand="274" /> <!-- Reinforced Bow -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1891" mp="1778.0" />
+			<attack physical="3845" magical="1124" attackSpeed="253" random="30" critical="4" accuracy="5" type="BOW" range="400" />
+			<defence physical="686" magical="320" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="DARK" value="200" />
+				<defence fire="100" water="100" wind="100" earth="100" holy="100" dark="150" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
+				<walk ground="30" />
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4336" level="2" /> <!-- Dark Attack Weak Point -->
+			<skill id="4789" level="9" /> <!-- NPC High Level -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4417" level="17" /> <!-- Angels -->
+			<skill id="4423" level="3" /> <!-- Sacred Attacks -->
+			<skill id="6709" level="1" /> <!-- NPC Multi Shot -->
+			<skill id="4088" level="9" /> <!-- NPC Bleed -->
+		</skillList>
+		<ai aggroRange="500" clanHelpRange="300" isAggressive="true" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="11" />
+			<height normal="27" />
 		</collision>
 	</npc>
 	<npc id="27418" level="80" type="L2Monster" name="Mutant Warrior">
-		<!-- TODO: Must be confirmed -->
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment rhand="150" /> <!-- Elemental Sword -->
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1891" mp="1778.0" />
+			<attack physical="3845" magical="1124" attackSpeed="253" random="30" critical="4" accuracy="5" type="BLUNT" range="40" />
+			<defence physical="686" magical="320" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="DARK" value="200" />
+				<defence fire="100" water="100" wind="100" earth="100" holy="100" dark="150" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
+				<walk ground="30" />
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
+		<skillList>
+			<skill id="4336" level="2" /> <!-- Dark Attack Weak Point -->
+			<skill id="4789" level="9" /> <!-- NPC High Level -->
+			<skill id="4410" level="11" /> <!-- Average P. Atk. -->
+			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+			<skill id="4412" level="11" /> <!-- Average P. Def. -->
+			<skill id="4413" level="11" /> <!-- Average M. Def. -->
+			<skill id="4414" level="2" /> <!-- Standard Type -->
+			<skill id="4415" level="5" /> <!-- Blunt Weapons -->
+			<skill id="4416" level="8" /> <!-- Angels -->
+			<skill id="4417" level="17" /> <!-- Angels -->
+			<skill id="4423" level="3" /> <!-- Sacred Attacks -->
+			<skill id="6262" level="1" /> <!-- NPC Empower -->
+			<skill id="6515" level="13" /> <!-- NPC Dark Attack -->
+		</skillList>
+		<ai aggroRange="400" clanHelpRange="300" isAggressive="true" />
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="10" />
+			<height normal="25" />
 		</collision>
 	</npc>
 	<npc id="27419" level="80" type="L2Monster" name="Divinity Watcher">
@@ -470,6 +622,7 @@
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="25" />
 			<height normal="35" />
@@ -490,6 +643,7 @@
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="25" />
 			<height normal="35" />
@@ -510,6 +664,7 @@
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="11" />
 			<height normal="28.5" />
@@ -530,6 +685,7 @@
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="9" />
 			<height normal="23" />
@@ -550,6 +706,7 @@
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="10" />
 			<height normal="25" />
@@ -571,6 +728,7 @@
 				<run ground="160" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="10" />
 			<height normal="28" />

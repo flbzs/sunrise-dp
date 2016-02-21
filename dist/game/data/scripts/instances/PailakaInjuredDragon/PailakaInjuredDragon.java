@@ -350,6 +350,7 @@ public class PailakaInjuredDragon extends Quest
 			if (cond == 1)
 			{
 				st.set("cond", "2");
+				st.setMemoState(2);
 				st.playSound("ItemSound.quest_accept"); // double quest accept ???
 			}
 		}
@@ -491,7 +492,7 @@ public class PailakaInjuredDragon extends Quest
 						}
 						if (player.getLevel() > MAX_LEVEL)
 						{
-							return "32499-no.htm";
+							return "32499-over.htm";
 						}
 						return "32499-01.htm";
 					case State.STARTED:
@@ -501,11 +502,21 @@ public class PailakaInjuredDragon extends Quest
 						}
 						if (player.getLevel() > MAX_LEVEL)
 						{
-							return "32499-no.htm";
+							return "32499-over.htm";
 						}
-						if (cond > 1)
+						
+						if (st.getMemoState() < 2)
 						{
-							return "32499-06.htm";
+							return "32499-02.htm";
+						}
+						
+						if (cond == 1)
+						{
+							return "32499-04.htm";
+						}
+						else if (cond >= 2)
+						{
+							return "32499-05.htm";
 						}
 					case State.COMPLETED:
 						return "32499-completed.htm";
