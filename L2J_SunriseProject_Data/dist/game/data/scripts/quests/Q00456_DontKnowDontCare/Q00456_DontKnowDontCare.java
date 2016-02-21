@@ -202,6 +202,13 @@ public final class Q00456_DontKnowDontCare extends Quest
 		
 		if (Util.contains(SEPARATED_SOUL, npc.getId()))
 		{
+			// Just a precaution in case something went wrong
+			// npc gave the item but cond isn't increased
+			if (hasQuestItems(player, getRegisteredItemIds()) && (qs.getCond() == 1))
+			{
+				qs.setCond(2, true);
+			}
+			
 			switch (qs.getState())
 			{
 				case State.COMPLETED:
@@ -220,7 +227,7 @@ public final class Q00456_DontKnowDontCare extends Quest
 					{
 						case 1:
 						{
-							htmltext = (hasAtLeastOneQuestItem(player, getRegisteredItemIds()) ? "32864-09.html" : "32864-08.html");
+							htmltext = hasQuestItems(player, getRegisteredItemIds()) && !hasQuestItems(player, getRegisteredItemIds()) ? "32864-09.html" : "32864-08.html";
 							break;
 						}
 						case 2:

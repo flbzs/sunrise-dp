@@ -32,6 +32,8 @@ import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.NpcSay;
 
+import quests.Q00022_TragedyInVonHellmannForest.Q00022_TragedyInVonHellmannForest;
+
 /**
  * Hidden Truth (21)
  * @author xban1x
@@ -420,7 +422,7 @@ public class Q00021_HiddenTruth extends Quest
 					}
 					else if (st.isCompleted())
 					{
-						st = player.getQuestState("22_TragedyInVonHellmanForest");
+						st = player.getQuestState(Q00022_TragedyInVonHellmannForest.class.getSimpleName());
 						if (st == null)
 						{
 							htmltext = "31328-06.html";

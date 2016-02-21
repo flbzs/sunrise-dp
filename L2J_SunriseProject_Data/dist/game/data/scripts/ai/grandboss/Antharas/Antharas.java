@@ -115,6 +115,7 @@ public final class Antharas extends AbstractNpcAI
 	private static final int DEAD = 3;
 	// Misc
 	private static final int MAX_PEOPLE = Config.ANTHARAS_MAX_PLAYERS; // Max allowed players
+	private static final int _maxMiniosCount = Config.ANTHARAS_MAX_MINIONS_COUNT;
 	private L2GrandBossInstance _antharas = null;
 	private static long _lastAttack = 0;
 	private static int _minionCount = 0;
@@ -383,6 +384,7 @@ public final class Antharas extends AbstractNpcAI
 			{
 				if ((npc != null) && ((_lastAttack + 900000) < System.currentTimeMillis()))
 				{
+					_log.info(getClass().getSimpleName() + ": kicked players using CHECK_ATTACK");
 					setStatus(ALIVE);
 					for (L2Character charInside : zone.getCharactersInside())
 					{
@@ -430,7 +432,7 @@ public final class Antharas extends AbstractNpcAI
 			}
 			case "SPAWN_MINION":
 			{
-				if ((minionMultipler > 1) && (_minionCount < (100 - (minionMultipler * 2))))
+				if ((minionMultipler > 1) && (_minionCount < (_maxMiniosCount - (minionMultipler * 2))))
 				{
 					for (int i = 0; i < minionMultipler; i++)
 					{
@@ -439,13 +441,13 @@ public final class Antharas extends AbstractNpcAI
 					}
 					_minionCount += (minionMultipler * 2);
 				}
-				else if (_minionCount < 98)
+				else if (_minionCount < (_maxMiniosCount - 2))
 				{
 					addSpawn(BEHEMOTH, npc, true);
 					addSpawn(TERASQUE, npc, true);
 					_minionCount += 2;
 				}
-				else if (_minionCount < 99)
+				else if (_minionCount < (_maxMiniosCount - 1))
 				{
 					addSpawn((getRandomBoolean() ? BEHEMOTH : TERASQUE), npc, true);
 					_minionCount++;
@@ -460,6 +462,7 @@ public final class Antharas extends AbstractNpcAI
 			}
 			case "CLEAR_ZONE":
 			{
+				_log.info(getClass().getSimpleName() + ": kicked players using CLEAR_ZONE");
 				for (L2Character charInside : zone.getCharactersInside())
 				{
 					if (charInside != null)
@@ -582,6 +585,7 @@ public final class Antharas extends AbstractNpcAI
 			{
 				if (getStatus() == IN_FIGHT)
 				{
+					_log.info(getClass().getSimpleName() + ": kicked players using ABORT_FIGHT");
 					setStatus(ALIVE);
 					cancelQuestTimer("CHECK_ATTACK", _antharas, null);
 					cancelQuestTimer("SPAWN_MINION", _antharas, null);

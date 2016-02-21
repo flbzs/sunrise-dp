@@ -30,9 +30,13 @@ import l2r.gameserver.model.stats.Env;
  */
 public final class Passive extends L2Effect
 {
+	private final boolean _onlyUndead;
+	
 	public Passive(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		
+		_onlyUndead = template.getParameters().getBoolean("onlyUndead", false);
 	}
 	
 	@Override
@@ -54,6 +58,11 @@ public final class Passive extends L2Effect
 	public boolean onStart()
 	{
 		if (!getEffected().isAttackable())
+		{
+			return false;
+		}
+		
+		if (_onlyUndead && !getEffected().isUndead())
 		{
 			return false;
 		}

@@ -251,7 +251,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="22208-1" />
+		<set name="item_skill" val="22401-1" />
 	</item>
 	<item id="22325" type="EtcItem" name="Transformation Scroll: Zaken">
 		<!-- Description: Transformation scroll that transform you into Zaken for 30 minute(s). No effect if used while transformed. Cannot be exchanged or dropped. Can be destroyed. Can be stored in a private warehouse. -->
@@ -265,7 +265,7 @@
 		<set name="is_oly_restricted" val="true" />
 		<set name="is_freightable" val="true" />
 		<set name="handler" val="ItemSkills" />
-		<set name="item_skill" val="9160-1" />
+		<set name="item_skill" val="22400-1" />
 	</item>
 	<item id="22326" type="Armor" name="Blue Talisman - Buff Cancel">
 		<!-- Description: Cancels the buffs of nearby enemies upon use. Only one effect is applies when you wear two of the same talismans. Cannot be exchanged or dropped. Can be destroyed. Can be stored in a private warehouse. -->

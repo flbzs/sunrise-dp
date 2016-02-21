@@ -409,6 +409,7 @@ public final class Valakas extends AbstractNpcAI
 			{
 				if ((npc != null) && ((_lastAttack + 900000) < System.currentTimeMillis()))
 				{
+					_log.info(getClass().getSimpleName() + ": kicked players using CHECK_ATTACK");
 					setStatus(ALIVE);
 					for (L2Character charInside : zone.getCharactersInside())
 					{
@@ -432,10 +433,11 @@ public final class Valakas extends AbstractNpcAI
 							}
 						}
 					}
+					cancelQuestTimer("CHECK_ATTACK", npc, null);
 				}
-				else
+				else if (npc != null)
 				{
-					startQuestTimer("CHECK_ATTACK", 60000, _valakas, null);
+					startQuestTimer("CHECK_ATTACK", 60000, npc, null);
 				}
 				break;
 			}
@@ -458,6 +460,7 @@ public final class Valakas extends AbstractNpcAI
 			}
 			case "CLEAR_ZONE":
 			{
+				_log.info(getClass().getSimpleName() + ": kicked players using CLEAR_ZONE");
 				for (L2Character charInside : zone.getCharactersInside())
 				{
 					if (charInside != null)
@@ -508,6 +511,7 @@ public final class Valakas extends AbstractNpcAI
 			{
 				if (getStatus() == IN_FIGHT)
 				{
+					_log.info(getClass().getSimpleName() + ": kicked players using ABORT_FIGHT");
 					setStatus(ALIVE);
 					cancelQuestTimer("CHECK_ATTACK", _valakas, null);
 					cancelQuestTimer("SPAWN_MINION", _valakas, null);

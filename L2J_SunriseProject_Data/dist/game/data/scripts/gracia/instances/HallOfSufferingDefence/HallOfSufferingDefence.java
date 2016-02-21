@@ -36,11 +36,13 @@ import l2r.gameserver.model.actor.L2Summon;
 import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.L2EffectType;
+import l2r.gameserver.model.entity.Instance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.SystemMessageId;
+import l2r.gameserver.network.serverpackets.ExSendUIEvent;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
@@ -65,7 +67,6 @@ public class HallOfSufferingDefence extends Quest
 		}
 	}
 	
-	private static final String qn = "HallOfSufferingDefence";
 	private static final int INSTANCEID = 116; // this is the client number
 	private static final boolean debug = false;
 	
@@ -529,6 +530,19 @@ public class HallOfSufferingDefence extends Quest
 					cancelQuestTimers("spawnBossGuards");
 					cancelQuestTimers("isTwinSeparated");
 					addSpawn(TEPIOS, TEPIOS_SPAWN[0], TEPIOS_SPAWN[1], TEPIOS_SPAWN[2], 0, false, 0, false, world.getInstanceId());
+					
+					for (Integer pc : world.getAllowed())
+					{
+						L2PcInstance killer = L2World.getInstance().getPlayer(pc);
+						if (killer != null)
+						{
+							killer.sendPacket(new ExSendUIEvent(killer, true, true, 0, 0, ""));
+						}
+					}
+					
+					Instance inst = InstanceManager.getInstance().getInstance(world.getInstanceId());
+					inst.setDuration(5 * 60000);
+					inst.setEmptyDestroyTime(0);
 				}
 			}
 		}
@@ -538,12 +552,14 @@ public class HallOfSufferingDefence extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		int npcId = npc.getId();
-		QuestState st = player.getQuestState(qn);
+		String htmltext = getNoQuestMsg(player);
+		final QuestState st = getQuestState(player, true);
 		if (st == null)
 		{
-			st = newQuestState(player);
+			return htmltext;
 		}
+		
+		int npcId = npc.getId();
 		if (npcId == MOUTHOFEKIMUS)
 		{
 			teleCoord tele = new teleCoord();
