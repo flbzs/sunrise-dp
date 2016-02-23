@@ -92,7 +92,7 @@ public final class Anais extends AbstractNpcAI
 					Map<Integer, L2PcInstance> players = npc.getKnownList().getKnownPlayers();
 					L2PcInstance target = players.get(getRandom(players.size() - 1));
 					_nextTarget = target;
-					if (_nextTarget == null)
+					if ((_nextTarget == null) && (npc.getTarget() != null) && npc.getTarget().isPlayer())
 					{
 						_nextTarget = npc.getTarget().getActingPlayer();
 					}
@@ -101,7 +101,10 @@ public final class Anais extends AbstractNpcAI
 					b.setDisplayEffect(1);
 					b.setIsRunning(false);
 					L2Npc ward = addSpawn(GRAIL_WARD, new Location(b.getX(), b.getY(), b.getZ()), true, 0);
-					((L2Attackable) ward).addDamageHate(_nextTarget, 0, 999);
+					if (_nextTarget != null)
+					{
+						((L2Attackable) ward).addDamageHate(_nextTarget, 0, 999);
+					}
 					ward.setIsRunning(true);
 					ward.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, _nextTarget, null);
 					startQuestTimer("GUARD_ATTACK", 1000, ward, _nextTarget, true);
