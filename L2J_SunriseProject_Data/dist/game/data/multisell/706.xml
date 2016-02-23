@@ -4092,4 +4092,148 @@
 		<!-- Vesper Dual Daggers - Gale -->
 		<production count="1" id="16148" />
 	</item>
+	<item>
+		<!-- Hellblade -->
+		<ingredient id="21919" count="1" />
+		<!-- Neolithic Crystal - S84 -->
+		<ingredient id="21579" count="1" />
+		<!-- Hellblade - Lightning -->
+		<production id="21927" count="1" />
+	</item>
+	<item>
+		<!-- Hellblade - Haste -->
+		<ingredient id="21920" count="1" />
+		<!-- Neolithic Crystal - S84 -->
+		<ingredient id="21579" count="1" />
+		<!-- Hellblade - Lightning - Haste -->
+		<production id="21928" count="1" />
+	</item>
+	<item>
+		<!-- Hellblade - Health -->
+		<ingredient id="21921" count="1" />
+		<!-- Neolithic Crystal - S84 -->
+		<ingredient id="21579" count="1" />
+		<!-- Hellblade - Lightning - Health -->
+		<production id="21929" count="1" />
+	</item>
+	<item>
+		<!-- Hellblade - Focus -->
+		<ingredient id="21922" count="1" />
+		<!-- Neolithic Crystal - S84 -->
+		<ingredient id="21579" count="1" />
+		<!-- Hellblade - Lightning - Focus -->
+		<production id="21930" count="1" />
+	</item>
+	<item>
+		<!-- Butcher Blades -->
+		<ingredient id="21935" count="1" />
+		<!-- Neolithic Crystal - S80 -->
+		<ingredient id="14681" count="1" />
+		<!-- Butcher Blades - Confusion -->
+		<production id="21937" count="1" />
+	</item>
+	<item>
+		<!-- Claw of Destruction -->
+		<ingredient id="21939" count="1" />
+		<!-- Neolithic Crystal - S84 -->
+		<ingredient id="21579" count="1" />
+		<!-- Claw of Destruction - Landslide -->
+		<production id="21947" count="1" />
+	</item>
+	<item>
+		<!-- Claw of Destruction - HP Drain -->
+		<ingredient id="21940" count="1" />
+		<!-- Neolithic Crystal - S84 -->
+		<ingredient id="21579" count="1" />
+		<!-- Claw of Destruction - Landslide - HP Drain -->
+		<production id="21948" count="1" />
+	</item>
+	<item>
+		<!-- Claw of Destruction - Health -->
+		<ingredient id="21941" count="1" />
+		<!-- Neolithic Crystal - S84 -->
+		<ingredient id="21579" count="1" />
+		<!-- Claw of Destruction - Landslide - Health -->
+		<production id="21949" count="1" />
+	</item>
+	<item>
+		<!-- Claw of Destruction - HP Regeneration -->
+		<ingredient id="21942" count="1" />
+		<!-- Neolithic Crystal - S84 -->
+		<ingredient id="21579" count="1" />
+		<!-- Claw of Destruction - Landslide - HP Regeneration -->
+		<production id="21950" count="1" />
+	</item>
+	<item>
+		<!-- Blades of Delusion -->
+		<ingredient id="21955" count="1" />
+		<!-- Neolithic Crystal - S -->
+		<ingredient id="14680" count="1" />
+		<!-- Blades of Delusion - Earth -->
+		<production id="21957" count="1" />
+	</item>
+	<item>
+		<!-- Blood Brother -->
+		<ingredient id="21959" count="1" />
+		<!-- Neolithic Crystal - S -->
+		<ingredient id="14680" count="1" />
+		<!-- Blood Brother - Great Gale -->
+		<production id="21966" count="1" />
+	</item>
+	<item>
+		<!-- Blood Brother - Focus -->
+		<ingredient id="21960" count="1" />
+		<!-- Neolithic Crystal - S -->
+		<ingredient id="14680" count="1" />
+		<!-- Blood Brother - Great Gale - Focus -->
+		<production id="21967" count="1" />
+	</item>
+	<item>
+		<!-- Blood Brother - Health -->
+		<ingredient id="21961" count="1" />
+		<!-- Neolithic Crystal - S -->
+		<ingredient id="14680" count="1" />
+		<!-- Blood Brother - Great Gale - Health -->
+		<production id="21968" count="1" />
+	</item>
+	<item>
+		<!-- Blood Brother - Light -->
+		<ingredient id="21962" count="1" />
+		<!-- Neolithic Crystal - S -->
+		<ingredient id="14680" count="1" />
+		<!-- Blood Brother - Great Gale - Light -->
+		<production id="21969" count="1" />
+	</item>
+	<item>
+		<!-- Mardil's Fan -->
+		<ingredient id="21973" count="1" />
+		<!-- Neolithic Crystal - A -->
+		<ingredient id="14679" count="1" />
+		<!-- Mardil's Fan - Holy Spirit -->
+		<production id="21977" count="1" />
+	</item>
+	<item>
+		<!-- Mardil's Fan - M. Atk. -->
+		<ingredient id="21974" count="1" />
+		<!-- Neolithic Crystal - A -->
+		<ingredient id="14679" count="1" />
+		<!-- Mardil's Fan - Holy Spirit - M. Atk. -->
+		<production id="21978" count="1" />
+	</item>
+	<item>
+		<!-- Mardil's Fan - Magic Silence -->
+		<ingredient id="21975" count="1" />
+		<!-- Neolithic Crystal - A -->
+		<ingredient id="14679" count="1" />
+		<!-- Mardil's Fan - Holy Spirit - Magic Silence -->
+		<production id="21979" count="1" />
+	</item>
+	<item>
+		<!-- Mardil's Fan - Acumen -->
+		<ingredient id="21976" count="1" />
+		<!-- Neolithic Crystal - A -->
+		<ingredient id="14679" count="1" />
+		<!-- Mardil's Fan - Holy Spirit - Acumen -->
+		<production id="21980" count="1" />
+	</item>
 </list>
