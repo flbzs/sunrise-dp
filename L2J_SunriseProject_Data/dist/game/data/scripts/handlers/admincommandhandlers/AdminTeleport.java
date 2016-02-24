@@ -145,24 +145,31 @@ public class AdminTeleport implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_move_to_id"))
 		{
-			String val = command.substring(17);
-			if (!Util.isDigit(val))
+			try
 			{
-				activeChar.sendMessage("Usage: //admin_move_to_id ID");
-				AdminHtml.showAdminHtml(activeChar, "teleports.htm");
-				return false;
+				String val = command.substring(17);
+				if (!Util.isDigit(val))
+				{
+					activeChar.sendMessage("Command format is //admin_move_to_id <ID>");
+					AdminHtml.showAdminHtml(activeChar, "teleports.htm");
+					return false;
+				}
+				
+				L2Object npc = getAliveNpc(Integer.parseInt(val));
+				if (npc != null)
+				{
+					activeChar.teleToLocation(npc.getLocation());
+				}
+				else
+				{
+					activeChar.sendMessage("Npc id does not exist or all instances are dead.");
+					AdminHtml.showAdminHtml(activeChar, "teleports.htm");
+					return false;
+				}
 			}
-			
-			L2Object npc = getAliveNpc(Integer.parseInt(val));
-			if (npc != null)
+			catch (Exception e)
 			{
-				activeChar.teleToLocation(npc.getLocation());
-			}
-			else
-			{
-				activeChar.sendMessage("Npc id does not exist or all instances are dead.");
-				AdminHtml.showAdminHtml(activeChar, "teleports.htm");
-				return false;
+				activeChar.sendMessage("Command format is //admin_move_to_id <ID>");
 			}
 		}
 		else if (command.startsWith("admin_move_to"))
@@ -208,6 +215,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			}
 			catch (StringIndexOutOfBoundsException e)
 			{
+				activeChar.sendMessage("Command format is //admin_teleportto <name>");
 			}
 		}
 		else if (command.startsWith("admin_recall "))

@@ -38,7 +38,7 @@ import ai.npc.CastleTeleporter.CastleTeleporter;
 import ai.npc.CastleWarehouse.CastleWarehouse;
 import ai.npc.ClanTrader.ClanTrader;
 import ai.npc.Dorian.Dorian;
-import ai.npc.DragonVortex.DragonVortex;
+import ai.npc.DragonVortexRetail.DragonVortexRetail;
 import ai.npc.EkimusMouth.EkimusMouth;
 import ai.npc.FameManager.FameManager;
 import ai.npc.ForgeOfTheGods.ForgeOfTheGods;
@@ -101,7 +101,8 @@ public final class NpcLoader
 		CastleWarehouse.class,
 		ClanTrader.class,
 		Dorian.class,
-		DragonVortex.class,
+		// DragonVortex.class,
+		DragonVortexRetail.class,
 		EkimusMouth.class,
 		FameManager.class,
 		ForgeOfTheGods.class,

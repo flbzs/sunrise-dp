@@ -25,6 +25,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import l2r.gameserver.data.SpawnTable;
 import l2r.gameserver.model.L2Spawn;
+import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 
@@ -72,6 +73,16 @@ public final class DragonVortex extends AbstractNpcAI
 		addFirstTalkId(VORTEX);
 		addTalkId(VORTEX);
 		addKillId(25718, 25719, 25720, 25721, 25723, 25722, 25724);
+		
+		loadSpawns();
+	}
+	
+	private static void loadSpawns()
+	{
+		addSpawn(32871, new Location(92225, 113873, -3062));
+		addSpawn(32871, new Location(108924, 111992, -3028));
+		addSpawn(32871, new Location(110116, 125500, -3664));
+		addSpawn(32871, new Location(121172, 113348, -3776));
 	}
 	
 	@Override
