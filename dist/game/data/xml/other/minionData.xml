@@ -2618,6 +2618,9 @@
 		<minion id="29003" count="6" respawnTime="10" /> <!-- Nurse Ant -->
 		<minion id="29005" count="8" respawnTime="360" /> <!-- Court Guard Ant -->
 	</npc>
+	<npc id="29002"> <!-- Queen Ant Larva -->
+		<minion id="29003" count="2" respawnTime="10" /> <!-- Nurse Ant -->
+	</npc>
 	<npc id="29014"> <!-- Orfen -->
 		<minion id="29016" count="4" respawnTime="360" /> <!-- Raikel Leos -->
 	</npc>
