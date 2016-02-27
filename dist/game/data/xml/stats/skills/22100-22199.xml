@@ -1504,7 +1504,7 @@
 			<player flyMounted="false" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="vp_up" abnormalVisualEffect="vitality">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="vp_up" abnormalVisualEffect="vitality">
 				<sub stat="vitalityConsumeRate" val="1" />
 			</effect>
 		</for>

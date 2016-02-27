@@ -204,7 +204,7 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 				{
 					if (player.getLevel() >= MIN_LEVEL)
 					{
-						st.addExpAndSp(52518015, 5817677);
+						st.addExpAndSp(25000000, 2500000);
 						st.exitQuest(false, true);
 						htmltext = "30760-02.html";
 					}

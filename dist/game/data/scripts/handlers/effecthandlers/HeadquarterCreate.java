@@ -22,6 +22,7 @@ import l2r.gameserver.data.sql.NpcTable;
 import l2r.gameserver.instancemanager.CHSiegeManager;
 import l2r.gameserver.instancemanager.CastleManager;
 import l2r.gameserver.instancemanager.FortManager;
+import l2r.gameserver.instancemanager.TerritoryWarManager;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import l2r.gameserver.model.effects.EffectTemplate;
@@ -73,7 +74,13 @@ public final class HeadquarterCreate extends L2Effect
 		final Castle castle = CastleManager.getInstance().getCastle(player);
 		final Fort fort = FortManager.getInstance().getFort(player);
 		final SiegableHall hall = CHSiegeManager.getInstance().getNearbyClanHall(player);
-		if ((castle != null) && !castle.getSiege().getFlag(player.getClan()).contains(flag))
+		
+		// vGodFather territory flag fix
+		if (TerritoryWarManager.getInstance().isTWInProgress())
+		{
+			TerritoryWarManager.getInstance().addClanFlag(player.getClan(), flag);
+		}
+		else if ((castle != null) && !castle.getSiege().getFlag(player.getClan()).contains(flag))
 		{
 			castle.getSiege().getFlag(player.getClan()).add(flag);
 		}

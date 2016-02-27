@@ -63,7 +63,7 @@ public class AdminEnchant implements IAdminCommandHandler
 	{
 		if (command.equals("admin_enchant"))
 		{
-			showMainPage(activeChar);
+			AdminHtml.showAdminHtml(activeChar, "enchant.htm");
 		}
 		else
 		{
@@ -163,9 +163,6 @@ public class AdminEnchant implements IAdminCommandHandler
 					activeChar.sendMessage("Please specify a valid new enchant value.");
 				}
 			}
-			
-			// show the enchant menu after an action
-			showMainPage(activeChar);
 		}
 		
 		return true;
@@ -225,11 +222,6 @@ public class AdminEnchant implements IAdminCommandHandler
 			activeChar.sendMessage("Changed enchantment of " + player.getName() + "'s " + itemInstance.getItem().getName() + " from " + curEnchant + " to " + ench + ".");
 			player.sendMessage("Admin has changed the enchantment of your " + itemInstance.getItem().getName() + " from " + curEnchant + " to " + ench + ".");
 		}
-	}
-	
-	private void showMainPage(L2PcInstance activeChar)
-	{
-		AdminHtml.showAdminHtml(activeChar, "enchant.htm");
 	}
 	
 	@Override
