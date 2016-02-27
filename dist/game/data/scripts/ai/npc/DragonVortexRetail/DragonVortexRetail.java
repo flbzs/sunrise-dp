@@ -42,13 +42,13 @@ public class DragonVortexRetail extends AbstractNpcAI
 	
 	private static final int[] RAIDS =
 	{
-		25724, // Muscle Bomber
-		25723, // Spike Slasher
-		25722, // Shadow Summoner
-		25721, // Blackdagger Wing
-		25720, // Bleeding Fly
-		25719, // Dust Rider
 		25718, // Emerald Horn
+		25719, // Dust Rider
+		25720, // Bleeding Fly
+		25721, // Blackdagger Wing
+		25722, // Shadow Summoner
+		25723, // Spike Slasher
+		25724, // Muscle Bomber
 	};
 	
 	private L2Npc boss1;
