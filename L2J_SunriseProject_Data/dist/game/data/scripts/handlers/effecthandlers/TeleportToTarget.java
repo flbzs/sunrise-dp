@@ -42,22 +42,14 @@ public class TeleportToTarget extends L2Effect
 			return false;
 		}
 		
-		int px = target.getX();
-		int py = target.getY();
-		double ph = Util.convertHeadingToDegree(target.getHeading());
+		int heading = target.getHeading();
+		int sign = -1;
 		
-		ph += 180;
-		if (ph > 360)
-		{
-			ph -= 360;
-		}
+		double angle = Util.convertHeadingToDegree(-heading);
+		double radian = Math.toRadians(angle) - 1.5839;
 		
-		ph = (Math.PI * ph) / 180;
-		int x = (int) (px + (25 * Math.cos(ph)));
-		int y = (int) (py + (25 * Math.sin(ph)));
-		int z = target.getZ();
-		
-		final Location loc = GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), x, y, z, activeChar.getInstanceId());
+		final Location toLoc = new Location(target.getX() + (int) (Math.sin(radian) * (40 * (-sign))), target.getY() + (int) (Math.cos(radian) * (40 * sign)), target.getZ(), heading);
+		final Location loc = GeoData.getInstance().moveCheck(activeChar.getX(), activeChar.getY(), activeChar.getZ(), toLoc.getX(), toLoc.getY(), toLoc.getZ(), activeChar.getInstanceId());
 		
 		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		activeChar.broadcastPacket(new FlyToLocation(activeChar, loc.getX(), loc.getY(), loc.getZ(), FlyType.DUMMY));

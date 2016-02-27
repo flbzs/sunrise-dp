@@ -59,8 +59,15 @@ public class Mdam implements ISkillHandler
 		boolean sps = skill.useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
 		boolean bss = skill.useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		
-		for (L2Character target : (L2Character[]) targets)
+		for (L2Object trg : (L2Character[]) targets)
 		{
+			if (!trg.isCharacter())
+			{
+				continue;
+			}
+			
+			L2Character target = (L2Character) trg;
+			
 			if (activeChar.isPlayer() && target.isPlayer() && target.getActingPlayer().isFakeDeath())
 			{
 				target.stopFakeDeath(true);

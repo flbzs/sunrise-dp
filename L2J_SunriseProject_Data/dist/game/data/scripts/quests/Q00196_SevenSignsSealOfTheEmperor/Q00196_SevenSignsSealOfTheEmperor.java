@@ -215,7 +215,7 @@ public final class Q00196_SevenSignsSealOfTheEmperor extends Quest
 				{
 					if (player.getLevel() >= MIN_LEVEL)
 					{
-						addExpAndSp(player, 52518015, 5817677);
+						st.addExpAndSp(25000000, 2500000);
 						st.exitQuest(false, true);
 						htmltext = "32593-02.html";
 					}

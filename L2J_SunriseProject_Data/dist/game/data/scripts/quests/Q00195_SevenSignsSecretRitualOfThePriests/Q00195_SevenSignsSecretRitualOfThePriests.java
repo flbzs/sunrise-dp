@@ -175,7 +175,7 @@ public final class Q00195_SevenSignsSecretRitualOfThePriests extends Quest
 				{
 					if (player.getLevel() >= MIN_LEVEL)
 					{
-						st.addExpAndSp(52518015, 5817677);
+						st.addExpAndSp(25000000, 2500000);
 						st.exitQuest(false, true);
 						htmltext = "30969-03.html";
 					}

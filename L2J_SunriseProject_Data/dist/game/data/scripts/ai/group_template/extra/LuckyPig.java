@@ -26,8 +26,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.L2Object;
+import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.Location;
+import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.itemcontainer.Inventory;
@@ -122,11 +124,11 @@ public final class LuckyPig extends AbstractNpcAI
 	public LuckyPig()
 	{
 		super(LuckyPig.class.getSimpleName(), "ai/group_template/extra");
-		addKillId(Wingless_Lucky_Pig);
-		addKillId(Golden_Wingless_Lucky_Pig);
+		addKillId(Wingless_Lucky_Pig, Golden_Wingless_Lucky_Pig);
 		addKillId(Lucky_Pig_Level_52);
 		addKillId(Lucky_Pig_Level_70);
 		addKillId(Lucky_Pig_Level_80);
+		addAttackId(Wingless_Lucky_Pig, Golden_Wingless_Lucky_Pig);
 		addSpawnId(Lucky_Pig);
 	}
 	
@@ -172,17 +174,17 @@ public final class LuckyPig extends AbstractNpcAI
 							{
 								if (npc.isLucky52)
 								{
-									L2Npc pig = addSpawn(Wingless_Lucky_Pig, npc.getLocation(), true, despawnTime * 60 * 1000, true);
+									L2Npc pig = addSpawn(Wingless_Lucky_Pig, npc.getLocation().getX(), npc.getLocation().getY(), npc.getLocation().getZ(), despawnTime * 60 * 1000, 52);
 									pig.isLucky52 = true;
 								}
 								else if (npc.isLucky70)
 								{
-									L2Npc pig = addSpawn(Wingless_Lucky_Pig, npc.getLocation(), true, despawnTime * 60 * 1000, true);
+									L2Npc pig = addSpawn(Wingless_Lucky_Pig, npc.getLocation().getX(), npc.getLocation().getY(), npc.getLocation().getZ(), despawnTime * 60 * 1000, 70);
 									pig.isLucky70 = true;
 								}
 								else if (npc.isLucky80)
 								{
-									L2Npc pig = addSpawn(Wingless_Lucky_Pig, npc.getLocation(), true, despawnTime * 60 * 1000, true);
+									L2Npc pig = addSpawn(Wingless_Lucky_Pig, npc.getLocation().getX(), npc.getLocation().getY(), npc.getLocation().getZ(), despawnTime * 60 * 1000, 80);
 									pig.isLucky80 = true;
 								}
 								npc.deleteMe();
@@ -191,17 +193,17 @@ public final class LuckyPig extends AbstractNpcAI
 							{
 								if (npc.isLucky52)
 								{
-									L2Npc pig = addSpawn(Golden_Wingless_Lucky_Pig, npc.getLocation(), true, despawnTime * 60 * 1000, true);
+									L2Npc pig = addSpawn(Golden_Wingless_Lucky_Pig, npc.getLocation().getX(), npc.getLocation().getY(), npc.getLocation().getZ(), despawnTime * 60 * 1000, 52);
 									pig.isLucky52 = true;
 								}
 								else if (npc.isLucky70)
 								{
-									L2Npc pig = addSpawn(Golden_Wingless_Lucky_Pig, npc.getLocation(), true, despawnTime * 60 * 1000, true);
+									L2Npc pig = addSpawn(Golden_Wingless_Lucky_Pig, npc.getLocation().getX(), npc.getLocation().getY(), npc.getLocation().getZ(), despawnTime * 60 * 1000, 70);
 									pig.isLucky70 = true;
 								}
 								else if (npc.isLucky80)
 								{
-									L2Npc pig = addSpawn(Golden_Wingless_Lucky_Pig, npc.getLocation(), true, despawnTime * 60 * 1000, true);
+									L2Npc pig = addSpawn(Golden_Wingless_Lucky_Pig, npc.getLocation().getX(), npc.getLocation().getY(), npc.getLocation().getZ(), despawnTime * 60 * 1000, 80);
 									pig.isLucky80 = true;
 								}
 								npc.deleteMe();
@@ -221,6 +223,29 @@ public final class LuckyPig extends AbstractNpcAI
 		}
 		
 		return super.onAdvEvent(event, npc, player);
+	}
+	
+	@Override
+	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
+	{
+		switch (npc.getId())
+		{
+			// we will force lucky pigs to stop attack
+			case Wingless_Lucky_Pig:
+			case Golden_Wingless_Lucky_Pig:
+				L2Attackable target = (L2Attackable) npc;
+				target.abortAttack();
+				target.abortCast();
+				target.setIsParalyzed(true);
+				target.setIsImmobilized(true);
+				target.startParalyze();
+				target.clearAggroList();
+				target.getAttackByList().clear();
+				target.setTarget(null);
+				target.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+				break;
+		}
+		return null;
 	}
 	
 	@Override
@@ -305,5 +330,52 @@ public final class LuckyPig extends AbstractNpcAI
 		}
 		
 		return super.onSpawn(npc);
+	}
+	
+	private static L2Npc addSpawn(int npcId, int x, int y, int z, long despawnDelay, int level)
+	{
+		try
+		{
+			if ((x == 0) && (y == 0))
+			{
+				return null;
+			}
+			
+			int offset = Rnd.get(50, 100);
+			if (Rnd.nextBoolean())
+			{
+				offset *= -1;
+			}
+			x += offset;
+			
+			offset = Rnd.get(50, 100);
+			if (Rnd.nextBoolean())
+			{
+				offset *= -1;
+			}
+			y += offset;
+			
+			final L2Spawn spawn = new L2Spawn(npcId);
+			spawn.setInstanceId(0);
+			spawn.setHeading(0);
+			spawn.setX(x);
+			spawn.setY(y);
+			spawn.setZ(z);
+			spawn.stopRespawn();
+			
+			final L2Npc npc = spawn.spawnOne(true);
+			if (despawnDelay > 0)
+			{
+				npc.scheduleDespawn(despawnDelay);
+			}
+			
+			return npc;
+		}
+		catch (Exception e)
+		{
+		
+		}
+		
+		return null;
 	}
 }

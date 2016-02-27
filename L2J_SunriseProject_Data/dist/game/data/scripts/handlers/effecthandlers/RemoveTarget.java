@@ -22,6 +22,7 @@ import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
+import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.model.stats.Formulas;
 
@@ -37,6 +38,12 @@ public class RemoveTarget extends L2Effect
 		super(env, template);
 		
 		_chance = template.getParameters().getInt("chance", 100);
+	}
+	
+	@Override
+	public L2EffectType getEffectType()
+	{
+		return L2EffectType.REMOVE_TARGET;
 	}
 	
 	@Override
