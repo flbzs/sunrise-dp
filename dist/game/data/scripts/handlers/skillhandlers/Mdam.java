@@ -59,7 +59,7 @@ public class Mdam implements ISkillHandler
 		boolean sps = skill.useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
 		boolean bss = skill.useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		
-		for (L2Object trg : (L2Character[]) targets)
+		for (L2Object trg : targets)
 		{
 			if (!trg.isCharacter())
 			{
