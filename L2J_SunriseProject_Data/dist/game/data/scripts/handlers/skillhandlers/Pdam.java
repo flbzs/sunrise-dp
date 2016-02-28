@@ -55,8 +55,14 @@ public class Pdam implements ISkillHandler
 		
 		boolean ss = skill.useSoulShot() && activeChar.isChargedShot(ShotType.SOULSHOTS);
 		
-		for (L2Character target : (L2Character[]) targets)
+		for (L2Object trg : targets)
 		{
+			if (!trg.isCharacter())
+			{
+				continue;
+			}
+			
+			L2Character target = (L2Character) trg;
 			if (activeChar.isPlayer() && target.isPlayer() && target.getActingPlayer().isFakeDeath())
 			{
 				target.stopFakeDeath(true);
