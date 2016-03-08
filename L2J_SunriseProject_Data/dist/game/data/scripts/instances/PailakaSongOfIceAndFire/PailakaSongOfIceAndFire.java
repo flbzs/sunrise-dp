@@ -67,6 +67,20 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 		18611, 18612, 18613, 18614, 18615
 	};
 	
+	private static final int[][] DROPLIST =
+	{
+		// must be sorted by npcId !
+		// npcId, itemId, chance
+		{ BLOOM, SHIELD_POTION, 30 },
+		{ BLOOM, HEAL_POTION, 80 },
+		{ BOTTLE, SHIELD_POTION, 10 },
+		{ BOTTLE, WATER_ENHANCER, 40 },
+		{ BOTTLE, HEAL_POTION, 80 },
+		{ BRAZIER, SHIELD_POTION, 10 },
+		{ BRAZIER, FIRE_ENHANCER, 40 },
+		{ BRAZIER, HEAL_POTION, 80 }
+	};
+	
 	private static final int[][] HP_HERBS_DROPLIST =
 	{
 		// itemId, count, chance
@@ -200,13 +214,15 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 		
 		switch (npc.getId())
 		{
-			case 18611:
-			case 18612:
-			case 18613:
-			case 18614:
-			case 18615:
+			case BOTTLE:
+			case BRAZIER:
+			case BLOOM:
+				dropItem(npc, player);
+				break;
+			default:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
 				dropHerb(npc, player, MP_HERBS_DROPLIST);
+				break;
 		}
 		
 		return super.onKill(npc, player, isSummon);
@@ -243,6 +259,27 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 		npc.setInvisible(true);
 		startQuestTimer("BLOOM_TIMER", 1000, npc, null);
 		return super.onSpawn(npc);
+	}
+	
+	private static final void dropItem(L2Npc mob, L2PcInstance player)
+	{
+		final int npcId = mob.getId();
+		final int chance = Rnd.get(100);
+		for (int[] drop : DROPLIST)
+		{
+			if (npcId == drop[0])
+			{
+				if (chance < drop[2])
+				{
+					((L2MonsterInstance) mob).dropItem(player, drop[1], Rnd.get(1, 6));
+					return;
+				}
+			}
+			if (npcId < drop[0])
+			{
+				return; // not found
+			}
+		}
 	}
 	
 	private static final void dropHerb(L2Npc mob, L2PcInstance player, int[][] drop)
