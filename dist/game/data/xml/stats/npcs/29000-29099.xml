@@ -122,7 +122,7 @@
 			</speed>
 			<hitTime>350</hitTime>
 		</stats>
-		<status />
+		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
