@@ -22,11 +22,13 @@ import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
+import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.zone.L2ZoneType;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
+import l2r.util.Rnd;
 
 import instances.AbstractInstance;
 
@@ -38,7 +40,7 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 {
 	protected class PSoIWorld extends InstanceWorld
 	{
-		
+	
 	}
 	
 	// NPCs
@@ -57,6 +59,22 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	// Misc
 	private static final int TEMPLATE_ID = 43;
 	private static final int ZONE = 20108;
+	
+	//@formatter:off
+	private static final int[][] DROPLIST =
+	{
+		// must be sorted by npcId !
+		// npcId, itemId, chance
+		{ BLOOM, SHIELD_POTION, 30 },
+		{ BLOOM, HEAL_POTION, 80 },
+		{ BOTTLE, SHIELD_POTION, 10 },
+		{ BOTTLE, WATER_ENHANCER, 40 },
+		{ BOTTLE, HEAL_POTION, 80 },
+		{ BRAZIER, SHIELD_POTION, 10 },
+		{ BRAZIER, FIRE_ENHANCER, 40 },
+		{ BRAZIER, HEAL_POTION, 80 }
+	};
+	//@formatter:on
 	
 	public PailakaSongOfIceAndFire()
 	{
@@ -168,7 +186,14 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 	@Override
 	public final String onKill(L2Npc npc, L2PcInstance player, boolean isSummon)
 	{
-		npc.dropItem(player, getRandomBoolean() ? SHIELD_POTION : HEAL_POTION, getRandom(1, 7));
+		switch (npc.getId())
+		{
+			case BOTTLE:
+			case BRAZIER:
+			case BLOOM:
+				dropItem(npc, player);
+				break;
+		}
 		return super.onKill(npc, player, isSummon);
 	}
 	
@@ -203,5 +228,26 @@ public final class PailakaSongOfIceAndFire extends AbstractInstance
 		npc.setInvisible(true);
 		startQuestTimer("BLOOM_TIMER", 1000, npc, null);
 		return super.onSpawn(npc);
+	}
+	
+	private static final void dropItem(L2Npc mob, L2PcInstance player)
+	{
+		final int npcId = mob.getId();
+		final int chance = Rnd.get(100);
+		for (int[] drop : DROPLIST)
+		{
+			if (npcId == drop[0])
+			{
+				if (chance < drop[2])
+				{
+					((L2MonsterInstance) mob).dropItem(player, drop[1], Rnd.get(1, 6));
+					return;
+				}
+			}
+			if (npcId < drop[0])
+			{
+				return; // not found
+			}
+		}
 	}
 }

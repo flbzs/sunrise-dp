@@ -279,6 +279,7 @@
 				<run ground="165" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="8.5" />
 			<height normal="8.5" />
@@ -298,6 +299,7 @@
 				<run ground="165" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="12" />
 			<height normal="9.5" />
@@ -317,6 +319,7 @@
 				<run ground="165" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="8.5" />
 			<height normal="5.5" />
@@ -336,6 +339,7 @@
 				<run ground="165" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="18" />
 			<height normal="14" />
@@ -355,6 +359,7 @@
 				<run ground="165" />
 			</speed>
 		</stats>
+		<status undying="false" />
 		<collision>
 			<radius normal="11" />
 			<height normal="8" />
