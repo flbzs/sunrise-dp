@@ -643,7 +643,7 @@
 	</route>
 	<route name="iz111_zone06_01" repeat="true" repeatStyle="back">
 		<target id="18834" spawnX="-78921" spawnY="206110" spawnZ="-7904" />
-		<point X="-78710" Y="206306" Z="-7872" delay="0" run="false" />
+		<point X="-78719" Y="206297" Z="-7888" delay="0" run="false" />
 		<point X="-78930" Y="206101" Z="-7888" delay="0" run="false" />
 	</route>
 	<route name="iz111_zone06_02" repeat="true" repeatStyle="back">
@@ -658,7 +658,7 @@
 	</route>
 	<route name="iz111_zone06_04" repeat="true" repeatStyle="back">
 		<target id="18834" spawnX="-79665" spawnY="206257" spawnZ="-7896" />
-		<point X="-79858" Y="206454" Z="-7872" delay="0" run="false" />
+		<point X="-79850" Y="206448" Z="-7888" delay="0" run="false" />
 		<point X="-79656" Y="206246" Z="-7888" delay="0" run="false" />
 	</route>
 	<route name="iz111_zone06_05" repeat="true" repeatStyle="back">
@@ -688,7 +688,7 @@
 	</route>
 	<route name="iz111_zone06_10" repeat="true" repeatStyle="back">
 		<target id="18834" spawnX="-78928" spawnY="205585" spawnZ="-7904" />
-		<point X="-78731" Y="205386" Z="-7872" delay="0" run="false" />
+		<point X="-78739" Y="205394" Z="-7888" delay="0" run="false" />
 		<point X="-78942" Y="205599" Z="-7888" delay="0" run="false" />
 	</route>
 	<route name="iz111_zone07_01" repeat="true" repeatStyle="back">
@@ -1308,7 +1308,7 @@
 	</route>
 	<!-- Prophet (Sinister) - Gludio -->
 	<route name="prophet_gludio" repeat="true" repeatStyle="cycle">
-		<target id="4312" spawnX="-12216" spawnY="122264" spawnZ="-3014" />
+		<target id="4309" spawnX="-14153" spawnY="121252" spawnZ="-2984" />
 		<point npcStringId="1010222" X="-14153" Y="121252" Z="-2984" delay="5" run="false" />
 		<point X="-14148" Y="121679" Z="-2984" delay="0" run="false" />
 		<point npcStringId="1010221" X="-13892" Y="122266" Z="-2984" delay="10" run="false" />
@@ -1324,7 +1324,7 @@
 	</route>
 	<!-- Prophet (Sinister) - Giran -->
 	<route name="prophet_giran" repeat="true" repeatStyle="cycle">
-		<target id="4309" spawnX="84984" spawnY="147720" spawnZ="-3430" />
+		<target id="4310" spawnX="84858" spawnY="147764" spawnZ="-3400" />
 		<point X="84858" Y="147764" Z="-3400" delay="30" run="false" />
 		<point npcStringId="1010222" X="83623" Y="147705" Z="-3400" delay="0" run="false" />
 		<point X="83626" Y="149551" Z="-3400" delay="10" run="false" />
@@ -1338,7 +1338,7 @@
 	</route>
 	<!-- Prophet (Sinister) - Aden -->
 	<route name="prophet_aden" repeat="true" repeatStyle="cycle">
-		<target id="4310" spawnX="146328" spawnY="23320" spawnZ="-2038" />
+		<target id="4311" spawnX="146363" spawnY="24145" spawnZ="-2008" />
 		<point X="146363" Y="24145" Z="-2008" delay="0" run="false" />
 		<point npcStringId="1010222" X="146339" Y="25823" Z="-2008" delay="0" run="false" />
 		<point X="148546" Y="25817" Z="-2008" delay="35" run="false" />
@@ -1350,7 +1350,7 @@
 	</route>
 	<!-- Prophet (Sinister) - Rune -->
 	<route name="prophet_rune" repeat="true" repeatStyle="cycle">
-		<target id="4311" spawnX="43258" spawnY="-47055" spawnZ="-798" />
+		<target id="4312" spawnX="43319" spawnY="-47412" spawnZ="-792" />
 		<point X="43319" Y="-47412" Z="-792" delay="0" run="false" />
 		<point npcStringId="1010223" X="43531" Y="-48109" Z="-792" delay="0" run="false" />
 		<point X="45203" Y="-47980" Z="-792" delay="0" run="false" />
