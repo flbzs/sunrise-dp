@@ -26,6 +26,7 @@ import l2r.gameserver.handler.IVoicedCommandHandler;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.L2GameClient;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
+import l2r.gameserver.util.Util;
 
 /**
  * @author Nik
@@ -61,6 +62,11 @@ public class ChangePassword implements IVoicedCommandHandler
 				
 				if (!((curpass == null) || (newpass == null) || (repeatnewpass == null)))
 				{
+					if (!Util.isAlphaNumeric(newpass))
+					{
+						activeChar.sendMessage("The new password must be alpha numeric only!");
+						return false;
+					}
 					if (!newpass.equals(repeatnewpass))
 					{
 						activeChar.sendMessage("The new password doesn't match with the repeated one!");
