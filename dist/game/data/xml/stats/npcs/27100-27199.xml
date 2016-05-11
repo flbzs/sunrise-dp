@@ -2838,7 +2838,7 @@
 			</speed>
 			<hitTime>390</hitTime>
 		</stats>
-		<status />
+		<status undying="false" />
 		<skillList>
 			<skill id="4408" level="17" /> <!--HP Increase (9x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2883,7 +2883,7 @@
 			</speed>
 			<hitTime>390</hitTime>
 		</stats>
-		<status />
+		<status undying="false" />
 		<skillList>
 			<skill id="4408" level="17" /> <!--HP Increase (9x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -2928,7 +2928,7 @@
 			</speed>
 			<hitTime>390</hitTime>
 		</stats>
-		<status />
+		<status undying="false" />
 		<skillList>
 			<skill id="4408" level="17" /> <!--HP Increase (9x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->

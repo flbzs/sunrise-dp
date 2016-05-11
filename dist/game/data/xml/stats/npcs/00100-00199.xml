@@ -67,8 +67,8 @@
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<collision>
-			<radius normal="0.1" />
-			<height normal="0.1" />
+			<radius normal="20" />
+			<height normal="30" />
 		</collision>
 	</npc>
 	<npc id="102" level="70" type="L2Npc" name="Santa Trainee">
@@ -495,8 +495,8 @@
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<collision>
-			<radius normal="0.1" />
-			<height normal="0.1" />
+			<radius normal="9" />
+			<height normal="28.3" />
 		</collision>
 	</npc>
 	<npc id="113" level="55" type="L2Npc" name="Friendly Sno" title="Beginner Supporter">
@@ -1013,8 +1013,8 @@
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<collision>
-			<radius normal="0.1" />
-			<height normal="0.1" />
+			<radius normal="24.5" />
+			<height normal="14" />
 		</collision>
 	</npc>
 	<npc id="127" level="80" type="L2Npc" name="Kotatz">
@@ -1198,8 +1198,8 @@
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
 		<collision>
-			<radius normal="0.1" />
-			<height normal="0.1" />
+			<radius normal="21.5" />
+			<height normal="27" />
 		</collision>
 	</npc>
 	<npc id="132" level="80" type="L2Npc" name="Trejuo" title="Blessed Child">
