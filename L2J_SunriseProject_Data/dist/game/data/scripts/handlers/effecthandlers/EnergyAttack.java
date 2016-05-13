@@ -18,6 +18,11 @@
  */
 package handlers.effecthandlers;
 
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
+
+import l2r.Config;
 import l2r.gameserver.enums.ShotType;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -39,6 +44,8 @@ import l2r.util.Rnd;
  */
 public final class EnergyAttack extends L2Effect
 {
+	private static final Logger _logDamage = Logger.getLogger("damage");
+	
 	private final double _power;
 	private final int _criticalChance;
 	private final boolean _ignoreShieldDefence;
@@ -115,7 +122,7 @@ public final class EnergyAttack extends L2Effect
 		{
 			// FIXME: Traits
 			// double damageMultiplier = Formulas.calcWeaponTraitBonus(attacker, target) * Formulas.calcAttributeBonus(attacker, target, skill) * Formulas.calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true);
-			double damageMultiplier = Formulas.calcValakasTrait(attacker, target, getSkill());
+			double damageMultiplier = Formulas.calcValakasTrait(attacker, target, getSkill()) * Formulas.calcAttributeBonus(attacker, target, skill);
 			
 			boolean ss = getSkill().useSoulShot() && attacker.isChargedShot(ShotType.SOULSHOTS);
 			double ssBoost = ss ? 2 : 1.0;
@@ -161,6 +168,22 @@ public final class EnergyAttack extends L2Effect
 			attacker.sendDamageMessage(target, (int) damage, false, critical, false);
 			target.reduceCurrentHp(damage, attacker, skill);
 			target.notifyDamageReceived(damage, attacker, skill, critical, false);
+			
+			if (Config.LOG_GAME_DAMAGE && attacker.isPlayable() && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
+			{
+				LogRecord record = new LogRecord(Level.INFO, "");
+				record.setParameters(new Object[]
+				{
+					attacker,
+					" did damage ",
+					(int) damage,
+					skill,
+					" to ",
+					target
+				});
+				record.setLoggerName("pdam");
+				_logDamage.log(record);
+			}
 			
 			// Check if damage should be reflected
 			Formulas.calcDamageReflected(attacker, target, skill, damage);
