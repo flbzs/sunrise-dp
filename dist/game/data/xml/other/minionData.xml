@@ -2618,9 +2618,6 @@
 		<minion id="29003" count="6" respawnTime="10" /> <!-- Nurse Ant -->
 		<minion id="29005" count="8" respawnTime="360" /> <!-- Court Guard Ant -->
 	</npc>
-	<npc id="29002"> <!-- Queen Ant Larva -->
-		<minion id="29003" count="2" respawnTime="10" /> <!-- Nurse Ant -->
-	</npc>
 	<npc id="29014"> <!-- Orfen -->
 		<minion id="29016" count="4" respawnTime="360" /> <!-- Raikel Leos -->
 	</npc>
@@ -2628,5 +2625,17 @@
 		<minion id="29008" count="3" respawnTime="360" /> <!-- Doom Wraith -->
 		<minion id="29011" count="4" respawnTime="360" /> <!-- Susceptor -->
 		<minion id="29007" count="10" respawnTime="360" /> <!-- Death Knight -->
+	</npc>
+	<npc id="29002"> <!-- Queen Ant Larva -->
+		<minion id="29003" count="2" respawnTime="10" /> <!-- Nurse Ant -->
+	</npc>
+	<npc id="27346"> <!-- Shilen's Evil Thoughts -->
+		<minion id="27396" count="2" respawnTime="120" /> <!-- Dark Omen Offering -->
+	</npc>
+	<npc id="25542"> <!-- Ranku -->
+		<minion id="32305" count="4" respawnTime="0" /> <!-- Ranku's Scapegoat -->
+	</npc>
+	<npc id="22625"> <!-- Cannibalistic Stakato Leader -->
+		<minion id="22624" count="1" respawnTime="0" /> <!-- Cannibalistic Stakato Follower -->
 	</npc>
 </list>
