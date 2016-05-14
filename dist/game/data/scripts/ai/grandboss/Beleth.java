@@ -550,9 +550,11 @@ public final class Beleth extends AbstractNpcAI
 			}
 			case "CHECK_ATTACK":
 			{
-				if ((_lastAttack + 900000) < System.currentTimeMillis())
+				if ((npc != null) && ((_lastAttack + 900000) < System.currentTimeMillis()))
 				{
+					_log.info(getClass().getSimpleName() + ": kicked players using CHECK_ATTACK");
 					setStatus(ALIVE);
+					DoorData.getInstance().getDoor(DOOR1).openMe();
 					for (L2Character charInside : ZONE.getCharactersInside())
 					{
 						if (charInside != null)
@@ -567,11 +569,11 @@ public final class Beleth extends AbstractNpcAI
 							}
 						}
 					}
-					cancelQuestTimer("CHECK_ATTACK", null, null);
+					cancelQuestTimer("CHECK_ATTACK", npc, null);
 				}
-				else
+				else if (npc != null)
 				{
-					startQuestTimer("CHECK_ATTACK", 60000, null, null);
+					startQuestTimer("CHECK_ATTACK", 60000, npc, null);
 				}
 				break;
 			}
@@ -719,6 +721,8 @@ public final class Beleth extends AbstractNpcAI
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
+		_lastAttack = System.currentTimeMillis();
+		
 		if (getRandom(100) < 40)
 		{
 			return null;
