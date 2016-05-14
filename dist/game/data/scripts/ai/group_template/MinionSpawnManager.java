@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -381,7 +381,6 @@ public final class MinionSpawnManager extends AbstractNpcAI
 		NPC.add(27267); // Fallen Angel Haures
 		NPC.add(27290); // White Wing Commander
 		NPC.add(29001); // Queen Ant
-		NPC.add(29002); // Queen Ant Larva
 		NPC.add(29030); // Fenril Hound Kerinne
 		NPC.add(29033); // Fenril Hound Freki
 		NPC.add(29037); // Fenril Hound Kinaz
@@ -396,6 +395,10 @@ public final class MinionSpawnManager extends AbstractNpcAI
 		NPC.add(29141); // Lost Captain
 		NPC.add(29144); // Lost Captain
 		NPC.add(29147); // Lost Captain
+		// vGodFather addons
+		NPC.add(25542); // Ranku
+		NPC.add(27346); // Shilen's Evil Thoughts
+		NPC.add(29002); // Queen Ant Larva
 	}
 	
 	private static final NpcStringId[] ON_ATTACK_MSG =
