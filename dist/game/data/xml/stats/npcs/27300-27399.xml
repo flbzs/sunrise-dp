@@ -1951,9 +1951,6 @@
 			<param name="Skill02_Target" value="3" />
 			<param name="Skill02_AttackSplash" value="1" />
 			<param name="SceneID" value="14" />
-			<minions name="Privates">
-				<npc id="27396" count="2" respawnTime="120" weightPoint="0" /> <!-- Dark Omen Offering -->
-			</minions>
 			<skill name="Skill01_ID" id="5975" level="3" /> <!-- Dark Attack -->
 			<skill name="Skill02_ID" id="5976" level="3" /> <!-- Dark Storm -->
 			<skill name="Skill03_ID" id="5977" level="3" /> <!-- Dark Strike -->
