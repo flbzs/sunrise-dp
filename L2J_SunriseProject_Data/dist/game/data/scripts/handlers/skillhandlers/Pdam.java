@@ -111,6 +111,8 @@ public class Pdam implements ISkillHandler
 				if (damage > 0)
 				{
 					activeChar.sendDamageMessage(target, damage, false, crit, false);
+					target.reduceCurrentHp(damage, activeChar, skill);
+					target.notifyDamageReceived(damage, activeChar, skill, crit, false);
 					
 					if (Config.LOG_GAME_DAMAGE && activeChar.isPlayable() && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
 					{
@@ -127,8 +129,6 @@ public class Pdam implements ISkillHandler
 						record.setLoggerName("pdam");
 						_logDamage.log(record);
 					}
-					
-					target.reduceCurrentHp(damage, activeChar, skill);
 					
 					// Maybe launch chance skills on us
 					if (activeChar.getChanceSkills() != null)

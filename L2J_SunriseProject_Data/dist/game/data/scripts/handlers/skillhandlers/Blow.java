@@ -27,7 +27,6 @@ import l2r.gameserver.enums.ShotType;
 import l2r.gameserver.handler.ISkillHandler;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Character;
-import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.L2SkillType;
@@ -101,11 +100,17 @@ public class Blow implements ISkillHandler
 					damage *= 1 + (chargedSouls * 0.04);
 				}
 				
+				boolean crit = Formulas.calcCrit(activeChar, target, skill);
 				// Crit rate base crit rate for skill, modified with STR bonus
-				if (!skill.isStaticDamage() && Formulas.calcCrit(activeChar, target, skill))
+				if (!skill.isStaticDamage() && crit)
 				{
 					damage *= 2;
 				}
+				
+				// vGodFather retail message order
+				activeChar.sendDamageMessage(target, (int) damage, false, true, false);
+				target.reduceCurrentHp(damage, activeChar, skill);
+				target.notifyDamageReceived(damage, activeChar, skill, crit, false);
 				
 				if (Config.LOG_GAME_DAMAGE && activeChar.isPlayable() && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
 				{
@@ -123,8 +128,6 @@ public class Blow implements ISkillHandler
 					_logDamage.log(record);
 				}
 				
-				target.reduceCurrentHp(damage, activeChar, skill);
-				
 				// Maybe launch chance skills on us
 				if (activeChar.getChanceSkills() != null)
 				{
@@ -141,12 +144,6 @@ public class Blow implements ISkillHandler
 				{
 					target.breakAttack();
 					target.breakCast();
-				}
-				
-				if (activeChar.isPlayer())
-				{
-					L2PcInstance activePlayer = activeChar.getActingPlayer();
-					activePlayer.sendDamageMessage(target, (int) damage, false, true, false);
 				}
 				
 				// Check if damage should be reflected
