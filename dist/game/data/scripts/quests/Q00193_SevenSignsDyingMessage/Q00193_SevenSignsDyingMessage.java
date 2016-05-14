@@ -73,7 +73,8 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 	{
 		if ((npc.getId() == SHILENS_EVIL_THOUGHTS) && "despawn".equals(event))
 		{
-			if (!npc.isDead())
+			// vGodFather just in case
+			if (!npc.isDead() && (spawns != null) && (player != null))
 			{
 				final L2MonsterInstance monster = spawns.get(player.getObjectId());
 				if ((monster != null) && (monster.getObjectId() == npc.getObjectId()))
@@ -236,10 +237,14 @@ public final class Q00193_SevenSignsDyingMessage extends Quest
 			st.setCond(5);
 		}
 		
-		final L2MonsterInstance monster = spawns.get(player.getObjectId());
-		if ((monster != null) && (monster.getObjectId() == npc.getObjectId()))
+		// vGodFather just in case
+		if ((spawns != null) && (player != null))
 		{
-			spawns.remove(player.getObjectId());
+			final L2MonsterInstance monster = spawns.get(player.getObjectId());
+			if ((monster != null) && (monster.getObjectId() == npc.getObjectId()))
+			{
+				spawns.remove(player.getObjectId());
+			}
 		}
 		
 		cancelQuestTimers("despawn");
