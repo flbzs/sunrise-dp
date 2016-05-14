@@ -114,11 +114,30 @@ public class Mdam implements ISkillHandler
 				if ((reflect & Formulas.SKILL_REFLECT_VENGEANCE) != 0)
 				{
 					activeChar.reduceCurrentHp(damage, target, skill);
+					activeChar.notifyDamageReceived(damage, target, skill, mcrit, false);
 				}
 				else
 				{
 					activeChar.sendDamageMessage(target, damage, mcrit, false, false);
 					target.reduceCurrentHp(damage, activeChar, skill);
+					target.notifyDamageReceived(damage, activeChar, skill, mcrit, false);
+				}
+				
+				// Logging damage
+				if (Config.LOG_GAME_DAMAGE && activeChar.isPlayable() && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
+				{
+					LogRecord record = new LogRecord(Level.INFO, "");
+					record.setParameters(new Object[]
+					{
+						activeChar,
+						" did damage ",
+						damage,
+						skill,
+						" to ",
+						target
+					});
+					record.setLoggerName("mdam");
+					_logDamage.log(record);
 				}
 				
 				// Maybe launch chance skills on us
@@ -144,37 +163,8 @@ public class Mdam implements ISkillHandler
 					}
 					else
 					{
-						// activate attacked effects, if any
-						target.stopSkillEffects(skill.getId());
-						if (Formulas.calcSkillSuccess(activeChar, target, skill, shld, ss, sps, bss))
-						{
-							skill.getEffects(activeChar, target, new Env(shld, ss, sps, bss));
-						}
-						else
-						{
-							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_RESISTED_YOUR_S2);
-							sm.addCharName(target);
-							sm.addSkillName(skill);
-							activeChar.sendPacket(sm);
-						}
+						skill.getEffects(activeChar, target, new Env(shld, ss, sps, bss));
 					}
-				}
-				
-				// Logging damage
-				if (Config.LOG_GAME_DAMAGE && activeChar.isPlayable() && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
-				{
-					LogRecord record = new LogRecord(Level.INFO, "");
-					record.setParameters(new Object[]
-					{
-						activeChar,
-						" did damage ",
-						damage,
-						skill,
-						" to ",
-						target
-					});
-					record.setLoggerName("mdam");
-					_logDamage.log(record);
 				}
 			}
 		}
