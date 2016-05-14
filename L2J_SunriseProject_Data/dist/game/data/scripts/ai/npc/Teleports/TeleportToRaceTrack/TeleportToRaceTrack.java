@@ -90,7 +90,7 @@ public final class TeleportToRaceTrack extends AbstractNpcAI
 	{
 		if (npc.getId() == RACE_MANAGER)
 		{
-			final int returnId = player.getVariables().getInt(MONSTER_RETURN, -1);
+			final int returnId = player.hasVariables() ? player.getVariables().getInt(MONSTER_RETURN, -1) : -1;
 			
 			if (returnId != -1)
 			{
