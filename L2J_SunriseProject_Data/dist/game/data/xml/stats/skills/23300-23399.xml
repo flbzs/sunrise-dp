@@ -124,7 +124,7 @@
 		<set name="stayAfterDeath" val="true" />
 		<set name="operateType" val="A1" />
 		<for>
-			<effect name="Buff" abnormalTime="7210" val="0" abnormalLvl="26" abnormalType="vp_keep" abnormal="vitality">
+			<effect name="Buff" abnormalTime="10800" val="0" abnormalLvl="26" abnormalType="vp_keep" abnormalVisualEffect="vitality">
 				<mul stat="vitalityConsumeRate" val="0" />
 			</effect>
 		</for>
