@@ -382,51 +382,52 @@ public final class Antharas extends AbstractNpcAI
 			}
 			case "CHECK_ATTACK":
 			{
-				if ((npc != null) && ((_lastAttack + 900000) < System.currentTimeMillis()))
+				if (npc != null)
 				{
-					_log.info(getClass().getSimpleName() + ": kicked players using CHECK_ATTACK");
-					setStatus(ALIVE);
-					for (L2Character charInside : zone.getCharactersInside())
+					if ((_lastAttack + 900000) < System.currentTimeMillis())
 					{
-						if (charInside != null)
+						_log.info(getClass().getSimpleName() + ": kicked players using CHECK_ATTACK");
+						setStatus(ALIVE);
+						for (L2Character charInside : zone.getCharactersInside())
 						{
-							if (charInside.isNpc())
+							if (charInside != null)
 							{
-								if (charInside.getId() == ANTHARAS)
+								if (charInside.isNpc())
 								{
-									charInside.teleToLocation(185708, 114298, -8221);
-									charInside.setCurrentHpMp(npc.getMaxHp(), npc.getMaxMp());
+									if (charInside.getId() == ANTHARAS)
+									{
+										charInside.teleToLocation(185708, 114298, -8221);
+										charInside.setCurrentHpMp(npc.getMaxHp(), npc.getMaxMp());
+									}
+									else
+									{
+										charInside.deleteMe();
+									}
 								}
-								else
+								else if (charInside.isPlayer())
 								{
-									charInside.deleteMe();
+									charInside.teleToLocation(79800 + getRandom(600), 151200 + getRandom(1100), -3534);
 								}
-							}
-							else if (charInside.isPlayer())
-							{
-								charInside.teleToLocation(79800 + getRandom(600), 151200 + getRandom(1100), -3534);
 							}
 						}
 					}
-					cancelQuestTimer("CHECK_ATTACK", npc, null);
-					cancelQuestTimer("SPAWN_MINION", npc, null);
-				}
-				else if (npc != null)
-				{
-					if (attacker_1_hate > 10)
+					else
 					{
-						attacker_1_hate -= getRandom(10);
+						if (attacker_1_hate > 10)
+						{
+							attacker_1_hate -= getRandom(10);
+						}
+						if (attacker_2_hate > 10)
+						{
+							attacker_2_hate -= getRandom(10);
+						}
+						if (attacker_3_hate > 10)
+						{
+							attacker_3_hate -= getRandom(10);
+						}
+						manageSkills(npc);
+						startQuestTimer("CHECK_ATTACK", 60000, npc, null);
 					}
-					if (attacker_2_hate > 10)
-					{
-						attacker_2_hate -= getRandom(10);
-					}
-					if (attacker_3_hate > 10)
-					{
-						attacker_3_hate -= getRandom(10);
-					}
-					manageSkills(npc);
-					startQuestTimer("CHECK_ATTACK", 60000, npc, null);
 				}
 				break;
 			}
@@ -735,7 +736,6 @@ public final class Antharas extends AbstractNpcAI
 		{
 			cancelQuestTimer("SET_REGEN", npc, null);
 			startQuestTimer("SET_REGEN", 60000, npc, null);
-			((L2Attackable) npc).setOnKillDelay(0);
 		}
 		else
 		{

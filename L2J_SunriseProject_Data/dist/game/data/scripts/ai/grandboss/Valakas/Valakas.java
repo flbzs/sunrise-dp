@@ -407,37 +407,40 @@ public final class Valakas extends AbstractNpcAI
 			}
 			case "CHECK_ATTACK":
 			{
-				if ((npc != null) && ((_lastAttack + 900000) < System.currentTimeMillis()))
+				if (npc != null)
 				{
-					_log.info(getClass().getSimpleName() + ": kicked players using CHECK_ATTACK");
-					setStatus(ALIVE);
-					for (L2Character charInside : zone.getCharactersInside())
+					if ((_lastAttack + 900000) < System.currentTimeMillis())
 					{
-						if (charInside != null)
+						_log.info(getClass().getSimpleName() + ": kicked players using CHECK_ATTACK");
+						setStatus(ALIVE);
+						for (L2Character charInside : zone.getCharactersInside())
 						{
-							if (charInside.isNpc())
+							if (charInside != null)
 							{
-								if (charInside.getId() == VALAKAS)
+								if (charInside.isNpc())
 								{
-									charInside.teleToLocation(REST_ROOM);
+									if (charInside.getId() == VALAKAS)
+									{
+										charInside.teleToLocation(REST_ROOM);
+									}
+									else
+									{
+										charInside.deleteMe();
+									}
 								}
-								else
+								else if (charInside.isPlayer())
 								{
-									charInside.deleteMe();
+									final Location loc = new Location(OUT_LOC.getX() + getRandom(500), OUT_LOC.getY() + getRandom(500), OUT_LOC.getZ());
+									charInside.teleToLocation(loc);
 								}
-							}
-							else if (charInside.isPlayer())
-							{
-								final Location loc = new Location(OUT_LOC.getX() + getRandom(500), OUT_LOC.getY() + getRandom(500), OUT_LOC.getZ());
-								charInside.teleToLocation(loc);
 							}
 						}
+						cancelQuestTimer("CHECK_ATTACK", npc, null);
 					}
-					cancelQuestTimer("CHECK_ATTACK", npc, null);
-				}
-				else if (npc != null)
-				{
-					startQuestTimer("CHECK_ATTACK", 60000, npc, null);
+					else
+					{
+						startQuestTimer("CHECK_ATTACK", 60000, npc, null);
+					}
 				}
 				break;
 			}
@@ -597,7 +600,6 @@ public final class Valakas extends AbstractNpcAI
 	{
 		cancelQuestTimer("SET_REGEN", npc, null);
 		startQuestTimer("SET_REGEN", 60000, npc, null);
-		((L2Attackable) npc).setOnKillDelay(0);
 		return super.onSpawn(npc);
 	}
 	
