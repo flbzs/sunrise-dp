@@ -782,6 +782,11 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 					data.flag = rset.getInt("flag");
 					data.npc = rset.getInt("npc");
 					
+					// vGodFather just in case
+					if (_data == null)
+					{
+						_data = new HashMap<>();
+					}
 					_data.put(clanId, data);
 					loadAttackerMembers(clanId);
 				}

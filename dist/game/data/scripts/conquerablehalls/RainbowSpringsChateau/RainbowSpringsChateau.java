@@ -874,8 +874,8 @@ public final class RainbowSpringsChateau extends ClanHallSiegeEngine
 			{
 				while (rset.next())
 				{
-					int clanId = rset.getInt("clan_id");
-					long count = rset.getLong("decrees_count");
+					int clanId = rset.getInt("clanId");
+					long count = rset.getLong("war_decrees_count");
 					_warDecreesCount.put(clanId, count);
 				}
 			}
