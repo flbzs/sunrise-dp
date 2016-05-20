@@ -50,12 +50,14 @@ public final class Q00104_SpiritOfMirrors extends Quest
 	private static final int SPIRITBOUND_WAND3 = 1137;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(27003, SPIRITBOUND_WAND1); // Spirit Of Mirrors
 		MONSTERS.put(27004, SPIRITBOUND_WAND2); // Spirit Of Mirrors
 		MONSTERS.put(27005, SPIRITBOUND_WAND3); // Spirit Of Mirrors
 	}
+	
 	// Rewards
 	private static final int SOULSHOT_NO_GRADE = 1835;
 	private static final int SPIRITSHOT_NO_GRADE = 2509;

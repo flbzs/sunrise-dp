@@ -46,6 +46,7 @@ public final class Q00329_CuriosityOfADwarf extends Quest
 	private static final int MIN_LEVEL = 33;
 	// Monsters
 	private static final Map<Integer, List<ItemHolder>> MONSTER_DROPS = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROPS.put(20083, Arrays.asList(new ItemHolder(GOLEM_HEARTSTONE, 3), new ItemHolder(BROKEN_HEARTSTONE, 54))); // Granitic Golem

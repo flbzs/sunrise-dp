@@ -41,6 +41,7 @@ public class Q00700_CursedLife extends Quest
 	// Monsters
 	private static final int ROK = 25624;
 	private static final Map<Integer, Integer[]> MONSTERS = new HashMap<>();
+	
 	//@formatter:off
 	static
 	{

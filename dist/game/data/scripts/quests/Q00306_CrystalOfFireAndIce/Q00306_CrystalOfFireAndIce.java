@@ -47,6 +47,7 @@ public final class Q00306_CrystalOfFireAndIce extends Quest
 	// Monsters
 	private static final int UNDINE_NOBLE = 20115;
 	private static final Map<Integer, ItemHolder> MONSTER_DROPS = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROPS.put(20109, new ItemHolder(FLAME_SHARD, 925)); // Salamander

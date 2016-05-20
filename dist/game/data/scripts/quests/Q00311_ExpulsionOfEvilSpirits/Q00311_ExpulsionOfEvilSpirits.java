@@ -46,6 +46,7 @@ public final class Q00311_ExpulsionOfEvilSpirits extends Quest
 	private static final int RAGNA_ORCS_AMULET_COUNT = 10;
 	// Monsters
 	private static final Map<Integer, Double> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(22691, 0.694); // Ragna Orc

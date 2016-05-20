@@ -78,6 +78,7 @@ public class Q00611_AllianceWithVarkaSilenos extends Quest
 	private static final int NARAN_ASHANUK = 31378;
 	// Monsters
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(21324, new DropInfo(500, 1)); // Ketra Orc Footman
@@ -102,6 +103,7 @@ public class Q00611_AllianceWithVarkaSilenos extends Quest
 		MOBS.put(21348, new DropInfo(626, 3)); // Prophet's Guard
 		MOBS.put(21349, new DropInfo(626, 3)); // Prophet's Aide
 	}
+	
 	// Items
 	private static final int KETRA_BADGE_SOLDIER = 7226;
 	private static final int KETRA_BADGE_OFFICER = 7227;

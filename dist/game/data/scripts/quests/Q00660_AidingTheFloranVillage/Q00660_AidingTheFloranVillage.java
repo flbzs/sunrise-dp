@@ -57,6 +57,7 @@ public final class Q00660_AidingTheFloranVillage extends Quest
 	private static final int DELU_LIZARDMAN_COMMANDER = 21107; // Delu Lizardman Commander
 	
 	private static final Map<Integer, ItemChanceHolder> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(21102, new ItemChanceHolder(WATCHING_EYES, 0.500)); // Watchman of the Plains

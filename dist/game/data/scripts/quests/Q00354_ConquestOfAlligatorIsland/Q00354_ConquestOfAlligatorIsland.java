@@ -44,6 +44,7 @@ public final class Q00354_ConquestOfAlligatorIsland extends Quest
 	// Mobs
 	private static final Map<Integer, Double> MOB1 = new HashMap<>();
 	private static final Map<Integer, Integer> MOB2 = new HashMap<>();
+	
 	static
 	{
 		MOB1.put(20804, 0.84); // crokian_lad

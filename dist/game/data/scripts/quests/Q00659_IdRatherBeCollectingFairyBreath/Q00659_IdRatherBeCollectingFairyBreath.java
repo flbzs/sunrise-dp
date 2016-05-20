@@ -40,6 +40,7 @@ public final class Q00659_IdRatherBeCollectingFairyBreath extends Quest
 	private static final int MIN_LEVEL = 26;
 	// Mobs
 	private static final Map<Integer, Double> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20078, 0.98); // whispering_wind

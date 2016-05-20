@@ -71,6 +71,7 @@ public final class Q00416_PathOfTheOrcShaman extends Quest
 	private static final int MIN_LEVEL = 18;
 	// Mobs
 	private static final Map<Integer, ItemChanceHolder> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20415, new ItemChanceHolder(FIRST_FIERY_EGG, 1.0, 1)); // scarlet_salamander
@@ -330,7 +331,7 @@ public final class Q00416_PathOfTheOrcShaman extends Quest
 			if (st.isCond(1) && hasQuestItems(st.getPlayer(), FIRE_CHARM))
 			{
 				if (giveItemRandomly(st.getPlayer(), npc, item.getId(), 1, 1, item.getChance(), true) //
-					&& hasQuestItems(st.getPlayer(), FIRST_FIERY_EGG, KASHA_BLADE_SPIDER_HUSK, KASHA_BEAR_PELT))
+				&& hasQuestItems(st.getPlayer(), FIRST_FIERY_EGG, KASHA_BLADE_SPIDER_HUSK, KASHA_BEAR_PELT))
 				{
 					st.setCond(2, true);
 				}
@@ -343,17 +344,17 @@ public final class Q00416_PathOfTheOrcShaman extends Quest
 				}
 			}
 			else if (st.isCond(9) && hasQuestItems(st.getPlayer(), SPIRIT_NET) //
-				&& !hasQuestItems(st.getPlayer(), BOUND_DURKA_SPIRIT) //
-				&& (getQuestItemsCount(st.getPlayer(), DURKA_PARASITE) <= 8))
+			&& !hasQuestItems(st.getPlayer(), BOUND_DURKA_SPIRIT) //
+			&& (getQuestItemsCount(st.getPlayer(), DURKA_PARASITE) <= 8))
 			{
 				if ((npc.getId() == 20038) || (npc.getId() == 20043))
 				{
 					final int random = getRandom(10);
 					final long itemCount = getQuestItemsCount(st.getPlayer(), DURKA_PARASITE);
 					if ((((itemCount == 5) && (random < 1))) //
-						|| ((itemCount == 6) && (random < 2)) //
-						|| ((itemCount == 7) && (random < 2)) //
-						|| (itemCount >= 8))
+					|| ((itemCount == 6) && (random < 2)) //
+					|| ((itemCount == 7) && (random < 2)) //
+					|| (itemCount >= 8))
 					{
 						takeItems(player, DURKA_PARASITE, -1);
 						addSpawn(DURKA_SPIRIT, npc.getX(), npc.getY(), npc.getZ(), 0, true, 0, false);

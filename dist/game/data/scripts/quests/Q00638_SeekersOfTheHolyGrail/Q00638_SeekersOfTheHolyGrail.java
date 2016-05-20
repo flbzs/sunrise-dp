@@ -71,6 +71,7 @@ public final class Q00638_SeekersOfTheHolyGrail extends Quest
 	private static final int SCROLL_ENCHANT_A_S = 960;
 	// Mobs
 	private static final Map<Integer, DropInfo> MOBS_DROP_CHANCES = new HashMap<>();
+	
 	static
 	{
 		MOBS_DROP_CHANCES.put(22136, new DropInfo(TOTEM, 0.55)); // Gatekeeper Zombie

@@ -68,6 +68,7 @@ public final class Q00648_AnIceMerchantsDream extends Quest
 	private static final int MIN_LVL = 53;
 	// Monsters
 	private static final Map<Integer, DropInfo> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(22080, new DropInfo(0.285, 0.048)); // Massive Maze Bandersnatch

@@ -55,6 +55,7 @@ public final class Q00905_RefinedDragonBlood extends Quest
 	private static final int REFINED_BLUE_DRAGON_BLOOD = 21904;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(22844, UNREFINED_BLUE_DRAGON_BLOOD); // Dragon Knight
@@ -68,6 +69,7 @@ public final class Q00905_RefinedDragonBlood extends Quest
 		MONSTERS.put(22852, UNREFINED_BLUE_DRAGON_BLOOD); // Dragon Guard
 		MONSTERS.put(22853, UNREFINED_BLUE_DRAGON_BLOOD); // Dragon Mage
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL = 83;
 	private static final int DRAGON_BLOOD_COUNT = 10;

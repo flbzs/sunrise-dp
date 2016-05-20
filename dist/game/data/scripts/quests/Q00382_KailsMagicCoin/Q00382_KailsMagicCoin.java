@@ -49,12 +49,14 @@ public final class Q00382_KailsMagicCoin extends Quest
 	// Drops
 	private static final double ORC_CAPTAIN_DROP_CHANCE = 0.069;
 	private static final Map<Integer, ItemChanceHolder> MONSTER_DROPS = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROPS.put(FALLEN_ORC, new ItemChanceHolder(KAILS_SILVER_BASILISK, 0.073));
 		MONSTER_DROPS.put(FALLEN_ORC_ARCHER, new ItemChanceHolder(KAILS_GOLD_GOLEM, 0.075));
 		MONSTER_DROPS.put(FALLEN_ORC_SHAMAN, new ItemChanceHolder(KAILS_BLOOD_DRAGON, 0.073));
 	}
+	
 	// Misc
 	private static final int MIN_LVL = 55;
 	

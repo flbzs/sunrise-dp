@@ -38,6 +38,7 @@ public class Q00312_TakeAdvantageOfTheCrisis extends Quest
 	private static final int FILAUR = 30535;
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(22678, 291); // Grave Robber Summoner (Lunatic)
@@ -54,6 +55,7 @@ public class Q00312_TakeAdvantageOfTheCrisis extends Quest
 		MOBS.put(22689, 212); // Mine Bug
 		MOBS.put(22690, 748); // Earthworm's Descendant
 	}
+	
 	// Item
 	private static final int MINERAL_FRAGMENT = 14875;
 	// Misc

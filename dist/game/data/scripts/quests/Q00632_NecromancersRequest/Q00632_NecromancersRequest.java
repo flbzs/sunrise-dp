@@ -44,6 +44,7 @@ public final class Q00632_NecromancersRequest extends Quest
 	// Monsters
 	private static final Map<Integer, Double> BRAIN_MONSTERS = new HashMap<>();
 	private static final Map<Integer, Double> HEART_MONSTERS = new HashMap<>();
+	
 	static
 	{
 		BRAIN_MONSTERS.put(21547, 0.565); // Corrupted Knight

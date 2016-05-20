@@ -43,6 +43,7 @@ public final class Q00633_InTheForgottenVillage extends Quest
 	private static final int RIB_BONE_REQUIRED_COUNT = 200;
 	// Mobs
 	private static final Map<Integer, ItemChanceHolder> MOBS_DROP_CHANCES = new HashMap<>();
+	
 	static
 	{
 		MOBS_DROP_CHANCES.put(21553, new ItemChanceHolder(ZOMBIES_LIVER, 0.417)); // Trampled Man

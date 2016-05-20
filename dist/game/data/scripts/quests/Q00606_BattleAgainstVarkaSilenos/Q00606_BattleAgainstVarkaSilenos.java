@@ -38,6 +38,7 @@ public class Q00606_BattleAgainstVarkaSilenos extends Quest
 	private static final int KADUN = 31370;
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(21350, 500); // Varka Silenos Recruit
@@ -56,6 +57,7 @@ public class Q00606_BattleAgainstVarkaSilenos extends Quest
 		MOBS.put(21371, 713); // Varka's Head Magus
 		MOBS.put(21373, 738); // Varka's Prophet
 	}
+	
 	// Items
 	private static final int HORN = 7186;
 	private static final int MANE = 7233;

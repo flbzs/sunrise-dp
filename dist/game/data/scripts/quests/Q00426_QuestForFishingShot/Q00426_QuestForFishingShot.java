@@ -62,6 +62,7 @@ public class Q00426_QuestForFishingShot extends Quest
 		32348, // Burang
 	};
 	private static final Map<Integer, ChanceReward> MOBS = new HashMap<>(250);
+	
 	static
 	{
 		MOBS.put(20005, new ChanceReward(45, 1)); // Imp Elder
@@ -315,7 +316,9 @@ public class Q00426_QuestForFishingShot extends Quest
 		MOBS.put(21654, new ChanceReward(400, 5)); // Necromancer of Destruction
 		MOBS.put(21656, new ChanceReward(750, 5)); // Ashuras of Destruction
 	}
+	
 	private static final Map<Integer, ChanceReward> MOBS_SPECIAL = new HashMap<>(5);
+	
 	static
 	{
 		MOBS_SPECIAL.put(20829, new ChanceReward(115, 6)); // Platinum Tribe Overlord
@@ -324,6 +327,7 @@ public class Q00426_QuestForFishingShot extends Quest
 		MOBS_SPECIAL.put(21068, new ChanceReward(565, 11)); // Guardian Archangel
 		MOBS_SPECIAL.put(21071, new ChanceReward(400, 12)); // Seal Archangel
 	}
+	
 	private static final int SWEET_FLUID = 7586;
 	
 	public Q00426_QuestForFishingShot()

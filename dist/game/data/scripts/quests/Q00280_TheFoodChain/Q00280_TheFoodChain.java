@@ -45,6 +45,7 @@ public final class Q00280_TheFoodChain extends Quest
 	// Monsters
 	private static final Map<Integer, Integer> MONSTER_ITEM = new HashMap<>();
 	private static final Map<Integer, List<ItemHolder>> MONSTER_CHANCE = new HashMap<>();
+	
 	static
 	{
 		MONSTER_ITEM.put(22229, GREY_KELTIR_TOOTH);
@@ -58,6 +59,7 @@ public final class Q00280_TheFoodChain extends Quest
 		MONSTER_CHANCE.put(22232, Arrays.asList(new ItemHolder(1000, 3)));
 		MONSTER_CHANCE.put(22233, Arrays.asList(new ItemHolder(500, 3), new ItemHolder(1000, 4)));
 	}
+	
 	// Rewards
 	private static final int[] REWARDS = new int[]
 	{

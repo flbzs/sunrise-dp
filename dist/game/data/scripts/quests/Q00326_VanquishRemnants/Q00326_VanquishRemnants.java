@@ -43,6 +43,7 @@ public final class Q00326_VanquishRemnants extends Quest
 	private static final int BLACK_LION_MARK = 1369;
 	// Monsters
 	private static final Map<Integer, int[]> MONSTERS = new HashMap<>();
+	
 	//@formatter:off
 	static
 	{

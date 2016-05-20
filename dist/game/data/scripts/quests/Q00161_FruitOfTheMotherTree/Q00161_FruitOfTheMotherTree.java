@@ -69,7 +69,7 @@ public class Q00161_FruitOfTheMotherTree extends Quest
 			default:
 				htmltext = null;
 				break;
-		
+				
 		}
 		return htmltext;
 	}

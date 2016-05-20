@@ -46,6 +46,7 @@ public final class Q00370_AnElderSowsSeeds extends Quest
 	// Mobs
 	private static final Map<Integer, Integer> MOBS1 = new HashMap<>();
 	private static final Map<Integer, Double> MOBS2 = new HashMap<>();
+	
 	static
 	{
 		MOBS1.put(20082, 9); // ant_recruit

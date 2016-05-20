@@ -42,11 +42,13 @@ public final class Q00294_CovertBusiness extends Quest
 	private static final int BAT_FANG = 1491;
 	// Monsters
 	private static final Map<Integer, List<Integer>> MONSTER_DROP_CHANCE = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROP_CHANCE.put(20370, Arrays.asList(6, 3, 1, -1));
 		MONSTER_DROP_CHANCE.put(20480, Arrays.asList(5, 2, -1));
 	}
+	
 	// Reward
 	private static final int RING_OF_RACCOON = 1508;
 	// Misc

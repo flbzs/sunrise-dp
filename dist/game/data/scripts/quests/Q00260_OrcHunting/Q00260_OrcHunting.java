@@ -44,6 +44,7 @@ public final class Q00260_OrcHunting extends Quest
 	private static final int ORC_NECKLACE = 1115;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(20468, ORC_AMULET); // Kaboo Orc
@@ -53,6 +54,7 @@ public final class Q00260_OrcHunting extends Quest
 		MONSTERS.put(20472, ORC_NECKLACE); // Kaboo Orc Fighter Leader
 		MONSTERS.put(20473, ORC_NECKLACE); // Kaboo Orc Fighter Lieutenant
 	}
+	
 	// Misc
 	private static final int MIN_LVL = 6;
 	

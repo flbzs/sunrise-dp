@@ -56,7 +56,7 @@ public class Q10272_LightFragment extends Quest
 		22551, // Priest of Darkness
 		22552, // Mutation Drake
 		22596
-	// White Dragon Leader
+		// White Dragon Leader
 	};
 	private static final int FRAGMENT_POWDER = 13853;
 	private static final int LIGHT_FRAGMENT_POWDER = 13854;

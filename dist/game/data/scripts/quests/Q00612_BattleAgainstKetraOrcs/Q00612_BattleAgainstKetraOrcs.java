@@ -38,6 +38,7 @@ public class Q00612_BattleAgainstKetraOrcs extends Quest
 	private static final int ASHAS = 31377;
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(21324, 500); // Ketra Orc Footman
@@ -56,6 +57,7 @@ public class Q00612_BattleAgainstKetraOrcs extends Quest
 		MOBS.put(21345, 713); // Ketra's Head Shaman
 		MOBS.put(21347, 738); // Ketra Prophet
 	}
+	
 	// Items
 	private static final int SEED = 7187;
 	private static final int MOLAR = 7234;

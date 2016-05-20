@@ -69,6 +69,7 @@ public final class Q00355_FamilyHonor extends Quest
 	private static final int MIN_LEVEL = 36;
 	
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20767, new DropInfo(560, 684)); // timak_orc_troop_leader

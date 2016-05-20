@@ -40,6 +40,7 @@ public final class Q00269_InventionAmbition extends Quest
 	private static final int ENERGY_ORE = 10866;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(21124, 46); // Red Eye Barbed Bat
@@ -51,6 +52,7 @@ public final class Q00269_InventionAmbition extends Quest
 		MONSTERS.put(21130, 76); // Northern Goblin Leader
 		MONSTERS.put(21131, 78); // Enchanted Spine Golem
 	}
+	
 	// Misc
 	private static final int MIN_LVL = 18;
 	

@@ -40,6 +40,7 @@ public final class Q00366_SilverHairedShaman extends Quest
 	private static final int MIN_LEVEL = 48;
 	// Mobs
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20986, 80); // saitnn

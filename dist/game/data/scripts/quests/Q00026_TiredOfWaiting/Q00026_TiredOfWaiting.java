@@ -38,6 +38,7 @@ public final class Q00026_TiredOfWaiting extends Quest
 	// Items
 	private static final int DELIVERY_BOX = 17281;
 	private static final Map<String, Integer> REWARDS = new HashMap<>();
+	
 	static
 	{
 		REWARDS.put("31045-10.html", 17248); // Large Dragon Bone

@@ -71,6 +71,7 @@ public final class Q00403_PathOfTheRogue extends Quest
 	private static final int CATS_EYE_BANDIT = 27038;
 	// Monster
 	private static final Map<Integer, ItemChanceHolder> MONSTER_DROPS = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROPS.put(20035, new ItemChanceHolder(SPARTOIS_BONES, 2)); // Tracker Skeleton

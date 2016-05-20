@@ -43,6 +43,7 @@ public final class Q00654_JourneyToASettlement extends Quest
 	private static final int MIN_LEVEL = 74;
 	
 	private static final Map<Integer, Double> MOBS_SKIN = new HashMap<>();
+	
 	static
 	{
 		MOBS_SKIN.put(21294, 0.840); // Canyon Antelope

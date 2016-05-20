@@ -110,14 +110,14 @@ public class Q10270_BirthOfTheSeed extends Quest
 							htmltext = "32563-01.htm";
 						}
 						break;
-					
+						
 					case State.STARTED:
 						if (cond == 1)
 						{
 							htmltext = "32563-06.htm";
 						}
 						break;
-					
+						
 					case State.COMPLETED:
 						htmltext = "32563-03.htm";
 						break;

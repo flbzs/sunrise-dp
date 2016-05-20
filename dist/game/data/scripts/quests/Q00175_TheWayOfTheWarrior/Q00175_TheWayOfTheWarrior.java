@@ -53,7 +53,7 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 	private static final ItemHolder SOULSHOTS_NO_GRADE_FOR_ROOKIES = new ItemHolder(5789, 7000);
 	private static final ItemHolder[] REWARDS =
 	{
-		new ItemHolder(1060, 100),// Lesser Healing Potion
+		new ItemHolder(1060, 100), // Lesser Healing Potion
 		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
 		new ItemHolder(4413, 10), // Echo Crystal - Theme of Love
 		new ItemHolder(4414, 10), // Echo Crystal - Theme of Solitude

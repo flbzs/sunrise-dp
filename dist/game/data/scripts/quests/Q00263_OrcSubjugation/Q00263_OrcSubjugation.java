@@ -44,6 +44,7 @@ public final class Q00263_OrcSubjugation extends Quest
 	private static final int MIN_LEVEL = 8;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(20385, ORC_AMULET); // Balor Orc Archer

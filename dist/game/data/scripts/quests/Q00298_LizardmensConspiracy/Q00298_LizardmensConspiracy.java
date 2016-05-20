@@ -42,6 +42,7 @@ public final class Q00298_LizardmensConspiracy extends Quest
 	private static final int SHINING_RED_GEM = 7184;
 	// Monsters
 	private static final Map<Integer, ItemChanceHolder> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(20922, new ItemChanceHolder(SHINING_GEM, 0.49, 1));
@@ -50,6 +51,7 @@ public final class Q00298_LizardmensConspiracy extends Quest
 		MONSTERS.put(20927, new ItemChanceHolder(SHINING_RED_GEM, 0.54, 1));
 		MONSTERS.put(20922, new ItemChanceHolder(SHINING_GEM, 0.70, 1));
 	}
+	
 	// Misc
 	private static final int MIN_LVL = 25;
 	
@@ -123,8 +125,8 @@ public final class Q00298_LizardmensConspiracy extends Quest
 		{
 			final ItemChanceHolder item = MONSTERS.get(npc.getId());
 			if (giveItemRandomly(qs.getPlayer(), npc, item.getId(), item.getCount(), 50, item.getChance(), true) //
-				&& (getQuestItemsCount(qs.getPlayer(), SHINING_GEM) >= 50) //
-				&& (getQuestItemsCount(qs.getPlayer(), SHINING_RED_GEM) >= 50))
+			&& (getQuestItemsCount(qs.getPlayer(), SHINING_GEM) >= 50) //
+			&& (getQuestItemsCount(qs.getPlayer(), SHINING_RED_GEM) >= 50))
 			{
 				qs.setCond(3, true);
 			}

@@ -48,6 +48,7 @@ public class Q00168_DeliverSupplies extends Quest
 	// Misc
 	private static final int MIN_LVL = 3;
 	private static final Map<Integer, Integer> SENTRIES = new HashMap<>();
+	
 	static
 	{
 		SENTRIES.put(KRISTIN, SENTRY_BLADE3);

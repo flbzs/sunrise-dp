@@ -81,6 +81,7 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 	private static final int MIN_LVL = 10;
 	private static final int MAX_GEM_COUNT = 10;
 	private static final Map<Integer, Double> GOBLIN_DROP_CHANCES = new HashMap<>();
+	
 	static
 	{
 		GOBLIN_DROP_CHANCES.put(GOBLIN_BRIGAND_LEADER, 0.8);

@@ -49,6 +49,7 @@ public final class Q00385_YokeOfThePast extends Quest
 	private static final int BLANK_SCROLL = 5965;
 	// Monsters
 	private static final Map<Integer, Double> MONSTER_CHANCES = new HashMap<>();
+	
 	{
 		MONSTER_CHANCES.put(21144, 0.306); // Catacomb Shadow
 		MONSTER_CHANCES.put(21156, 0.994); // Purgatory Shadow
@@ -94,6 +95,7 @@ public final class Q00385_YokeOfThePast extends Quest
 		MONSTER_CHANCES.put(21254, 0.354); // Tomb Guard
 		MONSTER_CHANCES.put(21255, 0.250); // Tomb Preacher
 	}
+	
 	// Misc
 	private static final int MIN_LVL = 20;
 	

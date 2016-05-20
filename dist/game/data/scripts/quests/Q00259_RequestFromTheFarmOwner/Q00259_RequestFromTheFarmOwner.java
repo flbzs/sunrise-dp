@@ -53,6 +53,7 @@ public final class Q00259_RequestFromTheFarmOwner extends Quest
 	private static final int SKIN_REWARD = 25;
 	private static final int SKIN_BONUS = 250;
 	private static final Map<String, ItemHolder> CONSUMABLES = new HashMap<>();
+	
 	static
 	{
 		CONSUMABLES.put("30405-04.html", new ItemHolder(1061, 2)); // Greater Healing Potion

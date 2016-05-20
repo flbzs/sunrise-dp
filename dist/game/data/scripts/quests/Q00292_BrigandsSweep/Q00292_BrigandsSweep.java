@@ -47,6 +47,7 @@ public final class Q00292_BrigandsSweep extends Quest
 	private static final int SUSPICIOUS_CONTRACT = 1487;
 	// Monsters
 	private static final Map<Integer, Integer> MOB_ITEM_DROP = new HashMap<>();
+	
 	static
 	{
 		MOB_ITEM_DROP.put(20322, GOBLIN_NECKLACE); // Goblin Brigand
@@ -55,6 +56,7 @@ public final class Q00292_BrigandsSweep extends Quest
 		MOB_ITEM_DROP.put(20327, GOBLIN_NECKLACE); // Goblin Snooper
 		MOB_ITEM_DROP.put(20528, GOBLIN_LORD_PENDANT); // Goblin Lord
 	}
+	
 	// Misc
 	private static final int MIN_LVL = 5;
 	

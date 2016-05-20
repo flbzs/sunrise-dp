@@ -42,6 +42,7 @@ public final class Q00369_CollectorOfJewels extends Quest
 	private static final int MIN_LEVEL = 25;
 	// Mobs
 	private static final Map<Integer, QuestItemHolder> MOBS_DROP_CHANCES = new HashMap<>();
+	
 	static
 	{
 		MOBS_DROP_CHANCES.put(20609, new QuestItemHolder(FLARE_SHARD, 75, 1)); // salamander_lakin
@@ -125,7 +126,7 @@ public final class Q00369_CollectorOfJewels extends Quest
 				final int itemCount = (st.isMemoState(1) ? 50 : 200);
 				final int cond = (st.isMemoState(1) ? 2 : 4);
 				if (giveItemRandomly(luckyPlayer, npc, item.getId(), item.getCount(), itemCount, 1.0, true) //
-					&& (getQuestItemsCount(luckyPlayer, FLARE_SHARD, FREEZING_SHARD) >= (itemCount * 2)))
+				&& (getQuestItemsCount(luckyPlayer, FLARE_SHARD, FREEZING_SHARD) >= (itemCount * 2)))
 				{
 					st.setCond(cond);
 				}

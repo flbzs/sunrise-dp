@@ -44,6 +44,7 @@ public class Q00376_ExplorationOfTheGiantsCavePart1 extends Quest
 	private static final int BOOK5 = 14840;
 	// Mobs
 	private static final Map<Integer, Double> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(22670, 0.314); // const_lord

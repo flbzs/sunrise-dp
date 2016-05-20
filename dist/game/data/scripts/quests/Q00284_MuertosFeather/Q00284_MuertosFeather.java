@@ -38,6 +38,7 @@ public final class Q00284_MuertosFeather extends Quest
 	private static final int MUERTOS_FEATHER = 9748;
 	// Monsters
 	private static final Map<Integer, Double> MOB_DROP_CHANCE = new HashMap<>();
+	
 	static
 	{
 		MOB_DROP_CHANCE.put(22239, 0.500); // Muertos Guard
@@ -47,6 +48,7 @@ public final class Q00284_MuertosFeather extends Quest
 		MOB_DROP_CHANCE.put(22245, 0.633); // Muertos Lieutenant
 		MOB_DROP_CHANCE.put(22246, 0.633); // Muertos Commander
 	}
+	
 	// Misc
 	private static final int MIN_LVL = 11;
 	

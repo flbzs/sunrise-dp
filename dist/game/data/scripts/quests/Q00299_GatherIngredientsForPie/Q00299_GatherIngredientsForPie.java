@@ -50,6 +50,7 @@ public final class Q00299_GatherIngredientsForPie extends Quest
 	private static final List<QuestItemHolder> REWARDS = new ArrayList<>(5);
 	// Misc
 	private static final int MIN_LVL = 34;
+	
 	static
 	{
 		MONSTERS_CHANCES.put(20934, 700); // Wasp Worker

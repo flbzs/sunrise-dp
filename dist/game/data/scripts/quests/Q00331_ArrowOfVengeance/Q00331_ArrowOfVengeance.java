@@ -42,12 +42,14 @@ public class Q00331_ArrowOfVengeance extends Quest
 	private static final int WYRMS_TOOTH = 1454;
 	// Monster
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(20145, 59); // Harpy
 		MONSTERS.put(20158, 61); // Medusa
 		MONSTERS.put(20176, 60); // Wyrm
 	}
+	
 	// Misc
 	private static final int MIN_LVL = 32;
 	private static final int HARPY_FEATHER_ADENA = 78;

@@ -56,6 +56,7 @@ public final class Q00235_MimirsElixir extends Quest
 	private static SkillHolder QUEST_MIMIRS_ELIXIR = new SkillHolder(4339, 1);
 	// Mobs
 	private static final Map<Integer, QuestItemHolder> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20965, new QuestItemHolder(SAGES_STONE, 4, 1)); // chimera_piece

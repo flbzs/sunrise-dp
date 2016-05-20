@@ -52,6 +52,7 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 	private static final int KABOO_CHIEFS_1ST_TORQUE = 1844;
 	private static final int KABOO_CHIEFS_2ST_TORQUE = 1845;
 	private static final Map<Integer, Integer> MONSTER_DROP = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROP.put(27059, KENDELLS_1ST_ORDER); // Uoph (Kaboo Chief)
@@ -63,6 +64,7 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 		MONSTER_DROP.put(27067, KENDELLS_7TH_ORDER); // Kamut (Kaboo Chief)
 		MONSTER_DROP.put(27068, KENDELLS_8TH_ORDER); // Murtika (Kaboo Chief)
 	}
+	
 	private static final int[] KENDNELLS_ORDERS =
 	{
 		KENDELLS_1ST_ORDER,

@@ -39,6 +39,7 @@ public final class Q00286_FabulousFeathers extends Quest
 	private static final ItemHolder COMMANDERS_FEATHER = new ItemHolder(9746, 80);
 	// Monsters
 	private static final Map<Integer, Double> MOB_DROP_CHANCES = new HashMap<>();
+	
 	static
 	{
 		MOB_DROP_CHANCES.put(22251, 0.748); // Shady Muertos Captain
@@ -47,6 +48,7 @@ public final class Q00286_FabulousFeathers extends Quest
 		MOB_DROP_CHANCES.put(22255, 0.796); // Shady Muertos Commander
 		MOB_DROP_CHANCES.put(22256, 0.952); // Shady Muertos Wizard
 	}
+	
 	// Misc
 	private static final int MIN_LVL = 17;
 	

@@ -53,6 +53,7 @@ public final class Q00358_IllegitimateChildOfTheGoddess extends Quest
 	};
 	// Mobs
 	private static final Map<Integer, Double> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20672, 0.71); // trives
