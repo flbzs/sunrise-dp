@@ -44,6 +44,7 @@ public final class Q00266_PleasOfPixies extends Quest
 	private static final int PREDATORS_FANG = 1334;
 	// Monsters
 	private static final Map<Integer, List<ItemHolder>> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(20537, Arrays.asList(new ItemHolder(10, 2))); // Elder Red Keltir
@@ -51,8 +52,10 @@ public final class Q00266_PleasOfPixies extends Quest
 		MONSTERS.put(20534, Arrays.asList(new ItemHolder(6, 1))); // Red Keltir
 		MONSTERS.put(20530, Arrays.asList(new ItemHolder(8, 1))); // Young Red Keltir
 	}
+	
 	// Rewards
 	private static final Map<Integer, List<ItemHolder>> REWARDS = new HashMap<>();
+	
 	static
 	{
 		REWARDS.put(0, Arrays.asList(new ItemHolder(1337, 1), new ItemHolder(3032, 1))); // Emerald, Recipe: Spiritshot D
@@ -60,6 +63,7 @@ public final class Q00266_PleasOfPixies extends Quest
 		REWARDS.put(2, Arrays.asList(new ItemHolder(1339, 1), new ItemHolder(1061, 1))); // Onyx, Greater Healing Potion
 		REWARDS.put(3, Arrays.asList(new ItemHolder(1336, 1), new ItemHolder(1060, 1))); // Glass Shard, Lesser Healing Potion
 	}
+	
 	// Misc
 	private static final int MIN_LVL = 3;
 	

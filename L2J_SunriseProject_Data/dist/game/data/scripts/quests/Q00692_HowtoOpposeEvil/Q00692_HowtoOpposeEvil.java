@@ -50,6 +50,7 @@ public final class Q00692_HowtoOpposeEvil extends Quest
 	};
 	
 	private static final Map<Integer, ItemHolder> QUEST_MOBS = new HashMap<>();
+	
 	static
 	{
 		// Seed of Infinity

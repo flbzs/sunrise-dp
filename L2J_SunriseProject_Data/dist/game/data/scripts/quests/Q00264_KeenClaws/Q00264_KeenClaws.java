@@ -48,6 +48,7 @@ public final class Q00264_KeenClaws extends Quest
 	// Misc
 	private static final int MIN_LVL = 3;
 	private static final int WOLF_CLAW_COUNT = 50;
+	
 	static
 	{
 		MONSTER_CHANCES.put(20003, Arrays.asList(new ItemHolder(2, 25), new ItemHolder(8, 50)));

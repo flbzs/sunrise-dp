@@ -41,12 +41,14 @@ public class Q00699_GuardianOfTheSkies extends Quest
 	// Monsters
 	private static final int VALDSTONE = 25623;
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(22614, 840); // Vulture Rider lvl 1
 		MONSTERS.put(22615, 857); // Vulture Rider lvl 2
 		MONSTERS.put(25633, 719); // Vulture Rider lvl 3
 	}
+	
 	// Item
 	private static final int VULTURES_GOLDEN_FEATHER = 13871;
 	// Misc

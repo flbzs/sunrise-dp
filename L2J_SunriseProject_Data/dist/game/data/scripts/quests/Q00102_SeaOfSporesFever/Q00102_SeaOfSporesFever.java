@@ -68,6 +68,7 @@ public class Q00102_SeaOfSporesFever extends Quest
 	// Misc
 	private static final int MIN_LVL = 12;
 	private static final Map<Integer, Integer> SENTINELS = new HashMap<>();
+	
 	static
 	{
 		SENTINELS.put(GARTRANDELL, COBENDELLS_MEDICINE5);

@@ -53,6 +53,7 @@ public final class Q00406_PathOfTheElvenKnight extends Quest
 	// Mobs
 	private static final int OL_MAHUM_NOVICE = 20782;
 	private static final Map<Integer, ItemChanceHolder> MONSTER_DROPS = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROPS.put(20035, new ItemChanceHolder(TOPAZ_PIECE, 70)); // Tracker Skeleton

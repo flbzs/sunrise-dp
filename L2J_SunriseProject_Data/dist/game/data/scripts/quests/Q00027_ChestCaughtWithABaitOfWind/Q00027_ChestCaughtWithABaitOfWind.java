@@ -81,7 +81,7 @@ public class Q00027_ChestCaughtWithABaitOfWind extends Quest
 					htmltext = "31434-01.htm";
 				}
 				break;
-		
+				
 		}
 		return htmltext;
 	}

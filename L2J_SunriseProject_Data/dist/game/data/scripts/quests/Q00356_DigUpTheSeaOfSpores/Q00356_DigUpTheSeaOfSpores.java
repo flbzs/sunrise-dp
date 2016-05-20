@@ -45,6 +45,7 @@ public final class Q00356_DigUpTheSeaOfSpores extends Quest
 	private static final int ROTTING_TREE = 20558;
 	private static final int SPORE_ZOMBIE = 20562;
 	private static final Map<Integer, Double> MONSTER_DROP_CHANCES = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROP_CHANCES.put(ROTTING_TREE, 0.73);

@@ -43,11 +43,13 @@ public final class Q00380_BringOutTheFlavorOfIngredients extends Quest
 	private static final int LEECH_FLUIDS = 5897;
 	// Monsters
 	private static final Map<Integer, ItemChanceHolder> MONSTER_CHANCES = new HashMap<>();
+	
 	{
 		MONSTER_CHANCES.put(20205, new ItemChanceHolder(RITRON_FRUIT, 0.1, 4)); // Dire Wolf
 		MONSTER_CHANCES.put(20206, new ItemChanceHolder(MOON_FLOWER, 0.5, 20)); // Kadif Werewolf
 		MONSTER_CHANCES.put(20225, new ItemChanceHolder(LEECH_FLUIDS, 0.5, 10)); // Giant Mist Leech
 	}
+	
 	// Rewards
 	private static final int RITRON_RECIPE = 5959;
 	private static final int RITRON_DESSERT = 5960;

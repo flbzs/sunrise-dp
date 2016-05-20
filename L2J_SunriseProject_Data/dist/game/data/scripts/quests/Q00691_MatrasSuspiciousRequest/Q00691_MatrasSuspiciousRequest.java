@@ -42,6 +42,7 @@ public final class Q00691_MatrasSuspiciousRequest extends Quest
 	private static final int DYNASTY_SOUL_II = 10413;
 	// Reward
 	private static final Map<Integer, Integer> REWARD_CHANCES = new HashMap<>();
+	
 	static
 	{
 		REWARD_CHANCES.put(22363, 890);
@@ -55,6 +56,7 @@ public final class Q00691_MatrasSuspiciousRequest extends Quest
 		REWARD_CHANCES.put(22371, 257);
 		REWARD_CHANCES.put(22372, 656);
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL = 76;
 	

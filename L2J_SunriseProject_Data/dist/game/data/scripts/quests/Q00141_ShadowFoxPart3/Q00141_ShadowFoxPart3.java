@@ -42,12 +42,14 @@ public class Q00141_ShadowFoxPart3 extends Quest
 	private static final int NATOOLS = 30894;
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20135, 53); // Alligator
 		MOBS.put(20791, 100); // Crokian Warrior
 		MOBS.put(20792, 92); // Farhite
 	}
+	
 	// Items
 	private static final int PREDECESSORS_REPORT = 10350;
 	// Misc

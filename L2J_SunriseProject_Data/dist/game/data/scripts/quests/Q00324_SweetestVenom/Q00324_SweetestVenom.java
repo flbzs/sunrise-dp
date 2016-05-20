@@ -38,12 +38,14 @@ public class Q00324_SweetestVenom extends Quest
 	private static final int ASTARON = 30351;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(20034, 26);
 		MONSTERS.put(20038, 29);
 		MONSTERS.put(20043, 30);
 	}
+	
 	// Items
 	private static final int VENOM_SAC = 1077;
 	// Misc

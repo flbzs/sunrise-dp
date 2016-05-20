@@ -172,7 +172,7 @@ public class Q00037_MakeFormalWear extends Quest
 						case 7:
 							htmltext = (st.hasQuestItems(DRESS_SHOES_BOX)) ? "31520-10.html" : "31520-11.html";
 							break;
-					
+							
 					}
 				}
 				break;

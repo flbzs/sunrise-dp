@@ -48,6 +48,7 @@ public final class Q00117_TheOceanOfDistantStars extends Quest
 	private static final int BANDIT_WARRIOR = 22023;
 	private static final int BANDIT_INSPECTOR = 22024;
 	private static final Map<Integer, Double> MONSTER_DROP_CHANCES = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROP_CHANCES.put(BANDIT_WARRIOR, 0.179);

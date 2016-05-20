@@ -44,12 +44,14 @@ public final class Q00273_InvadersOfTheHolyLand extends Quest
 	private static final int RED_SOULSTONE = 1476;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(20311, 90); // Rakeclaw Imp
 		MONSTERS.put(20312, 87); // Rakeclaw Imp Hunter
 		MONSTERS.put(20313, 77); // Rakeclaw Imp Chieftain
 	}
+	
 	// Misc
 	private static final int MIN_LVL = 6;
 	

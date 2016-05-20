@@ -55,6 +55,7 @@ public final class Q00047_IntoTheDarkElvenForest extends Quest
 	private static final int SCROLL_OF_ESCAPE_DARK_ELF_VILLAGE = 7556;
 	// Get condition for each npc
 	private static Map<Integer, ItemHolder> NPC_ITEMS = new HashMap<>();
+	
 	static
 	{
 		NPC_ITEMS.put(GENTLER, new ItemHolder(1, GALLADUCCIS_ORDER_1));

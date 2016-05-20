@@ -64,6 +64,7 @@ public final class Q00352_HelpRoodRaiseANewPet extends Quest
 	private static final int MIN_LEVEL = 39;
 	
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20786, new DropInfo(46, 48)); // lienrik

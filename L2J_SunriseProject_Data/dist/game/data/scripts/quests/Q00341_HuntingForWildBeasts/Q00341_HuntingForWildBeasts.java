@@ -38,6 +38,7 @@ public class Q00341_HuntingForWildBeasts extends Quest
 	private static final int PANO = 30078;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(20203, 99);
@@ -45,6 +46,7 @@ public class Q00341_HuntingForWildBeasts extends Quest
 		MONSTERS.put(20021, 83);
 		MONSTERS.put(20335, 87);
 	}
+	
 	// Items
 	private static final int BEAR_SKIN = 4259;
 	// Misc

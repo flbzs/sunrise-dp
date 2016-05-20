@@ -47,6 +47,7 @@ public final class Q00316_DestroyPlagueCarriers extends Quest
 	// Monsters
 	private static final int VAROOL_FOULCLAW = 27020;
 	private static final Map<Integer, ItemHolder> MONSTER_DROPS = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROPS.put(20040, new ItemHolder(WERERAT_FANG, 5)); // Sukar Wererat

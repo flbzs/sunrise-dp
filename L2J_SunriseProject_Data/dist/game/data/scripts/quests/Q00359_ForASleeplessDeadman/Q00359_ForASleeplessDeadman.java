@@ -53,6 +53,7 @@ public final class Q00359_ForASleeplessDeadman extends Quest
 	};
 	// Mobs
 	private static final Map<Integer, Double> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(21006, 0.365); // doom_servant

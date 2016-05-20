@@ -57,6 +57,7 @@ public final class Q00365_DevilsLegacy extends Quest
 	private static SkillHolder POISON = new SkillHolder(4035, 2);
 	// Mobs
 	private static final Map<Integer, Double> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20836, 0.47); // pirates_zombie

@@ -56,6 +56,7 @@ public final class Q00325_GrimCollector extends Quest
 	private static final int MIN_LEVEL = 15;
 	// Monsters
 	private static final Map<Integer, List<QuestItemHolder>> MONSTER_DROPS = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROPS.put(20026, Arrays.asList(new QuestItemHolder(ZOMBIE_HEAD, 30), new QuestItemHolder(ZOMBIE_HEART, 50), new QuestItemHolder(ZOMBIE_LIVER, 75)));

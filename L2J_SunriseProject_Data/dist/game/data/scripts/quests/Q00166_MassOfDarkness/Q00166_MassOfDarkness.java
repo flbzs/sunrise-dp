@@ -48,6 +48,7 @@ public class Q00166_MassOfDarkness extends Quest
 	// Misc
 	private static final int MIN_LVL = 2;
 	private static final Map<Integer, Integer> NPCs = new HashMap<>();
+	
 	static
 	{
 		NPCs.put(IRIA, CEREMONIAL_DAGGER);

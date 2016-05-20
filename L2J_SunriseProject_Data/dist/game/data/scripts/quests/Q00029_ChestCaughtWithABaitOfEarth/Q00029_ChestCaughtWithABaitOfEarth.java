@@ -81,7 +81,7 @@ public class Q00029_ChestCaughtWithABaitOfEarth extends Quest
 					htmltext = "30909-02.htm";
 				}
 				break;
-		
+				
 		}
 		return htmltext;
 	}

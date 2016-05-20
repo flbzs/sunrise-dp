@@ -42,6 +42,7 @@ public class Q00626_ADarkTwilight extends Quest
 	private static final int BLOOD_OF_SAINT = 7169;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(21520, 641); // Eye of Splendor
@@ -59,6 +60,7 @@ public class Q00626_ADarkTwilight extends Quest
 		MONSTERS.put(21540, 880); // Wailing of Splendor
 		MONSTERS.put(21658, 790); // Punishment of Splendor
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL_REQUIRED = 60;
 	private static final int ITEMS_COUNT_REQUIRED = 300;

@@ -78,6 +78,7 @@ public class Q00605_AllianceWithKetraOrcs extends Quest
 	private static final int WAHKAN = 31371;
 	// Monsters
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(21350, new DropInfo(500, 1)); // Varka Silenos Recruit
@@ -102,6 +103,7 @@ public class Q00605_AllianceWithKetraOrcs extends Quest
 		MOBS.put(21374, new DropInfo(626, 3)); // Prophet's Guard
 		MOBS.put(21375, new DropInfo(626, 3)); // Disciple of Prophet
 	}
+	
 	// Items
 	private static final int VARKA_BADGE_SOLDIER = 7216;
 	private static final int VARKA_BADGE_OFFICER = 7217;

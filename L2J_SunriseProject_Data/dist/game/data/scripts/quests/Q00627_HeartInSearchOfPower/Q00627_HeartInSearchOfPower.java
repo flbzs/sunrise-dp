@@ -44,6 +44,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 	private static final int GEM_OF_SAINTS = 7172;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(21520, 661); // Eye of Splendor
@@ -61,6 +62,7 @@ public class Q00627_HeartInSearchOfPower extends Quest
 		MONSTERS.put(21540, 875); // Wailing of Splendor
 		MONSTERS.put(21658, 791); // Punishment of Splendor
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL_REQUIRED = 60;
 	private static final int BEAD_OF_OBEDIENCE_COUNT_REQUIRED = 300;

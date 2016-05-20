@@ -267,7 +267,7 @@ public final class Q00454_CompletelyLost extends Quest
 								{
 									final QuestState qsMember = getQuestState(member, false);
 									if ((qsMember != null) && qsMember.isMemoState(1) //
-										&& (npc.getVariables().getInt("partyId", 0) == leader.getParty().getLeaderObjectId()))
+									&& (npc.getVariables().getInt("partyId", 0) == leader.getParty().getLeaderObjectId()))
 									{
 										qsMember.setMemoState(2);
 									}

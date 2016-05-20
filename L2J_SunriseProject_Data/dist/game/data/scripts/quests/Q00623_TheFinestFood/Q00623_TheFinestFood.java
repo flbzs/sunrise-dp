@@ -51,6 +51,7 @@ public final class Q00623_TheFinestFood extends Quest
 	private static final int MIN_LVL = 71;
 	
 	private static final Map<Integer, ItemHolder> MONSTER_DROPS = new HashMap<>();
+	
 	static
 	{
 		MONSTER_DROPS.put(THERMAL_BUFFALO, BUFFALO_MEAT);

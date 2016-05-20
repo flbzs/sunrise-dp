@@ -40,6 +40,7 @@ public class Q00162_CurseOfTheUndergroundFortress extends Quest
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS_SKULLS = new HashMap<>();
 	private static final Map<Integer, Integer> MONSTERS_BONES = new HashMap<>();
+	
 	static
 	{
 		MONSTERS_SKULLS.put(20033, 25); // Shade Horror
@@ -49,6 +50,7 @@ public class Q00162_CurseOfTheUndergroundFortress extends Quest
 		MONSTERS_BONES.put(20464, 23); // Dungeon Skeleton
 		MONSTERS_BONES.put(20504, 26); // Dread Soldier
 	}
+	
 	// Items
 	private static final int BONE_SHIELD = 625;
 	private static final int BONE_FRAGMENT = 1158;

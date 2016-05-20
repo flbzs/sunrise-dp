@@ -38,6 +38,7 @@ public class Q00328_SenseForBusiness extends Quest
 	private static final int SARIEN = 30436;
 	private static final Map<Integer, int[]> MONSTER_EYES = new HashMap<>();
 	private static final Map<Integer, Integer> MONSTER_BASILISKS = new HashMap<>();
+	
 	// @formatter:off
 	static
 	{

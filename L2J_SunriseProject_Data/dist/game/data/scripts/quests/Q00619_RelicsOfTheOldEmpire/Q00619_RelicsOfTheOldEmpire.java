@@ -71,6 +71,7 @@ public final class Q00619_RelicsOfTheOldEmpire extends Quest
 	};
 	// Mobs
 	private static final Map<Integer, DropInfo> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(21396, new DropInfo(0.51, 0, true)); // carrion_scarab

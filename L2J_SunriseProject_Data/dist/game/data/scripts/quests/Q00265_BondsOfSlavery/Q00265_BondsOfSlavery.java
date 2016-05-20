@@ -45,6 +45,7 @@ public final class Q00265_BondsOfSlavery extends Quest
 	private static final int MIN_LVL = 6;
 	// Monsters
 	private static final Map<Integer, Integer> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(20004, 5); // Imp

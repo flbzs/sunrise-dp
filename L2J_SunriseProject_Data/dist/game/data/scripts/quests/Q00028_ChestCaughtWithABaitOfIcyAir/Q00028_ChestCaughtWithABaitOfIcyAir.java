@@ -81,7 +81,7 @@ public class Q00028_ChestCaughtWithABaitOfIcyAir extends Quest
 					htmltext = "31442-02.htm";
 				}
 				break;
-		
+				
 		}
 		return htmltext;
 	}

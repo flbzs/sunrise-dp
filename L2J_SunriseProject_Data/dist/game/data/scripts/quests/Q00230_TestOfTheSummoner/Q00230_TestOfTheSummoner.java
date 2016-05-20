@@ -143,6 +143,7 @@ public final class Q00230_TestOfTheSummoner extends Quest
 	private static final int MIN_LEVEL = 39;
 	
 	private static final Map<Integer, MonsterData> MONSTERS = new HashMap<>();
+	
 	static
 	{
 		MONSTERS.put(PAKO_THE_CAT, new MonsterData(CRYSTAL_OF_INPROGRESS_1ST, CRYSTAL_OF_VICTORY_1ST, NpcStringId.IM_SORRY_LORD));

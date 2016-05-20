@@ -45,6 +45,7 @@ public class Q00140_ShadowFoxPart2 extends Quest
 	private static final int CRYPTOGRAM_OF_THE_GODDESS_SWORD = 10349;
 	// Monsters
 	private static final Map<Integer, Integer> MOBS = new HashMap<>();
+	
 	static
 	{
 		MOBS.put(20789, 45); // Crokian
@@ -52,6 +53,7 @@ public class Q00140_ShadowFoxPart2 extends Quest
 		MOBS.put(20791, 100);// Crokian Warrior
 		MOBS.put(20792, 92); // Farhite
 	}
+	
 	// Misc
 	private static final int MIN_LEVEL = 37;
 	private static final int MAX_REWARD_LEVEL = 42;
@@ -198,7 +200,7 @@ public class Q00140_ShadowFoxPart2 extends Quest
 						break;
 				}
 				break;
-			
+				
 			case XENOVIA:
 				if (st.isStarted())
 				{
