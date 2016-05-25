@@ -39,13 +39,18 @@ public class AdminScan implements IAdminCommandHandler
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_scan",
+		"admin_scan_count",
 		"admin_deleteNpcByObjectId"
 	};
 	
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
-		if (command.startsWith("admin_scan"))
+		if (command.startsWith("admin_scan_count"))
+		{
+			activeChar.sendMessage("Known objects in 1000 radius: " + activeChar.getKnownList().getKnownCharactersInRadius(1000).size());
+		}
+		else if (command.startsWith("admin_scan"))
 		{
 			String htm = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");
 			StringBuilder sb = new StringBuilder();
