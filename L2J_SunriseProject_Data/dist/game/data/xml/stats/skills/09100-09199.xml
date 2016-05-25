@@ -8,7 +8,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17069" /> <!-- Vesper Weapon Box -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
@@ -30,7 +29,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17070" /> <!-- Icarus Weapon Box -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
@@ -52,7 +50,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17071" /> <!-- Dynasty Weapon Box -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
@@ -74,7 +71,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17072" /> <!-- Vesper Armor Box -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
@@ -96,7 +92,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17073" /> <!-- Moirai Armor Box -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
@@ -118,7 +113,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17074" /> <!-- Dynasty Armor Box -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
@@ -140,7 +134,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17075" /> <!-- Soul Crystal - Stage 14 Box -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
@@ -162,7 +155,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17076" /> <!-- Soul Crystal - Stage 15 Box -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
@@ -184,7 +176,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17077" /> <!-- Soul Crystal - Stage 16 Box -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
@@ -206,7 +197,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17078" /> <!-- Potion Box of Mask Type -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
@@ -228,7 +218,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17079" /> <!-- Potion Box of Hair Color -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
@@ -250,7 +239,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17080" /> <!-- Potion Box of Hair Style -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
@@ -272,7 +260,6 @@
 		<set name="capsuled_items_skill" val="#extractableItems" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
-		<set name="itemConsumeId" val="17081" /> <!-- Golden Apigas Box -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
