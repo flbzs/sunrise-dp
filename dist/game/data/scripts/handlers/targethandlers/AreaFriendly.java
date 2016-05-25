@@ -85,12 +85,7 @@ public class AreaFriendly implements ITargetTypeHandler
 	
 	private boolean checkTarget(L2Character activeChar, L2Character target)
 	{
-		if (target == null)
-		{
-			return false;
-		}
-		
-		if (!GeoData.getInstance().canSeeTarget(activeChar, target))
+		if ((target == null) || !GeoData.getInstance().canSeeTarget(activeChar, target))
 		{
 			return false;
 		}

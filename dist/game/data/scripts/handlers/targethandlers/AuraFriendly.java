@@ -67,12 +67,12 @@ public class AuraFriendly implements ITargetTypeHandler
 	
 	private boolean checkTarget(L2PcInstance activeChar, L2Character target)
 	{
-		if (!GeoData.getInstance().canSeeTarget(activeChar, target))
+		if ((target == null) || !GeoData.getInstance().canSeeTarget(activeChar, target))
 		{
 			return false;
 		}
 		
-		if ((target == null) || target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster())
+		if (target.isAlikeDead() || target.isDoor() || (target instanceof L2SiegeFlagInstance) || target.isMonster())
 		{
 			return false;
 		}
