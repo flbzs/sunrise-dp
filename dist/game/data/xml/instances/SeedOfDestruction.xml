@@ -4,6 +4,7 @@
 	<allowSummon val="false" />
 	<emptyDestroyTime val="900" />
 	<exitPoint x="-248717" y="250260" z="4337" />
+	<removeBuffs type="ALL" />
 	<doorlist>
 		<door doorId="12240001" />
 		<door doorId="12240002" />
