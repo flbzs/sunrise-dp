@@ -44,6 +44,7 @@ public final class TowerOfInfinitum extends AbstractNpcAI
 	private static final int PASS_SKILL = 2357;
 	// Misc
 	private static final Map<Integer, Location[]> TELE_COORDS = new HashMap<>();
+	
 	static
 	{
 		TELE_COORDS.put(32745, new Location[]
