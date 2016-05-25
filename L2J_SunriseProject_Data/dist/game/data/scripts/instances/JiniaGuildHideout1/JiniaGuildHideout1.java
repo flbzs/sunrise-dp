@@ -35,7 +35,7 @@ public final class JiniaGuildHideout1 extends AbstractInstance
 {
 	protected class JGH1World extends InstanceWorld
 	{
-		
+	
 	}
 	
 	// NPC
