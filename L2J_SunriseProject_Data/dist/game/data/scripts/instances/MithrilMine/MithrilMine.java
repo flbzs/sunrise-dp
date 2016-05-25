@@ -161,27 +161,30 @@ public final class MithrilMine extends AbstractInstance
 		final InstanceWorld world = InstanceManager.getInstance().getWorld(npc.getInstanceId());
 		final MMWorld _world = ((MMWorld) world);
 		
-		if (npc.getId() == KEGOR)
+		if (_world != null)
 		{
-			broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.HOW_COULD_I_FALL_IN_A_PLACE_LIKE_THIS);
-			InstanceManager.getInstance().getInstance(world.getInstanceId()).setDuration(1000);
-		}
-		else
-		{
-			if (npc.isScriptValue(1))
+			if (npc.getId() == KEGOR)
 			{
-				_world._count++;
+				broadcastNpcSay(npc, Say2.NPC_ALL, NpcStringId.HOW_COULD_I_FALL_IN_A_PLACE_LIKE_THIS);
+				InstanceManager.getInstance().getInstance(world.getInstanceId()).setDuration(1000);
 			}
-			
-			if (_world._count >= 5)
+			else
 			{
-				final QuestState qs = player.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
-				if ((qs != null) && qs.isMemoState(2))
+				if (npc.isScriptValue(1))
 				{
-					cancelQuestTimer("BUFF", npc, player);
-					qs.setMemoState(3);
-					qs.setCond(6, true);
-					startQuestTimer("FINISH", 3000, npc, player);
+					_world._count++;
+				}
+				
+				if (_world._count >= 5)
+				{
+					final QuestState qs = player.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
+					if ((qs != null) && qs.isMemoState(2))
+					{
+						cancelQuestTimer("BUFF", npc, player);
+						qs.setMemoState(3);
+						qs.setCond(6, true);
+						startQuestTimer("FINISH", 3000, npc, player);
+					}
 				}
 			}
 		}
