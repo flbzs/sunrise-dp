@@ -45,7 +45,8 @@ public class AdminTest implements IAdminCommandHandler
 		"admin_dkmanager",
 		"admin_movie",
 		"admin_checkai",
-		"admin_checkid"
+		"admin_checkid",
+		"admin_known",
 	};
 	
 	@Override
@@ -57,6 +58,10 @@ public class AdminTest implements IAdminCommandHandler
 			{
 				activeChar.sendMessage(line);
 			}
+		}
+		else if (command.startsWith("admin_known"))
+		{
+			activeChar.sendMessage("Your knownlist contains: " + activeChar.getKnownList().getKnownObjects().size());
 		}
 		else if (command.startsWith("admin_checkid"))
 		{

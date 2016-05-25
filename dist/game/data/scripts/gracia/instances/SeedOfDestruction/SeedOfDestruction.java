@@ -997,7 +997,7 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 				InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 				if ((SoDManager.getInstance().getSoDState() == 1) || ((world != null) && (world instanceof SOD1World)))
 				{
-					enterInstance(player, "SeedOfDestructionStage1.xml", ENTER_TELEPORT_1);
+					enterInstance(player, "SeedOfDestruction.xml", ENTER_TELEPORT_1);
 				}
 				else if (SoDManager.getInstance().getSoDState() == 2)
 				{

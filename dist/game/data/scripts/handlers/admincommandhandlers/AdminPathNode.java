@@ -57,15 +57,15 @@ public class AdminPathNode implements IAdminCommandHandler
 		}
 		else if (command.equals("admin_show_path"))
 		{
-			
+		
 		}
 		else if (command.equals("admin_path_debug"))
 		{
-			
+		
 		}
 		else if (command.equals("admin_show_pn"))
 		{
-			
+		
 		}
 		else if (command.equals("admin_find_path"))
 		{

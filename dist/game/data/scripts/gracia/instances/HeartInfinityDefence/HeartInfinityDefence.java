@@ -1204,7 +1204,7 @@ public class HeartInfinityDefence extends Quest
 						}
 					}
 				}
-			}, 60000);
+			} , 60000);
 			
 			ThreadPoolManager.getInstance().scheduleGeneral(() ->
 			{
@@ -1233,10 +1233,10 @@ public class HeartInfinityDefence extends Quest
 					}
 					broadCastPacket(world, new ExShowScreenMessage(NpcStringId.THE_TUMOR_INSIDE_S1_HAS_COMPLETELY_REVIVED_NEKIMUS_STARTED_TO_REGAIN_HIS_ENERGY_AND_IS_DESPERATELY_LOOKING_FOR_HIS_PREY, 2, 8000));
 				}
-			}, tumorRespawnTime);
+			} , tumorRespawnTime);
 			
 			world.wagonSpawnTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() -> addSpawn(SOULWAGON, -179544, 207400, -15496, 0, false, 0, false, world.getInstanceId()), 1000, wagonRespawnTime);
-		}, 20000);
+		} , 20000);
 	}
 	
 	void spawnCoffin(L2Npc npc, HIDWorld world)
@@ -1383,7 +1383,7 @@ public class HeartInfinityDefence extends Quest
 					world.npcList.add(alivetumor);
 					wagonRespawnTime -= 10000;
 					broadCastPacket(world, new ExShowScreenMessage(NpcStringId.THE_TUMOR_INSIDE_S1_HAS_COMPLETELY_REVIVED_NEKIMUS_STARTED_TO_REGAIN_HIS_ENERGY_AND_IS_DESPERATELY_LOOKING_FOR_HIS_PREY, 2, 8000));
-				}, tumorRespawnTime);
+				} , tumorRespawnTime);
 			}
 			
 			if (npc.getId() == 18711)

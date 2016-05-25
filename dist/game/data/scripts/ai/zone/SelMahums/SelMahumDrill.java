@@ -211,9 +211,13 @@ public final class SelMahumDrill extends AbstractNpcAI
 		
 		switch (npc.getId())
 		{
+			case 22780:
 			case 22782:
+			case 22783:
+			case 22784:
+			case 22785:
 			{
-				for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(22782))
+				for (L2Spawn spawn : SpawnTable.getInstance().getSpawns(npc.getId()))
 				{
 					if ((spawn != null) && spawn.getName().equals(npc.getSpawn().getName()))
 					{
