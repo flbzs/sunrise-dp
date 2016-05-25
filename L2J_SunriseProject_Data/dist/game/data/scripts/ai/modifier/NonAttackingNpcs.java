@@ -23,26 +23,29 @@ import l2r.gameserver.model.actor.L2Npc;
 import ai.npc.AbstractNpcAI;
 
 /**
- * @author UnAfraid, vGodFather
+ * @author , vGodFather
  */
-public class NonLethalableNpcs extends AbstractNpcAI
+public class NonAttackingNpcs extends AbstractNpcAI
 {
-	private static final int[] NON_LETHAL_NPCS =
+	// @formatter:off
+	private static final int[] NON_ATTACKING_NPCS =
 	{
-		// Headquarter
-		35062
+		// Fairy Trees
+		27185, 27186, 27187, 27188
 	};
+	// @formatter:on
 	
-	public NonLethalableNpcs()
+	public NonAttackingNpcs()
 	{
-		super(NonLethalableNpcs.class.getSimpleName(), "ai/modifiers");
-		addSpawnId(NON_LETHAL_NPCS);
+		super(NonAttackingNpcs.class.getSimpleName(), "ai/modifiers");
+		addSpawnId(NON_ATTACKING_NPCS);
 	}
 	
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		npc.setLethalable(false);
+		npc.disableCoreAI(true);
+		npc.setIsImmobilized(true);
 		return super.onSpawn(npc);
 	}
 }

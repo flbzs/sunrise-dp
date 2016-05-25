@@ -26,6 +26,7 @@ import ai.modifier.NoChampionMobs;
 import ai.modifier.NoMovingNpcs;
 import ai.modifier.NoRandomAnimation;
 import ai.modifier.NoRandomWalkMobs;
+import ai.modifier.NonAttackingNpcs;
 import ai.modifier.NonLethalableNpcs;
 import ai.modifier.NonTalkingNpcs;
 import ai.modifier.RunningNpcs;
@@ -45,6 +46,7 @@ public final class ModifiersLoader
 		FlyingNpcs.class,
 		NoChampionMobs.class,
 		NoMovingNpcs.class,
+		NonAttackingNpcs.class,
 		NonLethalableNpcs.class,
 		NonTalkingNpcs.class,
 		NoRandomAnimation.class,
