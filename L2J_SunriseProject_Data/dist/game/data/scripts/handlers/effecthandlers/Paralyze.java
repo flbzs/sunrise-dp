@@ -28,7 +28,8 @@ import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 
 /**
- * Paralyze effect implementation. vGodFather
+ * Paralyze effect implementation.
+ * @author vGodFather
  */
 public class Paralyze extends L2Effect
 {
