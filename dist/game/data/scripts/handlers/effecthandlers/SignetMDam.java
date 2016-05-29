@@ -99,16 +99,11 @@ public class SignetMDam extends L2Effect
 		_actor = effectPoint;
 		_srcInArena = (getEffector().isInsideZone(ZoneIdType.PVP) && !getEffector().isInsideZone(ZoneIdType.SIEGE));
 		return true;
-		
 	}
 	
 	@Override
 	public boolean onActionTime()
 	{
-		if (getCount() >= (getTotalCount() - 2))
-		{
-			return true; // do nothing first 2 times
-		}
 		int mpConsume = getSkill().getMpConsume();
 		
 		final L2PcInstance activeChar = getEffector().getActingPlayer();
