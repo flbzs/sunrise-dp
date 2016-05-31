@@ -33,6 +33,7 @@ import ai.npc.AbstractNpcAI;
 public class PolymorphingAngel extends AbstractNpcAI
 {
 	private static final Map<Integer, Integer> ANGELSPAWNS = new ConcurrentHashMap<>();
+	
 	static
 	{
 		ANGELSPAWNS.put(20830, 20859);
