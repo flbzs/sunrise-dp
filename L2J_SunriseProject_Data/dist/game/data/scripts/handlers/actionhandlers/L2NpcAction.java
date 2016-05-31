@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -30,10 +30,12 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.events.EventDispatcher;
 import l2r.gameserver.model.events.EventType;
 import l2r.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
-import l2r.gameserver.network.serverpackets.MoveToPawn;
-import l2r.gameserver.util.Util;
+import l2r.gameserver.network.serverpackets.ValidateLocation;
 import l2r.util.Rnd;
 
+/**
+ * @author vGodFather
+ */
 public class L2NpcAction implements IActionHandler
 {
 	/**
@@ -79,9 +81,15 @@ public class L2NpcAction implements IActionHandler
 			{
 				npc.getAI(); // wake up ai
 			}
+			
+			// Send a Server->Client packet ValidateLocation to correct the L2Npc position and heading on the client
+			activeChar.sendPacket(new ValidateLocation(npc));
 		}
 		else if (interact)
 		{
+			// Send a Server->Client packet ValidateLocation to correct the L2Npc position and heading on the client
+			activeChar.sendPacket(new ValidateLocation(npc));
+			
 			// Check if the activeChar is attackable (without a forced attack) and isn't dead
 			if (npc.isAutoAttackable(activeChar) && !npc.isAlikeDead())
 			{
@@ -97,14 +105,14 @@ public class L2NpcAction implements IActionHandler
 			}
 			else if (!npc.isAutoAttackable(activeChar))
 			{
-				// vGodFather addon
-				if (!GeoData.getInstance().canSeeTarget(activeChar, npc) && (Util.calculateDistance(activeChar, npc, true) >= 80))
+				if (!GeoData.getInstance().canSeeTarget(activeChar, npc))
 				{
 					final Location destination = GeoData.getInstance().moveCheck(activeChar, npc);
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_AND_INTERACT, npc, destination);
 					return true;
 				}
 				
+				// Verifies if the NPC can interact with the player.
 				if (!npc.canInteract(activeChar))
 				{
 					final Location destination = GeoData.getInstance().moveCheck(activeChar, npc);
@@ -120,8 +128,6 @@ public class L2NpcAction implements IActionHandler
 						return true;
 					}
 					
-					// Turn NPC to the player.
-					activeChar.sendPacket(new MoveToPawn(activeChar, npc, 100));
 					if (npc.hasRandomAnimation())
 					{
 						npc.onRandomAnimation(Rnd.get(8));
@@ -139,9 +145,6 @@ public class L2NpcAction implements IActionHandler
 					{
 						npc.showChatWindow(activeChar);
 					}
-					
-					// vGodFather we must stop move when start interacting.
-					activeChar.stopMove(null);
 				}
 				
 				if ((Config.PLAYER_MOVEMENT_BLOCK_TIME > 0) && !activeChar.isGM())
