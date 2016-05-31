@@ -61,6 +61,7 @@ public final class SubclassCertification extends AbstractNpcAI
 	private static final int CERTIFICATE_MASTER_ABILITY = 10612;
 	private static final Map<Integer, Integer> ABILITY_CERTIFICATES = new HashMap<>();
 	private static final Map<Integer, Integer> TRANSFORMATION_SEALBOOKS = new HashMap<>();
+	
 	static
 	{
 		ABILITY_CERTIFICATES.put(0, 10281); // Certificate - Warrior Ability

@@ -50,6 +50,7 @@ public class Clan extends AbstractNpcAI
 	// @formatter:on
 	
 	private static final Map<String, String> LEADER_REQUIRED = new HashMap<>();
+	
 	static
 	{
 		LEADER_REQUIRED.put("9000-03.htm", "9000-03-no.htm");
