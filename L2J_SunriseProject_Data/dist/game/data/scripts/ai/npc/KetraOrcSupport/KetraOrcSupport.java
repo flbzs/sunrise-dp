@@ -78,6 +78,7 @@ public class KetraOrcSupport extends AbstractNpcAI
 	};
 	// Misc
 	private static final Map<Integer, BuffsData> BUFF = new HashMap<>();
+	
 	static
 	{
 		BUFF.put(1, new BuffsData(4359, 2)); // Focus: Requires 2 Buffalo Horns
