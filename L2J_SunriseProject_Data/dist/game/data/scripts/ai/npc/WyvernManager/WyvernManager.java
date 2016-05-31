@@ -62,6 +62,7 @@ public final class WyvernManager extends AbstractNpcAI
 	};
 	// NPCS
 	private static final Map<Integer, ManagerType> MANAGERS = new HashMap<>();
+	
 	static
 	{
 		MANAGERS.put(35101, ManagerType.CASTLE);

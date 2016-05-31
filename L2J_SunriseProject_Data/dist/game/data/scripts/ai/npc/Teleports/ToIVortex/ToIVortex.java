@@ -52,6 +52,7 @@ public final class ToIVortex extends AbstractNpcAI
 	private static final Map<String, Location> TOI_FLOORS = new HashMap<>();
 	// Misc
 	private static final Map<String, Integer> DIMENSION_TRADE = new HashMap<>();
+	
 	static
 	{
 		TOI_FLOORS.put("1", new Location(114356, 13423, -5096));
