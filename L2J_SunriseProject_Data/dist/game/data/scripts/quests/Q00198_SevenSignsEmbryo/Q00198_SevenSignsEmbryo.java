@@ -74,21 +74,14 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 		{
 			if (!npc.isDead())
 			{
-				try
+				final L2MonsterInstance monster = spawns.get(player.getObjectId());
+				if ((monster != null) && (monster.getObjectId() == npc.getObjectId()))
 				{
-					final L2MonsterInstance monster = spawns.get(player.getObjectId());
-					if ((monster != null) && (monster.getObjectId() == npc.getObjectId()))
-					{
-						spawns.remove(player.getObjectId());
-					}
-					
-					npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.NEXT_TIME_YOU_WILL_NOT_ESCAPE));
-					npc.deleteMe();
+					spawns.remove(player.getObjectId());
 				}
-				catch (Exception e)
-				{
 				
-				}
+				npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getId(), NpcStringId.NEXT_TIME_YOU_WILL_NOT_ESCAPE));
+				npc.deleteMe();
 			}
 			return super.onAdvEvent(event, npc, player);
 		}
@@ -131,7 +124,7 @@ public final class Q00198_SevenSignsEmbryo extends Quest
 					monster.setRunning();
 					monster.addDamageHate(player, 0, 999);
 					monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
-					startQuestTimer("despawn", 300000, monster, null);
+					startQuestTimer("despawn", 300000, monster, player);
 				}
 				break;
 			}

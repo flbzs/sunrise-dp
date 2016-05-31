@@ -117,7 +117,7 @@ public final class Q00196_SevenSignsSealOfTheEmperor extends Quest
 						spawns.put(player.getObjectId(), merchant);
 						merchant.broadcastPacket(new NpcSay(merchant.getObjectId(), Say2.NPC_ALL, merchant.getId(), NpcStringId.WHO_DARES_SUMMON_THE_MERCHANT_OF_MAMMON));
 						htmltext = "30969-06.html";
-						startQuestTimer("DESPAWN", 120000, merchant, null);
+						startQuestTimer("DESPAWN", 120000, merchant, player);
 					}
 				}
 				break;
