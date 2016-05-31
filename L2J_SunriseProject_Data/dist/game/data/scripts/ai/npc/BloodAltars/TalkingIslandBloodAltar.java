@@ -160,6 +160,6 @@ public class TalkingIslandBloodAltar extends AbstractNpcAI
 					ThreadPoolManager.getInstance().scheduleGeneral(() -> changestatus(), Config.RESPAWN_TIME * 60 * 1000);
 				}
 			}
-		}, 10000);
+		} , 10000);
 	}
 }

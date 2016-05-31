@@ -209,7 +209,7 @@ public class SchutgartBloodAltar extends AbstractNpcAI
 					ThreadPoolManager.getInstance().scheduleGeneral(() -> changestatus(), Config.RESPAWN_TIME * 60 * 1000);
 				}
 			}
-		}, 10000);
+		} , 10000);
 	}
 	
 	@Override
@@ -231,7 +231,7 @@ public class SchutgartBloodAltar extends AbstractNpcAI
 				manageBosses(false);
 				manageNpcs(true);
 				ThreadPoolManager.getInstance().scheduleGeneral(() -> changestatus(), Config.RESPAWN_TIME * 60 * 1000);
-			}, 30000);
+			} , 30000);
 		}
 		return super.onKill(npc, player, isSummon);
 	}
