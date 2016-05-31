@@ -170,11 +170,11 @@ public class DenOfEvil extends AbstractNpcAI
 		{
 			try
 			{
-			addSpawn(EYE_IDS[getRandom(EYE_IDS.length)], _loc, false, 0);
+				addSpawn(EYE_IDS[getRandom(EYE_IDS.length)], _loc, false, 0);
 			}
 			catch (Exception e)
 			{
-				
+			
 			}
 		}
 	}

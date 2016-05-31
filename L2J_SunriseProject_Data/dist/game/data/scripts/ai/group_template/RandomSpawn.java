@@ -34,6 +34,7 @@ import ai.npc.AbstractNpcAI;
 public class RandomSpawn extends AbstractNpcAI
 {
 	private static Map<Integer, Location[]> SPAWN_POINTS = new ConcurrentHashMap<>();
+	
 	static
 	{
 		// Keltas

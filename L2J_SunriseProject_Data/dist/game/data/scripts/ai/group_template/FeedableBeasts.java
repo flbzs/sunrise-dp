@@ -76,6 +76,7 @@ public class FeedableBeasts extends AbstractNpcAI
 	// @formatter:on
 	
 	private static final Map<Integer, Integer> MAD_COW_POLYMORPH = new ConcurrentHashMap<>();
+	
 	static
 	{
 		MAD_COW_POLYMORPH.put(21824, 21468);

@@ -46,6 +46,7 @@ public class SummonMinions extends AbstractNpcAI
 	private static Set<Integer> myTrackingSet = new CopyOnWriteArraySet<>(); // Used to track instances of npcs
 	private final Map<Integer, List<L2PcInstance>> _attackersList = new ConcurrentHashMap<>();
 	private static final Map<Integer, List<Integer>> MINIONS = new HashMap<>();
+	
 	static
 	{
 		// Timak Orc Troop
@@ -85,6 +86,7 @@ public class SummonMinions extends AbstractNpcAI
 		// Tanta Lizardman Summoner
 		MINIONS.put(22774, Arrays.asList(22768, 22768));
 	}
+	
 	// Timak Orc Troop Messages
 	private static final NpcStringId[] ATTACK_LEADER_MSG =
 	{
