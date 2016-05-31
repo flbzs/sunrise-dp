@@ -184,7 +184,7 @@ public final class Q00197_SevenSignsTheSacredBookOfSeal extends Quest
 					monster.setRunning();
 					monster.addDamageHate(player, 0, 999);
 					monster.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, player);
-					startQuestTimer("despawn", 300000, monster, null);
+					startQuestTimer("despawn", 300000, monster, player);
 				}
 				break;
 			}
