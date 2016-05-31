@@ -86,6 +86,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 	private static final int CROWN = 6841;
 	// Fortress
 	private static final Map<Integer, List<Integer>> FORTRESS = new HashMap<>();
+	
 	static
 	{
 		FORTRESS.put(1, Arrays.asList(101, 102, 112, 113)); // Gludio Castle
@@ -98,6 +99,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 		FORTRESS.put(8, Arrays.asList(110, 120, 121)); // Rune Castle
 		FORTRESS.put(9, Arrays.asList(111, 121)); // Schuttgart Castle
 	}
+	
 	// Buffs
 	private static final SkillHolder[] BUFFS =
 	{
