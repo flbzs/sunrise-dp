@@ -43,6 +43,7 @@ public class MercenaryCaptain extends AbstractNpcAI
 {
 	// NPCs
 	private static final Map<Integer, Integer> NPCS = new HashMap<>();
+	
 	static
 	{
 		NPCS.put(36481, 13757); // Mercenary Captain (Gludio)
@@ -55,6 +56,7 @@ public class MercenaryCaptain extends AbstractNpcAI
 		NPCS.put(36488, 13764); // Mercenary Captain (Rune)
 		NPCS.put(36489, 13765); // Mercenary Captain (Schuttgart)
 	}
+	
 	// Items
 	private static final int STRIDER_WIND = 4422;
 	private static final int STRIDER_STAR = 4423;
