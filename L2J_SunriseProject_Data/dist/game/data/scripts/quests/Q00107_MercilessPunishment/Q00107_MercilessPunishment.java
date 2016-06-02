@@ -204,15 +204,17 @@ public final class Q00107_MercilessPunishment extends Quest
 								if (hasQuestItems(talker, HATOSS_ORDER_3, LETTER_TO_HUMAN, LETTER_TO_DARK_ELF, LETTER_TO_ELF))
 								{
 									Q00281_HeadForTheHills.giveNewbieReward(talker);
+									talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
 									addExpAndSp(talker, 34565, 2962);
 									giveAdena(talker, 14666, true);
+									
+									giveItems(talker, BUTCHER, 1);
 									for (ItemHolder reward : REWARDS)
 									{
 										giveItems(talker, reward);
 									}
-									giveItems(talker, BUTCHER, 1);
+									
 									qs.exitQuest(false, true);
-									talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
 									htmltext = "30568-11.html";
 								}
 								break;

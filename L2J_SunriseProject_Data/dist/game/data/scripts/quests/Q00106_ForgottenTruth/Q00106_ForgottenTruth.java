@@ -22,9 +22,11 @@ import l2r.gameserver.enums.QuestSound;
 import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.model.holders.ItemHolder;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
+import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.gameserver.util.Util;
 
@@ -49,6 +51,16 @@ public final class Q00106_ForgottenTruth extends Quest
 	private static final int KARTAS_TRANSLATION = 988;
 	// Misc
 	private static final int MIN_LVL = 10;
+	// Rewards
+	private static final ItemHolder[] REWARDS =
+	{
+		new ItemHolder(1060, 100), // Lesser Healing Potion
+		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
+		new ItemHolder(4413, 10), // Echo Crystal - Theme of Love
+		new ItemHolder(4414, 10), // Echo Crystal - Theme of Solitude
+		new ItemHolder(4415, 10), // Echo Crystal - Theme of Feast
+		new ItemHolder(4416, 10), // Echo Crystal - Theme of Celebration
+	};
 	
 	public Q00106_ForgottenTruth()
 	{
@@ -150,8 +162,16 @@ public final class Q00106_ForgottenTruth extends Quest
 						{
 							Q00281_HeadForTheHills.giveNewbieReward(talker);
 							talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
-							st.giveAdena(10266, true);
+							showOnScreenMsg(talker, NpcStringId.ACQUISITION_OF_RACE_SPECIFIC_WEAPON_COMPLETE_N_GO_FIND_THE_NEWBIE_GUIDE, 2, 5000);
+							
 							st.addExpAndSp(24195, 2074);
+							st.giveAdena(10266, true);
+							
+							for (ItemHolder reward : REWARDS)
+							{
+								giveItems(talker, reward);
+							}
+							
 							st.exitQuest(false, true);
 							htmltext = "30358-07.html";
 						}

@@ -28,6 +28,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
+import l2r.gameserver.network.NpcStringId;
 
 /**
  * Sea of Spores Fever (102)
@@ -180,6 +181,8 @@ public class Q00102_SeaOfSporesFever extends Quest
 								{
 									if (!hasAtLeastOneQuestItem(player, COBENDELLS_MEDICINE1, COBENDELLS_MEDICINE2, COBENDELLS_MEDICINE3, COBENDELLS_MEDICINE4, COBENDELLS_MEDICINE5))
 									{
+										showOnScreenMsg(player, NpcStringId.ACQUISITION_OF_RACE_SPECIFIC_WEAPON_COMPLETE_N_GO_FIND_THE_NEWBIE_GUIDE, 2, 5000);
+										
 										st.giveItems(LESSER_HEALING_POTION, 100);
 										st.giveItems(ECHO_CRYSTAL_THEME_OF_BATTLE, 10);
 										st.giveItems(ECHO_CRYSTAL_THEME_OF_LOVE, 10);

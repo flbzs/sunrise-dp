@@ -25,6 +25,7 @@ import l2r.gameserver.model.holders.ItemHolder;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
+import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.gameserver.util.Util;
 
@@ -157,15 +158,19 @@ public final class Q00103_SpiritOfCraftsman extends Quest
 								if (hasQuestItems(talker, STEELBENDERS_HEAD))
 								{
 									Q00281_HeadForTheHills.giveNewbieReward(talker);
+									talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
+									showOnScreenMsg(talker, NpcStringId.ACQUISITION_OF_RACE_SPECIFIC_WEAPON_COMPLETE_N_GO_FIND_THE_NEWBIE_GUIDE, 2, 5000);
+									
 									addExpAndSp(talker, 46663, 3999);
 									giveAdena(talker, 19799, true);
+									
+									giveItems(talker, BLOODSABER, 1);
 									for (ItemHolder reward : REWARDS)
 									{
 										giveItems(talker, reward);
 									}
-									giveItems(talker, BLOODSABER, 1);
+									
 									qs.exitQuest(false, true);
-									talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
 									htmltext = "30307-07.html";
 								}
 								break;
