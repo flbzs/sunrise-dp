@@ -29,6 +29,7 @@ import l2r.gameserver.model.holders.ItemHolder;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
+import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.gameserver.util.Util;
 
@@ -226,20 +227,23 @@ public final class Q00108_JumbleTumbleDiamondFuss extends Quest
 								if (st.hasQuestItems(STAR_DIAMOND))
 								{
 									Q00281_HeadForTheHills.giveNewbieReward(talker);
+									talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
+									showOnScreenMsg(talker, NpcStringId.ACQUISITION_OF_RACE_SPECIFIC_WEAPON_COMPLETE_N_GO_FIND_THE_NEWBIE_GUIDE, 2, 5000);
+									
 									st.addExpAndSp(34565, 2962);
 									st.giveAdena(14666, true);
+									
+									st.giveItems(SILVERSMITH_HAMMER, 1);
 									for (ItemHolder reward : REWARDS)
 									{
 										st.giveItems(reward);
 									}
-									st.giveItems(SILVERSMITH_HAMMER, 1);
+									
 									st.exitQuest(false, true);
-									talker.sendPacket(new SocialAction(talker.getObjectId(), 3));
 									htmltext = "30523-09.html";
 								}
 								break;
 							}
-							
 						}
 						break;
 					}
