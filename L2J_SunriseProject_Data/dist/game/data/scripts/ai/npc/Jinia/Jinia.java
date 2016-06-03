@@ -86,6 +86,11 @@ public final class Jinia extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
+		if (player.isGM())
+		{
+			return "32781-02.html";
+		}
+		
 		final QuestState st = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
 		if ((st != null) && (player.getLevel() >= MIN_LEVEL))
 		{
