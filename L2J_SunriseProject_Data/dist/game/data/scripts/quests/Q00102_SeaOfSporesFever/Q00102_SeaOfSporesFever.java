@@ -25,6 +25,7 @@ import l2r.gameserver.enums.QuestSound;
 import l2r.gameserver.enums.Race;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.model.holders.ItemHolder;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
@@ -53,7 +54,6 @@ public class Q00102_SeaOfSporesFever extends Quest
 	private static final int ALBERIUS_LETTER = 964;
 	private static final int EVERGREEN_AMULET = 965;
 	private static final int DRYADS_TEAR = 966;
-	private static final int LESSER_HEALING_POTION = 1060;
 	private static final int COBENDELLS_MEDICINE1 = 1130;
 	private static final int COBENDELLS_MEDICINE2 = 1131;
 	private static final int COBENDELLS_MEDICINE3 = 1132;
@@ -61,11 +61,6 @@ public class Q00102_SeaOfSporesFever extends Quest
 	private static final int COBENDELLS_MEDICINE5 = 1134;
 	private static final int SOULSHOT_NO_GRADE = 1835;
 	private static final int SPIRITSHOT_NO_GRADE = 2509;
-	private static final int ECHO_CRYSTAL_THEME_OF_BATTLE = 4412;
-	private static final int ECHO_CRYSTAL_THEME_OF_LOVE = 4413;
-	private static final int ECHO_CRYSTAL_THEME_OF_SOLITUDE = 4414;
-	private static final int ECHO_CRYSTAL_THEME_OF_FEAST = 4415;
-	private static final int ECHO_CRYSTAL_THEME_OF_CELEBRATION = 4416;
 	// Misc
 	private static final int MIN_LVL = 12;
 	private static final Map<Integer, Integer> SENTINELS = new HashMap<>();
@@ -78,6 +73,17 @@ public class Q00102_SeaOfSporesFever extends Quest
 		SENTINELS.put(BERROS, COBENDELLS_MEDICINE2);
 		SENTINELS.put(ALBERIUS, COBENDELLS_MEDICINE1);
 	}
+	
+	// Rewards
+	private static final ItemHolder[] REWARDS =
+	{
+		new ItemHolder(1060, 100), // Lesser Healing Potion
+		new ItemHolder(4412, 10), // Echo Crystal - Theme of Battle
+		new ItemHolder(4413, 10), // Echo Crystal - Theme of Love
+		new ItemHolder(4414, 10), // Echo Crystal - Theme of Solitude
+		new ItemHolder(4415, 10), // Echo Crystal - Theme of Feast
+		new ItemHolder(4416, 10), // Echo Crystal - Theme of Celebration
+	};
 	
 	public Q00102_SeaOfSporesFever()
 	{
@@ -183,12 +189,11 @@ public class Q00102_SeaOfSporesFever extends Quest
 									{
 										showOnScreenMsg(player, NpcStringId.ACQUISITION_OF_RACE_SPECIFIC_WEAPON_COMPLETE_N_GO_FIND_THE_NEWBIE_GUIDE, 2, 5000);
 										
-										st.giveItems(LESSER_HEALING_POTION, 100);
-										st.giveItems(ECHO_CRYSTAL_THEME_OF_BATTLE, 10);
-										st.giveItems(ECHO_CRYSTAL_THEME_OF_LOVE, 10);
-										st.giveItems(ECHO_CRYSTAL_THEME_OF_SOLITUDE, 10);
-										st.giveItems(ECHO_CRYSTAL_THEME_OF_FEAST, 10);
-										st.giveItems(ECHO_CRYSTAL_THEME_OF_CELEBRATION, 10);
+										for (ItemHolder reward : REWARDS)
+										{
+											st.giveItems(reward);
+										}
+										
 										if (player.isMageClass())
 										{
 											st.giveItems(STAFF_OF_SENTINEL, 1);
@@ -199,6 +204,7 @@ public class Q00102_SeaOfSporesFever extends Quest
 											st.giveItems(SWORD_OF_SENTINEL, 1);
 											st.giveItems(SOULSHOT_NO_GRADE, 500);
 										}
+										
 										st.addExpAndSp(30202, 1339);
 										st.giveAdena(6331, true);
 										st.exitQuest(false, true);
