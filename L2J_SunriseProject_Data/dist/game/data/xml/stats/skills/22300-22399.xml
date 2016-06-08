@@ -83,7 +83,8 @@
 		<!-- Birthday Skill -->
 		<set name="canBeDispeled" val="false" />
 		<set name="itemConsumeCount" val="1" />
-		<set name="operateType" val="A1" /> <!-- FIXME: value unconfirmed -->
+		<set name="operateType" val="A2" />
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="reuseDelay" val="3600000" />
 		<set name="skillType" val="BUFF" />
 		<set name="stayAfterDeath" val="true" />
