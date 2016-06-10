@@ -216,11 +216,12 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 									world.knightStatues.add(statue);
 								}
 							}
+							
 							for (L2PcInstance players : world.playersInside)
 							{
 								if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
 								{
-									final QuestState qs = player.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
+									final QuestState qs = players.getQuestState(Q10286_ReunionWithSirra.class.getSimpleName());
 									if ((qs != null) && (qs.getState() == State.STARTED) && qs.isCond(5))
 									{
 										qs.setCond(6, true);
@@ -590,7 +591,9 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 								players.broadcastPacket(ExChangeClientEffectInfo.STATIC_FREYA_DEFAULT);
 							}
 						}
-						InstanceManager.getInstance().destroyInstance(world.getInstanceId());
+						
+						// vGodFather this is already handled
+						// InstanceManager.getInstance().destroyInstance(world.getInstanceId());
 						break;
 					}
 					case "LEADER_RANGEBUFF":

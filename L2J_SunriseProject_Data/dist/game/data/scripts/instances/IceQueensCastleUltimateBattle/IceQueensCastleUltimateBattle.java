@@ -566,7 +566,9 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 								players.broadcastPacket(ExChangeClientEffectInfo.STATIC_FREYA_DEFAULT);
 							}
 						}
-						InstanceManager.getInstance().destroyInstance(world.getInstanceId());
+						
+						// vGodFather this is already handled
+						// InstanceManager.getInstance().destroyInstance(world.getInstanceId());
 						break;
 					}
 					case "LEADER_RANGEBUFF":
