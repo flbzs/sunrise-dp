@@ -35,6 +35,7 @@
 													<xs:simpleType>
 														<xs:restriction base="xs:token">
 															<xs:enumeration value="FULL_PARTY" />
+															<xs:enumeration value="PARTY_RANDOM" />
 															<xs:enumeration value="PARTY_ONE_RANDOM" />
 														</xs:restriction>
 													</xs:simpleType>
