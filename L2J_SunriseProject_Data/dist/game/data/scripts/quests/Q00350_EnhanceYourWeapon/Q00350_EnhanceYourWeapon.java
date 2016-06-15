@@ -516,7 +516,6 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 		Map<L2PcInstance, SoulCrystal> players = new HashMap<>();
 		int maxSCLevel = 0;
 		
-		// TODO: what if mob support last_hit + party?
 		if (isPartyLevelingMonster(mob.getId()) && (killer.getParty() != null))
 		{
 			// firts get the list of players who has one Soul Cry and the quest
