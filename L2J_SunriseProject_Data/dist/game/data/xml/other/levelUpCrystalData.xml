@@ -777,6 +777,13 @@
 		<item npcId="29186"> <!-- Baylor -->
 			<detail chance="1" absorbType="PARTY_ONE_RANDOM" levelList="12, 13, 14, 15, 16" />
 		</item>
+		<item npcId="29099"> <!-- Baylor -->
+			<detail chance="1" absorbType="PARTY_ONE_RANDOM" levelList="12, 13, 14, 15, 16"/>
+		</item>
+		<item npcId="29096"> <!-- Anais -->
+			<detail chance="10" absorbType="PARTY_ONE_RANDOM" levelList="12, 13" />
+			<detail chance="5" absorbType="PARTY_ONE_RANDOM" levelList="14" />
+		</item>
 		<item npcId="29047"> <!-- Scarlet van Halisha -->
 			<detail chance="100" absorbType="FULL_PARTY" levelList="12, 13" />
 			<detail chance="50" absorbType="FULL_PARTY" levelList="14" />
@@ -785,6 +792,7 @@
 		<item npcId="29179"> <!-- Freya Normal Mode -->
 			<detail chance="100" absorbType="FULL_PARTY" levelList="12, 13, 14" />
 			<detail chance="10" absorbType="FULL_PARTY" levelList="15" />
+			<detail chance="15" absorbType="PARTY_ONE_RANDOM" levelList="16"/>
 		</item>
 		<item npcId="29180"> <!-- Freya Extreme Mode -->
 			<detail chance="100" absorbType="FULL_PARTY" levelList="12, 13, 14, 15" />
