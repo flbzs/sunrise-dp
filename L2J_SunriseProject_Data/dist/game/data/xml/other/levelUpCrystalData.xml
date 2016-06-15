@@ -369,13 +369,13 @@
 
 		<!-- RaidBosses or GrandBosses that level up crystal from Level 10 up to 18 -->
 		<item npcId="29001"> <!-- Queen Ant -->
-			<detail chance="5" absorbType="FULL_PARTY" levelList="10" />
+			<detail chance="5" absorbType="PARTY_RANDOM" levelList="10" />
 		</item>
 		<item npcId="29006"> <!-- Core -->
-			<detail chance="20" absorbType="FULL_PARTY" levelList="10, 11, 12" />
+			<detail chance="20" absorbType="PARTY_RANDOM" levelList="10, 11, 12" />
 		</item>
 		<item npcId="29014"> <!-- Orfen -->
-			<detail chance="20" absorbType="FULL_PARTY" levelList="10, 11, 12" />
+			<detail chance="20" absorbType="PARTY_RANDOM" levelList="10, 11, 12" />
 		</item>
 		<item npcId="29022"> <!-- Zaken -->
 			<detail chance="100" absorbType="FULL_PARTY" levelList="10, 11" />
@@ -502,7 +502,7 @@
 		</item>
 		<item npcId="29020"> <!-- Baium -->
 			<detail chance="100" absorbType="FULL_PARTY" levelList="10, 11" />
-			<detail chance="5" absorbType="FULL_PARTY" levelList="12" />
+			<detail chance="5" absorbType="PARTY_RANDOM" levelList="12" />
 		</item>
 		<item npcId="25054"> <!-- Kernon -->
 			<detail chance="5" absorbType="PARTY_ONE_RANDOM" levelList="10, 11, 12" />
@@ -698,12 +698,16 @@
 			<detail chance="5" absorbType="PARTY_ONE_RANDOM" levelList="10, 11" />
 		</item>
 		<item npcId="29150"> <!-- Ekimus -->
-			<detail chance="10" absorbType="FULL_PARTY" levelList="12, 13, 14, 15" />
-			<detail chance="3" absorbType="FULL_PARTY" levelList="16" />
+			<detail chance="10" absorbType="PARTY_RANDOM" levelList="12, 13, 14, 15" />
+			<detail chance="3" absorbType="PARTY_RANDOM" levelList="16" />
 		</item>
 		<item npcId="29163"> <!-- Tiat Attack stage -->
-			<detail chance="10" absorbType="FULL_PARTY" levelList="12, 13, 14, 15" />
-			<detail chance="3" absorbType="FULL_PARTY" levelList="16" />
+			<detail chance="10" absorbType="PARTY_RANDOM" levelList="12, 13, 14, 15" />
+			<detail chance="3" absorbType="PARTY_RANDOM" levelList="16" />
+		</item>
+		<item npcId="29175"> <!-- Tiat defend stage -->
+			<detail chance="10" absorbType="PARTY_RANDOM" levelList="12, 13, 14, 15" />
+			<detail chance="3" absorbType="PARTY_RANDOM" levelList="16" />
 		</item>
 		<item npcId="25540"> <!-- Demon Prince -->
 			<detail chance="3" absorbType="PARTY_ONE_RANDOM" levelList="10, 11, 12, 13, 14" />
@@ -730,8 +734,8 @@
 			<detail chance="5" absorbType="PARTY_ONE_RANDOM" levelList="10, 11, 12, 13, 14" />
 		</item>
 		<item npcId="29118"> <!-- Beleth -->
-			<detail chance="10" absorbType="FULL_PARTY" levelList="12, 13, 14, 15" />
-			<detail chance="1" absorbType="FULL_PARTY" levelList="16" />
+			<detail chance="10" absorbType="PARTY_RANDOM" levelList="12, 13, 14, 15" />
+			<detail chance="1" absorbType="PARTY_RANDOM" levelList="16" />
 		</item>
 		<item npcId="25701"> <!-- Anais -->
 			<detail chance="10" absorbType="PARTY_ONE_RANDOM" levelList="12, 13" />
@@ -786,37 +790,38 @@
 		</item>
 		<item npcId="29047"> <!-- Scarlet van Halisha -->
 			<detail chance="100" absorbType="FULL_PARTY" levelList="12, 13" />
-			<detail chance="50" absorbType="FULL_PARTY" levelList="14" />
-			<detail chance="10" absorbType="FULL_PARTY" levelList="15" />
+			<detail chance="50" absorbType="PARTY_RANDOM" levelList="14" />
+			<detail chance="10" absorbType="PARTY_RANDOM" levelList="15" />
+			 <detail chance="15" absorbType="PARTY_ONE_RANDOM" levelList="16"/>
 		</item>
 		<item npcId="29179"> <!-- Freya Normal Mode -->
-			<detail chance="100" absorbType="FULL_PARTY" levelList="12, 13, 14" />
-			<detail chance="10" absorbType="FULL_PARTY" levelList="15" />
+			<detail chance="100" absorbType="FULL_PARTY" levelList="12, 13, 14"/>
+			<detail chance="10" absorbType="PARTY_RANDOM" levelList="15"/>
 			<detail chance="15" absorbType="PARTY_ONE_RANDOM" levelList="16"/>
 		</item>
 		<item npcId="29180"> <!-- Freya Extreme Mode -->
 			<detail chance="100" absorbType="FULL_PARTY" levelList="12, 13, 14, 15" />
-			<detail chance="50" absorbType="FULL_PARTY" levelList="16, 17" />
+			<detail chance="50" absorbType="PARTY_RANDOM" levelList="16, 17" />
 		</item>
 		<item npcId="29019"> <!-- Antharas -->
 			<detail chance="100" absorbType="FULL_PARTY" levelList="12, 13, 14, 15, 16" />
-			<detail chance="50" absorbType="FULL_PARTY" levelList="17" />
+			<detail chance="50" absorbType="PARTY_RANDOM" levelList="17" />
 		</item>
 		<item npcId="29066"> <!-- Antharas -->
 			<detail chance="100" absorbType="FULL_PARTY" levelList="12, 13, 14, 15, 16" />
-			<detail chance="50" absorbType="FULL_PARTY" levelList="17" />
+			<detail chance="50" absorbType="PARTY_RANDOM" levelList="17" />
 		</item>
 		<item npcId="29067"> <!-- Antharas -->
 			<detail chance="100" absorbType="FULL_PARTY" levelList="12, 13, 14, 15, 16" />
-			<detail chance="50" absorbType="FULL_PARTY" levelList="17" />
+			<detail chance="50" absorbType="PARTY_RANDOM" levelList="17" />
 		</item>
 		<item npcId="29068"> <!-- Antharas -->
 			<detail chance="100" absorbType="FULL_PARTY" levelList="12, 13, 14, 15, 16" />
-			<detail chance="50" absorbType="FULL_PARTY" levelList="17" />
+			<detail chance="50" absorbType="PARTY_RANDOM" levelList="17" />
 		</item>
 		<item npcId="29028"> <!-- Valakas -->
 			<detail chance="100" absorbType="FULL_PARTY" levelList="12, 13, 14, 15, 16" />
-			<detail chance="50" absorbType="FULL_PARTY" levelList="17" />
+			<detail chance="50" absorbType="PARTY_RANDOM" levelList="17" />
 		</item>
 	</npc>
 </list>
