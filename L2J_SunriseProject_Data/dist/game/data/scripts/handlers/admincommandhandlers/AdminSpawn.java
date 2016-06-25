@@ -78,7 +78,9 @@ public class AdminSpawn implements IAdminCommandHandler
 		"admin_list_positions",
 		"admin_spawn_debug_menu",
 		"admin_spawn_debug_print",
-		"admin_spawn_debug_print_menu"
+		"admin_spawn_debug_print_menu",
+		"admin_npc_kill",
+		"admin_npc_recall"
 	};
 	
 	@Override
@@ -174,7 +176,7 @@ public class AdminSpawn implements IAdminCommandHandler
 				int instance = Integer.parseInt(st.nextToken());
 				if (instance >= 300000)
 				{
-					final StringBuilder html = StringUtil.startAppend(500 + 1000, "<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center>", "<font color=\"LEVEL\">Spawns for " + String.valueOf(instance) + "</font>", "</td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br>", "<table width=\"100%\"><tr><td width=200>NpcName</td><td width=70>Action</td></tr>");
+					final StringBuilder html = StringUtil.startAppend(500 + 1000, "<html><table width=\"100%\"><tr><td width=45><button value=\"Main\" action=\"bypass -h admin_admin\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center>", "<font color=\"LEVEL\">Spawns for " + String.valueOf(instance) + "</font>", "</td><td width=45><button value=\"Back\" action=\"bypass -h admin_current_player\" width=45 height=21 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td></tr></table><br>", "<table width=\"100%\"><tr><td width=170>NpcName</td><td width=40>Action</td><td width=40>Action</td><td width=40>Action</td></tr>");
 					int counter = 0;
 					int skiped = 0;
 					Instance inst = InstanceManager.getInstance().getInstance(instance);
@@ -187,7 +189,7 @@ public class AdminSpawn implements IAdminCommandHandler
 								// Only 50 because of client html limitation
 								if (counter < 50)
 								{
-									StringUtil.append(html, "<tr><td>" + npc.getName() + "</td><td>", "<a action=\"bypass -h admin_move_to " + npc.getX() + " " + npc.getY() + " " + npc.getZ() + "\">Go</a>", "</td></tr>");
+									StringUtil.append(html, "<tr><td>" + getName(npc.getName()) + "</td><td>", "<a action=\"bypass -h admin_move_to " + npc.getX() + " " + npc.getY() + " " + npc.getZ() + "\">Go To</a>", "</td><td>", "<a action=\"bypass -h admin_npc_recall " + npc.getObjectId() + "\">Recall</a>", "</td><td>", "<a action=\"bypass -h admin_npc_kill " + npc.getObjectId() + "\">Kill It</a>", "</td></tr>");
 									counter++;
 								}
 								else
@@ -314,7 +316,68 @@ public class AdminSpawn implements IAdminCommandHandler
 				findNPCInstances(activeChar, npcId, teleportIndex, false);
 			}
 		}
+		else if (command.startsWith("admin_npc_kill"))
+		{
+			kill(activeChar, Integer.parseInt(command.substring(15)));
+		}
+		else if (command.startsWith("admin_npc_recall"))
+		{
+			recall(activeChar, Integer.parseInt(command.substring(17)));
+		}
 		return true;
+	}
+	
+	private void kill(L2PcInstance activeChar, int objectId)
+	{
+		L2Object obj = L2World.getInstance().findObject(objectId);
+		
+		if (obj instanceof L2Npc)
+		{
+			L2Npc target = (L2Npc) obj;
+			if (target.isDead())
+			{
+				return;
+			}
+			
+			boolean targetIsInvul = false;
+			if (target.isInvul())
+			{
+				targetIsInvul = true;
+				target.setIsInvul(false);
+			}
+			
+			target.reduceCurrentHp(target.getMaxHp() + 1, activeChar, null);
+			
+			if (targetIsInvul)
+			{
+				target.setIsInvul(true);
+			}
+		}
+	}
+	
+	private void recall(L2PcInstance activeChar, int objectId)
+	{
+		L2Object obj = L2World.getInstance().findObject(objectId);
+		
+		if (obj instanceof L2Npc)
+		{
+			L2Npc target = (L2Npc) obj;
+			if (target.isDead())
+			{
+				return;
+			}
+			
+			target.teleToLocation(activeChar);
+		}
+	}
+	
+	private String getName(String name)
+	{
+		if (name.length() > 22)
+		{
+			return name.substring(0, 21) + "...";
+		}
+		return name;
 	}
 	
 	@Override
