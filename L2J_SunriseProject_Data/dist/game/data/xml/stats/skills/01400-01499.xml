@@ -748,7 +748,6 @@
 		<set name="castRange" val="900" />
 		<set name="effectId" val="5145" />
 		<set name="hitTime" val="5000" />
-		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8876" />
