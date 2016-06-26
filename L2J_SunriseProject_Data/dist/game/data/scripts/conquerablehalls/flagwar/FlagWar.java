@@ -59,7 +59,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	private static final String SQL_LOAD_ATTACKERS = "SELECT * FROM siegable_hall_flagwar_attackers WHERE hall_id = ?";
 	private static final String SQL_SAVE_ATTACKER = "INSERT INTO siegable_hall_flagwar_attackers_members VALUES (?,?,?)";
 	private static final String SQL_LOAD_MEMEBERS = "SELECT object_id FROM siegable_hall_flagwar_attackers_members WHERE clan_id = ?";
-	private static final String SQL_SAVE_CLAN = "INSERT INTO siegable_hall_flagwar_attackers VALUES(?,?,?,?)";
+	private static final String SQL_SAVE_CLAN = "INSERT INTO siegable_hall_flagwar_attackers VALUES(?,?,?,?) ON DUPLICATE KEY UPDATE flag=?";
 	private static final String SQL_SAVE_NPC = "UPDATE siegable_hall_flagwar_attackers SET npc = ? WHERE clan_id = ?";
 	private static final String SQL_CLEAR_CLAN = "DELETE FROM siegable_hall_flagwar_attackers WHERE hall_id = ?";
 	private static final String SQL_CLEAR_CLAN_ATTACKERS = "DELETE FROM siegable_hall_flagwar_attackers_members WHERE hall_id = ?";
@@ -834,6 +834,8 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			ps.setInt(2, flag);
 			ps.setInt(3, 0);
 			ps.setInt(4, clanId);
+			
+			ps.setInt(5, flag);
 			ps.execute();
 		}
 		catch (Exception e)
