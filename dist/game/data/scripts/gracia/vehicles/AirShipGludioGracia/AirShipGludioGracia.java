@@ -254,7 +254,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable
 				case 1:
 					// _ship.teleToLocation(-167874, 256731, -509, 41035, false);
 					_ship.setOustLoc(OUST_GRACIA);
-					ThreadPoolManager.getInstance().scheduleGeneral(this, 5000);
+					ThreadPoolManager.getInstance().scheduleGeneral(this, 500);
 					break;
 				case 2:
 					_ship.executePath(WARPGATE_TO_GRACIA);
@@ -273,7 +273,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable
 				case 5:
 					// _ship.teleToLocation(-157261, 255664, 221, 64781, false);
 					_ship.setOustLoc(OUST_GLUDIO);
-					ThreadPoolManager.getInstance().scheduleGeneral(this, 5000);
+					ThreadPoolManager.getInstance().scheduleGeneral(this, 500);
 					break;
 				case 6:
 					_ship.executePath(WARPGATE_TO_GLUDIO);
