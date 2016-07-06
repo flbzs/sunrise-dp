@@ -359,7 +359,7 @@ public class Q00419_GetAPet extends Quest
 		
 		int npcId = npc.getId();
 		int state = st.getState();
-		String step = st.get("step");
+		String step = st.get("step") != null ? st.get("step") : "";
 		
 		if ((npcId != PET_MANAGER_MARTIN) && (state == State.STARTED) && !step.equalsIgnoreCase("SLAYED"))
 		{
