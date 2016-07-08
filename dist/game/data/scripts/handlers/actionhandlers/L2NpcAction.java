@@ -31,6 +31,7 @@ import l2r.gameserver.model.events.EventDispatcher;
 import l2r.gameserver.model.events.EventType;
 import l2r.gameserver.model.events.impl.character.npc.OnNpcFirstTalk;
 import l2r.gameserver.network.serverpackets.ValidateLocation;
+import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
 
 /**
@@ -105,7 +106,7 @@ public class L2NpcAction implements IActionHandler
 			}
 			else if (!npc.isAutoAttackable(activeChar))
 			{
-				if (!GeoData.getInstance().canSeeTarget(activeChar, npc))
+				if (!GeoData.getInstance().canSeeTarget(activeChar, npc) && (Util.calculateDistance(activeChar, npc, true) > 80))
 				{
 					final Location destination = GeoData.getInstance().moveCheck(activeChar, npc);
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_AND_INTERACT, npc, destination);
