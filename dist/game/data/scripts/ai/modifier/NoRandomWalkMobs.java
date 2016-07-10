@@ -64,7 +64,7 @@ public class NoRandomWalkMobs extends AbstractNpcAI
 		// Ekimus Feral Hound
 		29151,
 		// Lair of antharas mobs
-		22848, 22849, 22850, 22851,
+		22848, 22849, 22850, 22851, 22857,
 		// Grandbosses no instances
 		29006, 29014, 29020, 29028, 29065, 29068, 29118, 29119,
 		// Freya instances
