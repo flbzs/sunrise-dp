@@ -198,7 +198,10 @@ public final class Q00380_BringOutTheFlavorOfIngredients extends Quest
 			final ItemChanceHolder item = MONSTER_CHANCES.get(npc.getId());
 			if (giveItemRandomly(qs.getPlayer(), npc, item.getId(), 1, item.getCount(), item.getChance(), true))
 			{
-				qs.setCond(qs.getCond() + 1, true);
+				if ((getQuestItemsCount(killer, RITRON_FRUIT) >= 4) && (getQuestItemsCount(killer, MOON_FLOWER) >= 20) && (getQuestItemsCount(killer, LEECH_FLUIDS) >= 10))
+				{
+					qs.setCond(2, true);
+				}
 			}
 		}
 		return super.onKill(npc, killer, isSummon);
