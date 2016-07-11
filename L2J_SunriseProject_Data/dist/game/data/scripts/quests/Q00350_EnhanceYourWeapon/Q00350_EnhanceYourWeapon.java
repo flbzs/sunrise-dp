@@ -514,7 +514,6 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 		}
 		
 		Map<L2PcInstance, SoulCrystal> players = new HashMap<>();
-		int maxSCLevel = 0;
 		
 		if (isPartyLevelingMonster(mob.getId()) && (killer.getParty() != null))
 		{
@@ -533,10 +532,6 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 				}
 				
 				players.put(pl, sc);
-				if ((maxSCLevel < sc.getLevel()) && NPC_LEVELING_INFO.get(mob.getId()).containsKey(sc.getLevel()))
-				{
-					maxSCLevel = sc.getLevel();
-				}
 			}
 		}
 		else
@@ -545,102 +540,101 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 			if (sc != null)
 			{
 				players.put(killer, sc);
-				if ((maxSCLevel < sc.getLevel()) && NPC_LEVELING_INFO.get(mob.getId()).containsKey(sc.getLevel()))
-				{
-					maxSCLevel = sc.getLevel();
-				}
 			}
 		}
 		
 		// Init some useful vars
-		LevelingInfo mainlvlInfo = NPC_LEVELING_INFO.get(mob.getId()).get(maxSCLevel);
-		if (mainlvlInfo == null)
+		for (SoulCrystal crystal : players.values())
 		{
-			return;
-		}
-		
-		// If this mob is not require skill, then skip some checkings
-		if (mainlvlInfo.isSkillNeeded())
-		{
-			// Fail if this L2Attackable isn't absorbed or there's no one in its _absorbersList
-			if (!mob.isAbsorbed())
+			LevelingInfo mainlvlInfo = NPC_LEVELING_INFO.get(mob.getId()).get(crystal.getLevel());
+			if (mainlvlInfo == null)
 			{
-				mob.resetAbsorbList();
 				return;
 			}
 			
-			// Fail if the killer isn't in the _absorbersList of this L2Attackable and mob is not boss
-			AbsorberInfo ai = mob.getAbsorbersList().get(killer.getObjectId());
-			boolean isSuccess = true;
-			if ((ai == null) || (ai.getObjectId() != killer.getObjectId()))
+			// If this mob is not require skill, then skip some checkings
+			if (mainlvlInfo.isSkillNeeded())
 			{
-				isSuccess = false;
+				// Fail if this L2Attackable isn't absorbed or there's no one in its _absorbersList
+				if (!mob.isAbsorbed())
+				{
+					mob.resetAbsorbList();
+					return;
+				}
+				
+				// Fail if the killer isn't in the _absorbersList of this L2Attackable and mob is not boss
+				AbsorberInfo ai = mob.getAbsorbersList().get(killer.getObjectId());
+				boolean isSuccess = true;
+				if ((ai == null) || (ai.getObjectId() != killer.getObjectId()))
+				{
+					isSuccess = false;
+				}
+				
+				// Check if the soul crystal was used when HP of this L2Attackable wasn't higher than half of it
+				if ((ai != null) && (ai.getAbsorbedHp() > (mob.getMaxHp() / 2.0)))
+				{
+					isSuccess = false;
+				}
+				
+				if (!isSuccess)
+				{
+					mob.resetAbsorbList();
+					return;
+				}
 			}
 			
-			// Check if the soul crystal was used when HP of this L2Attackable wasn't higher than half of it
-			if ((ai != null) && (ai.getAbsorbedHp() > (mob.getMaxHp() / 2.0)))
+			switch (mainlvlInfo.getAbsorbCrystalType())
 			{
-				isSuccess = false;
-			}
-			
-			if (!isSuccess)
-			{
-				mob.resetAbsorbList();
-				return;
-			}
-		}
-		
-		switch (mainlvlInfo.getAbsorbCrystalType())
-		{
-			case PARTY_ONE_RANDOM:
-				// This is a naive method for selecting a random member. It gets any random party member and
-				// then checks if the member has a valid crystal. It does not select the random party member
-				// among those who have crystals, only. However, this might actually be correct (same as retail).
-				if (killer.getParty() != null)
-				{
-					L2PcInstance lucky = killer.getParty().getMembers().get(getRandom(killer.getParty().getMemberCount()));
-					levelCrystal(lucky, players.get(lucky), mob);
-				}
-				else
-				{
-					levelCrystal(killer, players.get(killer), mob);
-				}
-				break;
-			case PARTY_RANDOM:
-				if (killer.getParty() != null)
-				{
-					List<L2PcInstance> luckyParty = new ArrayList<>();
-					luckyParty.addAll(killer.getParty().getMembers());
-					while ((getRandom(100) < 33) && !luckyParty.isEmpty())
+				case PARTY_ONE_RANDOM:
+					// This is a naive method for selecting a random member. It gets any random party member and
+					// then checks if the member has a valid crystal. It does not select the random party member
+					// among those who have crystals, only. However, this might actually be correct (same as retail).
+					if (killer.getParty() != null)
 					{
-						L2PcInstance lucky = luckyParty.remove(getRandom(luckyParty.size()));
-						if (players.containsKey(lucky))
+						L2PcInstance lucky = killer.getParty().getMembers().get(getRandom(killer.getParty().getMemberCount()));
+						levelCrystal(lucky, players.get(lucky), mob);
+					}
+					else
+					{
+						levelCrystal(killer, players.get(killer), mob);
+					}
+					break;
+				case PARTY_RANDOM:
+					if (killer.getParty() != null)
+					{
+						List<L2PcInstance> luckyParty = new ArrayList<>();
+						luckyParty.addAll(killer.getParty().getMembers());
+						while ((getRandom(100) < 33) && !luckyParty.isEmpty())
 						{
-							levelCrystal(lucky, players.get(lucky), mob);
+							L2PcInstance lucky = luckyParty.remove(getRandom(luckyParty.size()));
+							if (players.containsKey(lucky))
+							{
+								levelCrystal(lucky, players.get(lucky), mob);
+							}
 						}
 					}
-				}
-				else if (getRandom(100) < 33)
-				{
-					levelCrystal(killer, players.get(killer), mob);
-				}
-				break;
-			case FULL_PARTY:
-				if (killer.getParty() != null)
-				{
-					for (L2PcInstance pl : killer.getParty().getMembers())
+					else if (getRandom(100) < 33)
 					{
-						levelCrystal(pl, players.get(pl), mob);
+						levelCrystal(killer, players.get(killer), mob);
 					}
-				}
-				else
-				{
+					break;
+				case FULL_PARTY:
+					if (killer.getParty() != null)
+					{
+						for (L2PcInstance pl : killer.getParty().getMembers())
+						{
+							levelCrystal(pl, players.get(pl), mob);
+						}
+					}
+					else
+					{
+						levelCrystal(killer, players.get(killer), mob);
+					}
+					break;
+				case LAST_HIT:
 					levelCrystal(killer, players.get(killer), mob);
-				}
-				break;
-			case LAST_HIT:
-				levelCrystal(killer, players.get(killer), mob);
-				break;
+					break;
+			}
 		}
 	}
 }
