@@ -71,6 +71,8 @@ public class NoRandomWalkMobs extends AbstractNpcAI
 		29179, 25699, 29177, 25700, 29180, 29178,
 		// Zaken instances
 		29022, 29176, 29181,
+		// Gordon
+		29095,
 	};
 	// @formatter:on
 	
