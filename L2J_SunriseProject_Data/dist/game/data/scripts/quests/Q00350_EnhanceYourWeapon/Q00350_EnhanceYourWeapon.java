@@ -520,7 +520,7 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 			// firts get the list of players who has one Soul Cry and the quest
 			for (L2PcInstance pl : killer.getParty().getMembers())
 			{
-				if (pl == null)
+				if ((pl == null) || (mob.calculateDistance(pl, true, false) > 9000))
 				{
 					continue;
 				}
@@ -549,7 +549,7 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 			LevelingInfo mainlvlInfo = NPC_LEVELING_INFO.get(mob.getId()).get(crystal.getLevel());
 			if (mainlvlInfo == null)
 			{
-				return;
+				continue;
 			}
 			
 			// If this mob is not require skill, then skip some checkings
@@ -607,7 +607,7 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 						while ((getRandom(100) < 33) && !luckyParty.isEmpty())
 						{
 							L2PcInstance lucky = luckyParty.remove(getRandom(luckyParty.size()));
-							if (players.containsKey(lucky))
+							if (players.containsKey(lucky) && (mob.calculateDistance(lucky, true, false) <= 9000))
 							{
 								levelCrystal(lucky, players.get(lucky), mob);
 							}
@@ -623,7 +623,10 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 					{
 						for (L2PcInstance pl : killer.getParty().getMembers())
 						{
-							levelCrystal(pl, players.get(pl), mob);
+							if (players.containsKey(pl) && (mob.calculateDistance(pl, true, false) <= 9000))
+							{
+								levelCrystal(pl, players.get(pl), mob);
+							}
 						}
 					}
 					else
