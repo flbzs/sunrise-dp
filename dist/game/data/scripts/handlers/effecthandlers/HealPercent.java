@@ -69,15 +69,24 @@ public class HealPercent extends L2Effect
 			target.setCurrentHp(amount + target.getCurrentHp());
 		}
 		SystemMessage sm;
-		if ((getEffector() != null) && (getEffector().getObjectId() != target.getObjectId()))
+		
+		try
 		{
-			sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_RESTORED_BY_C1);
-			sm.addCharName(getEffector());
+			if ((getEffector() != null) && (getEffector().getObjectId() != target.getObjectId()))
+			{
+				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_RESTORED_BY_C1);
+				sm.addCharName(getEffector());
+			}
+			else
+			{
+				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_RESTORED);
+			}
 		}
-		else
+		catch (Exception e)
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_RESTORED);
 		}
+		
 		sm.addInt((int) amount);
 		target.sendPacket(sm);
 		return true;
