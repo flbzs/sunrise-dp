@@ -160,6 +160,7 @@ public class SummonNpc extends L2Effect
 				npc.setName(npcTemplate.getName());
 				npc.setTitle(npcTemplate.getName());
 				npc.setSummoner(player);
+				npc.broadcastInfo();
 				if (_despawnDelay > 0)
 				{
 					npc.scheduleDespawn(_despawnDelay);

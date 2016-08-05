@@ -98,6 +98,10 @@ public class SummonPet extends L2Effect
 		
 		final L2NpcTemplate npcTemplate = NpcTable.getInstance().getTemplate(petData.getNpcId());
 		final L2PetInstance pet = L2PetInstance.spawnPet(npcTemplate, player, item);
+		if (pet == null)
+		{
+			return false;
+		}
 		
 		pet.setShowSummonAnimation(true);
 		if (!pet.isRespawned())
