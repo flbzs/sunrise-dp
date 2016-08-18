@@ -54,7 +54,7 @@ public class OutpostCreate extends L2Effect
 			return false;
 		}
 		
-		if (TerritoryWarManager.getInstance().isTWInProgress())
+		if (TerritoryWarManager.getInstance().isTWInProgress() && (player.getClan().getCastleId() > 0))
 		{
 			// Spawn a new flag
 			final L2SiegeFlagInstance flag = new L2SiegeFlagInstance(player, NpcTable.getInstance().getTemplate(HQ_NPC_ID), true, true);
