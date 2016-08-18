@@ -559,7 +559,7 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 				if (!mob.isAbsorbed())
 				{
 					mob.resetAbsorbList();
-					return;
+					continue;
 				}
 				
 				// Fail if the killer isn't in the _absorbersList of this L2Attackable and mob is not boss
@@ -579,7 +579,7 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 				if (!isSuccess)
 				{
 					mob.resetAbsorbList();
-					return;
+					continue;
 				}
 			}
 			
