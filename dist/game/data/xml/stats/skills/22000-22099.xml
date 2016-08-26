@@ -972,7 +972,7 @@
 		</for>
 	</skill>
 	<skill id="22056" levels="1" name="Wind Walk">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="speed_up" />
 		<set name="blockedInOlympiad" val="true" />
@@ -982,13 +982,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="speed_up">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="speed_up">
 				<add stat="runSpd" val="33" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="22057" levels="1" name="Haste">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="attack_time_down" />
 		<set name="blockedInOlympiad" val="true" />
@@ -997,13 +997,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="attack_time_down">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="attack_time_down">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="22058" levels="1" name="Might">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="pa_up" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1012,13 +1012,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="pa_up">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="pa_up">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="22059" levels="1" name="Shield">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="pd_up" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1027,13 +1027,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="pd_up">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="pd_up">
 				<mul stat="pDef" val="1.15" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="22060" levels="1" name="Death Whisper">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="critical_dmg_up" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1042,13 +1042,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="critical_dmg_up">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="critical_dmg_up">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="22061" levels="1" name="Guidance">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="hit_up" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1057,13 +1057,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="hit_up">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="hit_up">
 				<add stat="accCombat" val="4" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="22062" levels="1" name="Empower">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="ma_up" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1073,13 +1073,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="ma_up">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="ma_up">
 				<mul stat="mAtk" val="1.75" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="22063" levels="1" name="Greater Acumen">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="casting_time_down" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1088,13 +1088,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="casting_time_down">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="casting_time_down">
 				<mul stat="mAtkSpd" val="1.3" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="22064" levels="1" name="Vampiric Rage">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="vampiric_attack" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1103,13 +1103,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="vampiric_attack">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="vampiric_attack">
 				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
 			</effect>
 		</for>
 	</skill>
 	<skill id="22065" levels="1" name="Bless the Body">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="max_hp_up" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1118,13 +1118,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="max_hp_up">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="max_hp_up">
 				<mul stat="maxHp" val="1.35" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="22066" levels="1" name="Berserker Spirit">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="berserker" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1133,7 +1133,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="berserker">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="berserker">
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mDef" val="0.84" />
 				<sub stat="rEvas" val="4" />
@@ -1146,7 +1146,7 @@
 		</for>
 	</skill>
 	<skill id="22067" levels="1" name="Magic Barrier">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="md_up" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1155,13 +1155,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="md_up">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="md_up">
 				<mul stat="mDef" val="1.3" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="22068" levels="1" name="Bless the Soul">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="max_mp_up" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1170,13 +1170,13 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="max_mp_up">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="max_mp_up">
 				<mul stat="maxMp" val="1.35" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="22069" levels="1" name="Clarity">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="cheap_magic" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1185,7 +1185,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="cheap_magic">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="cheap_magic">
 				<mul stat="physicalMpConsumeRate" val="0.8" />
 				<mul stat="magicalMpConsumeRate" val="0.9" />
 				<mul stat="danceMpConsumeRate" val="0.8" />
@@ -1193,7 +1193,7 @@
 		</for>
 	</skill>
 	<skill id="22070" levels="1" name="Wild Magic">
-		<set name="abnormalLvl" val="26" />
+		<set name="abnormalLvl" val="6" />
 		<set name="abnormalTime" val="3600" />
 		<set name="abnormalType" val="magic_critical_up" />
 		<set name="blockedInOlympiad" val="true" />
@@ -1202,7 +1202,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="magic_critical_up">
+			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="6" abnormalType="magic_critical_up">
 				<add stat="mCritRate" val="2" />
 			</effect>
 		</for>
