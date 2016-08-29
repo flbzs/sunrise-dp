@@ -261,7 +261,7 @@ public final class Q00103_SpiritOfCraftsman extends Quest
 				{
 					switch (qs.getCond())
 					{
-						case 3:
+						case 2:
 						{
 							if (hasQuestItems(talker, CECKTINONS_VOUCHER_1))
 							{
@@ -272,6 +272,7 @@ public final class Q00103_SpiritOfCraftsman extends Quest
 							}
 							break;
 						}
+						case 3:
 						case 4:
 						{
 							if (hasQuestItems(talker, CECKTINONS_VOUCHER_2) && (getQuestItemsCount(talker, BONE_FRAGMENT) >= 10))
