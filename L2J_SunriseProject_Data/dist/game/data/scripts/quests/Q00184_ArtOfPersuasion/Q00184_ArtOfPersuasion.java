@@ -145,7 +145,7 @@ public final class Q00184_ArtOfPersuasion extends Quest
 					}
 					else
 					{
-						htmltext = "30673-10.htm";
+						htmltext = "30673-10.html";
 						qs.exitQuest(false, true);
 					}
 					if (player.getLevel() < MAX_LEVEL_FOR_EXP_SP)
@@ -213,7 +213,7 @@ public final class Q00184_ArtOfPersuasion extends Quest
 				final QuestState q185 = player.getQuestState(Q00185_NikolasCooperation.class.getSimpleName());
 				if ((q183 != null) && q183.isCompleted() && (q184 != null) && (q185 != null))
 				{
-					htmltext = (player.getLevel() >= MIN_LEVEL) ? "30621-01.htm" : "30621-02.html";
+					htmltext = (player.getLevel() >= MIN_LEVEL) ? "30621-01.htm" : "30621-02.htm";
 				}
 			}
 		}
