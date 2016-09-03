@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.instancemanager.InstanceManager;
@@ -51,6 +52,11 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 	{
 		protected final List<L2Npc> anakimGroup = new ArrayList<>();
 		protected final List<L2Npc> lilithGroup = new ArrayList<>();
+		
+		protected final List<L2Npc> seals = new CopyOnWriteArrayList<>();
+		
+		protected L2Npc _lilith = null;
+		protected L2Npc _anakim = null;
 		protected int countKill = 0;
 	}
 	
@@ -144,11 +150,23 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 		{
 			final L2Npc npc = addSpawn(entry.getKey(), entry.getValue(), false, 0, false, world.getInstanceId());
 			world.lilithGroup.add(npc);
+			switch (npc.getId())
+			{
+				case LILITH:
+					world._lilith = npc;
+					break;
+			}
 		}
 		for (Map.Entry<Integer, Location> entry : ANAKIM_SPAWN.entrySet())
 		{
 			final L2Npc enpc = addSpawn(entry.getKey(), entry.getValue(), false, 0, false, world.getInstanceId());
 			world.anakimGroup.add(enpc);
+			switch (enpc.getId())
+			{
+				case ANAKIM:
+					world._anakim = enpc;
+					break;
+			}
 		}
 	}
 	
@@ -208,13 +226,8 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 				{
 					if (getQuestItemsCount(player, SEAL_OF_BINDING) >= 4)
 					{
-						player.abortAttack();
-						player.abortCast();
-						player.disableAllSkills();
-						player.setTarget(null);
-						player.stopMove(null);
-						player.setIsImmobilized(true);
-						player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+						stopPlayer(player);
+						stopSeals(player);
 						
 						player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ_SEALING_EMPEROR_2ND);
 						startQuestTimer("TELEPORT", 27000, null, player);
@@ -240,12 +253,12 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 						{
 							if (caster.isScriptValue(0))
 							{
-								caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), NpcStringId.YOU_SUCH_A_FOOL_THE_VICTORY_OVER_THIS_WAR_BELONGS_TO_SHILIEN));
+								world._lilith.broadcastPacket(new NpcSay(world._lilith.getObjectId(), Say2.NPC_SHOUT, world._lilith.getId(), NpcStringId.YOU_SUCH_A_FOOL_THE_VICTORY_OVER_THIS_WAR_BELONGS_TO_SHILIEN));
 								caster.setScriptValue(1);
 							}
 							else if (getRandom(100) < 10)
 							{
-								caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), LILITH_SHOUT[getRandom(3)]));
+								world._lilith.broadcastPacket(new NpcSay(world._lilith.getObjectId(), Say2.NPC_SHOUT, world._lilith.getId(), LILITH_SHOUT[getRandom(3)]));
 							}
 						}
 					}
@@ -259,10 +272,10 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 						{
 							if (caster.isScriptValue(0))
 							{
-								caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), NpcStringId.FOR_THE_ETERNITY_OF_EINHASAD));
-								if (Util.checkIfInRange(2000, caster, player, true))
+								world._anakim.broadcastPacket(new NpcSay(world._anakim.getObjectId(), Say2.NPC_SHOUT, world._anakim.getId(), NpcStringId.FOR_THE_ETERNITY_OF_EINHASAD));
+								if (Util.checkIfInRange(2000, world._anakim, player, true))
 								{
-									player.sendPacket(new NpcSay(caster.getObjectId(), Say2.TELL, caster.getId(), NpcStringId.MY_POWERS_WEAKENING_HURRY_AND_TURN_ON_THE_SEALING_DEVICE));
+									player.sendPacket(new NpcSay(world._anakim.getObjectId(), Say2.TELL, world._anakim.getId(), NpcStringId.MY_POWERS_WEAKENING_HURRY_AND_TURN_ON_THE_SEALING_DEVICE));
 								}
 								caster.setScriptValue(1);
 							}
@@ -272,28 +285,28 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 								{
 									case 0:
 									{
-										caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), NpcStringId.DEAR_SHILLIENS_OFFSPRINGS_YOU_ARE_NOT_CAPABLE_OF_CONFRONTING_US));
-										if (Util.checkIfInRange(2000, caster, player, true))
+										world._anakim.broadcastPacket(new NpcSay(world._anakim.getObjectId(), Say2.NPC_SHOUT, world._anakim.getId(), NpcStringId.DEAR_SHILLIENS_OFFSPRINGS_YOU_ARE_NOT_CAPABLE_OF_CONFRONTING_US));
+										if (Util.checkIfInRange(2000, world._anakim, player, true))
 										{
-											player.sendPacket(new NpcSay(caster.getObjectId(), Say2.TELL, caster.getId(), NpcStringId.ALL_4_SEALING_DEVICES_MUST_BE_TURNED_ON));
+											player.sendPacket(new NpcSay(world._anakim.getObjectId(), Say2.TELL, world._anakim.getId(), NpcStringId.ALL_4_SEALING_DEVICES_MUST_BE_TURNED_ON));
 										}
 										break;
 									}
 									case 1:
 									{
-										caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), NpcStringId.ILL_SHOW_YOU_THE_REAL_POWER_OF_EINHASAD));
-										if (Util.checkIfInRange(2000, caster, player, true))
+										world._anakim.broadcastPacket(new NpcSay(world._anakim.getObjectId(), Say2.NPC_SHOUT, world._anakim.getId(), NpcStringId.ILL_SHOW_YOU_THE_REAL_POWER_OF_EINHASAD));
+										if (Util.checkIfInRange(2000, world._anakim, player, true))
 										{
-											player.sendPacket(new NpcSay(caster.getObjectId(), Say2.TELL, caster.getId(), NpcStringId.LILITHS_ATTACK_IS_GETTING_STRONGER_GO_AHEAD_AND_TURN_IT_ON));
+											player.sendPacket(new NpcSay(world._anakim.getObjectId(), Say2.TELL, world._anakim.getId(), NpcStringId.LILITHS_ATTACK_IS_GETTING_STRONGER_GO_AHEAD_AND_TURN_IT_ON));
 										}
 										break;
 									}
 									case 2:
 									{
-										caster.broadcastPacket(new NpcSay(caster.getObjectId(), Say2.NPC_SHOUT, caster.getId(), NpcStringId.DEAR_MILITARY_FORCE_OF_LIGHT_GO_DESTROY_THE_OFFSPRINGS_OF_SHILLIEN));
-										if (Util.checkIfInRange(2000, caster, player, true))
+										world._anakim.broadcastPacket(new NpcSay(world._anakim.getObjectId(), Say2.NPC_SHOUT, world._anakim.getId(), NpcStringId.DEAR_MILITARY_FORCE_OF_LIGHT_GO_DESTROY_THE_OFFSPRINGS_OF_SHILLIEN));
+										if (Util.checkIfInRange(2000, world._anakim, player, true))
 										{
-											player.sendPacket(new NpcSay(caster.getObjectId(), Say2.TELL, caster.getId(), NpcStringId.DEAR_S1_GIVE_ME_MORE_STRENGTH).addStringParameter(player.getName()));
+											player.sendPacket(new NpcSay(world._anakim.getObjectId(), Say2.TELL, world._anakim.getId(), NpcStringId.DEAR_S1_GIVE_ME_MORE_STRENGTH).addStringParameter(player.getName()));
 										}
 										break;
 									}
@@ -363,6 +376,12 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 		InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
 		if (tmpworld instanceof DNPWorld)
 		{
+			final DNPWorld world = (DNPWorld) tmpworld;
+			if ((npc.getId() == SEAL_DEVICE) && !world.seals.contains(npc))
+			{
+				world.seals.add(npc);
+			}
+			
 			if (npc.isScriptValue(0))
 			{
 				if (npc.getCurrentHp() < (npc.getMaxHp() * 0.1))
@@ -479,5 +498,36 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 			}
 		}
 		return htmltext;
+	}
+	
+	private void stopPlayer(L2PcInstance player)
+	{
+		player.abortAttack();
+		player.abortCast();
+		player.disableAllSkills();
+		player.setTarget(null);
+		player.stopMove(null);
+		player.setIsImmobilized(true);
+		player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+	}
+	
+	private void stopSeals(L2PcInstance player)
+	{
+		final InstanceWorld tmpworld = InstanceManager.getInstance().getPlayerWorld(player);
+		if (tmpworld instanceof DNPWorld)
+		{
+			DNPWorld world = (DNPWorld) tmpworld;
+			for (L2Npc seal : world.seals)
+			{
+				if (seal != null)
+				{
+					seal.abortAttack();
+					seal.abortCast();
+					seal.setIsInvul(true);
+					seal.setIsImmobilized(true);
+					seal.disableAllSkills();
+				}
+			}
+		}
 	}
 }
