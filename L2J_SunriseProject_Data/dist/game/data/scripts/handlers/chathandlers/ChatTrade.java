@@ -59,6 +59,12 @@ public class ChatTrade implements IChatHandler
 			return;
 		}
 		
+		if (!activeChar.canOverrideCond(PcCondOverride.CHAT_CONDITIONS) && !activeChar.getFloodProtectors().getTradeChat().tryPerformAction("trade chat"))
+		{
+			activeChar.sendMessage("Do not spam trade channel.");
+			return;
+		}
+		
 		CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getName(), text);
 		CreatureSay cs2 = new CreatureSay(activeChar.getObjectId(), type, activeChar.getVar("namePrefix", "") + activeChar.getName(), text);
 		
@@ -90,12 +96,6 @@ public class ChatTrade implements IChatHandler
 		}
 		else if (Config.DEFAULT_TRADE_CHAT.equalsIgnoreCase("global"))
 		{
-			if (!activeChar.canOverrideCond(PcCondOverride.CHAT_CONDITIONS) && !activeChar.getFloodProtectors().getGlobalChat().tryPerformAction("global chat"))
-			{
-				activeChar.sendMessage("Do not spam trade channel.");
-				return;
-			}
-			
 			for (L2PcInstance player : pls)
 			{
 				if (!BlockList.isBlocked(player, activeChar))
