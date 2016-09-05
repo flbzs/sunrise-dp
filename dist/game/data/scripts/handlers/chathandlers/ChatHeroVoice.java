@@ -63,6 +63,7 @@ public class ChatHeroVoice implements IChatHandler
 				activeChar.sendMessage("Action failed. Heroes are only able to speak in the global channel once every 10 seconds.");
 				return;
 			}
+			
 			if (activeChar.isGM())
 			{
 				CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getVar("namePrefix", "") + activeChar.getName(), text);

@@ -19,6 +19,7 @@
 package handlers.chathandlers;
 
 import l2r.Config;
+import l2r.gameserver.enums.PcCondOverride;
 import l2r.gameserver.handler.IChatHandler;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.SystemMessageId;
@@ -50,6 +51,13 @@ public class ChatAlliance implements IChatHandler
 				activeChar.sendPacket(SystemMessageId.CHATTING_IS_CURRENTLY_PROHIBITED);
 				return;
 			}
+			
+			if (!activeChar.canOverrideCond(PcCondOverride.CHAT_CONDITIONS) && !activeChar.getFloodProtectors().getAllyChat().tryPerformAction("ally chat"))
+			{
+				activeChar.sendMessage("Do not spam ally channel.");
+				return;
+			}
+			
 			if (activeChar.isGM())
 			{
 				CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getVar("namePrefix", "") + activeChar.getName(), text);
