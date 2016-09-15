@@ -1087,8 +1087,8 @@
 		<exCrtEffect>true</exCrtEffect>
 		<ai aggroRange="1000" clanHelpRange="300" />
 		<collision>
-			<radius normal="0.01" />
-			<height normal="0.01" />
+			<radius normal="11" />
+			<height normal="14" />
 		</collision>
 	</npc>
 	<npc id="129" level="70" type="L2Npc" name="White-Bearded Santa" title="Merry Christmas~">

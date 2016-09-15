@@ -396,7 +396,6 @@ public final class TowerOfNaia extends AbstractNpcAI
 			}
 			return "18492-01.htm";
 		}
-		
 		else if ((npcId >= ROOM_MANAGER_FIRST) && (npcId <= ROOM_MANAGER_LAST))
 		{
 			if (_activeRooms.containsKey(npcId) && !_activeRooms.get(npcId))
@@ -409,7 +408,7 @@ public final class TowerOfNaia extends AbstractNpcAI
 				return "manager.htm";
 			}
 		}
-		return super.onFirstTalk(npc, player);
+		return null;
 	}
 	
 	@Override
