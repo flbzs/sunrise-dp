@@ -32,6 +32,7 @@ import l2r.gameserver.data.sql.TeleportLocationTable;
 import l2r.gameserver.enums.PcCondOverride;
 import l2r.gameserver.instancemanager.CastleManorManager;
 import l2r.gameserver.instancemanager.FortManager;
+import l2r.gameserver.instancemanager.TerritoryWarManager;
 import l2r.gameserver.model.ClanPrivilege;
 import l2r.gameserver.model.L2Clan;
 import l2r.gameserver.model.L2TeleportLocation;
@@ -882,7 +883,7 @@ public final class CastleChamberlain extends AbstractNpcAI
 			{
 				if (isOwner(player, npc) && player.hasClanPrivilege(ClanPrivilege.CS_DISMISS))
 				{
-					if (castle.getSiege().isInProgress())
+					if (castle.getSiege().isInProgress() || TerritoryWarManager.getInstance().isTWInProgress())
 					{
 						htmltext = "chamberlain-08.html";
 					}
