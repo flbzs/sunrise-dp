@@ -18,6 +18,10 @@
  */
 package ai.group_template;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Attackable;
@@ -25,12 +29,14 @@ import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.SkillHolder;
+import l2r.gameserver.model.skills.L2Skill;
+import l2r.gameserver.network.serverpackets.MagicSkillUse;
 
 import ai.npc.AbstractNpcAI;
 
 /**
  * Plains of Lizardmen AI.
- * @author Gnacik, malyelfik
+ * @author Gnacik, malyelfik, Fixed by: vGodFather
  */
 public final class PlainsOfLizardman extends AbstractNpcAI
 {
@@ -40,6 +46,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	private static final int FANTASY_MUSHROOM = 18864;
 	private static final int STICKY_MUSHROOM = 18865;
 	private static final int RAINBOW_FROG = 18866;
+	private static final int ABYSS_WEED = 18867;
 	private static final int ENERGY_PLANT = 18868;
 	private static final int TANTA_SCOUT = 22768;
 	private static final int TANTA_MAGICIAN = 22773;
@@ -128,13 +135,22 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 				}
 				break;
 			case RAINBOW_FROG:
-				castSkill(npc, attacker, RAINBOW_FROG_SKILL);
-				break;
-			case ENERGY_PLANT:
-				castSkill(npc, attacker, ENERGY_PLANT_SKILL);
+				ThreadPoolManager.getInstance().scheduleEffect(new TaskAfterDead(attacker, RAINBOW_FROG_SKILL), 3000);
+				// castSkill(npc, attacker, RAINBOW_FROG_SKILL);
+				npc.doDie(attacker);
 				break;
 			case STICKY_MUSHROOM:
-				castSkill(npc, attacker, STICKY_MUSHROOM_SKILL);
+				ThreadPoolManager.getInstance().scheduleEffect(new TaskAfterDead(attacker, STICKY_MUSHROOM_SKILL), 3000);
+				// castSkill(npc, attacker, STICKY_MUSHROOM_SKILL);
+				npc.doDie(attacker);
+				break;
+			case ENERGY_PLANT:
+				ThreadPoolManager.getInstance().scheduleEffect(new TaskAfterDead(attacker, ENERGY_PLANT_SKILL), 3000);
+				// castSkill(npc, attacker, ENERGY_PLANT_SKILL);
+				npc.doDie(attacker);
+				break;
+			case ABYSS_WEED:
+				npc.doDie(attacker);
 				break;
 			case FANTASY_MUSHROOM:
 				if (npc.isScriptValue(0))
@@ -168,11 +184,6 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		{
 			final L2Npc guard = addSpawn(TANTA_GUARD, npc);
 			attackPlayer((L2Attackable) guard, killer);
-		}
-		
-		if (npc.getId() == RAINBOW_FROG)
-		{
-			RAINBOW_FROG_SKILL.getSkill().getEffects(killer, killer);
 		}
 		
 		// Invisible buff npc
@@ -233,6 +244,38 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		else
 		{
 			npc.doCast(buffs[0].getSkill());
+		}
+	}
+	
+	public static class TaskAfterDead implements Runnable
+	{
+		private final L2Character _killer;
+		private final L2Skill _skill;
+		
+		public TaskAfterDead(L2Character killer, SkillHolder skill)
+		{
+			_killer = killer;
+			_skill = skill.getSkill();
+		}
+		
+		@Override
+		public void run()
+		{
+			if (_skill == null)
+			{
+				return;
+			}
+			
+			if ((_killer != null) && _killer.isPlayer() && !_killer.isDead())
+			{
+				List<L2Character> targets = new ArrayList<>();
+				targets.add(_killer);
+				_killer.broadcastPacket(new MagicSkillUse(_killer, _killer, _skill.getId(), _skill.getLevel(), 0, 0));
+				for (L2Character target : targets)
+				{
+					_skill.getEffects(_killer, target);
+				}
+			}
 		}
 	}
 }
