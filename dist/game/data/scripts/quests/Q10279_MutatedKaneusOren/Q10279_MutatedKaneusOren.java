@@ -134,7 +134,7 @@ public class Q10279_MutatedKaneusOren extends Quest
 						htmltext = (st.hasQuestItems(TISSUE_KA) && st.hasQuestItems(TISSUE_KM)) ? "30196-05.htm" : "30196-04.htm";
 						break;
 					case State.COMPLETED:
-						htmltext = "30916-06.htm";
+						htmltext = "30196-06.htm";
 						break;
 				}
 				break;

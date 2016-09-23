@@ -21,6 +21,8 @@ package ai.grandboss.Valakas;
 import java.util.List;
 
 import l2r.Config;
+import l2r.gameserver.GeoData;
+import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.enums.MountType;
 import l2r.gameserver.instancemanager.GrandBossManager;
 import l2r.gameserver.instancemanager.ZoneManager;
@@ -30,6 +32,7 @@ import l2r.gameserver.model.StatsSet;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
+import l2r.gameserver.model.actor.L2Playable;
 import l2r.gameserver.model.actor.instance.L2GrandBossInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.SkillHolder;
@@ -42,6 +45,7 @@ import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.gameserver.network.serverpackets.SpecialCamera;
 import l2r.gameserver.network.serverpackets.SystemMessage;
+import l2r.gameserver.util.Util;
 
 import ai.npc.AbstractNpcAI;
 
@@ -84,8 +88,33 @@ public final class Valakas extends AbstractNpcAI
 	private static final SkillHolder VALAKAS_REGEN3 = new SkillHolder(4691, 3);
 	private static final SkillHolder VALAKAS_REGEN4 = new SkillHolder(4691, 4);
 	private static final SkillHolder VALAKAS_REGEN5 = new SkillHolder(4691, 5);
-	private static final SkillHolder LAVA_SKIN = new SkillHolder(4680, 1);
+	private static final SkillHolder VALAKAS_LAVA_SKIN = new SkillHolder(4680, 1);
 	private static final SkillHolder ANTI_STRIDER = new SkillHolder(4258, 1); // Hinder Strider
+	private static final SkillHolder[] VALAKAS_REGULAR_SKILLS =
+	{
+		new SkillHolder(4681, 1), // Valakas Trample
+		new SkillHolder(4682, 1), // Valakas Trample
+		new SkillHolder(4683, 1), // Valakas Dragon Breath
+		new SkillHolder(4689, 1), // Valakas Fear
+	};
+	private static final SkillHolder[] VALAKAS_LOWHP_SKILLS =
+	{
+		new SkillHolder(4681, 1), // Valakas Trample
+		new SkillHolder(4682, 1), // Valakas Trample
+		new SkillHolder(4683, 1), // Valakas Dragon Breath
+		new SkillHolder(4689, 1), // Valakas Fear
+		new SkillHolder(4690, 1), // Valakas Meteor Storm
+	};
+	private static final SkillHolder[] VALAKAS_AOE_SKILLS =
+	{
+		new SkillHolder(4683, 1), // Valakas Dragon Breath
+		new SkillHolder(4684, 1), // Valakas Dragon Breath
+		new SkillHolder(4685, 1), // Valakas Tail Stomp
+		new SkillHolder(4686, 1), // Valakas Tail Stomp
+		new SkillHolder(4688, 1), // Valakas Stun
+		new SkillHolder(4689, 1), // Valakas Fear
+		new SkillHolder(4690, 1), // Valakas Meteor Storm
+	};
 	// Status
 	private static final int ALIVE = 0;
 	private static final int WAITING = 1;
@@ -97,6 +126,7 @@ public final class Valakas extends AbstractNpcAI
 	private static final int MAX_PEOPLE = Config.VALAKAS_MAX_PLAYERS; // Max allowed players
 	private L2GrandBossInstance _valakas = null;
 	private static long _lastAttack = 0;
+	private L2Playable _actualVictim; // Actual target of Valakas.
 	
 	public Valakas()
 	{
@@ -141,6 +171,7 @@ public final class Valakas extends AbstractNpcAI
 				_lastAttack = System.currentTimeMillis();
 				startQuestTimer("CHECK_ATTACK", 60000, _valakas, null);
 				startQuestTimer("SPAWN_MINION", 300000, _valakas, null);
+				startQuestTimer("MANAGE_SKILL", 2000, _valakas, null, true);
 				break;
 			}
 			case DEAD:
@@ -364,6 +395,7 @@ public final class Valakas extends AbstractNpcAI
 				npc.doCast(VALAKAS_REGEN1.getSkill());
 				startQuestTimer("CHECK_ATTACK", 60000, npc, null);
 				startQuestTimer("SPAWN_MINION", 60000, npc, null);
+				startQuestTimer("MANAGE_SKILL", 2000, _valakas, null, true);
 				for (L2PcInstance players : npc.getKnownList().getKnownPlayersInRadius(4000))
 				{
 					if (players.isHero())
@@ -377,7 +409,7 @@ public final class Valakas extends AbstractNpcAI
 			}
 			case "SET_REGEN":
 			{
-				if ((((npc.getCurrentHp() / npc.getMaxHp()) * 100) < 75) && (getRandom(150) == 0) && (!npc.isAffectedBySkill(LAVA_SKIN.getSkillId())))
+				if ((((npc.getCurrentHp() / npc.getMaxHp()) * 100) < 75) && (getRandom(150) == 0) && (!npc.isAffectedBySkill(VALAKAS_LAVA_SKIN.getSkillId())))
 				{
 					npc.doCast(VALAKAS_REGEN5.getSkill());
 				}
@@ -436,6 +468,7 @@ public final class Valakas extends AbstractNpcAI
 							}
 						}
 						cancelQuestTimer("CHECK_ATTACK", npc, null);
+						cancelQuestTimer("MANAGE_SKILL", npc, null);
 					}
 					else
 					{
@@ -518,6 +551,7 @@ public final class Valakas extends AbstractNpcAI
 					setStatus(ALIVE);
 					cancelQuestTimer("CHECK_ATTACK", _valakas, null);
 					cancelQuestTimer("SPAWN_MINION", _valakas, null);
+					cancelQuestTimer("MANAGE_SKILL", _valakas, null);
 					for (L2Character charInside : zone.getCharactersInside())
 					{
 						if (charInside != null)
@@ -546,6 +580,11 @@ public final class Valakas extends AbstractNpcAI
 				{
 					player.sendMessage(getClass().getSimpleName() + ": You cant abort fight right now!");
 				}
+				break;
+			}
+			case "MANAGE_SKILL":
+			{
+				manageSkills(_valakas);
 				break;
 			}
 		}
@@ -589,6 +628,7 @@ public final class Valakas extends AbstractNpcAI
 			cancelQuestTimer("SET_REGEN", npc, null);
 			cancelQuestTimer("CHECK_ATTACK", npc, null);
 			cancelQuestTimer("SPAWN_MINION", npc, null);
+			cancelQuestTimer("MANAGE_SKILL", npc, null);
 			startQuestTimer("CLEAR_ZONE", 900000, null, null);
 			setStatus(DEAD);
 		}
@@ -603,10 +643,95 @@ public final class Valakas extends AbstractNpcAI
 		return super.onSpawn(npc);
 	}
 	
-	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
+	private SkillHolder getRandomSkill(L2Npc npc)
 	{
-		return super.onSpellFinished(npc, player, skill);
+		final int hpRatio = (int) ((npc.getCurrentHp() / npc.getMaxHp()) * 100);
+		
+		// Valakas Lava Skin has priority.
+		if ((hpRatio < 75) && (getRandom(150) == 0) && !npc.isAffectedBySkill(VALAKAS_LAVA_SKIN.getSkillId()))
+		{
+			return VALAKAS_LAVA_SKIN;
+		}
+		
+		// Valakas will use mass spells if he feels surrounded.
+		if (Util.getPlayersCountInRadius(1200, npc, false, false) >= 20)
+		{
+			return VALAKAS_AOE_SKILLS[getRandom(VALAKAS_AOE_SKILLS.length)];
+		}
+		
+		if (hpRatio > 50)
+		{
+			return VALAKAS_REGULAR_SKILLS[getRandom(VALAKAS_REGULAR_SKILLS.length)];
+		}
+		
+		return VALAKAS_LOWHP_SKILLS[getRandom(VALAKAS_LOWHP_SKILLS.length)];
+	}
+	
+	private void manageSkills(L2Npc npc)
+	{
+		if ((npc == null) || npc.isDead() || npc.isInvul() || npc.isCastingNow())
+		{
+			return;
+		}
+		
+		if (GrandBossManager.getInstance().getBossStatus(VALAKAS) != IN_FIGHT)
+		{
+			return;
+		}
+		
+		if ((_actualVictim == null) || _actualVictim.isDead() || !(npc.getKnownList().knowsObject(_actualVictim)) || (getRandom(10) == 0))
+		{
+			_actualVictim = getRandomTarget(npc);
+		}
+		
+		// If result is still null, Valakas will roam. Don't go deeper in skill AI.
+		if (_actualVictim == null)
+		{
+			if (getRandom(10) == 0)
+			{
+				int x = npc.getX();
+				int y = npc.getY();
+				int z = npc.getZ();
+				
+				int posX = x + getRandom(-1400, 1400);
+				int posY = y + getRandom(-1400, 1400);
+				
+				Location loc = GeoData.getInstance().moveCheck(x, y, z, posX, posY, z, npc.getInstanceId());
+				npc.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, loc);
+			}
+			return;
+		}
+		
+		L2Skill skill = getRandomSkill(npc).getSkill();
+		int castRange = skill.getCastRange() < 600 ? 600 : skill.getCastRange();
+		
+		// Cast the skill or follow the target.
+		if (Util.checkIfInRange(castRange, npc, _actualVictim, true))
+		{
+			npc.getAI().stopFollow();
+			npc.setTarget(_actualVictim);
+			npc.doCast(skill);
+		}
+		else
+		{
+			if (!npc.isRunning())
+			{
+				npc.setIsRunning(true);
+			}
+			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, _actualVictim);
+		}
+	}
+	
+	private L2Playable getRandomTarget(L2Npc npc)
+	{
+		for (L2Character creature : npc.getKnownList().getKnownCharacters())
+		{
+			if ((creature != null) && creature.isPlayable() && !creature.isDead())
+			{
+				return (L2Playable) creature;
+			}
+		}
+		return null;
 	}
 	
 	private int getStatus()
