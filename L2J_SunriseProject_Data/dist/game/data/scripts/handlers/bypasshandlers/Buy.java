@@ -24,11 +24,14 @@ import l2r.gameserver.handler.IBypassHandler;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.instance.L2MerchantInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.network.serverpackets.BuyList;
+import l2r.gameserver.network.serverpackets.ExBuySellList;
 
 public class Buy implements IBypassHandler
 {
 	private static final String[] COMMANDS =
 	{
+		"MerchantSell",
 		"Buy"
 	};
 	
@@ -42,16 +45,25 @@ public class Buy implements IBypassHandler
 		
 		try
 		{
-			StringTokenizer st = new StringTokenizer(command, " ");
-			st.nextToken();
-			
-			if (st.countTokens() < 1)
+			if (command.startsWith(COMMANDS[0])) // MerchantSell
 			{
-				return false;
+				activeChar.sendPacket(new BuyList(activeChar.getAdena()));
+				activeChar.sendPacket(new ExBuySellList(activeChar, 0, true));
+				return true;
 			}
-			
-			((L2MerchantInstance) target).showBuyWindow(activeChar, Integer.parseInt(st.nextToken()));
-			return true;
+			else if (command.startsWith(COMMANDS[1])) // Buy
+			{
+				StringTokenizer st = new StringTokenizer(command, " ");
+				st.nextToken();
+				
+				if (st.countTokens() < 1)
+				{
+					return false;
+				}
+				
+				((L2MerchantInstance) target).showBuyWindow(activeChar, Integer.parseInt(st.nextToken()));
+				return true;
+			}
 		}
 		catch (Exception e)
 		{
