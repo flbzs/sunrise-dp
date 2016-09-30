@@ -104,13 +104,16 @@ public class DispelBySlotProbability extends L2Effect
 					// Fist check for stacktype
 					if (stackType.equalsIgnoreCase(e.getAbnormalType()) && (e.getSkill().getId() != skillCast))
 					{
-						if (stackOrder == -1)
+						if (e.getSkill() != null)
 						{
-							e.exit();
-						}
-						else if (stackOrder >= e.getAbnormalLvl())
-						{
-							e.exit();
+							if (stackOrder == -1)
+							{
+								target.stopSkillEffects(e.getSkill().getId());
+							}
+							else if (stackOrder >= e.getAbnormalLvl())
+							{
+								target.stopSkillEffects(e.getSkill().getId());
+							}
 						}
 					}
 				}
