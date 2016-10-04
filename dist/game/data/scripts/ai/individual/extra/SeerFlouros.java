@@ -39,7 +39,10 @@ public class SeerFlouros extends AbstractNpcAI
 			{
 				cancelQuestTimer("despawn", npc, null);
 				SeerFlouros.deleteMe();
-				InstanceManager.getInstance().getInstance(SeerFlouros.getInstanceId()).setDuration(duration);
+				if ((SeerFlouros != null) && (InstanceManager.getInstance().getInstance(SeerFlouros.getInstanceId()) != null))
+				{
+					InstanceManager.getInstance().getInstance(SeerFlouros.getInstanceId()).setDuration(duration);
+				}
 				successDespawn = true;
 				if (Follower != null)
 				{
