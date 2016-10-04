@@ -715,7 +715,7 @@ public final class Beleth extends AbstractNpcAI
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{
-		return onTalk(npc, player);
+		return "";
 	}
 	
 	@Override
