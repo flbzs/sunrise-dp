@@ -24,6 +24,7 @@ import java.util.List;
 import l2r.gameserver.enums.CtrlEvent;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.L2Object;
+import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.effects.EffectFlag;
 import l2r.gameserver.model.effects.EffectTemplate;
@@ -79,11 +80,14 @@ public class Confusion extends L2Effect
 		// if there is no target, exit function
 		if (!targetList.isEmpty())
 		{
+			final L2Attackable effected = (L2Attackable) getEffected();
 			// Choosing randomly a new target
 			final L2Character target = targetList.get(Rnd.nextInt(targetList.size()));
 			// Attacking the target
-			getEffected().setTarget(target);
-			getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
+			effected.stopHating(getEffector());
+			effected.addDamageHate(target, 100, 500);
+			effected.setTarget(target);
+			effected.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
 		}
 		return false;
 	}
