@@ -29,8 +29,13 @@ public class NonLethalableNpcs extends AbstractNpcAI
 {
 	private static final int[] NON_LETHAL_NPCS =
 	{
+		//@formatter:off
 		// Headquarter
-		35062
+		35062,
+		
+		//Antharas minions
+		29069, 29070, 29071, 29072, 29073, 29074, 29075, 29076, 29190
+		//@formatter:on
 	};
 	
 	public NonLethalableNpcs()
