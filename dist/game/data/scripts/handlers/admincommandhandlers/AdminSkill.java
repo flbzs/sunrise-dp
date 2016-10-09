@@ -35,7 +35,6 @@ import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 import l2r.gameserver.network.serverpackets.PledgeSkillList;
 import l2r.gameserver.network.serverpackets.SystemMessage;
-import l2r.util.StringUtil;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -134,9 +133,11 @@ public class AdminSkill implements IAdminCommandHandler
 		{
 			try
 			{
-				String id = command.substring(19);
-				int idval = Integer.parseInt(id);
+				String[] idAndPage = command.substring(19).split(" ");
+				
+				int idval = Integer.parseInt(idAndPage[0]);
 				adminRemoveSkill(activeChar, idval);
+				removeSkillsPage(activeChar, Integer.parseInt(idAndPage[1]));
 			}
 			catch (Exception e)
 			{
@@ -290,46 +291,62 @@ public class AdminSkill implements IAdminCommandHandler
 			return;
 		}
 		
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		StringBuilder sb = new StringBuilder();
+		
 		final L2PcInstance player = target.getActingPlayer();
 		final L2Skill[] skills = player.getAllSkills().toArray(new L2Skill[player.getAllSkills().size()]);
 		
-		int maxSkillsPerPage = 10;
-		int maxPages = skills.length / maxSkillsPerPage;
-		if (skills.length > (maxSkillsPerPage * maxPages))
+		page = page < 1 ? 1 : page;
+		int size = skills.length;
+		int maxItemsPerPage = 11;
+		int startIndex = (page - 1) * maxItemsPerPage;
+		startIndex = ((startIndex > (size - 1)) ? (size - 1) : startIndex);
+		int endIndex = startIndex + maxItemsPerPage;
+		endIndex = ((endIndex > (size - 1)) ? (size - 1) : endIndex);
+		int filled = 0;
+		
+		sb.append("<html><body>");
+		
+		sb.append("<table width=260>");
+		sb.append("<tr><td width=40>");
+		sb.append("<button value=\"Main\" action=\"bypass -h admin_admin\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td><td width=180><center>Character Selection Menu</center></td><td width=40><button value=\"Back\" action=\"bypass -h admin_show_skills\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\">");
+		sb.append("</td></tr></table>");
+		sb.append("<br>");
+		sb.append("<table width=270><tr><td>Editing <font color=\"LEVEL\">" + player.getName() + "</font></td></tr></table>");
+		sb.append("<table width=270><tr><td>Lv: " + String.valueOf(player.getLevel()) + " " + ClassListData.getInstance().getClass(player.getClassId()).getClientCode() + "</td></tr></table>");
+		sb.append("<table width=270><tr><td>Note: Modifying skills can ruin the game</td></tr></table>");
+		sb.append("<table width=270><tr><td>Click on the skill you wish to remove:</td></tr></table>");
+		
+		String prevButton = startIndex > 0 ? "<a action=\"bypass -h admin_remove_skills " + (page - 1) + "\">PrevPage</a>" : "";
+		String nextButton = endIndex < (size - 1) ? "<a action=\"bypass -h admin_remove_skills " + (page + 1) + "\">NextPage</a>" : "";
+		sb.append("<table width=270><tr>");
+		sb.append("<td width=120 align=left>" + prevButton + "</td><td width=55><font color=\"LEVEL\">Page: " + String.valueOf(page) + "</font></td><td width=120 align=right>" + nextButton + "</td>");
+		sb.append("</tr></table>");
+		
+		sb.append("<table width=270><tr><td width=80>Name:</td><td width=60>Level:</td><td width=40>Id:</td></tr>");
+		
+		if (size > 0)
 		{
-			maxPages++;
+			for (int index = startIndex; index <= endIndex; ++index)
+			{
+				sb.append("<tr><td width=80><a action=\"bypass -h admin_remove_skill " + String.valueOf(skills[index].getId()) + " " + page + "\">" + skills[index].getName() + "</a></td><td width=60>" + String.valueOf(skills[index].getLevel()) + "</td><td width=40>" + String.valueOf(skills[index].getId()) + "</td></tr>");
+				filled++;
+			}
 		}
 		
-		if (page > maxPages)
+		while (filled < maxItemsPerPage)
 		{
-			page = maxPages;
+			sb.append("<tr><td width=80>-----</td><td width=60>-----</td><td width=40>-----</td></tr>");
+			filled++;
 		}
 		
-		int skillsStart = maxSkillsPerPage * page;
-		int skillsEnd = skills.length;
-		if ((skillsEnd - skillsStart) > maxSkillsPerPage)
-		{
-			skillsEnd = skillsStart + maxSkillsPerPage;
-		}
-		
-		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
-		final StringBuilder replyMSG = StringUtil.startAppend(500 + (maxPages * 50) + (((skillsEnd - skillsStart) + 1) * 50), "<html><body>" + "<table width=260><tr>" + "<td width=40><button value=\"Main\" action=\"bypass -h admin_admin\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" + "<td width=180><center>Character Selection Menu</center></td>" + "<td width=40><button value=\"Back\" action=\"bypass -h admin_show_skills\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></td>" + "</tr></table>" + "<br><br>" + "<center>Editing <font color=\"LEVEL\">", player.getName(), "</font></center>" + "<br><table width=270><tr><td>Lv: ", String.valueOf(player.getLevel()), " ", ClassListData.getInstance().getClass(player.getClassId()).getClientCode(), "</td></tr></table>" + "<br><table width=270><tr><td>Note: Dont forget that modifying players skills can</td></tr>" + "<tr><td>ruin the game...</td></tr></table>" + "<br><center>Click on the skill you wish to remove:</center>" + "<br>" + "<center><table width=270><tr>");
-		
-		for (int x = 0; x < maxPages; x++)
-		{
-			int pagenr = x + 1;
-			StringUtil.append(replyMSG, "<td><a action=\"bypass -h admin_remove_skills ", String.valueOf(x), "\">Page ", String.valueOf(pagenr), "</a></td>");
-		}
-		
-		replyMSG.append("</tr></table></center>" + "<br><table width=270>" + "<tr><td width=80>Name:</td><td width=60>Level:</td><td width=40>Id:</td></tr>");
-		
-		for (int i = skillsStart; i < skillsEnd; i++)
-		{
-			StringUtil.append(replyMSG, "<tr><td width=80><a action=\"bypass -h admin_remove_skill ", String.valueOf(skills[i].getId()), "\">", skills[i].getName(), "</a></td><td width=60>", String.valueOf(skills[i].getLevel()), "</td><td width=40>", String.valueOf(skills[i].getId()), "</td></tr>");
-		}
-		
-		replyMSG.append("</table>" + "<br><center><table>" + "Remove skill by ID :" + "<tr><td>Id: </td>" + "<td><edit var=\"id_to_remove\" width=110></td></tr>" + "</table></center>" + "<center><button value=\"Remove skill\" action=\"bypass -h admin_remove_skill $id_to_remove\" width=110 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center>" + "<br><center><button value=\"Back\" action=\"bypass -h admin_current_player\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center>" + "</body></html>");
-		adminReply.setHtml(replyMSG.toString());
+		sb.append("</table width=260>");
+		sb.append("<br><center>");
+		sb.append("<table><tr><td>Remove skill by ID: <edit var=\"id_to_remove\" width=110>");
+		sb.append("</td></tr></table>");
+		sb.append("<br></center><center><button value=\"Remove skill\" action=\"bypass -h admin_remove_skill $id_to_remove\" width=110 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center>" + "<br><center><button value=\"Back\" action=\"bypass -h admin_current_player\" width=40 height=15 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center>" + "</body></html>");
+		adminReply.setHtml(sb.toString());
 		activeChar.sendPacket(adminReply);
 	}
 	
