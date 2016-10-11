@@ -93,6 +93,16 @@ public class Area implements ITargetTypeHandler
 					continue;
 				}
 				
+				if (activeChar.isPlayable() && obj.isAttackable() && !skill.isOffensive())
+				{
+					continue;
+				}
+				
+				if (obj.isPlayer() && activeChar.isPlayer() && skill.isOffensive() && activeChar.getActingPlayer().isFriend(obj.getActingPlayer()))
+				{
+					continue;
+				}
+				
 				if (targetList.size() >= maxTargets)
 				{
 					break;
