@@ -1097,7 +1097,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 					manageMovie(world, ExStartScenePlayer.SCENE_BOSS_FREYA_ENDING_A);
 					manageDespawnMinions(world);
 					finishInstance(world);
-					DecayTaskManager.getInstance().cancelDecayTask(world.freya);
+					DecayTaskManager.getInstance().cancel(world.freya);
 					cancelQuestTimer("ATTACK_FREYA", world.supp_Jinia, null);
 					cancelQuestTimer("ATTACK_FREYA", world.supp_Kegor, null);
 					cancelQuestTimer("GIVE_SUPPORT", world.controller, null);

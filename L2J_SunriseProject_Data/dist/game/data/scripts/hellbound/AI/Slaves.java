@@ -88,7 +88,7 @@ public final class Slaves extends AbstractNpcAI
 						HellboundEngine.getInstance().updateTrust(TRUST_REWARD, false);
 					}
 					slave.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, MOVE_TO);
-					DecayTaskManager.getInstance().addDecayTask(slave);
+					DecayTaskManager.getInstance().add(slave);
 				}
 			}
 		}
