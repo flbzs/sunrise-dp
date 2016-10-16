@@ -90,6 +90,17 @@ public final class Q00905_RefinedDragonBlood extends Quest
 		if ((st != null) && st.isCond(1) && Util.checkIfInRange(1500, npc, player, false))
 		{
 			final int itemId = MONSTERS.get(npc.getId());
+			
+			// vGodFather: Just in case
+			if (st.isCond(1))
+			{
+				if ((st.getQuestItemsCount(UNREFINED_RED_DRAGON_BLOOD) >= DRAGON_BLOOD_COUNT) && (st.getQuestItemsCount(UNREFINED_BLUE_DRAGON_BLOOD) >= DRAGON_BLOOD_COUNT))
+				{
+					st.setCond(2, true);
+					return;
+				}
+			}
+			
 			if (st.getQuestItemsCount(itemId) < DRAGON_BLOOD_COUNT)
 			{
 				st.giveItems(itemId, 1);
