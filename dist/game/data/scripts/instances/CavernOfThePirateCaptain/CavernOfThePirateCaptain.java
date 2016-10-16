@@ -66,6 +66,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	private static final int PIRATES_ZOMBIE_CAPTAIN_60 = 29026; // Pirate Zombie Captain
 	private static final int PIRATES_ZOMBIE_CAPTAIN_83 = 29184; // Pirate Zombie Captain
 	// Items
+	private static final int VORPAL_NECKLACE = 15762; // Sealed Vorpal Necklace
 	private static final int VORPAL_RING = 15763; // Sealed Vorpal Ring
 	private static final int VORPAL_EARRING = 15764; // Sealed Vorpal Earring
 	private static final int FIRE = 15280; // Transparent 1HS (for NPC)
@@ -378,22 +379,25 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 			
 			if (npc.getId() == ZAKEN_83)
 			{
+				long time = System.currentTimeMillis() - world.storeTime;
+				_log.info("Zaken day hard(83) killed in: " + time + " Killer: " + killer.getName());
 				for (L2PcInstance playersInside : world.playersInside)
 				{
 					if ((playersInside != null) && ((playersInside.getInstanceId() == world.getInstanceId()) && playersInside.isInsideRadius(npc, 1500, true, true)))
 					{
-						final long time = System.currentTimeMillis() - world.storeTime;
 						if (time <= 300000) // 5 minutes
 						{
 							if (getRandomBoolean())
 							{
-								giveItems(playersInside, VORPAL_RING, 1);
+								_log.info(playersInside.getName() + " got vorpal necklace.");
+								giveItems(playersInside, VORPAL_NECKLACE, 1);
 							}
 						}
 						else if (time <= 600000) // 10 minutes
 						{
 							if (getRandom(100) < 30)
 							{
+								_log.info(playersInside.getName() + " got vorpal earring.");
 								giveItems(playersInside, VORPAL_EARRING, 1);
 							}
 						}
@@ -401,6 +405,7 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 						{
 							if (getRandom(100) < 25)
 							{
+								_log.info(playersInside.getName() + " got vorpal ring.");
 								giveItems(playersInside, VORPAL_RING, 1);
 							}
 						}
