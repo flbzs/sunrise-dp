@@ -66,9 +66,9 @@ public final class CavernOfThePirateCaptain extends AbstractInstance
 	private static final int PIRATES_ZOMBIE_CAPTAIN_60 = 29026; // Pirate Zombie Captain
 	private static final int PIRATES_ZOMBIE_CAPTAIN_83 = 29184; // Pirate Zombie Captain
 	// Items
-	private static final int VORPAL_NECKLACE = 15762; // Sealed Vorpal Necklace
 	private static final int VORPAL_RING = 15763; // Sealed Vorpal Ring
 	private static final int VORPAL_EARRING = 15764; // Sealed Vorpal Earring
+	private static final int VORPAL_NECKLACE = 15765; // Sealed Vorpal Necklace
 	private static final int FIRE = 15280; // Transparent 1HS (for NPC)
 	private static final int RED = 15281; // Transparent 1HS (for NPC)
 	private static final int BLUE = 15302; // Transparent Bow (for NPC)
