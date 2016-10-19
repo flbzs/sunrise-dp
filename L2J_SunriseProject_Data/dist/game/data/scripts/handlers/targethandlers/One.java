@@ -40,6 +40,16 @@ public class One implements ITargetTypeHandler
 			return _emptyTargetList;
 		}
 		
+		// vGodFather: if summon has his owner targeted and use buff both summon target must feel that effect!
+		if (activeChar.isSummon() && (activeChar.getSummon().getOwner() == target) && !skill.isBad() && !skill.isDebuff())
+		{
+			return new L2Character[]
+			{
+				target,
+				activeChar
+			};
+		}
+		
 		// If a target is found, return it in a table else send a system message TARGET_IS_INCORRECT
 		return new L2Character[]
 		{
