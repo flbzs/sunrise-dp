@@ -81,6 +81,8 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 	// Misc
 	private static final int MIN_LVL = 10;
 	// Rewards
+	private static final int RED_SUNSET_STAFF = 754;
+	private static final int RED_SUNSET_SWORD = 981;
 	private static final ItemHolder[] REWARDS =
 	{
 		new ItemHolder(1060, 100), // Lesser Healing Potion
@@ -220,6 +222,8 @@ public final class Q00105_SkirmishWithOrcs extends Quest
 					
 					st.addExpAndSp(41478, 3555);
 					st.giveAdena(17599, true);
+					
+					st.giveItems(st.getPlayer().isMageClass() ? RED_SUNSET_STAFF : RED_SUNSET_SWORD, 1);
 					
 					for (ItemHolder reward : REWARDS)
 					{

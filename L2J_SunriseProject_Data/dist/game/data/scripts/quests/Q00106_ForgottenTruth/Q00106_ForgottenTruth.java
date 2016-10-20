@@ -169,14 +169,7 @@ public final class Q00106_ForgottenTruth extends Quest
 							st.addExpAndSp(24195, 2074);
 							st.giveAdena(10266, true);
 							
-							if (st.getPlayer().isMageClass())
-							{
-								st.giveItems(ELDRITCH_STAFF, 1);
-							}
-							else
-							{
-								st.giveItems(ELDRITCH_DAGGER, 1);
-							}
+							st.giveItems(st.getPlayer().isMageClass() ? ELDRITCH_STAFF : ELDRITCH_DAGGER, 1);
 							
 							for (ItemHolder reward : REWARDS)
 							{
