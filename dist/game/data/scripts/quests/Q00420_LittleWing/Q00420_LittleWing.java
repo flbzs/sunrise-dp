@@ -325,7 +325,7 @@ public final class Q00420_LittleWing extends Quest
 			}
 			case "30747-15.html":
 			{
-				if (qs.isCond(8) && (getQuestItemsCount(player, FAIRY_DUST) > 1))
+				if (qs.isCond(8) && (getQuestItemsCount(player, FAIRY_DUST) >= 1))
 				{
 					if (getRandom(100) < 5)
 					{
