@@ -200,9 +200,9 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="public_slot">
-				<mul stat="critRatePos" val="2">
+				<basemul stat="critRatePos" val="2">
 					<player behind="true" />
-				</mul>
+				</basemul>
 				<!-- TODO: Missing bonus for Rapier -->
 			</effect>
 		</for>

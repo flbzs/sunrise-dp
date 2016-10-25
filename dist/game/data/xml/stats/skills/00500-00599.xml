@@ -815,9 +815,9 @@
 				<add stat="accCombat" val="#accCombat">
 					<using kind="CROSSBOW" />
 				</add>
-				<mul stat="critRate" val="1.2">
+				<basemul stat="critRate" val="0.2">
 					<using kind="CROSSBOW" />
-				</mul>
+				</basemul>
 				<add stat="pAtkRange" val="#range">
 					<using kind="CROSSBOW" />
 				</add>
@@ -831,9 +831,9 @@
 				<add stat="accCombat" val="#ench1Acc">
 					<using kind="CROSSBOW" />
 				</add>
-				<mul stat="critRate" val="1.2">
+				<basemul stat="critRate" val="0.2">
 					<using kind="CROSSBOW" />
-				</mul>
+				</basemul>
 				<add stat="pAtkRange" val="200">
 					<using kind="CROSSBOW" />
 				</add>
@@ -847,9 +847,9 @@
 				<add stat="accCombat" val="6">
 					<using kind="CROSSBOW" />
 				</add>
-				<mul stat="critRate" val="1.2">
+				<basemul stat="critRate" val="0.2">
 					<using kind="CROSSBOW" />
-				</mul>
+				</basemul>
 				<add stat="pAtkRange" val="200">
 					<using kind="CROSSBOW" />
 				</add>

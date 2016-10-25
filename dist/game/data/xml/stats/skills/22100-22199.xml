@@ -1168,7 +1168,7 @@
 		<for>
 			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="br_event_buf1">
 				<mul stat="pAtkSpd" val="1.15" />
-				<mul stat="critRate" val="1.1" />
+				<basemul stat="critRate" val="0.1" />
 			</effect>
 		</for>
 	</skill>

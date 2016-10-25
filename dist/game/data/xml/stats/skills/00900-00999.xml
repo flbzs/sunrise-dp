@@ -909,7 +909,7 @@
 		<for>
 			<mul stat="mAtk" val="1.05" />
 			<mul stat="mAtkSpd" val="1.05" />
-			<mul stat="mCritRate" val="1.05" />
+			<basemul stat="mCritRate" val="0.05" />
 			<mul stat="magicalMpConsumeRate" val="0.95" />
 		</for>
 	</skill>
@@ -1436,9 +1436,9 @@
 				<add stat="accCombat" val="6">
 					<using kind="BOW" />
 				</add>
-				<mul stat="critRate" val="1.2">
+				<basemul stat="critRate" val="0.2">
 					<using kind="BOW" />
-				</mul>
+				</basemul>
 				<add stat="pAtkRange" val="200">
 					<using kind="BOW" />
 				</add>

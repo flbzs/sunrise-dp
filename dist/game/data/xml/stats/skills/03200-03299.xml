@@ -775,7 +775,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<mul stat="critRate" val="1.2" />
+			<basemul stat="critRate" val="0.2" />
 		</for>
 	</skill>
 	<skill id="3250" levels="10" name="Item Skill: Wild Magic">
