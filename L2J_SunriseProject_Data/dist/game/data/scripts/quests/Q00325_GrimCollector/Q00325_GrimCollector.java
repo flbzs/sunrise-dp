@@ -164,6 +164,16 @@ public final class Q00325_GrimCollector extends Quest
 						
 						st.giveAdena(sum, true);
 					}
+					
+					st.takeItems(ZOMBIE_HEAD, -1);
+					st.takeItems(ZOMBIE_HEART, -1);
+					st.takeItems(ZOMBIE_LIVER, -1);
+					st.takeItems(SKULL, -1);
+					st.takeItems(RIB_BONE, -1);
+					st.takeItems(SPINE, -1);
+					st.takeItems(ARM_BONE, -1);
+					st.takeItems(THIGH_BONE, -1);
+					st.takeItems(COMPLETE_SKELETON, -1);
 				}
 				
 				if (event.equals("30434-06.html"))
