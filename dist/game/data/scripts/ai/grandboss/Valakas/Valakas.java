@@ -36,6 +36,7 @@ import l2r.gameserver.model.actor.L2Playable;
 import l2r.gameserver.model.actor.instance.L2GrandBossInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.SkillHolder;
+import l2r.gameserver.model.quest.QuestTimer;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.zone.type.L2NoRestartZone;
 import l2r.gameserver.network.NpcStringId;
@@ -171,6 +172,12 @@ public final class Valakas extends AbstractNpcAI
 				_lastAttack = System.currentTimeMillis();
 				startQuestTimer("CHECK_ATTACK", 60000, _valakas, null);
 				startQuestTimer("SPAWN_MINION", 300000, _valakas, null);
+				
+				QuestTimer manageSkill = getQuestTimer("MANAGE_SKILL", _valakas, null);
+				if (manageSkill != null)
+				{
+					manageSkill.cancel();
+				}
 				startQuestTimer("MANAGE_SKILL", 2000, _valakas, null, true);
 				break;
 			}
@@ -395,7 +402,14 @@ public final class Valakas extends AbstractNpcAI
 				npc.doCast(VALAKAS_REGEN1.getSkill());
 				startQuestTimer("CHECK_ATTACK", 60000, npc, null);
 				startQuestTimer("SPAWN_MINION", 60000, npc, null);
+				
+				QuestTimer manageSkill = getQuestTimer("MANAGE_SKILL", _valakas, null);
+				if (manageSkill != null)
+				{
+					manageSkill.cancel();
+				}
 				startQuestTimer("MANAGE_SKILL", 2000, _valakas, null, true);
+				
 				for (L2PcInstance players : npc.getKnownList().getKnownPlayersInRadius(4000))
 				{
 					if (players.isHero())
