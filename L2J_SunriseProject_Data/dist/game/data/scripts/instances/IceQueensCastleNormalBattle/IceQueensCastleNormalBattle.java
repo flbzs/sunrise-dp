@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import l2r.Config;
+import l2r.gameserver.GeoData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.enums.MountType;
 import l2r.gameserver.enums.PcCondOverride;
@@ -1255,7 +1256,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 		final List<L2PcInstance> players = new ArrayList<>();
 		for (L2PcInstance player : world.playersInside)
 		{
-			if ((player != null) && !player.isDead() && (player.getInstanceId() == world.getInstanceId()) && !player.isInvisible())
+			if ((player != null) && !player.isDead() && GeoData.getInstance().canMove(mob, player) && (player.getInstanceId() == world.getInstanceId()) && !player.isInvisible())
 			{
 				players.add(player);
 			}
