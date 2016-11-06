@@ -1475,6 +1475,8 @@
 		<!-- Confirmed CT2.5 -->
 		<table name="#value"> 10000 20000 </table>
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="itemConsumeCount" val="1" />
+		<set name="itemConsumeId" val="14055" /> <!-- Vitality Replenishing Beverage -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="3600000" />
