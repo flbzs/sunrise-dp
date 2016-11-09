@@ -40,7 +40,7 @@ public final class BlockDamage extends L2Effect
 	public BlockDamage(Env env, EffectTemplate template)
 	{
 		super(env, template);
-		_type = template.getParameters().getEnum("type", BlockType.class, BlockType.HP);
+		_type = template.getParameters().getEnum("block", BlockType.class, BlockType.HP);
 	}
 	
 	@Override
