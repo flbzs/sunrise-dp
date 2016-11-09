@@ -18,6 +18,7 @@
  */
 package ai.grandboss.Valakas;
 
+import java.util.Collections;
 import java.util.List;
 
 import l2r.Config;
@@ -738,9 +739,11 @@ public final class Valakas extends AbstractNpcAI
 	
 	private L2Playable getRandomTarget(L2Npc npc)
 	{
-		for (L2Character creature : npc.getKnownList().getKnownCharacters())
+		List<L2Character> characters = npc.getKnownList().getKnownCharacters();
+		Collections.shuffle(characters);
+		for (L2Character creature : characters)
 		{
-			if ((creature != null) && creature.isPlayable() && !creature.isDead())
+			if ((creature != null) && creature.isPlayable() && !creature.isDead() && creature.isVisible())
 			{
 				return (L2Playable) creature;
 			}
