@@ -66,6 +66,7 @@ public class SavingSanta extends AbstractNpcAI
 	private boolean _isSantaFree = true;
 	private boolean _isJackPot = false;
 	private boolean _isWaitingForPlayerSkill = false;
+	private static L2Skill thomasSkill;
 	private static final List<L2Npc> _santaHelpers = new ArrayList<>();
 	private static final List<L2Npc> _specialTrees = new ArrayList<>();
 	private static final Map<String, Long> _rewardedPlayers = new ConcurrentHashMap<>();
@@ -111,7 +112,7 @@ public class SavingSanta extends AbstractNpcAI
 	// 3th December 2015
 	private static GregorianCalendar START_EVENT_CALENDAR = new GregorianCalendar(2015, 11, 3);
 	// 6th January 2016
-	private static GregorianCalendar END_EVENT_CALENDAR = new GregorianCalendar(2016, 0, 6);
+	private static GregorianCalendar END_EVENT_CALENDAR = new GregorianCalendar(2017, 0, 6);
 	
 	private static final Location[] TREE_SPAWNS =
 	{
@@ -304,97 +305,6 @@ public class SavingSanta extends AbstractNpcAI
 		return "";
 	}
 	
-	@Override
-	public String onSpellFinished(L2Npc npc, L2PcInstance player, L2Skill skill)
-	{
-		// Turkey's Choice
-		// Level 1: Scissors
-		// Level 2: Rock
-		// Level 3: Paper
-		if (skill.getId() == 6100)
-		{
-			_isWaitingForPlayerSkill = false;
-			for (L2PcInstance pl : npc.getKnownList().getKnownPlayersInRadius(600))
-			{
-				// Level 1: Scissors
-				// Level 2: Rock
-				// Level 3: Paper
-				if (pl.getEffectList().getFirstEffect(23019) == null)
-				{
-					continue;
-				}
-				
-				int result = pl.getEffectList().getFirstEffect(23019).getSkill().getLevel() - skill.getLevel();
-				
-				if (result == 0)
-				{
-					// Oh. I'm bored.
-					npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NPC_STRINGS[15]));
-				}
-				else if ((result == -1) || (result == 2))
-				{
-					// Now!! Those of you who lost, go away!
-					// What a bunch of losers.
-					npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NPC_STRINGS[6 + getRandom(2)]));
-					pl.broadcastPacket(new MagicSkillUse(pl, pl, 23023, 1, 3000, 1));
-					pl.stopSkillEffects(23022);
-				}
-				else if ((result == 1) || (result == -2))
-				{
-					int level = (pl.getEffectList().getFirstEffect(23022) != null ? (pl.getEffectList().getFirstEffect(23022).getSkill().getLevel() + 1) : 1);
-					pl.broadcastPacket(new MagicSkillUse(pl, pl, 23022, level, 3000, 1));
-					SkillData.getInstance().getSkill(23022, level).getEffects(pl, pl);
-					if ((level == 1) || (level == 2))
-					{
-						// Ah, okay...
-						// Agh!! I wasn't going to do that!
-						// You're cursed!! Oh.. What?
-						// Have you done nothing but rock-paper-scissors??
-						npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NPC_STRINGS[10 + getRandom(4)]));
-					}
-					else if (level == 3)
-					{
-						SkillData.getInstance().getSkill(23018, 1).getEffects(pl, pl);
-						// Stop it, no more... I did it because I was too lonely...
-						npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NPC_STRINGS[13]));
-					}
-					else if (level == 4)
-					{
-						Broadcast.toAllOnlinePlayers(SystemMessage.getSystemMessage(SystemMessageId.THOMAS_D_TURKEY_DEFETED));
-						// I have to release Santa... How infuriating!!!
-						// I hate happy Merry Christmas!!!
-						npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NPC_STRINGS[14 + getRandom(2)]));
-						
-						startQuestTimer("SantaSpawn", 120000, null, null);
-						final L2Npc holidaySled = addSpawn(HOLIDAY_SLED_ID, 117935, -126003, -2585, 54625, false, 12000);
-						// Message from Santa Claus: Many blessings to $s1, who saved me~
-						final NpcSay santaSaved = new NpcSay(holidaySled.getObjectId(), 10, holidaySled.getId(), NPC_STRINGS[28]);
-						santaSaved.addStringParameter(pl.getName());
-						holidaySled.broadcastPacket(santaSaved);
-						// Oh ho ho.... Merry Christmas!!
-						holidaySled.broadcastPacket(new NpcSay(holidaySled.getObjectId(), 0, holidaySled.getId(), NPC_STRINGS[17]));
-						
-						if (getRandom(100) > 90)
-						{
-							_isJackPot = true;
-							pl.addItem("SavingSantaPresent", BR_XMAS_PRESENT_JACKPOT, 1, pl, true);
-						}
-						else
-						{
-							pl.addItem("SavingSantaPresent", BR_XMAS_PRESENT_NORMAL, 1, pl, true);
-						}
-						
-						ThreadPoolManager.getInstance().scheduleGeneral(new SledAnimation(holidaySled), 7000);
-						npc.decayMe();
-						_isSantaFree = true;
-						break;
-					}
-				}
-			}
-		}
-		return super.onSpellFinished(npc, player, skill);
-	}
-	
 	private static class SledAnimation implements Runnable
 	{
 		private final L2Npc _sled;
@@ -500,8 +410,11 @@ public class SavingSanta extends AbstractNpcAI
 		{
 			if (!npc.isDecayed())
 			{
-				startQuestTimer("ThomasCast1", 13000, npc, null);
-				npc.doCast(SkillData.getInstance().getSkill(6100, getRandom(1, 3)));
+				startQuestTimer("ThomasCast1", 14000, npc, null);
+				
+				thomasSkill = SkillData.getInstance().getSkill(6100, getRandom(1, 3));
+				npc.doCast(thomasSkill);
+				startQuestTimer("CheckingSpellFinished", 3050, npc, null);
 				// It's hurting... I'm in pain... What can I do for the pain...
 				// No... When I lose that one... I'll be in more pain...
 				// Hahahah!!! I captured Santa Claus!! There will be no gifts this year!!!
@@ -641,6 +554,88 @@ public class SavingSanta extends AbstractNpcAI
 					if ((playerX > xxMin) && (playerX < xxMax) && (playerY > yyMin) && (playerY < yyMax))
 					{
 						SkillData.getInstance().getSkill(2139, 1).getEffects(tree, playerr);
+					}
+				}
+			}
+		}
+		else if (event.startsWith("CheckingSpellFinished"))
+		{
+			_isWaitingForPlayerSkill = false;
+			for (L2PcInstance pl : npc.getKnownList().getKnownPlayersInRadius(600))
+			{
+				// Level 1: Scissors
+				// Level 2: Rock
+				// Level 3: Paper
+				if (pl.getEffectList().getFirstEffect(23019) == null)
+				{
+					continue;
+				}
+				
+				int result = pl.getEffectList().getFirstEffect(23019).getSkill().getLevel() - thomasSkill.getLevel();
+				
+				if (result == 0)
+				{
+					// Oh. I'm bored.
+					npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NPC_STRINGS[15]));
+				}
+				else if ((result == -1) || (result == 2))
+				{
+					// Now!! Those of you who lost, go away!
+					// What a bunch of losers.
+					npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NPC_STRINGS[6 + getRandom(2)]));
+					pl.broadcastPacket(new MagicSkillUse(pl, pl, 23023, 1, 3000, 1));
+					pl.stopSkillEffects(23022);
+				}
+				else if ((result == 1) || (result == -2))
+				{
+					int level = (pl.getEffectList().getFirstEffect(23022) != null ? (pl.getEffectList().getFirstEffect(23022).getSkill().getLevel() + 1) : 1);
+					pl.broadcastPacket(new MagicSkillUse(pl, pl, 23022, level, 3000, 1));
+					SkillData.getInstance().getSkill(23022, level).getEffects(pl, pl);
+					
+					if ((level == 1) || (level == 2))
+					{
+						// Ah, okay...
+						// Agh!! I wasn't going to do that!
+						// You're cursed!! Oh.. What?
+						// Have you done nothing but rock-paper-scissors??
+						npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NPC_STRINGS[10 + getRandom(4)]));
+					}
+					else if (level == 3)
+					{
+						SkillData.getInstance().getSkill(23018, 1).getEffects(pl, pl);
+						// Stop it, no more... I did it because I was too lonely...
+						npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NPC_STRINGS[13]));
+					}
+					else if (level == 4)
+					{
+						Broadcast.toAllOnlinePlayers(SystemMessage.getSystemMessage(SystemMessageId.THOMAS_D_TURKEY_DEFETED));
+						// I have to release Santa... How infuriating!!!
+						// I hate happy Merry Christmas!!!
+						npc.broadcastPacket(new NpcSay(npc.getObjectId(), 0, npc.getId(), NPC_STRINGS[14 + getRandom(2)]));
+						
+						startQuestTimer("SantaSpawn", 120000, null, null);
+						final L2Npc holidaySled = addSpawn(HOLIDAY_SLED_ID, 117935, -126003, -2585, 54625, false, 12000);
+						// Message from Santa Claus: Many blessings to $s1, who saved me~
+						final NpcSay santaSaved = new NpcSay(holidaySled.getObjectId(), 10, holidaySled.getId(), NPC_STRINGS[28]);
+						santaSaved.addStringParameter(pl.getName());
+						holidaySled.broadcastPacket(santaSaved);
+						// Oh ho ho.... Merry Christmas!!
+						holidaySled.broadcastPacket(new NpcSay(holidaySled.getObjectId(), 0, holidaySled.getId(), NPC_STRINGS[17]));
+						
+						if (getRandom(100) > 90)
+						{
+							_isJackPot = true;
+							pl.addItem("SavingSantaPresent", BR_XMAS_PRESENT_JACKPOT, 1, pl, true);
+						}
+						else
+						{
+							pl.addItem("SavingSantaPresent", BR_XMAS_PRESENT_NORMAL, 1, pl, true);
+						}
+						
+						ThreadPoolManager.getInstance().scheduleGeneral(new SledAnimation(holidaySled), 7000);
+						npc.decayMe();
+						_isSantaFree = true;
+						break;
 					}
 				}
 			}
