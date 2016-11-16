@@ -587,7 +587,7 @@
 		<set name="spiritshots" val="1" />
 		<set name="element_enabled" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<set name="item_skill" val="3828-1;3013-3;21252-1" />
+		<set name="item_skill" val="3828-1;3566-3;21252-1" />
 		<for>
 			<set stat="pAtk" val="396" />
 			<set stat="mAtk" val="176" />
