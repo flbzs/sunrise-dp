@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import l2r.gameserver.model.actor.L2Character;
+import l2r.gameserver.model.actor.L2Summon;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
@@ -27,7 +28,7 @@ import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * @author UnAfraid
+ * @author UnAfraid, vGodFather
  */
 public class ManaHealPercent extends L2Effect
 {
@@ -68,6 +69,23 @@ public class ManaHealPercent extends L2Effect
 		{
 			target.setCurrentMp(amount + target.getCurrentMp());
 		}
+		
+		// vGodFather: Summons must feel heal effect from herbs
+		if (getSkill().getName().toLowerCase().contains("herb") && getSkill().getName().toLowerCase().contains("mana") && target.hasSummon())
+		{
+			L2Summon summon = target.getSummon();
+			if ((summon != null) && !summon.isDead() && !summon.isInvul())
+			{
+				double newAmount = 0;
+				newAmount = full ? summon.getMaxMp() : (summon.getMaxMp() * power) / 100.0;
+				newAmount = Math.max(Math.min(newAmount, summon.getMaxRecoverableMp() - summon.getCurrentMp()), 0);
+				if (newAmount != 0)
+				{
+					summon.setCurrentMp(newAmount + summon.getCurrentMp());
+				}
+			}
+		}
+		
 		SystemMessage sm;
 		if (getEffector().getObjectId() != target.getObjectId())
 		{

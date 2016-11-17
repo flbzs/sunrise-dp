@@ -19,6 +19,7 @@
 package handlers.effecthandlers;
 
 import l2r.gameserver.model.actor.L2Character;
+import l2r.gameserver.model.actor.L2Summon;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
@@ -27,7 +28,7 @@ import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 
 /**
- * @author UnAfraid
+ * @author UnAfraid, vGodFather
  */
 public class HealPercent extends L2Effect
 {
@@ -68,11 +69,27 @@ public class HealPercent extends L2Effect
 		{
 			target.setCurrentHp(amount + target.getCurrentHp());
 		}
-		SystemMessage sm;
 		
+		// vGodFather: Summons must feel heal effect
+		if (getSkill().getName().toLowerCase().contains("herb") && getSkill().getName().toLowerCase().contains("life") && target.hasSummon())
+		{
+			L2Summon summon = target.getSummon();
+			if ((summon != null) && !summon.isDead() && !summon.isInvul())
+			{
+				double newAmount = 0;
+				newAmount = full ? summon.getMaxHp() : (summon.getMaxHp() * power) / 100.0;
+				newAmount = Math.max(Math.min(newAmount, summon.getMaxRecoverableHp() - summon.getCurrentHp()), 0);
+				if (newAmount != 0)
+				{
+					summon.setCurrentHp(newAmount + summon.getCurrentHp());
+				}
+			}
+		}
+		
+		SystemMessage sm;
 		try
 		{
-			if ((getEffector() != null) && (getEffector().getObjectId() != target.getObjectId()))
+			if (getEffector().getObjectId() != target.getObjectId())
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S2_HP_RESTORED_BY_C1);
 				sm.addCharName(getEffector());
@@ -86,7 +103,6 @@ public class HealPercent extends L2Effect
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HP_RESTORED);
 		}
-		
 		sm.addInt((int) amount);
 		target.sendPacket(sm);
 		return true;
