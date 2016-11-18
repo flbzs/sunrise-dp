@@ -173,22 +173,7 @@ public final class MithrilMine extends AbstractInstance
 			}
 			else
 			{
-				if (npc.isScriptValue(1))
-				{
-					_world._count++;
-				}
-				
-				if (_world._count >= 5)
-				{
-					final QuestState qs = player.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
-					if ((qs != null) && qs.isMemoState(2))
-					{
-						cancelQuestTimer("BUFF", npc, player);
-						qs.setMemoState(3);
-						qs.setCond(6, true);
-						startQuestTimer("FINISH", 3000, npc, player);
-					}
-				}
+				checkKill(player, npc, _world);
 			}
 		}
 		return super.onKill(npc, player, isSummon);
@@ -240,5 +225,26 @@ public final class MithrilMine extends AbstractInstance
 			world.addAllowed(player.getObjectId());
 		}
 		teleportPlayer(player, START_LOC, world.getInstanceId(), false);
+	}
+	
+	// vGodFather: sync kills
+	private synchronized void checkKill(L2PcInstance player, L2Npc npc, MMWorld _world)
+	{
+		if (npc.isScriptValue(1))
+		{
+			_world._count++;
+		}
+		
+		if (_world._count >= 5)
+		{
+			final QuestState qs = player.getQuestState(Q10284_AcquisitionOfDivineSword.class.getSimpleName());
+			if ((qs != null) && qs.isMemoState(2))
+			{
+				cancelQuestTimer("BUFF", npc, player);
+				qs.setMemoState(3);
+				qs.setCond(6, true);
+				startQuestTimer("FINISH", 3000, npc, player);
+			}
+		}
 	}
 }
