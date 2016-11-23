@@ -19,10 +19,14 @@
 package handlers.effecthandlers;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
+import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.model.stats.Formulas;
 import l2r.gameserver.network.SystemMessageId;
@@ -55,24 +59,49 @@ public class StealAbnormal extends L2Effect
 			{
 				return false;
 			}
-			final Env env = new Env();
-			env.setCharacter(getEffected());
-			env.setTarget(getEffector());
+			
+			Map<L2Skill, L2Effect> skillIds = new ConcurrentHashMap<>();
 			for (L2Effect eff : toSteal)
 			{
-				env.setSkill(eff.getSkill());
-				final L2Effect effect = eff.getEffectTemplate().getStolenEffect(env, eff);
-				if (effect != null)
+				L2Skill skill = eff.getSkill();
+				if (!skillIds.containsKey(skill))
 				{
-					effect.scheduleEffect();
-					if (effect.getShowIcon() && getEffector().isPlayer())
+					skillIds.put(skill, eff);
+				}
+			}
+			
+			Env env = new Env();
+			env.setCharacter(getEffected());
+			env.setTarget(getEffector());
+			
+			for (Entry<L2Skill, L2Effect> stats : skillIds.entrySet())
+			{
+				L2Skill skill = stats.getKey();
+				L2Effect effect = stats.getValue();
+				if (skill.hasEffects())
+				{
+					env.setSkill(skill);
+					
+					L2Effect ef;
+					for (EffectTemplate et : skill.getEffectTemplates())
 					{
-						final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
-						sm.addSkillName(effect);
-						getEffector().sendPacket(sm);
+						ef = et.getEffect(env);
+						if (ef != null)
+						{
+							ef.setCount(effect.getCount());
+							ef.setFirstTime(effect.getTime());
+							ef.scheduleEffect();
+							
+							if (ef.getShowIcon() && getEffector().isPlayer())
+							{
+								final SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT);
+								sm.addSkillName(effect);
+								getEffector().sendPacket(sm);
+							}
+						}
 					}
 				}
-				eff.exit();
+				getEffected().stopSkillEffects(skill.getId());
 			}
 			return true;
 		}
