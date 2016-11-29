@@ -53,7 +53,7 @@ import quests.Q00692_HowtoOpposeEvil.Q00692_HowtoOpposeEvil;
 
 /**
  * Energy Seeds AI.
- * @author Gigiikun
+ * @author Gigiikun Fixed by: vGodFather
  */
 public class EnergySeeds extends AbstractNpcAI
 {
@@ -1558,6 +1558,56 @@ public class EnergySeeds extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
+		if (event.equalsIgnoreCase("SoiAbyssGaze1Stop"))
+		{
+			SoiAbyssGaze1Stop();
+		}
+		
+		if (event.equalsIgnoreCase("SoiAbyssGaze2Stop"))
+		{
+			SoiAbyssGaze2Stop();
+		}
+		
+		if (event.equalsIgnoreCase("SoiAbyssGaze1Spawn"))
+		{
+			SoiAbyssGaze1Spawn();
+		}
+		
+		if (event.equalsIgnoreCase("SoiAbyssGaze2Spawn"))
+		{
+			SoiAbyssGaze2Spawn();
+		}
+		
+		if (event.equalsIgnoreCase("SoiCloseMouthStop"))
+		{
+			SoiCloseMouthStop();
+		}
+		
+		if (event.equalsIgnoreCase("SoiMouthStop"))
+		{
+			SoiMouthStop();
+		}
+		
+		if (event.equalsIgnoreCase("SoiMouthSpawn"))
+		{
+			SoiMouthSpawn();
+		}
+		
+		if (event.equalsIgnoreCase("SoiCloseMouthSpawn"))
+		{
+			SoiCloseMouthSpawn();
+		}
+		
+		if (event.equalsIgnoreCase("SoiSeedStop"))
+		{
+			SoiSeedStop();
+		}
+		
+		if (event.equalsIgnoreCase("SoiSeedSpawn"))
+		{
+			SoiSeedSpawn();
+		}
+		
 		if (event.equalsIgnoreCase("StartSoDAi"))
 		{
 			for (int doorId : SEED_OF_DESTRUCTION_DOORS)
