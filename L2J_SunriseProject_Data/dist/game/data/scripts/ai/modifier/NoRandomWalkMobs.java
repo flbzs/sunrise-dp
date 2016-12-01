@@ -65,6 +65,8 @@ public class NoRandomWalkMobs extends AbstractNpcAI
 		29151,
 		// Lair of antharas mobs
 		22848, 22849, 22850, 22851, 22857,
+		// Dragon Valley
+		22859, 22820,
 		// Grandbosses no instances
 		29006, 29014, 29020, 29028, 29065, 29068, 29118, 29119,
 		// Freya instances
