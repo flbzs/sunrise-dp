@@ -134,6 +134,7 @@
 	</zone>
 	<zone name="valakas_no_restart" id="70052" type="NoRestartZone" shape="NPoly" minZ="-2572" maxZ="5428"> <!-- 26_14 -->
 		<stat name="restartTime" val="1800" />
+		<stat name="restartAllowedTime" val="600" />
 		<node X="196866" Y="-130845" />
 		<node X="229289" Y="-130860" />
 		<node X="229176" Y="-98508" />
