@@ -37,7 +37,8 @@ public final class BlockDebuff extends L2Effect
 	@Override
 	public int getEffectFlags()
 	{
-		return EffectFlag.BLOCK_DEBUFF.getMask();
+		// vGodFather: temp fix till implement all effects
+		return (EffectFlag.BLOCK_DEBUFF.getMask() | EffectFlag.INVUL.getMask());
 	}
 	
 	@Override
