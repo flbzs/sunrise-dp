@@ -9,6 +9,18 @@
 		<node X="57669" Y="221683" />
 		<node X="50773" Y="221632" />
 	</zone>
+	<zone name="sailen_no_restart" id="70049" type="NoRestartZone" shape="NPoly" minZ="-2560" maxZ="440"> <!-- 20_17 -->
+		<stat name="restartTime" val="1800" />
+		<stat name="restartAllowedTime" val="600" />
+		<node X="29177" Y="-7187" />
+		<node X="28958" Y="-5798" />
+		<node X="27844" Y="-5035" />
+		<node X="26589" Y="-5393" />
+		<node X="25949" Y="-6294" />
+		<node X="26028" Y="-7399" />
+		<node X="26846" Y="-8117" />
+		<node X="28231" Y="-8163" />
+	</zone>
 	<zone name="antaras_no_restart" id="70050" type="NoRestartZone" shape="NPoly" minZ="-8380" maxZ="-4880"> <!-- 25_21 -->
 		<stat name="restartTime" val="1800" />
 		<stat name="restartAllowedTime" val="600" />
@@ -24,6 +36,22 @@
 		<node X="114562" Y="12623" />
 		<node X="118194" Y="15790" />
 		<node X="114825" Y="19589" />
+	</zone>
+	<zone name="valakas_no_restart" id="70052" type="NoRestartZone" shape="NPoly" minZ="-2572" maxZ="5428"> <!-- 26_14 -->
+		<stat name="restartTime" val="1800" />
+		<stat name="restartAllowedTime" val="600" />
+		<node X="196866" Y="-130845" />
+		<node X="229289" Y="-130860" />
+		<node X="229176" Y="-98508" />
+		<node X="196880" Y="-98498" />
+	</zone>
+	<zone name="beleth__chamber_no_restart" id="70053" type="NoRestartZone" shape="NPoly" minZ="-10412" maxZ="-5112">
+		<stat name="restartTime" val="1800" />
+		<stat name="restartAllowedTime" val="600" />
+		<node X="11214" Y="205578" />
+		<node X="20607" Y="205578" />
+		<node X="20648" Y="220271" />
+		<node X="11172" Y="220271" />
 	</zone>
 	<zone name="anakimNlilith" type="NoRestartZone" shape="NPoly" minZ="-5504" maxZ="-5104"> <!-- 25_17 -->
 		<stat name="restartTime" val="1800" />
@@ -131,25 +159,6 @@
 		<node X="-113293" Y="-187430" />
 		<node X="-113293" Y="-182247" />
 		<node X="-116217" Y="-182247" />
-	</zone>
-	<zone name="valakas_no_restart" id="70052" type="NoRestartZone" shape="NPoly" minZ="-2572" maxZ="5428"> <!-- 26_14 -->
-		<stat name="restartTime" val="1800" />
-		<stat name="restartAllowedTime" val="600" />
-		<node X="196866" Y="-130845" />
-		<node X="229289" Y="-130860" />
-		<node X="229176" Y="-98508" />
-		<node X="196880" Y="-98498" />
-	</zone>
-	<zone name="sailen_no_restart" id="70049" type="NoRestartZone" shape="NPoly" minZ="-2560" maxZ="440"> <!-- 20_17 -->
-		<stat name="restartTime" val="0" />
-		<node X="29177" Y="-7187" />
-		<node X="28958" Y="-5798" />
-		<node X="27844" Y="-5035" />
-		<node X="26589" Y="-5393" />
-		<node X="25949" Y="-6294" />
-		<node X="26028" Y="-7399" />
-		<node X="26846" Y="-8117" />
-		<node X="28231" Y="-8163" />
 	</zone>
 	<zone name="25_15_frintessa_Restart01" type="NoRestartZone" shape="NPoly" minZ="-5200" maxZ="-4680">
 		<stat name="restartTime" val="1800" />
@@ -289,13 +298,6 @@
 		<node X="-39128" Y="238125" />
 		<node X="-39128" Y="253515" />
 		<node X="-58700" Y="253515" />
-	</zone>
-	<zone name="20_24_beres_restart_01" type="NoRestartZone" shape="NPoly" minZ="-10412" maxZ="-5112">
-		<stat name="restartTime" val="1800" />
-		<node X="11214" Y="205578" />
-		<node X="20607" Y="205578" />
-		<node X="20648" Y="220271" />
-		<node X="11172" Y="220271" />
 	</zone>
 	<zone name="14_24_undying_norestart1" type="NoRestartZone" shape="NPoly" minZ="-16233" maxZ="-6233">
 		<stat name="restartTime" val="0" />
