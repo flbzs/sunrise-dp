@@ -45,7 +45,7 @@
 		<node X="229176" Y="-98508" />
 		<node X="196880" Y="-98498" />
 	</zone>
-	<zone name="beleth__chamber_no_restart" id="70053" type="NoRestartZone" shape="NPoly" minZ="-10412" maxZ="-5112">
+	<zone name="beleth_chamber_no_restart" id="70053" type="NoRestartZone" shape="NPoly" minZ="-10412" maxZ="-5112">
 		<stat name="restartTime" val="1800" />
 		<stat name="restartAllowedTime" val="600" />
 		<node X="11214" Y="205578" />
