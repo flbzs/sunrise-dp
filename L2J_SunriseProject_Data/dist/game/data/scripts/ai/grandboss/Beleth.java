@@ -71,7 +71,7 @@ public final class Beleth extends AbstractNpcAI
 	private static final int ELF = 29128;
 	private static final int WHIRPOOL = 29125;
 	// Zones
-	private static final L2ZoneType ZONE = ZoneManager.getInstance().getZoneById(12018);
+	private static final L2ZoneType ZONE = ZoneManager.getInstance().getZoneById(70053);
 	private static final Location BELETH_SPAWN = new Location(16323, 213059, -9357, 49152);
 	// Skills
 	private static final SkillHolder BLEED = new SkillHolder(5495, 1);

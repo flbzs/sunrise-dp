@@ -25,7 +25,7 @@ import l2r.gameserver.model.L2CommandChannel;
 import l2r.gameserver.model.L2Party;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.zone.type.L2BossZone;
+import l2r.gameserver.model.zone.L2ZoneType;
 
 import ai.npc.AbstractNpcAI;
 
@@ -66,7 +66,7 @@ public class SteelCitadelTeleport extends AbstractNpcAI
 			return "32376-02a.htm";
 		}
 		
-		final L2BossZone zone = (L2BossZone) ZoneManager.getInstance().getZoneById(12018);
+		final L2ZoneType zone = ZoneManager.getInstance().getZoneById(70053);
 		if (zone != null)
 		{
 			GrandBossManager.getInstance().setBossStatus(BELETH, 1);
@@ -82,7 +82,6 @@ public class SteelCitadelTeleport extends AbstractNpcAI
 				{
 					if (pl.isInsideRadius(npc.getX(), npc.getY(), npc.getZ(), 3000, true, false))
 					{
-						zone.allowPlayerEntry(pl, 30);
 						pl.teleToLocation(16342, 209557, -9352, true);
 					}
 				}
