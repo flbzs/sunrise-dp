@@ -66,11 +66,29 @@ public class Q00552_OlympiadVeteran extends Quest
 		}
 		else if (event.equalsIgnoreCase("31688-04.html"))
 		{
-			final long count = st.getQuestItemsCount(TEAM_EVENT_CERTIFICATE) + st.getQuestItemsCount(CLASS_FREE_BATTLE_CERTIFICATE) + st.getQuestItemsCount(CLASS_BATTLE_CERTIFICATE);
-			
+			final long count = st.getQuestItemsCount(CLASS_FREE_BATTLE_CERTIFICATE) + st.getQuestItemsCount(CLASS_BATTLE_CERTIFICATE);
 			if (count > 0)
 			{
-				st.giveItems(OLY_CHEST, count);
+				if ((st.getQuestItemsCount(CLASS_FREE_BATTLE_CERTIFICATE) > 0) && (st.getQuestItemsCount(CLASS_BATTLE_CERTIFICATE) > 0))
+				{
+					st.giveItems(OLY_CHEST, 2);
+				}
+				else
+				{
+					st.giveItems(OLY_CHEST, 1);
+				}
+				st.exitQuest(QuestType.DAILY, true);
+			}
+			else
+			{
+				htmltext = getNoQuestMsg(player);
+			}
+		}
+		else if (event.equalsIgnoreCase("31688-06.html"))
+		{
+			if ((st.getQuestItemsCount(CLASS_FREE_BATTLE_CERTIFICATE) > 0) && (st.getQuestItemsCount(CLASS_FREE_BATTLE_CERTIFICATE) > 0) && (st.getQuestItemsCount(CLASS_BATTLE_CERTIFICATE) > 0))
+			{
+				st.giveItems(OLY_CHEST, 3);
 				st.exitQuest(QuestType.DAILY, true);
 			}
 			else
@@ -213,11 +231,10 @@ public class Q00552_OlympiadVeteran extends Quest
 		else if (st.isStarted())
 		{
 			final long count = st.getQuestItemsCount(TEAM_EVENT_CERTIFICATE) + st.getQuestItemsCount(CLASS_FREE_BATTLE_CERTIFICATE) + st.getQuestItemsCount(CLASS_BATTLE_CERTIFICATE);
-			
 			if (count >= 3)
 			{
 				htmltext = "31688-04.html";
-				st.giveItems(OLY_CHEST, 4);
+				st.giveItems(OLY_CHEST, 3);
 				st.exitQuest(QuestType.DAILY, true);
 			}
 			else
