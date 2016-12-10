@@ -225,6 +225,7 @@
 	<skill id="6209" levels="4" name="Weapon Grade Penalty">
 		<table name="#cAtk"> 0.9 0.8 0.7 0.6 </table>
 		<table name="#rCrit"> -0.1 -0.2 -0.3 -0.4 </table>
+		<table name="#magicFailureRate"> 1.2 1.4 1.6 1.8 </table>
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="P" />
 		<set name="stayAfterDeath" val="true" />
@@ -235,6 +236,7 @@
 			<mul stat="critDmg" val="#cAtk" />
 			<mul stat="pAtkSpd" val="0.9" />
 			<mul stat="pAtk" val="0.9" />
+			<add stat="magicFailureRate" val="#magicFailureRate" />
 		</for>
 	</skill>
 	<skill id="6213" levels="4" name="Armor Grade Penalty">
