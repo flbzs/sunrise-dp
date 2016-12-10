@@ -1274,13 +1274,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="BlockDamage" abnormalTime="5" noicon="1" val="0">
-				<param block="HP"/>
-			</effect>
-			<effect name="BlockDamage" abnormalTime="5" noicon="1" val="0">
-				<param block="MP"/>
-			</effect>
-			<effect name="BlockDebuff" abnormalTime="5" val="0" special="invincible" abnormalLvl="1" abnormalType="sub_trigger_defence"/>
+			<effect name="Invincible" abnormalTime="5" val="0" special="invincible" abnormalLvl="1" abnormalType="sub_trigger_defence" />
 		</for>
 	</skill>
 	<skill id="5577" levels="1" name="Healer Ability - Heal">
