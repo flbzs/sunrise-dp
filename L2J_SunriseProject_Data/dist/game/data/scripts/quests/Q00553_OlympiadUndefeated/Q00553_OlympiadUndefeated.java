@@ -68,14 +68,31 @@ public class Q00553_OlympiadUndefeated extends Quest
 		else if (event.equalsIgnoreCase("31688-04.html"))
 		{
 			final long count = st.getQuestItemsCount(WIN_CONF_2) + st.getQuestItemsCount(WIN_CONF_5);
-			
 			if (count > 0)
 			{
-				st.giveItems(OLY_CHEST, count);
-				if (count == 2)
+				if ((st.getQuestItemsCount(WIN_CONF_2) > 0) && (st.getQuestItemsCount(WIN_CONF_5) > 0))
 				{
-					st.giveItems(MEDAL_OF_GLORY, 3);
+					st.giveItems(OLY_CHEST, 5);
+					st.giveItems(MEDAL_OF_GLORY, 5);
 				}
+				else
+				{
+					st.giveItems(OLY_CHEST, 1);
+				}
+				
+				st.exitQuest(QuestType.DAILY, true);
+			}
+			else
+			{
+				htmltext = getNoQuestMsg(player);
+			}
+		}
+		else if (event.equalsIgnoreCase("31688-06.html"))
+		{
+			if ((st.getQuestItemsCount(WIN_CONF_2) > 0) && (st.getQuestItemsCount(WIN_CONF_5) > 0) && (st.getQuestItemsCount(WIN_CONF_10) > 0))
+			{
+				st.giveItems(OLY_CHEST, 6);
+				st.giveItems(MEDAL_OF_GLORY, 10);
 				st.exitQuest(QuestType.DAILY, true);
 			}
 			else
@@ -181,8 +198,8 @@ public class Q00553_OlympiadUndefeated extends Quest
 			final long count = st.getQuestItemsCount(WIN_CONF_2) + st.getQuestItemsCount(WIN_CONF_5) + st.getQuestItemsCount(WIN_CONF_10);
 			if ((count >= 3) && st.isCond(2))
 			{
-				st.giveItems(OLY_CHEST, 4);
-				st.giveItems(MEDAL_OF_GLORY, 5);
+				st.giveItems(OLY_CHEST, 6);
+				st.giveItems(MEDAL_OF_GLORY, 10);
 				st.exitQuest(QuestType.DAILY, true);
 				htmltext = "31688-04.html";
 			}
