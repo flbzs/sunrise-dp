@@ -143,7 +143,7 @@ public class CabaleBuffer extends AbstractNpcAI
 			Collection<L2PcInstance> plrs = _npc.getKnownList().getKnownPlayers().values();
 			for (L2PcInstance player : plrs)
 			{
-				if ((player == null) || player.isInvul())
+				if ((player == null) || player.isInvul() || !player.isOnline() || player.isInOfflineMode())
 				{
 					continue;
 				}
