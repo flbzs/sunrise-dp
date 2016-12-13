@@ -10,6 +10,9 @@ import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
 import l2r.gameserver.model.skills.L2Skill;
 
+/**
+ * @author vGodFather
+ */
 public class Q00348_ArrogantSearch extends Quest
 {
 	// MOBS
@@ -713,38 +716,56 @@ public class Q00348_ArrogantSearch extends Quest
 		}
 		
 		int npcId = npc.getId();
-		
-		if (ATTACK_DROPS_24.containsKey(npcId))
+		switch (st.getCond())
 		{
-			int cond = (Integer) ATTACK_DROPS_24.get(npcId)[0];
-			int chance = (Integer) ATTACK_DROPS_24.get(npcId)[3];
-			if ((st.getInt("cond") == cond) && (getRandom(1000) < chance) && (st.getQuestItemsCount((Integer) ATTACK_DROPS_24.get(npcId)[4]) > 0)) // Attack drops are low chance
-			{
-				st.giveItems((Integer) ATTACK_DROPS_24.get(npcId)[1], (Integer) ATTACK_DROPS_24.get(npcId)[2]);
-				st.playSound("ItemSound.quest_itemget");
-				st.takeItems((Integer) ATTACK_DROPS_24.get(npcId)[4], 1);
-				if (cond == 24)
+			case 24:
+				if (ATTACK_DROPS_24.containsKey(npcId))
 				{
-					st.playSound("ItemSound.quest_finish");
-					st.exitQuest(true);
+					int cond = (Integer) ATTACK_DROPS_24.get(npcId)[0];
+					int chance = (Integer) ATTACK_DROPS_24.get(npcId)[3];
+					if (st.getInt("cond") == cond)
+					{
+						if (st.getQuestItemsCount((Integer) ATTACK_DROPS_24.get(npcId)[4]) > 0)
+						{
+							if (getRandom(1000) < chance) // Attack drops are low chance
+							{
+								st.giveItems((Integer) ATTACK_DROPS_24.get(npcId)[1], (Integer) ATTACK_DROPS_24.get(npcId)[2]);
+								st.playSound("ItemSound.quest_itemget");
+								st.takeItems((Integer) ATTACK_DROPS_24.get(npcId)[4], 1);
+								if (cond == 24)
+								{
+									st.playSound("ItemSound.quest_finish");
+									st.exitQuest(true);
+								}
+							}
+						}
+					}
 				}
-			}
-		}
-		else if (ATTACK_DROPS_25.containsKey(npcId))
-		{
-			int cond = (Integer) ATTACK_DROPS_25.get(npcId)[0];
-			int chance = (Integer) ATTACK_DROPS_25.get(npcId)[3];
-			if ((st.getInt("cond") == cond) && (getRandom(1000) < chance) && (st.getQuestItemsCount((Integer) ATTACK_DROPS_25.get(npcId)[4]) > 0)) // Attack drops are low chance
-			{
-				st.giveItems((Integer) ATTACK_DROPS_25.get(npcId)[1], (Integer) ATTACK_DROPS_25.get(npcId)[2]);
-				st.playSound("ItemSound.quest_itemget");
-				st.takeItems((Integer) ATTACK_DROPS_25.get(npcId)[4], 1);
-				if (cond == 24)
+				break;
+			case 25:
+				if (ATTACK_DROPS_25.containsKey(npcId))
 				{
-					st.playSound("ItemSound.quest_finish");
-					st.exitQuest(true);
+					int cond = (Integer) ATTACK_DROPS_25.get(npcId)[0];
+					int chance = (Integer) ATTACK_DROPS_25.get(npcId)[3];
+					if (st.getInt("cond") == cond)
+					{
+						if (st.getQuestItemsCount((Integer) ATTACK_DROPS_25.get(npcId)[4]) > 0)
+						{
+							if ((getRandom(1000) < chance)) // Attack drops are low chance
+							{
+								st.giveItems((Integer) ATTACK_DROPS_25.get(npcId)[1], (Integer) ATTACK_DROPS_25.get(npcId)[2]);
+								st.playSound("ItemSound.quest_itemget");
+								st.takeItems((Integer) ATTACK_DROPS_25.get(npcId)[4], 1);
+								if (cond == 24)
+								{
+									st.playSound("ItemSound.quest_finish");
+									st.exitQuest(true);
+								}
+							}
+						}
+					}
 				}
-			}
+				break;
 		}
 		return null;
 	}
