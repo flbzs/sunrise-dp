@@ -969,6 +969,7 @@
 		<set name="icon" val="icon.skill5760" />
 		<set name="magicLvl" val="73" />
 		<set name="mpConsume" val="74" />
+		<set name="isTriggeredSkill" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="20000" />
 		<set name="targetType" val="SELF" />
@@ -976,17 +977,16 @@
 			<player instanceId="45" /> <!-- Pailaka 73-77 -->
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="seed_of_critical">
+			<effect name="TriggerSkillByAttack" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="seed_of_critical">
 				<mul stat="critRate" val="1.3" />
 				<mul stat="pAtkSpd" val="1.33" />
-			</effect>
-			<effect name="TriggerSkillByAttack" abnormalTime="3600" noicon="1" val="0" abnormalLvl="1">
+				
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="99" />
 				<param skillId="5760" skillLevel="#level" />
 				<param targetType="SELF" />
-				<param allowWeapons="DAGGER,DUALDAGGER" />
+				<param allowWeapons="POLE" />
 			</effect>
 		</for>
 	</skill>
