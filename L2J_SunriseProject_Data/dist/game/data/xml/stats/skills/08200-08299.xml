@@ -857,11 +857,10 @@
 			<player instanceId="45" /> <!-- Pailaka 73-77 -->
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="seed_of_critical">
+			<effect name="TriggerSkillByAttack" abnormalTime="3600" val="0" abnormalType="seed_of_critical">
 				<mul stat="critRate" val="1.3" />
 				<mul stat="pAtkSpd" val="1.33" />
-			</effect>
-			<effect name="TriggerSkillByAttack" abnormalTime="3600" nocicon="1" val="0">
+				
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="99" />
@@ -1033,10 +1032,15 @@
 		</for>
 	</skill>
 	<skill id="8249" levels="1" name="Cancel Critical Hit">
+		<set name="hitTime" val="2500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="DispelBySlot" noicon="1" val="0">
+				<param dispel="SEED_OF_CRITICAL,10" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="8250" levels="2" name="Summon Tigress">
 		<set name="hitTime" val="15000" />
