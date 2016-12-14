@@ -34,6 +34,7 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.L2SkillType;
+import l2r.gameserver.model.skills.targets.L2TargetType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.model.stats.Formulas;
 import l2r.gameserver.network.SystemMessageId;
@@ -181,6 +182,11 @@ public class Continuous implements ISkillHandler
 					if ((summon != null) && (summon != activeChar) && summon.isServitor() && (effects.length > 0))
 					{
 						if (effects[0].canBeStolen() || skill.isHeroSkill() || skill.isStatic())
+						{
+							skill.getEffects(activeChar, target.getSummon(), new Env(shld, ss, sps, bss));
+						}
+						// vGodFather: some extra implementation most of target type one skills must take effect on servitors too
+						else if ((skill.getTargetType() == L2TargetType.ONE) && !skill.isDebuff())
 						{
 							skill.getEffects(activeChar, target.getSummon(), new Env(shld, ss, sps, bss));
 						}
