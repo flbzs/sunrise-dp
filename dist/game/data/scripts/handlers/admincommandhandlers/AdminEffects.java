@@ -130,7 +130,6 @@ public class AdminEffects implements IAdminCommandHandler
 			}
 			activeChar.broadcastUserInfo();
 			command = "";
-			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
 		}
 		else if (command.startsWith("admin_invis"))
 		{

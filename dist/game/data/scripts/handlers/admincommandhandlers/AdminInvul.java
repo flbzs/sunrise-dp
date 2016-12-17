@@ -42,11 +42,9 @@ public class AdminInvul implements IAdminCommandHandler
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
-		
 		if (command.equals("admin_invul"))
 		{
 			handleInvul(activeChar);
-			AdminHtml.showAdminHtml(activeChar, "gm_menu.htm");
 		}
 		if (command.equals("admin_setinvul"))
 		{
