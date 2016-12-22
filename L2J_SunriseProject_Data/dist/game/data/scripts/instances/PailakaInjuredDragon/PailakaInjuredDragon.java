@@ -447,12 +447,15 @@ public class PailakaInjuredDragon extends Quest
 			}
 			return "32509-05.htm";
 		}
-		else if (event.equalsIgnoreCase("latana_animation"))
+		else if (event.equalsIgnoreCase("start_anime"))
 		{
 			_hasDoneAnimation = true;
 			
 			npc.abortAttack();
 			npc.abortCast();
+			npc.setIsInvul(true);
+			npc.setIsImmobilized(true);
+			npc.disableAllSkills();
 			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			player.abortAttack();
 			player.abortCast();
@@ -466,14 +469,76 @@ public class PailakaInjuredDragon extends Quest
 				player.getSummon().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			}
 			
-			player.sendPacket(new SpecialCamera(npc, 600, 0, 0, 1000, 11000, 1, 0, 1, 0, 0));
-			startQuestTimer("latana_animation2", 1000, npc, player);
+			player.sendPacket(new SpecialCamera(npc, 600, 200, 5, 0, 15000, 10000, (-10), 8, 1, 1, 1));
+			startQuestTimer("start_anime2", 2000, npc, player);
 			return null;
 		}
-		else if (event.equalsIgnoreCase("latana_animation2"))
+		else if (event.equalsIgnoreCase("start_anime2"))
+		{
+			player.sendPacket(new SpecialCamera(npc, 400, 200, 5, 4000, 15000, 10000, (-10), 8, 1, 1, 0));
+			startQuestTimer("start_anime3", 4000, npc, player);
+			return null;
+		}
+		else if (event.equalsIgnoreCase("start_anime3"))
+		{
+			player.sendPacket(new SpecialCamera(npc, 300, 195, 4, 1500, 15000, 10000, (-5), 10, 1, 1, 0));
+			startQuestTimer("start_anime4", 1700, npc, player);
+			return null;
+		}
+		else if (event.equalsIgnoreCase("start_anime4"))
+		{
+			player.sendPacket(new SpecialCamera(npc, 130, 2, 5, 0, 15000, 10000, 0, 0, 1, 0, 1));
+			startQuestTimer("start_anime5", 2000, npc, player);
+			return null;
+		}
+		else if (event.equalsIgnoreCase("start_anime5"))
+		{
+			player.sendPacket(new SpecialCamera(npc, 220, 0, 4, 800, 15000, 10000, 5, 10, 1, 0, 0));
+			startQuestTimer("start_anime6", 2000, npc, player);
+			return null;
+		}
+		else if (event.equalsIgnoreCase("start_anime6"))
+		{
+			player.sendPacket(new SpecialCamera(npc, 250, 185, 5, 4000, 15000, 10000, (-5), 10, 1, 1, 0));
+			startQuestTimer("start_anime7", 4000, npc, player);
+			return null;
+		}
+		else if (event.equalsIgnoreCase("start_anime7"))
+		{
+			player.sendPacket(new SpecialCamera(npc, 200, 0, 5, 2000, 15000, 10000, 0, 25, 1, 0, 0));
+			startQuestTimer("start_anime8", 4530, npc, player);
+			return null;
+		}
+		else if (event.equalsIgnoreCase("start_anime8"))
 		{
 			npc.doCast(SkillData.getInstance().getInfo(5759, 1));
+			player.sendPacket(new SpecialCamera(npc, 300, (-3), 5, 3500, 15000, 6000, 0, 6, 1, 0, 0));
+			startQuestTimer("start_anime9", 10000, npc, player);
+			return null;
+		}
+		else if (event.equalsIgnoreCase("start_anime9"))
+		{
+			npc.setIsInvul(false);
+			npc.setIsImmobilized(false);
+			npc.enableAllSkills();
 			npc.getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, player);
+			return null;
+		}
+		else if (event.equalsIgnoreCase("end_anime"))
+		{
+			player.sendPacket(new SpecialCamera(npc, 450, 200, 3, 0, 15000, 10000, (-15), 20, 1, 1, 1));
+			startQuestTimer("end_anime1", 100, npc, player);
+			return null;
+		}
+		else if (event.equalsIgnoreCase("end_anime1"))
+		{
+			player.sendPacket(new SpecialCamera(npc, 350, 200, 5, 5600, 15000, 10000, (-15), 10, 1, 1, 0));
+			startQuestTimer("end_anime2", 5600, npc, player);
+			return null;
+		}
+		else if (event.equalsIgnoreCase("end_anime2"))
+		{
+			player.sendPacket(new SpecialCamera(npc, 360, 200, 5, 1000, 15000, 2000, (-15), 10, 1, 1, 0));
 			return null;
 		}
 		return event;
@@ -581,7 +646,7 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_MEDIUM);
-				checkIfLastInWall(npc);
+				checkIfLastInWall(npc, player);
 				break;
 			case VARKA_SILENOS_WARRIOR:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
@@ -592,7 +657,7 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_PRIEST);
-				checkIfLastInWall(npc);
+				checkIfLastInWall(npc, player);
 				break;
 			case VARKA_ELITE_GUARD:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
@@ -603,7 +668,7 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_SHAMAN);
-				checkIfLastInWall(npc);
+				checkIfLastInWall(npc, player);
 				break;
 			case VARKAS_COMMANDER:
 			case VARKA_SILENOS_OFFICER:
@@ -615,7 +680,7 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_SEER);
-				checkIfLastInWall(npc);
+				checkIfLastInWall(npc, player);
 				break;
 			case VARKA_SILENOS_GREAT_MAGUS:
 			case VARKA_SILENOS_GENERAL:
@@ -627,7 +692,7 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_MAGNUS);
-				checkIfLastInWall(npc);
+				checkIfLastInWall(npc, player);
 				break;
 			case VARKAS_PROPHET:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
@@ -638,7 +703,7 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, DISCIPLE_OF_PROPHET);
-				checkIfLastInWall(npc);
+				checkIfLastInWall(npc, player);
 				break;
 			case VARKA_SILENOS_HEAD_GUARD:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
@@ -649,7 +714,7 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_HEAD_MAGUS);
-				checkIfLastInWall(npc);
+				checkIfLastInWall(npc, player);
 				break;
 			case PROPHET_GUARD:
 				dropHerb(npc, player, HP_HERBS_DROPLIST);
@@ -660,11 +725,12 @@ public class PailakaInjuredDragon extends Quest
 					st.playSound("ItemSound.quest_itemget");
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_GREAT_SEER);
-				checkIfLastInWall(npc);
+				checkIfLastInWall(npc, player);
 				break;
 			case LATANA:
 				st.set("cond", "8");
 				st.playSound("ItemSound.quest_middle");
+				startQuestTimer("end_anime", 1000, npc, player);
 				addSpawn(KETRA_ORC_SUPPORTER2, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0, false, npc.getInstanceId());
 				break;
 			case ANTYLOPE_1:
@@ -683,14 +749,32 @@ public class PailakaInjuredDragon extends Quest
 	
 	private final void spawnMageBehind(L2Npc npc, L2PcInstance player, int mageId)
 	{
-		final double rads = Math.toRadians(Util.convertHeadingToDegree(npc.getSpawn().getHeading()) + 180);
-		final int mageX = (int) (npc.getX() + (150 * Math.cos(rads)));
-		final int mageY = (int) (npc.getY() + (150 * Math.sin(rads)));
-		final L2Npc mageBack = addSpawn(mageId, mageX, mageY, npc.getZ(), npc.getSpawn().getHeading(), false, 0, true, npc.getInstanceId());
-		mageBack.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, player, 1000);
+		if (getRandom(100) < 40)
+		{
+			List<L2Character> mobs = player.getKnownList().getKnownCharactersInRadius(700);
+			for (L2Character npcs : mobs)
+			{
+				switch (npcs.getId())
+				{
+					case VARKA_SILENOS_GREAT_SEER:
+					case VARKA_HEAD_MAGUS:
+					case DISCIPLE_OF_PROPHET:
+					case VARKA_SILENOS_SEER:
+					case VARKA_SILENOS_SHAMAN:
+					case VARKA_SILENOS_MEDIUM:
+						return;
+				}
+			}
+			
+			final double rads = Math.toRadians(Util.convertHeadingToDegree(npc.getSpawn().getHeading()) + 180);
+			final int mageX = (int) (npc.getX() + (150 * Math.cos(rads)));
+			final int mageY = (int) (npc.getY() + (150 * Math.sin(rads)));
+			final L2Npc mageBack = addSpawn(mageId, mageX, mageY, npc.getZ(), npc.getSpawn().getHeading(), false, 0, true, npc.getInstanceId());
+			mageBack.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, player, 1000);
+		}
 	}
 	
-	private final void checkIfLastInWall(L2Npc npc)
+	private final void checkIfLastInWall(L2Npc npc, L2PcInstance player)
 	{
 		final Collection<L2Character> knowns = npc.getKnownList().getKnownCharactersInRadius(700);
 		for (L2Character npcs : knowns)
@@ -804,6 +888,8 @@ public class PailakaInjuredDragon extends Quest
 					}
 					break;
 			}
+			
+			dropItem(npc, player);
 		}
 	}
 	
@@ -821,7 +907,7 @@ public class PailakaInjuredDragon extends Quest
 			case LATANA:
 				if (!_hasDoneAnimation)
 				{
-					startQuestTimer("latana_animation", 600, npc, player);
+					startQuestTimer("start_anime", 600, npc, player);
 					return null;
 				}
 				break;
@@ -843,7 +929,7 @@ public class PailakaInjuredDragon extends Quest
 						return super.onAttack(npc, attacker, damage, isSummon);
 					}
 					
-					startQuestTimer("latana_animation", 600, npc, attacker);
+					startQuestTimer("start_anime", 600, npc, attacker);
 					return null;
 				}
 				break;
