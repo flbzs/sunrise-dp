@@ -2210,4 +2210,18 @@
 		<node X="25804" Y="-15088" />
 		<node X="26324" Y="-15704" />
 	</zone>
+	<!--vGodFather: Fantasy Isle Effect Zone -->
+	<zone name="fanta_isle_effect" type="EffectZone" shape="NPoly" minZ="-4200" maxZ="-1000">
+		<stat name="skillIdLvl" val="22300-1;" /> <!-- Fantasy Isle Magic -->
+		<stat name="chance" val="100" />
+		<!-- stat name="unitTick" val="5" / -->
+		<stat name="initialDelay" val="1000" />
+		<stat name="default_enabled" val="true" />
+		<stat name="reuse" val="120000" />
+		<stat name="showDangerIcon" val="false" />
+		<node X="-86242" Y="-47789" />
+		<node X="-73678" Y="-75359" />
+		<node X="-48903" Y="-75772" />
+		<node X="-46959" Y="-51229" />
+	</zone>
 </list>
