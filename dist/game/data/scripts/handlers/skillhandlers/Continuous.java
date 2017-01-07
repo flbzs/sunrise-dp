@@ -83,8 +83,14 @@ public class Continuous implements ISkillHandler
 		boolean sps = skill.useSpiritShot() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);
 		boolean bss = skill.useSpiritShot() && activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOTS);
 		
-		for (L2Character target : (L2Character[]) targets)
+		for (L2Object obj : targets)
 		{
+			if (!obj.isCharacter())
+			{
+				continue;
+			}
+			
+			L2Character target = (L2Character) obj;
 			byte shld = 0;
 			
 			if (Formulas.calcSkillReflect(target, skill) == Formulas.SKILL_REFLECT_SUCCEED)
