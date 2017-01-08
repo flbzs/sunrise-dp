@@ -20,6 +20,7 @@ package handlers.effecthandlers;
 
 import l2r.gameserver.model.L2Party;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.model.actor.instance.PcInstance.PcFunc;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.stats.Env;
@@ -45,7 +46,7 @@ public class CallParty extends L2Effect
 		{
 			for (L2PcInstance partyMember : party.getMembers())
 			{
-				if (CallPc.checkSummonTargetStatus(partyMember, getEffector().getActingPlayer()))
+				if (PcFunc.checkSummonTargetStatus(partyMember, getEffector().getActingPlayer()))
 				{
 					if (getEffector() != partyMember)
 					{

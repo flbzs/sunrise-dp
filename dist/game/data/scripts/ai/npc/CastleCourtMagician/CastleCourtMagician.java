@@ -18,17 +18,12 @@
  */
 package ai.npc.CastleCourtMagician;
 
-import l2r.Config;
-import l2r.gameserver.SevenSigns;
-import l2r.gameserver.enums.ZoneIdType;
-import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.ClanPrivilege;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.model.actor.instance.PcInstance.PcFunc;
 import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.network.clientpackets.RequestAcquireSkill;
-
-import gr.sr.interf.SunriseEvents;
 
 import ai.npc.AbstractNpcAI;
 
@@ -271,9 +266,9 @@ public final class CastleCourtMagician extends AbstractNpcAI
 				{
 					final L2PcInstance clanLeader = player.getClan().getLeader().getPlayerInstance();
 					
-					if ((clanLeader != null) && (clanLeader.getFirstEffect(CLAN_GATE) != null))
+					if ((clanLeader != null) && clanLeader.isAffectedBySkill(CLAN_GATE))
 					{
-						if (validateGateCondition(clanLeader, player))
+						if (PcFunc.checkSummonTargetStatus(clanLeader, player))
 						{
 							npc.setTarget(player);
 							npc.doCast(DISPLAY_CLAN_GATE.getSkill());
@@ -289,97 +284,6 @@ public final class CastleCourtMagician extends AbstractNpcAI
 			}
 		}
 		return htmltext;
-	}
-	
-	private static final boolean validateGateCondition(L2PcInstance clanLeader, L2PcInstance player)
-	{
-		if (clanLeader.isAlikeDead())
-		{
-			// TODO: Need retail message if there's one.
-			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
-			return false;
-		}
-		
-		if (clanLeader.isInStoreMode())
-		{
-			// TODO: Need retail message if there's one.
-			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
-			return false;
-		}
-		
-		if (clanLeader.isRooted() || clanLeader.isInCombat())
-		{
-			// TODO: Need retail message if there's one.
-			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
-			return false;
-		}
-		
-		if (clanLeader.isInOlympiadMode())
-		{
-			// TODO: Need retail message if there's one.
-			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
-			return false;
-		}
-		
-		if (clanLeader.isFestivalParticipant())
-		{
-			// TODO: Need retail message if there's one.
-			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
-			return false;
-		}
-		
-		if (clanLeader.inObserverMode())
-		{
-			// TODO: Need retail message if there's one.
-			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
-			return false;
-		}
-		
-		if (clanLeader.isInsideZone(ZoneIdType.NO_SUMMON_FRIEND))
-		{
-			// TODO: Need retail message if there's one.
-			player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
-			return false;
-		}
-		
-		if (clanLeader.getInstanceId() > 0)
-		{
-			if (!Config.ALLOW_SUMMON_IN_INSTANCE || InstanceManager.getInstance().getInstance(player.getInstanceId()).isSummonAllowed())
-			{
-				// TODO: Need retail message if there's one.
-				player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
-				return false;
-			}
-		}
-		
-		if (player.isIn7sDungeon())
-		{
-			final int targetCabal = SevenSigns.getInstance().getPlayerCabal(clanLeader.getObjectId());
-			if (SevenSigns.getInstance().isSealValidationPeriod())
-			{
-				if (targetCabal != SevenSigns.getInstance().getCabalHighestScore())
-				{
-					// TODO: Need retail message if there's one.
-					player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
-					return false;
-				}
-			}
-			else
-			{
-				if (targetCabal == SevenSigns.CABAL_NULL)
-				{
-					// TODO: Need retail message if there's one.
-					player.sendMessage("Couldn't teleport to clan leader. The requirements was not meet.");
-					return false;
-				}
-			}
-		}
-		if (SunriseEvents.isInEvent(player) || SunriseEvents.isInEvent(clanLeader))
-		{
-			player.sendMessage("You or your CL is on an event. You cannot teleport!");
-			return false;
-		}
-		return true;
 	}
 	
 	@Override
