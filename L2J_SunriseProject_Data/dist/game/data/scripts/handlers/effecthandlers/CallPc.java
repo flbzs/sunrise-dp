@@ -18,15 +18,10 @@
  */
 package handlers.effecthandlers;
 
-import l2r.Config;
-import l2r.gameserver.SevenSigns;
-import l2r.gameserver.enums.ZoneIdType;
-import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.model.actor.instance.PcInstance.PcFunc;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
-import l2r.gameserver.model.entity.Instance;
-import l2r.gameserver.model.entity.olympiad.OlympiadManager;
 import l2r.gameserver.model.holders.SummonRequestHolder;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.SystemMessageId;
@@ -65,121 +60,27 @@ public class CallPc extends L2Effect
 		
 		L2PcInstance target = getEffected().getActingPlayer();
 		L2PcInstance activeChar = getEffector().getActingPlayer();
-		if (checkSummonTargetStatus(target, activeChar))
-		{
-			if ((_itemId != 0) && (_itemCount != 0))
-			{
-				if (target.getInventory().getInventoryItemCount(_itemId, 0) < _itemCount)
-				{
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_REQUIRED_FOR_SUMMONING);
-					sm.addItemName(_itemId);
-					target.sendPacket(sm);
-					return false;
-				}
-				target.getInventory().destroyItemByItemId("Consume", _itemId, _itemCount, activeChar, target);
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISAPPEARED);
-				sm.addItemName(_itemId);
-				target.sendPacket(sm);
-			}
-			
-			target.addScript(new SummonRequestHolder(activeChar, getSkill()));
-			final ConfirmDlg confirm = new ConfirmDlg(SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId());
-			confirm.addCharName(activeChar);
-			confirm.addZoneName(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-			confirm.addTime(30000);
-			confirm.addRequesterId(activeChar.getObjectId());
-			target.sendPacket(confirm);
-			return true;
-		}
-		return false;
-	}
-	
-	public static boolean checkSummonTargetStatus(L2PcInstance target, L2PcInstance activeChar)
-	{
-		if (target == activeChar)
+		
+		if (!PcFunc.checkSummonTargetStatus(target, activeChar))
 		{
 			return false;
 		}
 		
-		if (target.isAlikeDead())
+		if (target.getScript(SummonRequestHolder.class) != null)
 		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_DEAD_AT_THE_MOMENT_AND_CANNOT_BE_SUMMONED);
-			sm.addPcName(target);
-			activeChar.sendPacket(sm);
-			return false;
-		}
-		
-		if (target.isInStoreMode())
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_CURRENTLY_TRADING_OR_OPERATING_PRIVATE_STORE_AND_CANNOT_BE_SUMMONED);
-			sm.addPcName(target);
-			activeChar.sendPacket(sm);
-			return false;
-		}
-		
-		if (target.isRooted() || target.isInCombat())
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_ENGAGED_IN_COMBAT_AND_CANNOT_BE_SUMMONED);
-			sm.addPcName(target);
-			activeChar.sendPacket(sm);
-			return false;
-		}
-		
-		if (target.isInOlympiadMode() || target.isInOlympiad() || target.inObserverMode() || OlympiadManager.getInstance().isRegistered(target))
-		{
-			activeChar.sendPacket(SystemMessageId.YOU_CANNOT_SUMMON_PLAYERS_WHO_ARE_IN_OLYMPIAD);
-			return false;
-		}
-		
-		if (target.isFestivalParticipant() || target.isFlyingMounted() || target.isCombatFlagEquipped())
-		{
-			activeChar.sendPacket(SystemMessageId.YOUR_TARGET_IS_IN_AN_AREA_WHICH_BLOCKS_SUMMONING);
-			return false;
-		}
-		
-		if (target.inObserverMode())
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_STATE_FORBIDS_SUMMONING);
-			sm.addCharName(target);
-			activeChar.sendPacket(sm);
-			return false;
-		}
-		
-		if (target.isInsideZone(ZoneIdType.NO_SUMMON_FRIEND) || target.isInsideZone(ZoneIdType.JAIL))
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IN_SUMMON_BLOCKING_AREA);
+			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.C1_ALREADY_SUMMONED);
 			sm.addString(target.getName());
 			activeChar.sendPacket(sm);
 			return false;
 		}
 		
-		if (activeChar.getInstanceId() > 0)
-		{
-			Instance summonerInstance = InstanceManager.getInstance().getInstance(activeChar.getInstanceId());
-			if (!Config.ALLOW_SUMMON_IN_INSTANCE || !summonerInstance.isSummonAllowed())
-			{
-				activeChar.sendPacket(SystemMessageId.YOU_MAY_NOT_SUMMON_FROM_YOUR_CURRENT_LOCATION);
-				return false;
-			}
-		}
-		
-		if (activeChar.isIn7sDungeon())
-		{
-			int targetCabal = SevenSigns.getInstance().getPlayerCabal(target.getObjectId());
-			if (SevenSigns.getInstance().isSealValidationPeriod())
-			{
-				if (targetCabal != SevenSigns.getInstance().getCabalHighestScore())
-				{
-					activeChar.sendPacket(SystemMessageId.YOUR_TARGET_IS_IN_AN_AREA_WHICH_BLOCKS_SUMMONING);
-					return false;
-				}
-			}
-			else if (targetCabal == SevenSigns.CABAL_NULL)
-			{
-				activeChar.sendPacket(SystemMessageId.YOUR_TARGET_IS_IN_AN_AREA_WHICH_BLOCKS_SUMMONING);
-				return false;
-			}
-		}
+		target.addScript(new SummonRequestHolder(activeChar, _itemId, _itemCount));
+		final ConfirmDlg confirm = new ConfirmDlg(SystemMessageId.C1_WISHES_TO_SUMMON_YOU_FROM_S2_DO_YOU_ACCEPT.getId());
+		confirm.addCharName(activeChar);
+		confirm.addZoneName(activeChar.getX(), activeChar.getY(), activeChar.getZ());
+		confirm.addTime(30000);
+		confirm.addRequesterId(activeChar.getObjectId());
+		target.sendPacket(confirm);
 		return true;
 	}
 }
