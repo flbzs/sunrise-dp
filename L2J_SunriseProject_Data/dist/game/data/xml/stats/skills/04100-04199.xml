@@ -171,6 +171,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="fly_away" />
+		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="1500" />
 		<set name="coolTime" val="3000" />
 		<set name="element" val="0" /> <!-- Fire -->

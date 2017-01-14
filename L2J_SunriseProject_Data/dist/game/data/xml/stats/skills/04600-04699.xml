@@ -1924,6 +1924,7 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- Valakas Skills -->
 		<!-- Valakas Tail Stomp A from Behind -->
+		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="1000" />
 		<set name="baseCritRate" val="10" />
 		<set name="coolTime" val="1000" />
@@ -1942,6 +1943,7 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- Valakas Skills -->
 		<!-- Valakas Tail Stomp B from Behind -->
+		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="500" />
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="180" />
@@ -1969,6 +1971,7 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="9" />
 		<set name="abnormalType" val="fly_away" />
+		<set name="affectLimit" val="5-12" />
 		<set name="affectRange" val="250" />
 		<set name="baseCritRate" val="10" />
 		<set name="coolTime" val="3000" />
