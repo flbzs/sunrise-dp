@@ -210,7 +210,7 @@ public final class Valakas extends AbstractNpcAI
 				String htmltext = null;
 				if (getStatus() == DEAD)
 				{
-					htmltext = "31385-02.html";
+					htmltext = "31385-01.html";
 				}
 				
 				else if (getStatus() == IN_FIGHT)
