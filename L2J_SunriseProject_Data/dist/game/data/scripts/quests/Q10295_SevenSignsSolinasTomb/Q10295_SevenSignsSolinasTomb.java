@@ -507,23 +507,18 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 		}
 		else if (TombGuardians.contains(npcId))
 		{
-			System.out.println("what????");
 			switch (npcId)
 			{
 				case 18956:
-					System.out.println("ENTER FIRST");
 					st.set("firstgroup", "1");
 					break;
 				case 18957:
-					System.out.println("ENTER SECOND");
 					st.set("secondgroup", "1");
 					break;
 				case 18958:
-					System.out.println("ENTER THIRD");
 					st.set("thirdgroup", "1");
 					break;
 				case 18959:
-					System.out.println("ENTER FOURTH");
 					st.set("fourthgroup", "1");
 					break;
 			}
