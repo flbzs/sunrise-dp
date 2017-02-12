@@ -310,7 +310,7 @@ public class Q00246_PossessorOfAPreciousSoul3 extends Quest
 								}
 								break;
 							case 6:
-								if (st.getQuestItemsCount(RELIC_BOX) == 1)
+								if (st.getQuestItemsCount(RELIC_BOX) >= 1)
 								{
 									htmltext = "31741-11.html";
 								}

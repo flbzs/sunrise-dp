@@ -225,7 +225,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				if ((MALRUK_SUCCUBUS_CLAW_CHANCE >= getRandom(100)) && (st.getQuestItemsCount(MALRUK_SUCCUBUS_CLAW) < 10))
 				{
 					st.giveItems(MALRUK_SUCCUBUS_CLAW, 1);
-					if (st.getQuestItemsCount(MALRUK_SUCCUBUS_CLAW) == 10)
+					if (st.getQuestItemsCount(MALRUK_SUCCUBUS_CLAW) >= 10)
 					{
 						st.setCond(7, true);
 					}
@@ -245,7 +245,7 @@ public class Q00241_PossessorOfAPreciousSoul1 extends Quest
 				if ((CRIMSON_MOSS_CHANCE >= getRandom(100)) && (st.getQuestItemsCount(CRIMSON_MOSS) < 5))
 				{
 					st.giveItems(CRIMSON_MOSS, 1);
-					if (st.getQuestItemsCount(CRIMSON_MOSS) == 5)
+					if (st.getQuestItemsCount(CRIMSON_MOSS) >= 5)
 					{
 						st.setCond(15, true);
 					}
