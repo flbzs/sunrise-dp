@@ -48,6 +48,12 @@ public class EnchantAttribute implements IItemHandler
 			return false;
 		}
 		
+		// vGodFather: missing check allowing spam attribute stones
+		if (activeChar.getActiveEnchantAttrItemId() != L2PcInstance.ID_NONE)
+		{
+			return false;
+		}
+		
 		activeChar.setActiveEnchantAttrItemId(item.getObjectId());
 		activeChar.sendPacket(new ExChooseInventoryAttributeItem(item));
 		return true;
