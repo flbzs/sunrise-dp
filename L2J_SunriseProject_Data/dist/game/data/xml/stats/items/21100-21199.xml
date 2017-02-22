@@ -54,10 +54,15 @@
 	<item id="21107" type="EtcItem" name="Refined Cube - 1 time use">
 		<!-- Description: Double click to create augmenting stones according to type. Cannot be exchanged or dropped. (Disappears after 1 time use.) -->
 		<set name="icon" val="Branchsys2.icon.cube_event_i03" />
+		<set name="default_action" val="SKILL_REDUCE" />
+		<set name="etcitem_type" val="ELIXIR" />
 		<set name="material" val="STEEL" />
+		<set name="immediate_effect" val="true" />
 		<set name="is_tradable" val="false" />
 		<set name="is_dropable" val="false" />
 		<set name="is_stackable" val="true" />
+		<set name="handler" val="ItemSkills" />
+		<set name="item_skill" val="22181-1" />
 	</item>
 	<item id="21108" type="Armor" name="Warm Bear Hat">
 		<!-- Description: Polar bear hat that makes you feel cozy just by looking at it. Uses 2 hair accessory slot(s). -->
