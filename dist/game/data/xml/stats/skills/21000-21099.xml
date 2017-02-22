@@ -1251,11 +1251,18 @@
 		<set name="abnormalType" val="improve_crt_rate_dmg_up" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="3000" />
+		<set name="icon" val="BranchSys.icon.br_watermelon_cap_a_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
+		<set name="magicLvl" val="-1" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="14400000" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="improve_crt_rate_dmg_up">
+				<mul stat="critRate" val="1.3" />
+				<mul stat="critDmg" val="1.35" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="21097" levels="1" name="Summon Friend">
 		<!-- Summons your friend. -->
