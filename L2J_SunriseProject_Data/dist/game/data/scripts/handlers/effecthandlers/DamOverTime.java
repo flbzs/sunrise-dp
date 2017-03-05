@@ -68,6 +68,8 @@ public class DamOverTime extends L2Effect
 		}
 		getEffected().reduceCurrentHpByDOT(damage, getEffector(), getSkill());
 		
+		// vGodFather: trigger function should work only with normal hits close or range
+		// getEffected().notifyDamageReceived(damage, getEffector(), getSkill(), false, true);
 		return true;
 	}
 }

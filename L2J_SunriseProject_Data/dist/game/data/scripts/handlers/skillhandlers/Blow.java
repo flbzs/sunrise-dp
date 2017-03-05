@@ -110,7 +110,9 @@ public class Blow implements ISkillHandler
 				// vGodFather retail message order
 				activeChar.sendDamageMessage(target, (int) damage, false, true, false);
 				target.reduceCurrentHp(damage, activeChar, skill);
-				target.notifyDamageReceived(damage, activeChar, skill, crit, false);
+				
+				// vGodFather: trigger function should work only with normal hits close or range
+				// target.notifyDamageReceived(damage, activeChar, skill, crit, false);
 				
 				if (Config.LOG_GAME_DAMAGE && activeChar.isPlayable() && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
 				{

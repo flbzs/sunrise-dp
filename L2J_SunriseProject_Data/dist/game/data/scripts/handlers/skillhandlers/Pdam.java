@@ -112,7 +112,9 @@ public class Pdam implements ISkillHandler
 				{
 					activeChar.sendDamageMessage(target, damage, false, crit, false);
 					target.reduceCurrentHp(damage, activeChar, skill);
-					target.notifyDamageReceived(damage, activeChar, skill, crit, false);
+					
+					// vGodFather: trigger function should work only with normal hits close or range
+					// target.notifyDamageReceived(damage, activeChar, skill, crit, false);
 					
 					if (Config.LOG_GAME_DAMAGE && activeChar.isPlayable() && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
 					{
