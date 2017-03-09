@@ -114,17 +114,13 @@ public class Mdam implements ISkillHandler
 				if ((reflect & Formulas.SKILL_REFLECT_VENGEANCE) != 0)
 				{
 					activeChar.reduceCurrentHp(damage, target, skill);
-					
-					// vGodFather: trigger function should work only with normal hits close or range
-					// activeChar.notifyDamageReceived(damage, target, skill, mcrit, false);
+					activeChar.notifyDamageReceived(damage, target, skill, mcrit, false);
 				}
 				else
 				{
 					activeChar.sendDamageMessage(target, damage, mcrit, false, false);
 					target.reduceCurrentHp(damage, activeChar, skill);
-					
-					// vGodFather: trigger function should work only with normal hits close or range
-					// target.notifyDamageReceived(damage, activeChar, skill, mcrit, false);
+					target.notifyDamageReceived(damage, activeChar, skill, mcrit, false);
 				}
 				
 				// Logging damage
