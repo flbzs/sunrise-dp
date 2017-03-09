@@ -167,9 +167,7 @@ public final class EnergyAttack extends L2Effect
 		{
 			attacker.sendDamageMessage(target, (int) damage, false, critical, false);
 			target.reduceCurrentHp(damage, attacker, skill);
-			
-			// vGodFather: trigger function should work only with normal hits close or range
-			// target.notifyDamageReceived(damage, attacker, skill, critical, false);
+			target.notifyDamageReceived(damage, attacker, skill, critical, false);
 			
 			if (Config.LOG_GAME_DAMAGE && attacker.isPlayable() && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
 			{
