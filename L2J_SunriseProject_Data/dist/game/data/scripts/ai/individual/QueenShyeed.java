@@ -89,11 +89,12 @@ public class QueenShyeed extends AbstractNpcAI
 		if (remain > 0)
 		{
 			startQuestTimer("respawn", remain, null, null);
+			PC_BUFF_ZONE.setEnabled(true);
 			return;
 		}
+		
 		final L2Npc npc = addSpawn(SHYEED, SHYEED_LOC, false, 0);
 		startQuestTimer("despawn", 10800000, npc, null);
-		PC_BUFF_ZONE.setEnabled(false);
 		MOB_BUFF_ZONE.setEnabled(true);
 		MOB_BUFF_DISPLAY_ZONE.setEnabled(true);
 	}
