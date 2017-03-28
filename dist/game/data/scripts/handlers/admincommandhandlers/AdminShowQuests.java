@@ -30,7 +30,6 @@ import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
-import l2r.gameserver.model.quest.State;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.ExShowQuestMark;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -360,8 +359,7 @@ public class AdminShowQuests implements IAdminCommandHandler
 				case "CREATE":
 				{
 					qs = QuestManager.getInstance().getQuest(Integer.parseInt(val[0])).newQuestState(target);
-					qs.setState(State.STARTED);
-					qs.set("cond", "1");
+					qs.startQuest();
 					target.sendPacket(new QuestList());
 					target.sendPacket(new ExShowQuestMark(qs.getQuest().getId()));
 					val[0] = qs.getQuest().getName();
