@@ -1,6 +1,7 @@
 # Made by Fulminus, version 0.1
 
 import sys
+from l2r.gameserver.enums.audio import Sound
 from l2r.gameserver.model.quest import State
 from l2r.gameserver.model.quest import QuestState
 from l2r.gameserver.model.quest import Quest as JQuest
@@ -198,7 +199,7 @@ class Quest (JQuest) :
           qs = st.getPlayer().getQuestState("255_Tutorial")
           if qs:
              st.showQuestionMark(13)
-             st.playSound("ItemSound.quest_tutorial")
+             st.playSound(Sound.ITEMSOUND_QUEST_TUTORIAL)
         # waiting for 984 B Grade Crystals
         elif cond == 11 and (st.getQuestItemsCount(CRYSTAL_B) < 984) :
           htmltext = "31002-09a.htm"
@@ -268,7 +269,7 @@ class Quest (JQuest) :
         if npcId ==NPC[8] and st.getQuestItemsCount(REIRIAS_SOUL_ORB)==0 :
           htmltext = "31027-01.htm"
           st.giveItems(REIRIAS_SOUL_ORB,1)
-          st.playSound("ItemSound.quest_itemget")
+          st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
       elif cond==2 :
         # Kernon's Chest
         if npcId == NPC[5] and st.getQuestItemsCount(KERMONS_INFERNIUM_SCEPTER)==0 :
@@ -297,7 +298,7 @@ class Quest (JQuest) :
       if player.getActiveWeaponItem() and player.getActiveWeaponItem().getId() == PIPETTE_KNIFE and st.getQuestItemsCount(RED_PIPETTE_KNIFE) == 0:
         st.giveItems(RED_PIPETTE_KNIFE,1)
         st.takeItems(PIPETTE_KNIFE,1)
-        st.playSound("ItemSound.quest_itemget")
+        st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
     return
 
   def onKill(self,npc,player,isPet):
@@ -321,7 +322,7 @@ class Quest (JQuest) :
         stw = PartyQuestMembers[Rnd.get(len(PartyQuestMembers))]
         stw.giveItems(dropId,1)
         stw.takeItems(WHITE_CLOTH,1)
-        stw.playSound("ItemSound.quest_itemget")
+        stw.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
         if stw.getQuestItemsCount(dropId) >= 30:
           stw.set("cond","9")
       else:
@@ -333,7 +334,7 @@ class Quest (JQuest) :
             if value == 8 and st.getQuestItemsCount(dropId) < 30:
               st.giveItems(dropId,1)
               st.takeItems(WHITE_CLOTH,1)
-              st.playSound("ItemSound.quest_itemget")
+              st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET)
               if st.getQuestItemsCount(dropId) >= 30:
                  st.set("cond","9")
     return

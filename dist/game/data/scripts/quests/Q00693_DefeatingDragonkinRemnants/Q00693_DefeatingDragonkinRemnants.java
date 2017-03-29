@@ -18,6 +18,7 @@
  */
 package quests.Q00693_DefeatingDragonkinRemnants;
 
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.L2Party;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -57,7 +58,7 @@ public class Q00693_DefeatingDragonkinRemnants extends Quest
 				st.setState((byte) 1);
 				st.set("cond", "1");
 				st.unset("timeDiff");
-				st.playSound("ItemSound.quest_accept");
+				playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			}
 		}
 		return htmltext;
@@ -104,7 +105,7 @@ public class Q00693_DefeatingDragonkinRemnants extends Quest
 					
 					st.unset("timeDiff");
 					st.unset("cond");
-					st.playSound("ItemSound.quest_finish");
+					playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 					st.exitQuest(true);
 				}
 				else if (party == null)

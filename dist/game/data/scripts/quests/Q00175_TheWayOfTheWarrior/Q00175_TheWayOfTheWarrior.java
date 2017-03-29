@@ -19,6 +19,7 @@
 package quests.Q00175_TheWayOfTheWarrior;
 
 import l2r.gameserver.enums.Race;
+import l2r.gameserver.enums.audio.Voice;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.ItemHolder;
@@ -301,7 +302,7 @@ public final class Q00175_TheWayOfTheWarrior extends Quest
 		final PlayerVariables vars = player.getVariables();
 		if ((player.getLevel() < 25) && !vars.getBoolean("NEWBIE_SHOTS", false))
 		{
-			playSound(player, "tutorial_voice_26");
+			playSound(player, Voice.TUTORIAL_VOICE_026_1000);
 			giveItems(player, SOULSHOTS_NO_GRADE_FOR_ROOKIES);
 			vars.set("NEWBIE_SHOTS", true);
 		}

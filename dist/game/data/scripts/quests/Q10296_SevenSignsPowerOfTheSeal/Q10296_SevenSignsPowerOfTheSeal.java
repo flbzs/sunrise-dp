@@ -14,6 +14,7 @@
  */
 package quests.Q10296_SevenSignsPowerOfTheSeal;
 
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -79,7 +80,7 @@ public class Q10296_SevenSignsPowerOfTheSeal extends Quest
 		{
 			st.set("cond", "1");
 			st.setState(State.STARTED);
-			st.playSound("ItemSound.quest_accept");
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 		}
 		else if (event.equalsIgnoreCase("32784-03.htm"))
 		{
@@ -98,7 +99,7 @@ public class Q10296_SevenSignsPowerOfTheSeal extends Quest
 				st.unset("cond");
 				st.unset("EtisKilled");
 				st.setState(State.COMPLETED);
-				st.playSound("ItemSound.quest_finish");
+				playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 				st.exitQuest(false);
 			}
 			else

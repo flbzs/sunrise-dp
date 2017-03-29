@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import l2r.Config;
+import l2r.gameserver.enums.audio.Music;
 import l2r.gameserver.instancemanager.GrandBossManager;
 import l2r.gameserver.model.StatsSet;
 import l2r.gameserver.model.actor.L2Attackable;
@@ -31,7 +32,6 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.NpcSay;
-import l2r.gameserver.network.serverpackets.PlaySound;
 
 import ai.npc.AbstractNpcAI;
 
@@ -112,7 +112,7 @@ public final class Core extends AbstractNpcAI
 	public void spawnBoss(L2GrandBossInstance npc)
 	{
 		GrandBossManager.getInstance().addBoss(npc);
-		npc.broadcastPacket(new PlaySound(1, "BS01_A", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
+		npc.broadcastPacket(Music.BS01_A_10000.getPacket());
 		// Spawn minions
 		L2Attackable mob;
 		for (int i = 0; i < 5; i++)
@@ -189,7 +189,7 @@ public final class Core extends AbstractNpcAI
 		if (npc.getId() == CORE)
 		{
 			int objId = npc.getObjectId();
-			npc.broadcastPacket(new PlaySound(1, "BS02_D", 1, objId, npc.getX(), npc.getY(), npc.getZ()));
+			npc.broadcastPacket(Music.BS02_D_10000.getPacket());
 			npc.broadcastPacket(new NpcSay(objId, Say2.NPC_ALL, npc.getId(), NpcStringId.A_FATAL_ERROR_HAS_OCCURRED));
 			npc.broadcastPacket(new NpcSay(objId, Say2.NPC_ALL, npc.getId(), NpcStringId.SYSTEM_IS_BEING_SHUT_DOWN));
 			npc.broadcastPacket(new NpcSay(objId, Say2.NPC_ALL, npc.getId(), NpcStringId.DOT_DOT_DOT_DOT_DOT_DOT));

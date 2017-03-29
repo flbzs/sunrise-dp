@@ -23,6 +23,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -185,7 +186,7 @@ public class Q00419_GetAPet extends Quest
 			st.giveItems(WOLF_COLLAR, 1);
 			st.takeItems(ANIMAL_LOVERS_LIST1, -1);
 			st.exitQuest(true);
-			st.playSound("ItemSound.quest_finish");
+			st.playSound(Sound.ITEMSOUND_QUEST_FINISH);
 			htmltext = "Completed.htm";
 		}
 		
@@ -252,7 +253,7 @@ public class Q00419_GetAPet extends Quest
 				{
 					htmltext = "Error: unknown race...";
 					st.exitQuest(true);
-					st.playSound("ItemSound.quest_accept");
+					playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 				}
 			}
 			else if (event.equalsIgnoreCase("disagree"))

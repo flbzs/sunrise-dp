@@ -20,6 +20,7 @@ package quests.Q00694_BreakThroughTheHallOfSuffering;
 
 import java.util.Calendar;
 
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.actor.L2Npc;
@@ -64,7 +65,7 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 		{
 			st.set("cond", "1");
 			st.setState(State.STARTED);
-			st.playSound("ItemSound.quest_accept");
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 		}
 		return htmltext;
 	}
@@ -124,7 +125,7 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 											st1.giveItems(SOE, 1);
 											st1.unset("cond");
 											st1.exitQuest(true);
-											st1.playSound("ItemSound.quest_finish");
+											playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 											htmltext = "32530-00.htm";
 											finishInstance(player);
 										}
@@ -138,7 +139,7 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 											st1.giveItems(SOE, 1);
 											st1.unset("cond");
 											st1.exitQuest(true);
-											st1.playSound("ItemSound.quest_finish");
+											playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 											htmltext = "32530-01.htm";
 											finishInstance(player);
 										}
@@ -152,7 +153,7 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 											st1.giveItems(SOE, 1);
 											st1.unset("cond");
 											st1.exitQuest(true);
-											st1.playSound("ItemSound.quest_finish");
+											playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 											htmltext = "32530-02.htm";
 											finishInstance(player);
 										}
@@ -166,7 +167,7 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 											st1.giveItems(SOE, 1);
 											st1.unset("cond");
 											st1.exitQuest(true);
-											st1.playSound("ItemSound.quest_finish");
+											playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 											htmltext = "32530-03.htm";
 											finishInstance(player);
 										}
@@ -180,7 +181,7 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 											st1.giveItems(SOE, 1);
 											st1.unset("cond");
 											st1.exitQuest(true);
-											st1.playSound("ItemSound.quest_finish");
+											playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 											htmltext = "32530-04.htm";
 											finishInstance(player);
 										}
@@ -194,7 +195,7 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 											st1.giveItems(SOE, 1);
 											st1.unset("cond");
 											st1.exitQuest(true);
-											st1.playSound("ItemSound.quest_finish");
+											playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 											htmltext = "32530-05.htm";
 											finishInstance(player);
 										}
@@ -208,7 +209,7 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 											st1.giveItems(SOE, 1);
 											st1.unset("cond");
 											st1.exitQuest(true);
-											st1.playSound("ItemSound.quest_finish");
+											playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 											htmltext = "32530-06.htm";
 											finishInstance(player);
 										}
@@ -222,7 +223,7 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 											st1.giveItems(SOE, 1);
 											st1.unset("cond");
 											st1.exitQuest(true);
-											st1.playSound("ItemSound.quest_finish");
+											playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 											htmltext = "32530-07.htm";
 											finishInstance(player);
 										}
@@ -236,7 +237,7 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 											st1.giveItems(SOE, 1);
 											st1.unset("cond");
 											st1.exitQuest(true);
-											st1.playSound("ItemSound.quest_finish");
+											playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 											htmltext = "32530-08.htm";
 											finishInstance(player);
 										}
@@ -250,7 +251,7 @@ public final class Q00694_BreakThroughTheHallOfSuffering extends Quest
 											st1.giveItems(SOE, 1);
 											st1.unset("cond");
 											st1.exitQuest(true);
-											st1.playSound("ItemSound.quest_finish");
+											playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 											htmltext = "32530-09.htm";
 											finishInstance(player);
 										}

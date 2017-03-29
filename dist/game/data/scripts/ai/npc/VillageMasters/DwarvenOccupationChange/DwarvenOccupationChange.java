@@ -3,6 +3,7 @@ package ai.npc.VillageMasters.DwarvenOccupationChange;
 import java.util.HashMap;
 import java.util.Map;
 
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.QuestState;
@@ -269,7 +270,7 @@ public class DwarvenOccupationChange extends AbstractNpcAI
 						player.setClassId(new_class);
 						player.setBaseClass(new_class);
 						player.broadcastUserInfo();
-						st.playSound("ItemSound.quest_fanfare_2");
+						playSound(player, Sound.ITEMSOUND_QUEST_FANFARE_2);
 						htmltext = prefix + "08.htm";
 					}
 				}

@@ -25,6 +25,7 @@ import java.util.Map;
 
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.enums.CtrlIntention;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.instancemanager.FortManager;
 import l2r.gameserver.instancemanager.GlobalVariablesManager;
 import l2r.gameserver.instancemanager.InstanceManager;
@@ -632,12 +633,12 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 			{
 				st.setCond(1);
 				st.setState(State.STARTED);
-				st.playSound("ItemSound.quest_accept");
+				playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			}
 		}
 		else if (event.equalsIgnoreCase("CastleWarden-15.htm"))
 		{
-			st.playSound("ItemSound.quest_finish");
+			playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 			st.exitQuest(true);
 		}
 		return htmltext;
@@ -724,7 +725,7 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 				}
 				else if (st.getMemoState() == 3)
 				{
-					st.playSound("ItemSound.quest_finish");
+					playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 					st.giveItems(KNIGHT_EPALUETTE, 159);
 					st.exitQuest(true);
 					htmltext = "CastleWarden-16.htm";

@@ -11,6 +11,7 @@ import l2r.Config;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.enums.MountType;
 import l2r.gameserver.enums.PcCondOverride;
+import l2r.gameserver.enums.audio.Music;
 import l2r.gameserver.instancemanager.GrandBossManager;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.instancemanager.ZoneManager;
@@ -29,7 +30,6 @@ import l2r.gameserver.model.zone.L2ZoneForm;
 import l2r.gameserver.model.zone.L2ZoneType;
 import l2r.gameserver.model.zone.type.L2BossZone;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
@@ -247,7 +247,7 @@ public class Zaken extends AbstractNpcAI
 			count++;
 			teleportPlayer(member, loc, world.getInstanceId(), false);
 			world.addAllowed(member.getObjectId());
-			member.sendPacket(new PlaySound("BS01_A"));
+			playSound(member, Music.BS01_A_10000);
 			savePlayerReenter(member);
 		}
 		
@@ -373,7 +373,7 @@ public class Zaken extends AbstractNpcAI
 					final L2PcInstance player = L2World.getInstance().getPlayer(objectId);
 					if (player != null)
 					{
-						player.sendPacket(new PlaySound("BS02_D"));
+						playSound(player, Music.BS01_D_10000);
 					}
 				}
 			}

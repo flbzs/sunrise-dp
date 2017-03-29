@@ -18,6 +18,7 @@
  */
 package quests.Q00696_ConquertheHallofErosion;
 
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -51,7 +52,7 @@ public final class Q00696_ConquertheHallofErosion extends Quest
 		{
 			st.set("cond", "1");
 			st.setState(State.STARTED);
-			st.playSound("ItemSound.quest_accept");
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 		}
 		return htmltext;
 	}
@@ -96,7 +97,7 @@ public final class Q00696_ConquertheHallofErosion extends Quest
 						st.giveItems(MARK_OF_KEUCEREUS_STAGE_2, 1);
 					}
 					htmltext = "32603-04.htm";
-					st.playSound("ItemSound.quest_finish");
+					playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 					st.exitQuest(true);
 				}
 				else

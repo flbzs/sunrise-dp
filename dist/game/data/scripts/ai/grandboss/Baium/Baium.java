@@ -22,6 +22,7 @@ import l2r.Config;
 import l2r.gameserver.enums.CategoryType;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.enums.MountType;
+import l2r.gameserver.enums.audio.Music;
 import l2r.gameserver.instancemanager.GrandBossManager;
 import l2r.gameserver.instancemanager.ZoneManager;
 import l2r.gameserver.model.Location;
@@ -40,7 +41,6 @@ import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.Earthquake;
 import l2r.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.gameserver.util.Util;
 
@@ -231,7 +231,7 @@ public final class Baium extends AbstractNpcAI
 				if (npc != null)
 				{
 					zone.broadcastPacket(new Earthquake(npc.getX(), npc.getY(), npc.getZ(), 40, 10));
-					zone.broadcastPacket(new PlaySound("BS02_A"));
+					zone.broadcastPacket(Music.BS02_A_6000.getPacket());
 				}
 				break;
 			}
@@ -559,7 +559,7 @@ public final class Baium extends AbstractNpcAI
 		{
 			setStatus(DEAD);
 			addSpawn(TELE_CUBE, TELEPORT_CUBIC_LOC, false, 900000);
-			zone.broadcastPacket(new PlaySound("BS01_D"));
+			zone.broadcastPacket(Music.BS01_D_10000.getPacket());
 			long respawnTime = (Config.BAIUM_SPAWN_INTERVAL + getRandom(-Config.BAIUM_SPAWN_RANDOM, Config.BAIUM_SPAWN_RANDOM)) * 3600000;
 			setRespawn(respawnTime);
 			startQuestTimer("CLEAR_STATUS", respawnTime, null, null);

@@ -25,6 +25,7 @@ import l2r.Config;
 import l2r.gameserver.GeoData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.enums.MountType;
+import l2r.gameserver.enums.audio.Music;
 import l2r.gameserver.instancemanager.GrandBossManager;
 import l2r.gameserver.instancemanager.ZoneManager;
 import l2r.gameserver.model.L2Party;
@@ -43,7 +44,6 @@ import l2r.gameserver.model.zone.type.L2NoRestartZone;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.gameserver.network.serverpackets.SpecialCamera;
 import l2r.gameserver.network.serverpackets.SystemMessage;
@@ -298,7 +298,7 @@ public final class Valakas extends AbstractNpcAI
 				_valakas.teleToLocation(VALAKAS_SPAWN);
 				setStatus(IN_FIGHT);
 				_lastAttack = System.currentTimeMillis();
-				zone.broadcastPacket(new PlaySound("BS03_A"));
+				zone.broadcastPacket(Music.BS03_A_10000.getPacket());
 				zone.broadcastPacket(new SocialAction(_valakas.getObjectId(), 3));
 				startQuestTimer("CAMERA_1", 1700, _valakas, null);
 				break;
@@ -629,7 +629,7 @@ public final class Valakas extends AbstractNpcAI
 		if (zone.isCharacterInZone(killer))
 		{
 			zone.broadcastPacket(new SpecialCamera(_valakas, 2000, 130, -1, 0, 15000, 10000, 0, 0, 1, 1, 0));
-			zone.broadcastPacket(new PlaySound("B03_D"));
+			zone.broadcastPacket(Music.B03_D_10000.getPacket());
 			startQuestTimer("CAMERA_10", 500, _valakas, null);
 			// Calculate Min and Max respawn times randomly.
 			long respawnTime = Config.VALAKAS_SPAWN_INTERVAL + getRandom(-Config.VALAKAS_SPAWN_RANDOM, Config.VALAKAS_SPAWN_RANDOM);

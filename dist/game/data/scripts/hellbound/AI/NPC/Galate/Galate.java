@@ -2,12 +2,14 @@ package hellbound.AI.NPC.Galate;
 
 import l2r.gameserver.data.SpawnTable;
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.audio.IAudio;
+import l2r.gameserver.enums.audio.Music;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.QuestState;
-import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.util.Broadcast;
 
 import ai.npc.AbstractNpcAI;
@@ -184,28 +186,28 @@ public class Galate extends AbstractNpcAI
 		{
 			if (!checked && (points >= 20000) && (points < 40000))
 			{
-				spawnNewWarpgate("secondWarpgate", BLACKBLUEWARPGATE, BLUEWARPGATE, "Warpgate is now 20% energized!", new PlaySound("ItemSound.quest_finish"), 0);
+				spawnNewWarpgate("secondWarpgate", BLACKBLUEWARPGATE, BLUEWARPGATE, "Warpgate is now 20% energized!", Sound.ITEMSOUND_QUEST_FINISH, 0);
 			}
 		}
 		else if (event.equalsIgnoreCase("thirdWarpgate"))
 		{
 			if (!checked && (points >= 40000) && (points < 60000))
 			{
-				spawnNewWarpgate("thirdWarpgate", PURPLEWARPGATE, BLACKBLUEWARPGATE, "Warpgate is now 40% energized!", new PlaySound("ItemSound.quest_finish"), 0);
+				spawnNewWarpgate("thirdWarpgate", PURPLEWARPGATE, BLACKBLUEWARPGATE, "Warpgate is now 40% energized!", Sound.ITEMSOUND_QUEST_FINISH, 0);
 			}
 		}
 		else if (event.equalsIgnoreCase("fourthWarpgate"))
 		{
 			if (!checked && (points >= 60000) && (points < 80000))
 			{
-				spawnNewWarpgate("fourthWarpgate", YELLOWWARPGATE, PURPLEWARPGATE, "Warpgate is now 60% energized!", new PlaySound("ItemSound.quest_finish"), 0);
+				spawnNewWarpgate("fourthWarpgate", YELLOWWARPGATE, PURPLEWARPGATE, "Warpgate is now 60% energized!", Sound.ITEMSOUND_QUEST_FINISH, 0);
 			}
 		}
 		else if (event.equalsIgnoreCase("fifthWarpgate"))
 		{
 			if (!checked && (points >= 80000) && (points < 100000))
 			{
-				spawnNewWarpgate("fifthWarpgate", GREENWARPGATEVERDE, YELLOWWARPGATE, "Warpgate is now 80% energized!", new PlaySound("ItemSound.quest_finish"), FINALWARPGATE);
+				spawnNewWarpgate("fifthWarpgate", GREENWARPGATEVERDE, YELLOWWARPGATE, "Warpgate is now 80% energized!", Sound.ITEMSOUND_QUEST_FINISH, FINALWARPGATE);
 			}
 		}
 		else if (event.equalsIgnoreCase("lastWarpgate"))
@@ -213,7 +215,7 @@ public class Galate extends AbstractNpcAI
 			if (!checked && (points >= 100000))
 			{
 				checked = true;
-				spawnNewWarpgate("lastWarpgate", FINALWARPGATE, GREENWARPGATEVERDE, "Warpgate is now 100% energized!", new PlaySound(1, "ssq_dawn_01", 0, 0, 0, 0, 0), 0);
+				spawnNewWarpgate("lastWarpgate", FINALWARPGATE, GREENWARPGATEVERDE, "Warpgate is now 100% energized!", Music.SSQ_Dawn_01, 0);
 			}
 		}
 		else if (event.equalsIgnoreCase("cwp"))
@@ -286,10 +288,10 @@ public class Galate extends AbstractNpcAI
 	 * @param warpgateToBeSpawned
 	 * @param deleteOldWarpgate
 	 * @param message
-	 * @param playSound
+	 * @param itemsoundQuestFinish
 	 * @param deleteLastWarpgate
 	 */
-	private void spawnNewWarpgate(String cancelQuestTimerString, int warpgateToBeSpawned, int deleteOldWarpgate, String message, PlaySound playSound, int deleteLastWarpgate)
+	private void spawnNewWarpgate(String cancelQuestTimerString, int warpgateToBeSpawned, int deleteOldWarpgate, String message, IAudio itemsoundQuestFinish, int deleteLastWarpgate)
 	{
 		cancelQuestTimer(cancelQuestTimerString, null, null);
 		addWarpgateSpawns(warpgateToBeSpawned);
@@ -304,9 +306,9 @@ public class Galate extends AbstractNpcAI
 			Broadcast.toAllOnlinePlayers(message);
 		}
 		
-		if (playSound != null)
+		if (itemsoundQuestFinish != null)
 		{
-			Broadcast.toAllOnlinePlayers(playSound);
+			Broadcast.toAllOnlinePlayers(itemsoundQuestFinish.getPacket());
 		}
 		
 		if (deleteLastWarpgate != 0)

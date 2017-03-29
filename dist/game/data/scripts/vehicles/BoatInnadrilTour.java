@@ -19,13 +19,13 @@
 package vehicles;
 
 import l2r.gameserver.ThreadPoolManager;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.instancemanager.BoatManager;
 import l2r.gameserver.model.VehiclePathPoint;
 import l2r.gameserver.model.actor.instance.L2BoatInstance;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.CreatureSay;
-import l2r.gameserver.network.serverpackets.PlaySound;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -91,8 +91,6 @@ public class BoatInnadrilTour implements Runnable
 	private final CreatureSay ARRIVAL5;
 	private final CreatureSay ARRIVAL1;
 	
-	private final PlaySound INNADRIL_SOUND;
-	
 	public BoatInnadrilTour(L2BoatInstance boat)
 	{
 		_boat = boat;
@@ -108,8 +106,6 @@ public class BoatInnadrilTour implements Runnable
 		ARRIVAL10 = new CreatureSay(0, Say2.BOAT, 801, SystemMessageId.INNADRIL_BOAT_ARRIVE_10_MINUTES);
 		ARRIVAL5 = new CreatureSay(0, Say2.BOAT, 801, SystemMessageId.INNADRIL_BOAT_ARRIVE_5_MINUTES);
 		ARRIVAL1 = new CreatureSay(0, Say2.BOAT, 801, SystemMessageId.INNADRIL_BOAT_ARRIVE_1_MINUTE);
-		
-		INNADRIL_SOUND = new PlaySound(0, "itemsound.ship_arrival_departure", 1, _boat.getObjectId(), DOCK.getX(), DOCK.getY(), DOCK.getZ());
 	}
 	
 	@Override
@@ -132,7 +128,7 @@ public class BoatInnadrilTour implements Runnable
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 20000);
 					break;
 				case 3:
-					BoatManager.getInstance().broadcastPackets(DOCK, DOCK, LEAVING_INNADRIL, INNADRIL_SOUND);
+					BoatManager.getInstance().broadcastPackets(DOCK, DOCK, LEAVING_INNADRIL, Sound.ITEMSOUND_SHIP_ARRIVAL_DEPARTURE.withObject(_boat));
 					_boat.payForRide(0, 1, 107092, 219098, -3952);
 					_boat.executePath(TOUR);
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 650000);
@@ -157,7 +153,7 @@ public class BoatInnadrilTour implements Runnable
 					BoatManager.getInstance().broadcastPacket(DOCK, DOCK, ARRIVAL1);
 					break;
 				case 9:
-					BoatManager.getInstance().broadcastPackets(DOCK, DOCK, ARRIVED_AT_INNADRIL, INNADRIL_SOUND);
+					BoatManager.getInstance().broadcastPackets(DOCK, DOCK, ARRIVED_AT_INNADRIL, Sound.ITEMSOUND_SHIP_ARRIVAL_DEPARTURE.withObject(_boat));
 					ThreadPoolManager.getInstance().scheduleGeneral(this, 300000);
 					break;
 			}

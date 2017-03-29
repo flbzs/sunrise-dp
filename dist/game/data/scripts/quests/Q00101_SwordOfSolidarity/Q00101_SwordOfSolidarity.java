@@ -20,6 +20,7 @@ package quests.Q00101_SwordOfSolidarity;
 
 import l2r.gameserver.enums.QuestSound;
 import l2r.gameserver.enums.Race;
+import l2r.gameserver.enums.audio.Voice;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
@@ -115,7 +116,7 @@ public class Q00101_SwordOfSolidarity extends Quest
 						if ((player.getLevel() < 25) && (player.getClassId() == ClassId.fighter))
 						{
 							st.rewardItems(SOULSHOT_NO_GRADE, 7000);
-							st.playTutorialVoice("tutorial_voice_026");
+							playSound(player, Voice.TUTORIAL_VOICE_026_1000);
 						}
 						for (ItemHolder reward : REWARDS)
 						{

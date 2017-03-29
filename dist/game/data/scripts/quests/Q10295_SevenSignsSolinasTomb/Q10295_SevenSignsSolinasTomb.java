@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import l2r.gameserver.ThreadPoolManager;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2MonsterInstance;
@@ -109,7 +110,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 		{
 			st.set("cond", "1");
 			st.setState((byte) 1);
-			st.playSound("ItemSound.quest_accept");
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 		}
 		else
 		{
@@ -194,7 +195,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					st.giveItems(StaffofBlessing, 1L);
 					progress++;
 					st.set("progress", String.valueOf(progress));
-					st.playSound("ItemSound.quest_middle");
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					checkDoors(player, progress);
 				}
 				else
@@ -209,7 +210,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					st.giveItems(ScrollofAbstinence, 1L);
 					progress++;
 					st.set("progress", String.valueOf(progress));
-					st.playSound("ItemSound.quest_middle");
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					checkDoors(player, progress);
 				}
 				else
@@ -224,7 +225,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					st.giveItems(SwordofHolySpirit, 1L);
 					progress++;
 					st.set("progress", String.valueOf(progress));
-					st.playSound("ItemSound.quest_middle");
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					checkDoors(player, progress);
 				}
 				else
@@ -239,7 +240,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					st.giveItems(ShieldofSacrifice, 1L);
 					progress++;
 					st.set("progress", String.valueOf(progress));
-					st.playSound("ItemSound.quest_middle");
+					playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					checkDoors(player, progress);
 				}
 				else
@@ -298,13 +299,13 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					if (event.equalsIgnoreCase("solina_q10295_4.htm"))
 					{
 						st.set("cond", "2");
-						st.playSound("ItemSound.quest_middle");
+						playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 						player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_ELYSS_NARRATION);
 					}
 					else if (event.equalsIgnoreCase("solina_q10295_8.htm"))
 					{
 						st.set("cond", "3");
-						st.playSound("ItemSound.quest_middle");
+						playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 				}
 			}
@@ -386,7 +387,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 					st.unset("fourthgroup");
 					st.unset("entermovie");
 					st.exitQuest(false);
-					st.playSound("ItemSound.quest_finish");
+					playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 				}
 				else
 				{
@@ -497,7 +498,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 			int solina = st.getInt("solina");
 			solina++;
 			st.set("solina", String.valueOf(solina));
-			st.playSound("ItemSound.quest_middle");
+			playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 			if (solina >= 4)
 			{
 				player.showQuestMovie(ExStartScenePlayer.SCENE_SSQ2_SOLINA_TOMB_CLOSING);
@@ -526,7 +527,7 @@ public class Q10295_SevenSignsSolinasTomb extends Quest
 			int tomb = st.getInt("tomb");
 			tomb++;
 			st.set("tomb", String.valueOf(tomb));
-			st.playSound("ItemSound.quest_middle");
+			playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 			if (tomb >= 4)
 			{
 				openDoor(21100018, player.getInstanceId());

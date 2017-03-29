@@ -3,6 +3,7 @@ package quests.Q00348_ArrogantSearch;
 import java.util.HashMap;
 import java.util.Map;
 
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -436,7 +437,7 @@ public class Q00348_ArrogantSearch extends Quest
 			htmltext = "30864-10c.htm";
 			st.takeItems(WHITE_FABRIC_1, -1);
 			st.takeItems(BLOODED_FABRIC, -1);
-			st.playSound("ItemSound.quest_finish");
+			playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 			st.exitQuest(true);
 		}
 		return htmltext;
@@ -572,7 +573,7 @@ public class Q00348_ArrogantSearch extends Quest
 				htmltext = "30864-09b.htm";
 				st.giveItems(ADENA, 5000);
 				st.takeItems(BLOODED_FABRIC, -1);
-				st.playSound("ItemSound.quest_finish");
+				playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 				st.exitQuest(true);
 			}
 			else if (cond == 26)
@@ -604,7 +605,7 @@ public class Q00348_ArrogantSearch extends Quest
 				htmltext = "30864-09b.htm";
 				st.giveItems(ADENA, 5000);
 				st.takeItems(BLOODED_FABRIC, -1);
-				st.playSound("ItemSound.quest_finish");
+				playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 				st.exitQuest(true);
 			}
 			else if (cond == 29)
@@ -730,11 +731,11 @@ public class Q00348_ArrogantSearch extends Quest
 							if (getRandom(1000) < chance) // Attack drops are low chance
 							{
 								st.giveItems((Integer) ATTACK_DROPS_24.get(npcId)[1], (Integer) ATTACK_DROPS_24.get(npcId)[2]);
-								st.playSound("ItemSound.quest_itemget");
+								playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 								st.takeItems((Integer) ATTACK_DROPS_24.get(npcId)[4], 1);
 								if (cond == 24)
 								{
-									st.playSound("ItemSound.quest_finish");
+									playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 									st.exitQuest(true);
 								}
 							}
@@ -754,11 +755,11 @@ public class Q00348_ArrogantSearch extends Quest
 							if ((getRandom(1000) < chance)) // Attack drops are low chance
 							{
 								st.giveItems((Integer) ATTACK_DROPS_25.get(npcId)[1], (Integer) ATTACK_DROPS_25.get(npcId)[2]);
-								st.playSound("ItemSound.quest_itemget");
+								playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 								st.takeItems((Integer) ATTACK_DROPS_25.get(npcId)[4], 1);
 								if (cond == 24)
 								{
-									st.playSound("ItemSound.quest_finish");
+									playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 									st.exitQuest(true);
 								}
 							}
@@ -793,7 +794,7 @@ public class Q00348_ArrogantSearch extends Quest
 			if ((st.getInt("cond") == cond) && (st.getQuestItemsCount((Integer) DROPS.get(npcId)[1]) < (Integer) DROPS.get(npcId)[2]) && (getRandom(100) < (Integer) DROPS.get(npcId)[3]) && (((Integer) DROPS.get(npcId)[4] == 0) || (st.getQuestItemsCount((Integer) DROPS.get(npcId)[4]) > 0)))
 			{
 				st.giveItems((Integer) DROPS.get(npcId)[1], 1);
-				st.playSound("ItemSound.quest_itemget");
+				playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 				if ((Integer) DROPS.get(npcId)[4] != 0)
 				{
 					st.takeItems((Integer) DROPS.get(npcId)[4], 1);
@@ -802,7 +803,7 @@ public class Q00348_ArrogantSearch extends Quest
 			
 			if (cond == 24)
 			{
-				st.playSound("ItemSound.quest_finish");
+				playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 				st.exitQuest(true);
 			}
 		}
@@ -813,7 +814,7 @@ public class Q00348_ArrogantSearch extends Quest
 			if ((st.getInt("cond") == cond) && (st.getQuestItemsCount((Integer) DROPS_29.get(npcId)[1]) < (Integer) DROPS.get(npcId)[2]) && (getRandom(100) < (Integer) DROPS.get(npcId)[3]) && (((Integer) DROPS.get(npcId)[4] == 0) || (st.getQuestItemsCount((Integer) DROPS.get(npcId)[4]) > 0)))
 			{
 				st.giveItems((Integer) DROPS_29.get(npcId)[1], 1);
-				st.playSound("ItemSound.quest_itemget");
+				playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 				if ((Integer) DROPS_29.get(npcId)[4] != 0)
 				{
 					st.takeItems((Integer) DROPS_29.get(npcId)[4], 1);

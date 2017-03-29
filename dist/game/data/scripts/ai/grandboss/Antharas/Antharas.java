@@ -25,6 +25,7 @@ import java.util.Map;
 import l2r.Config;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.enums.MountType;
+import l2r.gameserver.enums.audio.Music;
 import l2r.gameserver.instancemanager.GrandBossManager;
 import l2r.gameserver.instancemanager.ZoneManager;
 import l2r.gameserver.model.L2Party;
@@ -42,7 +43,6 @@ import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.Earthquake;
 import l2r.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.gameserver.network.serverpackets.SpecialCamera;
 import l2r.gameserver.network.serverpackets.SystemMessage;
@@ -291,7 +291,7 @@ public final class Antharas extends AbstractNpcAI
 				_antharas.teleToLocation(181323, 114850, -7623, 32542);
 				setStatus(IN_FIGHT);
 				_lastAttack = System.currentTimeMillis();
-				zone.broadcastPacket(new PlaySound("BS02_A"));
+				zone.broadcastPacket(Music.BS02_A_10000.getPacket());
 				startQuestTimer("CAMERA_1", 23, _antharas, null);
 				break;
 			}
@@ -701,7 +701,7 @@ public final class Antharas extends AbstractNpcAI
 				_antharas = null;
 				notifyEvent("DESPAWN_MINIONS", null, null);
 				zone.broadcastPacket(new SpecialCamera(npc, 1200, 20, -10, 0, 10000, 13000, 0, 0, 0, 0, 0));
-				zone.broadcastPacket(new PlaySound("BS01_D"));
+				zone.broadcastPacket(Music.BS01_D_10000.getPacket());
 				addSpawn(CUBE, 177615, 114941, -7709, 0, false, 900000);
 				// Calculate Min and Max respawn times randomly.
 				long respawnTime = Config.ANTHARAS_SPAWN_INTERVAL + getRandom(-Config.ANTHARAS_SPAWN_RANDOM, Config.ANTHARAS_SPAWN_RANDOM);

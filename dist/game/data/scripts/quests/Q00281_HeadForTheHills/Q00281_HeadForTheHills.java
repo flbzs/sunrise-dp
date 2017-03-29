@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.audio.Voice;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.ItemHolder;
@@ -205,12 +206,12 @@ public final class Q00281_HeadForTheHills extends Quest
 			if (player.isMageClass())
 			{
 				giveItems(player, SPIRITSHOTS_NO_GRADE_FOR_ROOKIES);
-				playSound(player, "tutorial_voice_27");
+				playSound(player, Voice.TUTORIAL_VOICE_027_1000);
 			}
 			else
 			{
 				giveItems(player, SOULSHOTS_NO_GRADE_FOR_ROOKIES);
-				playSound(player, "tutorial_voice_26");
+				playSound(player, Voice.TUTORIAL_VOICE_026_1000);
 			}
 			vars.set("NEWBIE_SHOTS", true);
 		}

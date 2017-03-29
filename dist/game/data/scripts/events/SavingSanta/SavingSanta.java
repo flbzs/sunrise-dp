@@ -29,6 +29,7 @@ import l2r.gameserver.data.xml.impl.ItemData;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.enums.ZoneIdType;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.Location;
@@ -41,7 +42,6 @@ import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.ActionFailed;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
 import l2r.gameserver.network.serverpackets.NpcSay;
-import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.script.DateRange;
@@ -675,7 +675,7 @@ public class SavingSanta extends AbstractNpcAI
 			}
 			else if (event.equalsIgnoreCase("buyTree"))
 			{
-				player.sendPacket(new PlaySound("ItemSound.quest_middle"));
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 				for (ItemHolder item : REQUIRED_ITEMS)
 				{
 					if (player.getInventory().getInventoryItemCount(item.getId(), -1) < item.getCount())
@@ -722,7 +722,7 @@ public class SavingSanta extends AbstractNpcAI
 			}
 			else if (event.equalsIgnoreCase("buySpecialTree") && !SAVING_SANTA)
 			{
-				player.sendPacket(new PlaySound("ItemSound.quest_middle"));
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 				if (player.getInventory().getInventoryItemCount(X_MAS_TREE1, -1) < 10)
 				{
 					player.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS);
@@ -760,7 +760,7 @@ public class SavingSanta extends AbstractNpcAI
 			}
 			else if (event.equalsIgnoreCase("buyHat"))
 			{
-				player.sendPacket(new PlaySound("ItemSound.quest_middle"));
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 				if (player.getInventory().getInventoryItemCount(X_MAS_TREE1, -1) < 10)
 				{
 					player.sendPacket(SystemMessageId.NOT_ENOUGH_ITEMS);
@@ -801,7 +801,7 @@ public class SavingSanta extends AbstractNpcAI
 			}
 			else if (event.equalsIgnoreCase("buySavingHat") && SAVING_SANTA)
 			{
-				player.sendPacket(new PlaySound("ItemSound.quest_middle"));
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 				if (player.getInventory().getAdena() < 50000)
 				{
 					return "";

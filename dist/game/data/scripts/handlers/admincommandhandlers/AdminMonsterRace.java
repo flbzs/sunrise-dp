@@ -20,6 +20,8 @@ package handlers.admincommandhandlers;
 
 import l2r.gameserver.MonsterRace;
 import l2r.gameserver.ThreadPoolManager;
+import l2r.gameserver.enums.audio.Music;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.handler.IAdminCommandHandler;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.network.SystemMessageId;
@@ -101,10 +103,10 @@ public class AdminMonsterRace implements IAdminCommandHandler
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.MONSRACE_RACE_START);
 			sm.addInt(0);
 			activeChar.sendPacket(sm);
-			PlaySound SRace = new PlaySound(1, "S_Race", 0, 0, 0, 0, 0);
+			PlaySound SRace = Music.S_RACE.getPacket();
 			activeChar.sendPacket(SRace);
 			activeChar.broadcastPacket(SRace);
-			PlaySound SRace2 = new PlaySound(0, "ItemSound2.race_start", 1, 121209259, 12125, 182487, -3559);
+			PlaySound SRace2 = Sound.ITEMSOUND2_RACE_START.getPacket();
 			activeChar.sendPacket(SRace2);
 			activeChar.broadcastPacket(SRace2);
 			MonRaceInfo spk = new MonRaceInfo(codes[state][0], codes[state][1], race.getMonsters(), race.getSpeeds());
