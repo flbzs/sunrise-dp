@@ -28,6 +28,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.enums.CtrlEvent;
 import l2r.gameserver.enums.CtrlIntention;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
@@ -357,7 +358,7 @@ public class PailakaInjuredDragon extends Quest
 			{
 				st.set("cond", "1");
 				st.setState(State.STARTED);
-				st.playSound("ItemSound.quest_accept");
+				playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			}
 		}
 		else if (event.equalsIgnoreCase("32499-05.htm"))
@@ -366,7 +367,7 @@ public class PailakaInjuredDragon extends Quest
 			{
 				st.set("cond", "2");
 				st.setMemoState(2);
-				st.playSound("ItemSound.quest_accept"); // double quest accept ???
+				playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT); // double quest accept ???
 			}
 		}
 		else if (event.equalsIgnoreCase("32502-05.htm"))
@@ -377,7 +378,7 @@ public class PailakaInjuredDragon extends Quest
 				if (!st.hasQuestItems(SPEAR))
 				{
 					st.giveItems(SPEAR, 1);
-					st.playSound("ItemSound.quest_itemget");
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}
@@ -393,7 +394,7 @@ public class PailakaInjuredDragon extends Quest
 					st.takeItems(SPEAR, 1);
 					st.takeItems(STAGE1, 1);
 					st.giveItems(ENCHSPEAR, 1);
-					st.playSound("ItemSound.quest_itemget");
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 					return "32509-02.htm";
 				case 5:
 					return "32509-01.htm";
@@ -402,7 +403,7 @@ public class PailakaInjuredDragon extends Quest
 					st.takeItems(ENCHSPEAR, 1);
 					st.takeItems(STAGE2, 1);
 					st.giveItems(LASTSPEAR, 1);
-					st.playSound("ItemSound.quest_itemget");
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 					
 					addSpawn(LATANA, 105732, -41787, -1782, 35742, false, 0, false, npc.getInstanceId());
 					return "32509-03.htm";
@@ -422,7 +423,7 @@ public class PailakaInjuredDragon extends Quest
 		else if (event.equalsIgnoreCase("32512-02.htm"))
 		{
 			st.unset("cond");
-			st.playSound("ItemSound.quest_finish");
+			playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 			st.exitQuest(false);
 			
 			Instance inst = InstanceManager.getInstance().getInstance(npc.getInstanceId());
@@ -643,7 +644,7 @@ public class PailakaInjuredDragon extends Quest
 				{
 					st.set("cond", "4");
 					st.giveItems(STAGE1, 1);
-					st.playSound("ItemSound.quest_itemget");
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_MEDIUM);
 				checkIfLastInWall(npc, player);
@@ -654,7 +655,7 @@ public class PailakaInjuredDragon extends Quest
 				{
 					st.set("cond", "4");
 					st.giveItems(STAGE1, 1);
-					st.playSound("ItemSound.quest_itemget");
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_PRIEST);
 				checkIfLastInWall(npc, player);
@@ -665,7 +666,7 @@ public class PailakaInjuredDragon extends Quest
 				{
 					st.set("cond", "4");
 					st.giveItems(STAGE1, 1);
-					st.playSound("ItemSound.quest_itemget");
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_SHAMAN);
 				checkIfLastInWall(npc, player);
@@ -677,7 +678,7 @@ public class PailakaInjuredDragon extends Quest
 				{
 					st.set("cond", "4");
 					st.giveItems(STAGE1, 1);
-					st.playSound("ItemSound.quest_itemget");
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_SEER);
 				checkIfLastInWall(npc, player);
@@ -689,7 +690,7 @@ public class PailakaInjuredDragon extends Quest
 				{
 					st.set("cond", "6");
 					st.giveItems(STAGE2, 1);
-					st.playSound("ItemSound.quest_itemget");
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_MAGNUS);
 				checkIfLastInWall(npc, player);
@@ -700,7 +701,7 @@ public class PailakaInjuredDragon extends Quest
 				{
 					st.set("cond", "6");
 					st.giveItems(STAGE2, 1);
-					st.playSound("ItemSound.quest_itemget");
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				spawnMageBehind(npc, player, DISCIPLE_OF_PROPHET);
 				checkIfLastInWall(npc, player);
@@ -711,7 +712,7 @@ public class PailakaInjuredDragon extends Quest
 				{
 					st.set("cond", "6");
 					st.giveItems(STAGE2, 1);
-					st.playSound("ItemSound.quest_itemget");
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				spawnMageBehind(npc, player, VARKA_HEAD_MAGUS);
 				checkIfLastInWall(npc, player);
@@ -722,14 +723,14 @@ public class PailakaInjuredDragon extends Quest
 				{
 					st.set("cond", "6");
 					st.giveItems(STAGE2, 1);
-					st.playSound("ItemSound.quest_itemget");
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 				spawnMageBehind(npc, player, VARKA_SILENOS_GREAT_SEER);
 				checkIfLastInWall(npc, player);
 				break;
 			case LATANA:
 				st.set("cond", "8");
-				st.playSound("ItemSound.quest_middle");
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 				startQuestTimer("end_anime", 1000, npc, player);
 				addSpawn(KETRA_ORC_SUPPORTER2, npc.getX(), npc.getY(), npc.getZ(), npc.getHeading(), false, 0, false, npc.getInstanceId());
 				break;

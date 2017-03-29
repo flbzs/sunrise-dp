@@ -5,8 +5,8 @@ import l2r.gameserver.data.xml.impl.TransformData;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.QuestState;
-import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.PledgeShowInfoUpdate;
+import l2r.gameserver.network.serverpackets.SocialAction;
 
 import gr.sr.aioItem.runnable.TransformFinalizer;
 import gr.sr.configsEngine.configs.impl.CustomNpcsConfigs;
@@ -81,7 +81,7 @@ public class BetaManager extends AbstractNpcAI
 			if (!player.isHero())
 			{
 				player.setHero(true);
-				player.sendPacket(new PlaySound("ns01_f"));
+				player.broadcastPacket(new SocialAction(player.getObjectId(), 20016)); // Hero Animation
 				player.broadcastUserInfo();
 				return "character.htm";
 			}

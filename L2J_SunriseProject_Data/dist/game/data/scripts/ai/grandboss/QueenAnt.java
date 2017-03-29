@@ -23,6 +23,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import l2r.Config;
 import l2r.gameserver.enums.CtrlIntention;
+import l2r.gameserver.enums.audio.Music;
 import l2r.gameserver.instancemanager.GrandBossManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.StatsSet;
@@ -37,7 +38,6 @@ import l2r.gameserver.model.skills.CommonSkill;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.zone.type.L2BossZone;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
-import l2r.gameserver.network.serverpackets.PlaySound;
 
 import ai.npc.AbstractNpcAI;
 
@@ -154,7 +154,7 @@ public final class QueenAnt extends AbstractNpcAI
 		addBoss(npc);
 		startQuestTimer("action", 10000, npc, null, true);
 		startQuestTimer("heal", 1000, null, null, true);
-		npc.broadcastPacket(new PlaySound(1, "BS01_A", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
+		npc.broadcastPacket(Music.BS01_A_7000.getPacket());
 		_queen = npc;
 		_larva = (L2MonsterInstance) addSpawn(LARVA, LARVA_LOC, false, 0);
 	}
@@ -335,7 +335,7 @@ public final class QueenAnt extends AbstractNpcAI
 		int npcId = npc.getId();
 		if (npcId == QUEEN)
 		{
-			_zone.broadcastPacket(new PlaySound("BS02_D"));
+			npc.broadcastPacket(Music.BS02_D_10000.getPacket());
 			// Calculate Min and Max respawn times randomly.
 			long respawnTime = Config.QUEEN_ANT_SPAWN_INTERVAL + getRandom(-Config.QUEEN_ANT_SPAWN_RANDOM, Config.QUEEN_ANT_SPAWN_RANDOM);
 			respawnTime *= 3600000;

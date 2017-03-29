@@ -18,6 +18,7 @@
  */
 package quests.Q00697_DefendtheHallofErosion;
 
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.instancemanager.SoIManager;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -53,7 +54,7 @@ public class Q00697_DefendtheHallofErosion extends Quest
 		{
 			st.set("cond", "1");
 			st.setState(State.STARTED);
-			st.playSound("ItemSound.quest_accept");
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 		}
 		return htmltext;
 	}
@@ -94,7 +95,7 @@ public class Q00697_DefendtheHallofErosion extends Quest
 				{
 					st.giveItems(VesperNobleEnhanceStone, Rnd.get(12, 20));
 					htmltext = "32603-05.htm";
-					st.playSound("ItemSound.quest_finish");
+					playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 					st.unset("defenceDone");
 					st.exitQuest(true);
 				}

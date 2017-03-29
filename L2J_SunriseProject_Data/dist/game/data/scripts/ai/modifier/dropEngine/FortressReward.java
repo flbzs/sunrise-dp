@@ -18,6 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import l2r.Config;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.L2Clan;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -242,7 +243,7 @@ public class FortressReward extends AbstractNpcAI
 		{
 			final QuestState st = player.getQuestState(getName());
 			st.giveItems(KE, (long) (getRandom(drop[0], drop[1]) * Config.RATE_DROP_ITEMS));
-			st.playSound("ItemSound.quest_itemget");
+			playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 		}
 	}
 }

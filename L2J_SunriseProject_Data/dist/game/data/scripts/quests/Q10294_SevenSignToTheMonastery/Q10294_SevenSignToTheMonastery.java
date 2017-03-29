@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import l2r.gameserver.data.xml.impl.SkillData;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -85,7 +86,7 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 			{
 				st.setState(State.STARTED);
 				st.set("cond", "1");
-				st.playSound("ItemSound.quest_accept");
+				playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			}
 		}
 		else if (npc.getId() == ErisEvilThoughts)
@@ -97,7 +98,7 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 					st.setState(State.STARTED);
 				}
 				st.set("cond", "2");
-				st.playSound("ItemSound.quest_middle");
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 			}
 		}
 		
@@ -318,7 +319,7 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 					st.unset("good3");
 					st.unset("good4");
 					st.addExpAndSp(25000000, 2500000);
-					st.playSound("ItemSound.quest_finish");
+					playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 					st.exitQuest(false);
 					htmltext = "32792-07.html";
 				}
@@ -333,7 +334,7 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 			if ((st.getInt("cond") == 2) && (st.getInt("good1") == 1) && (st.getInt("good2") == 1) && (st.getInt("good3") == 1) && (st.getInt("good4") == 1))
 			{
 				st.set("cond", "3");
-				st.playSound("ItemSound.quest_middle");
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 				htmltext = "32803-04.html";
 			}
 			else if (st.getInt("cond") == 3)

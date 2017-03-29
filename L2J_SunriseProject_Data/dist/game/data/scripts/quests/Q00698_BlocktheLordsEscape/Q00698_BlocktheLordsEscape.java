@@ -18,6 +18,7 @@
  */
 package quests.Q00698_BlocktheLordsEscape;
 
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.instancemanager.SoIManager;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -53,7 +54,7 @@ public class Q00698_BlocktheLordsEscape extends Quest
 		{
 			st.set("cond", "1");
 			st.setState(State.STARTED);
-			st.playSound("ItemSound.quest_accept");
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 		}
 		return htmltext;
 	}
@@ -90,7 +91,7 @@ public class Q00698_BlocktheLordsEscape extends Quest
 				{
 					htmltext = "32603-05.htm";
 					rewardItems(player, VESPER_STONE, Rnd.get(5, 8));
-					st.playSound("ItemSound.quest_finish");
+					playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 					st.exitQuest(true);
 				}
 				else

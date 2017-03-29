@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import l2r.gameserver.ThreadPoolManager;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.instancemanager.InstanceManager;
 import l2r.gameserver.model.L2Party;
 import l2r.gameserver.model.L2World;
@@ -140,13 +141,13 @@ public class Q00726_LightwithintheDarkness extends Quest
 			st.set("cond", "1");
 			st.set("kanadis", "0");
 			st.setState(State.STARTED);
-			st.playSound("ItemSound.quest_accept");
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 		}
 		else if (event.equalsIgnoreCase("reward") && (cond == 2) && (st.getInt("done") == 1))
 		{
 			st.set("done", "0");
 			st.giveItems(KNIGHTS_EPAULETTE, 152);
-			st.playSound("ItemSound.quest_finish");
+			playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 			st.exitQuest(true);
 			return null;
 		}
@@ -246,7 +247,7 @@ public class Q00726_LightwithintheDarkness extends Quest
 							{
 								st.set("done", "1");
 								st.set("cond", "2");
-								st.playSound("ItemSound.quest_middle");
+								playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 								Instance instanceObj = InstanceManager.getInstance().getInstance(world.getInstanceId());
 								instanceObj.setDuration(360000);
 								instanceObj.removeNpcs();

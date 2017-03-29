@@ -56,7 +56,6 @@ import l2r.gameserver.network.serverpackets.CreatureSay;
 import l2r.gameserver.network.serverpackets.FlyToLocation;
 import l2r.gameserver.network.serverpackets.FlyToLocation.FlyType;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
-import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.SpecialCamera;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.network.serverpackets.ValidateLocation;
@@ -1734,7 +1733,6 @@ public final class CrystalCaverns extends AbstractInstance
 			{
 				world.setStatus(31);
 				world._baylor = null;
-				npc.broadcastPacket(new PlaySound(1, "BS01_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
 				Instance baylorInstance = InstanceManager.getInstance().getInstance(npc.getInstanceId());
 				baylorInstance.setDuration(300000);
 				this.startQuestTimer("spawn_oracle", 1000, npc, null);

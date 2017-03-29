@@ -22,6 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import l2r.gameserver.enums.CtrlIntention;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -77,7 +78,7 @@ public class Q00423_TakeYourBestShot extends Quest
 			{
 				st.setState(State.STARTED);
 				st.set("cond", "1");
-				st.playSound("ItemSound.quest_accept");
+				playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			}
 			else if (event.equalsIgnoreCase("32744-quit.htm"))
 			{
@@ -139,7 +140,7 @@ public class Q00423_TakeYourBestShot extends Quest
 						else if (st.getInt("cond") == 2)
 						{
 							st.giveItems(SEER_UGOROS_PASS, 1);
-							st.playSound("ItemSound.quest_finish");
+							playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 							st.unset("cond");
 							st.exitQuest(true);
 							htmltext = "32740-04.htm";
@@ -186,7 +187,7 @@ public class Q00423_TakeYourBestShot extends Quest
 		else if ((npc.getId() == TANTA_GUARD) && (st.getInt("cond") == 1))
 		{
 			st.set("cond", "2");
-			st.playSound("ItemSound.quest_middle");
+			playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 		}
 		return null;
 	}

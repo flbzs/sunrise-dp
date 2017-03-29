@@ -26,6 +26,7 @@ import l2r.gameserver.cache.HtmCache;
 import l2r.gameserver.data.xml.impl.DoorData;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.enums.TeleportWhereType;
+import l2r.gameserver.enums.audio.Music;
 import l2r.gameserver.instancemanager.GrandBossManager;
 import l2r.gameserver.instancemanager.MapRegionManager;
 import l2r.gameserver.instancemanager.ZoneManager;
@@ -45,7 +46,6 @@ import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.zone.L2ZoneType;
 import l2r.gameserver.network.serverpackets.DoorStatusUpdate;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
-import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.SocialAction;
 import l2r.gameserver.network.serverpackets.SpecialCamera;
 import l2r.gameserver.network.serverpackets.StaticObject;
@@ -161,7 +161,7 @@ public final class Beleth extends AbstractNpcAI
 				_camera3 = addSpawn(29122, new Location(16323, 213170, -9357));
 				_camera4 = addSpawn(29123, new Location(16323, 214917, -9356));
 				
-				ZONE.broadcastPacket(new PlaySound(1, "BS07_A", 1, _camera1.getObjectId(), _camera1.getX(), _camera1.getY(), _camera1.getZ()));
+				ZONE.broadcastPacket(Music.BS07_A_10000.getPacket());
 				ZONE.broadcastPacket(new SpecialCamera(_camera1, 400, 75, -25, 0, 2500, 0, 0, 1, 0, 0));
 				ZONE.broadcastPacket(new SpecialCamera(_camera1, 400, 75, -25, 0, 2500, 0, 0, 1, 0, 0));
 				
@@ -477,7 +477,7 @@ public final class Beleth extends AbstractNpcAI
 				_beleth.doDie(null);
 				
 				_camera1 = addSpawn(29122, new Location(16323, 213170, -9357));
-				_camera1.broadcastPacket(new PlaySound(1, "BS07_D", 1, _camera1.getObjectId(), _camera1.getX(), _camera1.getY(), _camera1.getZ()));
+				_camera1.broadcastPacket(Music.BS07_D_10000.getPacket());
 				
 				ZONE.broadcastPacket(new SpecialCamera(_camera1, 400, 290, 25, 0, 10000, 0, 0, 1, 0, 0));
 				ZONE.broadcastPacket(new SpecialCamera(_camera1, 400, 290, 25, 0, 10000, 0, 0, 1, 0, 0));

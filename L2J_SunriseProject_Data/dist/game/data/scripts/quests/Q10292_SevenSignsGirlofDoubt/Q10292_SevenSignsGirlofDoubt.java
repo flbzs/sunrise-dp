@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -107,7 +108,7 @@ public class Q10292_SevenSignsGirlofDoubt extends Quest
 			{
 				st.setState(State.STARTED);
 				st.set("cond", "1");
-				st.playSound("ItemSound.quest_accept");
+				playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			}
 		}
 		else if (npc.getId() == Franz)
@@ -115,7 +116,7 @@ public class Q10292_SevenSignsGirlofDoubt extends Quest
 			if (event.equalsIgnoreCase("32597-08.htm"))
 			{
 				st.set("cond", "2");
-				st.playSound("ItemSound.quest_middle");
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 			}
 		}
 		else if (npc.getId() == Hardin)
@@ -123,7 +124,7 @@ public class Q10292_SevenSignsGirlofDoubt extends Quest
 			if (event.equalsIgnoreCase("30832-02.html"))
 			{
 				st.set("cond", "8");
-				st.playSound("ItemSound.quest_middle");
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 			}
 		}
 		else if (npc.getId() == Elcadia)
@@ -131,12 +132,12 @@ public class Q10292_SevenSignsGirlofDoubt extends Quest
 			if (event.equalsIgnoreCase("32784-03.html"))
 			{
 				st.set("cond", "3");
-				st.playSound("ItemSound.quest_middle");
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 			}
 			else if (event.equalsIgnoreCase("32784-14.html"))
 			{
 				st.set("cond", "7");
-				st.playSound("ItemSound.quest_middle");
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 			}
 			else if (event.equalsIgnoreCase("spawn"))
 			{
@@ -218,18 +219,18 @@ public class Q10292_SevenSignsGirlofDoubt extends Quest
 			}
 			else if (st.getInt("cond") == 4)
 			{
-				st.playSound("ItemSound.quest_middle");
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 				st.set("cond", "5");
 				htmltext = "32784-05.html";
 			}
 			else if (st.getInt("cond") == 5)
 			{
-				st.playSound("ItemSound.quest_middle");
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 				htmltext = "32784-05.html";
 			}
 			else if (st.getInt("cond") == 6)
 			{
-				st.playSound("ItemSound.quest_middle");
+				playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 				htmltext = "32784-11.html";
 			}
 			else if (st.getInt("cond") == 8)
@@ -240,7 +241,7 @@ public class Q10292_SevenSignsGirlofDoubt extends Quest
 				}
 				else
 				{
-					st.playSound("ItemSound.quest_finish");
+					playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 					st.addExpAndSp(10000000, 1000000);
 					st.exitQuest(false);
 					htmltext = "32784-16.html";
@@ -269,12 +270,12 @@ public class Q10292_SevenSignsGirlofDoubt extends Quest
 		if ((st != null) && (st.getInt("cond") == 3) && Util.contains(Mobs, npc.getId()) && (st.getQuestItemsCount(Elcadias_Mark) < 10) && (st.getQuestItemsCount(Elcadias_Mark) != 9))
 		{
 			st.giveItems(Elcadias_Mark, 1);
-			st.playSound("ItemSound.quest_middle");
+			playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 		}
 		else if ((st != null) && (st.getInt("cond") == 3) && Util.contains(Mobs, npc.getId()) && (st.getQuestItemsCount(Elcadias_Mark) >= 9))
 		{
 			st.giveItems(Elcadias_Mark, 1);
-			st.playSound("ItemSound.quest_middle");
+			playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 			st.set("cond", "4");
 		}
 		else if ((st != null) && (st.getInt("cond") == 5) && (npc.getId() == 27422))
@@ -296,7 +297,7 @@ public class Q10292_SevenSignsGirlofDoubt extends Quest
 			holder.mobs.clear();
 			instanceWorlds.remove(instanceid);
 			st.set("cond", "6");
-			st.playSound("ItemSound.quest_middle");
+			playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 		}
 		return super.onKill(npc, player, isPet);
 	}

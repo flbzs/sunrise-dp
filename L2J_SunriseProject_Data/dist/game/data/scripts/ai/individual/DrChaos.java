@@ -24,7 +24,6 @@ import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.network.serverpackets.PlaySound;
 import l2r.gameserver.network.serverpackets.SpecialCamera;
 
 import ai.npc.AbstractNpcAI;
@@ -103,7 +102,6 @@ public final class DrChaos extends AbstractNpcAI
 					L2Npc golem = addSpawn(CHAOS_GOLEM, 94640, -112496, -3336, 0, false, 0);
 					_IsGolemSpawned = true;
 					startQuestTimer("6", 1000, golem, player);
-					player.sendPacket(new PlaySound(1, "Rm03_A", 0, 0, 0, 0, 0));
 				}
 				break;
 			}

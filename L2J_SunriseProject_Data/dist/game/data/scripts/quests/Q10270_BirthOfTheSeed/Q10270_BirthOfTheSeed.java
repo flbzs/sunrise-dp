@@ -1,5 +1,6 @@
 package quests.Q10270_BirthOfTheSeed;
 
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.L2CommandChannel;
 import l2r.gameserver.model.L2Party;
 import l2r.gameserver.model.actor.L2Npc;
@@ -46,22 +47,22 @@ public class Q10270_BirthOfTheSeed extends Quest
 		{
 			qs.setState(State.STARTED);
 			qs.set("cond", "1");
-			qs.playSound("ItemSound.quest_accept");
+			playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 		}
 		else if (event.equalsIgnoreCase("32559-03.htm"))
 		{
 			qs.set("cond", "2");
-			qs.playSound("ItemSound.quest_middle");
+			playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 		}
 		else if (event.equalsIgnoreCase("32559-09.htm"))
 		{
 			qs.set("cond", "4");
-			qs.playSound("ItemSound.quest_middle");
+			playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 		}
 		else if (event.equalsIgnoreCase("32559-13.htm"))
 		{
 			qs.setState(State.COMPLETED);
-			qs.playSound("ItemSound.quest_finish");
+			playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 			qs.exitQuest(false);
 			qs.addExpAndSp(251602, 25244);
 			qs.giveAdena(41677, true);
@@ -81,7 +82,7 @@ public class Q10270_BirthOfTheSeed extends Quest
 		else if (event.equalsIgnoreCase("32567-05.htm"))
 		{
 			qs.set("cond", "5");
-			qs.playSound("ItemSound.quest_middle");
+			playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 		}
 		
 		return htmltext;
@@ -145,7 +146,7 @@ public class Q10270_BirthOfTheSeed extends Quest
 						qs.takeItems(13869, 1);
 						qs.takeItems(13870, 1);
 						qs.set("cond", "3");
-						qs.playSound("ItemSound.quest_middle");
+						playSound(player, Sound.ITEMSOUND_QUEST_MIDDLE);
 					}
 				}
 				else if ((cond == 3) || (cond == 4))

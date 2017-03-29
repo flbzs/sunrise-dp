@@ -1,6 +1,7 @@
 package quests.Q00330_AdeptOfTaste;
 
 import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -185,7 +186,7 @@ public class Q00330_AdeptOfTaste extends Quest
 										{
 											htmltext = "30469-05t5.htm";
 											st.giveItems(JONAS_STEAK_DISH5, 1);
-											st.playSound("ItemSound.quest_jackpot");
+											playSound(player, Sound.ITEMSOUND_QUEST_JACKPOT);
 										}
 										else
 										{

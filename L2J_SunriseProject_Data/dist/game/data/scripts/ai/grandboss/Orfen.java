@@ -24,6 +24,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import l2r.Config;
 import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.enums.CtrlIntention;
+import l2r.gameserver.enums.audio.Music;
 import l2r.gameserver.instancemanager.GrandBossManager;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.L2Spawn;
@@ -39,7 +40,6 @@ import l2r.gameserver.model.zone.type.L2BossZone;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.clientpackets.Say2;
 import l2r.gameserver.network.serverpackets.NpcSay;
-import l2r.gameserver.network.serverpackets.PlaySound;
 
 import ai.npc.AbstractNpcAI;
 
@@ -150,7 +150,7 @@ public final class Orfen extends AbstractNpcAI
 	public void spawnBoss(L2GrandBossInstance npc)
 	{
 		GrandBossManager.getInstance().addBoss(npc);
-		npc.broadcastPacket(new PlaySound(1, "BS01_A", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
+		npc.broadcastPacket(Music.BS01_A_7000.getPacket());
 		startQuestTimer("check_orfen_pos", 10000, npc, null, true);
 		// Spawn minions
 		int x = npc.getX();
@@ -327,7 +327,7 @@ public final class Orfen extends AbstractNpcAI
 	{
 		if (npc.getId() == ORFEN)
 		{
-			npc.broadcastPacket(new PlaySound(1, "BS02_D", 1, npc.getObjectId(), npc.getX(), npc.getY(), npc.getZ()));
+			npc.broadcastPacket(Music.BS02_D_7000.getPacket());
 			GrandBossManager.getInstance().setBossStatus(ORFEN, DEAD);
 			// Calculate Min and Max respawn times randomly.
 			long respawnTime = Config.ORFEN_SPAWN_INTERVAL + getRandom(-Config.ORFEN_SPAWN_RANDOM, Config.ORFEN_SPAWN_RANDOM);

@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 import l2r.L2DatabaseFactory;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.L2Clan;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -912,11 +913,11 @@ public class Q00503_PursuitClanAmbition extends Quest
 			st.giveItems(item, 1);
 			if (count == (maxcount - 1))
 			{
-				st.playSound("ItemSound.quest_middle");
+				st.playSound(Sound.ITEMSOUND_QUEST_MIDDLE);
 			}
 			else
 			{
-				st.playSound("ItemSound.quest_itemget");
+				st.playSound(Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 	}

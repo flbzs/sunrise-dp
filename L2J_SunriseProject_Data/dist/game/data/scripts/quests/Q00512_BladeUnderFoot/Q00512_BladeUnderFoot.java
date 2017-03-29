@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import l2r.gameserver.ThreadPoolManager;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.instancemanager.FortManager;
 import l2r.gameserver.instancemanager.GlobalVariablesManager;
 import l2r.gameserver.instancemanager.InstanceManager;
@@ -317,7 +318,7 @@ public final class Q00512_BladeUnderFoot extends Quest
 			if (st.getInt("cond") == 1)
 			{
 				st.giveItems(DL_MARK, SINGLE_REWARD_AMOUNT[idx]);
-				st.playSound("ItemSound.quest_itemget");
+				playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 			}
 		}
 	}
@@ -335,7 +336,7 @@ public final class Q00512_BladeUnderFoot extends Quest
 				if (st.getInt("cond") == 1)
 				{
 					st.giveItems(DL_MARK, count);
-					st.playSound("ItemSound.quest_itemget");
+					playSound(player, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}
@@ -404,12 +405,12 @@ public final class Q00512_BladeUnderFoot extends Quest
 			{
 				st.set("cond", "1");
 				st.setState(State.STARTED);
-				st.playSound("ItemSound.quest_accept");
+				playSound(player, Sound.ITEMSOUND_QUEST_ACCEPT);
 			}
 		}
 		else if (event.equalsIgnoreCase("CastleWarden-15.htm"))
 		{
-			st.playSound("ItemSound.quest_finish");
+			playSound(player, Sound.ITEMSOUND_QUEST_FINISH);
 			st.exitQuest(true);
 		}
 		return htmltext;

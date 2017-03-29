@@ -22,6 +22,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import l2r.Config;
+import l2r.gameserver.enums.audio.Sound;
+import l2r.gameserver.enums.audio.Voice;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2MonsterInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
@@ -485,17 +487,17 @@ public class Q00999_T1Tutorial extends Quest
 			{
 				if (player.getClassId().isMage())
 				{
-					st.playTutorialVoice("tutorial_voice_009b");
+					playSound(player, Voice.TUTORIAL_VOICE_009B);
 				}
 				else
 				{
-					st.playTutorialVoice("tutorial_voice_009a");
+					playSound(player, Voice.TUTORIAL_VOICE_009A);
 				}
 				qs.set("Ex", "1");
 			}
 			else if (Ex == 3)
 			{
-				st.playTutorialVoice("tutorial_voice_010a");
+				playSound(player, Voice.TUTORIAL_VOICE_010A);
 				qs.set("Ex", "4");
 			}
 			return null;
@@ -505,8 +507,8 @@ public class Q00999_T1Tutorial extends Quest
 			if (Ex >= 4)
 			{
 				st.showQuestionMark(7);
-				st.playSound("ItemSound.quest_tutorial");
-				st.playTutorialVoice("tutorial_voice_025");
+				playSound(player, Sound.ITEMSOUND_QUEST_TUTORIAL);
+				playSound(player, Voice.TUTORIAL_VOICE_025_1000);
 			}
 			return null;
 		}
@@ -549,11 +551,11 @@ public class Q00999_T1Tutorial extends Quest
 					st.giveItems(gift1, count1);
 					if (gift1 == SPIRITSHOT_NOVICE)
 					{
-						st.playTutorialVoice("tutorial_voice_027");
+						playSound(player, Voice.TUTORIAL_VOICE_017_1000);
 					}
 					else
 					{
-						st.playTutorialVoice("tutorial_voice_026");
+						playSound(player, Voice.TUTORIAL_VOICE_016_1000);
 					}
 				}
 				else if (player.getClassId().getId() == classId2)
@@ -561,7 +563,7 @@ public class Q00999_T1Tutorial extends Quest
 					if (gift2 != 0)
 					{
 						st.giveItems(gift2, count2);
-						st.playTutorialVoice("tutorial_voice_026");
+						playSound(player, Voice.TUTORIAL_VOICE_016_1000);
 					}
 				}
 				st.set("step", "4");
@@ -638,7 +640,7 @@ public class Q00999_T1Tutorial extends Quest
 							qs.set("ucMemo", "3");
 							if (player.getClassId().isMage())
 							{
-								st.playTutorialVoice("tutorial_voice_027");
+								playSound(player, Voice.TUTORIAL_VOICE_017_1000);
 								st.giveItems(SPIRITSHOT_NOVICE, 100);
 								htmltext = talk.htmlfiles[2];
 								if (htmltext.equals(""))
@@ -648,7 +650,7 @@ public class Q00999_T1Tutorial extends Quest
 							}
 							else
 							{
-								st.playTutorialVoice("tutorial_voice_026");
+								playSound(player, Voice.TUTORIAL_VOICE_016_1000);
 								st.giveItems(SOULSHOT_NOVICE, 200);
 								htmltext = talk.htmlfiles[1];
 								if (htmltext.equals(""))
@@ -732,7 +734,7 @@ public class Q00999_T1Tutorial extends Quest
 		
 		if (Ex <= 1)
 		{
-			st.playTutorialVoice("tutorial_voice_011");
+			playSound(player, Voice.TUTORIAL_VOICE_011_1000);
 			st.showQuestionMark(3);
 			qs.set("Ex", "2");
 		}
@@ -742,7 +744,7 @@ public class Q00999_T1Tutorial extends Quest
 			if (getRandom(100) < 100)
 			{
 				((L2MonsterInstance) npc).dropItem(player, BLUE_GEM, 1);
-				st.playSound("ItemSound.quest_tutorial");
+				playSound(player, Sound.ITEMSOUND_QUEST_TUTORIAL);
 			}
 		}
 		return null;
