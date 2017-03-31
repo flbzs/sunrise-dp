@@ -53,7 +53,13 @@ public class ManaHealByLevel extends L2Effect
 	public boolean onStart()
 	{
 		L2Character target = getEffected();
-		if ((target == null) || target.isDead() || target.isDoor() || target.isInvul())
+		if ((target == null) || target.isDead() || target.isDoor())
+		{
+			return false;
+		}
+		
+		// vGodFather: herb effect must override invul check
+		if (target.isInvul() && !getSkill().isHerb())
 		{
 			return false;
 		}

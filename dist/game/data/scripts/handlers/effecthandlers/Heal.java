@@ -58,7 +58,13 @@ public class Heal extends L2Effect
 	{
 		L2Character target = getEffected();
 		L2Character activeChar = getEffector();
-		if ((target == null) || target.isDead() || target.isDoor() || target.isInvul())
+		if ((target == null) || target.isDead() || target.isDoor())
+		{
+			return false;
+		}
+		
+		// vGodFather: herb effect must override invul check
+		if (target.isInvul() && !getSkill().isHerb())
 		{
 			return false;
 		}
