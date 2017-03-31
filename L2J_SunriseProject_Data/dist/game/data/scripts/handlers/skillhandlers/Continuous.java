@@ -192,7 +192,7 @@ public class Continuous implements ISkillHandler
 							skill.getEffects(activeChar, target.getSummon(), new Env(shld, ss, sps, bss));
 						}
 						// vGodFather: some extra implementation most of target type one skills must take effect on servitors too
-						else if (((skill.getTargetType() == L2TargetType.ONE) || (skill.getTargetType() == L2TargetType.SELF)) && !skill.isDebuff())
+						else if (((skill.getTargetType() == L2TargetType.ONE) || ((skill.getTargetType() == L2TargetType.SELF) && !skill.isToggle())) && !skill.isDebuff())
 						{
 							skill.getEffects(activeChar, target.getSummon(), new Env(shld, ss, sps, bss));
 						}

@@ -62,7 +62,13 @@ public class HealOverTime extends L2Effect
 	@Override
 	public boolean onActionTime()
 	{
-		if ((getEffected().getFirstEffect(L2EffectType.INVINCIBLE) != null) || getEffected().isInvul() || getEffected().isDead() || getEffected().isDoor())
+		if ((getEffected().getFirstEffect(L2EffectType.INVINCIBLE) != null) || getEffected().isDead() || getEffected().isDoor())
+		{
+			return false;
+		}
+		
+		// vGodFather: herb effect must override invul check
+		if (getEffected().isInvul() && !getSkill().isHerb())
 		{
 			return false;
 		}
