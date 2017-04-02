@@ -31,7 +31,10 @@ public class NonAttackingNpcs extends AbstractNpcAI
 	private static final int[] NON_ATTACKING_NPCS =
 	{
 		// Fairy Trees
-		27185, 27186, 27187, 27188
+		27185, 27186, 27187, 27188,
+		
+		//
+		18811
 	};
 	// @formatter:on
 	
