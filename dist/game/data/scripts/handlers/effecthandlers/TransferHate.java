@@ -62,7 +62,7 @@ public final class TransferHate extends L2Effect
 			}
 			
 			final L2Attackable hater = ((L2Attackable) obj);
-			final int hate = hater.getHating(getEffector());
+			final long hate = hater.getHating(getEffector());
 			if (hate <= 0)
 			{
 				continue;

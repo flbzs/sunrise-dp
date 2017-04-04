@@ -68,7 +68,7 @@ public class RandomizeHate extends L2Effect
 		
 		// Choosing randomly a new target
 		final L2Character target = aggroList.get(Rnd.get(aggroList.size()));
-		final int hate = effectedMob.getHating(getEffector());
+		final long hate = effectedMob.getHating(getEffector());
 		effectedMob.stopHating(getEffector());
 		effectedMob.addDamageHate(target, 0, hate);
 		
