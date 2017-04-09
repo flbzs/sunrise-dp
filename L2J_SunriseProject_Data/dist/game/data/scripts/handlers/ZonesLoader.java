@@ -22,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import ai.zone.DragonValley.DragonValley;
+import ai.zone.DragonValley.DustRider;
 import ai.zone.DragonValley.EmeraldHorn;
 import ai.zone.DragonValley.NecromancerValley;
 import ai.zone.FantasyIsle.HandysBlockCheckerEvent;
@@ -46,6 +47,7 @@ public final class ZonesLoader
 	{
 		// Dragon Valley
 		DragonValley.class,
+		DustRider.class,
 		EmeraldHorn.class,
 		NecromancerValley.class,
 		

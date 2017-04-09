@@ -148,6 +148,9 @@ public class Blow implements ISkillHandler
 				
 				// Check if damage should be reflected
 				Formulas.calcDamageReflected(activeChar, target, skill, damage);
+				
+				// vGodFather: ss must consume only if skill succeed
+				activeChar.setChargedShot(ShotType.SOULSHOTS, false);
 			}
 			
 			// Possibility of a lethal strike
@@ -163,8 +166,6 @@ public class Blow implements ISkillHandler
 				}
 				skill.getEffectsSelf(activeChar);
 			}
-			
-			activeChar.setChargedShot(ShotType.SOULSHOTS, false);
 		}
 	}
 	
