@@ -1884,7 +1884,7 @@
 		<for>
 			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="multi_buff">
 				<mul stat="maxHp" val="1.2" />
-				<basemul stat="critRate" val="0.2" />
+				<basemul stat="critRate" val="1.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
@@ -1900,7 +1900,7 @@
 		<enchant1for>
 			<effect name="Buff" abnormalTime="#ench1Time" val="0" abnormalLvl="1" abnormalType="multi_buff">
 				<mul stat="maxHp" val="1.2" />
-				<basemul stat="critRate" val="0.2" />
+				<basemul stat="critRate" val="1.2" />
 				<mul stat="mCritPower" val="1.2" />
 				<mul stat="pAtk" val="1.1" />
 				<mul stat="pDef" val="1.2" />
