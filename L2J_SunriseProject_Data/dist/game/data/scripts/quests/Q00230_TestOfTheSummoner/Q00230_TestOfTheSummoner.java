@@ -466,7 +466,7 @@ public final class Q00230_TestOfTheSummoner extends Quest
 								Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getIdTemplate(), NpcStringId.WHHIISSHH));
 								takeItems(attacker, CRYSTAL_OF_STARTING_1ST, -1);
 								giveItems(attacker, CRYSTAL_OF_INPROGRESS_1ST, 1);
-								addAttackPlayerDesire(npc, attacker.getSummon(), 100000);
+								addAttackDesire(npc, attacker.getSummon(), 100000);
 							}
 						}
 						break;
@@ -510,7 +510,7 @@ public final class Q00230_TestOfTheSummoner extends Quest
 								Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getIdTemplate(), NpcStringId.START_DUEL));
 								takeItems(attacker, CRYSTAL_OF_STARTING_3RD, -1);
 								giveItems(attacker, CRYSTAL_OF_INPROGRESS_3RD, 1);
-								addAttackPlayerDesire(npc, attacker.getSummon(), 100000);
+								addAttackDesire(npc, attacker.getSummon(), 100000);
 							}
 						}
 						break;
@@ -553,7 +553,7 @@ public final class Q00230_TestOfTheSummoner extends Quest
 								Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getIdTemplate(), NpcStringId.SO_SHALL_WE_START));
 								takeItems(attacker, CRYSTAL_OF_STARTING_5TH, -1);
 								giveItems(attacker, CRYSTAL_OF_INPROGRESS_5TH, 1);
-								addAttackPlayerDesire(npc, attacker.getSummon(), 100000);
+								addAttackDesire(npc, attacker.getSummon(), 100000);
 							}
 						}
 						break;
@@ -596,7 +596,7 @@ public final class Q00230_TestOfTheSummoner extends Quest
 								Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getIdTemplate(), NpcStringId.WHISH_FIGHT));
 								takeItems(attacker, CRYSTAL_OF_STARTING_2ND, -1);
 								giveItems(attacker, CRYSTAL_OF_INPROGRESS_2ND, 1);
-								addAttackPlayerDesire(npc, attacker.getSummon(), 100000);
+								addAttackDesire(npc, attacker.getSummon(), 100000);
 							}
 						}
 						break;
@@ -639,7 +639,7 @@ public final class Q00230_TestOfTheSummoner extends Quest
 								Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getIdTemplate(), NpcStringId.START_DUEL));
 								takeItems(attacker, CRYSTAL_OF_STARTING_4TH, -1);
 								giveItems(attacker, CRYSTAL_OF_INPROGRESS_4TH, 1);
-								addAttackPlayerDesire(npc, attacker.getSummon(), 100000);
+								addAttackDesire(npc, attacker.getSummon(), 100000);
 							}
 						}
 						break;
@@ -682,7 +682,7 @@ public final class Q00230_TestOfTheSummoner extends Quest
 								Broadcast.toKnownPlayers(npc, new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getIdTemplate(), NpcStringId.ILL_WALK_ALL_OVER_YOU));
 								takeItems(attacker, CRYSTAL_OF_STARTING_6TH, -1);
 								giveItems(attacker, CRYSTAL_OF_INPROGRESS_6TH, 1);
-								addAttackPlayerDesire(npc, attacker.getSummon(), 100000);
+								addAttackDesire(npc, attacker.getSummon(), 100000);
 							}
 						}
 						break;
