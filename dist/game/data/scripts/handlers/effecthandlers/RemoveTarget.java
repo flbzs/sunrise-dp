@@ -67,7 +67,9 @@ public class RemoveTarget extends L2Effect
 		getEffected().setTarget(null);
 		getEffected().abortAttack();
 		getEffected().abortCast();
-		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, getEffector());
+		
+		// vGodFather: Attackable instances must change intention to active not idle
+		getEffected().getAI().setIntention(getEffected().isAttackable() ? CtrlIntention.AI_INTENTION_ACTIVE : CtrlIntention.AI_INTENTION_IDLE);
 		return true;
 	}
 }
