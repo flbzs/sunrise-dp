@@ -1066,7 +1066,6 @@
 	</skill>
 	<skill id="6770" levels="1" name="Heal">
 		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
 		<set name="affectRange" val="900" />
 		<set name="hitTime" val="1500" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
@@ -1080,7 +1079,6 @@
 	</skill>
 	<skill id="6771" levels="1" name="Death Strike">
 		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
 		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="150" />
 		<set name="effectRange" val="300" />
