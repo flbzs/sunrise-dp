@@ -817,6 +817,7 @@
 		</for>
 	</skill>
 	<skill id="1425" levels="1" name="Purification Field">
+		<set name="affectLimit" val="0-0" />
 		<set name="affectRange" val="180" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="900" />
@@ -859,7 +860,7 @@
 		<set name="abnormalTime" val="30" />
 		<set name="abnormalType" val="invincibility" />
 		<set name="affectRange" val="900" />
-		<set name="affectLimit" val="5-12" />
+		<set name="affectLimit" val="0-0" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="5000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
