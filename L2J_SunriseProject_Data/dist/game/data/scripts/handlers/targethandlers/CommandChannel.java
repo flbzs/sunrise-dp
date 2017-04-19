@@ -75,7 +75,7 @@ public class CommandChannel implements ITargetTypeHandler
 			if (L2Skill.addCharacter(activeChar, member, radius, false))
 			{
 				targetList.add(member);
-				if (targetList.size() >= maxTargets)
+				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
 				{
 					break;
 				}

@@ -51,7 +51,7 @@ public class EmeraldHorn extends AbstractNpcAI
 	
 	public EmeraldHorn()
 	{
-		super(EmeraldHorn.class.getSimpleName(), "ai/individual");
+		super(EmeraldHorn.class.getSimpleName(), "ai/zone/DragonValley");
 		addAttackId(EMERALD_HORN);
 		addSpellFinishedId(EMERALD_HORN);
 	}
@@ -119,10 +119,5 @@ public class EmeraldHorn extends AbstractNpcAI
 			npc.getVariables().set(CAST_FLAG, false);
 		}
 		return super.onAdvEvent(event, npc, player);
-	}
-	
-	public static void main(String[] args)
-	{
-		new EmeraldHorn();
 	}
 }

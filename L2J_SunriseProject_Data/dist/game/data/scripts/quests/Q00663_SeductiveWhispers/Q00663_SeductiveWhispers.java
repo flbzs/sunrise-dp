@@ -23,7 +23,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import l2r.gameserver.enums.QuestSound;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.ItemHolder;
@@ -753,7 +753,7 @@ public class Q00663_SeductiveWhispers extends Quest
 		if (!players.isEmpty())
 		{
 			final L2PcInstance rewardedPlayer = players.get(getRandom(players.size()));
-			if ((rewardedPlayer != null) && Util.checkIfInRange(1500, npc, rewardedPlayer, false))
+			if (Util.checkIfInRange(1500, npc, rewardedPlayer, false))
 			{
 				final int rnd = getRandom(1000);
 				
@@ -771,11 +771,10 @@ public class Q00663_SeductiveWhispers extends Quest
 				else if (rnd < MONSTERS.get(npc.getId()))
 				{
 					giveItems(rewardedPlayer, SPIRIT_BEAD, 1);
-					playSound(rewardedPlayer, QuestSound.ITEMSOUND_QUEST_ITEMGET);
+					playSound(rewardedPlayer, Sound.ITEMSOUND_QUEST_ITEMGET);
 				}
 			}
 		}
-		
 		return super.onKill(npc, killer, isSummon);
 	}
 	

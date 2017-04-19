@@ -42,7 +42,7 @@ public class DustRider extends AbstractNpcAI
 	
 	public DustRider()
 	{
-		super(DustRider.class.getSimpleName(), "ai/individual");
+		super(DustRider.class.getSimpleName(), "ai/zone/DragonValley");
 		addAttackId(DUST_RIDER);
 	}
 	
@@ -60,10 +60,5 @@ public class DustRider extends AbstractNpcAI
 			addSkillCastDesire(npc, npc, NPC_HASTE_LVL_3, 99999999999000000L);
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	public static void main(String[] args)
-	{
-		new DustRider();
 	}
 }
