@@ -87,7 +87,7 @@ public class AreaSummon implements ITargetTypeHandler
 				}
 			}
 			
-			if (targetList.size() >= maxTargets)
+			if ((maxTargets > 0) && (targetList.size() >= maxTargets))
 			{
 				break;
 			}

@@ -21,10 +21,13 @@ package handlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ai.zone.DragonValley.BlackdaggerWing;
+import ai.zone.DragonValley.BleedingFly;
 import ai.zone.DragonValley.DragonValley;
 import ai.zone.DragonValley.DustRider;
 import ai.zone.DragonValley.EmeraldHorn;
 import ai.zone.DragonValley.NecromancerValley;
+import ai.zone.DragonValley.ShadowSummoner;
 import ai.zone.FantasyIsle.HandysBlockCheckerEvent;
 import ai.zone.FantasyIsle.MC_Show;
 import ai.zone.FantasyIsle.Parade;
@@ -46,10 +49,13 @@ public final class ZonesLoader
 	private static final Class<?>[] ZONES =
 	{
 		// Dragon Valley
+		BlackdaggerWing.class,
+		BleedingFly.class,
 		DragonValley.class,
 		DustRider.class,
 		EmeraldHorn.class,
 		NecromancerValley.class,
+		ShadowSummoner.class,
 		
 		// Fantasy Island
 		HandysBlockCheckerEvent.class,
