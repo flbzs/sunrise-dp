@@ -735,7 +735,6 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="FRONT_AREA" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
-		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<cond msgId="113" addName="1">
@@ -746,6 +745,11 @@
 				<param power="#power" />
 			</effect>
 		</for>
+		<enchant1for>
+			<effect name="CpDamPercent" noicon="1" val="0" >
+				<param power="#ench1Power" />
+			</effect>
+		</enchant1for>
 	</skill>
 	<skill id="321" levels="10" name="Blinding Blow" enchantGroup1="2" enchantGroup2="2">
 		<table name="#magicLvl"> 65 66 67 68 69 70 71 72 73 74 </table>
