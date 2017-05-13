@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2017 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -21,18 +21,18 @@ package custom.NewbieCoupons;
 import l2r.gameserver.data.xml.impl.MultisellData;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
+import l2r.gameserver.network.NpcStringId;
+
+import ai.npc.AbstractNpcAI;
 
 /**
  * Newbie Weapon/Accesories Coupons for the Hellbound opening event.<br>
  * Original Jython script by Vice.
  * @author Nyaran
  */
-public class NewbieCoupons extends Quest
+public class NewbieCoupons extends AbstractNpcAI
 {
-	private static final String qn = "NewbieCoupons";
-	
 	private static final int COUPON_ONE = 7832;
 	private static final int COUPON_TWO = 7833;
 	
@@ -54,16 +54,12 @@ public class NewbieCoupons extends Quest
 	// enable/disable coupon give
 	private static final boolean NEWBIE_COUPONS_ENABLED = true;
 	
-	/*
-	 * Newbie/one time rewards section Any quest should rely on a unique bit, but it could be shared among quests that were mutually exclusive or race restricted. Bit //1 isn't used for backwards compatibility. This script uses 2 bits, one for newbie coupons and another for travelers These 2 bits
-	 * happen to be the same used by the Miss Queen script
-	 */
 	private static final int NEWBIE_WEAPON = 16;
 	private static final int NEWBIE_ACCESORY = 32;
 	
 	public NewbieCoupons()
 	{
-		super(-1, qn, "custom");
+		super(NewbieCoupons.class.getSimpleName(), "custom");
 		addStartNpc(NPCs);
 		addTalkId(NPCs);
 	}
@@ -77,16 +73,13 @@ public class NewbieCoupons extends Quest
 			return htmltext;
 		}
 		
-		QuestState st = player.getQuestState(qn);
+		final QuestState st = getQuestState(player, true);
 		int newbie = player.getNewbie();
 		int level = player.getLevel();
 		int occupation_level = player.getClassId().level();
 		int pkkills = player.getPkKills();
 		if (event.equals("newbie_give_weapon_coupon"))
 		{
-			/*
-			 * TODO: check if this is the very first character for this account would need a bit of SQL, or a core method to determine it. This condition should be stored by the core in the account_data table upon character creation.
-			 */
 			if ((level >= 6) && (level <= 39) && (pkkills == 0) && (occupation_level == 0))
 			{
 				// check the player state against this quest newbie rewarding mark.
@@ -94,6 +87,7 @@ public class NewbieCoupons extends Quest
 				{
 					player.setNewbie(newbie | NEWBIE_WEAPON);
 					st.giveItems(COUPON_ONE, 5);
+					showOnScreenMsg(player, NpcStringId.ACQUISITION_OF_WEAPON_EXCHANGE_COUPON_FOR_BEGINNERS_COMPLETE_N_GO_SPEAK_WITH_THE_NEWBIE_GUIDE, 2, 5000, "");
 					htmltext = "30598-2.htm"; // here's the coupon you requested
 				}
 				else
@@ -152,12 +146,7 @@ public class NewbieCoupons extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		QuestState st = player.getQuestState(qn);
-		if (st == null)
-		{
-			st = newQuestState(player);
-		}
-		
+		getQuestState(player, true);
 		return "30598.htm";
 	}
 }

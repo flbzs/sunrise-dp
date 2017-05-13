@@ -40,7 +40,6 @@ public class ShadowSummoner extends AbstractNpcAI
 	private static final int DEMONS_BANQUET_2 = 25731;
 	// Skills
 	private static final SkillHolder SUMMON_SKELETON = new SkillHolder(6835, 1);
-	private static final SkillHolder SELF_DESTRUCTION = new SkillHolder(6838, 1);
 	// Variables
 	private static final String LOW_HP_FLAG = "LOW_HP_FLAG";
 	private static final String LIMIT_FLAG = "LIMIT_FLAG";
@@ -95,6 +94,11 @@ public class ShadowSummoner extends AbstractNpcAI
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
+		if (npc.isDead())
+		{
+			return super.onAdvEvent(event, npc, player);
+		}
+		
 		if (SUMMON_TIMER.equals(event))
 		{
 			if (!npc.getVariables().getBoolean(LIMIT_FLAG, false))
@@ -120,7 +124,6 @@ public class ShadowSummoner extends AbstractNpcAI
 			addSkillCastDesire(npc, npc, SUMMON_SKELETON, 9999999999900000L);
 			final L2Npc demonsBanquet = addSpawn(getRandom(2) < 1 ? DEMONS_BANQUET_1 : DEMONS_BANQUET_2, npc.getX() + 150, npc.getY() + 150, npc.getZ(), npc.getHeading(), false, 0);
 			addAttackDesire(demonsBanquet, player, 10000);
-			addSkillCastDesire(demonsBanquet, player, SELF_DESTRUCTION, 999999999);
 		}
 		return super.onAdvEvent(event, npc, player);
 	}
