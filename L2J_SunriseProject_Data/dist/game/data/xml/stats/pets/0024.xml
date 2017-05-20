@@ -3,6 +3,14 @@
 	<!-- Pet  : Wild Beast Fighter -->
 	<!-- Item : Wild Beast Fighter Hunting Helper Necklace -->
 	<pet id="16044" itemId="13019" index="24">
+		<skills>
+			<!-- Custom levels -->
+			<skill minLvl="1" skillId="5753" skillLvl="1" /> <!-- Awakening -->
+			<skill minLvl="1" skillId="5745" skillLvl="1" /> <!-- Death Blow -->
+			<skill minLvl="1" skillId="5746" skillLvl="1" /> <!-- Double Attack -->
+			<skill minLvl="1" skillId="5747" skillLvl="1" /> <!-- Spin Attack -->
+			<skill minLvl="1" skillId="5748" skillLvl="1" /> <!-- Meteor Shower -->
+		</skills>
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="18000" />

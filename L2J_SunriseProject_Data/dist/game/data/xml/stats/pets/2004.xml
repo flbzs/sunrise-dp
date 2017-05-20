@@ -3,6 +3,16 @@
 	<!-- Pet  : Lekang -->
 	<!-- Item : Rekang Rose Necklace (Event) - Summon duration - 3 hours -->
 	<pet id="1564" itemId="20910" index="2004">
+		<skills>
+			<skill minLvl="1" skillId="5189" skillLvl="6" />
+			<skill minLvl="1" skillId="5190" skillLvl="6" />
+			<skill minLvl="1" skillId="5192" skillLvl="2" />
+			<skill minLvl="1" skillId="5587" skillLvl="3" />
+			<skill minLvl="1" skillId="5771" skillLvl="1" />
+			<skill minLvl="1" skillId="5987" skillLvl="1" />
+			<skill minLvl="1" skillId="5988" skillLvl="1" />
+			<skill minLvl="1" skillId="23167" skillLvl="1" />
+		</skills>
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="10800" />

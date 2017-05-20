@@ -5,6 +5,28 @@
 	<pet id="16035" itemId="10313" index="19">
 		<set name="food" val="10425" />
 		<set name="hungry_limit" val="55" />
+		<skills>
+			<!-- Buffs -->
+			<skill minLvl="55" skillId="5194" skillLvl="3" /> <!-- Pet Empower -->
+			<skill minLvl="55" skillId="5190" skillLvl="6" /> <!-- Pet Blessed Soul -->
+			<skill minLvl="60" skillId="5587" skillLvl="3" /> <!-- Pet Shield -->
+			<skill minLvl="60" skillId="5189" skillLvl="6" /> <!-- Pet Blessed Body -->
+			<skill minLvl="65" skillId="5193" skillLvl="3" /> <!-- Pet Acumen -->
+			<skill minLvl="65" skillId="5201" skillLvl="6" /> <!-- Pet Concentration -->
+			<!-- Heals -->
+			<skill minLvl="55" skillId="5200" skillLvl="1" /> <!-- Pet Recharge -->
+			<skill minLvl="55" skillId="5590" skillLvl="5" /> <!-- Pet Battle Heal -->
+			<skill minLvl="60" skillId="5200" skillLvl="3" /> <!-- Pet Recharge -->
+			<skill minLvl="60" skillId="5590" skillLvl="6" /> <!-- Pet Battle Heal -->
+			<skill minLvl="65" skillId="5200" skillLvl="4" /> <!-- Pet Recharge -->
+			<skill minLvl="65" skillId="5590" skillLvl="7" /> <!-- Pet Battle Heal -->
+			<skill minLvl="70" skillId="5200" skillLvl="5" /> <!-- Pet Recharge -->
+			<skill minLvl="70" skillId="5590" skillLvl="8" /> <!-- Pet Battle Heal -->
+			<skill minLvl="75" skillId="5200" skillLvl="6" /> <!-- Pet Recharge -->
+			<skill minLvl="80" skillId="5200" skillLvl="7" /> <!-- Pet Recharge -->
+			<!-- Control -->
+			<skill minLvl="55" skillId="5771" skillLvl="1" /> <!-- Buff Control -->
+		</skills>
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="3335" />
