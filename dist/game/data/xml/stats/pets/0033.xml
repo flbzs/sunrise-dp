@@ -5,6 +5,17 @@
 	<pet id="16071" itemId="15488" index="33">
 		<set name="food" val="2515" />
 		<set name="hungry_limit" val="55" />
+		<skills>
+			<skill minLvl="1" skillId="6618" skillLvl="1" />
+			<skill minLvl="60" skillId="6618" skillLvl="2" />
+			<skill minLvl="65" skillId="6618" skillLvl="3" />
+			<skill minLvl="70" skillId="6618" skillLvl="4" />
+			<skill minLvl="75" skillId="6618" skillLvl="5" />
+			<skill minLvl="80" skillId="6618" skillLvl="6" />
+			<skill minLvl="85" skillId="6618" skillLvl="7" />
+			<skill minLvl="60" skillId="6681" skillLvl="1" />
+			<skill minLvl="60" skillId="6683" skillLvl="1" />
+		</skills>
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="248" />

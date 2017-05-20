@@ -3,6 +3,15 @@
 	<!-- Pet  : Lapham -->
 	<!-- Item : Lapham Rose Necklace (Event) - Summon duration - 3 hours -->
 	<pet id="1566" itemId="20912" index="2006">
+		<skills>
+			<skill minLvl="1" skillId="5190" skillLvl="6" />
+			<skill minLvl="1" skillId="5192" skillLvl="2" />
+			<skill minLvl="1" skillId="5193" skillLvl="3" />
+			<skill minLvl="1" skillId="5194" skillLvl="3" />
+			<skill minLvl="1" skillId="5587" skillLvl="3" />
+			<skill minLvl="1" skillId="5771" skillLvl="1" />
+			<skill minLvl="1" skillId="23167" skillLvl="1" />
+		</skills>
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="10800" />

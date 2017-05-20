@@ -5,6 +5,10 @@
 	<pet id="12526" itemId="4422" index="5">
 		<set name="food" val="5169;5168;6316" />
 		<set name="hungry_limit" val="55" />
+		<skills>
+			<skill minLvl="1" skillId="4710" skillLvl="0" />
+			<skill minLvl="1" skillId="4711" skillLvl="0" />
+		</skills>
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="508" />

@@ -5,6 +5,28 @@
 	<pet id="16034" itemId="10311" index="18">
 		<set name="food" val="10425" />
 		<set name="hungry_limit" val="55" />
+		<skills>
+			<!-- Buffs -->
+			<skill minLvl="55" skillId="5189" skillLvl="6" /> <!-- Pet Blessed Body -->
+			<skill minLvl="55" skillId="5586" skillLvl="3" /> <!-- Pet Might -->
+			<skill minLvl="60" skillId="5587" skillLvl="3" /> <!-- Pet Shield -->
+			<skill minLvl="60" skillId="5191" skillLvl="3" /> <!-- Pet Guidance -->
+			<skill minLvl="65" skillId="5186" skillLvl="2" /> <!-- Pet Haste -->
+			<skill minLvl="65" skillId="5187" skillLvl="4" /> <!-- Pet Vampiric Rage -->
+			<skill minLvl="70" skillId="5588" skillLvl="3" /> <!-- Pet Focus -->
+			<skill minLvl="70" skillId="5589" skillLvl="3" /> <!-- Pet Death Whisper -->
+			<!-- Heals -->
+			<skill minLvl="55" skillId="5195" skillLvl="5" /> <!-- Pet Greater Heal -->
+			<skill minLvl="55" skillId="5590" skillLvl="5" /> <!-- Pet Battle Heal -->
+			<skill minLvl="60" skillId="5195" skillLvl="6" /> <!-- Pet Greater Heal -->
+			<skill minLvl="60" skillId="5590" skillLvl="6" /> <!-- Pet Battle Heal -->
+			<skill minLvl="65" skillId="5195" skillLvl="7" /> <!-- Pet Greater Heal -->
+			<skill minLvl="65" skillId="5590" skillLvl="7" /> <!-- Pet Battle Heal -->
+			<skill minLvl="70" skillId="5195" skillLvl="8" /> <!-- Pet Greater Heal -->
+			<skill minLvl="70" skillId="5590" skillLvl="8" /> <!-- Pet Battle Heal -->
+			<!-- Control -->
+			<skill minLvl="55" skillId="5771" skillLvl="1" /> <!-- Buff Control -->
+		</skills>
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="3335" />

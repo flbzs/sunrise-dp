@@ -6,6 +6,19 @@
 		<set name="food" val="9668;14818;2515" />
 		<set name="hungry_limit" val="55" />
 		<set name="evolve" val="60;65;70" />
+		<skills>
+			<skill minLvl="70" skillId="5442" skillLvl="1" />
+			<skill minLvl="75" skillId="5442" skillLvl="2" />
+			<skill minLvl="80" skillId="5442" skillLvl="3" />
+			<skill minLvl="85" skillId="5442" skillLvl="4" />
+			<skill minLvl="70" skillId="5443" skillLvl="1" />
+			<skill minLvl="75" skillId="5443" skillLvl="2" />
+			<skill minLvl="80" skillId="5443" skillLvl="3" />
+			<skill minLvl="85" skillId="5443" skillLvl="4" />
+			<skill minLvl="80" skillId="5444" skillLvl="1" />
+			<skill minLvl="85" skillId="5444" skillLvl="2" />
+			<skill minLvl="85" skillId="5445" skillLvl="1" />
+		</skills>
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="3335" />

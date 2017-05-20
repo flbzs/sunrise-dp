@@ -6,6 +6,10 @@
 		<set name="food" val="5169;5168;6316" />
 		<set name="hungry_limit" val="55" />
 		<set name="evolve" val="60" />
+		<skills>
+			<skill minLvl="1" skillId="4712" skillLvl="0" />
+			<skill minLvl="1" skillId="4713" skillLvl="0" />
+		</skills>
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="696" />
