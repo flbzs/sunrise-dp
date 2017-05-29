@@ -59,7 +59,7 @@ public class ManaHealPercent extends L2Effect
 		}
 		
 		// vGodFather: herb effect must override invul check
-		if (target.isInvul() && !getSkill().isHerb())
+		if ((target.isInvul() || target.isMpBlocked()) && !getSkill().isHerb())
 		{
 			return false;
 		}

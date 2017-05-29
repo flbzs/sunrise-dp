@@ -26,6 +26,7 @@ import ai.zone.DragonValley.BleedingFly;
 import ai.zone.DragonValley.DragonValley;
 import ai.zone.DragonValley.DustRider;
 import ai.zone.DragonValley.EmeraldHorn;
+import ai.zone.DragonValley.MuscleBomber;
 import ai.zone.DragonValley.NecromancerValley;
 import ai.zone.DragonValley.ShadowSummoner;
 import ai.zone.FantasyIsle.HandysBlockCheckerEvent;
@@ -54,6 +55,7 @@ public final class ZonesLoader
 		DragonValley.class,
 		DustRider.class,
 		EmeraldHorn.class,
+		MuscleBomber.class,
 		NecromancerValley.class,
 		ShadowSummoner.class,
 		

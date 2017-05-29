@@ -32,6 +32,7 @@ import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.targets.L2TargetType;
 import l2r.gameserver.model.stats.Env;
+import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
 
 /**
@@ -64,6 +65,11 @@ public final class TriggerSkillByDamage extends L2Effect
 	public void onDamageReceivedEvent(OnCreatureDamageReceived event)
 	{
 		if (event.isDamageOverTime() || (_chance == 0) || (_skill.getSkillLvl() == 0))
+		{
+			return;
+		}
+		
+		if (((_targetType == L2TargetType.SELF) && (_skill.getSkill().getCastRange() > 0)) && (Util.calculateDistance(event.getAttacker(), event.getTarget(), true, false) > _skill.getSkill().getCastRange()))
 		{
 			return;
 		}
