@@ -50,6 +50,12 @@ public class ManaHealOverTime extends L2Effect
 			return false;
 		}
 		
+		// vGodFather: herb effect must override invul check
+		if ((getEffected().isInvul() || getEffected().isMpBlocked()) && !getSkill().isHerb())
+		{
+			return false;
+		}
+		
 		double mp = getEffected().getCurrentMp();
 		double maxmp = getEffected().getMaxRecoverableMp();
 		

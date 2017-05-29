@@ -54,7 +54,7 @@ public final class MagicalAttackMp extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		if (getEffected().isInvul())
+		if (getEffected().isInvul() || getEffected().isMpBlocked())
 		{
 			return false;
 		}
