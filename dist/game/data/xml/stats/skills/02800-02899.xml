@@ -756,8 +756,15 @@
 		<set name="itemConsumeId" val="14559" /> <!-- PC Points -->
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="10000" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="targetType" val="SELF" />
+		<cond>
+			<player checkpcbangpoint="true" />
+		</cond>
+		<for>
+			<effect name="PcBangPointUp" noicon="1" val="0">
+				<param amount="7000" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="2842" levels="1" name="Duel Supplies">
 		<!-- Confirmed CT2.5 -->
