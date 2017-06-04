@@ -130,6 +130,7 @@ public final class EffectMasterHandler
 		OutpostDestroy.class,
 		Paralyze.class,
 		Passive.class,
+		PcBangPointUp.class,
 		Petrification.class,
 		PhysicalAttackHpLink.class,
 		PhysicalAttackMute.class,
