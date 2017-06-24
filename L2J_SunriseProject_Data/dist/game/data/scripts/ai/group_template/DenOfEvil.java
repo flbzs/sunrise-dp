@@ -19,13 +19,12 @@
 package ai.group_template;
 
 import l2r.gameserver.ThreadPoolManager;
-import l2r.gameserver.data.xml.impl.SkillData;
 import l2r.gameserver.instancemanager.ZoneManager;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.skills.L2Skill;
+import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.zone.type.L2EffectZone;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
@@ -47,6 +46,7 @@ public class DenOfEvil extends AbstractNpcAI
 		18814
 	};
 	private static final int SKILL_ID = 6150; // others +2
+	private static final long KASHA_DESTRUCT_DELAY = 120000;
 	
 	private static final Location[] EYE_SPAWNS =
 	{
@@ -130,7 +130,7 @@ public class DenOfEvil extends AbstractNpcAI
 		zone.addSkill(skillId, skillLevel + 1);
 		if (skillLevel == 3) // 3+1=4
 		{
-			ThreadPoolManager.getInstance().scheduleAi(new KashaDestruction(zone), 2 * 60 * 1000l);
+			ThreadPoolManager.getInstance().scheduleAi(new KashaDestruction(zone), KASHA_DESTRUCT_DELAY);
 			zone.broadcastPacket(SystemMessage.getSystemMessage(SystemMessageId.KASHA_EYE_PITCHES_TOSSES_EXPLODE));
 		}
 		else if (skillLevel == 2)
@@ -143,7 +143,10 @@ public class DenOfEvil extends AbstractNpcAI
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
 	{
-		ThreadPoolManager.getInstance().scheduleAi(new RespawnNewEye(npc.getLocation()), 15000);
+		ThreadPoolManager.getInstance().scheduleAi(() ->
+		{
+			addSpawn(EYE_IDS[getRandom(EYE_IDS.length)], npc.getLocation(), false, 0);
+		} , 15000);
 		L2EffectZone zone = ZoneManager.getInstance().getZone(npc, L2EffectZone.class);
 		if (zone == null)
 		{
@@ -156,31 +159,9 @@ public class DenOfEvil extends AbstractNpcAI
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private class RespawnNewEye implements Runnable
+	private static class KashaDestruction implements Runnable
 	{
-		private final Location _loc;
-		
-		public RespawnNewEye(Location loc)
-		{
-			_loc = loc;
-		}
-		
-		@Override
-		public void run()
-		{
-			try
-			{
-				addSpawn(EYE_IDS[getRandom(EYE_IDS.length)], _loc, false, 0);
-			}
-			catch (Exception e)
-			{
-			
-			}
-		}
-	}
-	
-	private class KashaDestruction implements Runnable
-	{
+		private static final SkillHolder KASHAS_BETRAYAL = new SkillHolder(6149);
 		L2EffectZone _zone;
 		
 		public KashaDestruction(L2EffectZone zone)
@@ -212,8 +193,7 @@ public class DenOfEvil extends AbstractNpcAI
 				}
 				if (character.isPlayable())
 				{
-					L2Skill skill = SkillData.getInstance().getInfo(6149, 1);
-					skill.getEffects(character, character); // apply effect
+					KASHAS_BETRAYAL.getSkill().applyEffects(character, character);
 				}
 				else
 				{
@@ -225,7 +205,10 @@ public class DenOfEvil extends AbstractNpcAI
 							L2Npc npc = (L2Npc) character;
 							if (Util.contains(EYE_IDS, npc.getId()))
 							{
-								ThreadPoolManager.getInstance().scheduleAi(new RespawnNewEye(npc.getLocation()), 15000);
+								ThreadPoolManager.getInstance().scheduleAi(() ->
+								{
+									addSpawn(EYE_IDS[getRandom(EYE_IDS.length)], npc.getLocation(), false, 0);
+								} , 15000);
 							}
 						}
 					}
