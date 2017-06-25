@@ -25,6 +25,7 @@ import ai.npc.Abercrombie.Abercrombie;
 import ai.npc.Alarm.Alarm;
 import ai.npc.Alexandria.Alexandria;
 import ai.npc.ArenaManager.ArenaManager;
+import ai.npc.Asamah.Asamah;
 import ai.npc.AvantGarde.AvantGarde;
 import ai.npc.BlackJudge.BlackJudge;
 import ai.npc.BlackMarketeerOfMammon.BlackMarketeerOfMammon;
@@ -88,6 +89,7 @@ public final class NpcLoader
 		Alarm.class,
 		Alexandria.class,
 		ArenaManager.class,
+		Asamah.class,
 		AvantGarde.class,
 		BlackJudge.class,
 		BlackMarketeerOfMammon.class,
