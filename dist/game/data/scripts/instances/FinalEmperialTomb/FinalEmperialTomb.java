@@ -1544,7 +1544,6 @@ public final class FinalEmperialTomb extends AbstractInstance
 	
 	private L2Skill getRandomSkill(L2Npc npc, FETWorld world)
 	{
-		System.out.println("World status is: " + world.getStatus());
 		if (world.getStatus() == 3) // First Transform
 		{
 			if (world.lastSkillId == 5014)
@@ -1687,15 +1686,13 @@ public final class FinalEmperialTomb extends AbstractInstance
 		}
 		
 		L2Character _target = getRandomTarget(npc);
-		if (_target == null)
+		if ((_target == null) || npc.isCastingNow())
 		{
 			return;
 		}
 		
 		L2Skill _skill = getRandomSkill(npc, world);
-		int castRange = _skill.getCastRange() < 600 ? 600 : _skill.getCastRange();
-		
-		if (Util.checkIfInRange(castRange, npc, _target, true))
+		if (Util.checkIfInRange(_skill.getCastRange(), npc, _target, true))
 		{
 			npc.getAI().stopFollow();
 			npc.setTarget(_target);
