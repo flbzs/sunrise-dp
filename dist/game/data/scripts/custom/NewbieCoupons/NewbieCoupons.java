@@ -22,6 +22,7 @@ import l2r.gameserver.data.xml.impl.MultisellData;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.QuestState;
+import l2r.gameserver.model.variables.PlayerVariables;
 import l2r.gameserver.network.NpcStringId;
 
 import ai.npc.AbstractNpcAI;
@@ -146,7 +147,36 @@ public class NewbieCoupons extends AbstractNpcAI
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		getQuestState(player, true);
+		final QuestState qs = getQuestState(player, true);
+		
+		final PlayerVariables vars = player.getVariables();
+		
+		if (vars.getBoolean("NEWBIE_LEVEL", true) && vars.getBoolean("NEWBIE_SHOTS", false))
+		{
+			if (player.getLevel() >= 9)
+			{
+				qs.giveAdena(5563, true);
+				qs.addExpAndSp(16851, 711);
+			}
+			else if (player.getLevel() >= 8)
+			{
+				qs.giveAdena(9290, true);
+				qs.addExpAndSp(28806, 1207);
+			}
+			else if (player.getLevel() >= 7)
+			{
+				qs.giveAdena(11567, true);
+				qs.addExpAndSp(36942, 1541);
+			}
+			else
+			{
+				qs.giveAdena(12928, true);
+				qs.addExpAndSp(42191, 1753);
+			}
+			
+			vars.set("NEWBIE_LEVEL", false);
+		}
+		
 		return "30598.htm";
 	}
 }
