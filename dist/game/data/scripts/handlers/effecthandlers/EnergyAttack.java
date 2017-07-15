@@ -167,7 +167,7 @@ public final class EnergyAttack extends L2Effect
 		{
 			attacker.sendDamageMessage(target, (int) damage, false, critical, false);
 			target.reduceCurrentHp(damage, attacker, skill);
-			target.notifyDamageReceived(damage, attacker, skill, critical, false);
+			target.notifyDamageReceived(damage, attacker, skill, critical, false, false);
 			
 			if (Config.LOG_GAME_DAMAGE && attacker.isPlayable() && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
 			{
@@ -186,7 +186,7 @@ public final class EnergyAttack extends L2Effect
 			}
 			
 			// Check if damage should be reflected
-			Formulas.calcDamageReflected(attacker, target, skill, damage);
+			Formulas.calcDamageReflected(attacker, target, skill, damage, critical);
 		}
 		return true;
 	}

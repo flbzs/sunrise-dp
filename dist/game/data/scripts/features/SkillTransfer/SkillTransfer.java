@@ -25,8 +25,11 @@ import l2r.gameserver.enums.IllegalActionPunishmentType;
 import l2r.gameserver.enums.PcCondOverride;
 import l2r.gameserver.model.L2SkillLearn;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.model.events.impl.character.player.OnPlayerProfessionCancel;
 import l2r.gameserver.model.events.impl.character.player.OnPlayerProfessionChange;
 import l2r.gameserver.model.holders.ItemHolder;
+import l2r.gameserver.model.itemcontainer.PcInventory;
+import l2r.gameserver.model.items.instance.L2ItemInstance;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.util.Util;
 
@@ -53,6 +56,7 @@ public final class SkillTransfer extends AbstractNpcAI
 	{
 		super(SkillTransfer.class.getSimpleName(), "features");
 		setPlayerProfessionChangeId(this::onProfessionChange);
+		setPlayerProfessionCancelId(this::onProfessionCancel);
 		setOnEnterWorld(Config.SKILL_CHECK_ENABLE);
 	}
 	
@@ -71,6 +75,29 @@ public final class SkillTransfer extends AbstractNpcAI
 			player.getVariables().set(name, true);
 			giveItems(player, PORMANDERS[index]);
 		}
+	}
+	
+	public void onProfessionCancel(OnPlayerProfessionCancel event)
+	{
+		final L2PcInstance player = event.getActiveChar();
+		final int index = getTransferClassIndex(player);
+		
+		// is a transfer class
+		if (index < 0)
+		{
+			return;
+		}
+		
+		int pomanderId = PORMANDERS[index].getId();
+		// remove unsused HolyPomander
+		PcInventory inv = player.getInventory();
+		for (L2ItemInstance itemI : inv.getAllItemsByItemId(pomanderId))
+		{
+			inv.destroyItem("[HolyPomander - remove]", itemI, player, null);
+		}
+		// remove holy pomander variable
+		final String name = HOLY_POMANDER + event.getClassId();
+		player.getVariables().remove(name);
 	}
 	
 	@Override

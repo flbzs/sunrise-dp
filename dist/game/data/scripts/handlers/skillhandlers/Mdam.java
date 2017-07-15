@@ -114,13 +114,13 @@ public class Mdam implements ISkillHandler
 				if ((reflect & Formulas.SKILL_REFLECT_VENGEANCE) != 0)
 				{
 					activeChar.reduceCurrentHp(damage, target, skill);
-					activeChar.notifyDamageReceived(damage, target, skill, mcrit, false);
+					activeChar.notifyDamageReceived(damage, target, skill, mcrit, false, true);
 				}
 				else
 				{
 					activeChar.sendDamageMessage(target, damage, mcrit, false, false);
 					target.reduceCurrentHp(damage, activeChar, skill);
-					target.notifyDamageReceived(damage, activeChar, skill, mcrit, false);
+					target.notifyDamageReceived(damage, activeChar, skill, mcrit, false, false);
 				}
 				
 				// Logging damage
