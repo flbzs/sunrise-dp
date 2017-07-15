@@ -24,6 +24,7 @@ import java.util.logging.Logger;
 
 import l2r.Config;
 import l2r.gameserver.enums.ShotType;
+import l2r.gameserver.enums.audio.Sound;
 import l2r.gameserver.handler.ISkillHandler;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Character;
@@ -110,7 +111,12 @@ public class Blow implements ISkillHandler
 				// vGodFather retail message order
 				activeChar.sendDamageMessage(target, (int) damage, false, true, false);
 				target.reduceCurrentHp(damage, activeChar, skill);
-				target.notifyDamageReceived(damage, activeChar, skill, crit, false);
+				target.notifyDamageReceived(damage, activeChar, skill, crit, false, false);
+				
+				if (!skill.getDmgDirectlyToHP())
+				{
+					activeChar.sendPacket(Sound.SKILLSOUND_CRITICAL_HIT_2.getPacket());
+				}
 				
 				if (Config.LOG_GAME_DAMAGE && activeChar.isPlayable() && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
 				{
@@ -147,7 +153,7 @@ public class Blow implements ISkillHandler
 				}
 				
 				// Check if damage should be reflected
-				Formulas.calcDamageReflected(activeChar, target, skill, damage);
+				Formulas.calcDamageReflected(activeChar, target, skill, damage, crit);
 				
 				// vGodFather: ss must consume only if skill succeed
 				activeChar.setChargedShot(ShotType.SOULSHOTS, false);

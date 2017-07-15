@@ -112,7 +112,7 @@ public class Pdam implements ISkillHandler
 				{
 					activeChar.sendDamageMessage(target, damage, false, crit, false);
 					target.reduceCurrentHp(damage, activeChar, skill);
-					target.notifyDamageReceived(damage, activeChar, skill, crit, false);
+					target.notifyDamageReceived(damage, activeChar, skill, crit, false, false);
 					
 					if (Config.LOG_GAME_DAMAGE && activeChar.isPlayable() && (damage > Config.LOG_GAME_DAMAGE_THRESHOLD))
 					{
@@ -142,7 +142,7 @@ public class Pdam implements ISkillHandler
 					}
 					
 					// Check if damage should be reflected
-					Formulas.calcDamageReflected(activeChar, target, skill, damage);
+					Formulas.calcDamageReflected(activeChar, target, skill, damage, crit);
 				}
 				else
 				{

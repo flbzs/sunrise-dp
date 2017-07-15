@@ -18,7 +18,6 @@
  */
 package quests.Q00040_ASpecialOrder;
 
-import l2r.gameserver.enums.QuestSound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.quest.Quest;
@@ -69,8 +68,7 @@ public final class Q00040_ASpecialOrder extends Quest
 		{
 			case "accept":
 			{
-				st.setState(State.STARTED);
-				st.playSound(QuestSound.ITEMSOUND_QUEST_ACCEPT);
+				st.startQuest();
 				if (getRandomBoolean())
 				{
 					st.setCond(2);
