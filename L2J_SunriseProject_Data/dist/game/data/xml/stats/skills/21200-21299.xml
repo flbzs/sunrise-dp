@@ -431,9 +431,10 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="21242" levels="1" name="Zaken's Call">
-		<!-- Can move to near Zaken's Headquarters. Reuse delay 30 minutes. -->
+		<!-- High Five Confirmed -->
 		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="20000" />
+		<set name="hitTime" val="10000" />
+		<set name="icon" val="BranchSys2.Icon.br_zaken_cloak_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
@@ -448,16 +449,17 @@
 		</cond>
 	</skill>
 	<skill id="21243" levels="1" name="Freya's Call">
-		<!-- Can move to near Freya's Headquarters. Reuse delay 30 minutes. -->
+		<!-- High Five Confirmed -->
 		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="20000" />
+		<set name="hitTime" val="10000" />
+		<set name="icon" val="BranchSys2.Icon.br_freya_cloak_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="skillType" val="TELEPORT" />
 		<set name="targetType" val="SELF" />
-		<set name="teleCoords" val="102744,-124296,-2784" />
+		<set name="teleCoords" val="102605,-124399,-2784" />
 		<cond msgId="113" addName="1">
 			<not>
 				<player insideZoneId="10501, 10502, 10503" />
@@ -465,16 +467,17 @@
 		</cond>
 	</skill>
 	<skill id="21244" levels="1" name="Frintezza's Call">
-		<!-- Can move to near Frintezza's Headquarters. Reuse delay 30 minutes. -->
+		<!-- High Five Confirmed -->
 		<set name="blockedInOlympiad" val="true" />
-		<set name="hitTime" val="20000" />
+		<set name="hitTime" val="10000" />
+		<set name="icon" val="BranchSys2.Icon.br_frintessa_cloak_i00" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1800000" />
 		<set name="skillType" val="TELEPORT" />
 		<set name="targetType" val="SELF" />
-		<set name="teleCoords" val="181384,-80856,-2728" />
+		<set name="teleCoords" val="181380,-80878,-2728" />
 		<cond msgId="113" addName="1">
 			<not>
 				<player insideZoneId="10501, 10502, 10503" />
