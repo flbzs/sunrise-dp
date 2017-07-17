@@ -330,10 +330,24 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6823" levels="1" name="Reflect Attack">
-		<!-- none -->
-		<set name="operateType" val="P" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<!-- High Five Skill -->
+		<set name="abnormalLvl" val="3" />
+		<set name="abnormalTime" val="30" />
+		<set name="abnormalType" val="dmg_shield" />
+		<set name="effectPoint" val="438" />
+		<set name="hitTime" val="4000" />
+		<set name="icon" val="icon.skill0086" />
+		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="magicLvl" val="84" />
+		<set name="operateType" val="A2" />
+		<set name="reuseDelay" val="4000" />
+		<set name="skillType" val="BUFF" />
+		<set name="targetType" val="SELF" />
+		<for>
+			<effect name="Buff" abnormalTime="30" val="0" abnormalLvl="3" abnormalType="dmg_shield">
+				<add stat="reflectDam" val="20" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="6824" levels="1" name="Piercing Storm">
 		<!-- none -->
@@ -562,25 +576,24 @@
 	</skill>
 	<skill id="6842" levels="2" name="Enhance">
 		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
 		<table name="#abnormalLvls"> 2 3 </table>
 		<table name="#pAtk"> 1.12 1 </table>
 		<table name="#pAtkSpd"> 1.15 1.4 </table>
 		<set name="abnormalLvl" val="#abnormalLvls" />
 		<set name="abnormalTime" val="60" />
-		<set name="abnormalType" val="pa_up" />
-		<set name="affectRange" val="600" />
+		<set name="abnormalType" val="casting_time_up" />
 		<set name="blockedInOlympiad" val="true" />
+		<set name="basicProperty" val="MEN"/>
 		<set name="hitTime" val="3000" />
+		<set name="icon" val="icon.skill1086"/>
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
+		<set name="lvlBonusRate" val="2"/>
 		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="75" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
 		<set name="skillType" val="BUFF" />
-		<set name="targetType" val="CLAN" />
+		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="15" val="0" abnormalLvl="#abnormalLvls" abnormalType="pa_up">
+			<effect name="Buff" abnormalTime="15" val="0" abnormalLvl="#abnormalLvls" abnormalType="casting_time_up">
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
@@ -611,39 +624,32 @@
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="6845" levels="1" name="Power Strike">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
 		<set name="hitTime" val="2500" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="80" />
 		<set name="mpConsume" val="80" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="3000" />
-		<set name="reuseDelay" val="3000" />
+		<set name="power" val="12670" />
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="6846" levels="1" name="Vampiric Claw">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
-		<set name="absorbPart" val="1.0" />
+		<!-- High Five Confirmed -->
+		<set name="absorbPart" val="0.4" />
 		<set name="castRange" val="800" />
-		<set name="effectRange" val="1300" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
+		<set name="effectRange" val="1200" />
 		<set name="hitTime" val="3000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="123" />
+		<set name="magicLvl" val="81" />
+		<set name="mpConsume" val="98" />
+		<set name="mpInitialConsume" val="25" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="300" />
-		<set name="reuseDelay" val="3000" />
+		<set name="power" val="110" />
 		<set name="skillType" val="DRAIN" />
 		<set name="targetType" val="ONE" />
 	</skill>
@@ -660,106 +666,98 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6849" levels="1" name="Summoner Strike">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="40" />
 		<set name="effectRange" val="400" />
 		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
+		<set name="elementPower" val="120" />
 		<set name="hitTime" val="3000" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="82" />
 		<set name="mpConsume" val="100" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="3000" />
-		<set name="reuseDelay" val="3000" />
+		<set name="power" val="12936" />
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="6850" levels="1" name="Self-destruction">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="affectRange" val="200" />
+		<set name="castRange" val="600" />
+		<set name="effectPoint" val="-10000" />
+		<set name="effectRange" val="800" />
 		<set name="hitTime" val="3000" />
-		<set name="isSuicideAttack" val="true" />
 		<set name="magicLvl" val="81" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="3000" />
+		<set name="power" val="6335" />
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="AURA" />
 	</skill>
 	<skill id="6851" levels="1" name="Power Strike">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="40" />
+		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
 		<set name="hitTime" val="3000" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="81" />
 		<set name="mpConsume" val="80" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="3000" />
-		<set name="reuseDelay" val="3000" />
+		<set name="power" val="12936" />
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="6852" levels="1" name="Magic Strike">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="1100" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="80" />
+		<set name="magicLvl" val="81" />
+		<set name="mpConsume" val="63" />
+		<set name="mpInitialConsume" val="17" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="100" />
-		<set name="reuseDelay" val="3000" />
+		<set name="power" val="110" />
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="6853" levels="1" name="Sleep">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="6" />
 		<set name="abnormalType" val="sleep" />
-		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="3000" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="2" />
-		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="80" />
+		<set name="magicLvl" val="82" />
+		<set name="mpConsume" val="63" />
+		<set name="mpInitialConsume" val="17" />
 		<set name="operateType" val="A2" />
 		<set name="power" val="80" /> <!-- Base Land Rate -->
 		<set name="offensive" val="true" />
-		<set name="reuseDelay" val="1000" />
 		<set name="basicProperty" val="MEN" />
 		<set name="skillType" val="SLEEP" />
 		<set name="targetType" val="ONE" />
+		<set name="trait" val="SLEEP" />
 		<for>
 			<effect name="Sleep" abnormalTime="6" val="0" abnormalLvl="1" abnormalType="sleep" />
 		</for>
 	</skill>
 	<skill id="6854" levels="1" name="Hold">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="1" />
-		<set name="abnormalTime" val="20" />
+		<set name="abnormalTime" val="10" />
 		<set name="abnormalType" val="root_magically" />
-		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="3000" />
@@ -775,24 +773,22 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="skillType" val="ROOT" />
 		<set name="targetType" val="ONE" />
+		<set name="trait" val="HOLD" />
 		<for>
-			<effect name="Root" abnormalTime="8" val="0" abnormalLvl="1" abnormalType="root_magically" />
+			<effect name="Root" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="root_magically" effectPower="50"/>
 		</for>
 	</skill>
 	<skill id="6855" levels="1" name="Magic Strike">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="castRange" val="600" />
+		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="1100" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
 		<set name="hitTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="82" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="150" />
-		<set name="reuseDelay" val="1000" />
+		<set name="power" val="110" />
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="ONE" />
 	</skill>
@@ -803,20 +799,19 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6857" levels="1" name="Power Strike">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="80" />
+		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
 		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
+		<set name="elementPower" val="120" />
 		<set name="hitTime" val="2500" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="15000" />
-		<set name="reuseDelay" val="3000" />
+		<set name="power" val="13446" />
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 	</skill>
@@ -827,59 +822,60 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="6859" levels="1" name="Power Strike">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="80" />
+		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
 		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
+		<set name="elementPower" val="120" />
 		<set name="hitTime" val="2500" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="15000" />
-		<set name="reuseDelay" val="3000" />
+		<set name="power" val="13446" />
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="6860" levels="1" name="Power Strike">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="baseCritRate" val="20" />
 		<set name="castRange" val="80" />
+		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="400" />
-		<set name="element" val="5" /> <!-- Dark -->
-		<set name="elementPower" val="20" />
+		<set name="element" val="0" /> <!-- Fire -->
+		<set name="elementPower" val="120" />
 		<set name="hitTime" val="2000" />
-		<set name="magicLvl" val="85" />
+		<set name="magicLvl" val="83" />
 		<set name="mpConsume" val="80" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
-		<set name="power" val="15000" />
-		<set name="reuseDelay" val="3000" />
+		<set name="power" val="20168" />
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 	</skill>
 	<skill id="6861" levels="1" name="Enhance">
-		<!-- High Five Skill -->
-		<!-- FIXME: value unconfirmed -->
+		<!-- High Five Confirmed -->
 		<set name="abnormalLvl" val="3" />
-		<set name="abnormalTime" val="60" />
-		<set name="abnormalType" val="pa_up" />
+		<set name="abnormalTime" val="300" />
+		<set name="abnormalType" val="casting_time_up" />
+		<set name="basicProperty" val="MEN" />
+		<!-- <set name="castRange" val="600" /> -->
+		<!-- <set name="effectRange" val="900" /> -->
 		<set name="affectRange" val="600" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="hitTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="magicLvl" val="85" />
-		<set name="mpConsume" val="75" />
+		<set name="lvlBonusRate" val="2" />
+		<set name="magicLvl" val="83" />
+		<set name="mpConsume" val="60" />
+		<set name="mpInitialConsume" val="15" />
 		<set name="operateType" val="A2" />
-		<set name="reuseDelay" val="30000" />
 		<set name="skillType" val="BUFF" />
-		<set name="targetType" val="CLAN" />
+		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="15" val="0" abnormalLvl="3" abnormalType="pa_up">
+			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="3" abnormalType="casting_time_up">
 				<mul stat="pAtk" val="1.2" />
 				<mul stat="pAtkSpd" val="1.3" />
 			</effect>

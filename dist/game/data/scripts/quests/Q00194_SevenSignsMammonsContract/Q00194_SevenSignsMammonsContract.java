@@ -166,7 +166,7 @@ public final class Q00194_SevenSignsMammonsContract extends Quest
 					htmltext = event;
 					if (player.getTransformationId() == 111)
 					{
-						player.stopAllEffects();
+						player.untransform();
 					}
 				}
 				break;

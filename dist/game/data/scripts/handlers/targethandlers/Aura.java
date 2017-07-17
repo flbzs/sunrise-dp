@@ -38,6 +38,7 @@ public class Aura implements ITargetTypeHandler
 	@Override
 	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
 	{
+		int maxTargets = skill.getAffectLimit();
 		final List<L2Character> targetList = new ArrayList<>();
 		final boolean srcInArena = (activeChar.isInsideZone(ZoneIdType.PVP) && !activeChar.isInsideZone(ZoneIdType.SIEGE));
 		for (L2Character obj : activeChar.getKnownList().getKnownCharactersInRadius(skill.getAffectRange()))
@@ -80,6 +81,11 @@ public class Aura implements ITargetTypeHandler
 					{
 						obj
 					};
+				}
+				
+				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
+				{
+					break;
 				}
 				
 				targetList.add(obj);
