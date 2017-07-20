@@ -2225,7 +2225,6 @@
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="3000" />
 		<set name="basicProperty" val="CON" />
-		<set name="skillType" val="BLEED" />
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
@@ -2237,12 +2236,12 @@
 		</cond>
 		<for>
 			<!-- Retail Values CT2.3: 25 34 44 52 62 67HP * 3 Sec -->
-			<effect count="7" name="DamOverTime" abnormalTime="3" val="#dot" abnormalLvl="#abnormalLvls" abnormalType="bleeding" abnormalVisualEffect="bleed">
+			<effect count="7" name="DamOverTime" abnormalTime="3" val="#dot" abnormalLvl="#abnormalLvls" abnormalType="bleeding" abnormalVisualEffect="bleed" effectPower="100">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</for>
 		<enchant2for>
-			<effect name="HpByLevel" noicon="1" val="0">
+			<effect name="HpByLevel" noicon="1" val="0" effectPower="-1">
 				<param power="#ench2Sap" />
 			</effect>
 			<effect count="7" name="DamOverTime" abnormalTime="3" val="201" abnormalLvl="8" abnormalType="bleeding" abnormalVisualEffect="bleed" effectPower="100">
@@ -2250,7 +2249,7 @@
 			</effect>
 		</enchant2for>
 		<enchant3for>
-			<effect count="7" name="DamOverTime" abnormalTime="3" val="#ench3dot" abnormalLvl="8" abnormalType="bleeding" abnormalVisualEffect="bleed">
+			<effect count="7" name="DamOverTime" abnormalTime="3" val="#ench3dot" abnormalLvl="8" abnormalType="bleeding" abnormalVisualEffect="bleed" effectPower="100">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</enchant3for>

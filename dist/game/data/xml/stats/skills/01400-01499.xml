@@ -819,7 +819,7 @@
 	</skill>
 	<skill id="1425" levels="1" name="Purification Field">
 		<set name="affectLimit" val="0-0" />
-		<set name="affectRange" val="180" />
+		<set name="affectRange" val="1000" />
 		<set name="blockedInOlympiad" val="true" />
 		<set name="castRange" val="900" />
 		<set name="hitTime" val="3000" />
@@ -828,8 +828,8 @@
 		<set name="itemConsumeId" val="8876" />
 		<set name="magicLvl" val="80" />
 		<set name="maxNegated" val="10" />
-		<set name="mpConsume" val="70" />
-		<set name="mpInitialConsume" val="70" />
+		<set name="mpConsume" val="14" />
+		<set name="mpInitialConsume" val="56" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="1200000" />
 		<set name="staticReuse" val="true" />
