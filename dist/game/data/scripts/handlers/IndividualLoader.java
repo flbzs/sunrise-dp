@@ -51,7 +51,6 @@ import ai.individual.extra.HolyBrazier;
 import ai.individual.extra.KaimAbigore;
 import ai.individual.extra.Kechi;
 import ai.individual.extra.KelBilette;
-import ai.individual.extra.Lematan;
 import ai.individual.extra.OlAriosh;
 import ai.individual.extra.SeerFlouros;
 import ai.individual.extra.SeerUgoros;
@@ -105,7 +104,6 @@ public final class IndividualLoader
 		KaimAbigore.class,
 		Kechi.class,
 		KelBilette.class,
-		Lematan.class,
 		OlAriosh.class,
 		SeerFlouros.class,
 		SeerUgoros.class,
