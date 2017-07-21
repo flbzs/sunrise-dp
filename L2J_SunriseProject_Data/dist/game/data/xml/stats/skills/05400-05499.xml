@@ -358,7 +358,7 @@
 		<set name="operateType" val="A1" />
 		<set name="power" val="115" />
 		<set name="skillType" val="MDAM" />
-		<set name="targetType" val="CLAN" />
+		<set name="targetType" val="AREA" />
 	</skill>
 	<skill id="5431" levels="1" name="Slow">
 		<!-- Condition causing target to temporarily decrease attack speed and casting speed. -->
