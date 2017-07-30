@@ -60,7 +60,7 @@ public final class TriggerSkillByAvoid extends L2Effect
 			return;
 		}
 		
-		if (((_targetType == L2TargetType.SELF) && (_skill.getSkill().getCastRange() > 0)) && (Util.calculateDistance(event.getAttacker(), event.getTarget(), true, false) > _skill.getSkill().getCastRange()))
+		if ((((_targetType == L2TargetType.SELF) || (_targetType == L2TargetType.ONE)) && (_skill.getSkill().getCastRange() > 0)) && (Util.calculateDistance(event.getAttacker(), event.getTarget(), true, false) > _skill.getSkill().getCastRange()))
 		{
 			return;
 		}
