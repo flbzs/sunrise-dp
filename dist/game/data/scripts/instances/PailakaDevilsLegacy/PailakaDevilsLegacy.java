@@ -300,7 +300,7 @@ public final class PailakaDevilsLegacy extends AbstractInstance
 	@Override
 	public void onMoveFinished(L2Npc npc)
 	{
-		if (npc.isInsideRadius(LEMATAN_PORT_POINT, 50, true, false) && (npc.getVariables().getInt("ON_SHIP", 0) == 0) && (npc.isScriptValue(0)))
+		if (npc.isInsideRadius(LEMATAN_PORT_POINT, 50, true, false) && (npc.getVariables().getInt("ON_SHIP", 0) == 0) && (npc.isScriptValue(1)))
 		{
 			npc.setTarget(npc);
 			npc.doCast(AV_TELEPORT.getSkill());

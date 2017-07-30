@@ -748,6 +748,7 @@
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="operateType" val="A1" />
+		<set name="reuseDelay" val="500" />
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect name="CpHeal" noicon="1" val="#amount" />

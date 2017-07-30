@@ -548,7 +548,7 @@
 		<set name="effectPoint" val="-10000" />
 		<set name="effectRange" val="800" />
 		<set name="hitTime" val="4000" />
-		<set name="isSuicideAttack" val="true" />
+<!-- 		<set name="isSuicideAttack" val="true" /> -->
 		<set name="magicLvl" val="85" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="6960" />
