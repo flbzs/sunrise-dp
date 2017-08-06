@@ -238,7 +238,7 @@ public final class DisciplesNecropolisPast extends AbstractInstance
 				{
 					player.enableAllSkills();
 					player.setIsImmobilized(false);
-					player.teleToLocation(ENTER, 0);
+					teleportPlayer(player, ENTER, player.getInstanceId());
 					break;
 				}
 				case "FIGHT":
