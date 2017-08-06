@@ -27,7 +27,6 @@ import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.network.serverpackets.FlyToLocation;
 import l2r.gameserver.network.serverpackets.FlyToLocation.FlyType;
-import l2r.gameserver.network.serverpackets.ValidateLocation;
 import l2r.gameserver.util.Util;
 
 /**
@@ -74,7 +73,7 @@ public class Blink extends L2Effect
 		effected.abortAttack();
 		effected.abortCast();
 		effected.setXYZ(destination);
-		effected.broadcastPacket(new ValidateLocation(effected));
+		// effected.broadcastPacket(new ValidateLocation(effected));
 		return true;
 	}
 }

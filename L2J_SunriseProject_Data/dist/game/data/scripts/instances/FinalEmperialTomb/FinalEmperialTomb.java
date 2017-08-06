@@ -1544,11 +1544,12 @@ public final class FinalEmperialTomb extends AbstractInstance
 	
 	private L2Skill getRandomSkill(L2Npc npc, FETWorld world)
 	{
+		final int rnd = Rnd.get(1000);
 		if (world.getStatus() == 3) // First Transform
 		{
 			if (world.lastSkillId == 5014)
 			{
-				if (Rnd.get(100) < 15)
+				if (rnd < (15 * 10))
 				{
 					return SkillData.getInstance().getInfo(5016, 1); // Paralysis
 				}
@@ -1560,12 +1561,11 @@ public final class FinalEmperialTomb extends AbstractInstance
 		{
 			if (world.lastSkillId == 5014)
 			{
-				int rnd = Rnd.get(100);
-				if (rnd < 20)
+				if (rnd < (20 * 10))
 				{
 					return SkillData.getInstance().getInfo(5016, 1); // Paralysis
 				}
-				else if (rnd < 30)
+				else if (rnd < (30 * 10))
 				{
 					return SkillData.getInstance().getInfo(5015, 2); // Rush
 				}
@@ -1580,9 +1580,9 @@ public final class FinalEmperialTomb extends AbstractInstance
 			}
 			else if (world.lastSkillId == 5015)
 			{
-				if (Rnd.get(100) < 30)
+				if (rnd < (30 * 10))
 				{
-					return SkillData.getInstance().getInfo(5018, 1); // ÃƒÆ’Ã¯Â¿Â½ÃƒÂ¯Ã‚Â¿Ã‚Â½ÃƒÆ’Ã¯Â¿Â½Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¯Â¿Â½ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ hit
+					return SkillData.getInstance().getInfo(5018, 1); // Demon Field hit
 				}
 				return SkillData.getInstance().getInfo(5014, 2); // The usual blow
 			}
@@ -1597,12 +1597,11 @@ public final class FinalEmperialTomb extends AbstractInstance
 			{
 				if (world.lastSkillId == 5014)
 				{
-					int rnd = Rnd.get(100);
-					if (rnd < 40)
+					if (rnd < (40 * 10))
 					{
-						return SkillData.getInstance().getInfo(5018, 2); // ÃƒÆ’Ã¯Â¿Â½ÃƒÂ¯Ã‚Â¿Ã‚Â½ÃƒÆ’Ã¯Â¿Â½Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¯Â¿Â½ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢
+						return SkillData.getInstance().getInfo(5018, 2); // Demon Field
 					}
-					else if (rnd < 60)
+					else if (rnd < (60 * 10))
 					{
 						return SkillData.getInstance().getInfo(5016, 1); // Paralysis
 					}
@@ -1613,7 +1612,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 				}
 				else if (world.lastSkillId == 5016)
 				{
-					if (Rnd.get(100) < 15)
+					if (rnd < (15 * 10))
 					{
 						return SkillData.getInstance().getInfo(5015, 3); // Rush
 					}
@@ -1621,9 +1620,9 @@ public final class FinalEmperialTomb extends AbstractInstance
 				}
 				else if (world.lastSkillId == 5015)
 				{
-					if (Rnd.get(100) < 30)
+					if (rnd < (30 * 10))
 					{
-						return SkillData.getInstance().getInfo(5018, 2); // ÃƒÆ’Ã¯Â¿Â½ÃƒÂ¯Ã‚Â¿Ã‚Â½ÃƒÆ’Ã¯Â¿Â½Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¯Â¿Â½ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢
+						return SkillData.getInstance().getInfo(5018, 2); // Demon Field
 					}
 					return SkillData.getInstance().getInfo(5014, 3); // The usual blow
 				}
@@ -1634,7 +1633,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 			}
 			if (world.lastSkillId == 5014)
 			{
-				if (Rnd.get(100) < 20)
+				if (rnd < (20 * 10))
 				{
 					return SkillData.getInstance().getInfo(5016, 1); // Paralysis
 				}
@@ -1642,7 +1641,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 			}
 			else if (world.lastSkillId == 5016)
 			{
-				if (Rnd.get(100) < 15)
+				if (rnd < (15 * 10))
 				{
 					return SkillData.getInstance().getInfo(5015, 3); // Rush
 				}
@@ -1650,7 +1649,7 @@ public final class FinalEmperialTomb extends AbstractInstance
 			}
 			else if (world.lastSkillId == 5015)
 			{
-				if (Rnd.get(100) < 30)
+				if (rnd < (30 * 10))
 				{
 					return SkillData.getInstance().getInfo(5019, 3); // AOE hit
 				}
@@ -1698,6 +1697,10 @@ public final class FinalEmperialTomb extends AbstractInstance
 			npc.setTarget(_target);
 			world.lastSkillId = _skill.getId();
 			npc.doCast(_skill);
+			if (debug)
+			{
+				_log.info(FinalEmperialTomb.class.getSimpleName() + ": Casting skill: " + _skill.getId() + ":" + _skill.getName());
+			}
 		}
 		else
 		{

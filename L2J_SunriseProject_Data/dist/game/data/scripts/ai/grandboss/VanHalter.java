@@ -54,6 +54,8 @@ public class VanHalter extends AbstractNpcAI
 {
 	protected static final Logger _log = LoggerFactory.getLogger(VanHalter.class);
 	
+	private final boolean _debug = false;
+	
 	protected Map<Integer, ArrayList<L2PcInstance>> _bleedingPlayers = new HashMap<>();
 	
 	protected ArrayList<L2Spawn> _royalGuardSpawn = new ArrayList<>();
@@ -102,8 +104,8 @@ public class VanHalter extends AbstractNpcAI
 	
 	protected static L2BossZone _zone;
 	private static int _state = 0;
-	private static final byte INTERVAL = 0;
-	private static final byte ALIVE = 1;
+	private static final byte ALIVE = 0;
+	private static final byte DEAD = 1;
 	
 	private static final String[] StrStatus =
 	{
@@ -158,7 +160,7 @@ public class VanHalter extends AbstractNpcAI
 		
 		if (npcId == ANDREAS_VAN_HALTER)
 		{
-			setStatus(INTERVAL);
+			setStatus(DEAD);
 			// Calculate Min and Max respawn times randomly.
 			long respawnTime = Config.HPH_FIXINTERVALOFHALTER + getRandom(-Config.HPH_RANDOMINTERVALOFHALTER, Config.HPH_RANDOMINTERVALOFHALTER);
 			respawnTime *= 3600000;
@@ -276,11 +278,11 @@ public class VanHalter extends AbstractNpcAI
 		}
 		_setBleedTask = ThreadPoolManager.getInstance().scheduleGeneral(new Bleeding(), 2000);
 		
-		if (Config.DEBUG)
+		if (_debug)
 		{
 			_log.info("VanHalterManager : State of High Priestess van Halter is " + getState() + ".");
 		}
-		if (_state == INTERVAL)
+		if (_state == DEAD)
 		{
 			enterInterval();
 		}
@@ -327,7 +329,7 @@ public class VanHalter extends AbstractNpcAI
 				}
 			}
 			
-			if (Config.DEBUG)
+			if (_debug)
 			{
 				_log.info("VanHalterManager.loadRoyalGuard: Loaded " + _royalGuardSpawn.size() + " Royal Guard spawn locations.");
 			}
@@ -399,7 +401,7 @@ public class VanHalter extends AbstractNpcAI
 				}
 			}
 			
-			if (Config.DEBUG)
+			if (_debug)
 			{
 				_log.info("VanHalterManager.loadTriolRevelation: Loaded " + _triolRevelationSpawn.size() + " Triol's Revelation spawn locations.");
 			}
@@ -475,7 +477,7 @@ public class VanHalter extends AbstractNpcAI
 				}
 			}
 			
-			if (Config.DEBUG)
+			if (_debug)
 			{
 				_log.info("VanHalterManager.loadRoyalGuardCaptain: Loaded " + _royalGuardCaptainSpawn.size() + " Royal Guard Captain spawn locations.");
 			}
@@ -547,7 +549,7 @@ public class VanHalter extends AbstractNpcAI
 				}
 			}
 			
-			if (Config.DEBUG)
+			if (_debug)
 			{
 				_log.info("VanHalterManager.loadRoyalGuardHelper: Loaded " + _royalGuardHelperSpawn.size() + " Royal Guard Helper spawn locations.");
 			}
@@ -612,7 +614,7 @@ public class VanHalter extends AbstractNpcAI
 				}
 			}
 			
-			if (Config.DEBUG)
+			if (_debug)
 			{
 				_log.info("VanHalterManager.loadGuardOfAltar: Loaded " + _guardOfAltarSpawn.size() + " Guard Of Altar spawn locations.");
 			}
@@ -683,7 +685,7 @@ public class VanHalter extends AbstractNpcAI
 				}
 			}
 			
-			if (Config.DEBUG)
+			if (_debug)
 			{
 				_log.info("VanHalterManager.loadVanHalter: Loaded High Priestess van Halter spawn locations.");
 			}
@@ -749,7 +751,7 @@ public class VanHalter extends AbstractNpcAI
 				}
 			}
 			
-			if (Config.DEBUG)
+			if (_debug)
 			{
 				_log.info("VanHalterManager.loadRitualOffering: Loaded Ritual Offering spawn locations.");
 			}
@@ -815,7 +817,7 @@ public class VanHalter extends AbstractNpcAI
 				}
 			}
 			
-			if (Config.DEBUG)
+			if (_debug)
 			{
 				_log.info("VanHalterManager.loadRitualSacrifice: Loaded Ritual Sacrifice spawn locations.");
 			}
@@ -1258,11 +1260,6 @@ public class VanHalter extends AbstractNpcAI
 		if (_intervalTask != null)
 		{
 			_intervalTask.cancel(false);
-		}
-		
-		if (_state != INTERVAL)
-		{
-			setStatus(INTERVAL);
 		}
 		
 		long respawntime = info.getLong("respawn_time");
