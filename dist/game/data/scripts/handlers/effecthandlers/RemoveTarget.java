@@ -25,6 +25,7 @@ import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.stats.Env;
 import l2r.gameserver.model.stats.Formulas;
+import l2r.util.Rnd;
 
 /**
  * @author -Nemesiss-
@@ -63,6 +64,7 @@ public class RemoveTarget extends L2Effect
 		if (getEffected().isAttackable())
 		{
 			((L2Attackable) getEffected()).stopHating(getEffector());
+			((L2Attackable) getEffected()).setFindTargetDelay(Rnd.get(1000, 2000));
 		}
 		getEffected().setTarget(null);
 		getEffected().abortAttack();
