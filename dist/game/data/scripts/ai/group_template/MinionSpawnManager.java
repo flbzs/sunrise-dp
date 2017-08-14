@@ -428,6 +428,11 @@ public final class MinionSpawnManager extends AbstractNpcAI
 		if (npc.getTemplate().getParameters().getSet().get("SummonPrivateRate") == null)
 		{
 			((L2MonsterInstance) npc).getMinionList().spawnMinions(npc.getTemplate().getParameters().getMinionList("Privates"));
+			npc.setScriptValue(1);
+		}
+		else
+		{
+			npc.setScriptValue(0);
 		}
 		return super.onSpawn(npc);
 	}
@@ -440,13 +445,14 @@ public final class MinionSpawnManager extends AbstractNpcAI
 			final L2MonsterInstance monster = (L2MonsterInstance) npc;
 			if (!monster.isTeleporting())
 			{
-				if (getRandom(1, 100) <= npc.getTemplate().getParameters().getInt("SummonPrivateRate", 0))
+				if ((getRandom(1, 100) <= npc.getTemplate().getParameters().getInt("SummonPrivateRate", 0)) && npc.isScriptValue(0))
 				{
 					for (MinionHolder is : npc.getTemplate().getParameters().getMinionList("Privates"))
 					{
 						addMinion((L2MonsterInstance) npc, is.getId());
 					}
 					broadcastNpcSay(npc, Say2.NPC_ALL, ON_ATTACK_MSG[getRandom(ON_ATTACK_MSG.length)]);
+					npc.setScriptValue(1);
 				}
 			}
 		}
