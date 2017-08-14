@@ -3,9 +3,9 @@ package ai.grandboss;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -1262,14 +1262,15 @@ public class VanHalter extends AbstractNpcAI
 			_intervalTask.cancel(false);
 		}
 		
-		long respawntime = info.getLong("respawn_time");
+		long respawnTime = info.getLong("respawn_time");
 		long currenttime = System.currentTimeMillis();
-		if (respawntime > currenttime)
+		long remain = respawnTime - currenttime;
+		if (remain > 0)
 		{
-			_intervalTask = ThreadPoolManager.getInstance().scheduleGeneral(new Interval(), respawntime - currenttime);
+			_intervalTask = ThreadPoolManager.getInstance().scheduleGeneral(new Interval(), remain);
 			
-			Date dt = new Date(respawntime);
-			_log.info("VanHalterManager : Next spawn date of High Priestess van Halter is " + dt + ".");
+			final String bossRespawn = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(respawnTime);
+			_log.info("VanHalterManager : Next spawn date of High Priestess van Halter is " + bossRespawn + ".");
 		}
 		else
 		{
