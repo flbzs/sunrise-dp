@@ -67,12 +67,6 @@ public class HealOverTime extends L2Effect
 			return false;
 		}
 		
-		// vGodFather: herb effect must override invul check
-		if (getEffected().isInvul() && !getSkill().isHerb())
-		{
-			return false;
-		}
-		
 		double hp = getEffected().getCurrentHp();
 		double maxhp = getEffected().getMaxRecoverableHp();
 		
@@ -82,10 +76,14 @@ public class HealOverTime extends L2Effect
 			return true;
 		}
 		
-		hp += calc();
-		hp = Math.min(hp, maxhp);
-		
-		getEffected().setCurrentHp(hp);
+		// vGodFather: herb effect must override invul check
+		if (!getEffected().isInvul() || getSkill().isHerb())
+		{
+			hp += calc();
+			hp = Math.min(hp, maxhp);
+			
+			getEffected().setCurrentHp(hp);
+		}
 		return true;
 	}
 }

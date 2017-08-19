@@ -39,23 +39,21 @@ public class ManaDamOverTime extends L2Effect
 		}
 		
 		// vGodFather: herb effect must override invul check
-		if ((getEffected().isInvul() || getEffected().isMpBlocked()) && !getSkill().isHerb())
+		if ((!getEffected().isInvul() && !getEffected().isMpBlocked()) || getSkill().isHerb())
 		{
-			return false;
-		}
-		
-		double manaDam = calc();
-		
-		if (manaDam > getEffected().getCurrentMp())
-		{
-			if (getSkill().isToggle())
+			double manaDam = calc();
+			
+			if (manaDam > getEffected().getCurrentMp())
 			{
-				getEffected().sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
-				return false;
+				if (getSkill().isToggle())
+				{
+					getEffected().sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
+					return false;
+				}
 			}
+			
+			getEffected().reduceCurrentMp(manaDam);
 		}
-		
-		getEffected().reduceCurrentMp(manaDam);
 		return true;
 	}
 }
