@@ -106,6 +106,11 @@ public class Signet extends L2Effect
 				{
 					continue;
 				}
+				
+				if (cha.isPlayer() && activeChar.isPlayer() && _skill.isOffensive() && activeChar.getActingPlayer().isFriend(cha.getActingPlayer()))
+				{
+					continue;
+				}
 			}
 			
 			// there doesn't seem to be a visible effect with MagicSkillLaunched packet...
