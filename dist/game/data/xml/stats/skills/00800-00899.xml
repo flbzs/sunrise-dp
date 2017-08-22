@@ -690,6 +690,7 @@
 		</for>
 	</skill>
 	<skill id="835" levels="4" name="Imbue Seed of Destruction">
+		<!-- Confirmed CT2.5 -->
 		<table name="#magicLvl"> 68 70 72 74 </table>
 		<table name="#mdot"> 76 83 83 83 </table>
 		<table name="#triggeredLevel"> 1 2 3 4 </table>
@@ -716,8 +717,8 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<for>
-			<effect count="7" name="ManaDamOverTime" abnormalTime="3" val="#mdot" abnormalVisualEffect="bleed" />
-			<effect name="ChanceSkillTrigger" abnormalTime="20" noicon="1" val="0" triggeredId="5697" triggeredLevel="#triggeredLevel" chanceType="ON_EXIT" />
+			<effect count="7" name="ManaDamOverTime" abnormalTime="3" val="#mdot" abnormalLvl="8" abnormalType="dark_seed" abnormalVisualEffect="bleed" />
+			<effect name="ChanceSkillTrigger" abnormalTime="20" noicon="1" val="0" chanceType="ON_EXIT" triggeredId="5697" triggeredLevel="#triggeredLevel" />
 		</for>
 	</skill>
 	<skill id="836" levels="3" name="Oblivion Trap">
