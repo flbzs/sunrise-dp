@@ -225,6 +225,7 @@ import quests.Q00230_TestOfTheSummoner.Q00230_TestOfTheSummoner;
 import quests.Q00231_TestOfTheMaestro.Q00231_TestOfTheMaestro;
 import quests.Q00232_TestOfTheLord.Q00232_TestOfTheLord;
 import quests.Q00233_TestOfTheWarSpirit.Q00233_TestOfTheWarSpirit;
+import quests.Q00234_FatesWhisper.Q00234_FatesWhisper;
 import quests.Q00235_MimirsElixir.Q00235_MimirsElixir;
 import quests.Q00236_SeedsOfChaos.Q00236_SeedsOfChaos;
 import quests.Q00237_WindsOfChange.Q00237_WindsOfChange;
@@ -417,6 +418,7 @@ import quests.Q00616_MagicalPowerOfFirePart2.Q00616_MagicalPowerOfFirePart2;
 import quests.Q00617_GatherTheFlames.Q00617_GatherTheFlames;
 import quests.Q00618_IntoTheFlame.Q00618_IntoTheFlame;
 import quests.Q00619_RelicsOfTheOldEmpire.Q00619_RelicsOfTheOldEmpire;
+import quests.Q00620_FourGoblets.Q00620_FourGoblets;
 import quests.Q00621_EggDelivery.Q00621_EggDelivery;
 import quests.Q00622_SpecialtyLiquorDelivery.Q00622_SpecialtyLiquorDelivery;
 import quests.Q00623_TheFinestFood.Q00623_TheFinestFood;
@@ -454,6 +456,7 @@ import quests.Q00659_IdRatherBeCollectingFairyBreath.Q00659_IdRatherBeCollecting
 import quests.Q00660_AidingTheFloranVillage.Q00660_AidingTheFloranVillage;
 import quests.Q00661_MakingTheHarvestGroundsSafe.Q00661_MakingTheHarvestGroundsSafe;
 import quests.Q00662_AGameOfCards.Q00662_AGameOfCards;
+import quests.Q00663_SeductiveWhispers.Q00663_SeductiveWhispers;
 import quests.Q00688_DefeatTheElrokianRaiders.Q00688_DefeatTheElrokianRaiders;
 import quests.Q00690_JudesRequest.Q00690_JudesRequest;
 import quests.Q00691_MatrasSuspiciousRequest.Q00691_MatrasSuspiciousRequest;
@@ -739,7 +742,7 @@ public class QuestLoader
 		Q00231_TestOfTheMaestro.class,
 		Q00232_TestOfTheLord.class,
 		Q00233_TestOfTheWarSpirit.class,
-		// Q00234_FatesWhisper.class,
+		Q00234_FatesWhisper.class,
 		Q00235_MimirsElixir.class,
 		Q00236_SeedsOfChaos.class,
 		Q00237_WindsOfChange.class,
@@ -932,6 +935,7 @@ public class QuestLoader
 		Q00617_GatherTheFlames.class,
 		Q00618_IntoTheFlame.class,
 		Q00619_RelicsOfTheOldEmpire.class,
+		Q00620_FourGoblets.class,
 		Q00621_EggDelivery.class,
 		Q00622_SpecialtyLiquorDelivery.class,
 		Q00623_TheFinestFood.class,
@@ -969,6 +973,7 @@ public class QuestLoader
 		Q00660_AidingTheFloranVillage.class,
 		Q00661_MakingTheHarvestGroundsSafe.class,
 		Q00662_AGameOfCards.class,
+		Q00663_SeductiveWhispers.class,
 		Q00688_DefeatTheElrokianRaiders.class,
 		Q00690_JudesRequest.class,
 		Q00691_MatrasSuspiciousRequest.class,

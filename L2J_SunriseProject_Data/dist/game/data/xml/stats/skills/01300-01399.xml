@@ -1994,6 +1994,7 @@
 		<table name="#ench2mpInitialConsume"> 13 13 12 12 11 11 10 10 9 9 8 8 7 7 6 </table>
 		<table name="#ench2Time"> 128 136 144 152 160 168 176 184 192 200 208 216 224 232 240 </table>
 		<table name="#enchMagicLvl"> 81 81 81 82 82 82 83 83 83 84 84 84 85 85 85 </table>
+		<set name="activateRate" val="80" />
 		<set name="abnormalLvl" val="10" />
 		<set name="abnormalTime" val="120" />
 		<set name="abnormalType" val="block_speed_up" />
@@ -2020,7 +2021,7 @@
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
 		<for>
-			<effect name="Debuff" abnormalTime="120" val="0" abnormalLvl="10" abnormalType="block_speed_up">
+			<effect name="Debuff" abnormalTime="120" val="0" abnormalLvl="10" abnormalType="block_speed_up" effectPower="80" >
 				<mul stat="runSpd" val="0.9" />
 			</effect>
 			<effect name="DispelBySlotProbability" noicon="1" val="0">

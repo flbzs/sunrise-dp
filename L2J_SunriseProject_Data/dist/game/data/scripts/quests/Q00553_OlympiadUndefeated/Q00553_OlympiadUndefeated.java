@@ -95,6 +95,11 @@ public class Q00553_OlympiadUndefeated extends Quest
 				st.giveItems(MEDAL_OF_GLORY, 10);
 				st.exitQuest(QuestType.DAILY, true);
 			}
+			else if ((st.getQuestItemsCount(WIN_CONF_2) > 0) && (st.getQuestItemsCount(WIN_CONF_5) > 0))
+			{
+				st.giveItems(OLY_CHEST, 5);
+				st.giveItems(MEDAL_OF_GLORY, 5);
+			}
 			else
 			{
 				htmltext = getNoQuestMsg(player);

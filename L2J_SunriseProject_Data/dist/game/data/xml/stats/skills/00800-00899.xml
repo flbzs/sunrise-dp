@@ -374,11 +374,13 @@
 		</for>
 	</skill>
 	<skill id="821" levels="1" name="Shadow Step">
+		<!-- High Five Confirmed -->
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="1100" />
 		<set name="hitTime" val="100" />
-		<set name="magicLvl" val="72" />
+		<set name="icon" val="icon.skill0821" />
+		<set name="magicLvl" val="40" />
 		<set name="mpConsume" val="50" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />

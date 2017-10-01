@@ -94,6 +94,11 @@ public class Q00551_OlympiadStarter extends Quest
 				st.giveItems(MEDAL_OF_GLORY, 5);
 				st.exitQuest(QuestType.DAILY, true);
 			}
+			else if ((st.getQuestItemsCount(CERT_3) > 0) && (st.getQuestItemsCount(CERT_5) > 0))
+			{
+				st.giveItems(OLY_CHEST, 2);
+				st.giveItems(MEDAL_OF_GLORY, 3);
+			}
 			else
 			{
 				htmltext = getNoQuestMsg(player);

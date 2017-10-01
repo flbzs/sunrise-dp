@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import l2r.gameserver.GeoData;
-import l2r.gameserver.enums.ZoneIdType;
 import l2r.gameserver.handler.ITargetTypeHandler;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Character;
@@ -81,27 +80,7 @@ public class AuraFriendly implements ITargetTypeHandler
 		{
 			L2PcInstance targetPlayer = target.getActingPlayer();
 			
-			if (activeChar.isInDuelWith(target))
-			{
-				return false;
-			}
-			
-			if (activeChar.isInPartyWith(target))
-			{
-				return true;
-			}
-			
-			if (target.isInsideZone(ZoneIdType.PVP))
-			{
-				return false;
-			}
-			
-			if (activeChar.isInClanWith(target) || activeChar.isInAllyWith(target) || activeChar.isInCommandChannelWith(target))
-			{
-				return true;
-			}
-			
-			if ((targetPlayer.getPvpFlag() > 0) || (targetPlayer.getKarma() > 0))
+			if (!activeChar.isFriend(targetPlayer))
 			{
 				return false;
 			}
