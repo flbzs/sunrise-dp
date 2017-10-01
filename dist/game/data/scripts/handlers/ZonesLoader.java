@@ -24,10 +24,11 @@ import org.slf4j.LoggerFactory;
 import ai.zone.DragonValley.BlackdaggerWing;
 import ai.zone.DragonValley.BleedingFly;
 import ai.zone.DragonValley.DragonValley;
+import ai.zone.DragonValley.DrakosWarrior;
 import ai.zone.DragonValley.DustRider;
 import ai.zone.DragonValley.EmeraldHorn;
 import ai.zone.DragonValley.MuscleBomber;
-import ai.zone.DragonValley.NecromancerValley;
+import ai.zone.DragonValley.NecromancerOfTheValley;
 import ai.zone.DragonValley.ShadowSummoner;
 import ai.zone.FantasyIsle.HandysBlockCheckerEvent;
 import ai.zone.FantasyIsle.MC_Show;
@@ -53,10 +54,11 @@ public final class ZonesLoader
 		BlackdaggerWing.class,
 		BleedingFly.class,
 		DragonValley.class,
+		DrakosWarrior.class,
 		DustRider.class,
 		EmeraldHorn.class,
 		MuscleBomber.class,
-		NecromancerValley.class,
+		NecromancerOfTheValley.class,
 		ShadowSummoner.class,
 		
 		// Fantasy Island

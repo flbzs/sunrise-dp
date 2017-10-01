@@ -20,7 +20,6 @@ package ai.zone.DragonValley;
 
 import java.util.EnumMap;
 
-import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.L2Playable;
@@ -39,15 +38,11 @@ import ai.npc.AbstractNpcAI;
 public final class DragonValley extends AbstractNpcAI
 {
 	// NPC
-	private static final int NECROMANCER_OF_THE_VALLEY = 22858;
 	private static final int GEM_DRAGON = 22830;
 	private static final int GEM_DRAGON_HATCHLING = 22837;
-	private static final int EXPLODING_ORC_GHOST = 22818;
-	private static final int WRATHFUL_ORC_GHOST = 22819;
 	private static final int DRAKOS_ASSASSIN = 22823;
 	private static final int[] SUMMON_NPC =
 	{
-		22822, // Drakos Warrior
 		22824, // Drakos Guardian
 		22862, // Drakos Hunter
 	};
@@ -83,7 +78,6 @@ public final class DragonValley extends AbstractNpcAI
 	private static final int SUPERIOR_HERB_OF_MANA = 8605;
 	
 	// Skills
-	private static final SkillHolder SELF_DESTRUCTION = new SkillHolder(6850, 1);
 	private static final SkillHolder MORALE_BOOST1 = new SkillHolder(6885, 1);
 	private static final SkillHolder MORALE_BOOST2 = new SkillHolder(6885, 2);
 	private static final SkillHolder MORALE_BOOST3 = new SkillHolder(6885, 3);
@@ -138,49 +132,26 @@ public final class DragonValley extends AbstractNpcAI
 	public DragonValley()
 	{
 		super(DragonValley.class.getSimpleName(), "ai/zone/DragonValley");
-		addAttackId(NECROMANCER_OF_THE_VALLEY);
 		addAttackId(SUMMON_NPC);
-		addKillId(NECROMANCER_OF_THE_VALLEY);
 		addKillId(SPOIL_REACT_MONSTER);
 		addKillId(GEM_DRAGON);
-		addSpawnId(EXPLODING_ORC_GHOST, NECROMANCER_OF_THE_VALLEY);
 		addSpawnId(SPOIL_REACT_MONSTER);
-	}
-	
-	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equals("SelfDestruction") && (npc != null) && !npc.isDead())
-		{
-			npc.abortAttack();
-			npc.disableCoreAI(true);
-			npc.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			npc.doCast(SELF_DESTRUCTION.getSkill());
-		}
-		return super.onAdvEvent(event, npc, player);
 	}
 	
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
-		if (npc.getId() == NECROMANCER_OF_THE_VALLEY)
+		if ((npc.getCurrentHp() < (npc.getMaxHp() / 2)) && (getRandom(100) < 5) && npc.isScriptValue(0))
 		{
-			spawnGhost(npc, attacker, isSummon, 1);
-		}
-		else
-		{
-			if ((npc.getCurrentHp() < (npc.getMaxHp() / 2)) && (getRandom(100) < 5) && npc.isScriptValue(0))
+			npc.setScriptValue(1);
+			final int rnd = getRandom(3, 5);
+			for (int i = 0; i < rnd; i++)
 			{
 				if (Rnd.get(1000) <= (SPAWN_CHANCE * 10))
 				{
-					npc.setScriptValue(1);
-					final int rnd = getRandom(3, 5);
-					for (int i = 0; i < rnd; i++)
-					{
-						final L2Playable playable = isSummon ? attacker.getSummon() : attacker;
-						final L2Npc minion = addSpawn(DRAKOS_ASSASSIN, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), true, 0, true);
-						addAttackDesire(minion, playable);
-					}
+					final L2Playable playable = isSummon ? attacker.getSummon() : attacker;
+					final L2Npc minion = addSpawn(DRAKOS_ASSASSIN, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), true, 0, true);
+					addAttackDesire(minion, playable);
 				}
 			}
 		}
@@ -190,11 +161,7 @@ public final class DragonValley extends AbstractNpcAI
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
 	{
-		if (npc.getId() == NECROMANCER_OF_THE_VALLEY)
-		{
-			spawnGhost(npc, killer, isSummon, 20);
-		}
-		else if (npc.getId() == GEM_DRAGON) // Gem Dragon
+		if (npc.getId() == GEM_DRAGON) // Gem Dragon
 		{
 			if (getRandom(100) < 10)
 			{
@@ -214,11 +181,7 @@ public final class DragonValley extends AbstractNpcAI
 	public String onSpawn(L2Npc npc)
 	{
 		((L2Attackable) npc).setOnKillDelay(0);
-		if (npc.getId() == EXPLODING_ORC_GHOST)
-		{
-			startQuestTimer("SelfDestruction", 3000, npc, null);
-		}
-		else if (Util.contains(SPAWN_ANIMATION, npc.getId()))
+		if (Util.contains(SPAWN_ANIMATION, npc.getId()))
 		{
 			npc.setShowSummonAnimation(true);
 		}

@@ -18,7 +18,7 @@
  */
 package ai.npc.BlackMarketeerOfMammon;
 
-import java.util.Calendar;
+import java.time.LocalTime;
 
 import l2r.gameserver.enums.QuestType;
 import l2r.gameserver.model.actor.L2Npc;
@@ -100,16 +100,7 @@ public final class BlackMarketeerOfMammon extends AbstractNpcAI
 	
 	private boolean exchangeAvailable()
 	{
-		Calendar currentTime = Calendar.getInstance();
-		Calendar minTime = Calendar.getInstance();
-		minTime.set(Calendar.HOUR_OF_DAY, 20);
-		minTime.set(Calendar.MINUTE, 0);
-		minTime.set(Calendar.SECOND, 0);
-		Calendar maxtTime = Calendar.getInstance();
-		maxtTime.set(Calendar.HOUR_OF_DAY, 23);
-		maxtTime.set(Calendar.MINUTE, 59);
-		maxtTime.set(Calendar.SECOND, 59);
-		
-		return (currentTime.compareTo(minTime) >= 0) && (currentTime.compareTo(maxtTime) <= 0);
+		LocalTime localTime = LocalTime.now();
+		return (localTime.isAfter(LocalTime.parse("20:00:00")) && localTime.isBefore(LocalTime.MAX));
 	}
 }

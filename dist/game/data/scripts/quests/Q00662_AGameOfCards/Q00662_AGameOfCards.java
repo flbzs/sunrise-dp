@@ -627,7 +627,11 @@ public final class Q00662_AGameOfCards extends Quest
 			}
 			case State.STARTED:
 			{
-				if (st.isCond(0))
+				if (st.getQuestItemsCount(RED_GEM) >= REQUIRED_CHIP_COUNT)
+				{
+					htmltext = "30845-05.html";
+				}
+				else if (st.getQuestItemsCount(RED_GEM) < REQUIRED_CHIP_COUNT)
 				{
 					htmltext = "30845-04.html";
 				}
