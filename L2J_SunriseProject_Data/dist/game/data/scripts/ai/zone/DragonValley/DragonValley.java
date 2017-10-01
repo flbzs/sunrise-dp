@@ -236,24 +236,4 @@ public final class DragonValley extends AbstractNpcAI
 			}
 		}
 	}
-	
-	private void spawnGhost(L2Npc npc, L2PcInstance player, boolean isSummon, int chance)
-	{
-		if ((npc.getScriptValue() < 2) && (getRandom(100) < chance))
-		{
-			int val = npc.getScriptValue();
-			final L2Playable attacker = isSummon ? player.getSummon() : player;
-			final L2Npc ghost1 = addSpawn(EXPLODING_ORC_GHOST, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), false, 0, true);
-			ghost1.getVariables().set("playable", attacker);
-			addAttackDesire(ghost1, attacker);
-			val++;
-			if ((val < 2) && (getRandom(100) < 10))
-			{
-				final L2Npc ghost2 = addSpawn(WRATHFUL_ORC_GHOST, npc.getX(), npc.getY(), npc.getZ() + 20, npc.getHeading(), false, 0, false);
-				addAttackDesire(ghost2, attacker);
-				val++;
-			}
-			npc.setScriptValue(val);
-		}
-	}
 }
