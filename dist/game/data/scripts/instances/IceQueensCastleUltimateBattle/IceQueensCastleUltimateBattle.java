@@ -411,7 +411,7 @@ public final class IceQueensCastleUltimateBattle extends AbstractInstance
 					{
 						for (L2PcInstance players : world.playersInside)
 						{
-							if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
+							if (players != null)
 							{
 								players.setIsInvul(false);
 							}
