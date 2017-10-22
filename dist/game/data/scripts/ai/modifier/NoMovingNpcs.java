@@ -44,6 +44,8 @@ public class NoMovingNpcs extends AbstractNpcAI
 		// Doorman Zombie (Pagan guard)
 		18343,
 		18949,
+		// Pailaka injured dragon
+		18660,
 		// Penance Guard, Chapel Guard (Pagan)
 		22137, 22138,
 		// Triol''s Revelation
