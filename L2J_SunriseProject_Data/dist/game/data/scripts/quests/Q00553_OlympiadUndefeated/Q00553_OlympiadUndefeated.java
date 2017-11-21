@@ -99,6 +99,7 @@ public class Q00553_OlympiadUndefeated extends Quest
 			{
 				st.giveItems(OLY_CHEST, 5);
 				st.giveItems(MEDAL_OF_GLORY, 5);
+				st.exitQuest(QuestType.DAILY, true);
 			}
 			else
 			{

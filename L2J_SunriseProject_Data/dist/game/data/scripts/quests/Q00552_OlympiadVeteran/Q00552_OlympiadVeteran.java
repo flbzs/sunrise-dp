@@ -99,6 +99,7 @@ public class Q00552_OlympiadVeteran extends Quest
 			else if ((st.getQuestItemsCount(CLASS_FREE_BATTLE_CERTIFICATE) > 0) && (st.getQuestItemsCount(CLASS_BATTLE_CERTIFICATE) > 0))
 			{
 				st.giveItems(OLY_CHEST, 2);
+				st.exitQuest(QuestType.DAILY, true);
 			}
 			else
 			{

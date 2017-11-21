@@ -98,6 +98,7 @@ public class Q00551_OlympiadStarter extends Quest
 			{
 				st.giveItems(OLY_CHEST, 2);
 				st.giveItems(MEDAL_OF_GLORY, 3);
+				st.exitQuest(QuestType.DAILY, true);
 			}
 			else
 			{

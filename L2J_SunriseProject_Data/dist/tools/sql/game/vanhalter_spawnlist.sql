@@ -68,8 +68,11 @@ INSERT INTO `vanhalter_spawnlist` VALUES ('42', 'Pagan Temple', '1', '22176', '-
 INSERT INTO `vanhalter_spawnlist` VALUES ('43', 'Pagan Temple', '1', '22176', '-16532', '-47633', '-10821', '0', '0', '16242', '60', '0', '0');
 INSERT INTO `vanhalter_spawnlist` VALUES ('44', 'Pagan Temple', '1', '22176', '-16552', '-49694', '-10917', '0', '0', '15784', '60', '0', '0');
 INSERT INTO `vanhalter_spawnlist` VALUES ('45', 'Pagan Temple', '1', '22176', '-16594', '-45094', '-10725', '0', '0', '16166', '60', '0', '0');
-INSERT INTO `vanhalter_spawnlist` VALUES ('46', 'Pagan Temple', '1', '22188', '-16385', '-52461', '-10629', '0', '0', '16384', '60', '0', '0');
-INSERT INTO `vanhalter_spawnlist` VALUES ('47', 'Pagan Temple', '1', '29062', '-16397', '-53308', '-10448', '0', '0', '16384', '172800', '0', '0');
-INSERT INTO `vanhalter_spawnlist` VALUES ('48', 'Pagan Temple', '1', '32038', '-16397', '-53199', '-10448', '0', '0', '16384', '172800', '0', '0');
-INSERT INTO `vanhalter_spawnlist` VALUES ('49', 'Pagan Temple', '1', '22195', '-16397', '-53199', '-10448', '0', '0', '16384', '172800', '0', '0');
-INSERT INTO `vanhalter_spawnlist` VALUES ('50', 'Pagan Temple', '1', '22191', '-16397', '-53199', '-10448', '0', '0', '16384', '60', '0', '0');
+INSERT INTO `vanhalter_spawnlist` VALUES ('46', 'Pagan Temple', '1', '29062', '-16397', '-53308', '-10448', '0', '0', '16384', '172800', '0', '0');
+INSERT INTO `vanhalter_spawnlist` VALUES ('47', 'Pagan Temple', '1', '32038', '-16384', '-53197', '-10448', '0', '0', '16384', '172800', '0', '0');
+INSERT INTO `vanhalter_spawnlist` VALUES ('48', 'Pagan Temple', '1', '22195', '-16397', '-53199', '-10448', '0', '0', '16384', '172800', '0', '0');
+INSERT INTO `vanhalter_spawnlist` VALUES ('49', 'Pagan Temple', '1', '22191', '-16397', '-53199', '-10448', '0', '0', '16384', '60', '0', '0');
+INSERT INTO `vanhalter_spawnlist` VALUES ('50', 'Pagan Temple', '1', '22188', '-16392', '-52124', '-10592', '0', '0', '16384', '60', '0', '0');
+INSERT INTO `vanhalter_spawnlist` VALUES ('51', 'Pagan Temple', '1', '22189', '-16442', '-52046', '-10550', '0', '0', '16384', '60', '0', '0');
+INSERT INTO `vanhalter_spawnlist` VALUES ('52', 'Pagan Temple', '1', '22189', '-16488', '-52107', '-10550', '0', '0', '16384', '60', '0', '0');
+INSERT INTO `vanhalter_spawnlist` VALUES ('53', 'Pagan Temple', '1', '22190', '-16322', '-52078', '-10550', '0', '0', '16384', '60', '0', '0');
