@@ -3841,6 +3841,7 @@
 			</speed>
 			<hitTime>460</hitTime>
 		</stats>
+		<status undying="false" />
 		<skillList>
 			<skill id="4032" level="11" /> <!--NPC Strike -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
