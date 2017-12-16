@@ -111,9 +111,9 @@ public final class MithrilMine extends AbstractInstance
 			}
 			case "FINISH":
 			{
-				for (L2Character knownChar : npc.getKnownList().getKnownCharacters())
+				for (L2Character knownChar : player.getKnownList().getKnownCharacters())
 				{
-					if ((knownChar != null) && (knownChar.getId() == KEGOR))
+					if (knownChar.getId() == KEGOR)
 					{
 						final L2Npc kegor = (L2Npc) knownChar;
 						kegor.setScriptValue(2);
