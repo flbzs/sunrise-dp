@@ -73,7 +73,19 @@ public final class SkillTransfer extends AbstractNpcAI
 		if (!player.getVariables().getBoolean(name, false))
 		{
 			player.getVariables().set(name, true);
-			giveItems(player, PORMANDERS[index]);
+			
+			if (!Config.MULTIPLE_ITEM_DROP)
+			{
+				long count = PORMANDERS[index].getCount();
+				for (int i = 1; i <= count; i++)
+				{
+					giveItems(player, PORMANDERS[index].getId(), 1);
+				}
+			}
+			else
+			{
+				giveItems(player, PORMANDERS[index]);
+			}
 		}
 	}
 	
