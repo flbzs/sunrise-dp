@@ -611,3 +611,8 @@ INSERT INTO `minions` VALUES
 -- Seven signs
 INSERT INTO `minions` VALUES
 (27346,27396,2,2);
+
+-- Andreas Van Halter
+INSERT INTO `minions` VALUES
+(29062,29063,1,1),
+(29062,29064,3,3);

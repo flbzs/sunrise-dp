@@ -77,6 +77,8 @@ public class NoRandomWalkMobs extends AbstractNpcAI
 		29022, 29176, 29181,
 		// Gordon
 		29095,
+		// Atomic Foundry
+		22398, 22399
 	};
 	// @formatter:on
 	
