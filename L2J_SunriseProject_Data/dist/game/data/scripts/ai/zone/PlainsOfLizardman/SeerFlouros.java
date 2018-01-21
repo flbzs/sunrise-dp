@@ -1,4 +1,4 @@
-package ai.individual.extra;
+package ai.zone.PlainsOfLizardman;
 
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.instancemanager.InstanceManager;
@@ -8,6 +8,9 @@ import l2r.gameserver.model.actor.instance.L2PcInstance;
 
 import ai.npc.AbstractNpcAI;
 
+/**
+ * @author vGodFather
+ */
 public class SeerFlouros extends AbstractNpcAI
 {
 	private static L2Npc SeerFlouros;
@@ -21,7 +24,7 @@ public class SeerFlouros extends AbstractNpcAI
 	
 	public SeerFlouros()
 	{
-		super(SeerFlouros.class.getSimpleName(), "ai/individual/extra");
+		super(SeerFlouros.class.getSimpleName(), "ai/zone/PlainsOfLizardman");
 		
 		registerMobs(new int[]
 		{
@@ -88,17 +91,22 @@ public class SeerFlouros extends AbstractNpcAI
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isPet)
 	{
-		if (npc.getId() == SeerFlourosId)
+		switch (npc.getId())
 		{
-			cancelQuestTimer("despawn", npc, null);
-			if (Follower != null)
-			{
-				Follower.deleteMe();
-			}
-		}
-		else if ((npc.getId() == FollowerId) && (SeerFlouros != null))
-		{
-			startQuestTimer("respMinion", 30000L, npc, null);
+			case SeerFlourosId:
+				cancelQuestTimer("despawn", npc, null);
+				if (Follower != null)
+				{
+					Follower.deleteMe();
+				}
+				break;
+			case FollowerId:
+				if (SeerFlouros != null)
+				{
+					startQuestTimer("respMinion", 30000L, npc, null);
+				}
+				
+				break;
 		}
 		return null;
 	}

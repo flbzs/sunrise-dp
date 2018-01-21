@@ -497,14 +497,13 @@
 		</for>
 	</skill>
 	<skill id="4338" levels="1" name="Life Cubic for Beginners">
-		<!-- Confirmed CT2.5 -->
-		<!-- Newbie Guide Buff -->
+		<!-- High Five Confirmed -->
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="magicLvl" val="18" />
 		<set name="operateType" val="A1" />
-		<set name="targetType" val="SELF" />
+		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="SummonCubic" noicon="1" val="0">
 				<param cubicId="3" cubicDelay="13" cubicDuration="3600" cubicMaxCount="20" />

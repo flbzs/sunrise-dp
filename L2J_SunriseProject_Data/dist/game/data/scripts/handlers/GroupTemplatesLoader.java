@@ -32,7 +32,6 @@ import ai.group_template.IsleOfPrayer;
 import ai.group_template.MithrilMines;
 import ai.group_template.MonasteryOfSilence;
 import ai.group_template.PlainsOfDion;
-import ai.group_template.PlainsOfLizardman;
 import ai.group_template.PolymorphingAngel;
 import ai.group_template.PolymorphingOnAttack;
 import ai.group_template.PrisonGuards;
@@ -79,7 +78,6 @@ public final class GroupTemplatesLoader
 		MithrilMines.class,
 		MonasteryOfSilence.class,
 		PlainsOfDion.class,
-		PlainsOfLizardman.class,
 		PolymorphingAngel.class,
 		PolymorphingOnAttack.class,
 		PrisonGuards.class,

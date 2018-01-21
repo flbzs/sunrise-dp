@@ -38,6 +38,7 @@ import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.serverpackets.MagicSkillUse;
 import l2r.gameserver.network.serverpackets.NpcSay;
+import l2r.gameserver.util.Util;
 
 /**
  * Abstract Saga quest.
@@ -618,6 +619,31 @@ public abstract class AbstractSagaQuest extends Quest
 						st1.giveItems(Items[8], 1);
 						st1.takeItems(Items[3], -1);
 						st1.setCond(16, true);
+					}
+				}
+				
+				// vGodFather: retail like 3rd class quest for party members
+				if (player.isInParty())
+				{
+					for (L2PcInstance member : player.getParty().getMembers())
+					{
+						if (Util.calculateDistance(player, member, true) >= 1500)
+						{
+							continue;
+						}
+						
+						QuestState memberst1 = findQuest(member);
+						if (memberst1 != null)
+						{
+							if (memberst1.isCond(15))
+							{
+								// This is just a guess....not really sure what it actually says, if anything
+								autoChat(npc, Text[4].replace("PLAYERNAME", memberst1.getPlayer().getName()));
+								memberst1.giveItems(Items[8], 1);
+								memberst1.takeItems(Items[3], -1);
+								memberst1.setCond(16, true);
+							}
+						}
 					}
 				}
 				return super.onKill(npc, player, isSummon);
