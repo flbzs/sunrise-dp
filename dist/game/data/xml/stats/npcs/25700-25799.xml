@@ -24,7 +24,7 @@
 				<run ground="120" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -546,7 +546,6 @@
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4173" level="8" /> <!--BOSS Might -->
-			<skill id="4177" level="8" /> <!--BOSS Cancel Magic -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
 			<skill id="4410" level="11" /> <!--Average P. Atk. -->
@@ -1076,7 +1075,7 @@
 			<skill id="6898" level="1" /> <!--84 level Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -1146,7 +1145,7 @@
 			<skill id="6899" level="1" /> <!--84 level Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -1218,7 +1217,7 @@
 			<skill id="6915" level="1" /> <!--npc Acumen -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -1291,7 +1290,7 @@
 			<skill id="6901" level="1" /> <!--84 level Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -1368,7 +1367,7 @@
 			<skill id="6902" level="1" /> <!--84 level Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -1443,7 +1442,7 @@
 			<skill id="6903" level="1" /> <!--84 level Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -1516,7 +1515,7 @@
 			<skill id="6904" level="1" /> <!--84 level Raid Boss -->
 		</skillList>
 		<exCrtEffect>true</exCrtEffect>
-		<ai aggroRange="300" clanHelpRange="300" isAggressive="false" />
+		<ai aggroRange="300" clanHelpRange="300" />
 		<dropLists>
 			<death>
 				<item id="17267" min="1" max="1" chance="10" /> <!-- Sealed Blood Crystal -->
@@ -2077,7 +2076,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="2" /> <!--Hold -->
@@ -2130,7 +2128,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4191" level="2" /> <!--BOSS Windstrike -->
@@ -2167,7 +2164,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -2213,7 +2209,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -2276,7 +2271,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -2311,7 +2305,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -2356,7 +2349,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4178" level="2" /> <!--BOSS Flamestrike -->
@@ -2404,7 +2396,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -2440,7 +2431,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4211" level="2" /> <!--BOSS Might -->
@@ -2488,7 +2478,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4178" level="2" /> <!--BOSS Flamestrike -->
@@ -2540,7 +2529,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4214" level="2" /> <!--BOSS Reflect Damage -->
@@ -2580,7 +2568,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4275" level="2" /> <!--Sacred Attack Weak Point -->
@@ -2625,7 +2612,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4275" level="2" /> <!--Sacred Attack Weak Point -->
@@ -2679,7 +2665,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4275" level="2" /> <!--Sacred Attack Weak Point -->
@@ -2718,7 +2703,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4275" level="2" /> <!--Sacred Attack Weak Point -->
@@ -2765,7 +2749,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4178" level="2" /> <!--BOSS Flamestrike -->
@@ -2819,7 +2802,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4273" level="3" /> <!--Resist Daggers/Rapier Weapon -->
@@ -2859,7 +2841,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4213" level="1" /> <!--BOSS Haste -->
@@ -2910,11 +2891,9 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4175" level="4" /> <!--BOSS Haste -->
-			<skill id="4177" level="4" /> <!--BOSS Cancel Magic -->
 			<skill id="4275" level="2" /> <!--Sacred Attack Weak Point -->
 			<skill id="4278" level="1" /> <!--Dark Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -2987,7 +2966,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4182" level="3" /> <!--Poison -->
@@ -3040,7 +3018,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3076,7 +3053,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4278" level="1" /> <!--Dark Attack -->
@@ -3124,7 +3100,6 @@
 				<run ground="160" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="3" /> <!--Hold -->
@@ -3184,7 +3159,6 @@
 				<run ground="140" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4196" level="3" /> <!--Decrease Speed -->
@@ -3222,7 +3196,6 @@
 				<run ground="155" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4275" level="2" /> <!--Sacred Attack Weak Point -->
@@ -3270,7 +3243,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="6" /> <!--Hold -->
@@ -3333,7 +3305,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4273" level="3" /> <!--Resist Daggers/Rapier Weapon -->
@@ -3374,7 +3345,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4273" level="3" /> <!--Resist Daggers/Rapier Weapon -->
@@ -3424,7 +3394,6 @@
 				<run ground="200" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4178" level="5" /> <!--BOSS Flamestrike -->
@@ -3484,7 +3453,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4213" level="5" /> <!--BOSS Haste -->
@@ -3524,7 +3492,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4275" level="2" /> <!--Sacred Attack Weak Point -->
@@ -3569,12 +3536,10 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4172" level="6" /> <!--Stun -->
 			<skill id="4175" level="6" /> <!--BOSS Haste -->
-			<skill id="4177" level="6" /> <!--BOSS Cancel Magic -->
 			<skill id="4276" level="1" /> <!--Weak Point against Bow/Crossbow Weapons -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
 			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
@@ -3641,7 +3606,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3699,7 +3663,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3735,7 +3698,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3780,7 +3742,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3836,7 +3797,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3872,7 +3832,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3916,7 +3875,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -3973,7 +3931,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4275" level="2" /> <!--Sacred Attack Weak Point -->
@@ -4012,7 +3969,6 @@
 				<run ground="160" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4275" level="2" /> <!--Sacred Attack Weak Point -->
@@ -4061,7 +4017,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4183" level="4" /> <!--Decrease P. Atk. -->
@@ -4112,7 +4067,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4148,7 +4102,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4192,7 +4145,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="2" /> <!--Hold -->
@@ -4238,7 +4190,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4273,7 +4224,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4319,7 +4269,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="3" /> <!--Hold -->
@@ -4390,7 +4339,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4278" level="1" /> <!--Dark Attack -->
@@ -4438,7 +4386,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4197" level="3" /> <!--Hold -->
@@ -4487,7 +4434,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4523,7 +4469,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4194" level="3" /> <!--BOSS Aura Burn -->
@@ -4570,7 +4515,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4618,7 +4562,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4653,7 +4596,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4700,7 +4642,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4184" level="9" /> <!--Decrease Atk. Spd. -->
@@ -4753,7 +4694,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4789,7 +4729,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
@@ -4825,7 +4764,6 @@
 				<run ground="180" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4175" level="7" /> <!--BOSS Haste -->
@@ -4899,7 +4837,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4182" level="8" /> <!--Poison -->
@@ -4963,7 +4900,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4168" level="7" /> <!--BOSS Strike -->
@@ -5002,7 +4938,6 @@
 				<run ground="170" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4275" level="2" /> <!--Sacred Attack Weak Point -->
@@ -5050,7 +4985,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4184" level="7" /> <!--Decrease Atk. Spd. -->
@@ -5105,7 +5039,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4196" level="6" /> <!--Decrease Speed -->
@@ -5142,7 +5075,6 @@
 				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
 		<skillList>
 			<skill id="4045" level="1" /> <!--Resist Full Magic Attack -->
 			<skill id="4211" level="6" /> <!--BOSS Might -->

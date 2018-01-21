@@ -152,7 +152,7 @@ public final class EnergyAttack extends L2Effect
 			if (target instanceof L2PcInstance)
 			{
 				damage *= attacker.getStat().calcStat(Stats.PVP_PHYS_SKILL_DMG, 1.0);
-				damage *= target.getStat().calcStat(Stats.PVP_PHYS_SKILL_DEF, 1.0);
+				damage /= target.getStat().calcStat(Stats.PVP_PHYS_SKILL_DEF, 1.0);
 				damage = attacker.getStat().calcStat(Stats.PHYSICAL_SKILL_POWER, damage);
 			}
 			

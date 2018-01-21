@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package ai.group_template;
+package ai.zone.PlainsOfLizardman;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +50,6 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	private static final int ENERGY_PLANT = 18868;
 	private static final int TANTA_SCOUT = 22768;
 	private static final int TANTA_MAGICIAN = 22773;
-	private static final int TANTA_SUMMONER = 22774;
 	private static final int[] TANTA_LIZARDMEN =
 	{
 		22768, // Tanta Lizardman Scout
@@ -63,7 +62,6 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	};
 	// Skills
 	private static final SkillHolder STUN_EFFECT = new SkillHolder(6622, 1);
-	private static final SkillHolder DEMOTIVATION_HEX = new SkillHolder(6425, 1);
 	private static final SkillHolder FANTASY_MUSHROOM_SKILL = new SkillHolder(6427, 1);
 	private static final SkillHolder RAINBOW_FROG_SKILL = new SkillHolder(6429, 1);
 	private static final SkillHolder STICKY_MUSHROOM_SKILL = new SkillHolder(6428, 1);
@@ -96,8 +94,8 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	
 	public PlainsOfLizardman()
 	{
-		super(PlainsOfLizardman.class.getSimpleName(), "ai/group_template");
-		addAttackId(FANTASY_MUSHROOM, RAINBOW_FROG, STICKY_MUSHROOM, ENERGY_PLANT, TANTA_SUMMONER);
+		super(PlainsOfLizardman.class.getSimpleName(), "ai/zone/PlainsOfLizardman");
+		addAttackId(FANTASY_MUSHROOM, RAINBOW_FROG, STICKY_MUSHROOM, ENERGY_PLANT);
 		addKillId(TANTA_LIZARDMEN);
 		addKillId(RAINBOW_FROG);
 	}
@@ -128,12 +126,6 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	{
 		switch (npc.getId())
 		{
-			case TANTA_SUMMONER:
-				if (npc.getFirstEffect(DEMOTIVATION_HEX.getSkillId()) == null)
-				{
-					npc.doCast(DEMOTIVATION_HEX.getSkill());
-				}
-				break;
 			case RAINBOW_FROG:
 				ThreadPoolManager.getInstance().scheduleEffect(new TaskAfterDead(attacker, RAINBOW_FROG_SKILL), 3000);
 				// castSkill(npc, attacker, RAINBOW_FROG_SKILL);

@@ -32,10 +32,10 @@ import ai.group_template.IsleOfPrayer;
 import ai.group_template.MinionSpawnManager;
 import ai.group_template.MonasteryOfSilence;
 import ai.group_template.PlainsOfDion;
-import ai.group_template.PlainsOfLizardman;
 import ai.group_template.PolymorphingAngel;
 import ai.group_template.PolymorphingOnAttack;
 import ai.group_template.PrisonGuards;
+import ai.group_template.RaidBossCancel;
 import ai.group_template.RandomSpawn;
 import ai.group_template.RangeGuard;
 import ai.group_template.Sandstorms;
@@ -79,10 +79,10 @@ public final class GroupTemplatesLoader
 		MinionSpawnManager.class,
 		MonasteryOfSilence.class,
 		PlainsOfDion.class,
-		PlainsOfLizardman.class,
 		PolymorphingAngel.class,
 		PolymorphingOnAttack.class,
 		PrisonGuards.class,
+		RaidBossCancel.class,
 		RandomSpawn.class,
 		RangeGuard.class,
 		Sandstorms.class,

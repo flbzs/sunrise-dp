@@ -52,8 +52,6 @@ import ai.individual.extra.KaimAbigore;
 import ai.individual.extra.Kechi;
 import ai.individual.extra.KelBilette;
 import ai.individual.extra.OlAriosh;
-import ai.individual.extra.SeerFlouros;
-import ai.individual.extra.SeerUgoros;
 import ai.individual.extra.SelfExplosiveKamikaze;
 import ai.individual.extra.ValakasMinions;
 import ai.individual.extra.VenomousStorace;
@@ -105,8 +103,6 @@ public final class IndividualLoader
 		Kechi.class,
 		KelBilette.class,
 		OlAriosh.class,
-		SeerFlouros.class,
-		SeerUgoros.class,
 		SelfExplosiveKamikaze.class,
 		ValakasMinions.class,
 		VenomousStorace.class,

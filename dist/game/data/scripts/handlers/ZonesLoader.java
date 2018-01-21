@@ -35,6 +35,10 @@ import ai.zone.FantasyIsle.MC_Show;
 import ai.zone.FantasyIsle.Parade;
 import ai.zone.LairOfAntharas.LairOfAntharas;
 import ai.zone.PavelRuins.PavelArchaic;
+import ai.zone.PlainsOfLizardman.PlainsOfLizardman;
+import ai.zone.PlainsOfLizardman.SeerFlouros;
+import ai.zone.PlainsOfLizardman.SeerUgoros;
+import ai.zone.PlainsOfLizardman.TantaLizardmanSummoner;
 import ai.zone.PrimevalIsle.PrimevalIsle;
 import ai.zone.SelMahums.SelMahumDrill;
 import ai.zone.SelMahums.SelMahumSquad;
@@ -71,6 +75,12 @@ public final class ZonesLoader
 		
 		// Pavel Ruins
 		PavelArchaic.class,
+		
+		// Plains of Lizardman
+		PlainsOfLizardman.class,
+		SeerFlouros.class,
+		SeerUgoros.class,
+		TantaLizardmanSummoner.class,
 		
 		// Primeval Island
 		PrimevalIsle.class,
