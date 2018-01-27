@@ -48,7 +48,9 @@ import org.slf4j.LoggerFactory;
 import ai.npc.AbstractNpcAI;
 
 /**
- * Updated by GodFather 03.10.2011
+ * Updated by vGodFather 03.10.2011<br>
+ * Updated by vGodFather 29.12.2017<br>
+ * Updated by vGodFather 26.01.2018
  */
 public class VanHalter extends AbstractNpcAI
 {
@@ -99,6 +101,7 @@ public class VanHalter extends AbstractNpcAI
 	
 	private static final int ANDREAS_VAN_HALTER = 29062;
 	private static final int ANDREAS_CAPTAIN = 22188;
+	private static final int CAMERA = 13014;
 	
 	private static final List<Integer> TRIOLS = Arrays.asList(32058, 32059, 32060, 32061, 32062, 32063, 32064, 32065, 32066);
 	
@@ -106,12 +109,6 @@ public class VanHalter extends AbstractNpcAI
 	private static int _state = 0;
 	private static final byte ALIVE = 0;
 	private static final byte DEAD = 1;
-	
-	private static final String[] StrStatus =
-	{
-		"INTERVAL",
-		"ALIVE"
-	};
 	
 	public VanHalter()
 	{
@@ -124,6 +121,29 @@ public class VanHalter extends AbstractNpcAI
 		addKillId(TRIOLS);
 		
 		init();
+	}
+	
+	@Override
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	{
+		switch (event)
+		{
+			case "RESPAWN_VAN_HALTER":
+			{
+				if (getStatus() == DEAD)
+				{
+					setRespawn(0);
+					setupAltar();
+					player.sendMessage(getClass().getSimpleName() + ": Van Halter has been respawned.");
+				}
+				else
+				{
+					player.sendMessage(getClass().getSimpleName() + ": You can't respawn Van Halter while Van Halter is alive!");
+				}
+				break;
+			}
+		}
+		return super.onAdvEvent(event, npc, player);
 	}
 	
 	@Override
@@ -173,11 +193,6 @@ public class VanHalter extends AbstractNpcAI
 		return super.onKill(npc, killer, isSummon);
 	}
 	
-	private String getState()
-	{
-		return StrStatus[_state];
-	}
-	
 	public void init()
 	{
 		_zone = (L2BossZone) ZoneManager.getInstance().getZoneById(12014);
@@ -204,11 +219,38 @@ public class VanHalter extends AbstractNpcAI
 		loadVanHalter();
 		loadRitualOffering();
 		loadRitualSacrifice();
+		loadCameras();
 		
+		if (_timeUpTask != null)
+		{
+			_timeUpTask.cancel(false);
+		}
+		_timeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new TimeUp(), Config.HPH_ACTIVITYTIMEOFHALTER);
+		
+		if (_setBleedTask != null)
+		{
+			_setBleedTask.cancel(false);
+		}
+		_setBleedTask = ThreadPoolManager.getInstance().scheduleGeneral(new Bleeding(), 2000);
+		
+		if (_state == DEAD)
+		{
+			enterInterval();
+		}
+		else if (_state == ALIVE)
+		{
+			setupAltar();
+			_vanHalter.setCurrentHpMp(info.getInt("currentHP"), info.getInt("currentMP"));
+		}
+	}
+	
+	protected void loadCameras()
+	{
 		_cameraMarkerSpawn.clear();
+		
 		try
 		{
-			L2NpcTemplate template1 = NpcTable.getInstance().getTemplate(13014);
+			L2NpcTemplate template1 = NpcTable.getInstance().getTemplate(CAMERA);
 			L2Spawn tempSpawn;
 			
 			tempSpawn = new L2Spawn(template1);
@@ -263,33 +305,7 @@ public class VanHalter extends AbstractNpcAI
 		}
 		catch (Exception e)
 		{
-			_log.warn("VanHalterManager: Error in spawning mobs." + e.getMessage(), e);
-		}
-		
-		if (_timeUpTask != null)
-		{
-			_timeUpTask.cancel(false);
-		}
-		_timeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new TimeUp(), Config.HPH_ACTIVITYTIMEOFHALTER);
-		
-		if (_setBleedTask != null)
-		{
-			_setBleedTask.cancel(false);
-		}
-		_setBleedTask = ThreadPoolManager.getInstance().scheduleGeneral(new Bleeding(), 2000);
-		
-		if (_debug)
-		{
-			_log.info("VanHalterManager : State of High Priestess van Halter is " + getState() + ".");
-		}
-		if (_state == DEAD)
-		{
-			enterInterval();
-		}
-		else if (_state == ALIVE)
-		{
-			setupAltar();
-			_vanHalter.setCurrentHpMp(info.getInt("currentHP"), info.getInt("currentMP"));
+			_log.warn("VanHalterManager.loadCameras: Spawn could not be initialized: " + e);
 		}
 	}
 	
@@ -866,26 +882,13 @@ public class VanHalter extends AbstractNpcAI
 			return;
 		}
 		
-		for (int i = 1; i <= _cameraMarker.size(); i++)
-		{
-			_cameraMarker.get(i).deleteMe();
-		}
+		_cameraMarker.values().forEach(npc -> npc.deleteMe());
 		_cameraMarker.clear();
 	}
 	
 	protected void openDoorOfAltar(boolean loop)
 	{
-		for (L2DoorInstance door : _doorOfAltar)
-		{
-			try
-			{
-				door.openMe();
-			}
-			catch (Exception e)
-			{
-				_log.error(e.getMessage(), e);
-			}
-		}
+		_doorOfAltar.forEach(door -> door.openMe());
 		
 		if (loop)
 		{
@@ -919,10 +922,7 @@ public class VanHalter extends AbstractNpcAI
 	
 	protected void closeDoorOfAltar(boolean loop)
 	{
-		for (L2DoorInstance door : _doorOfAltar)
-		{
-			door.closeMe();
-		}
+		_doorOfAltar.forEach(door -> door.closeMe());
 		
 		if (loop)
 		{
@@ -955,32 +955,12 @@ public class VanHalter extends AbstractNpcAI
 	
 	protected void openDoorOfSacrifice()
 	{
-		for (L2DoorInstance door : _doorOfSacrifice)
-		{
-			try
-			{
-				door.openMe();
-			}
-			catch (Exception e)
-			{
-				_log.error(e.getMessage(), e);
-			}
-		}
+		_doorOfSacrifice.forEach(door -> door.openMe());
 	}
 	
 	protected void closeDoorOfSacrifice()
 	{
-		for (L2DoorInstance door : _doorOfSacrifice)
-		{
-			try
-			{
-				door.closeMe();
-			}
-			catch (Exception e)
-			{
-				_log.error(e.getMessage(), e);
-			}
-		}
+		_doorOfSacrifice.forEach(door -> door.closeMe());
 	}
 	
 	public void checkTriolRevelationDestroy()
@@ -1018,10 +998,7 @@ public class VanHalter extends AbstractNpcAI
 		openDoorOfSacrifice();
 		
 		CreatureSay cs = new CreatureSay(0, Say2.ALLIANCE, "", NpcStringId.THE_DOOR_TO_THE_3RD_FLOOR_OF_THE_ALTAR_IS_NOW_OPEN);
-		for (L2PcInstance pc : _zone.getPlayersInside())
-		{
-			pc.sendPacket(cs);
-		}
+		_zone.getPlayersInside().forEach(pc -> pc.sendPacket(cs));
 		
 		_vanHalter.setIsImmobilized(true);
 		_vanHalter.setIsInvul(true);
@@ -1197,10 +1174,8 @@ public class VanHalter extends AbstractNpcAI
 		}
 	}
 	
-	public void enterInterval()
+	private void cancelThreads()
 	{
-		StatsSet info = GrandBossManager.getInstance().getStatsSet(ANDREAS_VAN_HALTER);
-		
 		if (_callRoyalGuardHelperTask != null)
 		{
 			_callRoyalGuardHelperTask.cancel(false);
@@ -1248,7 +1223,10 @@ public class VanHalter extends AbstractNpcAI
 			_timeUpTask.cancel(false);
 		}
 		_timeUpTask = null;
-		
+	}
+	
+	private void clearSpawns()
+	{
 		deleteVanHalter();
 		deleteRoyalGuardHepler();
 		deleteRoyalGuardCaptain();
@@ -1256,6 +1234,14 @@ public class VanHalter extends AbstractNpcAI
 		deleteRitualOffering();
 		deleteRitualSacrifice();
 		deleteGuardOfAltar();
+	}
+	
+	public void enterInterval()
+	{
+		StatsSet info = GrandBossManager.getInstance().getStatsSet(ANDREAS_VAN_HALTER);
+		
+		cancelThreads();
+		clearSpawns();
 		
 		if (_intervalTask != null)
 		{
@@ -1278,73 +1264,12 @@ public class VanHalter extends AbstractNpcAI
 		}
 	}
 	
-	protected class Interval implements Runnable
-	{
-		@Override
-		public void run()
-		{
-			setupAltar();
-		}
-	}
-	
 	public void setupAltar()
 	{
-		if (_callRoyalGuardHelperTask != null)
-		{
-			_callRoyalGuardHelperTask.cancel(false);
-		}
-		_callRoyalGuardHelperTask = null;
+		cancelThreads();
+		clearSpawns();
 		
-		if (_closeDoorOfAltarTask != null)
-		{
-			_closeDoorOfAltarTask.cancel(false);
-		}
-		_closeDoorOfAltarTask = null;
-		
-		if (_halterEscapeTask != null)
-		{
-			_halterEscapeTask.cancel(false);
-		}
-		_halterEscapeTask = null;
-		
-		if (_intervalTask != null)
-		{
-			_intervalTask.cancel(false);
-		}
-		_intervalTask = null;
-		
-		if (_lockUpDoorOfAltarTask != null)
-		{
-			_lockUpDoorOfAltarTask.cancel(false);
-		}
-		_lockUpDoorOfAltarTask = null;
-		
-		if (_movieTask != null)
-		{
-			_movieTask.cancel(false);
-		}
-		_movieTask = null;
-		
-		if (_openDoorOfAltarTask != null)
-		{
-			_openDoorOfAltarTask.cancel(false);
-		}
-		_openDoorOfAltarTask = null;
-		
-		if (_timeUpTask != null)
-		{
-			_timeUpTask.cancel(false);
-		}
-		_timeUpTask = null;
-		
-		deleteVanHalter();
 		deleteTriolRevelation();
-		deleteRoyalGuardHepler();
-		deleteRoyalGuardCaptain();
-		deleteRoyalGuard();
-		deleteRitualSacrifice();
-		deleteRitualOffering();
-		deleteGuardOfAltar();
 		deleteCameraMarker();
 		
 		_isLocked = false;
@@ -1365,6 +1290,15 @@ public class VanHalter extends AbstractNpcAI
 		setStatus(ALIVE);
 		
 		_timeUpTask = ThreadPoolManager.getInstance().scheduleGeneral(new TimeUp(), Config.HPH_ACTIVITYTIMEOFHALTER);
+	}
+	
+	protected class Interval implements Runnable
+	{
+		@Override
+		public void run()
+		{
+			setupAltar();
+		}
 	}
 	
 	protected class TimeUp implements Runnable
