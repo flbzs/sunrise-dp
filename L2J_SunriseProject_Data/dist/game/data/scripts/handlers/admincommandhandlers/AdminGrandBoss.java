@@ -33,12 +33,14 @@ import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.zone.type.L2NoRestartZone;
 import l2r.gameserver.network.serverpackets.NpcHtmlMessage;
 
+import ai.grandboss.VanHalter;
 import ai.grandboss.Antharas.Antharas;
 import ai.grandboss.Baium.Baium;
 import ai.grandboss.Valakas.Valakas;
 
 /**
- * @author St3eT
+ * @author St3eT<br>
+ *         Updated by vGodFather 26.01.2018
  */
 public class AdminGrandBoss implements IAdminCommandHandler
 {
@@ -51,6 +53,7 @@ public class AdminGrandBoss implements IAdminCommandHandler
 	private static final int QUEENANT = 29001; // Queen Ant
 	private static final int ORFEN = 29014; // Orfen
 	private static final int CORE = 29006; // Core
+	private static final int VAN_HALTER = 29062; // Van Halter
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -143,6 +146,12 @@ public class AdminGrandBoss implements IAdminCommandHandler
 							manageHtml(activeChar, grandBossId);
 							break;
 						}
+						case VAN_HALTER:
+						{
+							vanHalterAi().notifyEvent("RESPAWN_VAN_HALTER", null, activeChar);
+							manageHtml(activeChar, grandBossId);
+							break;
+						}
 						default:
 						{
 							activeChar.sendMessage("Wrong ID!");
@@ -221,15 +230,15 @@ public class AdminGrandBoss implements IAdminCommandHandler
 				{
 					activeChar.sendMessage("Usage: //grandboss_abort Id");
 				}
-			}
 				break;
+			}
 		}
 		return true;
 	}
 	
 	private void manageHtml(L2PcInstance activeChar, int grandBossId)
 	{
-		if (Arrays.asList(ANTHARAS, VALAKAS, BAIUM, QUEENANT, ORFEN, CORE).contains(grandBossId))
+		if (Arrays.asList(ANTHARAS, VALAKAS, BAIUM, QUEENANT, ORFEN, CORE, VAN_HALTER).contains(grandBossId))
 		{
 			final int bossStatus = GrandBossManager.getInstance().getBossStatus(grandBossId);
 			L2NoRestartZone bossZone = null;
@@ -271,6 +280,11 @@ public class AdminGrandBoss implements IAdminCommandHandler
 				case CORE:
 				{
 					htmlPatch = "data/html/admin/grandbosses/grandboss_core.htm";
+					break;
+				}
+				case VAN_HALTER:
+				{
+					htmlPatch = "data/html/admin/grandbosses/grandboss_vanhalter.htm";
 					break;
 				}
 			}
@@ -356,6 +370,11 @@ public class AdminGrandBoss implements IAdminCommandHandler
 	private Quest baiumAi()
 	{
 		return QuestManager.getInstance().getQuest(Baium.class.getSimpleName());
+	}
+	
+	private Quest vanHalterAi()
+	{
+		return QuestManager.getInstance().getQuest(VanHalter.class.getSimpleName());
 	}
 	
 	@Override
