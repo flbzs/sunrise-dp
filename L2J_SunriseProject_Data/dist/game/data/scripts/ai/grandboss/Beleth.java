@@ -101,7 +101,7 @@ public final class Beleth extends AbstractNpcAI
 	
 	public Beleth()
 	{
-		super(Beleth.class.getSimpleName(), "ai/individual");
+		super(Beleth.class.getSimpleName(), "ai/grandboss");
 		addEnterZoneId(ZONE.getId());
 		registerMobs(REAL_BELETH, FAKE_BELETH);
 		addStartNpc(STONE_COFFIN);
