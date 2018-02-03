@@ -80,7 +80,7 @@ public final class Orfen extends AbstractNpcAI
 	
 	public Orfen()
 	{
-		super(Orfen.class.getSimpleName(), "ai/individual");
+		super(Orfen.class.getSimpleName(), "ai/grandboss");
 		int[] mobs =
 		{
 			ORFEN,

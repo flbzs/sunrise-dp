@@ -60,7 +60,7 @@ public final class Core extends AbstractNpcAI
 	
 	public Core()
 	{
-		super(Core.class.getSimpleName(), "ai/individual");
+		super(Core.class.getSimpleName(), "ai/grandboss");
 		registerMobs(CORE, DEATH_KNIGHT, DOOM_WRAITH, SUSCEPTOR);
 		
 		_firstAttacked = false;
