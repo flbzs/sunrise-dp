@@ -22,7 +22,6 @@ import l2r.Config;
 import l2r.gameserver.enums.QuestSound;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
@@ -40,10 +39,6 @@ public class Q00053_LinnaeusSpecialBait extends Quest
 	// Items
 	private static final int CRIMSON_DRAKE_HEART = 7624;
 	private static final int FLAMING_FISHING_LURE = 7613;
-	// Misc
-	// Custom setting: whether or not to check for fishing skill level?
-	// Default False to require fishing skill level, any other value to ignore fishing and evaluate char level only.
-	private static final boolean ALT_IGNORE_FISHING = false;
 	
 	public Q00053_LinnaeusSpecialBait()
 	{
@@ -131,27 +126,12 @@ public class Q00053_LinnaeusSpecialBait extends Quest
 				htmltext = getAlreadyCompletedMsg(player);
 				break;
 			case State.CREATED:
-				htmltext = ((player.getLevel() > 59) && (fishingLevel(player) > 19)) ? "31577-0.htm" : "31577-0a.html";
+				htmltext = (player.getLevel() > 59) ? "31577-0.htm" : "31577-0a.html";
 				break;
 			case State.STARTED:
 				htmltext = (st.isCond(1)) ? "31577-4.html" : "31577-2.html";
 				break;
 		}
 		return htmltext;
-	}
-	
-	private static int fishingLevel(L2PcInstance player)
-	{
-		int level = 20;
-		if (!ALT_IGNORE_FISHING)
-		{
-			level = player.getSkillLevel(1315);
-			L2Effect effect = player.getFirstEffect(2274);
-			if (effect != null)
-			{
-				level = (int) effect.getSkill().getPower();
-			}
-		}
-		return level;
 	}
 }
