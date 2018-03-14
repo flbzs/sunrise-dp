@@ -180,7 +180,6 @@ public final class DragonValley extends AbstractNpcAI
 	@Override
 	public String onSpawn(L2Npc npc)
 	{
-		((L2Attackable) npc).setOnKillDelay(0);
 		if (Util.contains(SPAWN_ANIMATION, npc.getId()))
 		{
 			npc.setShowSummonAnimation(true);

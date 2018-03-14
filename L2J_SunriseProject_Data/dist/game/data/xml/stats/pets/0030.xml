@@ -2,7 +2,7 @@
 <pets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/PetData.xsd">
 	<!-- Pet  : Owl Monk -->
 	<!-- Item : Owl Monk Summon Whistle -->
-	<pet id="16050" itemId="14063" index="30">
+	<pet id="16050" itemId="14063;13550" index="30">
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="18000" />

@@ -2,7 +2,7 @@
 <pets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/PetData.xsd">
 	<!-- Pet  : Toy Knight -->
 	<!-- Item : Toy Knight Summon Whistle -->
-	<pet id="16052" itemId="14061" index="27">
+	<pet id="16052" itemId="14061;13548" index="27">
 		<skills>
 			<!-- Custom levels -->
 			<skill minLvl="1" skillId="5771" skillLvl="1" /> <!-- Buff Control -->

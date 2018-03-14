@@ -2,7 +2,7 @@
 <pets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/PetData.xsd">
 	<!-- Pet  : Spirit Shaman -->
 	<!-- Item : Spirit Shaman Summon Whistle -->
-	<pet id="16051" itemId="14062" index="28">
+	<pet id="16051" itemId="14062;13549" index="28">
 		<skills>
 			<!-- Custom levels -->
 			<skill minLvl="1" skillId="5771" skillLvl="1" /> <!-- Buff Control -->
