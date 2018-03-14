@@ -18,7 +18,6 @@
  */
 package ai.individual;
 
-import l2r.gameserver.model.actor.L2Attackable;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.ItemHolder;
@@ -67,7 +66,6 @@ public final class EvasGiftBox extends AbstractNpcAI
 	public String onSpawn(L2Npc npc)
 	{
 		npc.setIsNoRndWalk(true);
-		((L2Attackable) npc).setOnKillDelay(0);
 		return super.onSpawn(npc);
 	}
 }

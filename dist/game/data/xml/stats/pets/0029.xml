@@ -2,7 +2,7 @@
 <pets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../xsd/PetData.xsd">
 	<!-- Pet  : Turtle Ascetic -->
 	<!-- Item : Turtle Ascetic Summon Whistle -->
-	<pet id="16053" itemId="14064" index="29">
+	<pet id="16053" itemId="14064;13551" index="29">
 		<skills>
 			<!-- Custom levels -->
 			<skill minLvl="1" skillId="5771" skillLvl="1" /> <!-- Buff Control -->

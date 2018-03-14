@@ -41,11 +41,11 @@ import ai.group_template.RangeGuard;
 import ai.group_template.Sandstorms;
 import ai.group_template.SilentValley;
 import ai.group_template.SummonPc;
+import ai.group_template.TreasureChest;
 import ai.group_template.TurekOrcs;
 import ai.group_template.VarkaKetra;
 import ai.group_template.WarriorFishingBlock;
 import ai.group_template.extra.BrekaOrcOverlord;
-import ai.group_template.extra.Chests;
 import ai.group_template.extra.CryptsOfDisgrace;
 import ai.group_template.extra.FieldOfWhispersSilence;
 import ai.group_template.extra.KarulBugbear;
@@ -88,13 +88,13 @@ public final class GroupTemplatesLoader
 		Sandstorms.class,
 		SilentValley.class,
 		SummonPc.class,
+		TreasureChest.class,
 		TurekOrcs.class,
 		VarkaKetra.class,
 		WarriorFishingBlock.class,
 		
 		// Extras
 		BrekaOrcOverlord.class,
-		Chests.class,
 		CryptsOfDisgrace.class,
 		FieldOfWhispersSilence.class,
 		KarulBugbear.class,
