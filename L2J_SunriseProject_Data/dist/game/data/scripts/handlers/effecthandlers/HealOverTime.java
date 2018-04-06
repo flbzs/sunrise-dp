@@ -77,7 +77,7 @@ public class HealOverTime extends L2Effect
 		}
 		
 		// vGodFather: herb effect must override invul check
-		if (!getEffected().isInvul() || getSkill().isHerb())
+		if ((!getEffected().isInvul() && !getEffected().isHpBlocked()) || getSkill().isHerb())
 		{
 			hp += calc();
 			hp = Math.min(hp, maxhp);

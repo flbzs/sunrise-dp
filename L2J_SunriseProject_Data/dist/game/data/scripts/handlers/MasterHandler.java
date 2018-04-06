@@ -164,7 +164,6 @@ import handlers.bypasshandlers.PlayerHelp;
 import handlers.bypasshandlers.PrivateWarehouse;
 import handlers.bypasshandlers.QuestLink;
 import handlers.bypasshandlers.QuestList;
-import handlers.bypasshandlers.ReceivePremium;
 import handlers.bypasshandlers.ReleaseAttribute;
 import handlers.bypasshandlers.RemoveDeathPenalty;
 import handlers.bypasshandlers.RentPet;
@@ -462,7 +461,6 @@ public class MasterHandler
 			PrivateWarehouse.class,
 			QuestLink.class,
 			QuestList.class,
-			ReceivePremium.class,
 			ReleaseAttribute.class,
 			RemoveDeathPenalty.class,
 			RentPet.class,
