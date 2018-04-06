@@ -181,7 +181,10 @@ public class Mdam implements ISkillHandler
 			skill.getEffectsSelf(activeChar);
 		}
 		
-		activeChar.setChargedShot(bss ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS, false);
+		if (targets.length > 0)
+		{
+			activeChar.setChargedShot(bss ? ShotType.BLESSED_SPIRITSHOTS : ShotType.SPIRITSHOTS, false);
+		}
 		
 		if (skill.isSuicideAttack())
 		{
