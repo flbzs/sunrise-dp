@@ -42,6 +42,7 @@ import ai.npc.Dorian.Dorian;
 import ai.npc.DragonVortexRetail.DragonVortexRetail;
 import ai.npc.EkimusMouth.EkimusMouth;
 import ai.npc.FameManager.FameManager;
+import ai.npc.Fisherman.Fisherman;
 import ai.npc.ForgeOfTheGods.ForgeOfTheGods;
 import ai.npc.ForgeOfTheGods.Rooney;
 import ai.npc.ForgeOfTheGods.TarBeetle;
@@ -107,6 +108,7 @@ public final class NpcLoader
 		DragonVortexRetail.class,
 		EkimusMouth.class,
 		FameManager.class,
+		Fisherman.class,
 		ForgeOfTheGods.class,
 		Rooney.class,
 		TarBeetle.class,
