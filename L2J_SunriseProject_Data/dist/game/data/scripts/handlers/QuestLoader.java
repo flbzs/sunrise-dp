@@ -241,6 +241,7 @@ import quests.Q00250_WatchWhatYouEat.Q00250_WatchWhatYouEat;
 import quests.Q00251_NoSecrets.Q00251_NoSecrets;
 import quests.Q00252_ItSmellsDelicious.Q00252_ItSmellsDelicious;
 import quests.Q00254_LegendaryTales.Q00254_LegendaryTales;
+import quests.Q00255_Tutorial.Q00255_Tutorial;
 import quests.Q00257_TheGuardIsBusy.Q00257_TheGuardIsBusy;
 import quests.Q00258_BringWolfPelts.Q00258_BringWolfPelts;
 import quests.Q00259_RequestFromTheFarmOwner.Q00259_RequestFromTheFarmOwner;
@@ -758,6 +759,7 @@ public class QuestLoader
 		Q00251_NoSecrets.class,
 		Q00252_ItSmellsDelicious.class,
 		Q00254_LegendaryTales.class,
+		Q00255_Tutorial.class,
 		Q00257_TheGuardIsBusy.class,
 		Q00258_BringWolfPelts.class,
 		Q00259_RequestFromTheFarmOwner.class,
