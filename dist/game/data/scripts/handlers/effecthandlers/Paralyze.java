@@ -19,7 +19,6 @@
 package handlers.effecthandlers;
 
 import l2r.gameserver.enums.CtrlEvent;
-import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.effects.AbnormalEffect;
 import l2r.gameserver.model.effects.EffectFlag;
 import l2r.gameserver.model.effects.EffectTemplate;
@@ -75,7 +74,6 @@ public class Paralyze extends L2Effect
 	public boolean onStart()
 	{
 		getEffected().startAbnormalEffect(AbnormalEffect.HOLD_1);
-		getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, getEffector());
 		getEffected().startParalyze();
 		return super.onStart();
 	}
