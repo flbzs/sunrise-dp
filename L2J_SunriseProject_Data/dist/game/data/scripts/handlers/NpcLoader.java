@@ -38,6 +38,7 @@ import ai.npc.CastleSiegeManager.CastleSiegeManager;
 import ai.npc.CastleTeleporter.CastleTeleporter;
 import ai.npc.CastleWarehouse.CastleWarehouse;
 import ai.npc.ClanTrader.ClanTrader;
+import ai.npc.DimensionalMerchant.DimensionalMerchant;
 import ai.npc.Dorian.Dorian;
 import ai.npc.DragonVortexRetail.DragonVortexRetail;
 import ai.npc.EkimusMouth.EkimusMouth;
@@ -103,6 +104,7 @@ public final class NpcLoader
 		CastleTeleporter.class,
 		CastleWarehouse.class,
 		ClanTrader.class,
+		DimensionalMerchant.class,
 		Dorian.class,
 		// DragonVortex.class,
 		DragonVortexRetail.class,

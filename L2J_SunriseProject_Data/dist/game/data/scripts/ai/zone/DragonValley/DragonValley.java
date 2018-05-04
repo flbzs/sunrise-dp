@@ -18,14 +18,20 @@
  */
 package ai.zone.DragonValley;
 
+import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.List;
 
+import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.model.actor.L2Attackable;
+import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.L2Playable;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.base.ClassId;
 import l2r.gameserver.model.holders.SkillHolder;
+import l2r.gameserver.model.skills.L2Skill;
+import l2r.gameserver.network.serverpackets.MagicSkillUse;
 import l2r.gameserver.util.Util;
 import l2r.util.Rnd;
 
@@ -33,7 +39,7 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Dragon Valley AI.
- * @author St3eT
+ * @author St3eT, vGodFather
  */
 public final class DragonValley extends AbstractNpcAI
 {
@@ -81,6 +87,7 @@ public final class DragonValley extends AbstractNpcAI
 	private static final SkillHolder MORALE_BOOST1 = new SkillHolder(6885, 1);
 	private static final SkillHolder MORALE_BOOST2 = new SkillHolder(6885, 2);
 	private static final SkillHolder MORALE_BOOST3 = new SkillHolder(6885, 3);
+	private static final SkillHolder VITALITY_BUFF = new SkillHolder(6883, 1);
 	
 	// Misc
 	private final int SPAWN_CHANCE = 100; // Retail 100%
@@ -89,6 +96,8 @@ public final class DragonValley extends AbstractNpcAI
 	private static final int MIN_LVL = 80;
 	private static final int CLASS_LVL = 3;
 	private static final EnumMap<ClassId, Double> CLASS_POINTS = new EnumMap<>(ClassId.class);
+	private final int RESET_TIMER = 55 * 1000;
+	private final String RESET = "RESET";
 	
 	{
 		CLASS_POINTS.put(ClassId.adventurer, 0.2);
@@ -139,21 +148,42 @@ public final class DragonValley extends AbstractNpcAI
 	}
 	
 	@Override
+	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
+	{
+		switch (event)
+		{
+			case RESET:
+			{
+				npc.setScriptValue(0);
+			}
+		}
+		
+		return super.onAdvEvent(event, npc, player);
+	}
+	
+	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
-		if ((npc.getCurrentHp() < (npc.getMaxHp() / 2)) && (getRandom(100) < 5) && npc.isScriptValue(0))
+		if (npc.isScriptValue(0))
 		{
 			npc.setScriptValue(1);
-			final int rnd = getRandom(3, 5);
-			for (int i = 0; i < rnd; i++)
+			manageMoraleBoost(attacker, npc);
+			
+			if ((npc.getCurrentHp() < (npc.getMaxHp() / 2)) && (getRandom(100) < 5))
 			{
-				if (Rnd.get(1000) <= (SPAWN_CHANCE * 10))
+				final int rnd = getRandom(3, 5);
+				for (int i = 0; i < rnd; i++)
 				{
-					final L2Playable playable = isSummon ? attacker.getSummon() : attacker;
-					final L2Npc minion = addSpawn(DRAKOS_ASSASSIN, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), true, 0, true);
-					addAttackDesire(minion, playable);
+					if (Rnd.get(1000) <= (SPAWN_CHANCE * 10))
+					{
+						final L2Playable playable = isSummon ? attacker.getSummon() : attacker;
+						final L2Npc minion = addSpawn(DRAKOS_ASSASSIN, npc.getX(), npc.getY(), npc.getZ() + 10, npc.getHeading(), true, 0, true);
+						addAttackDesire(minion, playable);
+					}
 				}
 			}
+			
+			startQuestTimer(RESET, RESET_TIMER, npc, null);
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
@@ -172,8 +202,15 @@ public final class DragonValley extends AbstractNpcAI
 		else if (((L2Attackable) npc).isSweepActive())
 		{
 			npc.dropItem(killer, getRandom(GREATER_HERB_OF_MANA, SUPERIOR_HERB_OF_MANA), 1);
-			manageMoraleBoost(killer, npc);
 		}
+		
+		if (getRandom(1000) > 5)
+		{
+			ThreadPoolManager.getInstance().scheduleEffect(new BuffAfterDeath(killer, VITALITY_BUFF), 2000);
+		}
+		
+		cancelQuestTimer(RESET, npc, null);
+		
 		return super.onKill(npc, killer, isSummon);
 	}
 	
@@ -222,15 +259,47 @@ public final class DragonValley extends AbstractNpcAI
 					switch (moraleBoostLv)
 					{
 						case 1:
-							MORALE_BOOST1.getSkill().getEffects(member, member);
+							addSkillCastDesire(npc, member, MORALE_BOOST1, 99900000000L);
 							break;
 						case 2:
-							MORALE_BOOST2.getSkill().getEffects(member, member);
+							addSkillCastDesire(npc, member, MORALE_BOOST2, 99900000000L);
 							break;
 						case 3:
-							MORALE_BOOST3.getSkill().getEffects(member, member);
+							addSkillCastDesire(npc, member, MORALE_BOOST3, 99900000000L);
 							break;
 					}
+				}
+			}
+		}
+	}
+	
+	public static class BuffAfterDeath implements Runnable
+	{
+		private final L2Character _killer;
+		private final L2Skill _skill;
+		
+		public BuffAfterDeath(L2Character killer, SkillHolder skill)
+		{
+			_killer = killer;
+			_skill = skill.getSkill();
+		}
+		
+		@Override
+		public void run()
+		{
+			if (_skill == null)
+			{
+				return;
+			}
+			
+			if ((_killer != null) && _killer.isPlayer() && !_killer.isDead())
+			{
+				List<L2Character> targets = new ArrayList<>();
+				targets.add(_killer);
+				_killer.broadcastPacket(new MagicSkillUse(_killer, _killer, _skill.getId(), _skill.getLevel(), 0, 0));
+				for (L2Character target : targets)
+				{
+					_skill.applyEffects(_killer, target);
 				}
 			}
 		}
