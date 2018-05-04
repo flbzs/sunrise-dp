@@ -31,6 +31,7 @@ import l2r.gameserver.handler.BypassHandler;
 import l2r.gameserver.handler.ChatHandler;
 import l2r.gameserver.handler.IHandler;
 import l2r.gameserver.handler.ItemHandler;
+import l2r.gameserver.handler.PlayerActionHandler;
 import l2r.gameserver.handler.PunishmentHandler;
 import l2r.gameserver.handler.SkillHandler;
 import l2r.gameserver.handler.TargetHandler;
@@ -222,6 +223,24 @@ import handlers.itemhandlers.SpecialXMas;
 import handlers.itemhandlers.SpiritShot;
 import handlers.itemhandlers.SummonItems;
 import handlers.itemhandlers.TeleportBookmark;
+import handlers.playeractions.AirshipAction;
+import handlers.playeractions.BotReport;
+import handlers.playeractions.PetAttack;
+import handlers.playeractions.PetHold;
+import handlers.playeractions.PetMove;
+import handlers.playeractions.PetSkillUse;
+import handlers.playeractions.PetStop;
+import handlers.playeractions.PrivateStore;
+import handlers.playeractions.Ride;
+import handlers.playeractions.RunWalk;
+import handlers.playeractions.ServitorAttack;
+import handlers.playeractions.ServitorHold;
+import handlers.playeractions.ServitorMove;
+import handlers.playeractions.ServitorSkillUse;
+import handlers.playeractions.SitStand;
+import handlers.playeractions.SocialAction;
+import handlers.playeractions.UnsummonPet;
+import handlers.playeractions.UnsummonServitor;
 import handlers.punishmenthandlers.BanHandler;
 import handlers.punishmenthandlers.ChatBanHandler;
 import handlers.punishmenthandlers.JailHandler;
@@ -332,6 +351,7 @@ public class MasterHandler
 		VoicedCommandHandler.getInstance(),
 		TargetHandler.getInstance(),
 		TelnetHandler.getInstance(),
+		PlayerActionHandler.getInstance(),
 	};
 	
 	private static final Class<?>[][] HANDLERS =
@@ -637,6 +657,26 @@ public class MasterHandler
 		{
 			// Custom Handlers
 			CustomAnnouncePkPvP.class
+		},
+		{
+			AirshipAction.class,
+			BotReport.class,
+			PetAttack.class,
+			PetHold.class,
+			PetMove.class,
+			PetSkillUse.class,
+			PetStop.class,
+			PrivateStore.class,
+			Ride.class,
+			RunWalk.class,
+			ServitorAttack.class,
+			ServitorHold.class,
+			ServitorMove.class,
+			ServitorSkillUse.class,
+			SitStand.class,
+			SocialAction.class,
+			UnsummonPet.class,
+			UnsummonServitor.class,
 		}
 	};
 	

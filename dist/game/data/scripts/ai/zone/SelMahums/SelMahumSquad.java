@@ -186,6 +186,7 @@ public final class SelMahumSquad extends AbstractNpcAI
 				if (npc.isMonster() && !npc.isDead())
 				{
 					((L2MonsterInstance) npc).returnHome();
+					npc.setDisplayEffect(MAHUM_EFFECT_NONE);
 				}
 				break;
 			}
