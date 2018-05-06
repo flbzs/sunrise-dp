@@ -1613,7 +1613,7 @@
 	<skill id="1554" levels="1" name="Aura Blast">
 		<!-- High Five Skill -->
 		<set name="abnormalTime" val="3" />
-		<set name="affectLimit" val="2-10" />
+		<set name="affectLimit" val="10-10" />
 		<set name="affectRange" val="200" />
 		<set name="castRange" val="900" />
 		<set name="effectRange" val="1400" />
