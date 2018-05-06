@@ -1804,7 +1804,7 @@
 	</skill>
 	<skill id="987" levels="1" name="Multiple Shot">
 		<!-- Confirmed High Five -->
-		<set name="affectLimit" val="5-12" />
+		<set name="affectLimit" val="8-10" />
 		<set name="affectRange" val="900" />
 		<set name="baseCritRate" val="15" />
 		<set name="castRange" val="900" />
