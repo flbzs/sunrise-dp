@@ -59,7 +59,7 @@ public final class DragonValley extends AbstractNpcAI
 		22828, // Parasitic Leech
 		
 	};
-	private static final int[] SPOIL_REACT_MONSTER =
+	private static final int[] REACT_MONSTER =
 	{
 		22822, // Drakos Warrior
 		22823, // Drakos Assassin
@@ -142,9 +142,10 @@ public final class DragonValley extends AbstractNpcAI
 	{
 		super(DragonValley.class.getSimpleName(), "ai/zone/DragonValley");
 		addAttackId(SUMMON_NPC);
-		addKillId(SPOIL_REACT_MONSTER);
+		addAttackId(REACT_MONSTER);
+		addKillId(REACT_MONSTER);
 		addKillId(GEM_DRAGON);
-		addSpawnId(SPOIL_REACT_MONSTER);
+		addSpawnId(REACT_MONSTER);
 	}
 	
 	@Override

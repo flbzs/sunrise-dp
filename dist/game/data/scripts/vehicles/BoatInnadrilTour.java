@@ -91,8 +91,15 @@ public class BoatInnadrilTour implements Runnable
 	private final CreatureSay ARRIVAL5;
 	private final CreatureSay ARRIVAL1;
 	
-	public BoatInnadrilTour(L2BoatInstance boat)
+	public BoatInnadrilTour()
 	{
+		final L2BoatInstance boat = BoatManager.getInstance().getNewBoat(4, 111264, 226240, -3610, 32768);
+		if (boat != null)
+		{
+			boat.registerEngine(this);
+			boat.runEngine(180000);
+		}
+		
 		_boat = boat;
 		
 		ARRIVED_AT_INNADRIL = new CreatureSay(0, Say2.BOAT, 801, SystemMessageId.INNADRIL_BOAT_ANCHOR_10_MINUTES);
@@ -166,16 +173,6 @@ public class BoatInnadrilTour implements Runnable
 		catch (Exception e)
 		{
 			_log.warn(e.getMessage());
-		}
-	}
-	
-	public static void main(String[] args)
-	{
-		final L2BoatInstance boat = BoatManager.getInstance().getNewBoat(4, 111264, 226240, -3610, 32768);
-		if (boat != null)
-		{
-			boat.registerEngine(new BoatInnadrilTour(boat));
-			boat.runEngine(180000);
 		}
 	}
 }

@@ -38,6 +38,7 @@ import handlers.NpcLoader;
 import handlers.QuestLoader;
 import handlers.SunriseNpcsLoader;
 import handlers.TeleportersLoader;
+import handlers.VehiclesLoader;
 import handlers.VillageMastersLoader;
 import handlers.ZonesLoader;
 
@@ -68,7 +69,7 @@ public final class GlobalLoader
 		QuestLoader.class,
 		SunriseNpcsLoader.class,
 		TeleportersLoader.class,
-		// VehiclesLoader.class,
+		VehiclesLoader.class,
 		VillageMastersLoader.class,
 		ZonesLoader.class,
 	};
