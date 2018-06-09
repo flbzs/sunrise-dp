@@ -304,7 +304,7 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 		
 		if (party.getLeader() != player)
 		{
-			return getHtm(player.getHtmlPrefix(), "CastleWarden-10.htm").replace("%leader%", party.getLeader().getName());
+			return getHtm(player, player.getHtmlPrefix(), "CastleWarden-10.htm").replace("%leader%", party.getLeader().getName());
 		}
 		
 		for (L2PcInstance partyMember : party.getMembers())
@@ -314,18 +314,18 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 			// check if each party member has quest
 			if ((st == null) || (st.getCond() < 1))
 			{
-				return getHtm(player.getHtmlPrefix(), "CastleWarden-12.htm").replace("%player%", partyMember.getName());
+				return getHtm(player, player.getHtmlPrefix(), "CastleWarden-12.htm").replace("%player%", partyMember.getName());
 			}
 			
 			if ((player.getClan() == null) || (player.getClan().getCastleId() != castle.getResidenceId()))
 			{
-				return getHtm(player.getHtmlPrefix(), "CastleWarden-11.htm").replace("%player%", partyMember.getName());
+				return getHtm(player, player.getHtmlPrefix(), "CastleWarden-11.htm").replace("%player%", partyMember.getName());
 			}
 			
 			// check if each party member not very far from leader
 			if (!Util.checkIfInRange(1000, player, partyMember, true))
 			{
-				return getHtm(player.getHtmlPrefix(), "CastleWarden-17.htm").replace("%player%", partyMember.getName());
+				return getHtm(player, player.getHtmlPrefix(), "CastleWarden-17.htm").replace("%player%", partyMember.getName());
 			}
 		}
 		
@@ -401,7 +401,7 @@ public final class Q00727_HopeWithinTheDarkness extends Quest
 				partyMember.getQuestState(getName()).setMemoState(2);
 			}
 		}
-		return getHtm(player.getHtmlPrefix(), "CastleWarden-13.htm").replace("%clan%", player.getClan().getName());
+		return getHtm(player, player.getHtmlPrefix(), "CastleWarden-13.htm").replace("%clan%", player.getClan().getName());
 	}
 	
 	// Spawns npc's and bosses

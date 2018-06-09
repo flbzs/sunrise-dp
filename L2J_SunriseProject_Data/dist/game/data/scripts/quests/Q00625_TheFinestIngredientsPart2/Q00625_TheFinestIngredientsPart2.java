@@ -163,7 +163,7 @@ public final class Q00625_TheFinestIngredientsPart2 extends Quest
 			{
 				if (isBumbalumpSpawned())
 				{
-					npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getIdTemplate(), NpcStringId.OOOH));
+					npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getDisplayId(), NpcStringId.OOOH));
 				}
 				break;
 			}
@@ -261,7 +261,7 @@ public final class Q00625_TheFinestIngredientsPart2 extends Quest
 	public String onSpawn(L2Npc npc)
 	{
 		startQuestTimer("NPC_TALK", 1000 * 1200, npc, null);
-		npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getIdTemplate(), NpcStringId.I_SMELL_SOMETHING_DELICIOUS));
+		npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getDisplayId(), NpcStringId.I_SMELL_SOMETHING_DELICIOUS));
 		return super.onSpawn(npc);
 	}
 	

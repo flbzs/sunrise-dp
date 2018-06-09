@@ -99,7 +99,7 @@ public class AdminGamePoints implements IAdminCommandHandler
 	private void openGamePointsMenu(L2PcInstance activeChar)
 	{
 		final NpcHtmlMessage html = new NpcHtmlMessage();
-		html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/game_points.htm");
+		html.setFile(activeChar, activeChar.getHtmlPrefix(), "data/html/admin/game_points.htm");
 		activeChar.sendPacket(html);
 	}
 	

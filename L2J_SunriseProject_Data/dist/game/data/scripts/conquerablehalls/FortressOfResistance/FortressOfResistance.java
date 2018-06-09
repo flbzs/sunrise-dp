@@ -93,7 +93,7 @@ public final class FortressOfResistance extends ClanHallSiegeEngine
 	
 	private final void buildMessengerMessage()
 	{
-		String html = HtmCache.getInstance().getHtm(null, "data/scripts/conquerablehalls/FortressOfResistance/partisan_ordery_brakel001.htm");
+		String html = HtmCache.getInstance().getHtm("", "data/scripts/conquerablehalls/FortressOfResistance/partisan_ordery_brakel001.htm");
 		if (html != null)
 		{
 			_messengerMsg = new NpcHtmlMessage();

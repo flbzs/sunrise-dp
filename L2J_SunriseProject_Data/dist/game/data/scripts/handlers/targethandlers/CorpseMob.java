@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2013 L2J DataPack
+ * Copyright (C) 2004-2015 L2J DataPack
  * 
  * This file is part of L2J DataPack.
  * 
@@ -29,7 +29,8 @@ import l2r.gameserver.model.skills.targets.L2TargetType;
 import l2r.gameserver.network.SystemMessageId;
 
 /**
- * @author UnAfraid
+ * Corpse Mob target handler.
+ * @author UnAfraid, Zoey76
  */
 public class CorpseMob implements ITargetTypeHandler
 {

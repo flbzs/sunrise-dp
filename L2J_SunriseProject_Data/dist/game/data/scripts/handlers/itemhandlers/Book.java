@@ -42,7 +42,7 @@ public class Book implements IItemHandler
 		final int itemId = item.getId();
 		
 		String filename = "data/html/help/" + itemId + ".htm";
-		String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), filename);
+		String content = HtmCache.getInstance().getHtm(activeChar, activeChar.getHtmlPrefix(), filename);
 		
 		if (content == null)
 		{

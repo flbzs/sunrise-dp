@@ -18,7 +18,6 @@
  */
 package handlers.effecthandlers;
 
-import l2r.gameserver.model.actor.instance.L2CubicInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
@@ -85,14 +84,7 @@ public class SummonCubic extends L2Effect
 			_cubicSkillLevel = ((getSkill().getLevel() - 100) / 7) + 8;
 		}
 		
-		final L2CubicInstance cubic = player.getCubicById(_cubicId);
-		if (cubic != null)
-		{
-			cubic.stopAction();
-			cubic.cancelDisappear();
-			player.getCubics().remove(_cubicId);
-		}
-		else
+		if (!player.stopCubicById(_cubicId))
 		{
 			// If maximum amount is reached, random cubic is removed.
 			// Players with no mastery can have only one cubic.
@@ -102,15 +94,21 @@ public class SummonCubic extends L2Effect
 			for (int i = 0; i <= (currentCubicCount - allowedCubicCount); i++)
 			{
 				final int removedCubicId = (int) player.getCubics().keySet().toArray()[Rnd.get(currentCubicCount)];
-				final L2CubicInstance removedCubic = player.getCubicById(removedCubicId);
-				removedCubic.stopAction();
-				removedCubic.cancelDisappear();
-				player.getCubics().remove(removedCubic.getId());
+				player.stopCubicById(removedCubicId);
 			}
 		}
 		// Adding a new cubic.
 		player.addCubic(_cubicId, _cubicSkillLevel, _cubicPower, _cubicDelay, _cubicSkillChance, _cubicMaxCount, _cubicDuration, getEffected() != getEffector());
 		player.broadcastUserInfo();
 		return true;
+	}
+	
+	@Override
+	public void onExit()
+	{
+		if (getEffected().isPlayer())
+		{
+			getEffected().getActingPlayer().stopCubicById(_cubicId);
+		}
 	}
 }

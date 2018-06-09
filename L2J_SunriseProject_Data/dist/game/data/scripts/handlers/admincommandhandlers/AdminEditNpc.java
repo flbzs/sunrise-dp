@@ -354,7 +354,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 		{
 			adminReply.setHtml(content);
 			adminReply.replace("%npcId%", String.valueOf(npc.getId()));
-			adminReply.replace("%templateId%", String.valueOf(npc.getIdTemplate()));
+			adminReply.replace("%templateId%", String.valueOf(npc.getDisplayId()));
 			adminReply.replace("%name%", npc.getName());
 			adminReply.replace("%serverSideName%", npc.isServerSideName() == true ? "1" : "0");
 			adminReply.replace("%title%", npc.getTitle());

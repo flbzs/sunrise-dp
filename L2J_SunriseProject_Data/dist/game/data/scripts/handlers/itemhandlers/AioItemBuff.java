@@ -29,7 +29,7 @@ public class AioItemBuff implements IItemHandler
 		
 		String htmFile = "data/html/sunrise/ItemBuffer/main.htm";
 		NpcHtmlMessage msg = new NpcHtmlMessage();
-		msg.setFile(player.getHtmlPrefix(), htmFile);
+		msg.setFile(player, player.getHtmlPrefix(), htmFile);
 		player.sendPacket(msg);
 		
 		return true;

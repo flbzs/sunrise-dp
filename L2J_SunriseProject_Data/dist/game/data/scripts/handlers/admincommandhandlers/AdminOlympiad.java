@@ -98,7 +98,7 @@ public class AdminOlympiad implements IAdminCommandHandler
 	private void showMainPage(L2PcInstance activeChar)
 	{
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
-		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/olympiad_menu.htm");
+		adminReply.setFile(activeChar, activeChar.getHtmlPrefix(), "data/html/admin/olympiad_menu.htm");
 		
 		int period = Olympiad.getInstance().getPeriod();
 		

@@ -205,18 +205,18 @@ public final class Q00511_AwlUnderFoot extends Quest
 		}
 		if (party.getLeader() != player)
 		{
-			return getHtm(player.getHtmlPrefix(), "FortressWarden-04.htm").replace("%leader%", party.getLeader().getName());
+			return getHtm(player, player.getHtmlPrefix(), "FortressWarden-04.htm").replace("%leader%", party.getLeader().getName());
 		}
 		for (L2PcInstance partyMember : party.getMembers())
 		{
 			QuestState st = partyMember.getQuestState(getName());
 			if ((st == null) || (st.getInt("cond") < 1))
 			{
-				return getHtm(player.getHtmlPrefix(), "FortressWarden-05.htm").replace("%player%", partyMember.getName());
+				return getHtm(player, player.getHtmlPrefix(), "FortressWarden-05.htm").replace("%player%", partyMember.getName());
 			}
 			if (!Util.checkIfInRange(1000, player, partyMember, true))
 			{
-				return getHtm(player.getHtmlPrefix(), "FortressWarden-06.htm").replace("%player%", partyMember.getName());
+				return getHtm(player, player.getHtmlPrefix(), "FortressWarden-06.htm").replace("%player%", partyMember.getName());
 			}
 		}
 		return null;
@@ -256,7 +256,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 		{
 			if ((partyMember.getClan() == null) || (partyMember.getClan().getFortId() == 0) || (partyMember.getClan().getFortId() != fortress.getResidenceId()))
 			{
-				return getHtm(player.getHtmlPrefix(), "FortressWarden-05.htm").replace("%player%", partyMember.getName());
+				return getHtm(player, player.getHtmlPrefix(), "FortressWarden-05.htm").replace("%player%", partyMember.getName());
 			}
 		}
 		return null;
@@ -318,7 +318,7 @@ public final class Q00511_AwlUnderFoot extends Quest
 				}
 			}
 		}
-		return getHtm(player.getHtmlPrefix(), "FortressWarden-08.htm").replace("%clan%", player.getClan().getName());
+		return getHtm(player, player.getHtmlPrefix(), "FortressWarden-08.htm").replace("%clan%", player.getClan().getName());
 	}
 	
 	@Override

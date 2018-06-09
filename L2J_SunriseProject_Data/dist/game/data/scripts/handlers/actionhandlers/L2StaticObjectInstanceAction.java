@@ -58,7 +58,7 @@ public class L2StaticObjectInstanceAction implements IActionHandler
 				if (staticObject.getType() == 2)
 				{
 					final String filename = (staticObject.getObjectId() == 24230101) ? "data/html/signboards/tomb_of_crystalgolem.htm" : "data/html/signboards/pvp_signboard.htm";
-					final String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), filename);
+					final String content = HtmCache.getInstance().getHtm(activeChar, activeChar.getHtmlPrefix(), filename);
 					final NpcHtmlMessage html = new NpcHtmlMessage(staticObject.getObjectId());
 					
 					if (content == null)

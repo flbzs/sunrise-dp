@@ -124,7 +124,7 @@ public class DelevelManager extends AbstractNpcAI
 	private NpcHtmlMessage getHtmlPacket(L2PcInstance player, L2Npc npc, String htmlFile)
 	{
 		final NpcHtmlMessage packet = new NpcHtmlMessage(npc.getObjectId());
-		packet.setHtml(getHtm(player.getHtmlPrefix(), htmlFile));
+		packet.setHtml(getHtm(player, player.getHtmlPrefix(), htmlFile));
 		return packet;
 	}
 }

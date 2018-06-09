@@ -94,7 +94,7 @@ public final class Q00604_DaimonTheWhiteEyedPart2 extends Quest
 		{
 			if (isDaimonSpawned())
 			{
-				npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getIdTemplate(), NpcStringId.CAN_LIGHT_EXIST_WITHOUT_DARKNESS));
+				npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getDisplayId(), NpcStringId.CAN_LIGHT_EXIST_WITHOUT_DARKNESS));
 				npc.deleteMe();
 			}
 			return super.onAdvEvent(event, npc, player);
@@ -199,7 +199,7 @@ public final class Q00604_DaimonTheWhiteEyedPart2 extends Quest
 	public String onSpawn(L2Npc npc)
 	{
 		startQuestTimer("DESPAWN", 1200000, npc, null);
-		npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getIdTemplate(), NpcStringId.WHO_IS_CALLING_ME));
+		npc.broadcastPacket(new NpcSay(npc.getObjectId(), Say2.NPC_ALL, npc.getTemplate().getDisplayId(), NpcStringId.WHO_IS_CALLING_ME));
 		return super.onSpawn(npc);
 	}
 	
