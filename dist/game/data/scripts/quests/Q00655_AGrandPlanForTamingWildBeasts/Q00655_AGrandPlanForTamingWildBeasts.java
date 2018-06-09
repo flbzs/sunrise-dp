@@ -94,11 +94,11 @@ public final class Q00655_AGrandPlanForTamingWildBeasts extends Quest
 			{
 				if ((minutesToSiege > 0) && (minutesToSiege < MINUTES_TO_SIEGE))
 				{
-					htmltext = HtmCache.getInstance().getHtm(player.getHtmlPrefix(), PATH_TO_HTML);
+					htmltext = HtmCache.getInstance().getHtm(player, player.getHtmlPrefix(), PATH_TO_HTML);
 				}
 				else
 				{
-					htmltext = getHtm(player.getHtmlPrefix(), event);
+					htmltext = getHtm(player, player.getHtmlPrefix(), event);
 					htmltext = htmltext.replace("%next_siege%", getSiegeDate());
 				}
 				break;
@@ -145,7 +145,7 @@ public final class Q00655_AGrandPlanForTamingWildBeasts extends Quest
 				{
 					if ((clan.getFortId() == ClanHallSiegeEngine.BEAST_FARM) && (minutesToSiege > 0) && (minutesToSiege < MINUTES_TO_SIEGE))
 					{
-						htmltext = HtmCache.getInstance().getHtm(talker.getHtmlPrefix(), PATH_TO_HTML);
+						htmltext = HtmCache.getInstance().getHtm(talker, talker.getHtmlPrefix(), PATH_TO_HTML);
 					}
 					else
 					{
@@ -155,7 +155,7 @@ public final class Q00655_AGrandPlanForTamingWildBeasts extends Quest
 			}
 			else
 			{
-				htmltext = getHtm(talker.getHtmlPrefix(), "35627-02.html");
+				htmltext = getHtm(talker, talker.getHtmlPrefix(), "35627-02.html");
 				htmltext = htmltext.replace("%next_siege%", getSiegeDate());
 			}
 		}

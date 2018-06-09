@@ -130,10 +130,10 @@ public class Q00463_IMustBeaGenius extends Quest
 				int number = getRandom(51) + 550;
 				st.set("number", String.valueOf(number));
 				st.set("chance", String.valueOf(getRandom(4)));
-				htmltext = getHtm(player.getHtmlPrefix(), event).replace("%num%", String.valueOf(number));
+				htmltext = getHtm(player, player.getHtmlPrefix(), event).replace("%num%", String.valueOf(number));
 				break;
 			case "32069-05.htm":
-				htmltext = getHtm(player.getHtmlPrefix(), event).replace("%num%", st.get("number"));
+				htmltext = getHtm(player, player.getHtmlPrefix(), event).replace("%num%", st.get("number"));
 				break;
 			case "reward":
 				if (st.isCond(2))

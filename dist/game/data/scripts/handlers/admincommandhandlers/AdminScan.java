@@ -52,7 +52,7 @@ public class AdminScan implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_scan"))
 		{
-			String htm = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");
+			String htm = HtmCache.getInstance().getHtm(activeChar, activeChar.getHtmlPrefix(), "data/html/admin/scan.htm");
 			StringBuilder sb = new StringBuilder();
 			List<L2Character> npc = activeChar.getKnownList().getKnownCharactersInRadius(1000);
 			

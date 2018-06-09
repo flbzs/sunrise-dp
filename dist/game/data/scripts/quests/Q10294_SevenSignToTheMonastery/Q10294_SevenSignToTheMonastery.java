@@ -113,6 +113,9 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 				addSpawn(27415, 88655, -250591, -8320, 144, false, 0, false, player.getInstanceId());
 				addSpawn(22125, 88655, -250591, -8320, 144, false, 0, false, player.getInstanceId());
 				addSpawn(22125, 88655, -250591, -8320, 144, false, 0, false, player.getInstanceId());
+				
+				npc.setTarget(npc);
+				npc.doSimultaneousCast(SkillData.getInstance().getInfo(6780, 1));
 			}
 		}
 		else if (npc.getId() == GoodBook2)
@@ -124,6 +127,9 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 				L2Skill skill = SkillData.getInstance().getInfo(6727, 1);
 				npc.setTarget(player);
 				npc.doCast(skill);
+				
+				npc.setTarget(npc);
+				npc.doSimultaneousCast(SkillData.getInstance().getInfo(6780, 1));
 			}
 		}
 		else if (npc.getId() == GoodBook3)
@@ -136,6 +142,9 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 				L2Skill skill = SkillData.getInstance().getInfo(6729, 1);
 				support.setTarget(player);
 				support.doCast(skill);
+				
+				npc.setTarget(npc);
+				npc.doSimultaneousCast(SkillData.getInstance().getInfo(6780, 1));
 			}
 		}
 		else if (npc.getId() == GoodBook4)
@@ -148,6 +157,9 @@ public class Q10294_SevenSignToTheMonastery extends Quest
 				L2Skill skill = SkillData.getInstance().getInfo(6729, 1);
 				support.setTarget(player);
 				support.doCast(skill);
+				
+				npc.setTarget(npc);
+				npc.doSimultaneousCast(SkillData.getInstance().getInfo(6780, 1));
 			}
 		}
 		else if (npc.getId() == RelicWatcher)

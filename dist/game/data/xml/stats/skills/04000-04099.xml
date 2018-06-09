@@ -1357,6 +1357,9 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
+		<cond>
+			<target op_siege_hammer="true" />
+		</cond>
 	</skill>
 	<skill id="4080" levels="1" name="Dark Heal">
 		<!-- Freya retail confirmed -->

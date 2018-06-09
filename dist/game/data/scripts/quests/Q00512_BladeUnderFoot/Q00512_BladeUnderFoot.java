@@ -143,18 +143,18 @@ public final class Q00512_BladeUnderFoot extends Quest
 		}
 		if (party.getLeader() != player)
 		{
-			return getHtm(player.getHtmlPrefix(), "CastleWarden-04.htm").replace("%leader%", party.getLeader().getName());
+			return getHtm(player, player.getHtmlPrefix(), "CastleWarden-04.htm").replace("%leader%", party.getLeader().getName());
 		}
 		for (L2PcInstance partyMember : party.getMembers())
 		{
 			QuestState st = partyMember.getQuestState(getName());
 			if ((st == null) || (st.getInt("cond") < 1))
 			{
-				return getHtm(player.getHtmlPrefix(), "CastleWarden-05.htm").replace("%player%", partyMember.getName());
+				return getHtm(player, player.getHtmlPrefix(), "CastleWarden-05.htm").replace("%player%", partyMember.getName());
 			}
 			if (!Util.checkIfInRange(1000, player, partyMember, true))
 			{
-				return getHtm(player.getHtmlPrefix(), "CastleWarden-06.htm").replace("%player%", partyMember.getName());
+				return getHtm(player, player.getHtmlPrefix(), "CastleWarden-06.htm").replace("%player%", partyMember.getName());
 			}
 		}
 		return null;
@@ -222,7 +222,7 @@ public final class Q00512_BladeUnderFoot extends Quest
 				}
 			}
 		}
-		return getHtm(player.getHtmlPrefix(), "CastleWarden-08.htm").replace("%clan%", player.getClan().getName());
+		return getHtm(player, player.getHtmlPrefix(), "CastleWarden-08.htm").replace("%clan%", player.getClan().getName());
 	}
 	
 	private class spawnRaid implements Runnable

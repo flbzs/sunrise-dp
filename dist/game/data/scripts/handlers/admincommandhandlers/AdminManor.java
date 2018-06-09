@@ -37,7 +37,7 @@ public final class AdminManor implements IAdminCommandHandler
 	{
 		final CastleManorManager manor = CastleManorManager.getInstance();
 		final NpcHtmlMessage msg = new NpcHtmlMessage();
-		msg.setFile(activeChar.getHtmlPrefix(), "data/html/admin/manor.htm");
+		msg.setFile(activeChar, activeChar.getHtmlPrefix(), "data/html/admin/manor.htm");
 		msg.replace("%status%", manor.getCurrentModeName());
 		msg.replace("%change%", manor.getNextModeChange());
 		

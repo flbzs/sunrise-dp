@@ -2335,7 +2335,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="basicProperty" val="MEN" />
 		<set name="skillType" val="DEBUFF" />
-		<set name="targetType" val="AREA" />
+		<set name="targetType" val="AURA_UNDEAD_ENEMY" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="power" val="#ench1Chance" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
@@ -2344,9 +2344,6 @@
 		<enchant3 name="power" val="#ench3Attack" />
 		<enchant3 name="skillType" val="PDAM" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
-		<cond msgId="144">
-			<target npcRace="UNDEAD" />
-		</cond>
 		<for>
 			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="3" abnormalType="pa_down">
 				<mul stat="pAtk" val="0.77" />

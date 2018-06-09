@@ -170,7 +170,7 @@ public final class Q00061_LawEnforcement extends Quest
 			{
 				if (player.getClassId() == ClassId.inspector)
 				{
-					final String html = getHtm(player.getHtmlPrefix(), "32222-01.htm");
+					final String html = getHtm(player, player.getHtmlPrefix(), "32222-01.htm");
 					return html.replace("%name%", player.getName());
 				}
 				htmltext = "32222-04.htm";
@@ -223,7 +223,7 @@ public final class Q00061_LawEnforcement extends Quest
 				{
 					if (qs.isMemoState(4))
 					{
-						final String html = getHtm(player.getHtmlPrefix(), "32469-01.html");
+						final String html = getHtm(player, player.getHtmlPrefix(), "32469-01.html");
 						return html.replace("%name%", player.getName());
 					}
 					else if (qs.isMemoState(5))

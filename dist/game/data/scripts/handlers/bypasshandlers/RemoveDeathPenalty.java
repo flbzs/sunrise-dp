@@ -63,7 +63,7 @@ public class RemoveDeathPenalty implements IBypassHandler
 				case 1:
 					String filename = "data/html/default/30981-1.htm";
 					NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
-					html.setFile(activeChar.getHtmlPrefix(), filename);
+					html.setFile(activeChar, activeChar.getHtmlPrefix(), filename);
 					html.replace("%objectId%", String.valueOf(npc.getObjectId()));
 					html.replace("%dp_price%", String.valueOf(PEN_CLEAR_PRICE[activeChar.getExpertiseLevel()]));
 					activeChar.sendPacket(html);

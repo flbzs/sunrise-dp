@@ -118,9 +118,9 @@ public final class WyvernManager extends AbstractNpcAI
 				player.mount(WYVERN, 0, true);
 				return "wyvernmanager-04.html";
 			}
-			return replacePart(player.getHtmlPrefix(), "wyvernmanager-06.html");
+			return replacePart(player, player.getHtmlPrefix(), "wyvernmanager-06.html");
 		}
-		return replacePart(player.getHtmlPrefix(), "wyvernmanager-05.html");
+		return replacePart(player, player.getHtmlPrefix(), "wyvernmanager-05.html");
 	}
 	
 	private boolean isOwnerClan(L2Npc npc, L2PcInstance player)
@@ -210,14 +210,14 @@ public final class WyvernManager extends AbstractNpcAI
 		}
 	}
 	
-	private String replaceAll(L2Npc npc, String htmlPrefix)
+	private String replaceAll(L2PcInstance activeChar, L2Npc npc, String htmlPrefix)
 	{
-		return replacePart(htmlPrefix, "wyvernmanager-01.html").replace("%residence_name%", getResidenceName(npc));
+		return replacePart(activeChar, htmlPrefix, "wyvernmanager-01.html").replace("%residence_name%", getResidenceName(npc));
 	}
 	
-	private String replacePart(String htmlPrefix, String htmlFile)
+	private String replacePart(L2PcInstance activeChar, String htmlPrefix, String htmlFile)
 	{
-		return getHtm(htmlPrefix, htmlFile).replace("%wyvern_fee%", String.valueOf(WYVERN_FEE)).replace("%strider_level%", String.valueOf(STRIDER_LVL));
+		return getHtm(activeChar, htmlPrefix, htmlFile).replace("%wyvern_fee%", String.valueOf(WYVERN_FEE)).replace("%strider_level%", String.valueOf(STRIDER_LVL));
 	}
 	
 	@Override
@@ -234,7 +234,7 @@ public final class WyvernManager extends AbstractNpcAI
 				}
 				else if (Config.ALLOW_WYVERN_ALWAYS)
 				{
-					htmltext = replaceAll(npc, player.getHtmlPrefix());
+					htmltext = replaceAll(player, npc, player.getHtmlPrefix());
 				}
 				else if ((MANAGERS.get(npc.getId()) == ManagerType.CASTLE) && SevenSigns.getInstance().isSealValidationPeriod() && (SevenSigns.getInstance().getSealOwner(SevenSigns.SEAL_STRIFE) == SevenSigns.CABAL_DUSK))
 				{
@@ -242,13 +242,13 @@ public final class WyvernManager extends AbstractNpcAI
 				}
 				else
 				{
-					htmltext = replaceAll(npc, player.getHtmlPrefix());
+					htmltext = replaceAll(player, npc, player.getHtmlPrefix());
 				}
 				break;
 			}
 			case "Help":
 			{
-				htmltext = MANAGERS.get(npc.getId()) == ManagerType.CASTLE ? replacePart(player.getHtmlPrefix(), "wyvernmanager-03.html") : replacePart(player.getHtmlPrefix(), "wyvernmanager-03b.html");
+				htmltext = MANAGERS.get(npc.getId()) == ManagerType.CASTLE ? replacePart(player, player.getHtmlPrefix(), "wyvernmanager-03.html") : replacePart(player, player.getHtmlPrefix(), "wyvernmanager-03b.html");
 				break;
 			}
 			case "RideWyvern":
@@ -291,7 +291,7 @@ public final class WyvernManager extends AbstractNpcAI
 		{
 			if (Config.ALLOW_WYVERN_ALWAYS)
 			{
-				htmltext = replaceAll(npc, player.getHtmlPrefix());
+				htmltext = replaceAll(player, npc, player.getHtmlPrefix());
 			}
 			else
 			{
@@ -301,7 +301,7 @@ public final class WyvernManager extends AbstractNpcAI
 				}
 				else
 				{
-					htmltext = replaceAll(npc, player.getHtmlPrefix());
+					htmltext = replaceAll(player, npc, player.getHtmlPrefix());
 				}
 			}
 		}

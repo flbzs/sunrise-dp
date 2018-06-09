@@ -592,7 +592,7 @@ public final class Q00065_CertifiedSoulBreaker extends Quest
 				{
 					if (memoState == 1)
 					{
-						htmltext = getHtm(player.getHtmlPrefix(), "32138-01.html");
+						htmltext = getHtm(player, player.getHtmlPrefix(), "32138-01.html");
 						htmltext = htmltext.replaceAll("%name1%", player.getName());
 					}
 					else if (memoState == 2)

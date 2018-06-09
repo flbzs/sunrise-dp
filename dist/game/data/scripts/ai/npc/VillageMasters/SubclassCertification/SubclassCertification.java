@@ -193,7 +193,7 @@ public final class SubclassCertification extends AbstractNpcAI
 	
 	private String replaceHtml(L2PcInstance player, String htmlFile, boolean replaceClass, String levelToReplace)
 	{
-		String htmltext = getHtm(player.getHtmlPrefix(), htmlFile);
+		String htmltext = getHtm(player, player.getHtmlPrefix(), htmlFile);
 		if (replaceClass)
 		{
 			htmltext = htmltext.replace("%class%", String.valueOf(ClassListData.getInstance().getClass(player.getActiveClass()).getClientCode()));

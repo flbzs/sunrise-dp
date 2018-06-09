@@ -207,7 +207,7 @@ public final class AdminPForge implements IAdminCommandHandler
 	private void showValuesPage(L2PcInstance activeChar, String[] opCodes, String format)
 	{
 		String sendBypass = null;
-		String valuesHtml = HtmCache.getInstance().getHtmForce(activeChar.getHtmlPrefix(), "data/html/admin/pforge/values.htm");
+		String valuesHtml = HtmCache.getInstance().getHtmForce(activeChar, activeChar.getHtmlPrefix(), "data/html/admin/pforge/values.htm");
 		if (opCodes.length == 3)
 		{
 			valuesHtml = valuesHtml.replace("%opformat%", "chd");
@@ -238,7 +238,7 @@ public final class AdminPForge implements IAdminCommandHandler
 			valuesHtml = valuesHtml.replace("%format%", format);
 			sendBypass += " " + format;
 			
-			String editorTemplate = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), "data/html/admin/pforge/inc/editor.htm");
+			String editorTemplate = HtmCache.getInstance().getHtm(activeChar, activeChar.getHtmlPrefix(), "data/html/admin/pforge/inc/editor.htm");
 			
 			if (editorTemplate != null)
 			{

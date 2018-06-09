@@ -41,7 +41,7 @@ public class Bypass implements IItemHandler
 		final int itemId = item.getId();
 		
 		String filename = "data/html/item/" + itemId + ".htm";
-		String content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), filename);
+		String content = HtmCache.getInstance().getHtm(activeChar, activeChar.getHtmlPrefix(), filename);
 		final NpcHtmlMessage html = new NpcHtmlMessage(0, item.getId());
 		if (content == null)
 		{

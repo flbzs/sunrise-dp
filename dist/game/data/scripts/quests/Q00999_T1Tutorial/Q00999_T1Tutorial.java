@@ -31,10 +31,10 @@ import l2r.gameserver.model.quest.Quest;
 import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
 
+import quests.Q00255_Tutorial.Q00255_Tutorial;
+
 public class Q00999_T1Tutorial extends Quest
 {
-	private static String qnTutorial = "255_Tutorial";
-	
 	// ITEMS
 	private static int RECOMMENDATION_01 = 1067;
 	private static int RECOMMENDATION_02 = 1068;
@@ -444,19 +444,9 @@ public class Q00999_T1Tutorial extends Quest
 			"32134-04.htm",
 		}, 1, DIPLOMA));
 		
-		for (int startNpc : NPCS)
-		{
-			addStartNpc(startNpc);
-		}
-		
-		for (int FirstTalkId : NPCS)
-		{
-			addFirstTalkId(FirstTalkId);
-		}
-		for (int TalkId : NPCS)
-		{
-			addTalkId(TalkId);
-		}
+		addStartNpc(NPCS);
+		addFirstTalkId(NPCS);
+		addTalkId(NPCS);
 		
 		addKillId(18342);
 		addKillId(20001);
@@ -473,7 +463,7 @@ public class Q00999_T1Tutorial extends Quest
 		String htmltext = event;
 		
 		QuestState st = player.getQuestState(getName());
-		QuestState qs = player.getQuestState(qnTutorial);
+		final QuestState qs = player.getQuestState(Q00255_Tutorial.class.getSimpleName());
 		if (qs == null)
 		{
 			return htmltext;
@@ -589,7 +579,7 @@ public class Q00999_T1Tutorial extends Quest
 			st = newQuestState(player);
 		}
 		
-		QuestState qs = player.getQuestState(qnTutorial);
+		final QuestState qs = player.getQuestState(Q00255_Tutorial.class.getSimpleName());
 		if ((qs == null) || qs.isCompleted())
 		{
 			npc.showChatWindow(player);
@@ -724,7 +714,7 @@ public class Q00999_T1Tutorial extends Quest
 			return null;
 		}
 		
-		QuestState qs = player.getQuestState(qnTutorial);
+		final QuestState qs = player.getQuestState(Q00255_Tutorial.class.getSimpleName());
 		if (qs == null)
 		{
 			return null;

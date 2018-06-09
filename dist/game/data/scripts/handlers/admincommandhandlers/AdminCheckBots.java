@@ -42,7 +42,7 @@ public class AdminCheckBots implements IAdminCommandHandler
 		if (command.startsWith("admin_check_bots"))
 		{
 			final NpcHtmlMessage adminReply = new NpcHtmlMessage();
-			adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/botsystem.htm");
+			adminReply.setFile(activeChar, activeChar.getHtmlPrefix(), "data/html/admin/botsystem.htm");
 			
 			adminReply.replace("%farmbots%", String.valueOf(farmBotsCount));
 			adminReply.replace("%enchantbots%", String.valueOf(enchantBotsCount));
@@ -129,11 +129,11 @@ public class AdminCheckBots implements IAdminCommandHandler
 		NpcHtmlMessage html = new NpcHtmlMessage();
 		if (type.equals("farm"))
 		{
-			html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/farmbotlist.htm");
+			html.setFile(activeChar, activeChar.getHtmlPrefix(), "data/html/admin/farmbotlist.htm");
 		}
 		else if (type.equals("enchant"))
 		{
-			html.setFile(activeChar.getHtmlPrefix(), "data/html/admin/enchantbotlist.htm");
+			html.setFile(activeChar, activeChar.getHtmlPrefix(), "data/html/admin/enchantbotlist.htm");
 		}
 		
 		final PageResult result = HtmlUtil.createPage(players, page, 20, i ->

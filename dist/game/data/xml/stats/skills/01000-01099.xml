@@ -766,7 +766,7 @@
 		<set name="operateType" val="A1" />
 		<set name="power" val="40" />
 		<set name="reuseDelay" val="5000" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="AURA_UNDEAD_ENEMY" />
 		<set name="trait" val="DERANGEMENT" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<enchant1 name="power" val="#ench1Power" />
@@ -1177,7 +1177,7 @@
 		<set name="power" val="35" /> <!-- Base Land Rate -->
 		<set name="reuseDelay" val="5000" />
 		<set name="basicProperty" val="MEN" />
-		<set name="targetType" val="AURA" />
+		<set name="targetType" val="AURA_UNDEAD_ENEMY" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
 			<effect name="Passive" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="turn_passive">

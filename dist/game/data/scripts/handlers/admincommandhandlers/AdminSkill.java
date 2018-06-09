@@ -363,7 +363,7 @@ public class AdminSkill implements IAdminCommandHandler
 		}
 		final L2PcInstance player = target.getActingPlayer();
 		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
-		adminReply.setFile(activeChar.getHtmlPrefix(), "data/html/admin/charskills.htm");
+		adminReply.setFile(activeChar, activeChar.getHtmlPrefix(), "data/html/admin/charskills.htm");
 		adminReply.replace("%name%", player.getName());
 		adminReply.replace("%level%", String.valueOf(player.getLevel()));
 		adminReply.replace("%class%", ClassListData.getInstance().getClass(player.getClassId()).getClientCode());

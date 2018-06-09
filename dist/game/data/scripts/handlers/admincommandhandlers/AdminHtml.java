@@ -94,7 +94,7 @@ public class AdminHtml implements IAdminCommandHandler
 		String content = null;
 		if (!reload)
 		{
-			content = HtmCache.getInstance().getHtm(activeChar.getHtmlPrefix(), path);
+			content = HtmCache.getInstance().getHtm(activeChar, activeChar.getHtmlPrefix(), path);
 		}
 		else
 		{

@@ -166,7 +166,7 @@ public class Q00693_DefeatingDragonkinRemnants extends Quest
 	{
 		String htmltext = getNoQuestMsg(player);
 		
-		htmltext = getHtm(player.getHtmlPrefix(), filename);
+		htmltext = getHtm(player, player.getHtmlPrefix(), filename);
 		htmltext = htmltext.replace("%replace%", replace);
 		
 		return htmltext;

@@ -30,7 +30,7 @@ public class AioItemVCmd implements IVoicedCommandHandler
 		String htmFile = "data/html/sunrise/AioItemNpcs/main.htm";
 		
 		NpcHtmlMessage msg = new NpcHtmlMessage();
-		msg.setFile(activeChar.getHtmlPrefix(), htmFile);
+		msg.setFile(activeChar, activeChar.getHtmlPrefix(), htmFile);
 		activeChar.sendPacket(msg);
 	}
 	

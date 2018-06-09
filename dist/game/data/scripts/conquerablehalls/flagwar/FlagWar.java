@@ -131,7 +131,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			if (!checkIsAttacker(player.getClan()))
 			{
 				L2Clan clan = ClanTable.getInstance().getClan(_hall.getOwnerId());
-				String content = getHtm(player.getHtmlPrefix(), "messenger_initial.htm");
+				String content = getHtm(player, player.getHtmlPrefix(), "messenger_initial.htm");
 				content = content.replaceAll("%clanName%", (clan == null) ? "no owner" : clan.getName());
 				content = content.replaceAll("%objectId%", String.valueOf(npc.getObjectId()));
 				html = content;
@@ -328,7 +328,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			}
 			else
 			{
-				html = getHtm(player.getHtmlPrefix(), "messenger_registeredclans.htm");
+				html = getHtm(player, player.getHtmlPrefix(), "messenger_registeredclans.htm");
 				int i = 0;
 				for (Entry<Integer, ClanData> clanData : _data.entrySet())
 				{
@@ -733,7 +733,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	private void sendRegistrationPageDate(L2PcInstance player)
 	{
 		final NpcHtmlMessage msg = new NpcHtmlMessage();
-		msg.setHtml(getHtm(player.getHtmlPrefix(), "siege_date.htm"));
+		msg.setHtml(getHtm(player, player.getHtmlPrefix(), "siege_date.htm"));
 		msg.replace("%nextSiege%", _hall.getSiegeDate().getTime().toString());
 		player.sendPacket(msg);
 	}
