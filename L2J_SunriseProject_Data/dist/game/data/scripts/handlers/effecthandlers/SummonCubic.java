@@ -102,13 +102,4 @@ public class SummonCubic extends L2Effect
 		player.broadcastUserInfo();
 		return true;
 	}
-	
-	@Override
-	public void onExit()
-	{
-		if (getEffected().isPlayer())
-		{
-			getEffected().getActingPlayer().stopCubicById(_cubicId);
-		}
-	}
 }
