@@ -912,9 +912,10 @@ public class AdminEditChar implements IAdminCommandHandler
 		} , player ->
 		{
 			StringBuilder sb = new StringBuilder();
+			String tag = player.isInOfflineMode() ? "<font color=\"C11B17\">Offline</font>" : "<font color=\"3EA055\">Online</font";
 			sb.append("<tr>");
-			sb.append("<td width=80><a action=\"bypass -h admin_character_info " + player.getName() + "\">" + player.getName() + "</a></td>");
-			sb.append("<td width=110>" + ClassListData.getInstance().getClass(player.getClassId()).getClientCode() + "</td><td width=40>" + player.getLevel() + "</td>");
+			sb.append("<td width=120><a action=\"bypass -h admin_character_info " + player.getName() + "\">" + player.getName() + "</a></td>");
+			sb.append("<td width=70>" + ClassListData.getInstance().getClass(player.getClassId()).getClientCode() + "</td><td width=35>" + player.getLevel() + "</td><td width=60>" + tag + "</td>");
 			sb.append("</tr>");
 			return sb.toString();
 		});

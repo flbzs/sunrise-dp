@@ -238,6 +238,7 @@ import handlers.playeractions.ServitorAttack;
 import handlers.playeractions.ServitorHold;
 import handlers.playeractions.ServitorMove;
 import handlers.playeractions.ServitorSkillUse;
+import handlers.playeractions.ServitorStop;
 import handlers.playeractions.SitStand;
 import handlers.playeractions.SocialAction;
 import handlers.playeractions.UnsummonPet;
@@ -677,6 +678,7 @@ public class MasterHandler
 			ServitorHold.class,
 			ServitorMove.class,
 			ServitorSkillUse.class,
+			ServitorStop.class,
 			SitStand.class,
 			SocialAction.class,
 			UnsummonPet.class,
