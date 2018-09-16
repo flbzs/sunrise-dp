@@ -57,7 +57,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="20" val="0" abnormalLvl="3" abnormalType="pd_up">
+			<effect name="Buff" abnormalTime="20" abnormalLvl="3" abnormalType="pd_up">
 				<mul stat="pDef" val="1.15" />
 				<mul stat="mDef" val="1.15" />
 			</effect>
@@ -106,7 +106,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="2" val="0" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="2" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="6305" levels="1" name="Sacred Gnosis">
@@ -401,7 +401,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="CLAN" /> <!-- FIXME: Aura Friendly ? -->
 		<for>
-			<effect name="Buff" abnormalTime="3" val="0" abnormalLvl="3" abnormalType="pd_up">
+			<effect name="Buff" abnormalTime="3" abnormalLvl="3" abnormalType="pd_up">
 				<mul stat="pDef" val="1.1" />
 			</effect>
 		</for>
@@ -424,7 +424,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="CLAN" /> <!-- FIXME: Aura Friendly ? -->
 		<for>
-			<effect name="Buff" abnormalTime="3" val="0" abnormalLvl="3" abnormalType="md_up">
+			<effect name="Buff" abnormalTime="3" abnormalLvl="3" abnormalType="md_up">
 				<mul stat="mDef" val="1.1" />
 			</effect>
 		</for>
@@ -450,7 +450,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Debuff" abnormalTime="15" val="0" abnormalLvl="3" abnormalType="pd_down">
+			<effect name="Debuff" abnormalTime="15" abnormalLvl="3" abnormalType="pd_down">
 				<mul stat="pDef" val="0.77" />
 				<mul stat="mDef" val="0.77" />
 			</effect>
@@ -653,7 +653,7 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="3" abnormalType="speed_down">
+			<effect name="Buff" abnormalTime="300" abnormalLvl="3" abnormalType="speed_down">
 				<mul stat="pAtkSpd" val="0.7" />
 			</effect>
 		</for>
@@ -672,7 +672,7 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="3" abnormalType="speed_down">
+			<effect name="Buff" abnormalTime="300" abnormalLvl="3" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.7" />
 				<mul stat="pAtkSpd" val="0.7" />
 			</effect>
@@ -729,7 +729,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="4" val="0" abnormalLvl="1" abnormalType="stun" effectPower="40" />
+			<effect name="Stun" abnormalTime="4" abnormalLvl="1" abnormalType="stun" effectPower="40" />
 		</for>
 	</skill>
 	<skill id="6335" levels="1" name="Electric Rain 1">
@@ -849,7 +849,7 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<!-- FIXME: effectPower should be 0.05% but we use 1% for now -->
-			<effect name="Stun" abnormalTime="4" val="0" abnormalLvl="1" abnormalType="stun" effectPower="1" />
+			<effect name="Stun" abnormalTime="4" abnormalLvl="1" abnormalType="stun" effectPower="1" />
 		</for>
 	</skill>
 	<skill id="6341" levels="1" name="Stronghold Water Cannon">
@@ -898,7 +898,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="TARGET_PARTY" />
 		<for>
-			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="signal_b">
+			<effect name="Buff" abnormalTime="600" abnormalLvl="1" abnormalType="signal_b">
 				<mul stat="mAtk" val="#mAtk" />
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
@@ -923,7 +923,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="TARGET_PARTY" />
 		<for>
-			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="signal_b">
+			<effect name="Buff" abnormalTime="600" abnormalLvl="1" abnormalType="signal_b">
 				<mul stat="mAtkSpd" val="#pmAtkSpd" />
 				<mul stat="pAtkSpd" val="#pmAtkSpd" />
 				<add stat="runSpd" val="#runSpd" />
@@ -951,7 +951,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="TARGET_PARTY" />
 		<for>
-			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="signal_b">
+			<effect name="Buff" abnormalTime="600" abnormalLvl="1" abnormalType="signal_b">
 				<basemul stat="critRate" val="#rCrit" />
 				<basemul stat="mCritRate" val="#mCritRate" />
 				<mul stat="critDmg" val="#cAtk" />
@@ -1133,8 +1133,8 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="Mute" abnormalTime="20" val="0" abnormalLvl="1" abnormalType="silence_all" />
-			<effect name="PhysicalMute" abnormalTime="20" noicon="1" val="0" abnormalLvl="1" abnormalType="silence_all_two" /> <!-- TODO: This abnormalLvl="1" and abnormalType="silence_all_two" is a TEMP FIX, should be removed when "abnormalType and abnormalLvl" works like main skill attributes and not effect attributes -->
+			<effect name="Mute" abnormalTime="20" abnormalLvl="1" abnormalType="silence_all" />
+			<effect name="PhysicalMute" abnormalTime="20" noicon="1" abnormalLvl="1" abnormalType="silence_all_two" /> <!-- TODO: This abnormalLvl="1" and abnormalType="silence_all_two" is a TEMP FIX, should be removed when "abnormalType and abnormalLvl" works like main skill attributes and not effect attributes -->
 		</for>
 	</skill>
 	<skill id="6381" levels="2" name="Bistakon Soul Beam">
@@ -1159,8 +1159,8 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="Mute" abnormalTime="20" val="0" abnormalLvl="#abnormalLvls" abnormalType="silence_all" />
-			<effect name="PhysicalMute" abnormalTime="20" noicon="1" val="0" abnormalLvl="1" abnormalType="silence_all_two" /> <!-- TODO: This abnormalLvl="1" and abnormalType="silence_all_two" is a TEMP FIX, should be removed when "abnormalType and abnormalLvl" works like main skill attributes and not effect attributes -->
+			<effect name="Mute" abnormalTime="20" abnormalLvl="#abnormalLvls" abnormalType="silence_all" />
+			<effect name="PhysicalMute" abnormalTime="20" noicon="1" abnormalLvl="1" abnormalType="silence_all_two" /> <!-- TODO: This abnormalLvl="1" and abnormalType="silence_all_two" is a TEMP FIX, should be removed when "abnormalType and abnormalLvl" works like main skill attributes and not effect attributes -->
 		</for>
 	</skill>
 	<skill id="6382" levels="1" name="Bistakon Rolling Claw">
@@ -1210,8 +1210,8 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="Mute" abnormalTime="20" val="0" abnormalLvl="1" abnormalType="silence_all" />
-			<effect name="PhysicalMute" abnormalTime="20" noicon="1" val="0" abnormalLvl="1" abnormalType="silence_all_two" /> <!-- TODO: This abnormalLvl="1" and abnormalType="silence_all_two" is a TEMP FIX, should be removed when "abnormalType and abnormalLvl" works like main skill attributes and not effect attributes -->
+			<effect name="Mute" abnormalTime="20" abnormalLvl="1" abnormalType="silence_all" />
+			<effect name="PhysicalMute" abnormalTime="20" noicon="1" abnormalLvl="1" abnormalType="silence_all_two" /> <!-- TODO: This abnormalLvl="1" and abnormalType="silence_all_two" is a TEMP FIX, should be removed when "abnormalType and abnormalLvl" works like main skill attributes and not effect attributes -->
 		</for>
 	</skill>
 	<skill id="6384" levels="2" name="Bistakon Deadly Blow">
@@ -1330,7 +1330,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="60" abnormalLvl="1" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.5" />
 			</effect>
 		</for>
@@ -1354,7 +1354,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="casting_time_up">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="1" abnormalType="casting_time_up">
 				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
 		</for>
@@ -1404,7 +1404,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Debuff" abnormalTime="5" val="0" abnormalLvl="3" abnormalType="attack_time_up">
+			<effect name="Debuff" abnormalTime="5" abnormalLvl="3" abnormalType="attack_time_up">
 				<mul stat="pAtkSpd" val="0.5" />
 			</effect>
 		</for>
@@ -1484,7 +1484,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect count="3" name="Fear" abnormalTime="2" val="0" abnormalLvl="1" abnormalType="turn_flee" />
+			<effect count="3" name="Fear" abnormalTime="2" abnormalLvl="1" abnormalType="turn_flee" />
 		</for>
 	</skill>
 	<skill id="6397" levels="1" name="Cokrakon Staggering Blow">
@@ -1533,7 +1533,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect count="2" name="Fear" abnormalTime="2" val="0" abnormalLvl="1" abnormalType="turn_flee" />
+			<effect count="2" name="Fear" abnormalTime="2" abnormalLvl="1" abnormalType="turn_flee" />
 		</for>
 	</skill>
 	<skill id="6399" levels="1" name="Cokrakon Dreadful Piercing">

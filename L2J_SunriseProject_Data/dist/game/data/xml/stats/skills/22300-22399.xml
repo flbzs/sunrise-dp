@@ -6,7 +6,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="operateType" val="A1" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="ultimate_buff">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="ultimate_buff">
 				<mul stat="runSpd" val="1.30" />
 				<sub stat="fall" val="100" /><!-- Guess -->
 			</effect>
@@ -91,7 +91,7 @@
 		<set name="stayOnSubclassChange" val="false" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="14400" val="0" abnormalLvl="1" abnormalType="vp_up">
+			<effect name="Buff" abnormalTime="14400" abnormalLvl="1" abnormalType="vp_up">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
 		</for>

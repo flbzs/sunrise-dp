@@ -198,7 +198,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="618" levels="1" name="Transform Death Blader">
@@ -218,7 +218,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="619" levels="1" name="Transform Dispel">
@@ -303,7 +303,7 @@
 			<player flyMounted="false" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="20" val="0" abnormalLvl="1" abnormalType="avoid_up_special">
+			<effect name="Buff" abnormalTime="20" abnormalLvl="1" abnormalType="avoid_up_special">
 				<add stat="rEvas" val="#rEvas" />
 				<add stat="runSpd" val="#runSpd" />
 				<add stat="pSkillEvas" val="#pSkillEvas" />
@@ -440,13 +440,13 @@
 			<using kind="CROSSBOW" />
 		</cond>
 		<for>
-			<effect count="3" name="Fear" val="0" abnormalLvl="1" abnormalType="turn_flee" effectPower="40" />
+			<effect count="3" name="Fear" abnormalLvl="1" abnormalType="turn_flee" effectPower="40" />
 		</for>
 		<enchant3for>
-			<effect count="#ench3Time" name="Fear" val="0" abnormalLvl="1" abnormalType="turn_flee" effectPower="40" />
+			<effect count="#ench3Time" name="Fear" abnormalLvl="1" abnormalType="turn_flee" effectPower="40" />
 		</enchant3for>
 		<enchant4for>
-			<effect count="3" name="Fear" val="0" abnormalLvl="1" abnormalType="turn_flee" effectPower="#ench4Chance" />
+			<effect count="3" name="Fear" abnormalLvl="1" abnormalType="turn_flee" effectPower="#ench4Chance" />
 		</enchant4for>
 	</skill>
 	<skill id="628" levels="1" name="Warp">
@@ -874,7 +874,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="657" levels="3" name="Transform Divine Knight">
@@ -897,7 +897,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="658" levels="3" name="Transform Divine Rogue">
@@ -920,7 +920,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="659" levels="3" name="Transform Divine Wizard">
@@ -943,7 +943,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="660" levels="3" name="Transform Divine Summoner">
@@ -966,7 +966,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="661" levels="3" name="Transform Divine Healer">
@@ -989,7 +989,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="662" levels="3" name="Transform Divine Enchanter">
@@ -1012,7 +1012,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="663" levels="1" name="Transform Zaken">
@@ -1033,7 +1033,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="664" levels="1" name="Transform Anakim">
@@ -1054,7 +1054,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="665" levels="1" name="Transform Venom">
@@ -1075,7 +1075,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="666" levels="1" name="Transform Gordon">
@@ -1096,7 +1096,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="667" levels="1" name="Transform Ranku">
@@ -1117,7 +1117,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="668" levels="1" name="Transform Kechi">
@@ -1138,7 +1138,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="669" levels="1" name="Transform Demon Prince">
@@ -1159,7 +1159,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="670" levels="1" name="Transform Heretic">
@@ -1180,7 +1180,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="671" levels="1" name="Transform Vale Master">
@@ -1201,7 +1201,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="672" levels="1" name="Transform Saber Tooth Tiger">
@@ -1222,7 +1222,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="673" levels="1" name="Transform Oel Mahum">
@@ -1243,7 +1243,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="674" levels="1" name="Transform Doll Blader">
@@ -1264,7 +1264,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="675" levels="1" name="Divine Warrior Cross Slash">
@@ -1324,7 +1324,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="2" abnormalType="pa_up_special">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="2" abnormalType="pa_up_special">
 				<mul stat="pAtk" val="1.25" />
 			</effect>
 		</for>
@@ -1348,7 +1348,7 @@
 			<player hp="30" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="transform_sacrifice">
+			<effect name="Buff" abnormalTime="30" abnormalLvl="1" abnormalType="transform_sacrifice">
 				<mul stat="pAtk" val="1.2" />
 			</effect>
 			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_START" triggeredId="5602" />
@@ -1374,7 +1374,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="TargetMe" abnormalTime="3" val="0" abnormalLvl="1" abnormalType="lock" />
+			<effect name="TargetMe" abnormalTime="3" abnormalLvl="1" abnormalType="lock" />
 		</for>
 	</skill>
 	<skill id="681" levels="1" name="Divine Knight Hate Aura">
@@ -1396,7 +1396,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="TargetMe" abnormalTime="3" val="0" abnormalLvl="1" abnormalType="lock" />
+			<effect name="TargetMe" abnormalTime="3" abnormalLvl="1" abnormalType="lock" />
 		</for>
 	</skill>
 	<skill id="682" levels="1" name="Divine Knight Stun Attack">
@@ -1421,7 +1421,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="1" abnormalType="stun" effectPower="50" />
+			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" effectPower="50" />
 		</for>
 	</skill>
 	<skill id="683" levels="1" name="Divine Knight Thunder Storm">
@@ -1446,7 +1446,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="1" abnormalType="stun" effectPower="50" />
+			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" effectPower="50" />
 		</for>
 	</skill>
 	<skill id="684" levels="1" name="Divine Knight Ultimate Defense">
@@ -1487,7 +1487,7 @@
 			<player hp="30" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="transform_sacrifice">
+			<effect name="Buff" abnormalTime="30" abnormalLvl="1" abnormalType="transform_sacrifice">
 				<mul stat="pDef" val="1.2" />
 			</effect>
 			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_START" triggeredId="5602" />
@@ -1514,7 +1514,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="1" abnormalType="stun" effectPower="50" />
+			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" effectPower="50" />
 			<effect name="RemoveTarget" noicon="1" val="0">
 				<param chance="40" />
 			</effect>
@@ -1593,7 +1593,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff" abnormalTime="1200" val="0" abnormalLvl="3" abnormalType="avoid_up">
+			<effect name="Buff" abnormalTime="1200" abnormalLvl="3" abnormalType="avoid_up">
 				<add stat="rEvas" val="4" />
 			</effect>
 		</for>
@@ -1617,7 +1617,7 @@
 			<player hp="30" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="transform_sacrifice">
+			<effect name="Buff" abnormalTime="30" abnormalLvl="1" abnormalType="transform_sacrifice">
 				<add stat="rEvas" val="10" />
 			</effect>
 			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_START" triggeredId="5602" />
@@ -1639,7 +1639,7 @@
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect self="1" name="Buff" abnormalTime="3" val="0" abnormalLvl="0" abnormalType="ma_down">
+			<effect self="1" name="Buff" abnormalTime="3" abnormalLvl="0" abnormalType="ma_down">
 				<mul stat="pvpMagicalDmg" val="0.5" />
 			</effect>
 		</for>
@@ -1702,7 +1702,7 @@
 		<set name="targetType" val="AREA" />
 		<set name="trait" val="SLEEP" />
 		<for>
-			<effect name="Sleep" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="sleep" />
+			<effect name="Sleep" abnormalTime="30" abnormalLvl="1" abnormalType="sleep" />
 		</for>
 	</skill>
 	<skill id="696" levels="1" name="Divine Wizard Surrender to Holy">
@@ -1724,7 +1724,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="3" abnormalType="armor_unholy">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="3" abnormalType="armor_unholy">
 				<sub stat="holyRes" val="25" />
 				<add stat="darkRes" val="12" />
 			</effect>
@@ -1749,7 +1749,7 @@
 			<player mp="10" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="transform_sacrifice">
+			<effect name="Buff" abnormalTime="30" abnormalLvl="1" abnormalType="transform_sacrifice">
 				<mul stat="mAtk" val="1.2" />
 			</effect>
 			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_START" triggeredId="5602" />

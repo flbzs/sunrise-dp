@@ -79,7 +79,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SilentMove" abnormalVisualEffect="stealth" abnormalTime="120" val="0" abnormalLvl="0" abnormalType="stealth">
+			<effect name="SilentMove" abnormalVisualEffect="stealth" abnormalTime="120" abnormalLvl="0" abnormalType="stealth">
 				<mul stat="runSpd" val="0.6" />
 			</effect>
 		</for>
@@ -134,7 +134,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="talisman">
 				<add stat="reflectDam" val="10" />
 			</effect>
 		</for>
@@ -238,7 +238,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="300" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="3419" levels="1" name="Magic Immunity">
@@ -366,7 +366,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="talisman">
 				<mul stat="pAtk" val="1.2" />
 				<mul stat="pAtkSpd" val="1.1" />
 			</effect>
@@ -401,7 +401,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="talisman">
 				<add stat="darkRes" val="50" />
 			</effect>
 		</for>
@@ -422,7 +422,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="talisman">
 				<add stat="windRes" val="50" />
 			</effect>
 		</for>
@@ -443,7 +443,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="talisman">
 				<add stat="waterRes" val="50" />
 			</effect>
 		</for>
@@ -464,7 +464,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="talisman">
 				<add stat="fireRes" val="50" />
 			</effect>
 		</for>
@@ -485,7 +485,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="talisman">
 				<add stat="earthRes" val="50" />
 			</effect>
 		</for>
@@ -506,7 +506,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="talisman">
 				<add stat="holyRes" val="50" />
 			</effect>
 		</for>
@@ -541,7 +541,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="talisman">
 				<add stat="mCritRate" val="4" />
 				<mul stat="mAtk" val="1.55" />
 			</effect>
@@ -563,7 +563,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="talisman">
 				<add stat="healEffect" val="1000" />
 			</effect>
 		</for>
@@ -944,7 +944,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="talisman">
 				<add stat="pAtk" val="9.4" />
 			</effect>
 		</for>
@@ -965,7 +965,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="talisman">
 				<add stat="sDef" val="63" />
 			</effect>
 		</for>

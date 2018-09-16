@@ -18,7 +18,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="22401" levels="1" name="Transformation Scroll - Ranku">
@@ -40,7 +40,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="22402" levels="1" name="Juju Agathion's Gift">

@@ -23,7 +23,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="Buff" abnormalTime="#time" val="0" abnormalLvl="#abnormalLvls" abnormalType="buff_queen_of_cat">
+			<effect name="Buff" abnormalTime="#time" abnormalLvl="#abnormalLvls" abnormalType="buff_queen_of_cat">
 				<mul stat="pAtk" val="#pAtk" />
 				<add stat="accCombat" val="#accCombat" />
 			</effect>
@@ -71,7 +71,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="Buff" abnormalTime="#time" val="0" abnormalLvl="#abnormalLvls" abnormalType="buff_unicorn_seraphim">
+			<effect name="Buff" abnormalTime="#time" abnormalLvl="#abnormalLvls" abnormalType="buff_unicorn_seraphim">
 				<mul stat="regMp" val="#regMp" />
 			</effect>
 		</for>
@@ -98,7 +98,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="Buff" abnormalTime="#time" val="0" abnormalLvl="#abnormalLvls" abnormalType="buff_unicorn_seraphim">
+			<effect name="Buff" abnormalTime="#time" abnormalLvl="#abnormalLvls" abnormalType="buff_unicorn_seraphim">
 				<mul stat="mReuse" val="#mReuse" />
 			</effect>
 		</for>
@@ -154,7 +154,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="#abnormalLvls" abnormalType="debuff_nightshade">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="debuff_nightshade">
 				<mul stat="mDef" val="#mpDef" />
 				<mul stat="pDef" val="#mpDef" />
 			</effect>
@@ -193,7 +193,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="#abnormalLvls" abnormalType="debuff_nightshade">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="debuff_nightshade">
 				<mul stat="mDef" val="#mpDef" />
 				<mul stat="pDef" val="#mpDef" />
 			</effect>
@@ -245,7 +245,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="1" effectPower="50" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" abnormalLvl="1" effectPower="50" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="4709" levels="10" name="Cursed Blow">
@@ -311,7 +311,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ImmobileBuff" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="ultimate_buff">
+			<effect name="ImmobileBuff" abnormalTime="30" abnormalLvl="1" abnormalType="ultimate_buff">
 				<mul stat="mDef" val="5" />
 				<mul stat="pDef" val="5" />
 				<mul stat="pAtkSpd" val="0.3" />

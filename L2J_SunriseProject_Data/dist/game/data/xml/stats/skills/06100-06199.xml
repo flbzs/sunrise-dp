@@ -149,7 +149,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="2" abnormalType="event_santa_reward">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="2" abnormalType="event_santa_reward">
 				<mul stat="maxHp" val="1.1" />
 				<mul stat="maxMp" val="1.1" />
 				<mul stat="maxCp" val="1.1" />
@@ -240,7 +240,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="paralyze" />
+			<effect name="Paralyze" abnormalTime="10" abnormalLvl="1" abnormalType="paralyze" />
 		</for>
 	</skill>
 	<skill id="6126" levels="1" name="Paralysis">
@@ -382,7 +382,7 @@
 		<set name="coolTime" val="2000" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="2" val="0" abnormalLvl="1" abnormalType="stun" effectPower="50" effectType="STUN" />
+			<effect name="Stun" abnormalTime="2" abnormalLvl="1" abnormalType="stun" effectPower="50" effectType="STUN" />
 		</for>
 	</skill>
 	<skill id="6136" levels="1" name="Agathion Cute Trick - Juju">
@@ -474,7 +474,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="300" val="0" abnormalLvl="#abnormalLvls" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="300" abnormalLvl="#abnormalLvls" abnormalType="speed_down">
 				<mul stat="runSpd" val="#speed" />
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="rEvas" val="#pDef" />
@@ -528,7 +528,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="3" abnormalType="dmg_shield">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="3" abnormalType="dmg_shield">
 				<add stat="vengeancePdam" val="70" />
 				<add stat="reflectSkillPhysic" val="70" />
 				<add stat="reflectDam" val="70" />
@@ -555,7 +555,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="Mute" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="silence">
+			<effect name="Mute" abnormalTime="120" abnormalLvl="1" abnormalType="silence">
 				<sub stat="accCombat" val="99" />
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="pAtk" val="0.01" />
@@ -577,7 +577,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="900" val="0" abnormalLvl="1" abnormalType="multi_debuff">
+			<effect name="Debuff" abnormalTime="900" abnormalLvl="1" abnormalType="multi_debuff">
 				<mul stat="pAtk" val="0.5" />
 				<mul stat="pDef" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
@@ -602,7 +602,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="10" val="0" abnormalLvl="3" abnormalType="pd_down">
+			<effect name="Debuff" abnormalTime="10" abnormalLvl="3" abnormalType="pd_down">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
 		</for>
@@ -633,7 +633,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="10" val="0" abnormalLvl="2" abnormalType="signal_a">
+			<effect name="Debuff" abnormalTime="10" abnormalLvl="2" abnormalType="signal_a">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
 		</for>
@@ -731,7 +731,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="public_slot" />
+			<effect name="Debuff" abnormalTime="60" abnormalLvl="1" abnormalType="public_slot" />
 		</for>
 	</skill>
 	<skill id="6170" levels="1" name="Shyeed's Fury">
@@ -747,7 +747,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<!-- NOTE: Using abnormalLvl 99 instead of 1 due is a irreplaceable buff -->
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="99" abnormalType="multi_buff">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="99" abnormalType="multi_buff">
 				<mul stat="pAtk" val="1.05" />
 				<mul stat="mAtk" val="1.05" />
 				<mul stat="mCritPower" val="1.05" />
@@ -769,7 +769,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<!-- NOTE: Using abnormalLvl 99 instead of 1 due is a irreplaceable buff -->
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="99" abnormalType="ultimate_buff">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="99" abnormalType="ultimate_buff">
 				<mul stat="pAtk" val="1.05" />
 				<mul stat="mAtk" val="1.05" />
 				<mul stat="mCritPower" val="1.05" />

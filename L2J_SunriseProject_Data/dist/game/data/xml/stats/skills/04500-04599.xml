@@ -103,7 +103,7 @@
 		<set name="skillType" val="PARALYZE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Petrification" abnormalTime="120" val="0" abnormalLvl="99" abnormalType="turn_stone" />
+			<effect name="Petrification" abnormalTime="120" abnormalLvl="99" abnormalType="turn_stone" />
 		</for>
 	</skill>
 	<skill id="4516" levels="1" name="Orfen Heal">
@@ -199,7 +199,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="public_slot">
+			<effect name="Buff" abnormalTime="600" abnormalLvl="1" abnormalType="public_slot">
 				<basemul stat="critRatePos" val="2">
 					<player behind="true" />
 				</basemul>
@@ -219,7 +219,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="public_slot">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="public_slot">
 				<add stat="rEvas" val="30" />
 			</effect>
 		</for>
@@ -235,7 +235,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="5" val="0" abnormalLvl="1" abnormalType="public_slot" />
+			<effect name="Buff" abnormalTime="5" abnormalLvl="1" abnormalType="public_slot" />
 		</for>
 	</skill>
 	<skill id="4525" levels="1" name="Quest - BOSS Defend">
@@ -273,7 +273,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="public_slot">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="public_slot">
 				<mul stat="maxHp" val="1.3" />
 			</effect>
 			<effect name="HealPercent" noicon="1" val="30" />
@@ -292,7 +292,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="public_slot">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="public_slot">
 				<add stat="runSpd" val="33" />
 			</effect>
 		</for>
@@ -357,7 +357,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="dance_of_inspiration">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="1" abnormalType="dance_of_inspiration">
 				<mul stat="runSpd" val="0.5" />
 				<sub stat="accCombat" val="40" />
 			</effect>
@@ -378,7 +378,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="dance_of_fury">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="1" abnormalType="dance_of_fury">
 				<mul stat="pAtkSpd" val="0.7" />
 				<sub stat="rEvas" val="40" />
 			</effect>
@@ -399,7 +399,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="dance_of_vampire">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="1" abnormalType="dance_of_vampire">
 				<mul stat="pDef" val="0.5" />
 				<mul stat="pAtk" val="0.5" />
 			</effect>
@@ -420,7 +420,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="song_of_wind">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="1" abnormalType="song_of_wind">
 				<mul stat="runSpd" val="0.5" />
 				<sub stat="accCombat" val="40" />
 			</effect>
@@ -441,7 +441,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="song_of_water">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="1" abnormalType="song_of_water">
 				<mul stat="pAtkSpd" val="0.7" />
 				<sub stat="rEvas" val="40" />
 			</effect>
@@ -462,7 +462,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="song_of_vengeance">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="1" abnormalType="song_of_vengeance">
 				<mul stat="pDef" val="0.5" />
 				<mul stat="pAtk" val="0.5" />
 			</effect>
@@ -484,7 +484,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="3" abnormalType="hit_up">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="3" abnormalType="hit_up">
 				<mul stat="runSpd" val="0.5" />
 				<sub stat="accCombat" val="40" />
 			</effect>
@@ -506,7 +506,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="3" abnormalType="pd_up">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="3" abnormalType="pd_up">
 				<mul stat="pDef" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 			</effect>
@@ -528,7 +528,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="3" abnormalType="pa_up">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="3" abnormalType="pa_up">
 				<mul stat="pAtk" val="0.5" />
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="mAtk" val="0.5" />
@@ -566,7 +566,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="public_slot">
+			<effect name="Buff" abnormalTime="600" abnormalLvl="1" abnormalType="public_slot">
 				<mul stat="pDef" val="#pDef" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="pAtk" val="#pAtk" />
@@ -610,7 +610,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="watcher_gaze" />
+			<effect name="Debuff" abnormalTime="3600" abnormalLvl="1" abnormalType="watcher_gaze" />
 		</for>
 	</skill>
 	<skill id="4548" levels="1" name="Quest - Dispel Watcher Gaze">
@@ -662,7 +662,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="#abnormalLvls" abnormalType="spa_disease_a" abnormalVisualEffect="poison">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="#abnormalLvls" abnormalType="spa_disease_a" abnormalVisualEffect="poison">
 				<mul stat="pDef" val="#pDef" />
 				<add stat="critRate" val="#rCrit" />
 			</effect>
@@ -689,7 +689,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="#abnormalLvls" abnormalType="spa_disease_b" abnormalVisualEffect="poison">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="#abnormalLvls" abnormalType="spa_disease_b" abnormalVisualEffect="poison">
 				<sub stat="rEvas" val="#rEvas" />
 				<add stat="accCombat" val="#accCombat" />
 			</effect>
@@ -716,7 +716,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="#abnormalLvls" abnormalType="spa_disease_c" abnormalVisualEffect="poison">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="#abnormalLvls" abnormalType="spa_disease_c" abnormalVisualEffect="poison">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
@@ -743,7 +743,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="600" val="0" abnormalLvl="#abnormalLvls" abnormalType="spa_disease_d" abnormalVisualEffect="poison">
+			<effect name="Debuff" abnormalTime="600" abnormalLvl="#abnormalLvls" abnormalType="spa_disease_d" abnormalVisualEffect="poison">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="magicalMpConsumeRate" val="#MpConsumeRate" />
 			</effect>
@@ -1140,7 +1140,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="CLAN" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="#abnormalLvls" abnormalType="attack_time_down">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="#abnormalLvls" abnormalType="attack_time_down">
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 			</effect>
 		</for>
@@ -1166,7 +1166,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="CLAN" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="#abnormalLvls" abnormalType="dmg_shield">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="#abnormalLvls" abnormalType="dmg_shield">
 				<add stat="reflectDam" val="#reflectDam" />
 			</effect>
 		</for>
@@ -1196,7 +1196,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="#time" val="0" abnormalLvl="#abnormalLvls" abnormalType="hit_down">
+			<effect name="Debuff" abnormalTime="#time" abnormalLvl="#abnormalLvls" abnormalType="hit_down">
 				<sub stat="accCombat" val="#accCombat" />
 			</effect>
 		</for>
@@ -1219,7 +1219,7 @@
 		<set name="skillType" val="PARALYZE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Petrification" abnormalTime="20" val="0" abnormalLvl="2" abnormalType="turn_stone" />
+			<effect name="Petrification" abnormalTime="20" abnormalLvl="2" abnormalType="turn_stone" />
 		</for>
 	</skill>
 	<skill id="4579" levels="12" name="Bleed">
@@ -1275,7 +1275,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="#time" val="0" abnormalLvl="#abnormalLvls" abnormalType="pa_down">
+			<effect name="Debuff" abnormalTime="#time" abnormalLvl="#abnormalLvls" abnormalType="pa_down">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
 		</for>
@@ -1302,7 +1302,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="HOLD" />
 		<for>
-			<effect name="Root" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="root_magically" />
+			<effect name="Root" abnormalTime="30" abnormalLvl="1" abnormalType="root_magically" />
 		</for>
 	</skill>
 	<skill id="4582" levels="12" name="Poison">
@@ -1355,7 +1355,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="#abnormalLvls" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="speed_down">
 				<mul stat="runSpd" val="#runSpd" />
 			</effect>
 		</for>
@@ -1415,7 +1415,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="CLAN" />
 		<for>
-			<effect name="Grow" abnormalTime="120" val="0" abnormalLvl="#abnormalLvls" abnormalType="multi_buff">
+			<effect name="Grow" abnormalTime="120" abnormalLvl="#abnormalLvls" abnormalType="multi_buff">
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtk" val="#mAtk" />
@@ -1450,7 +1450,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="avoid_down">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="1" abnormalType="avoid_down">
 				<sub stat="rEvas" val="#rEvas" />
 			</effect>
 		</for>
@@ -1480,7 +1480,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="#time" val="0" abnormalLvl="#abnormalLvls" abnormalType="pa_down">
+			<effect name="Debuff" abnormalTime="#time" abnormalLvl="#abnormalLvls" abnormalType="pa_down">
 				<mul stat="pAtk" val="#pAtk" />
 			</effect>
 		</for>
@@ -1512,7 +1512,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="CLAN" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="#abnormalLvls" abnormalType="multi_buff">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="#abnormalLvls" abnormalType="multi_buff">
 				<mul stat="pAtk" val="#pAtk" />
 				<mul stat="pAtkSpd" val="#pAtkSpd" />
 				<mul stat="mAtk" val="#mAtk" />
@@ -1547,7 +1547,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="#abnormalLvls" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="speed_down">
 				<mul stat="runSpd" val="#runSpd" />
 			</effect>
 		</for>
@@ -1575,7 +1575,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="#abnormalLvls" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="speed_down">
 				<mul stat="runSpd" val="#runSpd" />
 			</effect>
 		</for>
@@ -1603,7 +1603,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="#abnormalLvls" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="speed_down">
 				<mul stat="runSpd" val="#runSpd" />
 			</effect>
 		</for>
@@ -1633,7 +1633,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="#time" val="0" abnormalLvl="#abnormalLvls" abnormalType="pd_down">
+			<effect name="Debuff" abnormalTime="#time" abnormalLvl="#abnormalLvls" abnormalType="pd_down">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
 		</for>
@@ -1662,7 +1662,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="#time" val="0" abnormalLvl="#abnormalLvls" abnormalType="pd_down">
+			<effect name="Debuff" abnormalTime="#time" abnormalLvl="#abnormalLvls" abnormalType="pd_down">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
 		</for>
@@ -1691,7 +1691,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="#time" val="0" abnormalLvl="#abnormalLvls" abnormalType="pd_down">
+			<effect name="Debuff" abnormalTime="#time" abnormalLvl="#abnormalLvls" abnormalType="pd_down">
 				<mul stat="pDef" val="#pDef" />
 			</effect>
 		</for>
@@ -1718,7 +1718,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="CLAN" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="#abnormalLvls" abnormalType="multi_buff">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="#abnormalLvls" abnormalType="multi_buff">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 				<mul stat="pDef" val="#pDef" />
 			</effect>
@@ -1829,7 +1829,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="#abnormalLvls" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="speed_down">
 				<mul stat="runSpd" val="#runSpd" />
 			</effect>
 		</for>

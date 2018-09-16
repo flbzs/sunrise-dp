@@ -288,7 +288,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ResurrectionSpecial" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="resurrection_special">
+			<effect name="ResurrectionSpecial" abnormalTime="600" abnormalLvl="1" abnormalType="resurrection_special">
 				<param power="50" />
 				<param heal="true" />
 			</effect>
@@ -329,7 +329,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="2632" levels="1" name="Scroll of Transformation - Young Child">
@@ -345,7 +345,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="2633" levels="1" name="Elmore-Aden's Holy Water">
@@ -391,7 +391,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="holy_attack">
+			<effect name="Buff" abnormalTime="600" abnormalLvl="1" abnormalType="holy_attack">
 				<add stat="firePower" val="20" />
 			</effect>
 		</for>
@@ -407,7 +407,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="holy_attack">
+			<effect name="Buff" abnormalTime="600" abnormalLvl="1" abnormalType="holy_attack">
 				<add stat="earthPower" val="20" />
 			</effect>
 		</for>
@@ -1031,7 +1031,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="3600" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="2671" levels="1" name="Scroll of Transformation - Blue">
@@ -1049,7 +1049,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="3600" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="2672" levels="1" name="Gludio Human Mercenary">
@@ -1075,7 +1075,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2673" levels="1" name="Gludio Elf Mercenary">
@@ -1101,7 +1101,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2674" levels="1" name="Gludio Dark Elf Mercenary">
@@ -1127,7 +1127,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2675" levels="1" name="Gludio Orc Mercenary">
@@ -1153,7 +1153,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2676" levels="1" name="Gludio Dwarf Mercenary">
@@ -1179,7 +1179,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2677" levels="1" name="Gludio Kamael Mercenary">
@@ -1205,7 +1205,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2678" levels="1" name="Gludio Knight Mercenary">
@@ -1231,7 +1231,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2679" levels="1" name="Gludio Archer Mercenary">
@@ -1257,7 +1257,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2680" levels="1" name="Gludio Wizard Mercenary">
@@ -1283,7 +1283,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2681" levels="1" name="Gludio Kamael Captain Mercenary">
@@ -1309,7 +1309,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2682" levels="1" name="Gludio Knight Captain Mercenary">
@@ -1335,7 +1335,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2683" levels="1" name="Gludio Commander Mercenary">
@@ -1361,7 +1361,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2684" levels="1" name="Dion Human Mercenary">
@@ -1387,7 +1387,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2685" levels="1" name="Dion Elf Mercenary">
@@ -1413,7 +1413,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2686" levels="1" name="Dion Dark Elf Mercenary">
@@ -1439,7 +1439,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2687" levels="1" name="Dion Orc Mercenary">
@@ -1465,7 +1465,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2688" levels="1" name="Dion Dwarf Mercenary">
@@ -1491,7 +1491,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2689" levels="1" name="Dion Kamael Mercenary">
@@ -1517,7 +1517,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2690" levels="1" name="Dion Knight Mercenary">
@@ -1543,7 +1543,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2691" levels="1" name="Dion Archer Mercenary">
@@ -1569,7 +1569,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2692" levels="1" name="Dion Wizard Mercenary">
@@ -1595,7 +1595,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2693" levels="1" name="Dion Kamael Captain Mercenary">
@@ -1621,7 +1621,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2694" levels="1" name="Dion Knight Captain Mercenary">
@@ -1647,7 +1647,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2695" levels="1" name="Dion Commander Mercenary">
@@ -1673,7 +1673,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2696" levels="1" name="Giran Human Mercenary">
@@ -1699,7 +1699,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2697" levels="1" name="Giran Elf Mercenary">
@@ -1725,7 +1725,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2698" levels="1" name="Giran Dark Elf Mercenary">
@@ -1751,7 +1751,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 	<skill id="2699" levels="1" name="Giran Orc Mercenary">
@@ -1777,7 +1777,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" /> <!-- Transformation lasts 30 minutes -->
 		</for>
 	</skill>
 </list>

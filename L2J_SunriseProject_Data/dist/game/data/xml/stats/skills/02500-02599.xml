@@ -192,7 +192,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="3600" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="2512" levels="1" name="Herb of Vampiric Rage">
@@ -211,7 +211,7 @@
 			<player flyMounted="false" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="4" abnormalType="vampiric_attack">
+			<effect name="Buff" abnormalTime="300" abnormalLvl="4" abnormalType="vampiric_attack">
 				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
 			</effect>
 		</for>
@@ -260,7 +260,7 @@
 			<player flyMounted="false" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="3" abnormalType="critical_dmg_up">
+			<effect name="Buff" abnormalTime="300" abnormalLvl="3" abnormalType="critical_dmg_up">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
 		</for>
@@ -1438,7 +1438,7 @@
 			<player flyMounted="false" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="vp_up" abnormalVisualEffect="vitality">
+			<effect name="Buff" abnormalTime="300" abnormalLvl="1" abnormalType="vp_up" abnormalVisualEffect="vitality">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
 		</for>
@@ -1548,7 +1548,7 @@
 			<player flyMounted="false" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="4" abnormalType="pd_up_bow">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="4" abnormalType="pd_up_bow">
 				<mul stat="bowWpnVuln" val="0.8" />
 				<mul stat="crossbowWpnVuln" val="0.8" />
 			</effect>

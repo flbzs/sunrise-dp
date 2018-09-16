@@ -212,7 +212,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="talisman">
 				<add stat="rEvas" val="2" />
 				<mul stat="defCritRate" val="0.95" />
 			</effect>
@@ -450,7 +450,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="300" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="3336" levels="1" name="Transform Buffalo">
@@ -471,7 +471,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="300" abnormalLvl="1" abnormalType="transform" />
 			<effect name="DispelBySlot" noicon="1" val="0">
 				<param dispel="BIG_HEAD,9" />
 			</effect>
@@ -495,7 +495,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="300" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="3338" levels="1" name="Shield Master">
@@ -716,7 +716,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="300" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="3360" levels="1" name="Cheap Shot">
