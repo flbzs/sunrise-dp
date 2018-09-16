@@ -21,7 +21,6 @@ package handlers.itemhandlers;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.handler.IItemHandler;
 import l2r.gameserver.model.actor.L2Playable;
-import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.holders.SkillHolder;
 import l2r.gameserver.model.items.L2Item;
 import l2r.gameserver.model.items.instance.L2ItemInstance;
@@ -113,37 +112,6 @@ public class ItemSkillsTemplate implements IItemHandler
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PET_USES_S1);
 					sm.addSkillName(itemSkill);
 					playable.sendPacket(sm);
-				}
-				else
-				{
-					final L2PcInstance activeChar = playable.getActingPlayer();
-					int skillId = skillInfo.getSkillId();
-					int skillLvl = skillInfo.getSkillLvl();
-					switch (skillId)
-					{
-						case 2031:
-						case 2032:
-						case 2037:
-						case 26025:
-						case 26026:
-							final int buffId = activeChar.getShortBuffTaskSkillId();
-							if ((skillId == 2037) || (skillId == 26025))
-							{
-								activeChar.shortBuffStatusUpdate(skillId, skillLvl, itemSkill.getBuffDuration() / 1000);
-							}
-							else if (((skillId == 2032) || (skillId == 26026)) && (buffId != 2037) && (buffId != 26025))
-							{
-								activeChar.shortBuffStatusUpdate(skillId, skillLvl, itemSkill.getBuffDuration() / 1000);
-							}
-							else
-							{
-								if ((buffId != 2037) && (buffId != 26025) && (buffId != 2032) && (buffId != 26026))
-								{
-									activeChar.shortBuffStatusUpdate(skillId, skillLvl, itemSkill.getBuffDuration() / 1000);
-								}
-							}
-							break;
-					}
 				}
 				
 				// vGodFather: this will fix exploits with item that contains skills

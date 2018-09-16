@@ -313,7 +313,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="3600" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9116" levels="1" name="Nevit's Hourglass - 1.5 hour">
@@ -329,7 +329,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="5400" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="5400" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9117" levels="1" name="Nevit's Hourglass - 2 hour">
@@ -345,7 +345,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="7200" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="7200" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9118" levels="1" name="Nevit's Hourglass - 2.5 hour">
@@ -361,7 +361,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="9000" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="9000" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9119" levels="1" name="Nevit's Hourglass - 3 hour">
@@ -377,7 +377,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="10800" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="10800" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9120" levels="1" name="Nevit's Hourglass - 1 hour">
@@ -393,7 +393,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="3600" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9121" levels="1" name="Nevit's Hourglass - 1.5 hour">
@@ -409,7 +409,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="5400" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="5400" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9122" levels="1" name="Nevit's Hourglass - 2 hour">
@@ -425,7 +425,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="7200" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="7200" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9123" levels="1" name="Nevit's Hourglass - 2.5 hour">
@@ -441,7 +441,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="9000" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="9000" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9124" levels="1" name="Nevit's Hourglass - 3 hour">
@@ -457,7 +457,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="10800" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="10800" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9125" levels="1" name="Nevit's Hourglass - 1 hour">
@@ -473,7 +473,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="3600" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9126" levels="1" name="Nevit's Hourglass - 1.5 hour">
@@ -489,7 +489,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="5400" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="5400" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9127" levels="1" name="Nevit's Hourglass - 2 hour">
@@ -505,7 +505,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="7200" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="7200" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9128" levels="1" name="Nevit's Hourglass - 2.5 hour">
@@ -521,7 +521,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="9000" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="9000" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9129" levels="1" name="Nevit's Hourglass - 3 hour">
@@ -536,7 +536,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="10800" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="10800" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9130" levels="1" name="Nevit's Hourglass - 1 hour">
@@ -552,7 +552,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="3600" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9131" levels="1" name="Nevit's Hourglass - 1.5 hour">
@@ -568,7 +568,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="5400" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="5400" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9132" levels="1" name="Nevit's Hourglass - 2 hour">
@@ -584,7 +584,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="7200" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="7200" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9133" levels="1" name="Nevit's Hourglass - 2.5 hour">
@@ -599,7 +599,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="9000" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="9000" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9134" levels="1" name="Nevit's Hourglass - 3 hour">
@@ -615,7 +615,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="10800" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="10800" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9135" levels="1" name="Nevit's Hourglass - 1 hour">
@@ -631,7 +631,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="3600" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9136" levels="1" name="Nevit's Hourglass - 1.5 hour">
@@ -647,7 +647,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="5400" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="5400" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9137" levels="1" name="Nevit's Hourglass - 2 hour">
@@ -663,7 +663,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="7200" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="7200" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9138" levels="1" name="Nevit's Hourglass - 2.5 hour">
@@ -679,7 +679,7 @@
 		<set name="canBeDispeled" val="false" />
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="9000" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="9000" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9139" levels="1" name="Nevit's Hourglass - 3 hour">
@@ -695,7 +695,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="10800" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="10800" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9140" levels="1" name="Nevit's Hourglass - 1 hour">
@@ -711,7 +711,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="3600" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9141" levels="1" name="Nevit's Hourglass - 1.5 hour">
@@ -727,7 +727,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="5400" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="5400" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9142" levels="1" name="Nevit's Hourglass - 2 hour">
@@ -743,7 +743,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="7200" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="7200" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9143" levels="1" name="Nevit's Hourglass - 2.5 hour">
@@ -759,7 +759,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="9000" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="9000" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9144" levels="1" name="Nevit's Hourglass - 3 hour">
@@ -775,7 +775,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="10800" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="10800" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9145" levels="1" name="Nevit's Hourglass - 1 hour">
@@ -791,7 +791,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="3600" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9146" levels="1" name="Nevit's Hourglass - 1.5 hour">
@@ -807,7 +807,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="5400" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="5400" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9147" levels="1" name="Nevit's Hourglass - 2 hour">
@@ -823,7 +823,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="7200" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="7200" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9148" levels="1" name="Nevit's Hourglass - 2.5 hour">
@@ -839,7 +839,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="9000" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="9000" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9149" levels="1" name="Nevit's Hourglass - 3 hour">
@@ -855,7 +855,7 @@
 		<set name="canBeDispeled" val="false"/>
 		<set name="reuseDelay" val="2000" />
 		<for>
-			<effect name="NevitHourglass" abnormalTime="10800" val="0" abnormalLvl="1" abnormalType="nevit_hourglass" />
+			<effect name="NevitHourglass" abnormalTime="10800" abnormalLvl="1" abnormalType="nevit_hourglass" />
 		</for>
 	</skill>
 	<skill id="9150" levels="1" name="Freesia Bouquet - Event">
@@ -976,7 +976,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="9160" levels="1" name="Transformation Scroll - Zaken">
@@ -996,7 +996,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="9161" levels="1" name="Vesper's Mighty Power">
@@ -1013,7 +1013,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="wp_event_buf1" special="vesper_s">
+			<effect name="Buff" abnormalTime="600" abnormalLvl="1" abnormalType="wp_event_buf1" special="vesper_s">
 				<mul stat="pAtk" val="1.15" />
 				<mul stat="mAtk" val="1.2" />
 				<add stat="runSpd" val="10" />
@@ -1034,7 +1034,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="wp_event_buf1" special="vesper_c">
+			<effect name="Buff" abnormalTime="600" abnormalLvl="1" abnormalType="wp_event_buf1" special="vesper_c">
 				<add stat="critRate" val="15" />
 				<add stat="mCritRate" val="2" />
 				<add stat="runSpd" val="10" />
@@ -1056,7 +1056,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="1" abnormalType="wp_event_buf1" special="vesper_d">
+			<effect name="Buff" abnormalTime="600" abnormalLvl="1" abnormalType="wp_event_buf1" special="vesper_d">
 				<mul stat="pAtkSpd" val="1.2" />
 				<mul stat="mAtkSpd" val="1.2" />
 				<add stat="runSpd" val="20" />

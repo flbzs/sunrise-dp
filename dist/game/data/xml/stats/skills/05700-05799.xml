@@ -17,7 +17,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="2700" val="0" abnormalLvl="9" abnormalType="md_down">
+			<effect name="Buff" abnormalTime="2700" abnormalLvl="9" abnormalType="md_down">
 				<mul stat="mDef" val="0.34" />
 			</effect>
 		</for>
@@ -39,7 +39,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="2700" val="0" abnormalLvl="9" abnormalType="pa_down">
+			<effect name="Buff" abnormalTime="2700" abnormalLvl="9" abnormalType="pa_down">
 				<mul stat="pAtk" val="0.34" />
 			</effect>
 		</for>
@@ -151,7 +151,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="pa_up" />
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="pa_up" />
 		</for>
 	</skill>
 	<skill id="5712" levels="1" name="Energy Ditch">
@@ -798,7 +798,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="1" abnormalType="stun" effectPower="50" />
+			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" effectPower="50" />
 		</for>
 	</skill>
 	<skill id="5748" levels="12" name="Meteor Shower">
@@ -903,7 +903,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="public_slot" />
+			<effect name="Buff" abnormalTime="30" abnormalLvl="1" abnormalType="public_slot" />
 		</for>
 	</skill>
 	<skill id="5754" levels="1" name="Presentation - Adiantum Round Fighter">
@@ -977,7 +977,7 @@
 			<player instanceId="45" /> <!-- Pailaka 73-77 -->
 		</cond>
 		<for>
-			<effect name="TriggerSkillByAttack" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="seed_of_critical">
+			<effect name="TriggerSkillByAttack" abnormalTime="3600" abnormalLvl="1" abnormalType="seed_of_critical">
 				<mul stat="critRate" val="1.3" />
 				<mul stat="pAtkSpd" val="1.33" />
 				
@@ -1116,7 +1116,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="magical_stance" />
+			<effect name="Buff" abnormalTime="300" abnormalLvl="1" abnormalType="magical_stance" />
 		</for>
 	</skill>
 	<skill id="5772" levels="1" name="Surrender to Fire">

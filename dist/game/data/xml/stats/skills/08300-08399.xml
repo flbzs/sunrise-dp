@@ -187,7 +187,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="talisman">
 				<add stat="maxCp" val="1200" />
 			</effect>
 			<effect name="CpHeal" noicon="1" val="1200" />
@@ -209,7 +209,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="talisman">
 				<add stat="maxCp" val="800" />
 			</effect>
 			<effect name="CpHeal" noicon="1" val="800" />
@@ -424,7 +424,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="talisman">
 				<add stat="maxCp" val="1500" />
 			</effect>
 			<effect name="CpHeal" noicon="1" val="1500" />
@@ -446,7 +446,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="talisman">
 				<mul stat="pvpMagicalDef" val="1.75" />
 				<mul stat="pvpPhysDef" val="1.75" />
 			</effect>
@@ -468,7 +468,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="talisman">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="talisman">
 				<add stat="earthRes" val="15" />
 				<add stat="waterRes" val="15" />
 				<add stat="windRes" val="15" />
@@ -757,7 +757,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="vp_keep" abnormalVisualEffect="vitality">
+			<effect name="Buff" abnormalTime="1800" abnormalLvl="1" abnormalType="vp_keep" abnormalVisualEffect="vitality">
 				<mul stat="vitalityConsumeRate" val="0" />
 			</effect>
 		</for>
@@ -853,7 +853,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="3600" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="8372" levels="1" name="Super Strong Giant's Mask">
@@ -872,7 +872,7 @@
 		<set name="staticReuse" val="true"/>
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="br_event_buf1">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="1" abnormalType="br_event_buf1">
 				<mul stat="maxHp" val="1.1"/>
 				<mul stat="maxMp" val="1.1"/>
 				<mul stat="pAtk" val="1.05"/>
@@ -896,7 +896,7 @@
 		<set name="staticReuse" val="true"/>
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="br_event_buf1">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="1" abnormalType="br_event_buf1">
 				<mul stat="maxHp" val="1.1"/>
 				<mul stat="maxMp" val="1.1"/>
 				<basemul stat="critRate" val="0.05"/>
@@ -920,7 +920,7 @@
 		<set name="staticReuse" val="true"/>
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="br_event_buf1">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="1" abnormalType="br_event_buf1">
 				<mul stat="maxHp" val="1.1"/>
 				<mul stat="maxMp" val="1.1"/>
 				<mul stat="runSpd" val="1.1"/>
@@ -944,7 +944,7 @@
 		<set name="staticReuse" val="true"/>
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="br_event_buf1">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="1" abnormalType="br_event_buf1">
 				<mul stat="maxHp" val="1.1"/>
 				<mul stat="maxMp" val="1.1"/>
 				<mul stat="magicalMpConsumeRate" val="0.95"/>
@@ -969,7 +969,7 @@
 		<set name="staticReuse" val="true"/>
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="br_event_buf1">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="1" abnormalType="br_event_buf1">
 				<mul stat="maxHp" val="1.1"/>
 				<mul stat="maxMp" val="1.1"/>
 				<sub stat="fireRes" val="2"/>
@@ -993,7 +993,7 @@
 		<set name="staticReuse" val="true"/>
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="br_event_buf1">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="1" abnormalType="br_event_buf1">
 				<mul stat="maxHp" val="1.2"/>
 				<mul stat="maxMp" val="1.2"/>
 				<mul stat="runSpd" val="1.1"/>

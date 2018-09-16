@@ -152,7 +152,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="3018" levels="6" name="Special Ability: Back Blow">
@@ -975,7 +975,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="3071" levels="2" name="Special Ability: Rsk. Focus">
@@ -1042,7 +1042,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="Mute" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="silence" />
+			<effect name="Mute" abnormalTime="120" abnormalLvl="1" abnormalType="silence" />
 		</for>
 	</skill>
 	<skill id="3075" levels="2" name="Special Ability: Magic Paralyze">
@@ -1114,7 +1114,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="Mute" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="silence" />
+			<effect name="Mute" abnormalTime="120" abnormalLvl="1" abnormalType="silence" />
 		</for>
 	</skill>
 	<skill id="3079" levels="6" name="Special Ability: Magic Paralyze">

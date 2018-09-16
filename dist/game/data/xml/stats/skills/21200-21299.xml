@@ -329,7 +329,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform">
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform">
 				<mul stat="runSpd" val="1.5" />
 			</effect>
 		</for>
@@ -665,7 +665,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="1800" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="1800" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="21259" levels="1" name="Release Seal on Agathion - Chorong">

@@ -566,23 +566,23 @@
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="Buff" abnormalTime="1200" val="0" abnormalLvl="#abnormalLvls" abnormalType="speed_up">
+			<effect name="Buff" abnormalTime="1200" abnormalLvl="#abnormalLvls" abnormalType="speed_up">
 				<add stat="runSpd" val="#runSpd" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="2" abnormalType="speed_up">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="2" abnormalType="speed_up">
 				<add stat="runSpd" val="33" />
 			</effect>
 		</enchant1for>
 		<enchant3for>
-			<effect name="Buff" abnormalTime="1200" val="0" abnormalLvl="2" abnormalType="speed_up">
+			<effect name="Buff" abnormalTime="1200" abnormalLvl="2" abnormalType="speed_up">
 				<add stat="runSpd" val="33" />
 				<add stat="rEvas" val="#ench3rEvas" />
 			</effect>
 		</enchant3for>
 		<enchant4for>
-			<effect name="Buff" abnormalTime="1200" val="0" abnormalLvl="2" abnormalType="speed_up">
+			<effect name="Buff" abnormalTime="1200" abnormalLvl="2" abnormalType="speed_up">
 				<add stat="runSpd" val="33" />
 				<mul stat="movementVuln" val="#ench4Vuln" />
 			</effect>
@@ -1382,10 +1382,10 @@
 			<using kind="BLUNT" />
 		</cond>
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="1" abnormalType="stun" effectPower="50" />
+			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" effectPower="50" />
 		</for>
 		<enchant1for>
-			<effect name="Stun" abnormalTime="9" val="0" abnormalLvl="1" abnormalType="stun" effectPower="#ench1effectPower" />
+			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" effectPower="#ench1effectPower" />
 		</enchant1for>
 	</skill>
 	<skill id="261" levels="22" name="Triple Sonic Slash" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
@@ -1565,12 +1565,12 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="song_of_earth">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="song_of_earth">
 				<mul stat="pDef" val="1.25" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="song_of_earth">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="song_of_earth">
 				<mul stat="pDef" val="1.25" />
 			</effect>
 		</enchant1for>
@@ -1600,12 +1600,12 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="song_of_life">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="song_of_life">
 				<mul stat="regHp" val="1.2" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="song_of_life">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="song_of_life">
 				<mul stat="regHp" val="1.2" />
 			</effect>
 		</enchant1for>
@@ -1635,12 +1635,12 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="song_of_water">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="song_of_water">
 				<add stat="rEvas" val="3" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="song_of_water">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="song_of_water">
 				<add stat="rEvas" val="3" />
 			</effect>
 		</enchant1for>
@@ -1670,12 +1670,12 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="song_of_warding">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="song_of_warding">
 				<mul stat="mDef" val="1.3" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="song_of_warding">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="song_of_warding">
 				<mul stat="mDef" val="1.3" />
 			</effect>
 		</enchant1for>
@@ -1702,12 +1702,12 @@
 		<enchant2 name="aggroPoints" val="655" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="song_of_wind">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="song_of_wind">
 				<add stat="runSpd" val="20" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="song_of_wind">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="song_of_wind">
 				<add stat="runSpd" val="20" />
 			</effect>
 		</enchant1for>
@@ -1737,12 +1737,12 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="song_of_hunter">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="song_of_hunter">
 				<basemul stat="critRate" val="1" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="song_of_hunter">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="song_of_hunter">
 				<basemul stat="critRate" val="1" />
 			</effect>
 		</enchant1for>
@@ -1772,12 +1772,12 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="song_of_invocation">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="song_of_invocation">
 				<add stat="darkRes" val="20" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="song_of_invocation">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="song_of_invocation">
 				<add stat="darkRes" val="20" />
 			</effect>
 		</enchant1for>
@@ -1810,12 +1810,12 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="dance_of_warrior">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="dance_of_warrior">
 				<mul stat="pAtk" val="1.12" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="dance_of_warrior">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="dance_of_warrior">
 				<mul stat="pAtk" val="1.12" />
 			</effect>
 		</enchant1for>
@@ -1848,12 +1848,12 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="dance_of_inspiration">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="dance_of_inspiration">
 				<add stat="accCombat" val="4" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="dance_of_inspiration">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="dance_of_inspiration">
 				<add stat="accCombat" val="4" />
 			</effect>
 		</enchant1for>
@@ -1886,12 +1886,12 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="dance_of_mystic">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="dance_of_mystic">
 				<mul stat="mAtk" val="1.2" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="dance_of_mystic">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="dance_of_mystic">
 				<mul stat="mAtk" val="1.2" />
 			</effect>
 		</enchant1for>
@@ -1924,12 +1924,12 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="dance_of_fire">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="dance_of_fire">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="dance_of_fire">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="dance_of_fire">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
 		</enchant1for>
@@ -1962,12 +1962,12 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="dance_of_fury">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="dance_of_fury">
 				<mul stat="pAtkSpd" val="1.15" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="dance_of_fury">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="dance_of_fury">
 				<mul stat="pAtkSpd" val="1.15" />
 			</effect>
 		</enchant1for>
@@ -2000,13 +2000,13 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="dance_of_concentration">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="dance_of_concentration">
 				<mul stat="mAtkSpd" val="1.3" />
 				<sub stat="cancel" val="40" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="dance_of_concentration">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="dance_of_concentration">
 				<mul stat="mAtkSpd" val="1.3" />
 				<sub stat="cancel" val="40" />
 			</effect>
@@ -2041,12 +2041,12 @@
 			<using kind="DUAL" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="120" val="0" abnormalLvl="1" abnormalType="dance_of_light">
+			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="dance_of_light">
 				<add stat="holyPower" val="20" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="#ench1time" val="0" abnormalLvl="1" abnormalType="dance_of_light">
+			<effect name="Buff" abnormalTime="#ench1time" abnormalLvl="1" abnormalType="dance_of_light">
 				<add stat="holyPower" val="20" />
 			</effect>
 		</enchant1for>
@@ -2245,7 +2245,7 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="possession">
+			<effect name="Buff" abnormalTime="300" abnormalLvl="1" abnormalType="possession">
 				<add stat="accCombat" val="6">
 					<using kind="DUALFIST" />
 				</add>
@@ -2376,7 +2376,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Debuff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="real_target">
+			<effect name="Debuff" abnormalTime="10" abnormalLvl="1" abnormalType="real_target">
 				<mul stat="poleWpnVuln" val="#poleWpnVuln" />
 			</effect>
 		</for>
@@ -2399,7 +2399,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="#abnormalLvls" abnormalType="resist_spiritless">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="#abnormalLvls" abnormalType="resist_spiritless">
 				<sub stat="cancelVuln" val="40" />
 				<sub stat="stunVuln" val="#vuln" />
 				<sub stat="rootVuln" val="#vuln" />
@@ -2536,7 +2536,7 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="possession">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="1" abnormalType="possession">
 				<add stat="accCombat" val="6">
 					<using kind="DUALFIST" />
 				</add>
@@ -2658,7 +2658,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="#abnormalLvls" abnormalType="duelist_spirit">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="#abnormalLvls" abnormalType="duelist_spirit">
 				<mul stat="pAtkSpd" val="#pAtkSpd">
 					<using kind="DUAL" />
 				</mul>
@@ -2667,7 +2667,7 @@
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="2" abnormalType="duelist_spirit">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="2" abnormalType="duelist_spirit">
 				<mul stat="pAtkSpd" val="#ench1pAtkSpd">
 					<using kind="DUAL" />
 				</mul>
@@ -2676,7 +2676,7 @@
 			</effect>
 		</enchant1for>
 		<enchant2for>
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="2" abnormalType="duelist_spirit">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="2" abnormalType="duelist_spirit">
 				<mul stat="pAtkSpd" val="1.12">
 					<using kind="DUAL" />
 				</mul>
@@ -2702,7 +2702,7 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="300" val="0" abnormalLvl="1" abnormalType="possession">
+			<effect name="Buff" abnormalTime="300" abnormalLvl="1" abnormalType="possession">
 				<mul stat="pAtkSpd" val="1.3">
 					<using kind="DUALFIST" />
 				</mul>

@@ -67,7 +67,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="Transformation" abnormalTime="3600" val="0" abnormalLvl="1" abnormalType="transform" />
+			<effect name="Transformation" abnormalTime="3600" abnormalLvl="1" abnormalType="transform" />
 		</for>
 	</skill>
 	<skill id="6909" levels="1" name="Charming">
@@ -125,7 +125,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="3" abnormalType="attack_time_down">
+			<effect name="Buff" abnormalTime="600" abnormalLvl="3" abnormalType="attack_time_down">
 				<mul stat="pAtkSpd" val="#rate" />
  			</effect>
 		</for>
@@ -143,7 +143,7 @@
 		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="600" val="0" abnormalLvl="4" abnormalType="casting_time_down">
+			<effect name="Buff" abnormalTime="600" abnormalLvl="4" abnormalType="casting_time_down">
 				<mul stat="mAtkSpd" val="#mAtkSpd" />
 			</effect>
 		</for>
@@ -187,7 +187,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="fortune">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="fortune">
 				<mul stat="pAtk" val="1.15" />
 				<basemul stat="critRate" val="0.15" />
 				<mul stat="critDmg" val="1.1" />
@@ -215,7 +215,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="pd_down">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="1" abnormalType="pd_down">
 				<mul stat="pDef" val="0.77" />
 			</effect>
 		</for>

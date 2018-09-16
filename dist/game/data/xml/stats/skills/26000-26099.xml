@@ -211,7 +211,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="1200" val="0" abnormalLvl="2" abnormalType="attack_time_down">
+			<effect name="Buff" abnormalTime="1200" abnormalLvl="2" abnormalType="attack_time_down">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
 		</for>
@@ -227,7 +227,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="1200" val="0" abnormalLvl="2" abnormalType="speed_up">
+			<effect name="Buff" abnormalTime="1200" abnormalLvl="2" abnormalType="speed_up">
 				<add stat="runSpd" val="33" />
 			</effect>
 		</for>
@@ -341,7 +341,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="speed_up">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="speed_up">
 				<add stat="runSpd" val="33" />
 			</effect>
 		</for>
@@ -359,7 +359,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="attack_time_down">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="attack_time_down">
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
 		</for>
@@ -377,7 +377,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="pa_up">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="pa_up">
 				<mul stat="pAtk" val="1.15" />
 			</effect>
 		</for>
@@ -395,7 +395,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="pd_up">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="pd_up">
 				<mul stat="pDef" val="1.15" />
 			</effect>
 		</for>
@@ -413,7 +413,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="critical_dmg_up">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="critical_dmg_up">
 				<mul stat="critDmg" val="1.35" />
 			</effect>
 		</for>
@@ -431,7 +431,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="hit_up">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="hit_up">
 				<add stat="accCombat" val="4" />
 			</effect>
 		</for>
@@ -449,7 +449,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="ma_up">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="ma_up">
 				<mul stat="mAtk" val="1.75" />
 			</effect>
 		</for>
@@ -467,7 +467,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="casting_time_down">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="casting_time_down">
 				<mul stat="mAtkSpd" val="1.3" />
 			</effect>
 		</for>
@@ -485,7 +485,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="vampiric_attack">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="vampiric_attack">
 				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
 			</effect>
 		</for>
@@ -503,7 +503,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="max_hp_up">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="max_hp_up">
 				<mul stat="maxHp" val="1.35" />
 			</effect>
 		</for>
@@ -521,7 +521,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="berserker">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="berserker">
 				<mul stat="pDef" val="0.92" />
 				<mul stat="mDef" val="0.84" />
 				<sub stat="rEvas" val="4" />
@@ -546,7 +546,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="md_up">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="md_up">
 				<mul stat="mDef" val="1.3" />
 			</effect>
 		</for>
@@ -564,7 +564,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="max_mp_up">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="max_mp_up">
 				<mul stat="maxMp" val="1.35" />
 			</effect>
 		</for>
@@ -582,7 +582,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="cheap_magic">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="cheap_magic">
 				<mul stat="physicalMpConsumeRate" val="0.8" />
 				<mul stat="magicalMpConsumeRate" val="0.9" />
 				<mul stat="danceMpConsumeRate" val="0.8" />
@@ -602,7 +602,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="3600" val="0" abnormalLvl="26" abnormalType="magic_critical_up">
+			<effect name="Buff" abnormalTime="3600" abnormalLvl="26" abnormalType="magic_critical_up">
 				<add stat="mCritRate" val="2" />
 			</effect>
 		</for>
@@ -911,7 +911,7 @@
 			<player flyMounted="False" />
 		</cond>
 		<for>
-			<effect name="Buff" abnormalTime="5500" val="0" abnormalLvl="1" abnormalType="cocktail">
+			<effect name="Buff" abnormalTime="5500" abnormalLvl="1" abnormalType="cocktail">
 				<add stat="runSpd" val="50" />
 				<add stat="rEvas" val="5" />
 				<add stat="accCombat" val="3" />         

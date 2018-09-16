@@ -30,7 +30,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="ThrowUp" noicon="1" val="0" abnormalLvl="1" abnormalType="fly_away" />
+			<effect name="ThrowUp" noicon="1" abnormalLvl="1" abnormalType="fly_away" />
 			<effect name="Stun" abnormalTime="2" val="0" />
 		</for>
 	</skill>
@@ -275,7 +275,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="iron_shield_i">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="1" abnormalType="iron_shield_i">
 				<mul stat="sDef" val="1.3" />
 			</effect>
 		</for>
@@ -292,7 +292,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="archer_special">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="1" abnormalType="archer_special">
 				<mul stat="physicalMpConsumeRate" val="0.95" />
 				<mul stat="mAtkSpd" val="0.85" />
 			</effect>
@@ -311,7 +311,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="archer_special">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="1" abnormalType="archer_special">
 				<mul stat="pAtkSpd" val="1.15">
 					<using kind="BOW,CROSSBOW" />
 				</mul>
@@ -331,7 +331,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="Buff" abnormalTime="60" val="0" abnormalLvl="1" abnormalType="archer_special_i">
+			<effect name="Buff" abnormalTime="60" abnormalLvl="1" abnormalType="archer_special_i">
 				<add stat="runSpd" val="40" />
 			</effect>
 		</for>
@@ -541,7 +541,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="3" abnormalType="pa_down">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="3" abnormalType="pa_down">
 				<mul stat="pAtkSpd" val="0.77" />
 			</effect>
 		</for>
@@ -588,7 +588,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="90" val="0" abnormalLvl="1" abnormalType="pinch">
+			<effect name="Buff" abnormalTime="90" abnormalLvl="1" abnormalType="pinch">
 				<mul stat="pAtk" val="1.08" />
 				<mul stat="pAtkSpd" val="1.08" />
 				<mul stat="mAtk" val="1.16" />
@@ -625,7 +625,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="paralyze" />
+			<effect name="Paralyze" abnormalTime="10" abnormalLvl="1" abnormalType="paralyze" />
 		</for>
 	</skill>
 	<skill id="5448" levels="1" name="Oblivion">
@@ -653,7 +653,7 @@
 		<set name="skillType" val="STUN" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Stun" abnormalTime="3" val="0" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="3" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="5450" levels="7" name="Thin Skin">
@@ -687,7 +687,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="5" val="0" abnormalLvl="1" abnormalType="all_speed_down">
+			<effect name="Buff" abnormalTime="5" abnormalLvl="1" abnormalType="all_speed_down">
 				<mul stat="runSpd" val="0.7" />
 				<mul stat="pAtkSpd" val="0.77" />
 				<mul stat="mAtkSpd" val="0.7" />
@@ -707,7 +707,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="10" val="0" abnormalLvl="1" abnormalType="t_crt_dmg_up">
+			<effect name="Buff" abnormalTime="10" abnormalLvl="1" abnormalType="t_crt_dmg_up">
 				<mul stat="defCritDamage" val="#defCritDamage" />
 			</effect>
 		</for>
@@ -759,7 +759,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Cancel" noicon="1" val="0" effectPower="100" />
-			<effect name="Debuff" abnormalTime="30" val="0" abnormalLvl="1" abnormalType="speed_down" effectPower="80" >
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="1" abnormalType="speed_down" effectPower="80" >
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="runSpd" val="0.7" />
 			</effect>
@@ -1151,7 +1151,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="TargetMe" val="0" abnormalLvl="1" abnormalType="target_lock" effectPower="100" />
+			<effect name="TargetMe" abnormalLvl="1" abnormalType="target_lock" effectPower="100" />
 		</for>
 	</skill>
 	<skill id="5499" levels="1" name="Dark Lightening">
