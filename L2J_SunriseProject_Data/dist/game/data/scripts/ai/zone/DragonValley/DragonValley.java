@@ -92,50 +92,50 @@ public final class DragonValley extends AbstractNpcAI
 	// Misc
 	private final int SPAWN_CHANCE = 100; // Retail 100%
 	private static final int MIN_DISTANCE = 1500;
-	private static final int MIN_MEMBERS = 3;
-	private static final int MIN_LVL = 80;
-	private static final int CLASS_LVL = 3;
-	private static final EnumMap<ClassId, Double> CLASS_POINTS = new EnumMap<>(ClassId.class);
+	private static final int MIN_MEMBERS = 1;
+	private static final int MIN_LVL = 1;
+	private static final int CLASS_LVL = 0;
+	private static final EnumMap<ClassId, Integer> CLASS_POINTS = new EnumMap<>(ClassId.class);
 	private final int RESET_TIMER = 55 * 1000;
 	private final String RESET = "RESET";
 	
 	{
-		CLASS_POINTS.put(ClassId.adventurer, 0.2);
-		CLASS_POINTS.put(ClassId.arcanaLord, 1.5);
-		CLASS_POINTS.put(ClassId.archmage, 0.3);
-		CLASS_POINTS.put(ClassId.cardinal, -0.6);
-		CLASS_POINTS.put(ClassId.dominator, 0.2);
-		CLASS_POINTS.put(ClassId.doombringer, 0.2);
-		CLASS_POINTS.put(ClassId.doomcryer, 0.1);
-		CLASS_POINTS.put(ClassId.dreadnought, 0.7);
-		CLASS_POINTS.put(ClassId.duelist, 0.2);
-		CLASS_POINTS.put(ClassId.elementalMaster, 1.4);
-		CLASS_POINTS.put(ClassId.evaSaint, -0.6);
-		CLASS_POINTS.put(ClassId.evaTemplar, 0.8);
-		CLASS_POINTS.put(ClassId.femaleSoulhound, 0.4);
-		CLASS_POINTS.put(ClassId.fortuneSeeker, 0.9);
-		CLASS_POINTS.put(ClassId.ghostHunter, 0.2);
-		CLASS_POINTS.put(ClassId.ghostSentinel, 0.2);
-		CLASS_POINTS.put(ClassId.grandKhavatari, 0.2);
-		CLASS_POINTS.put(ClassId.hellKnight, 0.6);
-		CLASS_POINTS.put(ClassId.hierophant, 0.0);
-		CLASS_POINTS.put(ClassId.judicator, 0.1);
-		CLASS_POINTS.put(ClassId.moonlightSentinel, 0.2);
-		CLASS_POINTS.put(ClassId.maestro, 0.7);
-		CLASS_POINTS.put(ClassId.maleSoulhound, 0.4);
-		CLASS_POINTS.put(ClassId.mysticMuse, 0.3);
-		CLASS_POINTS.put(ClassId.phoenixKnight, 0.6);
-		CLASS_POINTS.put(ClassId.sagittarius, 0.2);
-		CLASS_POINTS.put(ClassId.shillienSaint, -0.6);
-		CLASS_POINTS.put(ClassId.shillienTemplar, 0.8);
-		CLASS_POINTS.put(ClassId.soultaker, 0.3);
-		CLASS_POINTS.put(ClassId.spectralDancer, 0.4);
-		CLASS_POINTS.put(ClassId.spectralMaster, 1.4);
-		CLASS_POINTS.put(ClassId.stormScreamer, 0.3);
-		CLASS_POINTS.put(ClassId.swordMuse, 0.4);
-		CLASS_POINTS.put(ClassId.titan, 0.3);
-		CLASS_POINTS.put(ClassId.trickster, 0.5);
-		CLASS_POINTS.put(ClassId.windRider, 0.2);
+		CLASS_POINTS.put(ClassId.adventurer, 0);
+		CLASS_POINTS.put(ClassId.arcanaLord, 22);
+		CLASS_POINTS.put(ClassId.archmage, 1);
+		CLASS_POINTS.put(ClassId.cardinal, 0);
+		CLASS_POINTS.put(ClassId.dominator, 4);
+		CLASS_POINTS.put(ClassId.doombringer, 3);
+		CLASS_POINTS.put(ClassId.doomcryer, 0);
+		CLASS_POINTS.put(ClassId.dreadnought, 17);
+		CLASS_POINTS.put(ClassId.duelist, 5);
+		CLASS_POINTS.put(ClassId.elementalMaster, 20);
+		CLASS_POINTS.put(ClassId.evaSaint, 0);
+		CLASS_POINTS.put(ClassId.evaTemplar, 14);
+		CLASS_POINTS.put(ClassId.femaleSoulhound, 11);
+		CLASS_POINTS.put(ClassId.fortuneSeeker, 17);
+		CLASS_POINTS.put(ClassId.ghostHunter, 8);
+		CLASS_POINTS.put(ClassId.ghostSentinel, 0);
+		CLASS_POINTS.put(ClassId.grandKhavatari, 0);
+		CLASS_POINTS.put(ClassId.hellKnight, 2);
+		CLASS_POINTS.put(ClassId.hierophant, 18);
+		CLASS_POINTS.put(ClassId.judicator, 23);
+		CLASS_POINTS.put(ClassId.moonlightSentinel, 0);
+		CLASS_POINTS.put(ClassId.maestro, 19);
+		CLASS_POINTS.put(ClassId.maleSoulhound, 11);
+		CLASS_POINTS.put(ClassId.mysticMuse, 0);
+		CLASS_POINTS.put(ClassId.phoenixKnight, 0);
+		CLASS_POINTS.put(ClassId.sagittarius, 0);
+		CLASS_POINTS.put(ClassId.shillienSaint, 0);
+		CLASS_POINTS.put(ClassId.shillienTemplar, 10);
+		CLASS_POINTS.put(ClassId.soultaker, 0);
+		CLASS_POINTS.put(ClassId.spectralDancer, 0);
+		CLASS_POINTS.put(ClassId.spectralMaster, 24);
+		CLASS_POINTS.put(ClassId.stormScreamer, 0);
+		CLASS_POINTS.put(ClassId.swordMuse, 0);
+		CLASS_POINTS.put(ClassId.titan, 1);
+		CLASS_POINTS.put(ClassId.trickster, 5);
+		CLASS_POINTS.put(ClassId.windRider, 2);
 	}
 	
 	public DragonValley()
@@ -228,6 +228,9 @@ public final class DragonValley extends AbstractNpcAI
 	private void manageMoraleBoost(L2PcInstance player, L2Npc npc)
 	{
 		double points = 0;
+		int threshold = 25;
+		int max_threshold = 140;
+		int category_weight = 15;
 		int moraleBoostLv = 0;
 		
 		if (player.isInParty() && (player.getParty().getMemberCount() >= MIN_MEMBERS) && (npc != null))
@@ -240,17 +243,66 @@ public final class DragonValley extends AbstractNpcAI
 				}
 			}
 			
-			if (points >= 3)
+			for (L2PcInstance member : player.getParty().getMembers())
 			{
-				moraleBoostLv = 3;
+				if ((member.getLevel() >= MIN_LVL) && (member.getClassId().level() >= CLASS_LVL) && (Util.calculateDistance(npc, member, true, false) < MIN_DISTANCE))
+				{
+					if ((member.getClassId().getId() == 90) || (member.getClassId().getId() == 91) || (member.getClassId().getId() == 99) || (member.getClassId().getId() == 106))
+					{
+						points += category_weight;
+					}
+					
+					if ((member.getClassId().getId() == 95) || (member.getClassId().getId() == 96) || (member.getClassId().getId() == 104) || (member.getClassId().getId() == 111))
+					{
+						points += category_weight;
+					}
+					
+					if ((member.getClassId().getId() == 94) || (member.getClassId().getId() == 103) || (member.getClassId().getId() == 110))
+					{
+						points += 3;
+					}
+					
+					if ((member.getClassId().getId() == 92) || (member.getClassId().getId() == 102) || (member.getClassId().getId() == 109) || (member.getClassId().getId() == 134))
+					{
+						points += 3;
+					}
+					
+					if ((member.getClassId().getId() == 93) || (member.getClassId().getId() == 101) || (member.getClassId().getId() == 108))
+					{
+						points += 3;
+					}
+					
+					if ((member.getClassId().getId() == 97) || (member.getClassId().getId() == 105) || (member.getClassId().getId() == 112) || (member.getClassId().getId() == 115))
+					{
+						points += 1;
+					}
+					
+					if ((member.getClassId().getId() == 98) || (member.getClassId().getId() == 100) || (member.getClassId().getId() == 107) || (member.getClassId().getId() == 116))
+					{
+						// nothing.
+					}
+					
+					if ((member.getClassId().getId() == 88) || (member.getClassId().getId() == 89) || (member.getClassId().getId() == 113) || (member.getClassId().getId() == 114) || (member.getClassId().getId() == 131) || (member.getClassId().getId() == 132) || (member.getClassId().getId() == 133) || (member.getClassId().getId() == 117))
+					{
+						// nothing.
+					}
+				}
 			}
-			else if (points >= 2)
+			
+			if (points > threshold)
 			{
-				moraleBoostLv = 2;
-			}
-			else if (points >= 1)
-			{
-				moraleBoostLv = 1;
+				if (points > (max_threshold * 0.450000))
+				{
+					moraleBoostLv = 3;
+				}
+				else if (points > (max_threshold * 0.300000))
+				{
+					moraleBoostLv = 2;
+				}
+				else
+				{
+					moraleBoostLv = 1;
+				}
 			}
 			
 			for (L2PcInstance member : player.getParty().getMembers())
