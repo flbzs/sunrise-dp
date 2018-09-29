@@ -19,7 +19,7 @@
 			<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 			<add stat="accCombat" val="4" /> <!-- Increases Accuracy by 4 -->
 			<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8401" levels="1" name="Vorpal Leather Armor Set">
@@ -39,7 +39,7 @@
 			<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 			<add stat="critDmgAdd" val="182" /> <!-- Increases Critical Damage by 182 -->
 			<add stat="maxMp" val="360" /> <!-- Increases Max MP by 360 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8402" levels="1" name="Vorpal Robe Set">
@@ -58,7 +58,7 @@
 			<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 			<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
 			<add stat="maxMp" val="92" /> <!-- Increases Max MP by 92 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8403" levels="1" name="Elegia Armor Set">
@@ -79,7 +79,7 @@
 			<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 			<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
 			<add stat="absorbDam" val="3" /> <!-- Steal opponent's HP on attack -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8404" levels="1" name="Elegia Leather Armor Set">
@@ -97,7 +97,7 @@
 			<add stat="waterRes" val="5" /> <!-- Resistance to water attributes +5 -->
 			<add stat="windRes" val="5" /> <!-- Resistance to wind attributes +5 -->
 			<add stat="earthRes" val="5" /> <!-- Resistance to earth attributes +5 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8405" levels="1" name="Elegia Robe Set">
@@ -117,7 +117,7 @@
 			<add stat="runSpd" val="7" /> <!-- Increases Speed by 7 -->
 			<add stat="maxMp" val="92" /> <!-- Increases Max MP by 97 -->
 			<mul stat="magicalMpConsumeRate" val="0.97" /> <!-- Decreases MP consumption for magic skills by 3% -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8406" levels="1" name="Moirai Armor Set - PvP">
@@ -137,14 +137,14 @@
 			<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
 				<param targetType="ONE" />
 			</effect>
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8407" levels="1" name="Moirai Leather Armor Set - PvP">
@@ -164,14 +164,14 @@
 			<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
 				<param targetType="ONE" />
 			</effect>
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8408" levels="1" name="Moirai Robe Set - PvP">
@@ -190,14 +190,14 @@
 			<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
 				<param targetType="SELF" />
 			</effect>
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8409" levels="1" name="Vorpal Heavy Armor Set - PvP">
@@ -222,14 +222,14 @@
 			<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
 				<param targetType="ONE" />
 			</effect>
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8410" levels="1" name="Vorpal Leather Armor Set - PvP">
@@ -252,14 +252,14 @@
 			<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-			<effect name="TriggerSkillByDamage"  noicon="1" val="0">
+			<effect name="TriggerSkillByDamage"  noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
 				<param targetType="ONE" />
 			</effect>
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8411" levels="1" name="Vorpal Robe Set - PvP">
@@ -281,14 +281,14 @@
 			<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
 				<param targetType="SELF" />
 			</effect>
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8412" levels="1" name="Elegia Armor Set - PvP">
@@ -312,14 +312,14 @@
 			<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
 				<param targetType="ONE" />
 			</effect>
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8413" levels="1" name="Elegia Leather Armor Set - PvP">
@@ -340,14 +340,14 @@
 			<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
 				<param targetType="ONE" />
 			</effect>
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8414" levels="1" name="Elegia Robe Set - PvP">
@@ -370,14 +370,14 @@
 			<mul stat="pvpMagicalDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysSkillsDef" val="1.05" /> <!-- During PvP, damage received decreased -->
 			<mul stat="pvpPhysDef" val="1.05" /> <!-- During PvP, damage received decreased -->
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
 				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
 				<param targetType="SELF" />
 			</effect>
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8415" levels="5" name="Ring Ability - Drop Rate Up">
@@ -919,7 +919,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8465" levels="1" name="Notifier">

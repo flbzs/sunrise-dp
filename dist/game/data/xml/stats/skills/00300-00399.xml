@@ -77,24 +77,24 @@
 		<enchant3 name="saveVs" val="MEN" />
 		<enchant3 name="skillType" val="DUMMY" />
 		<for>
-			<effect name="Spoil" noicon="1" val="0" />
+			<effect name="Spoil" noicon="1" />
 		</for>
 		<enchant1for>
 			<effect name="Debuff" abnormalTime="30" val="0" effectPower="#ench1Power" abnormalLvl="3" abnormalType="attack_time_up">
 				<mul stat="pAtkSpd" val="0.77" />
 			</effect>
-			<effect name="Spoil" noicon="1" val="0" />
+			<effect name="Spoil" noicon="1" />
 		</enchant1for>
 		<enchant2for>
 			<!-- 118HP * 3 During 15 Sec -->
 			<effect count="5" name="DamOverTime" abnormalTime="3" val="354" effectPower="#ench2Power" abnormalLvl="3" abnormalType="dot_attr" />
-			<effect name="Spoil" noicon="1" val="0" />
+			<effect name="Spoil" noicon="1" />
 		</enchant2for>
 		<enchant3for>
 			<effect name="Debuff" abnormalTime="15" val="0" effectPower="80" abnormalLvl="1" abnormalType="holy_attack">
 				<sub stat="earthPower" val="#ench3EarthPower" />
 			</effect>
-			<effect name="Spoil" noicon="1" val="0" />
+			<effect name="Spoil" noicon="1" />
 		</enchant3for>
 	</skill>
 	<skill id="303" levels="4" name="Soul of Sagittarius" enchantGroup1="1">
@@ -741,12 +741,12 @@
 			<using kind="POLE" />
 		</cond>
 		<for>
-			<effect name="CpDamPercent" noicon="1" val="0" >
+			<effect name="CpDamPercent" noicon="1" >
 				<param power="#power" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="CpDamPercent" noicon="1" val="0" >
+			<effect name="CpDamPercent" noicon="1" >
 				<param power="#ench1Power" />
 			</effect>
 		</enchant1for>
@@ -848,7 +848,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="324" levels="1" name="Quiver of Arrow: Grade S">
@@ -873,7 +873,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="325" levels="1" name="Strider Siege Assault">
@@ -906,7 +906,7 @@
 			<player canCreateBase="true" />
 		</cond>
 		<for>
-			<effect name="HeadquarterCreate" noicon="1" val="0" >
+			<effect name="HeadquarterCreate" noicon="1" >
 				<param isAdvanced="true" />
 			</effect>
 		</for>
@@ -995,7 +995,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" noicon="1" val="0" >
+			<effect name="Buff" noicon="1" >
 				<add stat="skillCritical" val="1" /> <!-- STR -->
 			</effect>
 		</for>
@@ -1005,7 +1005,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" noicon="1" val="0" >
+			<effect name="Buff" noicon="1" >
 				<add stat="skillCritical" val="4" /> <!-- INT -->
 			</effect>
 		</for>
@@ -1282,8 +1282,8 @@
 				<add stat="debuffVuln" val="30" />
 				<mul stat="healEffect" val="0.7" />
 			</effect>
-			<effect name="Cancel" noicon="1" val="0" effectPower="25" />
-			<effect name="CpDamPercent" noicon="1" val="0" >
+			<effect name="Cancel" noicon="1" effectPower="25" />
+			<effect name="CpDamPercent" noicon="1" >
 				<param power="90" />
 			</effect>
 		</for>
@@ -1293,8 +1293,8 @@
 				<add stat="debuffVuln" val="30" />
 				<mul stat="healEffect" val="0.7" />
 			</effect>
-			<effect name="Cancel" noicon="1" val="0" effectPower="25" />
-			<effect name="CpDamPercent" noicon="1" val="0" >
+			<effect name="Cancel" noicon="1" effectPower="25" />
+			<effect name="CpDamPercent" noicon="1" >
 				<param power="90" />
 			</effect>
 		</enchant2for>
@@ -1469,7 +1469,7 @@
 			<using kind="POLE" />
 		</cond>
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="60" />
 			</effect>
 		</for>
@@ -1625,7 +1625,7 @@
 		</cond>
 		<for>
 			<effect name="Stun" abnormalTime="2" abnormalLvl="1" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="80" />
 			</effect>
 		</for>
@@ -1633,7 +1633,7 @@
 			<effect name="Stun" abnormalTime="2" abnormalLvl="1" abnormalType="stun">
 				<sub stat="fireRes" val="#ench-Res" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="80" />
 			</effect>
 		</enchant2for>
@@ -1641,7 +1641,7 @@
 			<effect name="Stun" abnormalTime="2" abnormalLvl="1" abnormalType="stun">
 				<sub stat="waterRes" val="#ench-Res" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="80" />
 			</effect>
 		</enchant3for>
@@ -1649,7 +1649,7 @@
 			<effect name="Stun" abnormalTime="2" abnormalLvl="1" abnormalType="stun">
 				<sub stat="windRes" val="#ench-Res" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="80" />
 			</effect>
 		</enchant4for>
@@ -1657,7 +1657,7 @@
 			<effect name="Stun" abnormalTime="2" abnormalLvl="1" abnormalType="stun">
 				<sub stat="earthRes" val="#ench-Res" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="80" />
 			</effect>
 		</enchant5for>
@@ -1694,7 +1694,7 @@
 		</cond>
 		<for>
 			<effect name="PhysicalMute" abnormalTime="60" abnormalLvl="1" abnormalType="silence_physical" />
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="80" />
 			</effect>
 		</for>
@@ -1702,7 +1702,7 @@
 			<effect name="PhysicalMute" abnormalTime="60" abnormalLvl="1" abnormalType="silence_physical">
 				<sub stat="holyRes" val="#ench-Res" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="80" />
 			</effect>
 		</enchant2for>
@@ -1710,7 +1710,7 @@
 			<effect name="PhysicalMute" abnormalTime="60" abnormalLvl="1" abnormalType="silence_physical">
 				<sub stat="darkRes" val="#ench-Res" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="80" />
 			</effect>
 		</enchant3for>
@@ -1977,25 +1977,25 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="Bluff" noicon="1" val="0">
+			<effect name="Bluff" noicon="1">
 				<param chance="80" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="80" />
 			</effect>
-			<effect name="DeleteHateOfMe" noicon="1" val="0">
+			<effect name="DeleteHateOfMe" noicon="1">
 				<param chance="80" />
 			</effect>
 			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" />
 		</for>
 		<enchant1for>
-			<effect name="Bluff" noicon="1" val="0">
+			<effect name="Bluff" noicon="1">
 				<param chance="80" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="80" />
 			</effect>
-			<effect name="DeleteHateOfMe" noicon="1" val="0">
+			<effect name="DeleteHateOfMe" noicon="1">
 				<param chance="80" />
 			</effect>
 			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" />
@@ -2130,7 +2130,7 @@
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="60" />
 			</effect>
 		</for>
@@ -2139,7 +2139,7 @@
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="60" />
 			</effect>
 		</enchant3for>

@@ -873,7 +873,7 @@
 			<mul stat="pvpPhysDef" val="1.05" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
@@ -894,7 +894,7 @@
 			<mul stat="pvpPhysDef" val="1.05" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
@@ -916,7 +916,7 @@
 			<mul stat="pvpPhysDef" val="1.05" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
@@ -940,7 +940,7 @@
 			<mul stat="pvpPhysDef" val="1.05" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
@@ -962,7 +962,7 @@
 			<mul stat="pvpPhysDef" val="1.05" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
@@ -984,7 +984,7 @@
 			<mul stat="pvpPhysDef" val="1.05" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />
@@ -1006,7 +1006,7 @@
 			<mul stat="pvpPhysDef" val="1.05" />
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="2" />

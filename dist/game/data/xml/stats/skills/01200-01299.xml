@@ -1759,12 +1759,12 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="#power" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="#ench1power" />
 			</effect>
 		</enchant1for>
@@ -2430,7 +2430,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="DeleteHate" noicon="1" val="0" effectPower="80" />
+			<effect name="DeleteHate" noicon="1" effectPower="80" />
 		</for>
 	</skill>
 	<skill id="1274" levels="4" name="Energy Bolt">
@@ -2606,12 +2606,12 @@
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="6" cubicDelay="30" cubicDuration="900" cubicMaxCount="10" cubicSkillChance="12" cubicPower="#cubicPower" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="6" cubicDelay="30" cubicDuration="900" cubicMaxCount="10" cubicSkillChance="12" cubicPower="#ench1Power" />
 			</effect>
 		</enchant1for>
@@ -2638,12 +2638,12 @@
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="7" cubicDelay="30" cubicDuration="900" cubicMaxCount="10" cubicSkillChance="30" cubicPower="#cubicPower" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="7" cubicDelay="30" cubicDuration="900" cubicMaxCount="10" cubicSkillChance="30" cubicPower="#ench1Power" />
 			</effect>
 		</enchant1for>
@@ -2670,12 +2670,12 @@
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="8" cubicDelay="30" cubicDuration="900" cubicMaxCount="10" cubicSkillChance="12" cubicPower="#cubicPower" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="8" cubicDelay="30" cubicDuration="900" cubicMaxCount="10" cubicSkillChance="12" cubicPower="#ench1Power" />
 			</effect>
 		</enchant1for>

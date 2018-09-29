@@ -70,7 +70,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>
@@ -143,7 +143,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>
@@ -209,7 +209,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>
@@ -446,7 +446,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>
@@ -897,7 +897,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>
@@ -989,7 +989,7 @@
 			<player agathionId="1526" />
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="23067" levels="1" name="Pomona Agathion Cute Trick">

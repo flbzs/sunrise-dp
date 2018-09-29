@@ -373,7 +373,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2423" levels="1" name="2nd Place Treasure Sack">
@@ -394,7 +394,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2424" levels="1" name="3rd Place Treasure Sack">
@@ -415,7 +415,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2425" levels="1" name="4th Place Treasure Sack">
@@ -436,7 +436,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2426" levels="1" name="5th Place Treasure sack">
@@ -457,7 +457,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2427" levels="1" name="6th Place Treasure Sack">
@@ -478,7 +478,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2428" levels="1" name="Scroll of Transformation - Rabbit">
@@ -704,7 +704,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2441" levels="1" name="Protection of Rune">
@@ -1638,7 +1638,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2491" levels="1" name="Transform Zaken">

@@ -70,7 +70,7 @@
 		<set name="reuseDelay" val="75000" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="25" />
+			<effect name="Cancel" noicon="1" effectPower="25" />
 		</for>
 	</skill>
 	<skill id="807" levels="1" name="Over-hit">
@@ -340,7 +340,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByAvoid" noicon="1" val="0">
+			<effect name="TriggerSkillByAvoid" noicon="1">
 				<param chance="10" />
 				<param skillId="5673" skillLevel="1" /> <!-- Evasion Counter -->
 				<param targetType="ONE" />
@@ -353,7 +353,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByAvoid" noicon="1" val="0">
+			<effect name="TriggerSkillByAvoid" noicon="1">
 				<param chance="10" />
 				<param skillId="5674" skillLevel="1" /> <!-- Evasion Chance -->
 				<param targetType="SELF" />
@@ -366,7 +366,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByAvoid" noicon="1" val="0">
+			<effect name="TriggerSkillByAvoid" noicon="1">
 				<param chance="10" />
 				<param skillId="5675" skillLevel="1" /> <!-- Evasion Haste -->
 				<param targetType="SELF" />
@@ -387,8 +387,8 @@
 		<set name="reuseDelay" val="75000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="TeleportToTarget" noicon="1" val="0" />
-			<effect name="RemoveTarget" effectPower="100" noicon="1" val="0" />
+			<effect name="TeleportToTarget" noicon="1" />
+			<effect name="RemoveTarget" effectPower="100" noicon="1" />
 		</for>
 	</skill>
 	<skill id="822" levels="3" name="Repair Golem">
@@ -640,7 +640,7 @@
 		<set name="reuseDelay" val="75000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="13128" npcCount="1" despawnDelay="180000" />
 			</effect>
 		</for>
@@ -720,7 +720,7 @@
 		<set name="trait" val="BLEED" />
 		<for>
 			<effect count="7" name="ManaDamOverTime" abnormalTime="3" val="#mdot" abnormalLvl="8" abnormalType="dark_seed" abnormalVisualEffect="bleed" />
-			<effect name="ChanceSkillTrigger" abnormalTime="20" noicon="1" val="0" chanceType="ON_EXIT" triggeredId="5697" triggeredLevel="#triggeredLevel" />
+			<effect name="ChanceSkillTrigger" abnormalTime="20" noicon="1" chanceType="ON_EXIT" triggeredId="5697" triggeredLevel="#triggeredLevel" />
 		</for>
 	</skill>
 	<skill id="836" levels="3" name="Oblivion Trap">
@@ -737,7 +737,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="#npcId" />
 			</effect>
 		</for>
@@ -766,7 +766,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="TRANSFORM,-1" />
 			</effect>
 		</for>
@@ -776,7 +776,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="TRANSFORM,-1" />
 			</effect>
 		</for>
@@ -902,7 +902,7 @@
 			<player canCreateOutpost="true" />
 		</cond>
 		<for>
-			<effect name="OutpostCreate" noicon="1" val="0" />
+			<effect name="OutpostCreate" noicon="1" />
 		</for>
 	</skill>
 	<skill id="845" levels="1" name="Outpost Demolition">
@@ -919,7 +919,7 @@
 			<target npcId="36590" />
 		</cond>
 		<for>
-			<effect name="OutpostDestroy" noicon="1" val="0" />
+			<effect name="OutpostDestroy" noicon="1" />
 		</for>
 	</skill>
 	<skill id="846" levels="1" name="Possess Ward">
@@ -949,7 +949,7 @@
 			<target npcId="36590" />
 		</cond>
 		<for>
-			<effect name="TakeTerritoryFlag" noicon="1" val="0" />
+			<effect name="TakeTerritoryFlag" noicon="1" />
 		</for>
 	</skill>
 	<skill id="848" levels="1" name="Gludio Territory Benefaction">
@@ -1637,7 +1637,7 @@
 		<set name="targetType" val="AURA" />
 		<for>
 			<effect name="Stun" abnormalTime="2" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" special="airstun" />
-			<effect self="1" name="Blink" noicon="1" val="0" />
+			<effect self="1" name="Blink" noicon="1" />
 		</for>
 	</skill>
 	<skill id="886" levels="11" name="Air Shock Bomb">

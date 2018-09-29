@@ -18,7 +18,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="targetType" val="PET" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="#dispelAbnormals" />
 			</effect>
 		</for>
@@ -36,7 +36,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="targetType" val="PET" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="ROOT_PHYSICALLY,1;ROOT_MAGICALLY,1;PARALYZE,1;ATTACK_TIME_UP,3;SPEED_DOWN,3" />
 			</effect>
 		</for>
@@ -394,7 +394,7 @@
 			<using kind="FISHINGROD" />
 		</cond>
 		<for>
-			<effect name="Fishing" noicon="1" val="0" />
+			<effect name="Fishing" noicon="1" />
 		</for>
 	</skill>
 	<skill id="1313" levels="27" name="Pumping">
@@ -412,7 +412,7 @@
 			<using kind="FISHINGROD" />
 		</cond>
 		<for>
-			<effect name="Pumping" noicon="1" val="0">
+			<effect name="Pumping" noicon="1">
 				<param power="#power" />
 			</effect>
 		</for>
@@ -432,7 +432,7 @@
 			<using kind="FISHINGROD" />
 		</cond>
 		<for>
-			<effect name="Reeling" noicon="1" val="0">
+			<effect name="Reeling" noicon="1">
 				<param power="#power" />
 			</effect>
 		</for>
@@ -444,7 +444,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" noicon="1" val="0" >
+			<effect name="Buff" noicon="1" >
 				<set stat="fishingExpertise" val="#power" />
 			</effect>
 		</for>
@@ -486,7 +486,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="OpenDwarfRecipeBook" noicon="1" val="0" />
+			<effect name="OpenDwarfRecipeBook" noicon="1" />
 		</for>
 	</skill>
 	<skill id="1322" levels="1" name="Common Craft">
@@ -497,7 +497,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="OpenCommonRecipeBook" noicon="1" val="0" />
+			<effect name="OpenCommonRecipeBook" noicon="1" />
 		</for>
 	</skill>
 	<skill id="1323" levels="1" name="Noblesse Blessing">
@@ -663,12 +663,12 @@
 		<set name="targetType" val="PARTY" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="1" cubicDelay="10" cubicDuration="900" cubicMaxCount="30" cubicSkillChance="12" cubicPower="#cubicPower" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="1" cubicDelay="10" cubicDuration="900" cubicMaxCount="30" cubicSkillChance="12" cubicPower="#ench1Power" />
 			</effect>
 		</enchant1for>
@@ -696,12 +696,12 @@
 		<set name="targetType" val="PARTY" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="7" cubicDelay="30" cubicDuration="900" cubicMaxCount="10" cubicSkillChance="30" cubicPower="#cubicPower" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="7" cubicDelay="30" cubicDuration="900" cubicMaxCount="10" cubicSkillChance="30" cubicPower="#ench1Power" />
 			</effect>
 		</enchant1for>
@@ -729,13 +729,13 @@
 		<set name="targetType" val="PARTY" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="5" cubicDelay="8" cubicDuration="900" cubicMaxCount="30" cubicSkillChance="30" cubicPower="#cubicPower" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="5" cubicDelay="8" cubicDuration="900" cubicMaxCount="30" cubicSkillChance="30" cubicPower="#ench1Power" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
@@ -891,7 +891,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="RebalanceHP" noicon="1" val="0" />
+			<effect name="RebalanceHP" noicon="1" />
 		</for>
 	</skill>
 	<skill id="1336" levels="1" name="Curse of Doom" enchantGroup1="6" enchantGroup2="6">
@@ -1318,7 +1318,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="40" />
+			<effect name="Cancel" noicon="1" effectPower="40" />
 		</for>
 	</skill>
 	<skill id="1345" levels="1" name="Mass Mage Bane">
@@ -1337,7 +1337,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="40" />
+			<effect name="Cancel" noicon="1" effectPower="40" />
 		</for>
 	</skill>
 	<skill id="1346" levels="1" name="Warrior Servitor" enchantGroup1="5" enchantGroup2="5">
@@ -1565,7 +1565,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="80" />
+			<effect name="Cancel" noicon="1" effectPower="80" />
 		</for>
 	</skill>
 	<skill id="1351" levels="1" name="Mage Bane">
@@ -1584,7 +1584,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="80" />
+			<effect name="Cancel" noicon="1" effectPower="80" />
 		</for>
 	</skill>
 	<skill id="1352" levels="1" name="Elemental Protection" enchantGroup1="5" enchantGroup2="5">
@@ -1967,10 +1967,10 @@
 			<effect name="Debuff" abnormalTime="120" abnormalLvl="10" abnormalType="block_shield_up">
 				<mul stat="pDef" val="0.9" />
 			</effect>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="PD_UP;IMPROVE_PA_PD_UP" rate="100" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="120" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="120" noicon="1">
 				<param slot="IMPROVE_PA_PD_UP;PD_UP" />
 			</effect>
 		</for>
@@ -1978,10 +1978,10 @@
 			<effect name="Debuff" abnormalTime="#ench2Time" abnormalLvl="10" abnormalType="block_shield_up">
 				<mul stat="pDef" val="0.9" />
 			</effect>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="PD_UP;IMPROVE_PA_PD_UP" rate="100" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="#ench2Time" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="#ench2Time" noicon="1">
 				<param slot="IMPROVE_PA_PD_UP;PD_UP" />
 			</effect>
 		</enchant2for>
@@ -2024,10 +2024,10 @@
 			<effect name="Debuff" abnormalTime="120" abnormalLvl="10" abnormalType="block_speed_up" effectPower="80" >
 				<mul stat="runSpd" val="0.9" />
 			</effect>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="120" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="120" noicon="1">
 				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
 			</effect>
 		</for>
@@ -2035,10 +2035,10 @@
 			<effect name="Debuff" abnormalTime="#ench2Time" abnormalLvl="10" abnormalType="block_speed_up">
 				<mul stat="runSpd" val="0.9" />
 			</effect>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="#ench2Time" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="#ench2Time" noicon="1">
 				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
 			</effect>
 		</enchant2for>
@@ -2079,10 +2079,10 @@
 			<effect name="Debuff" abnormalTime="120" abnormalLvl="10" abnormalType="block_shield_up">
 				<mul stat="pDef" val="0.9" />
 			</effect>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="IMPROVE_PA_PD_UP;PD_UP" rate="100" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="120" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="120" noicon="1">
 				<param slot="IMPROVE_PA_PD_UP;PD_UP" />
 			</effect>
 		</for>
@@ -2123,10 +2123,10 @@
 			<effect name="Debuff" abnormalTime="120" abnormalLvl="10" abnormalType="block_speed_up">
 				<mul stat="runSpd" val="0.9" />
 			</effect>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="120" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="120" noicon="1">
 				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
 			</effect>
 		</for>
@@ -2278,10 +2278,10 @@
 				<add stat="accCombat" val="4" />
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="HIT_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="1200" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="1200" noicon="1">
 				<param slot="HIT_UP" />
 			</effect>
 		</for>
@@ -2290,10 +2290,10 @@
 				<add stat="accCombat" val="4" />
 				<mul stat="defCritRate" val="0.7" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="HIT_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="#ench1Time" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="#ench1Time" noicon="1">
 				<param slot="HIT_UP" />
 			</effect>
 		</enchant1for>
@@ -2330,10 +2330,10 @@
 				<mul stat="mAtk" val="1.75" />
 				<mul stat="mDef" val="1.3" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="MA_UP,9;MD_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="1200" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="1200" noicon="1">
 				<param slot="MA_UP;MD_UP" />
 			</effect>
 		</for>
@@ -2342,10 +2342,10 @@
 				<mul stat="mAtk" val="1.75" />
 				<mul stat="mDef" val="1.3" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="MA_UP,9;MD_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="#ench1Time" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="#ench1Time" noicon="1">
 				<param slot="MA_UP;MD_UP" />
 			</effect>
 		</enchant1for>
@@ -2545,7 +2545,7 @@
 				<sub stat="rEvas" val="16" />
 				<mul stat="rShld" val="0.5" />
 			</effect>
-			<effect name="PhysicalMute" abnormalTime="60" noicon="1" val="0" />
+			<effect name="PhysicalMute" abnormalTime="60" noicon="1" />
 		</for>
 	</skill>
 	<skill id="1376" levels="1" name="Heroic Dread">
@@ -2965,7 +2965,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="1388" levels="3" name="Greater Might" enchantGroup1="1" enchantGroup2="1">

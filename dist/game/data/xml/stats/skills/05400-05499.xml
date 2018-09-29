@@ -403,7 +403,7 @@
 		<set name="trait" val="GUST" />
 		<for>
 			<effect name="Stun" abnormalTime="1" val="0" effectPower="90" abnormalLvl="1" abnormalType="stun" />
-			<effect name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_EXIT" triggeredId="5494" />
+			<effect name="ChanceSkillTrigger" noicon="1" chanceType="ON_EXIT" triggeredId="5494" />
 		</for>
 	</skill>
 	<skill id="5435" levels="1" name="Gust">
@@ -426,7 +426,7 @@
 		<set name="trait" val="GUST" />
 		<for>
 			<effect name="Stun" abnormalTime="1" val="0" effectPower="90" abnormalLvl="1" abnormalType="stun" />
-			<effect name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_EXIT" triggeredId="5494" />
+			<effect name="ChanceSkillTrigger" noicon="1" chanceType="ON_EXIT" triggeredId="5494" />
 		</for>
 	</skill>
 	<skill id="5436" levels="1" name="Increase Recovery Rate">
@@ -638,7 +638,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" />
 		</for>
 	</skill>
 	<skill id="5449" levels="1" name="Weak Constitution">
@@ -758,7 +758,7 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="100" />
+			<effect name="Cancel" noicon="1" effectPower="100" />
 			<effect name="Debuff" abnormalTime="30" abnormalLvl="1" abnormalType="speed_down" effectPower="80" >
 				<mul stat="pAtkSpd" val="0.7" />
 				<mul stat="runSpd" val="0.7" />
@@ -933,7 +933,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="INVINCIBILITY,9" />
 			</effect>
 		</for>
@@ -1068,7 +1068,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ThrowUp" noicon="1" val="0" />
+			<effect name="ThrowUp" noicon="1" />
 		</for>
 	</skill>
 	<skill id="5495" levels="1" name="Bleed">

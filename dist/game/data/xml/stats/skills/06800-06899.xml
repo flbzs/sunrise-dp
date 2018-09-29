@@ -253,7 +253,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<effect count="10" name="HealOverTime" abnormalTime="1" abnormalLvl="10" abnormalType="bleeding" abnormalVisualEffect="bleed" val="#power" />
-			<effect name="ChanceSkillTrigger" abnormalTime="10" noicon="1" val="0" chanceType="ON_EXIT" triggeredId="6816" triggeredLevel="#skillLevel" />
+			<effect name="ChanceSkillTrigger" abnormalTime="10" noicon="1" chanceType="ON_EXIT" triggeredId="6816" triggeredLevel="#skillLevel" />
 		</for>
 	</skill>
 	<skill id="6817" levels="1" name="Arena HP Recovery">
@@ -405,14 +405,14 @@
 			<effect name="Petrification" abnormalTime="3" abnormalLvl="1" abnormalType="turn_stone">
 				<mul stat="regHp" val="0" />
 			</effect>
-			<effect name="BlockDamage" abnormalTime="3" noicon="1" val="0">
+			<effect name="BlockDamage" abnormalTime="3" noicon="1">
 				<param block="HP"/>
 			</effect>
-			<effect name="BlockDamage" abnormalTime="3" noicon="1" val="0">
+			<effect name="BlockDamage" abnormalTime="3" noicon="1">
 				<param block="MP"/>
 			</effect>
-			<effect name="BlockBuff" abnormalTime="3" noicon="1" val="0" />
-			<effect name="BlockDebuff" abnormalTime="3" noicon="1" val="0" />
+			<effect name="BlockBuff" abnormalTime="3" noicon="1" />
+			<effect name="BlockDebuff" abnormalTime="3" noicon="1" />
 		</for>
 	</skill>
 	<skill id="6828" levels="1" name="Dust Storm">

@@ -238,7 +238,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" />
 		</for>
 	</skill>
 	<skill id="6311" levels="1" name="Solina Thrust">
@@ -1297,7 +1297,7 @@
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" />
 		</for>
 	</skill>
 	<skill id="6388" levels="1" name="Bistakon Jump Blow">

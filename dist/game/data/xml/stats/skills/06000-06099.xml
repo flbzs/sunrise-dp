@@ -267,8 +267,8 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect name="Invincible" abnormalTime="10" noicon="1" abnormalLvl="1" abnormalType="invincibility" />
-			<effect name="Stun" abnormalTime="10" noicon="1" val="0" />
-			<effect name="ImmobileBuff" abnormalTime="10" noicon="1" val="0" />
+			<effect name="Stun" abnormalTime="10" noicon="1" />
+			<effect name="ImmobileBuff" abnormalTime="10" noicon="1" />
 		</for>
 	</skill>
 	<skill id="6035" levels="1" name="Red Team Transformation">
@@ -374,7 +374,7 @@
 			<target mindistance="200" />
 		</cond>
 		<for>
-			<effect name="EnemyCharge" noicon="1" val="0" />
+			<effect name="EnemyCharge" noicon="1" />
 		</for>
 	</skill>
 	<skill id="6042" levels="1" name="Phoenix Cleanse">
@@ -392,7 +392,7 @@
 		<set name="reuseDelay" val="180000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="CancelDebuff" noicon="1" val="0" effectPower="100" />
+			<effect name="CancelDebuff" noicon="1" effectPower="100" />
 		</for>
 	</skill>
 	<skill id="6043" levels="1" name="Phoenix Flame Feather">
@@ -997,7 +997,7 @@
 		<set name="reuseDelay" val="60000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="25" />
+			<effect name="Cancel" noicon="1" effectPower="25" />
 		</for>
 	</skill>
 	<skill id="6095" levels="15" name="Panther Dark Claw">

@@ -75,13 +75,13 @@
 		</cond>
 		<for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="40" />
 			</effect>
 		</for>
 		<enchant1for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="#ench1effectPower" abnormalLvl="1" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="40" />
 			</effect>
 		</enchant1for>
@@ -89,7 +89,7 @@
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun">
 				<mul stat="pDef" val="#ench34pmDef" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="40" />
 			</effect>
 		</enchant3for>
@@ -97,7 +97,7 @@
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun">
 				<mul stat="mDef" val="#ench34pmDef" />
 			</effect>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="40" />
 			</effect>
 		</enchant4for>
@@ -183,7 +183,7 @@
 		<for>
 			<!-- Retail Values CT2.3: 41 50 58 63HP * 3 Sec -->
 			<effect count="10" name="DamOverTime" abnormalTime="3" val="#dot" abnormalLvl="#abnormalLvls" abnormalType="poison" abnormalVisualEffect="poison" />
-			<effect name="ConsumeBody" noicon="1" val="0" />
+			<effect name="ConsumeBody" noicon="1" />
 		</for>
 	</skill>
 	<skill id="104" levels="1" name="Detect Plant Weakness">
@@ -1358,7 +1358,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Lucky" abnormalTime="-1" val="0" />
+			<effect name="Lucky" abnormalTime="-1"  />
 		</for>
 	</skill>
 	<skill id="195" levels="2" name="Breath Boost">

@@ -664,7 +664,7 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="80" />
 			</effect>
 		</for>
@@ -995,7 +995,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="HpByLevel" noicon="1" val="0">
+			<effect name="HpByLevel" noicon="1">
 				<param power="73" />
 			</effect>
 			<effect count="7" name="DamOverTime" abnormalTime="3" val="250" abnormalLvl="3" abnormalType="casting_time_up">

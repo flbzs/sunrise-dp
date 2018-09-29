@@ -18,7 +18,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9101" levels="1" name="Icarus Weapon Box">
@@ -39,7 +39,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9102" levels="1" name="Dynasty Weapon Box">
@@ -60,7 +60,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9103" levels="1" name="Box of Vesper Armor">
@@ -81,7 +81,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9104" levels="1" name="Box of Moirai Armor">
@@ -102,7 +102,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9105" levels="1" name="Box of Dynasty Armor">
@@ -123,7 +123,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9106" levels="1" name="Soul Crystal Box - Level 14">
@@ -144,7 +144,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9107" levels="1" name="Soul Crystal Box - Level 15">
@@ -165,7 +165,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9108" levels="1" name="Soul Crystal Box - Level 16">
@@ -186,7 +186,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9109" levels="1" name="Box of Facelift Potions">
@@ -207,7 +207,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9110" levels="1" name="Box of Haircolor Change Potions">
@@ -228,7 +228,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9111" levels="1" name="Box of Hairstyle Change Potions">
@@ -249,7 +249,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9112" levels="1" name="Box of Gold Apiga">
@@ -270,7 +270,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9113" levels="1" name="Vitality Potion">
@@ -295,7 +295,7 @@
 		<set name="reuseDelay" val="2000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="GiveRecommendation" noicon="1" val="0">
+			<effect name="GiveRecommendation" noicon="1">
 				<param amount="10" />
 			</effect>
 		</for>
@@ -956,7 +956,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9159" levels="1" name="Transformation Scroll - Anakim">
@@ -1082,7 +1082,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9165" levels="1" name="Energy of Sprout">
@@ -1202,7 +1202,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="9178" levels="1" name="Theodric's Box">
@@ -1229,7 +1229,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>

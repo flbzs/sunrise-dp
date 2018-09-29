@@ -731,14 +731,14 @@
 			<effect name="HpByLevel" val="0">
 				<param power="#drain" />
 			</effect>
-			<effect name="ConsumeBody" noicon="1" val="0" />
+			<effect name="ConsumeBody" noicon="1" />
 		</for>
 		<enchant2for>
-			<effect name="HpByLevel" noicon="1" val="0">
+			<effect name="HpByLevel" noicon="1">
 				<param power="#ench1Drain" />
 			</effect>
 			<effect self="1" name="CpHeal" noicon="1" val="#ench2Bravery" />
-			<effect name="ConsumeBody" noicon="1" val="0" />
+			<effect name="ConsumeBody" noicon="1" />
 		</enchant2for>
 	</skill>
 	<skill id="1154" levels="6" name="Summon Corrupted Man" enchantGroup1="1">
@@ -806,7 +806,7 @@
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
 		<enchant2 name="power" val="#ench2Power" />
 		<for>
-			<effect name="ConsumeBody" noicon="1" val="0" />
+			<effect name="ConsumeBody" noicon="1" />
 		</for>
 	</skill>
 	<skill id="1156" levels="13" name="Forget">
@@ -827,7 +827,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="DeleteHateOfMe" noicon="1" val="0">
+			<effect name="DeleteHateOfMe" noicon="1">
 				<param chance="80" />
 			</effect>
 		</for>

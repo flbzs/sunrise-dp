@@ -37,7 +37,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="12774" npcCount="1" despawnDelay="180000" />
 			</effect>
 		</for>
@@ -53,7 +53,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="12777" npcCount="1" despawnDelay="180000" />
 			</effect>
 		</for>
@@ -171,7 +171,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0" />
+			<effect name="Resurrection" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2015" levels="1" name="Scroll: Enchant Weapon (Grade B)">
@@ -430,7 +430,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="POISON,3" />
 			</effect>
 		</for>
@@ -441,7 +441,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="POISON,7" />
 			</effect>
 		</for>
@@ -452,7 +452,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="BLEEDING,3" />
 			</effect>
 		</for>
@@ -463,7 +463,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="BLEEDING,7" />
 			</effect>
 		</for>
@@ -475,7 +475,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonPet" noicon="1" val="0" />
+			<effect name="SummonPet" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2047" levels="1" name="Spiritshot: No Grade">
@@ -505,7 +505,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>
@@ -699,7 +699,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="FATAL_POISON,1;FATAL_POISON_TWO,1" />
 			</effect>
 		</for>
@@ -724,7 +724,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>
@@ -829,7 +829,7 @@
 		<set name="offensive" val="true" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="RandomizeHate" noicon="1" val="0" />
+			<effect name="RandomizeHate" noicon="1" />
 			<effect name="Debuff" abnormalTime="10" abnormalLvl="1" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
@@ -846,7 +846,7 @@
 		<set name="offensive" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="DeleteHateOfMe" noicon="1" val="0">
+			<effect name="DeleteHateOfMe" noicon="1">
 				<param chance="70" />
 			</effect>
 		</for>
@@ -1196,7 +1196,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Sow" noicon="1" val="0" />
+			<effect name="Sow" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2098" levels="1" name="Harvesting">
@@ -1212,7 +1212,7 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="CORPSE_MOB" />
 		<for>
-			<effect name="Harvesting" noicon="1" val="0" />
+			<effect name="Harvesting" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2099" levels="1" name="Escape: 5 minutes">

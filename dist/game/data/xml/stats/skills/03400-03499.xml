@@ -115,7 +115,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>
@@ -160,7 +160,7 @@
 			<mul stat="pDef" val="1.046" /> <!-- P. Def +4.6% -->
 			<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
 			<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3413" levels="1" name="Dynasty Leather Armor">
@@ -173,7 +173,7 @@
 			<add stat="accCombat" val="1.72" /> <!-- Accuracy +1.72 -->
 			<add stat="maxHp" val="418" /> <!-- MaxHP +418 -->
 			<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3414" levels="1" name="Dynasty Leather Armor - Force Master">
@@ -186,7 +186,7 @@
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 Effect -->
 			<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
 			<mul stat="physicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3415" levels="1" name="Dynasty Leather Armor - Weapon Master">
@@ -200,7 +200,7 @@
 			<add stat="critRate" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
 			<add stat="critDmgAdd" val="234" /> <!-- Critical Damage +234 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3416" levels="1" name="Dynasty Tunic">
@@ -212,7 +212,7 @@
 			<mul stat="mAtkSpd" val="1.12" /> <!-- Casting Spd. +12% -->
 			<add stat="maxMp" val="257" /> <!-- Max MP +257 -->
 			<add stat="darkRes" val="6" /> <!-- Darkness Resistance +6 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3417" levels="1" name="Equipped with Shield">
@@ -257,7 +257,7 @@
 			<mul stat="pDef" val="1.0266" /> <!-- Increase P. Def. +2.66% -->
 			<add stat="maxHp" val="492" /> <!-- MaxHP +492 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3421" levels="1" name="Wolf Mount">
@@ -283,7 +283,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3424" levels="1" name="Little Devil Agathion - Summon (or Release)">
@@ -295,7 +295,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3425" levels="1" name="Rudolph Agathion - Summon (or Release)">
@@ -307,7 +307,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3426" levels="1" name="Maximum Ability">
@@ -1076,7 +1076,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="TRANSFORM,9" />
 			</effect>
 		</for>

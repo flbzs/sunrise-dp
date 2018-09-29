@@ -22,7 +22,7 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="10" />
@@ -48,14 +48,14 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="10" />
 				<param skillId="5693" skillLevel="1" /> <!-- PvP Armor - Speed Down -->
 				<param targetType="ONE" />
 			</effect>
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8303" levels="1" name="Vesper Light Armor Set for Adults">
@@ -71,7 +71,7 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="25" />
@@ -96,14 +96,14 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="25" />
 				<param skillId="5694" skillLevel="1" /> <!-- PvP Armor - Mirage -->
 				<param targetType="ONE" />
 			</effect>
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8305" levels="1" name="Vesper Robe Set for Adults">
@@ -120,7 +120,7 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="25" />
@@ -145,14 +145,14 @@
 			<mul stat="pvpMagicalDef" val="1.05" />
 			<mul stat="pvpPhysSkillsDef" val="1.05" />
 			<mul stat="pvpPhysDef" val="1.05" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="25" />
 				<param skillId="5691" skillLevel="1" /> <!-- PvP Armor - Critical Down -->
 				<param targetType="SELF" />
 			</effect>
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8307" levels="1" name="Boing Hammer's Effect of Doubt">
@@ -250,7 +250,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8315" levels="1" name="Santa Claus' Blessed Weapon">
@@ -332,7 +332,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8328" levels="1" name="Release Seal on Agathion - Oink oink">
@@ -344,7 +344,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8329" levels="1" name="Summon Friend">
@@ -368,7 +368,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8331" levels="1" name="Blue Talisman - Buff Cancel">
@@ -387,7 +387,7 @@
 		<set name="reuseDelay" val="360000" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="25" />
+			<effect name="Cancel" noicon="1" effectPower="25" />
 		</for>
 	</skill>
 	<skill id="8332" levels="1" name="Blue Talisman - Buff Steal">
@@ -405,7 +405,7 @@
 		<set name="reuseDelay" val="360000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="StealAbnormal" noicon="1" val="0" effectPower="25" />
+			<effect name="StealAbnormal" noicon="1" effectPower="25" />
 		</for>
 	</skill>
 	<skill id="8333" levels="1" name="Red Talisman - Territory Guard">
@@ -735,7 +735,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8359" levels="1" name="Notifier">
@@ -1169,7 +1169,7 @@
 			<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
 			<add stat="windRes" val="3" /> <!-- resistance to wind attributes +3 -->
 			<add stat="earthRes" val="3" /> <!-- resistance to earth attributes +3 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8398" levels="1" name="Moirai Leather Armor Set">
@@ -1186,7 +1186,7 @@
 			<add stat="waterRes" val="3" /> <!-- resistance to water attributes +3 -->
 			<add stat="windRes" val="3" /> <!-- resistance to wind attributes +3 -->
 			<add stat="earthRes" val="3" /> <!-- resistance to earth attributes +3 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="8399" levels="1" name="Moirai Robe Set">
@@ -1202,7 +1202,7 @@
 			<add stat="waterRes" val="5" /> <!-- resistance to water attributes +5 -->
 			<add stat="windRes" val="5" /> <!-- resistance to wind attributes +5 -->
 			<add stat="earthRes" val="5" /> <!-- resistance to earth attributes +5 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 </list>

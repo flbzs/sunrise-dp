@@ -161,7 +161,7 @@
 			<mul stat="physicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="magicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="danceMpConsumeRate" val="#mpConsumeRate" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="10" />
@@ -186,7 +186,7 @@
 			<mul stat="physicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="magicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="danceMpConsumeRate" val="#mpConsumeRate" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="10" />
@@ -211,7 +211,7 @@
 			<mul stat="physicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="magicalMpConsumeRate" val="#mpConsumeRate" />
 			<mul stat="danceMpConsumeRate" val="#mpConsumeRate" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="10" />
@@ -577,7 +577,7 @@
 		</cond>
 		<for>
 			<effect name="ClanGate" abnormalTime="120" abnormalLvl="1" abnormalType="abnormal_item" />
-			<effect name="ImmobileBuff" abnormalTime="120" noicon="1" val="0" />
+			<effect name="ImmobileBuff" abnormalTime="120" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3633" levels="2" name="Residential Shock Immunity">
@@ -638,7 +638,7 @@
 			<mul stat="healEffect" val="1.04" /> <!-- Heal Capacity +4% -->
 			<sub stat="stunVuln" val="15" /> <!-- Stun Resistance +15 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3637" levels="1" name="Dynasty Platinum Plate - Weapon Master">
@@ -652,7 +652,7 @@
 			<add stat="critRate" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
 			<add stat="critDmgAdd" val="282" /> <!-- Critical Damage +282 -->
 			<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3638" levels="1" name="Dynasty Platinum Plate - Bard">
@@ -665,7 +665,7 @@
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 			<mul stat="danceMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Song and Dance Skills -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3639" levels="1" name="Dynasty Platinum Plate - Force Master">
@@ -678,7 +678,7 @@
 			<add stat="maxHp" val="492" /> <!-- Maximum HP +492 effect -->
 			<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 Increase -->
 			<mul stat="physicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% Decrease for Active Skills -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3640" levels="1" name="Dynasty Jewel Leather Mail Dagger Master">
@@ -692,7 +692,7 @@
 			<mul stat="pAtkSpd" val="1.0324" /> <!-- Atk. Spd. +3.24% -->
 			<sub stat="rootVuln" val="15" /> <!-- Hold Resistance +15% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3641" levels="1" name="Dynasty Jewel Leather Mail Bow Master">
@@ -706,7 +706,7 @@
 			<mul stat="pAtkSpd" val="1.0324" /> <!-- Atk. Spd. +3.24% -->
 			<add stat="regMp" val="1.066" /> <!-- MP Recovery +6.6% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3642" levels="1" name="Dynasty Jeweled Leather Armor Force Master">
@@ -719,7 +719,7 @@
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
 			<mul stat="physicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3643" levels="1" name="Dynasty Jeweled Leather Armor Weapon Master">
@@ -733,7 +733,7 @@
 			<add stat="critRate" val="29.5" /> <!-- Critical Rate +29.5 Increase -->
 			<add stat="critDmgAdd" val="282" /> <!-- Critical Damage +282 -->
 			<add stat="darkRes" val="8" /> <!-- Darkness Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3644" levels="1" name="Dynasty Jeweled Leather Armor Summoner">
@@ -747,7 +747,7 @@
 			<mul stat="pDef" val="1.0266" /> <!-- P. Def. +2.66% -->
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3645" levels="1" name="Dynasty Silver Satin Tunic Healer">
@@ -761,7 +761,7 @@
 			<add stat="healEffect" val="22" /> <!-- Heal Capacity +22 -->
 			<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3646" levels="1" name="Dynasty Silver Satin Tunic Enchanter">
@@ -775,7 +775,7 @@
 			<sub stat="cancel" val="15" /> <!-- Magic Cancel Rate -15 -->
 			<mul stat="magicalMpConsumeRate" val="0.94" /> <!-- MP Consumption -6% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3647" levels="1" name="Dynasty Silver Satin Tunic Summoner">
@@ -789,7 +789,7 @@
 			<mul stat="pDef" val="1.033" /> <!-- P. Def. +3.3% -->
 			<mul stat="pAtk" val="1.033" /> <!-- P. Atk. +3.3% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3648" levels="1" name="Dynasty Silver Satin Tunic Human Wizard">
@@ -802,7 +802,7 @@
 			<mul stat="mAtk" val="1.066" /> <!-- M. Atk. +6.6% -->
 			<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3649" levels="1" name="Beleth's Ring">
@@ -894,7 +894,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="5" />
@@ -958,7 +958,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="40" />
 				<param chance="10" />
@@ -973,7 +973,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="20" />
@@ -988,7 +988,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="20" />
@@ -1003,7 +1003,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill" noicon="1" val="0">
+			<effect name="TriggerSkillBySkill" noicon="1">
 				<param castSkillId="1401" /> <!-- Major Heal -->
 				<param chance="5" />
 				<param skillId="5692" skillLevel="1" /> <!-- PvP Armor - Heal -->
@@ -1017,7 +1017,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="10" />
@@ -1032,7 +1032,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="50" />
 				<param chance="25" />
@@ -1090,7 +1090,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="20" />
 				<param chance="2" />

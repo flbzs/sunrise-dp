@@ -325,7 +325,7 @@
 				<sub stat="debuffVuln" val="30" />
 				<mul stat="healEffect" val="1.3" />
 			</effect>
-			<effect name="CancelDebuff" noicon="1" val="0" effectPower="80" />
+			<effect name="CancelDebuff" noicon="1" effectPower="80" />
 		</for>
 	</skill>
 	<skill id="915" levels="1" name="Dance of Berserker">
@@ -753,7 +753,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Detection" noicon="1" val="0"/>
+			<effect name="Detection" noicon="1"/>
 		</for>
 	</skill>
 	<skill id="934" levels="1" name="Sigil Mastery">
@@ -1055,7 +1055,7 @@
 				<using kind="SWORD,BLUNT" />
 			</add>
 			<mul stat="rShld" val="#rShld" />
-			<effect name="TriggerSkillBySkill" noicon="1" val="0">
+			<effect name="TriggerSkillBySkill" noicon="1">
 				<param castSkillId="997" /> <!-- Crushing Strike -->
 				<param chance="30" />
 				<param skillId="6920" skillLevel="1" /> <!-- Collector's Fortune -->
@@ -1501,7 +1501,7 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" effectPower="80" />
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="40" />
 			</effect>
 		</for>
@@ -1615,7 +1615,7 @@
 		</cond>
 		<for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="80" abnormalLvl="1" abnormalType="stun" />
-			<effect name="EnemyCharge" noicon="1" val="0" />
+			<effect name="EnemyCharge" noicon="1" />
 		</for>
 	</skill>
 	<skill id="979" levels="6" name="Aggression">
@@ -1724,7 +1724,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="1" />
 				<param chance="10" />
@@ -1755,7 +1755,7 @@
 			<using kind="SHIELD" />
 		</cond>
 		<for>
-			<effect name="GetAgro" noicon="1" val="0" />
+			<effect name="GetAgro" noicon="1" />
 		</for>
 	</skill>
 	<skill id="985" levels="1" name="Challenge for Fate">
@@ -1775,8 +1775,8 @@
 		<set name="skillType" val="AGGDAMAGE" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="TargetMe" noicon="1" val="0" abnormalTime="5" abnormalLvl="1" abnormalType="target_lock" effectPower="100" />
-			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_START" triggeredId="6913" triggeredLevel="1" />
+			<effect name="TargetMe" noicon="1" abnormalTime="5" abnormalLvl="1" abnormalType="target_lock" effectPower="100" />
+			<effect self="1" name="ChanceSkillTrigger" noicon="1" chanceType="ON_START" triggeredId="6913" triggeredLevel="1" />
 		</for>
 	</skill>
 	<skill id="986" levels="25" name="Deadly Strike">
@@ -2015,7 +2015,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="EnemyCharge" noicon="1" val="0" />
+			<effect name="EnemyCharge" noicon="1" />
 		</for>
 	</skill>
 	<skill id="995" levels="1" name="Rush Impact">
@@ -2136,7 +2136,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="EnemyCharge" noicon="1" val="0" />
+			<effect name="EnemyCharge" noicon="1" />
 		</for>
 	</skill>
 </list>

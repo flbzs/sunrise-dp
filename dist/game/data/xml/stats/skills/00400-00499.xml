@@ -57,7 +57,7 @@
 				<mul stat="rapierWpnVuln" val="#vuln" />
 				<mul stat="ancientWpnVuln" val="#vuln" />
 			</effect>
-			<effect name="TargetMe" abnormalTime="3" noicon="1" val="0" /> <!-- FIXME: abnormalTime unconfirmed -->
+			<effect name="TargetMe" abnormalTime="3" noicon="1" /> <!-- FIXME: abnormalTime unconfirmed -->
 		</for>
 		<enchant2for>
 			<effect name="Debuff" abnormalTime="30" abnormalLvl="3" abnormalType="critical_prob_down" effectPower="#ench2Power" >
@@ -73,7 +73,7 @@
 				<mul stat="rapierWpnVuln" val="1.2" />
 				<mul stat="ancientWpnVuln" val="1.2" />
 			</effect>
-			<effect name="TargetMe" abnormalTime="3" noicon="1" val="0" /> <!-- FIXME: abnormalTime unconfirmed -->
+			<effect name="TargetMe" abnormalTime="3" noicon="1" /> <!-- FIXME: abnormalTime unconfirmed -->
 		</enchant2for>
 		<enchant3for>
 			<effect name="Debuff" abnormalTime="30" abnormalLvl="3" abnormalType="critical_prob_down" effectPower="80" >
@@ -90,7 +90,7 @@
 				<mul stat="rapierWpnVuln" val="1.2" />
 				<mul stat="ancientWpnVuln" val="1.2" />
 			</effect>
-			<effect name="TargetMe" abnormalTime="3" noicon="1" val="0" /> <!-- FIXME: abnormalTime unconfirmed -->
+			<effect name="TargetMe" abnormalTime="3" noicon="1" /> <!-- FIXME: abnormalTime unconfirmed -->
 		</enchant3for>
 	</skill>
 	<skill id="401" levels="10" name="Judgment" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">
@@ -154,7 +154,7 @@
 				<mul stat="rapierWpnVuln" val="#vuln" />
 				<mul stat="ancientWpnVuln" val="#vuln" />
 			</effect>
-			<effect name="TargetMe" abnormalTime="3" noicon="1" val="0" /> <!-- FIXME: abnormalTime unconfirmed -->
+			<effect name="TargetMe" abnormalTime="3" noicon="1" /> <!-- FIXME: abnormalTime unconfirmed -->
 		</for>
 		<enchant2for>
 			<effect name="Debuff" abnormalTime="#ench2Time" abnormalLvl="1" abnormalType="critical_dmg_down" effectPower="80" >
@@ -170,7 +170,7 @@
 				<mul stat="rapierWpnVuln" val="1.2" />
 				<mul stat="ancientWpnVuln" val="1.2" />
 			</effect>
-			<effect name="TargetMe" abnormalTime="3" noicon="1" val="0" /> <!-- FIXME: abnormalTime unconfirmed -->
+			<effect name="TargetMe" abnormalTime="3" noicon="1" /> <!-- FIXME: abnormalTime unconfirmed -->
 		</enchant2for>
 		<enchant3for>
 			<effect name="Debuff" abnormalTime="30" abnormalLvl="1" abnormalType="critical_dmg_down" effectPower="80" >
@@ -187,7 +187,7 @@
 				<mul stat="rapierWpnVuln" val="1.2" />
 				<mul stat="ancientWpnVuln" val="1.2" />
 			</effect>
-			<effect name="TargetMe" abnormalTime="3" noicon="1" val="0" /> <!-- FIXME: abnormalTime unconfirmed -->
+			<effect name="TargetMe" abnormalTime="3" noicon="1" /> <!-- FIXME: abnormalTime unconfirmed -->
 		</enchant3for>
 	</skill>
 	<skill id="402" levels="10" name="Arrest" enchantGroup1="1" enchantGroup2="1">
@@ -904,7 +904,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="420" levels="3" name="Zealot" enchantGroup1="1" enchantGroup2="1">
@@ -1559,8 +1559,8 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="targetType" val="AURA_CORPSE_MOB" />
 		<for>
-			<effect name="Sweeper" noicon="1" val="0" />
-			<effect name="ConsumeBody" noicon="1" val="0" />
+			<effect name="Sweeper" noicon="1" />
+			<effect name="ConsumeBody" noicon="1" />
 		</for>
 	</skill>
 	<skill id="445" levels="1" name="Mirage">
@@ -1669,13 +1669,13 @@
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="9" cubicDelay="8" cubicDuration="900" cubicMaxCount="300" cubicSkillChance="50" cubicPower="#cubicPower" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="9" cubicDelay="8" cubicDuration="900" cubicMaxCount="300" cubicSkillChance="50" cubicPower="#ench1Power" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
@@ -1791,13 +1791,13 @@
 		</cond>
 		<for>
 			<effect name="Stun" abnormalTime="9" abnormalLvl="2" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="#effectPower" />
 			</effect>
 		</for>
 		<enchant1for>
 			<effect name="Stun" abnormalTime="9" abnormalLvl="2" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="#ench1Power" />
 			</effect>
 		</enchant1for>
@@ -1813,7 +1813,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="ROOT_PHYSICALLY,3" />
 			</effect>
 		</for>
@@ -1983,7 +1983,7 @@
 			<player Charges="#chargeConsume" /> <!-- Level 2 3 Focused Force charge required. -->
 		</cond>
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="#dispelAbnormals" />
 			</effect>
 		</for>
@@ -2113,7 +2113,7 @@
 			<effect name="Buff" nocicon="1" val="0">
 				<set stat="maxSouls" val="#maxSouls" />
 			</effect>
-			<effect name="SoulEating" abnormalTime="-1" val="0">
+			<effect name="SoulEating" abnormalTime="-1" >
 				<param expNeeded="#expNeeded" />
 			</effect>
 			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
@@ -2183,7 +2183,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="TrapDetect" noicon="1" val="0" >
+			<effect name="TrapDetect" noicon="1" >
 				<param power="#power" />
 			</effect>
 		</for>
@@ -2205,7 +2205,7 @@
 			<target npcType="L2TrapInstance" />
 		</cond>
 		<for>
-			<effect name="TrapRemove" noicon="1" val="0" >
+			<effect name="TrapRemove" noicon="1" >
 				<param power="#power" />
 			</effect>
 		</for>
@@ -2538,7 +2538,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="EnemyCharge" noicon="1" val="0" />
+			<effect name="EnemyCharge" noicon="1" />
 		</for>
 	</skill>
 	<skill id="485" levels="7" name="Disarm" enchantGroup1="1" enchantGroup2="1">
@@ -2637,7 +2637,7 @@
 			<using kind="CROSSBOW" />
 		</cond>
 		<for>
-			<effect name="TransferHate" noicon="1" val="0">
+			<effect name="TransferHate" noicon="1">
 				<param chance="80" />
 			</effect>
 		</for>
@@ -2846,11 +2846,11 @@
 		</cond>
 		<for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="70" abnormalLvl="1" abnormalType="stun" />
-			<effect name="EnemyCharge" noicon="1" val="0" />
+			<effect name="EnemyCharge" noicon="1" />
 		</for>
 		<enchant2for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="#ench2Chance" abnormalLvl="1" abnormalType="stun" />
-			<effect name="EnemyCharge" noicon="1" val="0" />
+			<effect name="EnemyCharge" noicon="1" />
 		</enchant2for>
 	</skill>
 	<skill id="495" levels="10" name="Blade Rush" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">

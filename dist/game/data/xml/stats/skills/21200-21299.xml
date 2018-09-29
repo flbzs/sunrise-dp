@@ -35,7 +35,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21203" levels="1" name="Agathion Seal Cancel - Ball Trapping Orodriel">
@@ -47,7 +47,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21204" levels="1" name="Agathion Seal Cancel - Penalty Kick">
@@ -59,7 +59,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21205" levels="1" name="Agathion Seal Cancel - Ball Trapping Gnocian">
@@ -71,7 +71,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21206" levels="1" name="Agathion Seal Cancel - Ball Trapping Orodriel">
@@ -83,7 +83,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21207" levels="1" name="Agathion Seal Cancel - Penalty Kick">
@@ -95,7 +95,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21208" levels="1" name="Agathion Seal Cancel - Ball Trapping Gnocian">
@@ -107,7 +107,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21209" levels="1" name="Agathion Seal Cancel - Ball Trapping Orodriel">
@@ -119,7 +119,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21210" levels="1" name="Agathion Seal Cancel - Penalty Kick">
@@ -131,7 +131,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21211" levels="1" name="Blessing of Victory">
@@ -149,7 +149,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21213" levels="1" name="Agathion Seal Cancel - Flower Fairy Spirit">
@@ -161,7 +161,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21214" levels="1" name="Agathion Seal Cancel - Cheerleader Orodriel">
@@ -173,7 +173,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21215" levels="1" name="Agathion Seal Cancel - Cheerleader Lana">
@@ -185,7 +185,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21216" levels="1" name="Agathion Seal Cancel - Cheerleader Naonin">
@@ -197,7 +197,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21217" levels="1" name="Agathion Seal Cancel - Cheerleader Mortia">
@@ -209,7 +209,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21218" levels="1" name="Agathion Seal Cancel - Cheerleader Kaurin">
@@ -221,7 +221,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21219" levels="1" name="Agathion Seal Cancel - Cheerleader Meruril">
@@ -233,7 +233,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21220" levels="1" name="Agathion Seal Cancel - Handy">
@@ -245,7 +245,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21221" levels="1" name="Blessed Resurrection">
@@ -343,7 +343,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21234" levels="1" name="Release Seal on Agathion - Zaken Spirit Sword">
@@ -355,7 +355,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21235" levels="1" name="7th Anniversary T-shirt: Speed">
@@ -409,7 +409,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21240" levels="1" name="Release Seal on Agathion - Tow">
@@ -421,7 +421,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21241" levels="1" name="Magic Glasses">
@@ -493,7 +493,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21246" levels="1" name="Rudolph's Energy">
@@ -517,7 +517,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21249" levels="1" name="Release Seal on Agathion - Enze">
@@ -529,7 +529,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21250" levels="1" name="Academy Circlet">
@@ -677,7 +677,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21260" levels="1" name="Notifier">
@@ -725,7 +725,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="21267" levels="1" name="Notifier">

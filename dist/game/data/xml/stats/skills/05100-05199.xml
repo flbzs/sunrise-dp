@@ -214,7 +214,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="25" />
+			<effect name="Cancel" noicon="1" effectPower="25" />
 		</for>
 	</skill>
 	<skill id="5114" levels="12" name="Hold">
@@ -318,7 +318,7 @@
 		<set name="reuseDelay" val="6000" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="25" />
+			<effect name="Cancel" noicon="1" effectPower="25" />
 		</for>
 	</skill>
 	<skill id="5119" levels="1" name="Bleed">
@@ -414,7 +414,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="DANCE_OF_AQUA_GUARD;DANCE_OF_CONCENTRATION;DANCE_OF_CONCENTRATION;DANCE_OF_EARTH_GUARD;DANCE_OF_FIRE;DANCE_OF_FURY;DANCE_OF_INSPIRATION;DANCE_OF_LIGHT;DANCE_OF_MYSTIC;DANCE_OF_PROTECTION;DANCE_OF_SHADOW;DANCE_OF_SIREN;DANCE_OF_VAMPIRE;DANCE_OF_WARRIOR;SONG_OF_CHAMPION;SONG_OF_EARTH;SONG_OF_FLAME_GUARD;SONG_OF_HUNTER;SONG_OF_INVOCATION;SONG_OF_LIFE;SONG_OF_MEDITATION;SONG_OF_RENEWAL;SONG_OF_STORM_GUARD;SONG_OF_VENGEANCE;SONG_OF_VITALITY;SONG_OF_WARDING;SONG_OF_WATER;SONG_OF_WIND;DANCE_OF_BLADESTORM;DANCE_OF_ALIGNMENT;SONG_OF_ELEMENTAL;SONG_OF_WINDSTORM" rate="100" />
 			</effect>
 		</for>
@@ -717,7 +717,7 @@
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<for>
-			<effect name="ConsumeBody" noicon="1" val="0" />
+			<effect name="ConsumeBody" noicon="1" />
 		</for>
 	</skill>
 	<skill id="5143" levels="1" name="Sailren Use Blow">
@@ -749,7 +749,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" />
 		</for>
 	</skill>
 	<skill id="5145" levels="1" name="Day of Doom">
@@ -1182,7 +1182,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="AddHate" noicon="1" val="0">
+			<effect name="AddHate" noicon="1">
 				<param power="#power" />
 			</effect>
 		</for>
@@ -1568,7 +1568,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="ThrowUp" noicon="1" val="0" />
+			<effect name="ThrowUp" noicon="1" />
 		</for>
 	</skill>
 	<skill id="5184" levels="1" name="Production: Valakas Dragon Breath">
