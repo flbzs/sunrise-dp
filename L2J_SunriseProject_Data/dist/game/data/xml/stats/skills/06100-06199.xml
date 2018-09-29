@@ -268,7 +268,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="BlockBuffSlot" noicon="1" val="0">
+			<effect name="BlockBuffSlot" noicon="1">
 				<param slot="LIMIT" />
 			</effect>
 		</for>

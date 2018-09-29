@@ -492,7 +492,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="139" npcCount="1" despawnDelay="1200000" />
 			</effect>
 		</for>
@@ -651,7 +651,7 @@
 			<target npcType="L2ChestInstance" />
 		</cond>
 		<for>
-			<effect name="OpenChest" noicon="1" val="0" />
+			<effect name="OpenChest" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22272" levels="1" name="Beginner Adventurer's Treasure Sack">
@@ -670,7 +670,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" /> 
+			<effect name="RestorationRandom" noicon="1" /> 
 		</for>
 	</skill>
 	<skill id="22273" levels="1" name="Experienced Adventurer's Treasure Sack">
@@ -689,7 +689,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" /> 
+			<effect name="RestorationRandom" noicon="1" /> 
 		</for>
 	</skill>
 	<skill id="22274" levels="1" name="Great Adventurer's Treasure Sack">
@@ -708,7 +708,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" /> 
+			<effect name="RestorationRandom" noicon="1" /> 
 		</for>
 	</skill>
 	<skill id="22275" levels="1" name="Rune Jewelry Box - Crystal">
@@ -734,7 +734,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22277" levels="1" name="Pablo's Box">
@@ -753,7 +753,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22278" levels="1" name="Large Ancient Weapon">
@@ -898,7 +898,7 @@
 		<set name="reuseDelay" val="600" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="143" npcCount="1" despawnDelay="1800000" />
 			</effect>
 		</for>
@@ -911,7 +911,7 @@
 		<set name="reuseDelay" val="600" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="144" npcCount="1" despawnDelay="1800000" />
 			</effect>
 		</for>
@@ -925,7 +925,7 @@
 		<set name="reuseDelay" val="600" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="145" npcCount="1" despawnDelay="1800000" />
 			</effect>
 		</for>
@@ -938,7 +938,7 @@
 		<set name="reuseDelay" val="600" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="146" npcCount="1" despawnDelay="1800000" />
 			</effect>
 		</for>

@@ -349,7 +349,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChangeFace" noicon="1" val="0" />
+			<effect name="ChangeFace" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2123" levels="1" name="Facelifting Potion">
@@ -388,7 +388,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChangeHairColor" noicon="1" val="0" />
+			<effect name="ChangeHairColor" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2126" levels="1" name="Dye Potion">
@@ -440,7 +440,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="ChangeHairStyle" noicon="1" val="0" />
+			<effect name="ChangeHairStyle" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2130" levels="1" name="Hair Style Change Potion">
@@ -547,7 +547,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="13006" npcCount="1" despawnDelay="1200000" />
 			</effect>
 		</for>
@@ -560,7 +560,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="13007" npcCount="1" despawnDelay="1200000" />
 			</effect>
 		</for>
@@ -818,7 +818,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="SLEEP,1" />
 			</effect>
 		</for>
@@ -841,7 +841,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2172" levels="1" name="Scroll of Giants">
@@ -861,7 +861,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2173" levels="1" name="Book of Giants">
@@ -881,7 +881,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2174" levels="3" name="Ingredient Bag">
@@ -903,7 +903,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2175" levels="1" name="Ingredient Box">
@@ -923,7 +923,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2176" levels="4" name="Ancient Papyrus">
@@ -946,7 +946,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2177" levels="1" name="Blessed Scroll of Escape: Clan Hall">
@@ -995,7 +995,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>
@@ -1101,7 +1101,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2191" levels="9" name="Item - Jade Fish">
@@ -1129,7 +1129,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2192" levels="9" name="Item - Blue Fish">
@@ -1157,7 +1157,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2193" levels="9" name="Item - Yellow Fish">
@@ -1185,7 +1185,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2194" levels="9" name="Item - Orange Fish">
@@ -1213,7 +1213,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2195" levels="9" name="Item - Violet Fish">
@@ -1241,7 +1241,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2196" levels="9" name="Item - Red Fish">
@@ -1269,7 +1269,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2197" levels="9" name="Item - White Fish">
@@ -1297,7 +1297,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2198" levels="9" name="Item - Black Fish">
@@ -1325,7 +1325,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2199" levels="3" name="Item - Green Treasure Box">
@@ -1347,7 +1347,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 </list>

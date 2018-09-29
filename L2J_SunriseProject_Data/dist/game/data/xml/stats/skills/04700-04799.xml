@@ -44,7 +44,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="ATTACK_TIME_UP;HIT_DOWN;PA_DOWN" rate="#power" />
 			</effect>
 		</for>
@@ -118,7 +118,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="SLEEP;ROOT_MAGICALLY;STUN;PARALYZE;SILENCE" rate="#power" />
 			</effect>
 		</for>
@@ -158,7 +158,7 @@
 				<mul stat="mDef" val="#mpDef" />
 				<mul stat="pDef" val="#mpDef" />
 			</effect>
-			<effect name="TargetMe" abnormalTime="30" noicon="1" val="0" effectPower="80" />
+			<effect name="TargetMe" abnormalTime="30" noicon="1" effectPower="80" />
 		</for>
 	</skill>
 	<skill id="4706" levels="13" name="Mass Curse of Shade">
@@ -197,7 +197,7 @@
 				<mul stat="mDef" val="#mpDef" />
 				<mul stat="pDef" val="#mpDef" />
 			</effect>
-			<effect name="TargetMe" abnormalTime="30" noicon="1" val="0" effectPower="40" />
+			<effect name="TargetMe" abnormalTime="30" noicon="1" effectPower="40" />
 		</for>
 	</skill>
 	<skill id="4707" levels="13" name="Shade Sacrifice">

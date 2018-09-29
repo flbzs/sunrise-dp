@@ -119,7 +119,7 @@
 			<player levelRange="61;85" />
 		</cond>
 		<for>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="TURN_STONE" rate="99" />
 			</effect>
 		</for>
@@ -176,7 +176,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2309" levels="1" name="Pig Chest">
@@ -196,7 +196,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2310" levels="1" name="Scroll of Guidance - Event Use">
@@ -396,7 +396,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>
@@ -435,7 +435,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2324" levels="1" name="Blue Sage's Stone">
@@ -456,7 +456,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2325" levels="1" name="Orange Sage's Stone">
@@ -477,7 +477,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2326" levels="1" name="Black Sage's Stone">
@@ -498,7 +498,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2327" levels="1" name="White Sage's Stone">
@@ -519,7 +519,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2328" levels="1" name="Green Sage's Stone">
@@ -540,7 +540,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2329" levels="4" name="Fire Stone">
@@ -877,7 +877,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="DetectHiddenObjects" noicon="1" val="0" />
+			<effect name="DetectHiddenObjects" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2354" levels="1" name="Gate Key of Darkness">
@@ -1578,7 +1578,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>

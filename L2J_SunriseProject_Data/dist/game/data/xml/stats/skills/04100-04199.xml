@@ -772,7 +772,7 @@
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="AREA_CORPSE_MOB" />
 		<for>
-			<effect name="ConsumeBody" noicon="1" val="0" />
+			<effect name="ConsumeBody" noicon="1" />
 		</for>
 	</skill>
 	<skill id="4139" levels="12" name="Boom Attack">
@@ -928,7 +928,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="DispelAll" noicon="1" val="0" />
+			<effect name="DispelAll" noicon="1" />
 		</for>
 	</skill>
 	<skill id="4148" levels="12" name="Poison">
@@ -1556,7 +1556,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="DispelAll" noicon="1" val="0" />
+			<effect name="DispelAll" noicon="1" />
 		</for>
 	</skill>
 	<skill id="4178" levels="12" name="BOSS Flame Strike">

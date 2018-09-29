@@ -32,7 +32,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="70" />
 			</effect>
 		</for>
@@ -48,7 +48,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="CancelDebuff" noicon="1" val="0" effectPower="100" />
+			<effect name="CancelDebuff" noicon="1" effectPower="100" />
 		</for>
 	</skill>
 	<skill id="703" levels="1" name="Sacrifice Healer">
@@ -67,7 +67,7 @@
 			<player mp="10" />
 		</cond>
 		<for>
-			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_EXIT" triggeredId="5602" />
+			<effect self="1" name="ChanceSkillTrigger" noicon="1" chanceType="ON_EXIT" triggeredId="5602" />
 			<effect name="HealPercent" noicon="1" val="100" />
 			<effect name="ManaHealPercent" noicon="1" val="100" />
 		</for>
@@ -258,7 +258,7 @@
 				<mul stat="mAtk" val="1.1" />
 				<mul stat="mAtkSpd" val="1.1" />
 			</effect>
-			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_START" triggeredId="5602" />
+			<effect self="1" name="ChanceSkillTrigger" noicon="1" chanceType="ON_START" triggeredId="5602" />
 		</for>
 	</skill>
 	<skill id="710" levels="1" name="Divine Summoner Summon Divine Beast">
@@ -365,7 +365,7 @@
 				<basemul stat="critRate" val="0.2" />
 				<mul stat="critDmg" val="1.2" />
 			</effect>
-			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_START" triggeredId="5602" />
+			<effect self="1" name="ChanceSkillTrigger" noicon="1" chanceType="ON_START" triggeredId="5602" />
 		</for>
 	</skill>
 	<skill id="715" levels="4" name="Zaken Energy Drain">
@@ -571,7 +571,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="CancelDebuff" noicon="1" val="0" effectPower="100" />
+			<effect name="CancelDebuff" noicon="1" effectPower="100" />
 		</for>
 	</skill>
 	<skill id="725" levels="2" name="Venom Power Smash">
@@ -810,7 +810,7 @@
 		<for>
 			<!-- 351HP * 3 during 15 seconds -->
 			<effect count="5" name="DamOverTime" abnormalTime="3" val="1053" abnormalVisualEffect="bleed" abnormalLvl="9" abnormalType="dark_seed" />
-			<effect name="ChanceSkillTrigger" abnormalTime="15" noicon="1" val="0" triggeredId="5248" triggeredLevel="9" chanceType="ON_EXIT" />
+			<effect name="ChanceSkillTrigger" abnormalTime="15" noicon="1" triggeredId="5248" triggeredLevel="9" chanceType="ON_EXIT" />
 		</for>
 	</skill>
 	<skill id="737" levels="1" name="Devil Ultimate Defense">
@@ -891,7 +891,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="#power" />
 			</effect>
 		</for>
@@ -1012,7 +1012,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="CancelDebuff" noicon="1" val="0" effectPower="100" />
+			<effect name="CancelDebuff" noicon="1" effectPower="100" />
 		</for>
 	</skill>
 	<skill id="746" levels="3" name="Saber Tooth Tiger Bite">
@@ -1230,7 +1230,7 @@
 		<set name="targetType" val="SELF" />
 		<for>
 			<mul stat="mDef" val="1.15" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="300" />
 				<param chance="20" />
@@ -1249,7 +1249,7 @@
 			<add stat="waterRes" val="20" />
 			<add stat="windRes" val="20" />
 			<add stat="earthRes" val="20" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="20" />
@@ -1266,7 +1266,7 @@
 		<for>
 			<add stat="holyRes" val="20" />
 			<add stat="darkRes" val="20" />
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="20" />
@@ -1401,10 +1401,10 @@
 				<add stat="debuffVuln" val="30" />
 				<mul stat="healEffect" val="0.7" />
 			</effect>
-			<effect name="DispelOne" noicon="1" val="0">
+			<effect name="DispelOne" noicon="1">
 				<param ordered="true" />
 			</effect>
-			<effect name="Cancel" noicon="1" val="0" effectPower="25">
+			<effect name="Cancel" noicon="1" effectPower="25">
 				<param ordered="true" />
 			</effect>
 		</for>
@@ -1522,7 +1522,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="1" />
 				<param chance="5" />
@@ -1760,7 +1760,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="EnergyAttack" noicon="1" val="0">
+			<effect name="EnergyAttack" noicon="1">
 				<param power="4500" />
 				<param criticalChance="20" />
 			</effect>
@@ -1827,7 +1827,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="10" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
@@ -1847,7 +1847,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="11" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
@@ -1867,7 +1867,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="12" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
@@ -1887,7 +1887,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="13" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>
@@ -1907,7 +1907,7 @@
 		<set name="reuseDelay" val="5000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="14" cubicDelay="10" cubicDuration="900" cubicMaxCount="50" cubicSkillChance="30" cubicPower="2106" />
 				<param cubicSkill1Chance="33" cubicSkill2Chance="33" cubicSkill3Chance="33" />
 			</effect>

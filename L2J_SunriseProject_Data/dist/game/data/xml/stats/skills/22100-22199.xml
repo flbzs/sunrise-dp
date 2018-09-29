@@ -29,7 +29,7 @@
 				<mul stat="physicalMpConsumeRate" val="0.9" />
 				<mul stat="danceMpConsumeRate" val="0.9" />
 			</effect>
-			<effect name="ConsumeBody" noicon="1" val="0" />
+			<effect name="ConsumeBody" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22101" levels="1" name="Fortune of Love Box">
@@ -51,7 +51,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22102" levels="1" name="Soul Magic Box">
@@ -107,7 +107,7 @@
 			<player canResurrect="true" />
 		</cond>
 		<for>
-			<effect name="Resurrection" noicon="1" val="0">
+			<effect name="Resurrection" noicon="1">
 				<param power="100" />
 			</effect>
 		</for>
@@ -202,7 +202,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22109" levels="1" name="Shiny Halloween Toy Box">
@@ -223,7 +223,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22110" levels="1" name="Lucky Sky Lantern Summon">
@@ -236,7 +236,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="22" npcCount="1" />
 			</effect>
 		</for>
@@ -251,7 +251,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="23" npcCount="1" />
 			</effect>
 		</for>
@@ -266,7 +266,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="24" npcCount="1" />
 			</effect>
 		</for>
@@ -281,7 +281,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="25" npcCount="1" />
 			</effect>
 		</for>
@@ -304,7 +304,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22115" levels="1" name="Santa's Weapon Exchange Ticket Box">
@@ -326,7 +326,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22116" levels="1" name="Summon Flames Box">
@@ -339,7 +339,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="29" npcCount="1" />
 			</effect>
 		</for>
@@ -541,7 +541,7 @@
 		<set name="reuseDelay" val="600000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="127" npcCount="1" despawnDelay="7200" />
 			</effect>
 		</for>
@@ -712,7 +712,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="VitalityPointUp" noicon="1" val="0">
+			<effect name="VitalityPointUp" noicon="1">
 				<param value="20000" />
 			</effect>
 		</for>
@@ -727,7 +727,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="VitalityPointUp" noicon="1" val="0">
+			<effect name="VitalityPointUp" noicon="1">
 				<param value="20000" />
 			</effect>
 		</for>
@@ -1229,7 +1229,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22168" levels="1" name="Thirst Quencher">
@@ -1259,7 +1259,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22170" levels="1" name="Hardin's Protection">
@@ -1338,7 +1338,7 @@
 			<player hp="30" />
 		</cond>
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" chanceType="ON_START" triggeredId="23214" />
+			<effect name="ChanceSkillTrigger" abnormalTime="-1"  chanceType="ON_START" triggeredId="23214" />
 		</for>
 	</skill>
 	<skill id="22176" levels="1" name="Rune of Spirit">
@@ -1350,7 +1350,7 @@
 			<player mp="10" />
 		</cond>
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="-1" val="0" chanceType="ON_START" triggeredId="23215" />
+			<effect name="ChanceSkillTrigger" abnormalTime="-1"  chanceType="ON_START" triggeredId="23215" />
 		</for>
 	</skill>
 	<skill id="22177" levels="1" name="Warrior's Breath">
@@ -1396,7 +1396,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22180" levels="1" name="Wondrous Cubic - 1 time use">
@@ -1417,7 +1417,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22181" levels="1" name="Refined Cubic - 1 time use">
@@ -1437,7 +1437,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="22182" levels="1" name="Birthday Joy">
@@ -1533,7 +1533,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="137" npcCount="1" despawnDelay="1200000" />
 			</effect>
 		</for>

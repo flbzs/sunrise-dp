@@ -58,7 +58,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2607" levels="1" name="Pailaka Door Key">
@@ -234,7 +234,7 @@
 		<set name="reuseDelay" val="1800000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="32544" npcCount="1" />
 			</effect>
 		</for>
@@ -435,7 +435,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2639" levels="1" name="Five-year anniversary event box">
@@ -455,7 +455,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2640" levels="1" name="Five-year anniversary event box">
@@ -475,7 +475,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2641" levels="1" name="Five-Year Anniversary Event Box">
@@ -495,7 +495,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2642" levels="1" name="Five-Year Anniversary Event Box">
@@ -515,7 +515,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2643" levels="1" name="Five-Year Anniversary Event Box">
@@ -535,7 +535,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2644" levels="1" name="Five-Year Anniversary Event Box">
@@ -555,7 +555,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="2645" levels="1" name="Multi-Colored Honey Rice Cake">
@@ -569,7 +569,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF"/>
 		<for>
-			<effect name="VitalityPointUp" noicon="1" val="0">
+			<effect name="VitalityPointUp" noicon="1">
 				<param value="20000" />
 			</effect>
 		</for>
@@ -585,7 +585,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF"/>
 		<for>
-			<effect name="VitalityPointUp" noicon="1" val="0">
+			<effect name="VitalityPointUp" noicon="1">
 				<param value="20000" />
 			</effect>
 		</for>

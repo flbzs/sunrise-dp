@@ -170,7 +170,7 @@
 				<add stat="runSpd" val="#attackAndSpeed" />
 				<mul stat="healEffect" val="#healEffect" />
 			</effect>
-			<effect name="#effectname2" noicon="1" val="0" effectPower="#effectPower" />
+			<effect name="#effectname2" noicon="1" effectPower="#effectPower" />
 			<effect name="HealPercent" noicon="1" val="#healPercent" />
 		</for>
 	</skill>
@@ -590,7 +590,7 @@
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="25" />
+			<effect name="Cancel" noicon="1" effectPower="25" />
 		</for>
 	</skill>
 	<skill id="5043" levels="12" name="NPC Super Sonic Blaster">
@@ -1121,7 +1121,7 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="10" />
 			</effect>
 		</for>

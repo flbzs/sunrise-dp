@@ -22,10 +22,10 @@
 				<mul stat="mAtk" val="1.75" />
 				<mul stat="mDef" val="1.3" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="MA_UP,9;MD_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="MA_UP;MD_UP" />
 			</effect>
 		</for>
@@ -52,10 +52,10 @@
 				<mul stat="maxHp" val="1.35" />
 				<mul stat="maxMp" val="1.35" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="MAX_HP_UP,9;MAX_MP_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="MAX_HP_UP;MAX_MP_UP" />
 			</effect>
 		</for>
@@ -82,10 +82,10 @@
 				<basemul stat="critRate" val="0.3" />
 				<mul stat="critDmg" val="1.35" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="CRITICAL_PROB_UP;CRITICAL_DMG_UP" />
 			</effect>
 		</for>
@@ -112,10 +112,10 @@
 				<mul stat="rShld" val="1.3" />
 				<mul stat="sDef" val="1.5" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="SHIELD_PROB_UP,9;SHIELD_DEFENCE_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="SHIELD_PROB_UP;SHIELD_DEFENCE_UP" />
 			</effect>
 		</for>
@@ -142,10 +142,10 @@
 				<add stat="runSpd" val="33" />
 				<add stat="rEvas" val="4" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="SPEED_UP,9;AVOID_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="SPEED_UP;AVOID_UP" />
 			</effect>
 		</for>
@@ -196,7 +196,7 @@
 		</cond>
 		<for>
 			<effect name="CpHeal" noicon="1" val="9000" />
-			<effect name="CancelDebuff" noicon="1" val="0" effectPower="40" />
+			<effect name="CancelDebuff" noicon="1" effectPower="40" />
 			<effect name="HealPercent" noicon="1" val="100" />
 			<effect name="ManaHealPercent" noicon="1" val="100" />
 		</for>
@@ -298,7 +298,7 @@
 			<target races="KAMAEL" />
 		</cond>
 		<for>
-			<effect name="CancelDebuff" noicon="1" val="0" effectPower="100" />
+			<effect name="CancelDebuff" noicon="1" effectPower="100" />
 		</for>
 	</skill>
 	<skill id="1511" levels="8" name="Curse of Life Flow" enchantGroup1="1" enchantGroup2="1">
@@ -439,7 +439,7 @@
 			<target active_effect_id="1512" />
 		</cond>
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="MULTI_DEBUFF_SOUL,9" />
 			</effect>
 		</for>
@@ -599,10 +599,10 @@
 				<mul stat="pAtk" val="1.15" />
 				<mul stat="pDef" val="1.15" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="PA_UP,9;PD_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="PA_UP;PD_UP" />
 			</effect>
 		</for>
@@ -628,10 +628,10 @@
 				<basemul stat="critRate" val="0.3" />
 				<mul stat="critDmg" val="1.35" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="CRITICAL_PROB_UP;CRITICAL_DMG_UP" />
 			</effect>
 		</for>
@@ -657,10 +657,10 @@
 				<add stat="absorbDam" val="9" /> <!-- absorb 9% HP from damage inflicted on enemies -->
 				<mul stat="pAtkSpd" val="1.33" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="VAMPIRIC_ATTACK,9;ATTACK_TIME_DOWN,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="VAMPIRIC_ATTACK;ATTACK_TIME_DOWN" />
 			</effect>
 		</for>
@@ -1106,10 +1106,10 @@
 				<add stat="runSpd" val="33" />
 				<add stat="rEvas" val="4" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="SPEED_UP,9;AVOID_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="SPEED_UP;AVOID_UP" />
 			</effect>
 		</for>
@@ -1136,10 +1136,10 @@
 				<mul stat="pAtk" val="1.15" />
 				<mul stat="pDef" val="1.15" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="PA_UP,9;PD_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="PA_UP;PD_UP" />
 			</effect>
 		</for>
@@ -1166,10 +1166,10 @@
 				<basemul stat="critRate" val="0.3" />
 				<mul stat="critDmg" val="1.35" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="CRITICAL_PROB_UP,9;CRITICAL_DMG_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="CRITICAL_PROB_UP;CRITICAL_DMG_UP" />
 			</effect>
 		</for>
@@ -1196,10 +1196,10 @@
 				<mul stat="maxHp" val="1.35" />
 				<mul stat="maxMp" val="1.35" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="MAX_HP_UP,9;MAX_MP_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="MAX_HP_UP;MAX_MP_UP" />
 			</effect>
 		</for>
@@ -1341,7 +1341,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillBySkill" noicon="1" val="0">
+			<effect name="TriggerSkillBySkill" noicon="1">
 				<param castSkillId="927" /> <!-- Burning Chop -->
 				<param chance="30" />
 				<param skillId="6060" skillLevel="1" /> <!-- Great Fury -->
@@ -1547,7 +1547,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="POISON,9" />
 			</effect>
 		</for>
@@ -1565,7 +1565,7 @@
 		<set name="reuseDelay" val="9000" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="POISON,9;BLEEDING,9;PARALYZE,9;TURN_STONE,9" />
 			</effect>
 		</for>
@@ -1584,7 +1584,7 @@
 		<set name="reuseDelay" val="9000" />
 		<set name="targetType" val="PARTY" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="POISON,9;BLEEDING,9" />
 			</effect>
 			<effect name="Heal" noicon="1" val="796" />
@@ -1774,7 +1774,7 @@
 			<using kind="DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="Spoil" noicon="1" val="0" />
+			<effect name="Spoil" noicon="1" />
 		</for>
 	</skill>
 	<skill id="1561" levels="5" name="Battle Cry">
@@ -1873,7 +1873,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param minDamage="1" />
 				<param chance="50" />

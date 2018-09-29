@@ -232,7 +232,7 @@
 			<player canUntransform="true" />
 		</cond>
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="TRANSFORM,-1" />
 			</effect>
 		</for>
@@ -259,7 +259,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="621" levels="1" name="Create Special Bolt">
@@ -320,7 +320,7 @@
 		<set name="reuseDelay" val="3000" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="TrapDetect" noicon="1" val="0" >
+			<effect name="TrapDetect" noicon="1" >
 				<param power="78" />
 			</effect>
 		</for>
@@ -339,7 +339,7 @@
 			<target npcType="L2TrapInstance" />
 		</cond>
 		<for>
-			<effect name="TrapRemove" noicon="1" val="0" >
+			<effect name="TrapRemove" noicon="1" >
 				<param power="78" />
 			</effect>
 		</for>
@@ -463,7 +463,7 @@
 		<set name="reuseDelay" val="10000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Blink" noicon="1" val="0" />
+			<effect name="Blink" noicon="1" />
 		</for>
 	</skill>
 	<skill id="629" levels="1" name="Rabbit Magic Eye">
@@ -1351,7 +1351,7 @@
 			<effect name="Buff" abnormalTime="30" abnormalLvl="1" abnormalType="transform_sacrifice">
 				<mul stat="pAtk" val="1.2" />
 			</effect>
-			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_START" triggeredId="5602" />
+			<effect self="1" name="ChanceSkillTrigger" noicon="1" chanceType="ON_START" triggeredId="5602" />
 		</for>
 	</skill>
 	<skill id="680" levels="1" name="Divine Knight Hate">
@@ -1490,7 +1490,7 @@
 			<effect name="Buff" abnormalTime="30" abnormalLvl="1" abnormalType="transform_sacrifice">
 				<mul stat="pDef" val="1.2" />
 			</effect>
-			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_START" triggeredId="5602" />
+			<effect self="1" name="ChanceSkillTrigger" noicon="1" chanceType="ON_START" triggeredId="5602" />
 		</for>
 	</skill>
 	<skill id="686" levels="1" name="Divine Rogue Stun Shot">
@@ -1515,7 +1515,7 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" effectPower="50" />
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="40" />
 			</effect>
 		</for>
@@ -1620,7 +1620,7 @@
 			<effect name="Buff" abnormalTime="30" abnormalLvl="1" abnormalType="transform_sacrifice">
 				<add stat="rEvas" val="10" />
 			</effect>
-			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_START" triggeredId="5602" />
+			<effect self="1" name="ChanceSkillTrigger" noicon="1" chanceType="ON_START" triggeredId="5602" />
 		</for>
 	</skill>
 	<skill id="692" levels="1" name="Divine Wizard Holy Flare">
@@ -1752,7 +1752,7 @@
 			<effect name="Buff" abnormalTime="30" abnormalLvl="1" abnormalType="transform_sacrifice">
 				<mul stat="mAtk" val="1.2" />
 			</effect>
-			<effect self="1" name="ChanceSkillTrigger" noicon="1" val="0" chanceType="ON_START" triggeredId="5602" />
+			<effect self="1" name="ChanceSkillTrigger" noicon="1" chanceType="ON_START" triggeredId="5602" />
 		</for>
 	</skill>
 	<skill id="698" levels="1" name="Divine Healer Major Heal">

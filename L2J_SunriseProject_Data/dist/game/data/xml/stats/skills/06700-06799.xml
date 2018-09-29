@@ -475,7 +475,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" />
 		</for>
 	</skill>
 	<skill id="6733" levels="1" name="Antharas's Stigma">

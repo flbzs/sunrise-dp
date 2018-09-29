@@ -467,7 +467,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="DispelAll" noicon="1" val="0" />
+			<effect name="DispelAll" noicon="1" />
 		</for>
 	</skill>
 	<skill id="4335" levels="1" name="Sacred Attack">
@@ -505,7 +505,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="3" cubicDelay="13" cubicDuration="3600" cubicMaxCount="20" />
 				<param cubicSkill1Chance="13" cubicSkill2Chance="33" cubicSkill3Chance="53" />
 			</effect>
@@ -1489,8 +1489,8 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="BlockBuff" noicon="1" val="0" />
-			<effect name="BlockDebuff" noicon="1" val="0" />
+			<effect name="BlockBuff" noicon="1" />
+			<effect name="BlockDebuff" noicon="1" />
 		</for>
 	</skill>
 	<skill id="4391" levels="2" name="Wind Walk">

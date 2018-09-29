@@ -898,7 +898,7 @@
 			<player canTakeCastle="true" />
 		</cond>
 		<for>
-			<effect name="TakeCastle" noicon="1" val="0" />
+			<effect name="TakeCastle" noicon="1" />
 		</for>
 	</skill>
 	<skill id="247" levels="1" name="Build Headquarters">
@@ -915,7 +915,7 @@
 			<player canCreateBase="true" />
 		</cond>
 		<for>
-			<effect name="HeadquarterCreate" noicon="1" val="0" />
+			<effect name="HeadquarterCreate" noicon="1" />
 		</for>
 	</skill>
 	<skill id="248" levels="5" name="Crystallize">
@@ -1152,24 +1152,24 @@
 		<enchant3 name="saveVs" val="MEN" />
 		<enchant3 name="skillType" val="DUMMY" />
 		<for>
-			<effect name="Spoil" noicon="1" val="0" />
+			<effect name="Spoil" noicon="1" />
 		</for>
 		<enchant1for>
 			<effect name="Debuff" abnormalTime="30" val="0" effectPower="#ench1Power" abnormalLvl="3" abnormalType="attack_time_up">
 				<mul stat="pAtkSpd" val="0.77" />
 			</effect>
-			<effect name="Spoil" noicon="1" val="0" />
+			<effect name="Spoil" noicon="1" />
 		</enchant1for>
 		<enchant2for>
 			<!-- 118HP * 3 During 15 Sec -->
 			<effect count="5" name="DamOverTime" abnormalTime="3" val="354" effectPower="#ench2Power" abnormalLvl="3" abnormalType="dot_attr" />
-			<effect name="Spoil" noicon="1" val="0" />
+			<effect name="Spoil" noicon="1" />
 		</enchant2for>
 		<enchant3for>
 			<effect name="Debuff" abnormalTime="15" val="0" effectPower="80" abnormalLvl="1" abnormalType="holy_attack">
 				<sub stat="earthPower" val="#ench3EarthPower" />
 			</effect>
-			<effect name="Spoil" noicon="1" val="0" />
+			<effect name="Spoil" noicon="1" />
 		</enchant3for>
 	</skill>
 	<skill id="255" levels="15" name="Power Smash">
@@ -1473,13 +1473,13 @@
 		</enchant1for>
 		<enchant3for>
 			<effect name="Heal" noicon="1" val="546" />
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="POISON,9" />
 			</effect>
 		</enchant3for>
 		<enchant4for>
 			<effect name="Heal" noicon="1" val="546" />
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="BLEEDING,9" />
 			</effect>
 		</enchant4for>
@@ -2073,12 +2073,12 @@
 		<set name="targetType" val="SELF" />
 		<enchant1 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="4" cubicDelay="20" cubicDuration="900" cubicMaxCount="15" cubicSkillChance="20" cubicPower="#cubicPower" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonCubic" noicon="1" val="0">
+			<effect name="SummonCubic" noicon="1">
 				<param cubicId="4" cubicDelay="20" cubicDuration="900" cubicMaxCount="15" cubicSkillChance="20" cubicPower="#ench1Power" />
 			</effect>
 		</enchant1for>

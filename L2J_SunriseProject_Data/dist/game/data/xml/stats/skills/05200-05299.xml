@@ -567,7 +567,7 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="Stun" abnormalTime="3" val="0" effectPower="80" abnormalLvl="1" abnormalType="stun" />
-			<effect name="ThrowUp" noicon="1" val="0" />
+			<effect name="ThrowUp" noicon="1" />
 		</for>
 	</skill>
 	<skill id="5230" levels="1" name="Stun">
@@ -932,7 +932,7 @@
 		<set name="trait" val="BLEED" />
 		<for>
 			<effect count="10" name="DamOverTime" abnormalTime="3" abnormalLvl="#abnormalLvls" abnormalType="dark_seed" val="#dot" abnormalVisualEffect="poison" />
-			<effect name="ChanceSkillTrigger" abnormalTime="30" noicon="1" val="0" triggeredId="5248" triggeredLevel="#triggeredLevel" chanceType="ON_EXIT" />
+			<effect name="ChanceSkillTrigger" abnormalTime="30" noicon="1" triggeredId="5248" triggeredLevel="#triggeredLevel" chanceType="ON_EXIT" />
 		</for>
 	</skill>
 	<skill id="5248" levels="12" name="Seed Explosion">
@@ -1026,7 +1026,7 @@
 		<set name="trait" val="POISON" />
 		<for>
 			<effect count="5" name="DamOverTime" abnormalTime="3" val="#dot" abnormalLvl="#abnormalLvls" abnormalType="poison" abnormalVisualEffect="poison" />
-			<effect name="ChanceSkillTrigger" abnormalTime="15" noicon="1" val="0" triggeredId="5252" triggeredLevel="#triggeredLevel" chanceType="ON_EXIT" />
+			<effect name="ChanceSkillTrigger" abnormalTime="15" noicon="1" triggeredId="5252" triggeredLevel="#triggeredLevel" chanceType="ON_EXIT" />
 		</for>
 	</skill>
 	<skill id="5252" levels="12" name="Paralysis">
@@ -1084,7 +1084,7 @@
 		<for>
 			<!-- 35 50 68 87 107 123 134 134 139 139 142 142 HP * 3 during 10 seconds -->
 			<effect count="3" name="DamOverTime" abnormalTime="3" val="#dot" abnormalVisualEffect="bleed" abnormalLvl="#abnormalLvls" abnormalType="bleeding" />
-			<effect name="ChanceSkillTrigger" abnormalTime="10" noicon="1" val="0" chanceType="ON_EXIT" triggeredId="5252" triggeredLevel="#triggeredLevel" />
+			<effect name="ChanceSkillTrigger" abnormalTime="10" noicon="1" chanceType="ON_EXIT" triggeredId="5252" triggeredLevel="#triggeredLevel" />
 		</for>
 	</skill>
 	<skill id="5254" levels="12" name="Invasion of Spirit">
@@ -1113,7 +1113,7 @@
 		<set name="targetType" val="ONE" />
 		<for>
 			<effect count="3" name="DamOverTime" abnormalTime="3" val="#dot" abnormalLvl="#abnormalLvls" abnormalType="dot_mp" abnormalVisualEffect="bleed" />
-			<effect name="ChanceSkillTrigger" abnormalTime="10" noicon="1" val="0" triggeredId="5255" triggeredLevel="#triggeredLevel" chanceType="ON_EXIT" />
+			<effect name="ChanceSkillTrigger" abnormalTime="10" noicon="1" triggeredId="5255" triggeredLevel="#triggeredLevel" chanceType="ON_EXIT" />
 		</for>
 	</skill>
 	<skill id="5255" levels="12" name="Mana Burn">
@@ -1467,7 +1467,7 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="Stun" abnormalTime="3" abnormalLvl="1" abnormalType="stun" />
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="100" />
 			</effect>
 		</for>

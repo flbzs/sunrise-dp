@@ -8,7 +8,7 @@
 			<player canUntransform="true" />
 		</cond>
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="TRANSFORM,-1" />
 			</effect>
 		</for>
@@ -35,10 +35,10 @@
 				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
 			</effect>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="520" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="520" noicon="1">
 				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
 			</effect>
 		</for>
@@ -65,10 +65,10 @@
 				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
 			</effect>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="460" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="460" noicon="1">
 				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
 			</effect>
 		</for>
@@ -95,10 +95,10 @@
 				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
 			</effect>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="215" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="215" noicon="1">
 				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
 			</effect>
 		</for>
@@ -125,10 +125,10 @@
 				<add stat="weightPenalty" val="9000" />
 				<add stat="inventoryLimit" val="8" />
 			</effect>
-			<effect name="DispelBySlotProbability" noicon="1" val="0">
+			<effect name="DispelBySlotProbability" noicon="1">
 				<param dispel="IMPROVE_SPEED_AVOID_UP;SPEED_UP" rate="100" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="-1" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="-1" noicon="1">
 				<param slot="IMPROVE_SPEED_AVOID_UP;SPEED_UP" />
 			</effect>
 		</for>
@@ -548,7 +548,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="13270" npcCount="1" despawnDelay="7200" />
 			</effect>
 		</for>
@@ -1103,7 +1103,7 @@
 			<target mindistance="250" />
 		</cond>
 		<for>
-			<effect name="EnemyCharge" noicon="1" val="0" />
+			<effect name="EnemyCharge" noicon="1" />
 		</for>
 	</skill>
 	<skill id="6293" levels="1" name="Power Strike">
@@ -1178,7 +1178,7 @@
 			<target mindistance="250" />
 		</cond>
 		<for>
-			<effect name="EnemyCharge" noicon="1" val="0" />
+			<effect name="EnemyCharge" noicon="1" />
 		</for>
 	</skill>
 	<skill id="6297" levels="1" name="Cylinder Throw">

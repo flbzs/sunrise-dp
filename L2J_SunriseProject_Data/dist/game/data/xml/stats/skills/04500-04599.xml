@@ -622,7 +622,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="WATCHER_GAZE,1" />
 			</effect>
 		</for>
@@ -773,7 +773,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="SPA_DISEASE_A,10;SPA_DISEASE_D,10" />
 			</effect>
 		</for>
@@ -790,7 +790,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="SPA_DISEASE_B,10;SPA_DISEASE_D,10" />
 			</effect>
 		</for>
@@ -807,7 +807,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="SPA_DISEASE_C,10;SPA_DISEASE_D,10" />
 			</effect>
 		</for>

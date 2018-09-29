@@ -1356,7 +1356,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" />
 		</for>
 	</skill>
 	<skill id="5681" levels="1" name="PvP Weapon - CP Drain">
@@ -1390,7 +1390,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" val="0" effectPower="25" />
+			<effect name="Cancel" noicon="1" effectPower="25" />
 		</for>
 	</skill>
 	<skill id="5683" levels="1" name="PvP Weapon - Ignore Shield Defense">
@@ -1645,7 +1645,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0" />
+			<effect name="RemoveTarget" noicon="1" />
 		</for>
 	</skill>
 	<skill id="5695" levels="1" name="Talisman - Increase Force">

@@ -132,13 +132,13 @@
 		</enchant1for>
 		<enchant3for>
 			<effect name="Heal" noicon="1" val="#ench34amount" />
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="#ench3dispelAbnormals" />
 			</effect>
 		</enchant3for>
 		<enchant4for>
 			<effect name="Heal" noicon="1" val="#ench34amount" />
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="#ench4dispelAbnormals" />
 			</effect>
 		</enchant4for>
@@ -167,7 +167,7 @@
 			</not>
 		</cond>
 		<for>
-			<effect name="CallPc" noicon="1" val="0">
+			<effect name="CallPc" noicon="1">
 				<param itemId="8615" itemCount="1" />
 			</effect>
 		</for>
@@ -198,7 +198,7 @@
 			</not>
 		</cond>
 		<for>
-			<effect name="CallPc" noicon="1" val="0">
+			<effect name="CallPc" noicon="1">
 				<param itemId="8615" itemCount="1" />
 			</effect>
 		</for>
@@ -211,7 +211,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="EnlargeAbnormalSlot" noicon="1" val="0">
+			<effect name="EnlargeAbnormalSlot" noicon="1">
 				<param slots="#slots" />
 			</effect>
 		</for>
@@ -327,7 +327,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="CancelDebuff" noicon="1" val="0" effectPower="100" />
+			<effect name="CancelDebuff" noicon="1" effectPower="100" />
 		</for>
 	</skill>
 	<skill id="1410" levels="1" name="Salvation">
@@ -389,7 +389,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="SkillTurning" noicon="1" val="0">
+			<effect name="SkillTurning" noicon="1">
 				<param chance="50" />
 			</effect>
 		</for>
@@ -633,12 +633,12 @@
 		<enchant1 name="power" val="#ench1Power" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="#effectPower" />
 			</effect>
 		</for>
 		<enchant2for>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="#ench2Chance" />
 			</effect>
 		</enchant2for>
@@ -835,7 +835,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="CLAN" />
 		<for>
-			<effect name="CancelDebuff" noicon="1" val="0" effectPower="100" />
+			<effect name="CancelDebuff" noicon="1" effectPower="100" />
 		</for>
 	</skill>
 	<skill id="1426" levels="1" name="Miracle">
@@ -918,7 +918,7 @@
 			</not>
 		</cond>
 		<for>
-			<effect name="CallParty" noicon="1" val="0" />
+			<effect name="CallParty" noicon="1" />
 		</for>
 	</skill>
 	<skill id="1430" levels="5" name="Invocation">
@@ -1134,7 +1134,7 @@
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<enchant4 name="pvpPower" val="#ench4Duel" />
 		<for>
-			<effect name="RemoveTarget" noicon="1" val="0">
+			<effect name="RemoveTarget" noicon="1">
 				<param chance="30" />
 			</effect>
 		</for>
@@ -1292,7 +1292,7 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="StealAbnormal" noicon="1" val="0" effectPower="25" />
+			<effect name="StealAbnormal" noicon="1" effectPower="25" />
 		</for>
 	</skill>
 	<skill id="1441" levels="3" name="Soul to Empower">
@@ -1658,7 +1658,7 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
 			<effect name="Stun" abnormalTime="2" val="0" effectPower="99" abnormalLvl="1" abnormalType="stun" />
-			<effect self="1" name="Blink" noicon="1" val="0" />
+			<effect self="1" name="Blink" noicon="1" />
 		</for>
 	</skill>
 	<skill id="1449" levels="1" name="Transfer Soul">
@@ -1751,7 +1751,7 @@
 			<target active_effect_id="1339" />
 		</cond>
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="MULTI_DEBUFF_FIRE,9" />
 			</effect>
 		</for>
@@ -1829,7 +1829,7 @@
 			<target active_effect_id="1340" />
 		</cond>
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="MULTI_DEBUFF_WATER,9" />
 			</effect>
 		</for>
@@ -1941,7 +1941,7 @@
 			<target active_effect_id="1341" />
 		</cond>
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="MULTI_DEBUFF_WIND,9" />
 			</effect>
 		</for>
@@ -2422,7 +2422,7 @@
 			<using weaponChange="true" />
 		</cond>
 		<for>
-			<effect name="ConvertItem" noicon="1" val="0" />
+			<effect name="ConvertItem" noicon="1" />
 		</for>
 	</skill>
 	<skill id="1474" levels="1" name="Abyssal Power" enchantGroup1="1">
@@ -2459,7 +2459,7 @@
 		<set name="reuseDelay" val="4000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="#dispelAbnormals" />
 			</effect>
 		</for>
@@ -2694,13 +2694,13 @@
 		<enchant3 name="reuseDelay" val="#ench3Reuse" />
 		<for>
 			<effect count="15" name="ManaHealOverTime" val="200" abnormalLvl="1" abnormalType="instinct" />
-			<effect name="Paralyze" abnormalTime="15" noicon="1" val="0">
+			<effect name="Paralyze" abnormalTime="15" noicon="1">
 				<mul stat="pDef" val="0.1" />
 			</effect>
 		</for>
 		<enchant2for>
 			<effect count="#ench2Time" name="ManaHealOverTime" val="200" abnormalLvl="1" abnormalType="instinct" />
-			<effect name="Paralyze" abnormalTime="15" noicon="1" val="0">
+			<effect name="Paralyze" abnormalTime="15" noicon="1">
 				<mul stat="pDef" val="0.1" />
 			</effect>
 		</enchant2for>
@@ -3115,13 +3115,13 @@
 		</cond>
 		<for>
 			<effect name="HealPercent" noicon="1" val="#amount" />
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="LIFE_FORCE_KAMAEL,9" />
 			</effect>
 		</for>
 		<enchant1for>
 			<effect name="HealPercent" noicon="1" val="#ench1amount" />
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="LIFE_FORCE_KAMAEL,9" />
 			</effect>
 		</enchant1for>
@@ -3146,7 +3146,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="1" />
 				<param chance="2" />
@@ -3162,7 +3162,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="1" />
 				<param chance="2" />
@@ -3305,7 +3305,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -3353,10 +3353,10 @@
 				<mul stat="pAtk" val="1.15" />
 				<mul stat="pDef" val="1.15" />
 			</effect>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="PA_UP,9;PD_UP,9" />
 			</effect>
-			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1" val="0">
+			<effect name="BlockBuffSlot" abnormalTime="2400" noicon="1">
 				<param slot="PA_UP;PD_UP" />
 			</effect>
 		</for>

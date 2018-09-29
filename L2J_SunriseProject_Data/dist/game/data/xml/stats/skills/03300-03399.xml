@@ -175,7 +175,7 @@
 			<player canTakeFort="true" />
 		</cond>
 		<for>
-			<effect name="TakeFort" noicon="1" val="0" />
+			<effect name="TakeFort" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3319" levels="1" name="Divine Protection of Ring">
@@ -225,7 +225,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TalismanSlot" noicon="1" val="0" >
+			<effect name="TalismanSlot" noicon="1" >
 				<param slots="1" />
 			</effect>
 		</for>
@@ -237,7 +237,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TalismanSlot" noicon="1" val="0" >
+			<effect name="TalismanSlot" noicon="1" >
 				<param slots="2" />
 			</effect>
 		</for>
@@ -249,7 +249,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TalismanSlot" noicon="1" val="0" >
+			<effect name="TalismanSlot" noicon="1" >
 				<param slots="3" />
 			</effect>
 		</for>
@@ -261,7 +261,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TalismanSlot" noicon="1" val="0" >
+			<effect name="TalismanSlot" noicon="1" >
 				<param slots="4" />
 			</effect>
 		</for>
@@ -270,7 +270,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TalismanSlot" noicon="1" val="0" >
+			<effect name="TalismanSlot" noicon="1" >
 				<param slots="5" />
 			</effect>
 		</for>
@@ -279,7 +279,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TalismanSlot" noicon="1" val="0" >
+			<effect name="TalismanSlot" noicon="1" >
 				<param slots="6" />
 			</effect>
 		</for>
@@ -472,7 +472,7 @@
 		</cond>
 		<for>
 			<effect name="Transformation" abnormalTime="300" abnormalLvl="1" abnormalType="transform" />
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="BIG_HEAD,9" />
 			</effect>
 		</for>
@@ -559,7 +559,7 @@
 			<mul stat="healEffect" val="1.03" /> <!-- Received Increased Heal +3% -->
 			<sub stat="stunVuln" val="13" /> <!-- Shock resistance is increased +13% -->
 			<add stat="darkRes" val="8" /> <!-- Darkness resistance is increased +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3349" levels="1" name="Dynasty Breast Plate - Weapon Master">
@@ -573,7 +573,7 @@
 			<add stat="critRate" val="24.6" /> <!-- Critical Damage Chance +24.6 -->
 			<add stat="critDmgAdd" val="234" /> <!-- Critical Damage +234 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3350" levels="1" name="Dynasty Breast Plate - Force Master">
@@ -586,7 +586,7 @@
 			<add stat="maxHp" val="492" /> <!-- HP +492 -->
 			<add stat="darkRes" val="8" /> <!-- Resistance to Darkness attacks +8 -->
 			<mul stat="physicalMpConsumeRate" val="0.95" /> <!-- MP consumption of the active skill is decreased -5% -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3351" levels="1" name="Dynasty Breast Plate - Bard">
@@ -599,7 +599,7 @@
 			<add stat="maxHp" val="492" /> <!-- Max HP +492 effect -->
 			<mul stat="danceMpConsumeRate" val="0.95" /> <!-- MP consumption is decreased when song and dance skills are used -5% -->
 			<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3352" levels="1" name="Dynasty Leather Armor - Dagger Master">
@@ -613,7 +613,7 @@
 			<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
 			<sub stat="rootVuln" val="13" /> <!-- Hold resistance are increased +13 -->
 			<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3353" levels="1" name="Dynasty Leather Armor - Bow Master">
@@ -627,7 +627,7 @@
 			<mul stat="pAtkSpd" val="1.0266" /> <!-- Atk. Spd. are increased +2.66% -->
 			<add stat="regMp" val="1.72" /> <!-- MP recovery are increased +1.72 -->
 			<add stat="darkRes" val="8" /> <!-- Dark resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3354" levels="1" name="Dynasty Tunic - Healer">
@@ -641,7 +641,7 @@
 			<add stat="healEffect" val="20" /> <!-- Increase amount of heal +20 -->
 			<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3355" levels="1" name="Dynasty Tunic - Enchanter">
@@ -655,7 +655,7 @@
 			<sub stat="cancel" val="15" /> <!-- Decrease magic cancel rate -15% -->
 			<mul stat="magicalMpConsumeRate" val="0.95" /> <!-- Decrease MP consumption -5% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3356" levels="1" name="Dynasty Tunic - Summoner">
@@ -669,7 +669,7 @@
 			<mul stat="pDef" val="1.026" /> <!-- P. Def. +2.6% -->
 			<mul stat="pAtk" val="1.026" /> <!-- Increase P. Atk. +2.6% -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3357" levels="1" name="Dynasty Tunic - Wizard">
@@ -682,7 +682,7 @@
 			<mul stat="mAtk" val="1.054" /> <!-- Increase M. Atk +5.4% -->
 			<add stat="maxMp" val="321" /> <!-- Max MP +321 -->
 			<add stat="darkRes" val="8" /> <!-- Dark Resistance +8 -->
-			<effect name="EnableCloak" noicon="1" val="0" />
+			<effect name="EnableCloak" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3358" levels="1" name="Flag Equip">
@@ -738,7 +738,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonAgathion" noicon="1" val="0" />
+			<effect name="SummonAgathion" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3362" levels="1" name="Traits Strengthen Necklace">

@@ -472,7 +472,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect name="AddHate" noicon="1" val="0">
+			<effect name="AddHate" noicon="1">
 				<param power="500" />
 			</effect>
 		</for>
@@ -546,17 +546,17 @@
 			<player npcIdRadius="#ench1npcId,150,false" />
 		</enchant1cond>
 		<for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="#npcId" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="#ench1npcId" />
 			</effect>
 		</enchant1for>
 		<enchant2for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="13045" />
 			</effect>
 		</enchant2for>
@@ -587,17 +587,17 @@
 			<player npcIdRadius="#ench1npcId,150,false" />
 		</enchant1cond>
 		<for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="#npcId" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="#ench1npcId" />
 			</effect>
 		</enchant1for>
 		<enchant2for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="13051" />
 			</effect>
 		</enchant2for>
@@ -628,17 +628,17 @@
 			<player npcIdRadius="#ench1npcId,150,false" />
 		</enchant1cond>
 		<for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="#npcId" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="#ench1npcId" />
 			</effect>
 		</enchant1for>
 		<enchant2for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="13070" />
 			</effect>
 		</enchant2for>
@@ -669,17 +669,17 @@
 			<player npcIdRadius="#ench1npcId,150,false" />
 		</enchant1cond>
 		<for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="#npcId" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="#ench1npcId" />
 			</effect>
 		</enchant1for>
 		<enchant2for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="13056" />
 			</effect>
 		</enchant2for>
@@ -710,17 +710,17 @@
 			<player npcIdRadius="#ench1npcId,150,false" />
 		</enchant1cond>
 		<for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="#npcId" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="#ench1npcId" />
 			</effect>
 		</enchant1for>
 		<enchant2for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="13064" />
 			</effect>
 		</enchant2for>
@@ -747,7 +747,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="520" levels="1" name="Quiver of Bolts: S-Grade">
@@ -772,7 +772,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="RestorationRandom" noicon="1" val="0" />
+			<effect name="RestorationRandom" noicon="1" />
 		</for>
 	</skill>
 	<skill id="521" levels="8" name="Sharpshooting" enchantGroup1="1" enchantGroup2="1">
@@ -952,7 +952,7 @@
 		<for>
 			<!-- 76 76 76 76 83 83 83 HP * 5 during 20 seconds -->
 			<effect count="4" name="DamOverTime" abnormalTime="5" val="#dot" abnormalLvl="8" abnormalType="dark_seed" abnormalVisualEffect="bleed" />
-			<effect name="ChanceSkillTrigger" abnormalTime="20" noicon="1" val="0" chanceType="ON_EXIT" triggeredId="5447" triggeredLevel="#triggeredLevel" />
+			<effect name="ChanceSkillTrigger" abnormalTime="20" noicon="1" chanceType="ON_EXIT" triggeredId="5447" triggeredLevel="#triggeredLevel" />
 		</for>
 	</skill>
 	<skill id="524" levels="1" name="Cure Dark Seed">
@@ -966,7 +966,7 @@
 		<set name="reuseDelay" val="1000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="DispelBySlot" noicon="1" val="0">
+			<effect name="DispelBySlot" noicon="1">
 				<param dispel="DARK_SEED,9" />
 			</effect>
 		</for>
@@ -998,12 +998,12 @@
 		<enchant2 name="reuseDelay" val="#ench2reuseDelay" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="#npcId" npcCount="1" />
 			</effect>
 		</for>
 		<enchant3for>
-			<effect name="SummonNpc" noicon="1" val="0">
+			<effect name="SummonNpc" noicon="1">
 				<param npcId="#ench3npcId" npcCount="1" />
 			</effect>
 		</enchant3for>
@@ -1212,7 +1212,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="5" />
@@ -1227,7 +1227,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="5" />
@@ -1242,7 +1242,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="5" />
@@ -1257,7 +1257,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" noicon="1" val="0">
+			<effect name="TriggerSkillByDamage" noicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="5" />
@@ -1315,7 +1315,7 @@
 		<set name="targetType" val="AREA" />
 		<for>
 			<effect name="Spoil" abnormalTime="10" abnormalLvl="1" abnormalType="spoil_bomb" />
-			<effect name="ChanceSkillTrigger" abnormalTime="10" noicon="1" val="0" triggeredId="5430" chanceType="ON_EXIT" />
+			<effect name="ChanceSkillTrigger" abnormalTime="10" noicon="1" triggeredId="5430" chanceType="ON_EXIT" />
 		</for>
 	</skill>
 	<skill id="538" levels="1" name="Final Form">
@@ -1984,7 +1984,7 @@
 			<player Charges="2" />
 		</cond>
 		<for>
-			<effect name="EnergyAttack"  noicon="1" val="0">
+			<effect name="EnergyAttack"  noicon="1">
 				<param power="#power" />
 				<param criticalChance="10" />
 			</effect>
@@ -2013,7 +2013,7 @@
 			<player Charges="3" />
 		</cond>
 		<for>
-			<effect name="EnergyAttack"  noicon="1" val="0">
+			<effect name="EnergyAttack"  noicon="1">
 				<param power="#power" />
 				<param criticalChance="10" />
 			</effect>
@@ -2129,7 +2129,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="SummonTrap" noicon="1" val="0">
+			<effect name="SummonTrap" noicon="1">
 				<param npcId="#npcId" />
 			</effect>
 		</for>
@@ -2454,10 +2454,10 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="CORPSE_MOB" />
 		<for>
-			<effect name="HpByLevel" noicon="1" val="0">
+			<effect name="HpByLevel" noicon="1">
 				<param power="#drainHp" />
 			</effect>
-			<effect name="ConsumeBody" noicon="1" val="0" />
+			<effect name="ConsumeBody" noicon="1" />
 		</for>
 	</skill>
 	<skill id="590" levels="1" name="Residence Body">
