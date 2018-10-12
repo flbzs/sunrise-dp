@@ -1833,50 +1833,50 @@
 		</cond>
 		<for>
 			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="focus_dagger">
-				<basemul stat="critRatePos" val="-0.03"> <!-- Decreases frontal critical attack rate by 30% -->
+				<mul stat="critRatePos" val="-0.03"> <!-- Decreases frontal critical attack rate by 30% -->
 					<player front="true" />
-				</basemul>
-				<basemul stat="critRatePos" val="0.3"> <!-- Increase side critical attack rate by 30% -->
+				</mul>
+				<mul stat="critRatePos" val="0.3"> <!-- Increase side critical attack rate by 30% -->
 					<and>
 						<player front="false" />
 						<player behind="false" />
 					</and>
-				</basemul>
-				<basemul stat="critRatePos" val="0.6"> <!-- Increase rear critical attack rate by 60% -->
+				</mul>
+				<mul stat="critRatePos" val="0.6"> <!-- Increase rear critical attack rate by 60% -->
 					<player behind="true" />
-				</basemul>
+				</mul>
 			</effect>
 		</for>
 		<enchant1for>
 			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="focus_dagger">
-				<basemul stat="critRatePos" val="-0.03"> <!-- Critical Chance from front -30% -->
+				<mul stat="critRatePos" val="-0.03"> <!-- Critical Chance from front -30% -->
 					<player front="true" />
-				</basemul>
-				<basemul stat="critRatePos" val="-0.3"> <!-- Critical Chance from side +30% -->
+				</mul>
+				<mul stat="critRatePos" val="-0.3"> <!-- Critical Chance from side +30% -->
 					<and>
 						<player front="false" />
 						<player behind="false" />
 					</and>
-				</basemul>
-				<basemul stat="critRatePos" val="#ench1rCrit"> <!-- Critical Chance from back +60% -->
+				</mul>
+				<mul stat="critRatePos" val="#ench1rCrit"> <!-- Critical Chance from back +60% -->
 					<player behind="true" />
-				</basemul>
+				</mul>
 			</effect>
 		</enchant1for>
 		<enchant2for>
 			<effect name="Buff" abnormalTime="120" abnormalLvl="1" abnormalType="focus_dagger">
-				<basemul stat="critRatePos" val="-0.03"> <!-- Critical Chance from front -30% -->
+				<mul stat="critRatePos" val="-0.03"> <!-- Critical Chance from front -30% -->
 					<player front="true" />
-				</basemul>
-				<basemul stat="critRatePos" val="#ench2rCrit"> <!-- Critical Chance from side +30% -->
+				</mul>
+				<mul stat="critRatePos" val="#ench2rCrit"> <!-- Critical Chance from side +30% -->
 					<and>
 						<player front="false" />
 						<player behind="false" />
 					</and>
-				</basemul>
-				<basemul stat="critRatePos" val="0.6"> <!-- Critical Chance from back +60% -->
+				</mul>
+				<mul stat="critRatePos" val="0.6"> <!-- Critical Chance from back +60% -->
 					<player behind="true" />
-				</basemul>
+				</mul>
 			</effect>
 		</enchant2for>
 	</skill>

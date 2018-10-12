@@ -1022,9 +1022,9 @@
 			<mul stat="maxCp" val="1.5" />
 			<mul stat="pAtkSpd" val="1.03" />
 			<add stat="regMp" val="0.51" />
-			<basemul stat="critRatePos" val="0.22">
+			<mul stat="critRatePos" val="0.22">
 				<player behind="true" />
-			</basemul>
+			</mul>
 			<mul stat="pvpPhysDmg" val="1.1" />
 			<mul stat="pvpMagicalDmg" val="1.1" />
 			<mul stat="pvpPhysSkillsDmg" val="1.1" />

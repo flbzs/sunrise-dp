@@ -163,9 +163,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<basemul stat="critRatePos" val="#rCrit">
+			<mul stat="critRatePos" val="#rCrit">
 				<player behind="true" />
-			</basemul>
+			</mul>
 		</for>
 	</skill>
 	<skill id="3019" levels="6" name="Special Ability: Back Blow">
@@ -872,9 +872,9 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<basemul stat="critRatePos" val="0.37">
+			<mul stat="critRatePos" val="0.37">
 				<player behind="true" />
-			</basemul>
+			</mul>
 			<mul stat="pvpPhysDmg" val="1.05" />
 			<mul stat="pvpPhysSkillsDmg" val="1.05" />
 			<mul stat="pvpMagicalDmg" val="1.05" />
