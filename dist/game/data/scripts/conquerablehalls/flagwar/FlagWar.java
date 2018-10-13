@@ -26,6 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 
 import l2r.L2DatabaseFactory;
 import l2r.gameserver.ThreadPoolManager;
@@ -41,6 +42,7 @@ import l2r.gameserver.model.L2Spawn;
 import l2r.gameserver.model.L2World;
 import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.L2Npc;
+import l2r.gameserver.model.actor.instance.L2DefenderInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.entity.clanhall.ClanHallSiegeEngine;
 import l2r.gameserver.model.entity.clanhall.SiegeStatus;
@@ -90,9 +92,9 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 	
 	protected static Location CENTER;
 	
-	protected Map<Integer, ClanData> _data = new HashMap<>(6);
+	protected Map<Integer, ClanData> _data = new ConcurrentHashMap<>(6);
 	protected L2Clan _winner;
-	private boolean _firstPhase;
+	private boolean _firstPhase = true;
 	
 	public FlagWar(String name, int hallId)
 	{
@@ -371,10 +373,6 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			
 			synchronized (this)
 			{
-				// TODO: Zoey76: previous bad implementation.
-				// Converting map.keySet() to List and map.values() to List doesn't ensure that
-				// first element in the key's List correspond to the first element in the values' List
-				// That's the reason that values aren't copied to a List, instead using _data.get(clanIds.get(0))
 				final List<Integer> clanIds = new ArrayList<>(_data.keySet());
 				if (_firstPhase)
 				{
@@ -383,8 +381,8 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 					if (((clanIds.size() == 1) && (_hall.getOwnerId() <= 0)) || (_data.get(clanIds.get(0)).npc == 0))
 					{
 						_missionAccomplished = true;
-						// _winner = ClanTable.getInstance().getClan(_data.keySet()[0]);
-						// removeParticipant(_data.keySet()[0], false);
+						_winner = ClanTable.getInstance().getClan(clanIds.get(0));
+						removeParticipant(clanIds.get(0), false);
 						cancelSiegeTask();
 						endSiege();
 					}
@@ -510,7 +508,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			
 			_hall.getZone().banishNonSiegeParticipants();
 			
-			startSiege();
+			super.startSiege();
 		} , 300000);
 	}
 	
@@ -612,7 +610,7 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			int index = 0;
 			if (_firstPhase)
 			{
-				index = data.flag - FLAG_RED;
+				index = data.flag - ROYAL_FLAG;
 			}
 			else
 			{
@@ -626,12 +624,18 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 			data.flagInstance.setAmount(1);
 			data.flagInstance.init();
 			
-			data.warrior = new L2Spawn(data.npc);
-			data.warrior.setLocation(loc);
-			data.warrior.setRespawnDelay(10000);
-			data.warrior.setAmount(1);
-			data.warrior.init();
-			((L2SpecialSiegeGuardAI) data.warrior.getLastSpawn().getAI()).getAlly().addAll(data.players);
+			if (data.npc > 0)
+			{
+				data.warrior = new L2Spawn(data.npc);
+				data.warrior.setLocation(loc);
+				data.warrior.setRespawnDelay(10000);
+				data.warrior.setAmount(1);
+				data.warrior.init();
+				
+				// vGodFather: small trick-hack for now!
+				data.warrior.getLastSpawn().setAI(new L2SpecialSiegeGuardAI((L2DefenderInstance) data.warrior.getLastSpawn()));
+				((L2SpecialSiegeGuardAI) data.warrior.getLastSpawn().getAI()).getAlly().addAll(data.players);
+			}
 		}
 		catch (Exception e)
 		{
@@ -659,7 +663,16 @@ public abstract class FlagWar extends ClanHallSiegeEngine
 		getAttackers().put(clanId, sc);
 		
 		ClanData data = new ClanData();
-		data.flag = ROYAL_FLAG + _data.size();
+		
+		if (_hall.getOwnerId() == clan.getId())
+		{
+			data.flag = ROYAL_FLAG;
+		}
+		else
+		{
+			data.flag = ROYAL_FLAG + _data.size() + 1;
+		}
+		
 		data.players.add(clan.getLeaderId());
 		_data.put(clanId, data);
 		
