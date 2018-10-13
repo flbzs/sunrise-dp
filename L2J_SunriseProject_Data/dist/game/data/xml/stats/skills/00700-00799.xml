@@ -2196,6 +2196,7 @@
 		<set name="effectRange" val="800" />
 		<set name="fanRange" val="0,0,600,60" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyToBack" val="true" />
 		<set name="hitTime" val="800" />
 		<set name="lvlBonusRate" val="1" />
 		<set name="magicLvl" val="78" />

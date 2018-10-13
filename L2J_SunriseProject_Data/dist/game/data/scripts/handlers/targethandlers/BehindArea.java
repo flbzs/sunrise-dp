@@ -32,7 +32,7 @@ import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.util.Util;
 
 /**
- * @author UnAfraid
+ * @author UnAfraid, reworked by vGodFather
  */
 public class BehindArea implements ITargetTypeHandler
 {
@@ -72,7 +72,10 @@ public class BehindArea implements ITargetTypeHandler
 			origin = activeChar;
 		}
 		
-		final Collection<L2Character> objs = activeChar.getKnownList().getKnownCharacters();
+		// vGodFather Small trick just in case we miss actor face the target
+		activeChar.setHeading(Util.calculateHeadingFrom(activeChar, target));
+		
+		final Collection<L2Character> objs = activeChar.getKnownList().getKnownCharactersInRadius(target, skill.getAffectRange());
 		int maxTargets = skill.getAffectLimit();
 		for (L2Character obj : objs)
 		{
@@ -81,29 +84,14 @@ public class BehindArea implements ITargetTypeHandler
 				continue;
 			}
 			
-			if (obj == origin)
+			if ((obj == origin) || obj.isDead())
 			{
 				continue;
 			}
 			
-			if (Util.checkIfInRange(skill.getAffectRange(), origin, obj, true))
+			if (skill.getFanRange() != null ? skill.checkFan(activeChar, obj, srcInArena) : skill.checkNormal(activeChar, obj, srcInArena))
 			{
-				if (!obj.isBehind(activeChar))
-				{
-					continue;
-				}
-				
-				if (!L2Skill.checkForAreaOffensiveSkills(activeChar, obj, skill, srcInArena))
-				{
-					continue;
-				}
-				
-				if (activeChar.isPlayable() && obj.isAttackable() && !skill.isOffensive())
-				{
-					continue;
-				}
-				
-				if (obj.isPlayer() && activeChar.isPlayer() && skill.isOffensive() && activeChar.getActingPlayer().isFriend(obj.getActingPlayer()))
+				if ((skill.getFanRange() == null) && Util.isFacing(activeChar, obj, 120))
 				{
 					continue;
 				}

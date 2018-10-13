@@ -1615,7 +1615,6 @@
 		</cond>
 		<for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="80" abnormalLvl="1" abnormalType="stun" />
-			<effect name="EnemyCharge" noicon="1" />
 		</for>
 	</skill>
 	<skill id="979" levels="6" name="Aggression">
@@ -1999,6 +1998,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="600" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyToBack" val="true" />
 		<set name="hitTime" val="800" />
 		<set name="magicLvl" val="40" />
 		<set name="magicLvl" val="32" />
@@ -2014,9 +2014,6 @@
 				<target mindistance="200" />
 			</and>
 		</cond>
-		<for>
-			<effect name="EnemyCharge" noicon="1" />
-		</for>
 	</skill>
 	<skill id="995" levels="1" name="Rush Impact">
 		<!-- High Five Skill -->
@@ -2029,6 +2026,8 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="800" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyToBack" val="true" />
+		<set name="fanRange" val="0,0,600,60" />
 		<set name="hitTime" val="800" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
@@ -2121,6 +2120,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="900" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyToBack" val="true" />
 		<set name="hitTime" val="800" />
 		<set name="magicLvl" val="40" />
 		<set name="offensive" val="true" />
@@ -2135,8 +2135,5 @@
 				<target mindistance="400" />
 			</and>
 		</cond>
-		<for>
-			<effect name="EnemyCharge" noicon="1" />
-		</for>
 	</skill>
 </list>

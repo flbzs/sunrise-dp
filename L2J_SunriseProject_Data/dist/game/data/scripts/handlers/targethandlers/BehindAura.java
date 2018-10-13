@@ -28,6 +28,7 @@ import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.targets.L2TargetType;
+import l2r.gameserver.util.Util;
 
 /**
  * @author UnAfraid
@@ -45,7 +46,7 @@ public class BehindAura implements ITargetTypeHandler
 		{
 			if (obj.isAttackable() || obj.isPlayable())
 			{
-				if (!obj.isBehind(activeChar))
+				if (Util.isFacing(activeChar, obj, 120))
 				{
 					continue;
 				}

@@ -51,7 +51,6 @@ import l2r.gameserver.model.instancezone.InstanceWorld;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.network.NpcStringId;
 import l2r.gameserver.network.SystemMessageId;
-import l2r.gameserver.network.serverpackets.ExShowScreenMessage;
 import l2r.gameserver.network.serverpackets.ExStartScenePlayer;
 import l2r.gameserver.network.serverpackets.SystemMessage;
 import l2r.gameserver.util.Util;
@@ -78,10 +77,11 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 {
 	protected class SOD1World extends InstanceWorld
 	{
-		public Map<L2Npc, Boolean> npcList = new HashMap<>();
-		public int deviceSpawnedMobCount = 0;
-		public Lock lock = new ReentrantLock();
-		public L2MonsterInstance tiat;
+		protected List<L2PcInstance> playersInside = new ArrayList<>();
+		protected Map<L2Npc, Boolean> npcList = new HashMap<>();
+		protected int deviceSpawnedMobCount = 0;
+		protected Lock lock = new ReentrantLock();
+		protected L2MonsterInstance tiat;
 		
 		public int _tiatCounter = 0;
 		public long _lastTiatSpeech = -1;
@@ -121,7 +121,6 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 	private static final SkillHolder TRAP_HOLD = new SkillHolder(4186, 9); // 18720-18728
 	private static final SkillHolder TRAP_STUN = new SkillHolder(4072, 10); // 18729-18736
 	private static final SkillHolder TRAP_DAMAGE = new SkillHolder(5340, 4); // 18737-18770
-	private static final SkillHolder TRAP_SPAWN = new SkillHolder(10002, 1); // 18771-18774 : handled in this script
 	private static final int[] TRAP_18771_NPCS =
 	{
 		22541,
@@ -475,7 +474,7 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 		return true;
 	}
 	
-	protected int enterInstance(L2PcInstance player, String template, Location loc)
+	protected int enterInstance(L2PcInstance player, String template)
 	{
 		int instanceId = 0;
 		// check for existing instances for this player
@@ -488,7 +487,7 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 				player.sendPacket(SystemMessageId.YOU_HAVE_ENTERED_ANOTHER_INSTANT_ZONE_THEREFORE_YOU_CANNOT_ENTER_CORRESPONDING_DUNGEON);
 				return 0;
 			}
-			teleportPlayer(player, loc, world.getInstanceId(), false);
+			teleportPlayer(player, ENTER_TELEPORT_1, world.getInstanceId());
 			return world.getInstanceId();
 		}
 		// New instance
@@ -520,18 +519,23 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 		// teleport players
 		if ((player.getParty() == null) || (player.getParty().getCommandChannel() == null))
 		{
-			teleportPlayer(player, loc, instanceId, false);
-			world.addAllowed(player.getObjectId());
+			managePlayerEnter(player, (SOD1World) world);
 		}
 		else
 		{
 			for (L2PcInstance channelMember : player.getParty().getCommandChannel().getMembers())
 			{
-				teleportPlayer(channelMember, loc, instanceId, false);
-				world.addAllowed(channelMember.getObjectId());
+				managePlayerEnter(channelMember, (SOD1World) world);
 			}
 		}
 		return instanceId;
+	}
+	
+	private void managePlayerEnter(L2PcInstance player, SOD1World world)
+	{
+		world.playersInside.add(player);
+		world.addAllowed(player.getObjectId());
+		teleportPlayer(player, ENTER_TELEPORT_1, world.getInstanceId(), false);
 	}
 	
 	protected boolean checkKillProgress(L2Npc mob, SOD1World world)
@@ -602,8 +606,7 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 						spawnFlaggedNPCs(world, 0);
 						break;
 					case 1:
-						ExShowScreenMessage message1 = new ExShowScreenMessage(NpcStringId.THE_ENEMIES_HAVE_ATTACKED_EVERYONE_COME_OUT_AND_FIGHT_URGH, 5, 3000);
-						sendScreenMessage(world, message1);
+						manageScreenMsg(world, NpcStringId.THE_ENEMIES_HAVE_ATTACKED_EVERYONE_COME_OUT_AND_FIGHT_URGH);
 						for (int i : ENTRANCE_ROOM_DOORS)
 						{
 							openDoor(i, world.getInstanceId());
@@ -615,8 +618,7 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 						// handled elsewhere
 						return true;
 					case 4:
-						ExShowScreenMessage message2 = new ExShowScreenMessage(NpcStringId.OBELISK_HAS_COLLAPSED_DONT_LET_THE_ENEMIES_JUMP_AROUND_WILDLY_ANYMORE, 5, 3000);
-						sendScreenMessage(world, message2);
+						manageScreenMsg(world, NpcStringId.OBELISK_HAS_COLLAPSED_DONT_LET_THE_ENEMIES_JUMP_AROUND_WILDLY_ANYMORE);
 						for (int i : SQUARE_DOORS)
 						{
 							openDoor(i, world.getInstanceId());
@@ -635,8 +637,7 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 						spawnFlaggedNPCs(world, 7);
 						break;
 					case 8:
-						ExShowScreenMessage message4 = new ExShowScreenMessage(NpcStringId.COME_OUT_WARRIORS_PROTECT_SEED_OF_DESTRUCTION, 5, 3000);
-						sendScreenMessage(world, message4);
+						manageScreenMsg(world, NpcStringId.COME_OUT_WARRIORS_PROTECT_SEED_OF_DESTRUCTION);
 						world.deviceSpawnedMobCount = 0;
 						spawnFlaggedNPCs(world, 8);
 						break;
@@ -673,10 +674,7 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 			{
 				skill = TRAP_DAMAGE.getSkill();
 			}
-			else
-			{
-				skill = TRAP_SPAWN.getSkill();
-			}
+			
 			addTrap(npcId, x, y, z, h, skill, world.getInstanceId());
 			return;
 		}
@@ -750,14 +748,13 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 		}
 	}
 	
-	private void sendScreenMessage(SOD1World world, ExShowScreenMessage message)
+	private void manageScreenMsg(SOD1World world, NpcStringId stringId)
 	{
-		for (int objId : world.getAllowed())
+		for (L2PcInstance players : world.playersInside)
 		{
-			L2PcInstance player = L2World.getInstance().getPlayer(objId);
-			if (player != null)
+			if ((players != null) && (players.getInstanceId() == world.getInstanceId()))
 			{
-				player.sendPacket(message);
+				showOnScreenMsg(players, stringId, 2, 5000);
 			}
 		}
 	}
@@ -870,8 +867,7 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 				{
 					world.deviceSpawnedMobCount = 0;
 					spawnFlaggedNPCs(world, 6);
-					ExShowScreenMessage message3 = new ExShowScreenMessage(NpcStringId.ENEMIES_ARE_TRYING_TO_DESTROY_THE_FORTRESS_EVERYONE_DEFEND_THE_FORTRESS, 5, 3000);
-					sendScreenMessage(world, message3);
+					manageScreenMsg(world, NpcStringId.ENEMIES_ARE_TRYING_TO_DESTROY_THE_FORTRESS_EVERYONE_DEFEND_THE_FORTRESS);
 				}
 				else
 				{
@@ -997,7 +993,7 @@ public final class SeedOfDestruction extends AbstractNpcAI implements IXmlReader
 				InstanceWorld world = InstanceManager.getInstance().getPlayerWorld(player);
 				if ((SoDManager.getInstance().getSoDState() == 1) || ((world != null) && (world instanceof SOD1World)))
 				{
-					enterInstance(player, "SeedOfDestruction.xml", ENTER_TELEPORT_1);
+					enterInstance(player, "SeedOfDestruction.xml");
 				}
 				else if (SoDManager.getInstance().getSoDState() == 2)
 				{
