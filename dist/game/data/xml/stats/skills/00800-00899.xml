@@ -378,6 +378,8 @@
 		<set name="castRange" val="600" />
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="1100" />
+		<set name="flyType" val="DUMMY" />
+		<set name="flyToBack" val="true" />
 		<set name="hitTime" val="100" />
 		<set name="icon" val="icon.skill0821" />
 		<set name="magicLvl" val="40" />
@@ -387,7 +389,6 @@
 		<set name="reuseDelay" val="75000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="TeleportToTarget" noicon="1" />
 			<effect name="RemoveTarget" effectPower="100" noicon="1" />
 		</for>
 	</skill>

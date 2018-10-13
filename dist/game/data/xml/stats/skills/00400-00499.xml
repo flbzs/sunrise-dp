@@ -2524,6 +2524,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="600" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyToBack" val="true" />
 		<set name="hitTime" val="800" />
 		<set name="magicLvl" val="32" />
 		<set name="mpInitialConsume" val="20" />
@@ -2537,9 +2538,6 @@
 				<target mindistance="200" />
 			</and>
 		</cond>
-		<for>
-			<effect name="EnemyCharge" noicon="1" />
-		</for>
 	</skill>
 	<skill id="485" levels="7" name="Disarm" enchantGroup1="1" enchantGroup2="1">
 		<!-- Confirmed CT2.5 -->
@@ -2750,6 +2748,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="#effectRange" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyToBack" val="true" />
 		<set name="hitTime" val="800" />
 		<set name="magicLvl" val="#magicLvl" />
 		<set name="mpInitialConsume" val="#mpInitialConsume" />
@@ -2805,6 +2804,7 @@
 		<set name="coolTime" val="200" />
 		<set name="effectRange" val="#effectRange" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyToBack" val="true" />
 		<set name="hitTime" val="800" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />
@@ -2846,11 +2846,9 @@
 		</cond>
 		<for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="70" abnormalLvl="1" abnormalType="stun" />
-			<effect name="EnemyCharge" noicon="1" />
 		</for>
 		<enchant2for>
 			<effect name="Stun" abnormalTime="9" val="0" effectPower="#ench2Chance" abnormalLvl="1" abnormalType="stun" />
-			<effect name="EnemyCharge" noicon="1" />
 		</enchant2for>
 	</skill>
 	<skill id="495" levels="10" name="Blade Rush" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">
@@ -2876,6 +2874,7 @@
 		<set name="effectRange" val="#effectRange" />
 		<set name="fanRange" val="0,0,300,100" />
 		<set name="flyType" val="CHARGE" />
+		<set name="flyToBack" val="true" />
 		<set name="hitTime" val="800" />
 		<set name="isDebuff" val="true" />
 		<set name="lvlBonusRate" val="1" />

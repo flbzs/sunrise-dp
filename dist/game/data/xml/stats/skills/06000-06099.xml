@@ -373,9 +373,6 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
-			<effect name="EnemyCharge" noicon="1" />
-		</for>
 	</skill>
 	<skill id="6042" levels="1" name="Phoenix Cleanse">
 		<!-- Confirmed CT2.5 -->

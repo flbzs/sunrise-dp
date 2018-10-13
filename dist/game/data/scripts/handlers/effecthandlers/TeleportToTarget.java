@@ -64,10 +64,8 @@ public class TeleportToTarget extends L2Effect
 		activeChar.abortAttack();
 		activeChar.abortCast();
 		activeChar.setXYZ(loc);
+		activeChar.setHeading(target.getHeading());
 		activeChar.broadcastPacket(new ValidateLocation(activeChar));
-		// vGodFather trick :D
-		target.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(px, py, z));
-		target.broadcastPacket(new ValidateLocation(target));
 		return true;
 	}
 }

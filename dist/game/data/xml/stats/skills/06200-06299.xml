@@ -1102,9 +1102,6 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="250" />
 		</cond>
-		<for>
-			<effect name="EnemyCharge" noicon="1" />
-		</for>
 	</skill>
 	<skill id="6293" levels="1" name="Power Strike">
 		<!-- Confirmed CT2.5 -->
@@ -1177,9 +1174,6 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="250" />
 		</cond>
-		<for>
-			<effect name="EnemyCharge" noicon="1" />
-		</for>
 	</skill>
 	<skill id="6297" levels="1" name="Cylinder Throw">
 		<!-- Confirmed CT2.5 -->

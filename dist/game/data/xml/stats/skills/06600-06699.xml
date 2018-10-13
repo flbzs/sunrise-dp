@@ -561,9 +561,6 @@
 		<cond msgId="113" addName="1">
 			<target mindistance="200" />
 		</cond>
-		<for>
-			<effect name="EnemyCharge" noicon="1" />
-		</for>
 	</skill>
 	<skill id="6643" levels="1" name="Holy Strike">
 		<!-- Confirmed CT2.5 -->
