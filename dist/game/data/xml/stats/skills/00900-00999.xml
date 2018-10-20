@@ -380,7 +380,9 @@
 		</cond>
 		<for>
 			<effect name="Buff" abnormalTime="8" abnormalLvl="1" abnormalType="reflect_magic_dd">
-				<add stat="vengeanceMdam" val="#vengeanceMdam" />
+				<add stat="vengeanceMdam" val="#vengeanceMdam">
+					<using kind="SHIELD" />
+				</add>
 			</effect>
 		</for>
 	</skill>
