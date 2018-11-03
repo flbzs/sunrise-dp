@@ -630,7 +630,7 @@ public class Q00999_T1Tutorial extends Quest
 							qs.set("ucMemo", "3");
 							if (player.getClassId().isMage())
 							{
-								playSound(player, Voice.TUTORIAL_VOICE_017_1000);
+								playSound(player, Voice.TUTORIAL_VOICE_027_1000);
 								st.giveItems(SPIRITSHOT_NOVICE, 100);
 								htmltext = talk.htmlfiles[2];
 								if (htmltext.equals(""))
@@ -640,7 +640,7 @@ public class Q00999_T1Tutorial extends Quest
 							}
 							else
 							{
-								playSound(player, Voice.TUTORIAL_VOICE_016_1000);
+								playSound(player, Voice.TUTORIAL_VOICE_026_1000);
 								st.giveItems(SOULSHOT_NOVICE, 200);
 								htmltext = talk.htmlfiles[1];
 								if (htmltext.equals(""))
