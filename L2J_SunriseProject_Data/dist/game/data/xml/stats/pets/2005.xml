@@ -3,6 +3,7 @@
 	<!-- Pet  : Lilias -->
 	<!-- Item : Lilias Rose Necklace (Event) - Summon duration - 3 hours -->
 	<pet id="1565" itemId="20911" index="2005">
+		<set name="sync_level" val="1" />
 		<skills>
 			<skill minLvl="1" skillId="5186" skillLvl="2" />
 			<skill minLvl="1" skillId="5187" skillLvl="4" />

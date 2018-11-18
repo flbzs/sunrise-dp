@@ -3,6 +3,7 @@
 	<!-- Pet  : Toy Knight -->
 	<!-- Item : Toy Knight Summon Whistle -->
 	<pet id="16052" itemId="14061;13548" index="27">
+		<set name="sync_level" val="1" />
 		<skills>
 			<!-- Custom levels -->
 			<skill minLvl="1" skillId="5771" skillLvl="1" /> <!-- Buff Control -->

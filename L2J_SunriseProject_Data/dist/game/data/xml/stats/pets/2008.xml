@@ -3,6 +3,7 @@
 	<!-- Pet  : Desheloph -->
 	<!-- Item : Improved Deseloph Rose Necklace (Event) - Summon duration - 5 hours -->
 	<pet id="1568" itemId="20915" index="2008">
+		<set name="sync_level" val="1" />
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="18000" />

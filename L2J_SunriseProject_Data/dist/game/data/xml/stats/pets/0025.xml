@@ -3,6 +3,7 @@
 	<!-- Pet  : White Weasel -->
 	<!-- Item : White Weasel Hunting Helper Necklace -->
 	<pet id="16045" itemId="13017" index="25">
+		<set name="sync_level" val="1" />
 		<skills>
 			<!-- Custom levels -->
 			<skill minLvl="1" skillId="5771" skillLvl="1" /> <!-- Buff Control -->

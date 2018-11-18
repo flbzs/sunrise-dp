@@ -3,6 +3,7 @@
 	<!-- Pet  : Hyum -->
 	<!-- Item : Hyum Rose Necklace (Event) - Summon duration - 3 hours -->
 	<pet id="1563" itemId="20909" index="2003">
+		<set name="sync_level" val="1" />
 		<skills>
 			<skill minLvl="1" skillId="5190" skillLvl="6" />
 			<skill minLvl="1" skillId="5192" skillLvl="2" />

@@ -3,6 +3,7 @@
 	<!-- Pet  : Fairy Princess -->
 	<!-- Item : Fairy Princess Hunting Helper Necklace -->
 	<pet id="16046" itemId="13018" index="26">
+		<set name="sync_level" val="1" />
 		<skills>
 			<!-- Custom levels -->
 			<skill minLvl="1" skillId="5771" skillLvl="1" /> <!-- Buff Control -->

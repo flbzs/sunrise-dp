@@ -3,6 +3,7 @@
 	<!-- Pet  : Lilias -->
 	<!-- Item : Improved Lilias Rose Necklace (Event) - Summon duration - 5 hours -->
 	<pet id="1571" itemId="20918" index="2011">
+		<set name="sync_level" val="1" />
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="18000" />

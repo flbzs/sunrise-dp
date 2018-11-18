@@ -3,6 +3,7 @@
 	<!-- Pet  : Desheloph -->
 	<!-- Item : Deseloph Rose Necklace (Event) - Summon duration - 3 hours -->
 	<pet id="1562" itemId="20908" index="2002">
+		<set name="sync_level" val="1" />
 		<skills>
 			<skill minLvl="1" skillId="5186" skillLvl="2" />
 			<skill minLvl="1" skillId="5187" skillLvl="4" />

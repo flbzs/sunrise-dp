@@ -3,6 +3,7 @@
 	<!-- Pet  : Lapham -->
 	<!-- Item : Improved Lapham Rose Necklace (Event) - Summon duration - 5 hours -->
 	<pet id="1572" itemId="20919" index="2012">
+		<set name="sync_level" val="1" />
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="18000" />

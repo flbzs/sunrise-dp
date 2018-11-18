@@ -1713,20 +1713,25 @@
 	</skill>
 	<skill id="2498" levels="1" name="Bottle of Empty Soul">
 		<!-- Confirmed CT2.5 -->
-		<set name="create_item_count" val="1" />
-		<set name="create_item_id" val="10410" />
 		<set name="hitTime" val="500" />
 		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="itemConsumeId" val="10409" />
 		<set name="itemConsumeCount" val="1" />
 		<set name="magicLvl" val="1" />
 		<set name="operateType" val="A1" />
-		<set name="skillType" val="CREATE_ITEM" />
-		<set name="soulMaxConsumeCount" val="5" />
 		<set name="targetType" val="SELF" />
 		<cond msgId="2195">
 			<player souls="5" />
 		</cond>
+		<for>
+			<effect name="RemoveSouls" noicon="1">
+				<param count="5" />
+			</effect>
+			<effect name="Restoration" noicon="1">
+				<param itemId="10410" />
+				<param itemCount="1" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="2499" levels="1" name="Bottle of Full Soul">
 		<!-- Confirmed CT2.5 -->
