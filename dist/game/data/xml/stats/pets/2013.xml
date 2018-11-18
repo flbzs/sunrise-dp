@@ -3,6 +3,7 @@
 	<!-- Pet  : Mafum -->
 	<!-- Item : Improved Mafum Rose Necklace (Event) - Summon duration - 5 hours -->
 	<pet id="1573" itemId="20920" index="2013">
+		<set name="sync_level" val="1" />
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="18000" />

@@ -3,6 +3,7 @@
 	<!-- Pet  : Wild Beast Fighter -->
 	<!-- Item : Wild Beast Fighter Hunting Helper Necklace -->
 	<pet id="16044" itemId="13019" index="24">
+		<set name="sync_level" val="1" />
 		<skills>
 			<!-- Custom levels -->
 			<skill minLvl="1" skillId="5753" skillLvl="1" /> <!-- Awakening -->

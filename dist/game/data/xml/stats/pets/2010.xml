@@ -3,6 +3,7 @@
 	<!-- Pet  : Lekang -->
 	<!-- Item : Improved Rekang Rose Necklace (Event) - Summon duration - 5 hours -->
 	<pet id="1570" itemId="20917" index="2010">
+		<set name="sync_level" val="1" />
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="18000" />

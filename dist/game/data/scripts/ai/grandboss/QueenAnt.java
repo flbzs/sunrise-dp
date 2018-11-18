@@ -345,9 +345,14 @@ public final class QueenAnt extends AbstractNpcAI
 			cancelQuestTimer("action", npc, null);
 			cancelQuestTimer("heal", null, null);
 			_nurses.clear();
-			_larva.deleteMe();
-			_larva = null;
 			_queen = null;
+			
+			// Possible NPE in case of queen ant is not spawned by retail way
+			if (_larva != null)
+			{
+				_larva.deleteMe();
+				_larva = null;
+			}
 		}
 		else if ((_queen != null) && !_queen.isAlikeDead())
 		{

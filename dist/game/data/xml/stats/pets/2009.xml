@@ -3,6 +3,7 @@
 	<!-- Pet  : Hyum -->
 	<!-- Item : Improved Hyum Rose Necklace (Event) - Summon duration - 5 hours -->
 	<pet id="1569" itemId="20916" index="2009">
+		<set name="sync_level" val="1" />
 		<stats>
 			<stat level="1">
 				<set name="max_meal" val="18000" />

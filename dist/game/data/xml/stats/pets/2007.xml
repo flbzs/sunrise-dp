@@ -3,6 +3,7 @@
 	<!-- Pet  : Mafum -->
 	<!-- Item : Mafum Rose Necklace (Event) - Summon duration - 3 hours -->
 	<pet id="1567" itemId="20913" index="2007">
+		<set name="sync_level" val="1" />
 		<skills>
 			<skill minLvl="1" skillId="5189" skillLvl="6" />
 			<skill minLvl="1" skillId="5190" skillLvl="6" />
