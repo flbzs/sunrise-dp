@@ -1,23 +1,3 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : ServerConnection
-Source Server Version : 50528
-Source Host           : localhost:3306
-Source Database       : l2jsunrisegs
-
-Target Server Type    : MYSQL
-Target Server Version : 50528
-File Encoding         : 65001
-
-Date: 2013-05-10 23:29:38
-*/
-
-SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for `custom_spawnlist`
--- ----------------------------
 DROP TABLE IF EXISTS `custom_spawnlist`;
 CREATE TABLE `custom_spawnlist` (
   `location` varchar(40) NOT NULL DEFAULT '',
@@ -34,6 +14,7 @@ CREATE TABLE `custom_spawnlist` (
   `respawn_random` mediumint(5) NOT NULL DEFAULT '0',
   `loc_id` int(9) NOT NULL DEFAULT '0',
   `periodOfDay` tinyint(1) unsigned NOT NULL DEFAULT '0'
+  PRIMARY KEY (`npc_templateid`,`locx`,`locy`,`locz`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
