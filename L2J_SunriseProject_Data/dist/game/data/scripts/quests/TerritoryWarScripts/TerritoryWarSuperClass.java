@@ -383,16 +383,7 @@ public class TerritoryWarSuperClass extends Quest
 	{
 		if (Util.contains(targets, npc))
 		{
-			if (skill.getId() == 845)
-			{
-				if (TerritoryWarManager.getInstance().getHQForClan(caster.getClan()) != npc)
-				{
-					return super.onSkillSee(npc, caster, skill, targets, isSummon);
-				}
-				npc.deleteMe();
-				TerritoryWarManager.getInstance().setHQForClan(caster.getClan(), null);
-			}
-			else if (skill.getId() == 847)
+			if (skill.getId() == 847)
 			{
 				if (TerritoryWarManager.getInstance().getHQForTerritory(caster.getSiegeSide()) != npc)
 				{
