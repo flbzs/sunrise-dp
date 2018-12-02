@@ -25,8 +25,8 @@ import l2r.gameserver.model.actor.instance.L2OlympiadManagerInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.entity.olympiad.Olympiad;
 import l2r.gameserver.model.entity.olympiad.OlympiadGameManager;
-import l2r.gameserver.model.entity.olympiad.OlympiadGameTask;
 import l2r.gameserver.model.entity.olympiad.OlympiadManager;
+import l2r.gameserver.model.entity.olympiad.tasks.OlympiadGameTask;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.ExOlympiadMatchList;
 
