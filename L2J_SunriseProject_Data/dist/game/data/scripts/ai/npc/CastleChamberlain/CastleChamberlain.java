@@ -827,18 +827,20 @@ public final class CastleChamberlain extends AbstractNpcAI
 				if (isOwner(player, npc) && player.hasClanPrivilege(ClanPrivilege.CS_TAXES))
 				{
 					final long amount = (st.hasMoreTokens()) ? Long.parseLong(st.nextToken()) : 0;
-					if (amount <= castle.getTreasury())
-					{
-						castle.addToTreasuryNoTax((-1) * amount);
-						giveAdena(player, amount, false);
-						htmltext = "chamberlain-01.html";
-					}
-					else
+					if ((amount < 0) || (amount > castle.getTreasury()))
 					{
 						final NpcHtmlMessage html = getHtmlPacket(player, npc, "castlenotenoughbalance.html");
 						html.replace("%tax_income%", Util.formatAdena(castle.getTreasury()));
 						html.replace("%withdraw_amount%", Util.formatAdena(amount));
 						player.sendPacket(html);
+					}
+					else
+					{
+						if (castle.removeFromTreasury(amount))
+						{
+							giveAdena(player, amount, false);
+						}
+						htmltext = "chamberlain-01.html";
 					}
 				}
 				else

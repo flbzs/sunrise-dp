@@ -18,9 +18,11 @@
  */
 package handlers.effecthandlers;
 
+import l2r.gameserver.GeoData;
 import l2r.gameserver.data.sql.NpcTable;
 import l2r.gameserver.data.xml.impl.PetData;
 import l2r.gameserver.model.L2PetData;
+import l2r.gameserver.model.Location;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.instance.L2PetInstance;
 import l2r.gameserver.model.actor.templates.L2NpcTemplate;
@@ -121,7 +123,10 @@ public class SummonPet extends L2Effect
 		
 		item.setEnchantLevel(pet.getLevel());
 		player.setPet(pet);
-		pet.spawnMe(player.getX() + 50, player.getY() + 100, player.getZ());
+		
+		final Location loc = GeoData.getInstance().moveCheck(player, new Location(player.getX() + 20, player.getY() + 20, player.getZ()));
+		pet.spawnMe(loc.getX(), loc.getY(), loc.getZ());
+		
 		pet.startFeed();
 		pet.setFollowStatus(true);
 		pet.getOwner().sendPacket(new PetItemList(pet.getInventory().getItems()));
