@@ -312,17 +312,21 @@ public final class DragonValley extends AbstractNpcAI
 					switch (moraleBoostLv)
 					{
 						case 1:
-							addSkillCastDesire(npc, member, MORALE_BOOST1, 99900000000L);
+							MORALE_BOOST1.getSkill().applyEffects(member, member);
 							break;
 						case 2:
-							addSkillCastDesire(npc, member, MORALE_BOOST2, 99900000000L);
+							MORALE_BOOST2.getSkill().applyEffects(member, member);
 							break;
 						case 3:
-							addSkillCastDesire(npc, member, MORALE_BOOST3, 99900000000L);
+							MORALE_BOOST3.getSkill().applyEffects(member, member);
 							break;
 					}
 				}
 			}
+			
+			// TODO in retail uses skill cast desire
+			// addSkillCastDesire(npc, target, MORALE_BOOST1, 99900000000L);
+			npc.broadcastPacket(new MagicSkillUse(npc, MORALE_BOOST1.getSkillId(), MORALE_BOOST1.getSkillLvl(), 1000, 0));
 		}
 	}
 	

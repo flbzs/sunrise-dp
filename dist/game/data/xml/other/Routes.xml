@@ -594,7 +594,7 @@
 	</route>
 	<route name="iz111_zone04_02" repeat="true" repeatStyle="back">
 		<target id="18834" spawnX="-76628" spawnY="208151" spawnZ="-7616" />
-		<point X="-76367" Y="208151" Z="-7600" delay="0" run="false" />
+		<point X="-76377" Y="208151" Z="-7600" delay="0" run="false" />
 		<point X="-76628" Y="208151" Z="-7600" delay="0" run="false" />
 	</route>
 	<route name="iz111_zone04_03" repeat="true" repeatStyle="back">
