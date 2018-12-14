@@ -58,11 +58,7 @@ public class OutpostDestroy extends L2Effect
 			{
 				flag.deleteMe();
 			}
-			else
-			{
-				_log.warn("Could not find outpost for clan: " + player.getClan().getName());
-			}
-			TerritoryWarManager.getInstance().setHQForClan(player.getClan(), null);
+			TerritoryWarManager.getInstance().removeHQForClan(player.getClan());
 		}
 		return true;
 	}

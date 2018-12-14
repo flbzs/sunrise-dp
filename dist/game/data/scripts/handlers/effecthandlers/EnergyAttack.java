@@ -30,7 +30,6 @@ import l2r.gameserver.model.effects.EffectTemplate;
 import l2r.gameserver.model.effects.L2Effect;
 import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.items.L2Weapon;
-import l2r.gameserver.model.items.type.WeaponType;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.stats.BaseStats;
 import l2r.gameserver.model.stats.Env;
@@ -127,15 +126,11 @@ public final class EnergyAttack extends L2Effect
 			boolean ss = getSkill().useSoulShot() && attacker.isChargedShot(ShotType.SOULSHOTS);
 			double ssBoost = ss ? 2 : 1.0;
 			
-			double weaponTypeBoost;
-			L2Weapon weapon = attacker.getActiveWeaponItem();
-			if ((weapon != null) && ((weapon.getItemType() == WeaponType.BOW) || (weapon.getItemType() == WeaponType.CROSSBOW)))
+			double weaponTypeBoost = 77;
+			final L2Weapon weapon = attacker.getActiveWeaponItem();
+			if ((weapon != null) && weapon.getItemType().isRanged())
 			{
 				weaponTypeBoost = 70;
-			}
-			else
-			{
-				weaponTypeBoost = 77;
 			}
 			
 			// charge count should be the count before casting the skill but since its reduced before calling effects
