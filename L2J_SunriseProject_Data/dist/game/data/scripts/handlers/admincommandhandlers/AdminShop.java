@@ -23,7 +23,7 @@ import l2r.gameserver.handler.IAdminCommandHandler;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.buylist.L2BuyList;
 import l2r.gameserver.network.serverpackets.ActionFailed;
-import l2r.gameserver.network.serverpackets.BuyList;
+import l2r.gameserver.network.serverpackets.ExBuyList;
 import l2r.gameserver.network.serverpackets.ExBuySellList;
 
 import org.slf4j.Logger;
@@ -89,7 +89,7 @@ public class AdminShop implements IAdminCommandHandler
 		
 		if (buyList != null)
 		{
-			activeChar.sendPacket(new BuyList(buyList, activeChar.getAdena(), 0));
+			activeChar.sendPacket(new ExBuyList(buyList, activeChar.getAdena(), 0));
 			activeChar.sendPacket(new ExBuySellList(activeChar, 0, false));
 		}
 		else

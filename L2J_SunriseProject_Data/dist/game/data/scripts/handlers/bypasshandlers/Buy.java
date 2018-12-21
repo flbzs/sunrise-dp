@@ -24,7 +24,7 @@ import l2r.gameserver.handler.IBypassHandler;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.instance.L2MerchantInstance;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
-import l2r.gameserver.network.serverpackets.BuyList;
+import l2r.gameserver.network.serverpackets.ExBuyList;
 import l2r.gameserver.network.serverpackets.ExBuySellList;
 
 public class Buy implements IBypassHandler
@@ -47,7 +47,7 @@ public class Buy implements IBypassHandler
 		{
 			if (command.startsWith(COMMANDS[0])) // MerchantSell
 			{
-				activeChar.sendPacket(new BuyList(activeChar.getAdena()));
+				activeChar.sendPacket(new ExBuyList(activeChar.getAdena()));
 				activeChar.sendPacket(new ExBuySellList(activeChar, 0, true));
 				return true;
 			}

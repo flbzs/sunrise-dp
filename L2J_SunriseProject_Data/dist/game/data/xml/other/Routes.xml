@@ -1154,6 +1154,9 @@
 		<point X="18387" Y="151874" Z="-3317" delay="0" run="false" />
 		<point X="18405" Y="154770" Z="-3616" delay="30" run="false" />
 		<point X="17655" Y="156863" Z="-3664" delay="0" run="false" />
+		<point X="16166" Y="156203" Z="-3624" delay="0" run="false" />
+		<point X="14880" Y="155296" Z="-3520" delay="0" run="false" />
+		<point X="13659" Y="154650" Z="-3184" delay="0" run="false" />
 		<point X="12303" Y="153937" Z="-2680" delay="0" run="false" />
 	</route>
 	<!-- Suspicious Merchant - Cloud Mountain -->
@@ -1163,9 +1166,16 @@
 		<point X="-57329" Y="86006" Z="-3640" delay="0" run="false" />
 		<point X="-57470" Y="85306" Z="-3664" delay="0" run="false" />
 		<point X="-58892" Y="85159" Z="-3768" delay="30" run="false" />
+		<point X="-59031" Y="83198" Z="-3712" delay="0" run="false" />
+		<point X="-59124" Y="81706" Z="-3672" delay="0" run="false" />
 		<point X="-59030" Y="80150" Z="-3632" delay="0" run="false" />
 		<point X="-57642" Y="77591" Z="-3512" delay="20" run="false" />
+		<point X="-56201" Y="77490" Z="-3112" delay="0" run="false" />
+		<point X="-55225" Y="77639" Z="-3072" delay="0" run="false" />
 		<point X="-53971" Y="77664" Z="-3224" delay="40" run="false" />
+		<point X="-53026" Y="79133" Z="-3392" delay="0" run="false" />
+		<point X="-53329" Y="81567" Z="-3424" delay="0" run="false" />
+		<point X="-53676" Y="83283" Z="-3472" delay="0" run="false" />
 		<point X="-53271" Y="85126" Z="-3552" delay="60" run="false" />
 	</route>
 	<!-- Suspicious Merchant - Tanor Fortress -->
