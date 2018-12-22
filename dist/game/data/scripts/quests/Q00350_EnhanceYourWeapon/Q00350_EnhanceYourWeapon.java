@@ -401,12 +401,12 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 		if (Item != null)
 		{
 			// Prepare inventory update packet
-			InventoryUpdate playerIU = new InventoryUpdate();
-			playerIU.addRemovedItem(Item);
+			final InventoryUpdate iu = new InventoryUpdate();
+			iu.addRemovedItem(Item);
 			
 			// Add new crystal to the killer's inventory
 			Item = player.getInventory().addItem("SoulCrystal", giveid, 1, player, mob);
-			playerIU.addItem(Item);
+			iu.addItem(Item);
 			
 			// Send a sound event and text message to the player
 			if (broke)
@@ -432,7 +432,7 @@ public class Q00350_EnhanceYourWeapon extends Quest implements IXmlReader
 			}
 			
 			// Send inventory update packet
-			player.sendPacket(playerIU);
+			player.sendInventoryUpdate(iu);
 		}
 	}
 	

@@ -90,7 +90,7 @@ public class PlayerHandler implements ITelnetHandler
 					L2ItemInstance item = player.getInventory().addItem("Status-Give", itemId, amount, null, null);
 					InventoryUpdate iu = new InventoryUpdate();
 					iu.addItem(item);
-					player.sendPacket(iu);
+					player.sendInventoryUpdate(iu);
 					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_PICKED_UP_S1_S2);
 					sm.addItemName(itemId);
 					sm.addLong(amount);
@@ -315,7 +315,7 @@ public class PlayerHandler implements ITelnetHandler
 			// send packets
 			InventoryUpdate iu = new InventoryUpdate();
 			iu.addModifiedItem(itemInstance);
-			activeChar.sendPacket(iu);
+			activeChar.sendInventoryUpdate(iu);
 			activeChar.broadcastUserInfo();
 			
 			// informations

@@ -92,7 +92,7 @@ public class ConvertItem extends L2Effect
 		{
 			iu.addModifiedItem(item);
 		}
-		player.sendPacket(iu);
+		player.sendInventoryUpdate(iu);
 		
 		if (unequiped.length <= 0)
 		{

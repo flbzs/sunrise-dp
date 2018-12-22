@@ -47,7 +47,7 @@ public class Banking implements IVoicedCommandHandler
 				activeChar.getInventory().reduceAdena("BanbingAdenaDestroy", Config.BANKING_SYSTEM_ADENA, activeChar, null);
 				activeChar.getInventory().addItem("BanbingGoldbarCreate", 3470, Config.BANKING_SYSTEM_GOLDBARS, activeChar, null);
 				activeChar.getInventory().updateDatabase();
-				activeChar.sendPacket(iu);
+				activeChar.sendInventoryUpdate(iu);
 				activeChar.sendMessage("Thank you, you now have " + Config.BANKING_SYSTEM_GOLDBARS + " Goldbar(s), and " + Config.BANKING_SYSTEM_ADENA + " less adena.");
 			}
 			else
@@ -63,7 +63,7 @@ public class Banking implements IVoicedCommandHandler
 				activeChar.getInventory().destroyItemByItemId("BankingGoldbarDestroy", 3470, Config.BANKING_SYSTEM_GOLDBARS, activeChar, null);
 				activeChar.getInventory().addAdena("BankingAdenaCreate", Config.BANKING_SYSTEM_ADENA, activeChar, null);
 				activeChar.getInventory().updateDatabase();
-				activeChar.sendPacket(iu);
+				activeChar.sendInventoryUpdate(iu);
 				activeChar.sendMessage("Thank you, you now have " + Config.BANKING_SYSTEM_ADENA + " Adena, and " + Config.BANKING_SYSTEM_GOLDBARS + " less Goldbar(s).");
 			}
 			else

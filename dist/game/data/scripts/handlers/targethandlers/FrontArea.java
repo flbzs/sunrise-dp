@@ -89,7 +89,7 @@ public class FrontArea implements ITargetTypeHandler
 				continue;
 			}
 			
-			if (skill.getFanRange() != null ? skill.checkFan(activeChar, obj, srcInArena) : skill.checkNormal(activeChar, obj, srcInArena))
+			if (skill.getFanRange() != null ? skill.checkFan(activeChar, origin, obj, srcInArena) : skill.checkNormal(activeChar, origin, obj, srcInArena))
 			{
 				if ((skill.getFanRange() == null) && !Util.isFacing(activeChar, obj, 60))
 				{
