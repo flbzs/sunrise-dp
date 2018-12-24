@@ -39,8 +39,6 @@ public class Area implements ITargetTypeHandler
 	@Override
 	public L2Object[] getTargetList(L2Skill skill, L2Character activeChar, boolean onlyFirst, L2Character target)
 	{
-		System.out.println("Area getTargetList");
-		
 		List<L2Character> targetList = new ArrayList<>();
 		if ((target == null) || (((target == activeChar) || target.isAlikeDead()) && (skill.getCastRange() >= 0)) || (!(target.isAttackable() || target.isPlayable())))
 		{
@@ -80,25 +78,20 @@ public class Area implements ITargetTypeHandler
 		final Collection<L2Character> objs = activeChar.getKnownList().getKnownCharactersInRadius(target, skill.getAffectRange());
 		int maxTargets = skill.getAffectLimit();
 		
-		System.out.println("Objects size is: " + objs.size());
-		
 		for (L2Character obj : objs)
 		{
 			if (!(obj.isAttackable() || obj.isPlayable()))
 			{
-				System.out.println("skip 1");
 				continue;
 			}
 			
 			if ((obj == origin) || obj.isDead())
 			{
-				System.out.println("skip 2");
 				continue;
 			}
 			
 			if (skill.getFanRange() != null ? skill.checkFan(activeChar, origin, obj, srcInArena) : skill.checkNormal(activeChar, origin, obj, srcInArena))
 			{
-				System.out.println("Trying to add");
 				if ((maxTargets > 0) && (targetList.size() >= maxTargets))
 				{
 					break;
