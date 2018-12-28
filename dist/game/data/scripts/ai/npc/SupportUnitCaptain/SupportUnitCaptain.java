@@ -21,6 +21,7 @@ package ai.npc.SupportUnitCaptain;
 import l2r.gameserver.model.ClanPrivilege;
 import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
+import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.clientpackets.RequestAcquireSkill;
 
 import ai.npc.AbstractNpcAI;
@@ -155,6 +156,13 @@ public final class SupportUnitCaptain extends AbstractNpcAI
 				if (getQuestItemsCount(player, EPAULETTE) < 10)
 				{
 					htmltext = "unitcaptain-05.html";
+					break;
+				}
+				
+				// Weight/Inventory check
+				if (!player.isInventoryUnder90(false))
+				{
+					player.sendPacket(SystemMessageId.INVENTORY_LESS_THAN_80_PERCENT);
 					break;
 				}
 				

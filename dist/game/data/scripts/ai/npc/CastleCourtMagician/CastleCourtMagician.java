@@ -23,6 +23,7 @@ import l2r.gameserver.model.actor.L2Npc;
 import l2r.gameserver.model.actor.instance.L2PcInstance;
 import l2r.gameserver.model.actor.instance.PcInstance.PcFunc;
 import l2r.gameserver.model.holders.SkillHolder;
+import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.clientpackets.RequestAcquireSkill;
 
 import ai.npc.AbstractNpcAI;
@@ -147,6 +148,13 @@ public final class CastleCourtMagician extends AbstractNpcAI
 				if (getQuestItemsCount(player, EPAULETTE) < 10)
 				{
 					htmltext = "courtmagician-06.html";
+					break;
+				}
+				
+				// Weight/Inventory check
+				if (!player.isInventoryUnder90(false))
+				{
+					player.sendPacket(SystemMessageId.INVENTORY_LESS_THAN_80_PERCENT);
 					break;
 				}
 				
