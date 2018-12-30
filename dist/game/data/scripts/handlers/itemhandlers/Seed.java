@@ -95,13 +95,9 @@ public class Seed implements IItemHandler
 		final L2PcInstance activeChar = playable.getActingPlayer();
 		target.setSeeded(seed, activeChar);
 		
-		final SkillHolder[] skills = item.getItem().getSkills();
-		if (skills != null)
+		for (SkillHolder sk : item.getItem().getSkills())
 		{
-			for (SkillHolder sk : skills)
-			{
-				activeChar.useMagic(sk.getSkill(), false, false);
-			}
+			activeChar.useMagic(sk.getSkill(), false, false);
 		}
 		return true;
 	}

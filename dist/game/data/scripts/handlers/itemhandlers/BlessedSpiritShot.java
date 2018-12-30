@@ -18,6 +18,8 @@
  */
 package handlers.itemhandlers;
 
+import java.util.List;
+
 import l2r.gameserver.enums.ShotType;
 import l2r.gameserver.handler.IItemHandler;
 import l2r.gameserver.model.actor.L2Playable;
@@ -45,11 +47,9 @@ public class BlessedSpiritShot implements IItemHandler
 		L2PcInstance activeChar = (L2PcInstance) playable;
 		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		L2Weapon weaponItem = activeChar.getActiveWeaponItem();
-		final SkillHolder[] skills = item.getItem().getSkills();
-		
 		int itemId = item.getId();
-		
-		if (skills == null)
+		final List<SkillHolder> skills = item.getItem().getSkills();
+		if (skills.isEmpty())
 		{
 			_log.warn(getClass().getSimpleName() + ": is missing skills!");
 			return false;
@@ -104,7 +104,7 @@ public class BlessedSpiritShot implements IItemHandler
 		
 		if (!activeChar.getVarB("hideSSAnime"))
 		{
-			Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0), 600);
+			Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, skills.get(0).getSkillId(), skills.get(0).getSkillLvl(), 0, 0), 600);
 		}
 		return true;
 	}

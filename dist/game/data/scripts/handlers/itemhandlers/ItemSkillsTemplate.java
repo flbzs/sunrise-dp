@@ -18,6 +18,8 @@
  */
 package handlers.itemhandlers;
 
+import java.util.List;
+
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.handler.IItemHandler;
 import l2r.gameserver.model.actor.L2Playable;
@@ -56,8 +58,8 @@ public class ItemSkillsTemplate implements IItemHandler
 			return false;
 		}
 		
-		final SkillHolder[] skills = item.getEtcItem().getSkills();
-		if (skills == null)
+		final List<SkillHolder> skills = item.getItem().getSkills();
+		if (skills.isEmpty())
 		{
 			_log.info("Item " + item + " does not have registered any skill for handler.");
 			return false;
