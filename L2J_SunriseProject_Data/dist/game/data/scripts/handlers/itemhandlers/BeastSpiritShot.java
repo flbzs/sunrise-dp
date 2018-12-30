@@ -18,6 +18,8 @@
  */
 package handlers.itemhandlers;
 
+import java.util.List;
+
 import l2r.gameserver.enums.ShotType;
 import l2r.gameserver.handler.IItemHandler;
 import l2r.gameserver.model.actor.L2Playable;
@@ -60,9 +62,8 @@ public class BeastSpiritShot implements IItemHandler
 		final int itemId = item.getId();
 		final boolean isBlessed = ((itemId == 6647) || (itemId == 20334)); // TODO: Unhardcode these!
 		final short shotConsumption = activeOwner.getSummon().getSpiritShotsPerHit();
-		final SkillHolder[] skills = item.getItem().getSkills();
-		
-		if (skills == null)
+		final List<SkillHolder> skills = item.getItem().getSkills();
+		if (skills.isEmpty())
 		{
 			_log.warn(getClass().getSimpleName() + ": is missing skills!");
 			return false;
@@ -104,7 +105,7 @@ public class BeastSpiritShot implements IItemHandler
 		
 		if (!activeOwner.getVarB("hideSSAnime"))
 		{
-			Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(activeOwner.getSummon(), activeOwner.getSummon(), skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0), 600);
+			Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(activeOwner.getSummon(), activeOwner.getSummon(), skills.get(0).getSkillId(), skills.get(0).getSkillLvl(), 0, 0), 600);
 		}
 		return true;
 	}

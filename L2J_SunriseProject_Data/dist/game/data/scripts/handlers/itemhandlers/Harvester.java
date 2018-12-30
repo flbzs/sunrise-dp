@@ -18,6 +18,8 @@
  */
 package handlers.itemhandlers;
 
+import java.util.List;
+
 import l2r.Config;
 import l2r.gameserver.handler.IItemHandler;
 import l2r.gameserver.model.L2Object;
@@ -47,8 +49,8 @@ public final class Harvester implements IItemHandler
 			return false;
 		}
 		
-		final SkillHolder[] skills = item.getItem().getSkills();
-		if (skills == null)
+		final List<SkillHolder> skills = item.getItem().getSkills();
+		if (skills.isEmpty())
 		{
 			_log.warn(getClass().getSimpleName() + ": is missing skills!");
 			return false;

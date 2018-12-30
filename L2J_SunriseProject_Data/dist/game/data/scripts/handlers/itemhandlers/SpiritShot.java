@@ -18,6 +18,8 @@
  */
 package handlers.itemhandlers;
 
+import java.util.List;
+
 import l2r.gameserver.enums.ShotType;
 import l2r.gameserver.handler.IItemHandler;
 import l2r.gameserver.model.actor.L2Playable;
@@ -45,7 +47,7 @@ public class SpiritShot implements IItemHandler
 		final L2PcInstance activeChar = (L2PcInstance) playable;
 		final L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		final L2Weapon weaponItem = activeChar.getActiveWeaponItem();
-		final SkillHolder[] skills = item.getItem().getSkills();
+		final List<SkillHolder> skills = item.getItem().getSkills();
 		
 		int itemId = item.getId();
 		
@@ -103,7 +105,7 @@ public class SpiritShot implements IItemHandler
 		activeChar.sendPacket(SystemMessageId.ENABLED_SPIRITSHOT);
 		if (!activeChar.getVarB("hideSSAnime"))
 		{
-			Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, skills[0].getSkillId(), skills[0].getSkillLvl(), 0, 0), 600);
+			Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, skills.get(0).getSkillId(), skills.get(0).getSkillLvl(), 0, 0), 600);
 		}
 		return true;
 	}
