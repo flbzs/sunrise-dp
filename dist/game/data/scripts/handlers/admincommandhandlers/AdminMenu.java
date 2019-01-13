@@ -112,9 +112,8 @@ public class AdminMenu implements IAdminCommandHandler
 					teleportCharacter(pm, x, y, z, activeChar, "Your party is being teleported by an Admin.");
 				}
 			}
-			catch (Exception e)
+			catch (StringIndexOutOfBoundsException e)
 			{
-				_log.warn("", e);
 			}
 		}
 		else if (command.startsWith("admin_recall_clan_menu"))
@@ -142,9 +141,8 @@ public class AdminMenu implements IAdminCommandHandler
 					teleportCharacter(member, x, y, z, activeChar, "Your clan is being teleported by an Admin.");
 				}
 			}
-			catch (Exception e)
+			catch (StringIndexOutOfBoundsException e)
 			{
-				_log.warn("", e);
 			}
 		}
 		else if (command.startsWith("admin_goto_char_menu"))

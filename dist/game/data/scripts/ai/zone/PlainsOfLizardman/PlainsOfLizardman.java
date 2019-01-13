@@ -18,9 +18,6 @@
  */
 package ai.zone.PlainsOfLizardman;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import l2r.gameserver.ThreadPoolManager;
 import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.model.Location;
@@ -253,20 +250,10 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		@Override
 		public void run()
 		{
-			if (_skill == null)
-			{
-				return;
-			}
-			
 			if ((_killer != null) && _killer.isPlayer() && !_killer.isDead())
 			{
-				List<L2Character> targets = new ArrayList<>();
-				targets.add(_killer);
 				_killer.broadcastPacket(new MagicSkillUse(_killer, _killer, _skill.getId(), _skill.getLevel(), 0, 0));
-				for (L2Character target : targets)
-				{
-					_skill.getEffects(_killer, target);
-				}
+				_skill.getEffects(_killer, _killer);
 			}
 		}
 	}
