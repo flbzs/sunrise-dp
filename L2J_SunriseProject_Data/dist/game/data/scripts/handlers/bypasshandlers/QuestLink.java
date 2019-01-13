@@ -105,14 +105,7 @@ public class QuestLink implements IBypassHandler
 			if ((qs == null) || qs.isCreated())
 			{
 				state = quest.isCustomQuest() ? "" : "01";
-				if (quest.canStartQuest(player))
-				{
-					color = "bbaa88";
-				}
-				else
-				{
-					color = "a62f31";
-				}
+				color = quest.canStartQuest(player) ? "bbaa88" : "a62f31";
 			}
 			else if (qs.isStarted())
 			{
