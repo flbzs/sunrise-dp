@@ -30,7 +30,8 @@ import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.L2SkillType;
 import l2r.gameserver.network.SystemMessageId;
 import l2r.gameserver.network.serverpackets.SystemMessage;
-import l2r.util.ValueSortMap;
+
+import gr.sr.utils.ValueSortMap;
 
 /**
  * @author GodFather
