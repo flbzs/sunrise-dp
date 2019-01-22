@@ -284,6 +284,7 @@ import handlers.targethandlers.PartyClan;
 import handlers.targethandlers.PartyMember;
 import handlers.targethandlers.PartyNotMe;
 import handlers.targethandlers.PartyOther;
+import handlers.targethandlers.PartyTarget;
 import handlers.targethandlers.Pet;
 import handlers.targethandlers.Self;
 import handlers.targethandlers.Siege;
@@ -641,6 +642,7 @@ public class MasterHandler
 			PartyMember.class,
 			PartyNotMe.class,
 			PartyOther.class,
+			PartyTarget.class,
 			Pet.class,
 			Self.class,
 			Siege.class,

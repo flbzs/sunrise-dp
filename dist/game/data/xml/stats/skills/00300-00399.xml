@@ -2770,7 +2770,6 @@
 			<effect name="BlockDebuff" abnormalTime="120" abnormalLvl="2" abnormalType="hero_buff">
 				<add stat="accCombat" val="8" />
 				<sub stat="cancelVuln" val="80" />
-				<set stat="debuffImmunity" val="1" />
 				<mul stat="healEffect" val="2" />
 				<add stat="mAtk" val="500" />
 				<add stat="mAtkSpd" val="100" />
