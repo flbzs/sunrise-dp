@@ -305,28 +305,18 @@ public final class DragonValley extends AbstractNpcAI
 				}
 			}
 			
-			for (L2PcInstance member : player.getParty().getMembers())
+			switch (moraleBoostLv)
 			{
-				if (Util.calculateDistance(npc, member, true, false) < MIN_DISTANCE)
-				{
-					switch (moraleBoostLv)
-					{
-						case 1:
-							MORALE_BOOST1.getSkill().applyEffects(member, member);
-							break;
-						case 2:
-							MORALE_BOOST2.getSkill().applyEffects(member, member);
-							break;
-						case 3:
-							MORALE_BOOST3.getSkill().applyEffects(member, member);
-							break;
-					}
-				}
+				case 1:
+					addSkillCastDesire(npc, player, MORALE_BOOST1, 99900000000L);
+					break;
+				case 2:
+					addSkillCastDesire(npc, player, MORALE_BOOST2, 99900000000L);
+					break;
+				case 3:
+					addSkillCastDesire(npc, player, MORALE_BOOST3, 99900000000L);
+					break;
 			}
-			
-			// TODO in retail uses skill cast desire
-			// addSkillCastDesire(npc, target, MORALE_BOOST1, 99900000000L);
-			npc.broadcastPacket(new MagicSkillUse(npc, MORALE_BOOST1.getSkillId(), MORALE_BOOST1.getSkillLvl(), 1000, 0));
 		}
 	}
 	
