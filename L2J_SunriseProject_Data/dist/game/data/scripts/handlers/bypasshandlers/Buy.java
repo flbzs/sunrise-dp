@@ -47,7 +47,7 @@ public class Buy implements IBypassHandler
 		{
 			if (command.startsWith(COMMANDS[0])) // MerchantSell
 			{
-				activeChar.sendPacket(new ExBuyList(activeChar.getAdena()));
+				activeChar.sendPacket(new ExBuyList(activeChar));
 				activeChar.sendPacket(new ExBuySellList(activeChar, 0, true));
 				return true;
 			}
