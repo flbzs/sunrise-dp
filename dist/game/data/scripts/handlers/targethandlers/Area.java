@@ -75,9 +75,9 @@ public class Area implements ITargetTypeHandler
 		// vGodFather Small trick just in case we miss actor face the target
 		activeChar.setHeading(Util.calculateHeadingFrom(activeChar, target));
 		
-		final Collection<L2Character> objs = activeChar.getKnownList().getKnownCharactersInRadius(target, skill.getAffectRange());
+		int affectRange = skill.getFanRange() != null ? skill.getFanRange()[2] : skill.getAffectRange();
 		int maxTargets = skill.getAffectLimit();
-		
+		final Collection<L2Character> objs = activeChar.getKnownList().getKnownCharactersInRadius(target, affectRange);
 		for (L2Character obj : objs)
 		{
 			if (!(obj.isAttackable() || obj.isPlayable()))
