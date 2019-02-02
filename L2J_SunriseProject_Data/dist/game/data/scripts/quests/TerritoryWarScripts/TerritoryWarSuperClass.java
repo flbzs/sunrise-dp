@@ -385,6 +385,11 @@ public class TerritoryWarSuperClass extends Quest
 		{
 			if (skill.getId() == 847)
 			{
+				if (TerritoryWarManager.getInstance().getHQForClan(caster.getClan()) != npc)
+				{
+					return super.onSkillSee(npc, caster, skill, targets, isSummon);
+				}
+				
 				TerritoryWard ward = TerritoryWarManager.getInstance().getTerritoryWard(caster);
 				if (ward == null)
 				{
