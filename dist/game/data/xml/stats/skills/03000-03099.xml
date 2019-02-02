@@ -1064,7 +1064,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="15" val="0" chanceType="ON_EXIT" triggeredId="6126">
+			<effect name="ChanceSkillTrigger" abnormalTime="15" chanceType="ON_EXIT" triggeredId="6126">
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
@@ -1137,7 +1137,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="15" val="0" chanceType="ON_EXIT" triggeredId="6126">
+			<effect name="ChanceSkillTrigger" abnormalTime="15" chanceType="ON_EXIT" triggeredId="6126">
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
@@ -1154,7 +1154,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="TargetMe" abnormalTime="3" val="0" />
+			<effect name="TargetMe" abnormalTime="3" />
 		</for>
 	</skill>
 	<skill id="3081" levels="10" name="Item Skill: Charm">
@@ -1177,7 +1177,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttackMp" val="0" />
+			<effect name="MagicalAttackMp" />
 		</for>
 	</skill>
 	<skill id="3083" levels="10" name="Item Skill: Slow">
@@ -1309,7 +1309,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttackMp" val="0" />
+			<effect name="MagicalAttackMp" />
 		</for>
 	</skill>
 	<skill id="3096" levels="10" name="Item Skill: Slow">

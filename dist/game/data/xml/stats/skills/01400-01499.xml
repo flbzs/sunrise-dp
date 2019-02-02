@@ -50,13 +50,13 @@
 			<target npcRace="UNDEAD" />
 		</cond>
 		<for>
-			<effect count="10" name="Fear" abnormalTime="2" val="0" effectPower="30" />
+			<effect count="10" name="Fear" abnormalTime="2" effectPower="30" />
 		</for>
 		<enchant2for>
-			<effect count="#ench2Count" name="Fear" abnormalTime="1" val="0" effectPower="30" />
+			<effect count="#ench2Count" name="Fear" abnormalTime="1" effectPower="30" />
 		</enchant2for>
 		<enchant3for>
-			<effect count="10" name="Fear" abnormalTime="2" val="0" effectPower="30" />
+			<effect count="10" name="Fear" abnormalTime="2" effectPower="30" />
 		</enchant3for>
 	</skill>
 	<skill id="1401" levels="11" name="Major Heal" enchantGroup1="2" enchantGroup2="2">
@@ -657,7 +657,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Invincible" abnormalTime="10" val="0" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
+			<effect name="Invincible" abnormalTime="10" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
 		</for>
 	</skill>
 	<skill id="1419" levels="1" name="Volcano">
@@ -761,7 +761,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
 		<for>
-			<effect count="5" name="Signet" abnormalTime="3" val="0" />
+			<effect count="5" name="Signet" abnormalTime="3" />
 		</for>
 	</skill>
 	<skill id="1423" levels="1" name="Gehenna">
@@ -874,7 +874,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="PARTY_CLAN" />
 		<for>
-			<effect name="Invincible" abnormalTime="30" val="0" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
+			<effect name="Invincible" abnormalTime="30" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
 		</for>
 	</skill>
 	<skill id="1428" levels="1" name="Mass Recharge">
@@ -1187,17 +1187,17 @@
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<enchant5 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="Debuff" val="0" abnormalTime="5" abnormalLvl="1" abnormalType="speed_down" effectPower="40" >
+			<effect name="Debuff" abnormalTime="5" abnormalLvl="1" abnormalType="speed_down" effectPower="40" >
 				<mul stat="runSpd" val="0.7" />
 			</effect>
 		</for>
 		<enchant3for>
-			<effect name="Debuff" val="0" abnormalTime="5" abnormalLvl="1" abnormalType="speed_down" effectPower="#ench3Power" >
+			<effect name="Debuff" abnormalTime="5" abnormalLvl="1" abnormalType="speed_down" effectPower="#ench3Power" >
 				<mul stat="runSpd" val="0.7" />
 			</effect>
 		</enchant3for>
 		<enchant5for>
-			<effect name="Debuff" val="0" abnormalTime="5" abnormalLvl="1" abnormalType="speed_down" effectPower="40" >
+			<effect name="Debuff" abnormalTime="5" abnormalLvl="1" abnormalType="speed_down" effectPower="40" >
 				<sub stat="darkRes" val="#ench5DarkhVuln" />
 				<mul stat="runSpd" val="0.7" />
 			</effect>
@@ -1655,7 +1655,7 @@
 		<enchant2 name="flyRadius" val="#ench2Radius" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="Stun" abnormalTime="2" val="0" effectPower="99" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="2" effectPower="99" abnormalLvl="1" abnormalType="stun" />
 			<effect self="1" name="Blink" noicon="1" />
 		</for>
 	</skill>
@@ -1864,7 +1864,7 @@
 		<enchant3 name="elementPower" val="#ench3elementPower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="Debuff" abnormalTime="15" val="0" effectPower="80" abnormalLvl="3" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="15" effectPower="80" abnormalLvl="3" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.6" />
 			</effect>
 		</for>
@@ -2741,7 +2741,7 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="power" val="#ench2Power" />
 		<for>
-			<effect name="TriggerSkillByDamage" abnormalTime="60" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="oblivion">
+			<effect name="TriggerSkillByDamage" abnormalTime="60" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="oblivion">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -2750,7 +2750,7 @@
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="oblivion">
+			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="oblivion">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -2798,7 +2798,7 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="power" val="#ench2Power" />
 		<for>
-			<effect name="TriggerSkillByDamage" abnormalTime="60" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="weak_constitution">
+			<effect name="TriggerSkillByDamage" abnormalTime="60" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="weak_constitution">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -2807,7 +2807,7 @@
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="weak_constitution">
+			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="weak_constitution">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -2854,7 +2854,7 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="power" val="#ench2Power" />
 		<for>
-			<effect name="TriggerSkillByDamage" abnormalTime="60" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="thin_skin">
+			<effect name="TriggerSkillByDamage" abnormalTime="60" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="thin_skin">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -2863,7 +2863,7 @@
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="thin_skin">
+			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="thin_skin">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -2909,7 +2909,7 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="power" val="#ench2Power" />
 		<for>
-			<effect name="TriggerSkillByDamage" abnormalTime="60" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="enervation">
+			<effect name="TriggerSkillByDamage" abnormalTime="60" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="enervation">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -2918,7 +2918,7 @@
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="enervation">
+			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="enervation">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -2965,7 +2965,7 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="power" val="#ench2Power" />
 		<for>
-			<effect name="TriggerSkillByDamage" abnormalTime="60" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="spite">
+			<effect name="TriggerSkillByDamage" abnormalTime="60" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="spite">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -2974,7 +2974,7 @@
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="spite">
+			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="spite">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -3021,7 +3021,7 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="power" val="#ench2Power" />
 		<for>
-			<effect name="TriggerSkillByDamage" abnormalTime="60" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="mental_impoverish">
+			<effect name="TriggerSkillByDamage" abnormalTime="60" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="mental_impoverish">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -3030,7 +3030,7 @@
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" val="0" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="mental_impoverish">
+			<effect name="TriggerSkillByDamage" abnormalTime="#ench1Time" abnormalVisualEffect="poison" abnormalLvl="8" abnormalType="mental_impoverish">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />
@@ -3294,7 +3294,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="PET" />
 		<for>
-			<effect name="Invincible" abnormalTime="30" val="0" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
+			<effect name="Invincible" abnormalTime="30" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
 		</for>
 	</skill>
 	<skill id="1497" levels="1" name="Excessive Loyalty">
@@ -3319,7 +3319,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
 				<param minDamage="1" chance="5" />

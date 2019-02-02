@@ -1377,7 +1377,7 @@
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="BigHead" abnormalTime="300" val="0" abnormalVisualEffect="bighead" abnormalLvl="1" abnormalType="big_head" effectPower="80" />
+			<effect name="BigHead" abnormalTime="300" abnormalVisualEffect="bighead" abnormalLvl="1" abnormalType="big_head" effectPower="80" />
 		</for>
 		<table name="#mpConsume"> 13 20 28 38 50 61 71 76 80 83 84 85 </table>
 		<set name="mpConsume" val="#mpConsume" />

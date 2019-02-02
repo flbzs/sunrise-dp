@@ -90,7 +90,7 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttackMp" val="0" />
+			<effect name="MagicalAttackMp" />
 			<effect count="5" name="ManaDamOverTime" abnormalTime="3" val="#mdot" effectPower="80" abnormalLvl="#abnormalLvls" abnormalType="dot_mp" />
 		</for>
 	</skill>
@@ -159,7 +159,7 @@
 		<set name="skillType" val="CONFUSE_MOB_ONLY" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect count="5" name="Confusion" abnormalTime="4" val="0" />
+			<effect count="5" name="Confusion" abnormalTime="4" />
 		</for>
 	</skill>
 	<skill id="1107" levels="2" name="Frost Flame">
@@ -728,7 +728,7 @@
 		<enchant2 name="mpConsume" val="#ench2mpConsume" />
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
 		<for>
-			<effect name="HpByLevel" val="0">
+			<effect name="HpByLevel">
 				<param power="#drain" />
 			</effect>
 			<effect name="ConsumeBody" noicon="1" />
@@ -891,7 +891,7 @@
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
 		<enchant2 name="power" val="#ench2Power" />
 		<for>
-			<effect name="DeathLink" val="0" />
+			<effect name="DeathLink" />
 		</for>
 	</skill>
 	<skill id="1160" levels="15" name="Slow" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1">
@@ -969,7 +969,7 @@
 		<set name="skillType" val="CONFUSE_MOB_ONLY" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect count="5" name="Confusion" abnormalTime="4" val="0" />
+			<effect count="5" name="Confusion" abnormalTime="4" />
 		</for>
 	</skill>
 	<skill id="1164" levels="19" name="Curse: Weakness" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1" enchantGroup4="1">
@@ -1194,7 +1194,7 @@
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
 		<enchant2 name="power" val="#ench2Power" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="5" val="0" chanceType="ON_EXIT" triggeredId="6091" abnormalLvl="1" abnormalType="paralyze">
+			<effect name="ChanceSkillTrigger" abnormalTime="5" chanceType="ON_EXIT" triggeredId="6091" abnormalLvl="1" abnormalType="paralyze">
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
@@ -1528,7 +1528,7 @@
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="60" abnormalLvl="2" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="60" effectPower="60" abnormalLvl="2" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</for>

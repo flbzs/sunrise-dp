@@ -259,7 +259,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" abnormalTime="10" val="0" />
+			<effect name="Paralyze" abnormalTime="10" />
 		</for>
 	</skill>
 	<skill id="6127" levels="1" name="Anti-limit">
@@ -347,7 +347,7 @@
 		<set name="power" val="100" /> <!-- Base Land Rate -->
 		<set name="trait" val="ETC" />
 		<for>
-			<effect name="BigHead" abnormalTime="1800" val="0" abnormal="bighead" abnormalLvl="1" abnormalType="big_head" effectType="DEBUFF" />
+			<effect name="BigHead" abnormalTime="1800" abnormal="bighead" abnormalLvl="1" abnormalType="big_head" effectType="DEBUFF" />
 		</for>
 	</skill>
 	<skill id="6134" levels="1" name="Curse of the Mutant Animal">
@@ -665,7 +665,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="BLEED" />
 		<for>
-			<effect name="Debuff" abnormalTime="11" val="0" abnormalVisualEffect="bleed" abnormalLvl="4" abnormalType="max_hp_down">
+			<effect name="Debuff" abnormalTime="11" abnormalVisualEffect="bleed" abnormalLvl="4" abnormalType="max_hp_down">
 				<add stat="critRate" val="#rCrit" />
 			</effect>
 		</for>

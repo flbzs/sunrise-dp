@@ -749,7 +749,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="Invincible" abnormalTime="5" val="0" special="invincible" abnormalLvl="26" abnormalType="invincibility" />
+			<effect name="Invincible" abnormalTime="5" special="invincible" abnormalLvl="26" abnormalType="invincibility" />
 			<effect name="CpHealPercent" noicon="1" val="100" />
 			<effect name="HealPercent" noicon="1" val="100" />
 			<effect name="ManaHealPercent" noicon="1" val="100" />

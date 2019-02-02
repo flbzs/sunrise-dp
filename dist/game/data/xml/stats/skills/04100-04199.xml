@@ -161,7 +161,7 @@
 		<set name="targetType" val="FRONT_AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="100" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="100" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="4107" levels="1" name="Antharas Stun">
@@ -190,7 +190,7 @@
 		<set name="trait" val="SHOCK" />
 		<for>
 			<effect name="ThrowUp" noicon="1" abnormalLvl="1" abnormalType="fly_away" />
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="100" />
+			<effect name="Stun" abnormalTime="9" effectPower="100" />
 		</for>
 	</skill>
 	<skill id="4108" levels="1" name="Antharas Terror">
@@ -490,7 +490,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="50" abnormalLvl="1" abnormalType="stun" />
 		</for>
 		<table name="#mpConsume"> 25 40 56 76 99 121 142 151 159 165 168 170 </table>
 		<set name="mpConsume" val="#mpConsume" />
@@ -534,7 +534,7 @@
 		<set name="skillType" val="AGGDAMAGE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="TargetMe" abnormalTime="3" val="0" />
+			<effect name="TargetMe" abnormalTime="3" />
 		</for>
 		<table name="#mpConsume"> 12 19 26 35 45 55 65 76 80 83 84 85 </table>
 		<set name="mpConsume" val="#mpConsume" />
@@ -1073,7 +1073,7 @@
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="60" abnormalLvl="2" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="60" effectPower="60" abnormalLvl="2" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</for>
@@ -1094,7 +1094,7 @@
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttackMp" val="0" />
+			<effect name="MagicalAttackMp" />
 		</for>
 	</skill>
 	<skill id="4155" levels="12" name="NPC Twister - Magic">
@@ -1278,7 +1278,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="15" val="0" chanceType="ON_EXIT" triggeredId="6125">
+			<effect name="ChanceSkillTrigger" abnormalTime="15" chanceType="ON_EXIT" triggeredId="6125">
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
@@ -1392,7 +1392,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="80" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="80" abnormalLvl="1" abnormalType="stun" />
 		</for>
 		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<set name="mpConsume" val="#mpConsume" />
@@ -1452,7 +1452,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="50" abnormalLvl="1" abnormalType="stun" />
 		</for>
 		<table name="#mpConsume"> 16 23 32 42 53 65 75 79 82 84 85 87 </table>
 		<set name="mpConsume" val="#mpConsume" />

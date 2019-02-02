@@ -325,10 +325,10 @@
 			<target npcRace="UNDEAD" />
 		</cond>
 		<for>
-			<effect count="10" name="Fear" abnormalTime="2" val="0" />
+			<effect count="10" name="Fear" abnormalTime="2" />
 		</for>
 		<enchant3for>
-			<effect count="10" name="Fear" abnormalTime="2" val="0" effectPower="30" />
+			<effect count="10" name="Fear" abnormalTime="2" effectPower="30" />
 		</enchant3for>
 	</skill>
 	<skill id="406" levels="3" name="Angelic Icon" enchantGroup1="1" enchantGroup2="1" enchantGroup3="1" enchantGroup4="1">
@@ -1521,7 +1521,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="Invincible" abnormalTime="10" val="0" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
+			<effect name="Invincible" abnormalTime="10" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
 		</for>
 	</skill>
 	<skill id="443" levels="1" name="Force Barrier">
@@ -1544,7 +1544,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="Invincible" abnormalTime="10" val="0" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
+			<effect name="Invincible" abnormalTime="10" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
 		</for>
 	</skill>
 	<skill id="444" levels="1" name="Sweeper Festival">
@@ -1726,10 +1726,10 @@
 			<target npcRace="DIVINE" />
 		</cond>
 		<for>
-			<effect count="10" name="Fear" abnormalTime="2" val="0" />
+			<effect count="10" name="Fear" abnormalTime="2" />
 		</for>
 		<enchant3for>
-			<effect count="10" name="Fear" abnormalTime="2" val="0" effectPower="30" />
+			<effect count="10" name="Fear" abnormalTime="2" effectPower="30" />
 		</enchant3for>
 	</skill>
 	<skill id="451" levels="2" name="Sonic Move">
@@ -1836,7 +1836,7 @@
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect count="24" name="Signet" abnormalTime="5" val="0" />
+			<effect count="24" name="Signet" abnormalTime="5" />
 		</for>
 	</skill>
 	<skill id="455" levels="1" name="Symbol of Noise">
@@ -1859,7 +1859,7 @@
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="GROUND" />
 		<for>
-			<effect count="6" name="SignetNoise" abnormalTime="5" val="0" />
+			<effect count="6" name="SignetNoise" abnormalTime="5" />
 		</for>
 	</skill>
 	<skill id="456" levels="1" name="Symbol of Resistance">
@@ -1880,7 +1880,7 @@
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect count="24" name="Signet" abnormalTime="5" val="0" />
+			<effect count="24" name="Signet" abnormalTime="5" />
 		</for>
 	</skill>
 	<skill id="457" levels="1" name="Symbol of Honor">
@@ -1901,7 +1901,7 @@
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect count="24" name="Signet" abnormalTime="5" val="0" />
+			<effect count="24" name="Signet" abnormalTime="5" />
 		</for>
 	</skill>
 	<skill id="458" levels="1" name="Symbol of Energy">
@@ -1922,7 +1922,7 @@
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect count="24" name="Signet" abnormalTime="5" val="0" />
+			<effect count="24" name="Signet" abnormalTime="5" />
 		</for>
 	</skill>
 	<skill id="459" levels="1" name="Symbol of the Sniper">
@@ -1943,7 +1943,7 @@
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect count="24" name="Signet" abnormalTime="5" val="0" />
+			<effect count="24" name="Signet" abnormalTime="5" />
 		</for>
 	</skill>
 	<skill id="460" levels="1" name="Symbol of the Assassin">
@@ -1964,7 +1964,7 @@
 		<set name="skillType" val="SIGNET" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect count="24" name="Signet" abnormalTime="5" val="0" />
+			<effect count="24" name="Signet" abnormalTime="5" />
 		</for>
 	</skill>
 	<skill id="461" levels="2" name="Break Duress">
@@ -2110,13 +2110,13 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" nocicon="1" val="0">
+			<effect name="Buff" nocicon="1">
 				<set stat="maxSouls" val="#maxSouls" />
 			</effect>
 			<effect name="SoulEating" abnormalTime="-1" >
 				<param expNeeded="#expNeeded" />
 			</effect>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="#activationChance" />
@@ -2430,7 +2430,7 @@
 		<set name="skillType" val="CONT" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect count="0x7fffffff" name="ManaDamOverTime" abnormalTime="3" val="0">
+			<effect count="0x7fffffff" name="ManaDamOverTime" abnormalTime="3">
 				<add stat="darkPower" val="10" />
 			</effect>
 		</for>
@@ -2444,7 +2444,7 @@
 		<set name="skillType" val="CONT" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect count="0x7fffffff" name="ManaDamOverTime" abnormalTime="3" val="0">
+			<effect count="0x7fffffff" name="ManaDamOverTime" abnormalTime="3">
 				<add stat="darkRes" val="#darkRes" />
 			</effect>
 		</for>
@@ -2569,12 +2569,12 @@
 		<enchant2 name="abnormalTime" val="#ench2AbnormalTimes" />
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="Disarm" abnormalTime="5" val="0" abnormalVisualEffect="bleed" abnormalLvl="1" abnormalType="disarm">
+			<effect name="Disarm" abnormalTime="5" abnormalVisualEffect="bleed" abnormalLvl="1" abnormalType="disarm">
 				<mul stat="pAtk" val="0.6" />
 			</effect>
 		</for>
 		<enchant2for>
-			<effect name="Disarm" abnormalTime="#ench2Time" val="0" abnormalVisualEffect="bleed" abnormalLvl="1" abnormalType="disarm">
+			<effect name="Disarm" abnormalTime="#ench2Time" abnormalVisualEffect="bleed" abnormalLvl="1" abnormalType="disarm">
 				<mul stat="pAtk" val="0.6" />
 			</effect>
 		</enchant2for>
@@ -2845,10 +2845,10 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="70" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="70" abnormalLvl="1" abnormalType="stun" />
 		</for>
 		<enchant2for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="#ench2Chance" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="#ench2Chance" abnormalLvl="1" abnormalType="stun" />
 		</enchant2for>
 	</skill>
 	<skill id="495" levels="10" name="Blade Rush" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2">
