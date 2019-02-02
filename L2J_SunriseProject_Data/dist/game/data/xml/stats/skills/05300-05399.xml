@@ -45,7 +45,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="80" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="80" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="5302" levels="9" name="Poison">
@@ -131,7 +131,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" abnormalTime="30" val="0" effectPower="80" abnormalLvl="1" abnormalType="paralyze" />
+			<effect name="Paralyze" abnormalTime="30" effectPower="80" abnormalLvl="1" abnormalType="paralyze" />
 		</for>
 	</skill>
 	<skill id="5305" levels="9" name="Poison">
@@ -210,7 +210,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="80" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="80" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="5308" levels="9" name="Poison">
@@ -598,7 +598,7 @@
 		<set name="power" val="#power" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttackMp" val="0" />
+			<effect name="MagicalAttackMp" />
 		</for>
 	</skill>
 	<skill id="5333" levels="9" name="Poison">
@@ -972,7 +972,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="80" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="80" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="5363" levels="9" name="Poison">
@@ -1057,7 +1057,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" abnormalTime="30" val="0" effectPower="80" abnormalLvl="1" abnormalType="paralyze" />
+			<effect name="Paralyze" abnormalTime="30" effectPower="80" abnormalLvl="1" abnormalType="paralyze" />
 		</for>
 	</skill>
 	<skill id="5366" levels="9" name="Poison">
@@ -1110,7 +1110,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" abnormalTime="30" val="0" effectPower="60" abnormalLvl="1" abnormalType="paralyze" />
+			<effect name="Paralyze" abnormalTime="30" effectPower="60" abnormalLvl="1" abnormalType="paralyze" />
 		</for>
 	</skill>
 	<skill id="5368" levels="9" name="Stun">
@@ -1474,7 +1474,7 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttackMp" val="0" />
+			<effect name="MagicalAttackMp" />
 		</for>
 	</skill>
 	<skill id="5394" levels="9" name="Poison">

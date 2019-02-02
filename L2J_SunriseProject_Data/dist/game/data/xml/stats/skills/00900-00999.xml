@@ -661,7 +661,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="MySummonKill" noicon="1" abnormalTime="1" val="0"/>
+			<effect name="MySummonKill" noicon="1" abnormalTime="1"/>
 			<effect name="Transformation" abnormalTime="300" abnormalLvl="1" abnormalType="transform">
 				<mul stat="pAtk" val="1.4" />
 				<mul stat="mAtk" val="1.4" />
@@ -690,7 +690,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="MySummonKill" noicon="1" abnormalTime="1" val="0"/>
+			<effect name="MySummonKill" noicon="1" abnormalTime="1"/>
 			<effect name="Transformation" abnormalTime="300" abnormalLvl="1" abnormalType="transform">
 				<mul stat="pAtk" val="1.4" />
 				<mul stat="mAtk" val="1.4" />
@@ -719,7 +719,7 @@
 			<player canTransform="true" />
 		</cond>
 		<for>
-			<effect name="MySummonKill" noicon="1" abnormalTime="1" val="0"/>
+			<effect name="MySummonKill" noicon="1" abnormalTime="1"/>
 			<effect name="Transformation" abnormalTime="300" abnormalLvl="1" abnormalType="transform">
 				<mul stat="pAtk" val="1.4" />
 				<mul stat="mAtk" val="1.4" />
@@ -1581,7 +1581,7 @@
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="80" abnormalLvl="2" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="60" effectPower="80" abnormalLvl="2" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</for>
@@ -1616,7 +1616,7 @@
 			<target mindistance="200" />
 		</cond>
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="80" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="80" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="979" levels="6" name="Aggression">
@@ -1926,7 +1926,7 @@
 			<using kind="DAGGER,DUALDAGGER" />
 		</cond>
 		<for>
-			<effect name="Debuff" abnormalTime="10" val="0" effectPower="80" abnormalLvl="4" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="10" effectPower="80" abnormalLvl="4" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.2" />
 			</effect>
 		</for>
@@ -1944,7 +1944,7 @@
 			</not>
 		</cond>
 		<for>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param isCritical="false" />
 				<param minDamage="1" chance="15" />
@@ -1952,7 +1952,7 @@
 				<param targetType="SELF" />
 				<param allowWeapons="DUAL,SWORD,BLUNT" />
 			</effect>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="30" />
@@ -1976,7 +1976,7 @@
 			</not>
 		</cond>
 		<for>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param isCritical="false" />
 				<param minDamage="1" chance="15" />
@@ -1984,7 +1984,7 @@
 				<param targetType="SELF" />
 				<param allowWeapons="DUALFIST" />
 			</effect>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="30" />
@@ -2053,7 +2053,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="60" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="60" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="996" levels="1" name="Disarm">
@@ -2075,7 +2075,7 @@
 		<set name="skillType" val="DISARM" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Disarm" abnormalTime="5" val="0" abnormalVisualEffect="bleed" abnormalLvl="1" abnormalType="disarm">
+			<effect name="Disarm" abnormalTime="5" abnormalVisualEffect="bleed" abnormalLvl="1" abnormalType="disarm">
 				<mul stat="pAtk" val="0.6" />
 			</effect>
 		</for>
@@ -2110,7 +2110,7 @@
 			<using kind="SWORD,BLUNT" />
 		</cond>
 		<for>
-			<effect name="Debuff" abnormalTime="3" val="0" effectPower="80" abnormalLvl="4" abnormalType="multi_debuff_g">
+			<effect name="Debuff" abnormalTime="3" effectPower="80" abnormalLvl="4" abnormalType="multi_debuff_g">
 				<mul stat="pDef" val="0.9" />
 				<mul stat="mDef" val="0.9" />
 			</effect>

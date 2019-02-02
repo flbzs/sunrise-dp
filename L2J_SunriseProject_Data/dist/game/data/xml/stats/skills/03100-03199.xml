@@ -90,7 +90,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="TargetMe" abnormalTime="3" val="0" />
+			<effect name="TargetMe" abnormalTime="3" />
 		</for>
 	</skill>
 	<skill id="3109" levels="10" name="Item Skill: Aggression Down">
@@ -118,7 +118,7 @@
 		<set name="reuseDelay" val="30000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttackMp" val="0" />
+			<effect name="MagicalAttackMp" />
 		</for>
 	</skill>
 	<skill id="3111" levels="10" name="Item Skill: Slow">
@@ -841,7 +841,7 @@
 		<set name="skillType" val="AGGDAMAGE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="TargetMe" val="0" />
+			<effect name="TargetMe" />
 		</for>
 	</skill>
 	<skill id="3150" levels="10" name="Item Skill: Charm">
@@ -955,7 +955,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttackMp" val="0" />
+			<effect name="MagicalAttackMp" />
 		</for>
 	</skill>
 	<skill id="3155" levels="10" name="Item Skill: Unlock">
@@ -1008,7 +1008,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Invincible" abnormalTime="10" val="0" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
+			<effect name="Invincible" abnormalTime="10" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
 		</for>
 	</skill>
 	<skill id="3159" levels="3" name="Item Skill: Stealth">
@@ -1800,7 +1800,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="15" val="0" chanceType="ON_EXIT" triggeredId="6126">
+			<effect name="ChanceSkillTrigger" abnormalTime="15" chanceType="ON_EXIT" triggeredId="6126">
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
@@ -1865,7 +1865,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect count="5" name="Fear" abnormalTime="2" val="0" />
+			<effect count="5" name="Fear" abnormalTime="2" />
 		</for>
 	</skill>
 	<skill id="3195" levels="10" name="Item Skill: Poison">

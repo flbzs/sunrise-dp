@@ -183,7 +183,7 @@
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="70" abnormalLvl="3" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="60" effectPower="70" abnormalLvl="3" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
 		</for>
@@ -475,7 +475,7 @@
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="60" abnormalLvl="2" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="60" effectPower="60" abnormalLvl="2" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</for>
@@ -619,7 +619,7 @@
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="MagicalAttackMp" val="0" />
+			<effect name="MagicalAttackMp" />
 		</for>
 	</skill>
 	<skill id="4040" levels="12" name="NPC Bow Attack">
@@ -1013,7 +1013,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="Paralyze" abnormalTime="120" val="0" effectPower="90" abnormalLvl="1" abnormalType="paralyze" />
+			<effect name="Paralyze" abnormalTime="120" effectPower="90" abnormalLvl="1" abnormalType="paralyze" />
 		</for>
 	</skill>
 	<skill id="4064" levels="1" name="Paralysis">
@@ -1188,7 +1188,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="30" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="30" abnormalLvl="1" abnormalType="stun" />
 		</for>
 		<table name="#mpConsume"> 13 20 28 38 50 61 71 76 80 83 84 85 </table>
 		<set name="mpConsume" val="#mpConsume" />
@@ -1216,7 +1216,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="50" abnormalLvl="1" abnormalType="stun" />
 		</for>
 		<table name="#mpConsume"> 13 20 28 38 50 61 71 76 80 83 84 85 </table>
 		<set name="mpConsume" val="#mpConsume" />

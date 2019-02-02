@@ -391,7 +391,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Invincible" abnormalTime="7" val="0" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
+			<effect name="Invincible" abnormalTime="7" special="invincible" abnormalLvl="1" abnormalType="invincibility" />
 		</for>
 	</skill>
 	<skill id="21238" levels="1" name="Jet Bike">
@@ -559,7 +559,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
 				<param minDamage="1" chance="15" />
@@ -576,7 +576,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
 				<param minDamage="1" chance="15" />
@@ -593,7 +593,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
 				<param minDamage="1" chance="15" />
@@ -610,7 +610,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
 				<param minDamage="1" chance="15" />
@@ -627,7 +627,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
 				<param minDamage="1" chance="15" />
@@ -644,7 +644,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByDamage" nocicon="1" val="0">
+			<effect name="TriggerSkillByDamage" nocicon="1">
 				<param attackerType="L2Playable" minAttackerLevel="1" maxAttackerLevel="99" />
 				<param minDamage="100" />
 				<param chance="30" />

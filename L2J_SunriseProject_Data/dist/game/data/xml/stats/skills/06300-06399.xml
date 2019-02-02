@@ -16,7 +16,7 @@
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="ChanceSkillTrigger" val="0" chanceType="ON_START" triggeredId="6662" />
+			<effect name="ChanceSkillTrigger" chanceType="ON_START" triggeredId="6662" />
 		</for>
 	</skill>
 	<skill id="6301" levels="2" name="Cold Mana's Fragment">
@@ -299,7 +299,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="CLAN" /> <!-- FIXME: Aura Friendly ? -->
 		<for>
-			<effect name="Buff" abnormalTime="15" val="0" abnormalVisualEffect="stun" abnormalLvl="1" abnormalType="pd_up_special">
+			<effect name="Buff" abnormalTime="15" abnormalVisualEffect="stun" abnormalLvl="1" abnormalType="pd_up_special">
 				<mul stat="physicalSkillPower" val="2" />
 			</effect>
 		</for>
@@ -1086,7 +1086,7 @@
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="10" val="0" noicon="1" abnormalVisualEffect="earthquake" />
+			<effect name="Debuff" abnormalTime="10" noicon="1" abnormalVisualEffect="earthquake" />
 		</for>
 	</skill>
 	<skill id="6379" levels="1" name="Blood Spurt">
@@ -1276,7 +1276,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="3" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="3" effectPower="50" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="6387" levels="1" name="Bistakon Earthquake">
@@ -1380,7 +1380,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="5" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="5" effectPower="50" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="6392" levels="1" name="Cokrakon Sonic Shot">
@@ -1508,7 +1508,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="3" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="3" effectPower="50" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="6398" levels="1" name="Cokrakon Sonic Shout">

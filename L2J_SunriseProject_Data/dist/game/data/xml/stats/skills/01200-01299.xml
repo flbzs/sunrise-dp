@@ -237,7 +237,7 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="MagicalAttackMp" val="0" />
+			<effect name="MagicalAttackMp" />
 			<effect count="5" name="ManaDamOverTime" abnormalTime="3" val="#mdot" abnormalLvl="#abnormalLvls" abnormalType="dot_mp" effectPower="60" />
 		</for>
 	</skill>
@@ -261,7 +261,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="DERANGEMENT" />
 		<for>
-			<effect count="5" name="Confusion" abnormalTime="4" val="0" />
+			<effect count="5" name="Confusion" abnormalTime="4" />
 		</for>
 	</skill>
 	<skill id="1216" levels="1" name="Self Heal">
@@ -804,7 +804,7 @@
 		<enchant4 name="elementPower" val="#ench4ElementPower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3for>
-			<effect name="Debuff" abnormalTime="30" val="0" effectPower="40" abnormalLvl="1" abnormalType="holy_attack">
+			<effect name="Debuff" abnormalTime="30" effectPower="40" abnormalLvl="1" abnormalType="holy_attack">
 				<sub stat="firePower" val="#ench3FirePowerVuln" />
 			</effect>
 		</enchant3for>
@@ -1017,7 +1017,7 @@
 		<enchant4 name="elementPower" val="#ench4ElementPower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="60" abnormalLvl="1" abnormalType="holy_attack">
+			<effect name="Debuff" abnormalTime="60" effectPower="60" abnormalLvl="1" abnormalType="holy_attack">
 				<sub stat="waterPower" val="#ench3WaterPowerVuln" />
 			</effect>
 		</enchant3for>
@@ -1065,12 +1065,12 @@
 		<enchant4 name="elementPower" val="#enchElementPower" />
 		<enchant4 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="60" abnormalLvl="2" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="60" effectPower="60" abnormalLvl="2" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</for>
 		<enchant3for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="#ench3Power" abnormalLvl="2" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="60" effectPower="#ench3Power" abnormalLvl="2" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</enchant3for>
@@ -1221,7 +1221,7 @@
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="saveVs" val="MEN" />
 		<enchant3for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="40" abnormalLvl="1" abnormalType="holy_attack">
+			<effect name="Debuff" abnormalTime="60" effectPower="40" abnormalLvl="1" abnormalType="holy_attack">
 				<sub stat="windPower" val="#ench3WindPowerVuln" />
 			</effect>
 		</enchant3for>
@@ -2939,7 +2939,7 @@
 		<enchant3 name="elementPower" val="#enchElementPower" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" effectPower="40" abnormalLvl="3" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="30" effectPower="40" abnormalLvl="3" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.5" />
 			</effect>
 		</for>

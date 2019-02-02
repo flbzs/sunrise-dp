@@ -104,7 +104,7 @@
 		<set name="targetType" val="SELF" />
 		<set name="trait" val="ETC" />
 		<for>
-			<effect name="BigHead" abnormalTime="600" val="0" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
+			<effect name="BigHead" abnormalTime="600" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
 		</for>
 	</skill>
 	<skill id="21008" levels="1" name="Release Seal on Agathion - Baby Panda">

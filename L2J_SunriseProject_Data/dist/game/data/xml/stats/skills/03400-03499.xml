@@ -48,7 +48,7 @@
 			</not>
 		</cond>
 		<for>
-			<effect name="BigHead" abnormalTime="1200" val="0" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
+			<effect name="BigHead" abnormalTime="1200" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
 		</for>
 	</skill>
 	<skill id="3405" levels="1" name="Large Firecracker Effect">
@@ -317,7 +317,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="5" />
@@ -340,7 +340,7 @@
 			<mul stat="pvpMagicalDmg" val="1.07" />
 			<mul stat="pvpPhysSkillsDmg" val="1.07" />
 			<add stat="reflectDam" val="9" />
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="5" />

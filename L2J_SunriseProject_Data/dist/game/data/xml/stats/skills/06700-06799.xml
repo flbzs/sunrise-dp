@@ -56,7 +56,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="30" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="30" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="6706" levels="1" name="Piercing Attack">
@@ -116,7 +116,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="30" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="30" abnormalLvl="1" abnormalType="stun" />
 		</for>
 	</skill>
 	<skill id="6710" levels="1" name="Etis Haste">
@@ -1197,7 +1197,7 @@
 		<set name="skillType" val="PARALYZE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="10" val="0" chanceType="ON_EXIT" triggeredId="6779">
+			<effect name="ChanceSkillTrigger" abnormalTime="10" chanceType="ON_EXIT" triggeredId="6779">
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />

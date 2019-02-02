@@ -20,7 +20,7 @@
 			<add stat="pAtk" val="#pAtk">
 				<using kind="SWORD,BLUNT" />
 			</add>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="50" />
@@ -36,7 +36,7 @@
 			<add stat="runSpd" val="#ench1runSpd">
 				<using kind="SWORD,BLUNT" />
 			</add>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="50" />
@@ -52,7 +52,7 @@
 			<add stat="critDmgAdd" val="#ench2cAtkAdd">
 				<using kind="SWORD,BLUNT" />
 			</add>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="50" />
@@ -68,7 +68,7 @@
 			<add stat="pAtkSpd" val="#ench3pAtkSpd">
 				<using kind="SWORD,BLUNT" />
 			</add>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="50" />
@@ -125,7 +125,7 @@
 			<add stat="pAtk" val="#pAtk">
 				<using kind="DAGGER,DUALDAGGER" />
 			</add>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="33" />
@@ -138,7 +138,7 @@
 			<add stat="pAtk" val="#ench1pAtk">
 				<using kind="DAGGER,DUALDAGGER" />
 			</add>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="33" />
@@ -154,7 +154,7 @@
 			<basemul stat="critRate" val="#ench2rCrit">
 				<using kind="DAGGER,DUALDAGGER" />
 			</basemul>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="33" />
@@ -170,7 +170,7 @@
 			<mul stat="critDmg" val="#ench3cAtk">
 				<using kind="DAGGER,DUALDAGGER" />
 			</mul>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="true" />
 				<param minDamage="1" chance="33" />
@@ -1155,7 +1155,7 @@
 			<effect name="Spoil" noicon="1" />
 		</for>
 		<enchant1for>
-			<effect name="Debuff" abnormalTime="30" val="0" effectPower="#ench1Power" abnormalLvl="3" abnormalType="attack_time_up">
+			<effect name="Debuff" abnormalTime="30" effectPower="#ench1Power" abnormalLvl="3" abnormalType="attack_time_up">
 				<mul stat="pAtkSpd" val="0.77" />
 			</effect>
 			<effect name="Spoil" noicon="1" />
@@ -1166,7 +1166,7 @@
 			<effect name="Spoil" noicon="1" />
 		</enchant2for>
 		<enchant3for>
-			<effect name="Debuff" abnormalTime="15" val="0" effectPower="80" abnormalLvl="1" abnormalType="holy_attack">
+			<effect name="Debuff" abnormalTime="15" effectPower="80" abnormalLvl="1" abnormalType="holy_attack">
 				<sub stat="earthPower" val="#ench3EarthPower" />
 			</effect>
 			<effect name="Spoil" noicon="1" />
@@ -2121,14 +2121,14 @@
 		<enchant2 name="mpInitialConsume" val="#ench2MpInitialConsume" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="15" val="0" triggeredId="6090" chanceType="ON_EXIT" effectPower="40" abnormalLvl="1" abnormalType="paralyze">
+			<effect name="ChanceSkillTrigger" abnormalTime="15" triggeredId="6090" chanceType="ON_EXIT" effectPower="40" abnormalLvl="1" abnormalType="paralyze">
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
 			</effect>
 		</for>
 		<enchant3for>
-			<effect name="ChanceSkillTrigger" abnormalTime="15" val="0" triggeredId="6090" chanceType="ON_EXIT" effectPower="#ench3Chance" abnormalLvl="1" abnormalType="paralyze">
+			<effect name="ChanceSkillTrigger" abnormalTime="15" triggeredId="6090" chanceType="ON_EXIT" effectPower="#ench3Chance" abnormalLvl="1" abnormalType="paralyze">
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
@@ -2214,18 +2214,18 @@
 			<using kind="DUALFIST" />
 		</cond>
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="50" abnormalLvl="1" abnormalType="stun" />
 		</for>
 		<enchant1for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="#ench1effectPower" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="#ench1effectPower" abnormalLvl="1" abnormalType="stun" />
 		</enchant1for>
 		<enchant3for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" >
+			<effect name="Stun" abnormalTime="9" effectPower="50" abnormalLvl="1" abnormalType="stun" >
 				<mul stat="pDef" val="#ench34pmDef" />
 			</effect>
 		</enchant3for>
 		<enchant4for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="50" abnormalLvl="1" abnormalType="stun" >
+			<effect name="Stun" abnormalTime="9" effectPower="50" abnormalLvl="1" abnormalType="stun" >
 				<mul stat="mDef" val="#ench34pmDef" />
 			</effect>
 		</enchant4for>

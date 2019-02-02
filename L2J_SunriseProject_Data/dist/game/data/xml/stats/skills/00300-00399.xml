@@ -80,7 +80,7 @@
 			<effect name="Spoil" noicon="1" />
 		</for>
 		<enchant1for>
-			<effect name="Debuff" abnormalTime="30" val="0" effectPower="#ench1Power" abnormalLvl="3" abnormalType="attack_time_up">
+			<effect name="Debuff" abnormalTime="30" effectPower="#ench1Power" abnormalLvl="3" abnormalType="attack_time_up">
 				<mul stat="pAtkSpd" val="0.77" />
 			</effect>
 			<effect name="Spoil" noicon="1" />
@@ -91,7 +91,7 @@
 			<effect name="Spoil" noicon="1" />
 		</enchant2for>
 		<enchant3for>
-			<effect name="Debuff" abnormalTime="15" val="0" effectPower="80" abnormalLvl="1" abnormalType="holy_attack">
+			<effect name="Debuff" abnormalTime="15" effectPower="80" abnormalLvl="1" abnormalType="holy_attack">
 				<sub stat="earthPower" val="#ench3EarthPower" />
 			</effect>
 			<effect name="Spoil" noicon="1" />
@@ -667,13 +667,13 @@
 		<set name="skillType" val="CONT" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect count="0x7fffffff" name="ManaDamOverTime" abnormalTime="3" val="0">
+			<effect count="0x7fffffff" name="ManaDamOverTime" abnormalTime="3">
 				<mul stat="sDef" val="0.7" />
 				<set stat="shieldDefAngle" val="360" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect count="0x7fffffff" name="ManaDamOverTime" abnormalTime="2" val="0">
+			<effect count="0x7fffffff" name="ManaDamOverTime" abnormalTime="2">
 				<mul stat="sDef" val="#ench1sDef" />
 				<set stat="shieldDefAngle" val="360" />
 			</effect>
@@ -1288,7 +1288,7 @@
 			</effect>
 		</for>
 		<enchant2for>
-			<effect name="Debuff" abnormalTime="120" val="0" effectPower="#ench2effectPower" abnormalLvl="1" abnormalType="touch_of_death">
+			<effect name="Debuff" abnormalTime="120" effectPower="#ench2effectPower" abnormalLvl="1" abnormalType="touch_of_death">
 				<mul stat="maxCp" val="0.1" />
 				<add stat="debuffVuln" val="30" />
 				<mul stat="healEffect" val="0.7" />
@@ -1744,12 +1744,12 @@
 			<using kind="BOW" />
 		</cond>
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="40" abnormalLvl="3" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="60" effectPower="40" abnormalLvl="3" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
 		</for>
 		<enchant2for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="#ench2effectPower" abnormalLvl="3" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="60" effectPower="#ench2effectPower" abnormalLvl="3" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
 		</enchant2for>
@@ -2126,7 +2126,7 @@
 			<using kind="POLE" />
 		</cond>
 		<for>
-			<effect name="Stun" abnormalTime="8" val="0" effectPower="40" abnormalLvl="2" abnormalType="stun">
+			<effect name="Stun" abnormalTime="8" effectPower="40" abnormalLvl="2" abnormalType="stun">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 			</effect>
@@ -2135,7 +2135,7 @@
 			</effect>
 		</for>
 		<enchant3for>
-			<effect name="Stun" abnormalTime="8" val="0" effectPower="#ench3effectPower" abnormalLvl="2" abnormalType="stun">
+			<effect name="Stun" abnormalTime="8" effectPower="#ench3effectPower" abnormalLvl="2" abnormalType="stun">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 			</effect>
@@ -2183,13 +2183,13 @@
 			<using kind="BLUNT,SWORD" />
 		</cond>
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="40" abnormalLvl="2" abnormalType="stun">
+			<effect name="Stun" abnormalTime="9" effectPower="40" abnormalLvl="2" abnormalType="stun">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 			</effect>
 		</for>
 		<enchant3for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="#ench3effectPower" abnormalLvl="2" abnormalType="stun">
+			<effect name="Stun" abnormalTime="9" effectPower="#ench3effectPower" abnormalLvl="2" abnormalType="stun">
 				<mul stat="pDef" val="0.7" />
 				<mul stat="mDef" val="0.7" />
 			</effect>
@@ -2413,7 +2413,7 @@
 				<add stat="mDef" val="4050" />
 				<sub stat="cancelVuln" val="80" />
 			</effect>
-			<effect name="TargetMe" val="0" effectPower="100" effectType="DEBUFF" abnormalLvl="1" abnormalType="target_lock" />
+			<effect name="TargetMe" effectPower="100" effectType="DEBUFF" abnormalLvl="1" abnormalType="target_lock" />
 		</for>
 		<enchant2for>
 			<effect self="1" name="Buff" abnormalTime="30" abnormalLvl="3" abnormalType="pd_up_special">
@@ -2422,7 +2422,7 @@
 				<sub stat="cancelVuln" val="80" />
 				<mul stat="runSpd" val="#ench2decreasePenalty" />
 			</effect>
-			<effect name="TargetMe" val="0" effectPower="100" effectType="DEBUFF" abnormalLvl="1" abnormalType="target_lock" />
+			<effect name="TargetMe" effectPower="100" effectType="DEBUFF" abnormalLvl="1" abnormalType="target_lock" />
 		</enchant2for>
 	</skill>
 	<skill id="369" levels="1" name="Evade Shot" enchantGroup1="6" enchantGroup2="6" enchantGroup3="6" enchantGroup4="6" enchantGroup5="6" enchantGroup6="6" enchantGroup7="6" enchantGroup8="6">

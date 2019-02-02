@@ -213,7 +213,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="trait" val="SHOCK" />
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="80" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="80" abnormalLvl="1" abnormalType="stun" />
 		</for>
 		<table name="#mpConsume"> 32 45 63 83 106 129 150 158 164 168 170 173 </table>
 		<set name="mpConsume" val="#mpConsume" />
@@ -677,7 +677,7 @@
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="AREA" />
 		<for>
-			<effect name="Debuff" abnormalTime="120" val="0" effectPower="90" abnormalLvl="1" abnormalType="heal_effect_down">
+			<effect name="Debuff" abnormalTime="120" effectPower="90" abnormalLvl="1" abnormalType="heal_effect_down">
 				<mul stat="healEffect" val="0.5" />
 			</effect>
 		</for>
@@ -705,7 +705,7 @@
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="90" abnormalLvl="3" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="60" effectPower="90" abnormalLvl="3" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.7" />
 			</effect>
 		</for>
@@ -920,7 +920,7 @@
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="60" val="0" effectPower="60" abnormalLvl="2" abnormalType="speed_down">
+			<effect name="Debuff" abnormalTime="60" effectPower="60" abnormalLvl="2" abnormalType="speed_down">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
 		</for>

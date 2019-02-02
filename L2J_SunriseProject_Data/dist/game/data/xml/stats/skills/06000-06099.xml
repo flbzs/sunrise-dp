@@ -326,7 +326,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="stayAfterDeath" val="True" />
 		<for>
-			<effect name="BlockChat" abnormalTime="3600" val="0" abnormalType="BOT_PENALTY" abnormalLvl="1" />
+			<effect name="BlockChat" abnormalTime="3600" abnormalType="BOT_PENALTY" abnormalLvl="1" />
 		</for>
 	</skill>
 	<skill id="6039" levels="1" name="Report Status">
@@ -339,7 +339,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="stayAfterDeath" val="True" />
 		<for>
-			<effect name="BlockParty" abnormalTime="3600" val="0" abnormalType="BOT_PENALTY" abnormalLvl="1" />
+			<effect name="BlockParty" abnormalTime="3600" abnormalType="BOT_PENALTY" abnormalLvl="1" />
 		</for>
 	</skill>
 	<skill id="6040" levels="1" name="Report Status">
@@ -352,7 +352,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="stayAfterDeath" val="True" />
 		<for>
-			<effect name="Flag" abnormalTime="300" val="0" abnormalType="BOT_PENALTY" abnormalLvl="1" />
+			<effect name="Flag" abnormalTime="300" abnormalType="BOT_PENALTY" abnormalLvl="1" />
 		</for>
 	</skill>
 	<skill id="6041" levels="1" name="Phoenix Rush">
@@ -606,7 +606,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="stayAfterDeath" val="True" />
 		<for>
-			<effect name="BlockAction" abnormalTime="7200" val="0" abnormalType="BOT_PENALTY" abnormalLvl="1">
+			<effect name="BlockAction" abnormalTime="7200" abnormalType="BOT_PENALTY" abnormalLvl="1">
 				<param blockedActions="-2" />
 			</effect>
 		</for>
@@ -621,7 +621,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="stayAfterDeath" val="True" />
 		<for>
-			<effect name="BlockAction" abnormalTime="10800" val="0" abnormalType="BOT_PENALTY" abnormalLvl="1">
+			<effect name="BlockAction" abnormalTime="10800" abnormalType="BOT_PENALTY" abnormalLvl="1">
 				<param blockedActions="-2" />
 			</effect>
 		</for>
@@ -636,7 +636,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="stayAfterDeath" val="True" />
 		<for>
-			<effect name="Debuff" abnormalTime="7200" val="0" abnormalType="BOT_PENALTY" abnormalLvl="1">
+			<effect name="Debuff" abnormalTime="7200" abnormalType="BOT_PENALTY" abnormalLvl="1">
 				<mul stat="runSpd" val="0.0" />
 			</effect>
 		</for>
@@ -651,7 +651,7 @@
 		<set name="targetType" val="ONE" />
 		<set name="stayAfterDeath" val="True" />
 		<for>
-			<effect name="Debuff" abnormalTime="7200" val="0" abnormalType="BOT_PENALTY" abnormalLvl="1">
+			<effect name="Debuff" abnormalTime="7200" abnormalType="BOT_PENALTY" abnormalLvl="1">
 				<mul stat="runSpd" val="0.0" />
 			</effect>
 		</for>
@@ -1021,7 +1021,7 @@
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" val="0" effectPower="80" abnormalLvl="3" abnormalType="armor_unholy">
+			<effect name="Debuff" abnormalTime="30" effectPower="80" abnormalLvl="3" abnormalType="armor_unholy">
 				<sub stat="darkRes" val="25" />
 			</effect>
 		</for>

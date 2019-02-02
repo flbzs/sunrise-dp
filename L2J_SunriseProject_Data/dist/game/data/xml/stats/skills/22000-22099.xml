@@ -574,7 +574,7 @@
 			<player flyMounted="false" />
 		</cond>
 		<for>
-			<effect name="Buff" event="afrobaguette2" abnormalTime="600" val="0" abnormalVisualEffect="vitality" abnormalLvl="1" abnormalType="br_event_buf1">
+			<effect name="Buff" event="afrobaguette2" abnormalTime="600" abnormalVisualEffect="vitality" abnormalLvl="1" abnormalType="br_event_buf1">
 				<sub stat="vitalityConsumeRate" val="10" />
 			</effect>
 		</for>

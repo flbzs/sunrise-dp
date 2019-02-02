@@ -51,7 +51,7 @@
 			<player agathionId="1501" />
 		</cond>
 		<for>
-			<effect name="BigHead" abnormalTime="120" val="0" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
+			<effect name="BigHead" abnormalTime="120" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
 		</for>
 	</skill>
 	<skill id="23005" levels="1" name="Gold Majo Agathion Special Skill - Power of Blessed Resurrection">
@@ -107,7 +107,7 @@
 			<player agathionId="1504" />
 		</cond>
 		<for>
-			<effect name="BigHead" abnormalTime="120" val="0" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
+			<effect name="BigHead" abnormalTime="120" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
 		</for>
 	</skill>
 	<skill id="23008" levels="1" name="Plaipitak Agathion Special Skill - Power of Blessed Return">
@@ -190,7 +190,7 @@
 			<player agathionId="1505" />
 		</cond>
 		<for>
-			<effect name="BigHead" abnormalTime="120" val="0" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
+			<effect name="BigHead" abnormalTime="120" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
 		</for>
 	</skill>
 	<skill id="23014" levels="1" name="Bamboo Panda Agathion Special Skill - Power of Blessed Resurrection">
@@ -851,7 +851,7 @@
 			<player agathionId="1521" />
 		</cond>
 		<for>
-			<effect name="BigHead" abnormalTime="120" val="0" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
+			<effect name="BigHead" abnormalTime="120" abnormalVisualEffect="bighead" abnormalLvl="0" abnormalType="big_head" />
 		</for>
 	</skill>
 	<skill id="23060" levels="1" name="Great Sumo Match Agathion Special Skill - Ability of Firework">

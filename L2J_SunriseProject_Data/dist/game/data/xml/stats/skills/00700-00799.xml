@@ -1288,7 +1288,7 @@
 			<mul stat="pAtkSpd" val="1.1">
 				<using kind="SWORD,BLUNT,DUAL,DUALFIST,DAGGER,DUALDAGGER,POLE,ANCIENTSWORD,RAPIER" />
 			</mul>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
 				<param minDamage="1" chance="3" />
@@ -1311,7 +1311,7 @@
 			<add stat="pAtkRange" val="50">
 				<using kind="BOW,CROSSBOW" />
 			</add>
-			<effect name="TriggerSkillByAttack" nocicon="1" val="0">
+			<effect name="TriggerSkillByAttack" nocicon="1">
 				<param attackerType="L2Character" minAttackerLevel="1" maxAttackerLevel="100" />
 				<param isCritical="false" />
 				<param minDamage="1" chance="3" />
@@ -1333,7 +1333,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="30" val="0" abnormalVisualEffect="invulnerable" abnormalLvl="2" abnormalType="pd_up_special">
+			<effect name="Buff" abnormalTime="30" abnormalVisualEffect="invulnerable" abnormalLvl="2" abnormalType="pd_up_special">
 				<add stat="mDef" val="5000" />
 			</effect>
 		</for>
@@ -1543,7 +1543,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="30" val="0" abnormalVisualEffect="invulnerable" abnormalLvl="2" abnormalType="avoid_up_special">
+			<effect name="Buff" abnormalTime="30" abnormalVisualEffect="invulnerable" abnormalLvl="2" abnormalType="avoid_up_special">
 				<add stat="runSpd" val="20" />
 				<add stat="rEvas" val="15" />
 				<mul stat="blowRate" val="1.3" />
@@ -1564,7 +1564,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="30" val="0" abnormalVisualEffect="invulnerable" abnormalLvl="2" abnormalType="avoid_up_special">
+			<effect name="Buff" abnormalTime="30" abnormalVisualEffect="invulnerable" abnormalLvl="2" abnormalType="avoid_up_special">
 				<add stat="runSpd" val="50" />
 				<add stat="rEvas" val="20" />
 				<mul stat="blowRate" val="1.2" />
@@ -1585,7 +1585,7 @@
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Buff" abnormalTime="30" val="0" abnormalVisualEffect="invulnerable" abnormalLvl="2" abnormalType="avoid_up_special">
+			<effect name="Buff" abnormalTime="30" abnormalVisualEffect="invulnerable" abnormalLvl="2" abnormalType="avoid_up_special">
 				<add stat="runSpd" val="33" />
 				<add stat="rEvas" val="15" />
 				<mul stat="blowRate" val="1.4" />
@@ -1617,7 +1617,7 @@
 			<using kind="BOW" />
 		</cond>
 		<for>
-			<effect name="ChanceSkillTrigger" val="0" chanceType="ON_START" triggeredId="23298" />
+			<effect name="ChanceSkillTrigger" chanceType="ON_START" triggeredId="23298" />
 		</for>
 	</skill>
 	<skill id="772" levels="1" name="Arrow Rain">
@@ -1642,7 +1642,7 @@
 			<using kind="BOW" />
 		</cond>
 		<for>
-			<effect name="ChanceSkillTrigger" val="0" chanceType="ON_START" triggeredId="23299" />
+			<effect name="ChanceSkillTrigger" chanceType="ON_START" triggeredId="23299" />
 		</for>
 	</skill>
 	<skill id="773" levels="1" name="Ghost Piercing">
@@ -1668,7 +1668,7 @@
 			<using kind="BOW" />
 		</cond>
 		<for>
-			<effect name="ChanceSkillTrigger" val="0" chanceType="ON_START" triggeredId="23300" />
+			<effect name="ChanceSkillTrigger" chanceType="ON_START" triggeredId="23300" />
 		</for>
 	</skill>
 	<skill id="774" levels="1" name="Dread Pool">
@@ -1727,7 +1727,7 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="Disarm" abnormalTime="5" val="0" abnormalVisualEffect="bleed" abnormalLvl="1" abnormalType="disarm">
+			<effect name="Disarm" abnormalTime="5" abnormalVisualEffect="bleed" abnormalLvl="1" abnormalType="disarm">
 				<mul stat="pAtk" val="0.6" />
 			</effect>
 		</for>
@@ -2141,7 +2141,7 @@
 		<set name="targetType" val="AURA" />
 		<set name="trait" val="PARALYZE" />
 		<for>
-			<effect name="ChanceSkillTrigger" abnormalTime="5" val="0" triggeredId="6092" chanceType="ON_EXIT" effectPower="50" abnormalLvl="1" abnormalType="paralyze">
+			<effect name="ChanceSkillTrigger" abnormalTime="5" triggeredId="6092" chanceType="ON_EXIT" effectPower="50" abnormalLvl="1" abnormalType="paralyze">
 				<mul stat="pAtkSpd" val="0.5" />
 				<mul stat="runSpd" val="0.5" />
 				<mul stat="mAtkSpd" val="0.5" />
@@ -2236,10 +2236,10 @@
 			</and>
 		</cond>
 		<for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="60" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="60" abnormalLvl="1" abnormalType="stun" />
 		</for>
 		<enchant3for>
-			<effect name="Stun" abnormalTime="9" val="0" effectPower="#ench3Chance" abnormalLvl="1" abnormalType="stun" />
+			<effect name="Stun" abnormalTime="9" effectPower="#ench3Chance" abnormalLvl="1" abnormalType="stun" />
 		</enchant3for>
 	</skill>
 	<skill id="794" levels="1" name="Mass Disarm" enchantGroup1="6" enchantGroup2="6">
@@ -2269,7 +2269,7 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="reuseDelay" val="#ench2Reuse" />
 		<for>
-			<effect name="Disarm" abnormalTime="5" val="0" abnormalVisualEffect="bleed" abnormalLvl="1" abnormalType="disarm">
+			<effect name="Disarm" abnormalTime="5" abnormalVisualEffect="bleed" abnormalLvl="1" abnormalType="disarm">
 				<mul stat="pAtk" val="0.6" />
 			</effect>
 		</for>

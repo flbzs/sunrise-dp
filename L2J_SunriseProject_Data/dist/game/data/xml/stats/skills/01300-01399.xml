@@ -3413,7 +3413,7 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<for>
-			<effect name="MagicalAttackMp" val="0" />
+			<effect name="MagicalAttackMp" />
 		</for>
 	</skill>
 	<skill id="1399" levels="5" name="Mana Storm" enchantGroup1="2" enchantGroup2="2">
@@ -3438,7 +3438,7 @@
 		<enchant2 name="magicLvl" val="#enchMagicLvl" />
 		<enchant2 name="mpConsume" val="#ench2MpConsume" />
 		<for>
-			<effect name="MagicalAttackMp" val="0" />
+			<effect name="MagicalAttackMp" />
 		</for>
 	</skill>
 </list>

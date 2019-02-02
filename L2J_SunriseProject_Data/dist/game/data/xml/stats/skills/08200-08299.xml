@@ -857,7 +857,7 @@
 			<player instanceId="45" /> <!-- Pailaka 73-77 -->
 		</cond>
 		<for>
-			<effect name="TriggerSkillByAttack" abnormalTime="3600" val="0" abnormalType="seed_of_critical">
+			<effect name="TriggerSkillByAttack" abnormalTime="3600" abnormalType="seed_of_critical">
 				<mul stat="critRate" val="1.3" />
 				<mul stat="pAtkSpd" val="1.33" />
 				
