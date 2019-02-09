@@ -204,7 +204,9 @@
 			</not>
 		</cond>
 		<for>
-			<effect count="#maxCharges" name="IncreaseCharges" noicon="1" val="1" />
+			<effect name="FocusEnergy" noicon="1">
+				<param charge="#maxCharges" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6814" levels="8" name="Focus Force">
@@ -223,7 +225,9 @@
 			</not>
 		</cond>
 		<for>
-			<effect count="#maxCharges" name="IncreaseCharges" noicon="1" val="1" />
+			<effect name="FocusEnergy" noicon="1">
+				<param charge="#maxCharges" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="6815" levels="16" name="Deadly Poison">

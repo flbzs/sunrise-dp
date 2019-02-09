@@ -293,7 +293,9 @@
 			</not>
 		</cond>
 		<for>
-			<effect count="#maxCharges" name="IncreaseCharges" noicon="1" val="1" />
+			<effect name="FocusEnergy" noicon="1">
+				<param charge="#maxCharges" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="9" levels="34" name="Sonic Buster" enchantGroup1="2" enchantGroup2="2" enchantGroup3="2" enchantGroup4="2" enchantGroup5="2" enchantGroup6="2" enchantGroup7="2">
@@ -1291,7 +1293,9 @@
 			</not>
 		</cond>
 		<for>
-			<effect count="#maxCharges" name="IncreaseCharges" noicon="1" val="1" />
+			<effect name="FocusEnergy" noicon="1">
+				<param charge="#maxCharges" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="51" levels="1" name="Lure" enchantGroup1="1">

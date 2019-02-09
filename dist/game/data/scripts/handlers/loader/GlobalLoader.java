@@ -1,25 +1,6 @@
-/*
- * Copyright (C) 2004-2015 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers.loader;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import gr.sr.handler.ABLoader;
 
 import handlers.BloodAltarsLoader;
 import handlers.ConquerableHallsLoader;
@@ -46,11 +27,9 @@ import handlers.ZonesLoader;
  * @author L2jSunrise Team
  * @Website www.l2jsunrise.com
  */
-public final class GlobalLoader
+public final class GlobalLoader extends ABLoader
 {
-	private static final Logger _log = LoggerFactory.getLogger(GlobalLoader.class);
-	
-	private static final Class<?>[] loader =
+	private final Class<?>[] SCRIPTS =
 	{
 		BloodAltarsLoader.class,
 		ConquerableHallsLoader.class,
@@ -76,19 +55,13 @@ public final class GlobalLoader
 	
 	public GlobalLoader()
 	{
-		long serverLoadStart = System.currentTimeMillis();
-		for (Class<?> script : loader)
-		{
-			try
-			{
-				script.newInstance();
-			}
-			catch (Exception e)
-			{
-				_log.error(GlobalLoader.class.getSimpleName() + ": Failed loading " + script.getSimpleName() + ":", e);
-			}
-		}
-		_log.info(GlobalLoader.class.getSimpleName() + ": Global scripts loaded in " + (System.currentTimeMillis() - serverLoadStart) + " ms.");
+		loadScripts();
+	}
+	
+	@Override
+	public Class<?>[] getScripts()
+	{
+		return SCRIPTS;
 	}
 	
 	public static void main(String[] args)

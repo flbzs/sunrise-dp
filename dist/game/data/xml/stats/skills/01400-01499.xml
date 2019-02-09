@@ -669,6 +669,7 @@
 		<set name="element" val="0" /> <!-- Fire -->
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="15000" />
+		<set name="hitCancelTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8876" />
@@ -696,6 +697,7 @@
 		<set name="element" val="2" /> <!-- Wind -->
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="15000" />
+		<set name="hitCancelTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8876" />
@@ -723,6 +725,7 @@
 		<set name="element" val="1" /> <!-- Water -->
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="15000" />
+		<set name="hitCancelTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8876" />
@@ -773,6 +776,7 @@
 		<set name="element" val="5" /> <!-- Dark -->
 		<set name="elementPower" val="20" />
 		<set name="hitTime" val="15000" />
+		<set name="hitCancelTime" val="4000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8876" />
@@ -1526,19 +1530,19 @@
 		<enchant3 name="abnormalTime" val="#ench3AbnormalTimes" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_unholy">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_unholy_res">
 				<sub stat="darkRes" val="#darkRes" />
 				<add stat="holyRes" val="#holyRes" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="#enchabnormalLvl" abnormalType="armor_unholy">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#enchabnormalLvl" abnormalType="armor_unholy_res">
 				<sub stat="darkRes" val="#ench1darkRes" />
 				<add stat="holyRes" val="15" />
 			</effect>
 		</enchant1for>
 		<enchant3for>
-			<effect name="Debuff" abnormalTime="#ench3Time" abnormalLvl="4" abnormalType="armor_unholy">
+			<effect name="Debuff" abnormalTime="#ench3Time" abnormalLvl="4" abnormalType="armor_unholy_res">
 				<sub stat="darkRes" val="30" />
 				<add stat="holyRes" val="15" />
 			</effect>

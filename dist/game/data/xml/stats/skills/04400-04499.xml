@@ -765,7 +765,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_water">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_water_res">
 				<add stat="fireRes" val="#fire" />
 				<sub stat="waterRes" val="#water" />
 			</effect>
@@ -799,7 +799,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_wind">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_wind_res">
 				<add stat="earthRes" val="#earth" />
 				<sub stat="windRes" val="#wind" />
 			</effect>
@@ -833,7 +833,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_earth">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_earth_res">
 				<add stat="windRes" val="#wind" />
 				<sub stat="earthRes" val="#earth" />
 			</effect>
@@ -867,7 +867,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_unholy">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_unholy_res">
 				<add stat="holyRes" val="#holy" />
 				<sub stat="darkRes" val="#dark" />
 			</effect>
@@ -901,7 +901,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_holy">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_holy_res">
 				<add stat="darkRes" val="#dark" />
 				<sub stat="holyRes" val="#holy" />
 			</effect>

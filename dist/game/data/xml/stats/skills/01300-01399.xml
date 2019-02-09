@@ -2492,6 +2492,7 @@
 		<set name="blockedInOlympiad" val="true" />
 		<set name="aggroPoints" val="676" />
 		<set name="hitTime" val="2500" />
+		<set name="hitCancelTime" val="2000" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="80" />
 		<set name="itemConsumeId" val="3031" />
@@ -2520,6 +2521,7 @@
 		<set name="canBeDispeled" val="false" />
 		<set name="canBeReflected" val="false" />
 		<set name="hitTime" val="2500" />
+		<set name="hitCancelTime" val="2000" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="80" />
@@ -2558,6 +2560,7 @@
 		<set name="canBeDispeled" val="false" />
 		<set name="canBeReflected" val="false" />
 		<set name="hitTime" val="2500" />
+		<set name="hitCancelTime" val="2000" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="itemConsumeCount" val="80" />
@@ -2778,13 +2781,13 @@
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="power" val="#ench3Power" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_fire">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_fire_res">
 				<sub stat="fireRes" val="30" />
 				<add stat="waterRes" val="15" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_fire">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_fire_res">
 				<sub stat="fireRes" val="#ench1fireRes" />
 				<add stat="waterRes" val="15" />
 			</effect>
@@ -2827,13 +2830,13 @@
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="power" val="#ench3Power" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_water">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_water_res">
 				<sub stat="waterRes" val="30" />
 				<add stat="fireRes" val="15" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_water">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_water_res">
 				<sub stat="waterRes" val="#ench1waterRes" />
 				<add stat="fireRes" val="15" />
 			</effect>
@@ -2876,13 +2879,13 @@
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<enchant3 name="power" val="#ench3Power" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_wind">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_wind_res">
 				<sub stat="windRes" val="30" />
 				<add stat="earthRes" val="15" />
 			</effect>
 		</for>
 		<enchant1for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_wind">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_wind_res">
 				<sub stat="windRes" val="#ench1windRes" />
 				<add stat="earthRes" val="15" />
 			</effect>

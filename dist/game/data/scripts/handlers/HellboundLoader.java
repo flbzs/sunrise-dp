@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2015 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package handlers;
 
 import l2r.Config;
@@ -24,8 +6,7 @@ import l2r.gameserver.handler.IAdminCommandHandler;
 import l2r.gameserver.handler.IVoicedCommandHandler;
 import l2r.gameserver.handler.VoicedCommandHandler;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import gr.sr.handler.ABLoader;
 
 import handlers.admincommandhandlers.AdminHellbound;
 import handlers.voicedcommandhandlers.Hellbound;
@@ -71,13 +52,11 @@ import quests.Q00133_ThatsBloodyHot.Q00133_ThatsBloodyHot;
 
 /**
  * Hellbound class-loader.
- * @author Zoey76
+ * @author vGodFather
  */
-public final class HellboundLoader
+public final class HellboundLoader extends ABLoader
 {
-	private static final Logger _log = LoggerFactory.getLogger(HellboundLoader.class);
-	
-	private static final Class<?>[] SCRIPTS =
+	private final Class<?>[] SCRIPTS =
 	{
 		// Commands
 		AdminHellbound.class,
@@ -125,15 +104,16 @@ public final class HellboundLoader
 		Q00133_ThatsBloodyHot.class,
 	};
 	
-	public HellboundLoader()
+	@Override
+	public void loadScripts()
 	{
-		_log.info(HellboundLoader.class.getSimpleName() + ": Loading related scripts.");
+		final long startCache = System.currentTimeMillis();
 		// Data
 		HellboundPointData.getInstance();
 		HellboundSpawns.getInstance();
 		// Engine
 		HellboundEngine.getInstance();
-		for (Class<?> script : SCRIPTS)
+		for (Class<?> script : getScripts())
 		{
 			try
 			{
@@ -149,8 +129,20 @@ public final class HellboundLoader
 			}
 			catch (Exception e)
 			{
-				_log.error(HellboundLoader.class.getSimpleName() + ": Failed loading " + script.getSimpleName() + ":" + e.getMessage());
+				_log.error(getClass().getSimpleName() + ": Failed loading " + script.getSimpleName() + ":" + e.getMessage());
 			}
 		}
+		_log.info(getClass().getSimpleName() + " loaded. (GenTime: {} ms) ", (System.currentTimeMillis() - startCache));
+	}
+	
+	public HellboundLoader()
+	{
+		loadScripts();
+	}
+	
+	@Override
+	public Class<?>[] getScripts()
+	{
+		return SCRIPTS;
 	}
 }

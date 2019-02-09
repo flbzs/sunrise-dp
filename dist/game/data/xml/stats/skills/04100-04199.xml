@@ -61,7 +61,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_fire">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_fire_res">
 				<sub stat="fireRes" val="#fireRes" />
 				<add stat="waterRes" val="#waterRes" />
 			</effect>
