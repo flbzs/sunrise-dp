@@ -469,7 +469,9 @@
 			<effect name="Buff" abnormalTime="7" abnormalLvl="1" abnormalType="combination">
 				<mul stat="pAtk" val="1.2" />
 			</effect>
-			<effect count="7" name="IncreaseCharges" noicon="1" val="1" />
+			<effect name="FocusEnergy" noicon="1">
+				<param charge="7" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="5128" levels="1" name="Maximize long-range weapon use">

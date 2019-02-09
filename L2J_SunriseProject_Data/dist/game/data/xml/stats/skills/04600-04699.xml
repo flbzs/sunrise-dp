@@ -173,7 +173,7 @@
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="FRONT_AREA" />
 		<for>
-			<effect name="Debuff" abnormalTime="#time" effectPower="80" abnormalLvl="#abnormalLvls" abnormalType="armor_fire">
+			<effect name="Debuff" abnormalTime="#time" effectPower="80" abnormalLvl="#abnormalLvls" abnormalType="armor_fire_res">
 				<sub stat="fireRes" val="#fireRes" />
 				<add stat="waterRes" val="#waterRes" />
 			</effect>

@@ -740,7 +740,9 @@
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect count="2" name="IncreaseCharges" noicon="1" val="1" />
+			<effect name="FocusEnergy" noicon="1">
+				<param charge="2" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="2166" levels="2" name="CP Gauge Potion">

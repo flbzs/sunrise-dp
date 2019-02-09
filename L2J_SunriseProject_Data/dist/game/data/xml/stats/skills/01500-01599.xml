@@ -779,7 +779,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="3" abnormalType="armor_holy">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="3" abnormalType="armor_holy_res">
 				<sub stat="holyRes" val="25" />
 				<add stat="darkRes" val="12" />
 			</effect>

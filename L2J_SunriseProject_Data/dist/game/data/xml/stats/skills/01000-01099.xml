@@ -1496,19 +1496,19 @@
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_water">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_water_res">
 				<sub stat="waterRes" val="20" />
 				<add stat="fireRes" val="10" />
 			</effect>
 		</for>
 		<enchant2for>
-			<effect name="Debuff" abnormalTime="#ench2time" abnormalLvl="4" abnormalType="armor_water">
+			<effect name="Debuff" abnormalTime="#ench2time" abnormalLvl="4" abnormalType="armor_water_res">
 				<sub stat="waterRes" val="20" />
 				<add stat="fireRes" val="10" />
 			</effect>
 		</enchant2for>
 		<enchant3for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_water">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_water_res">
 				<sub stat="waterRes" val="20" />
 				<add stat="fireRes" val="10" />
 				<sub stat="waterPower" val="#enchElementPower" />
@@ -1634,19 +1634,19 @@
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_wind">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_wind_res">
 				<sub stat="windRes" val="20" />
 				<add stat="earthRes" val="10" />
 			</effect>
 		</for>
 		<enchant2for>
-			<effect name="Debuff" abnormalTime="#ench2time" abnormalLvl="4" abnormalType="armor_wind">
+			<effect name="Debuff" abnormalTime="#ench2time" abnormalLvl="4" abnormalType="armor_wind_res">
 				<sub stat="windRes" val="20" />
 				<add stat="earthRes" val="10" />
 			</effect>
 		</enchant2for>
 		<enchant3for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_wind">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_wind_res">
 				<sub stat="windRes" val="20" />
 				<add stat="earthRes" val="10" />
 				<sub stat="windPower" val="#enchElementPower" />
@@ -1797,19 +1797,19 @@
 		<enchant2 name="mpInitialConsume" val="#ench2mpInitialConsume" />
 		<enchant3 name="magicLvl" val="#enchMagicLvl" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_fire">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="#abnormalLvls" abnormalType="armor_fire_res">
 				<sub stat="fireRes" val="20" />
 				<add stat="waterRes" val="10" />
 			</effect>
 		</for>
 		<enchant2for>
-			<effect name="Debuff" abnormalTime="#ench2time" abnormalLvl="4" abnormalType="armor_fire">
+			<effect name="Debuff" abnormalTime="#ench2time" abnormalLvl="4" abnormalType="armor_fire_res">
 				<sub stat="fireRes" val="20" />
 				<add stat="waterRes" val="10" />
 			</effect>
 		</enchant2for>
 		<enchant3for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_fire">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="4" abnormalType="armor_fire_res">
 				<sub stat="fireRes" val="20" />
 				<add stat="waterRes" val="10" />
 				<sub stat="firePower" val="#enchElementPower" />

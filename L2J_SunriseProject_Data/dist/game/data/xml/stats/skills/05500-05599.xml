@@ -191,7 +191,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Debuff" abnormalTime="20" abnormalLvl="0" abnormalType="armor_fire">
+			<effect name="Debuff" abnormalTime="20" abnormalLvl="0" abnormalType="armor_fire_res">
 				<sub stat="fireRes" val="50" />
 			</effect>
 		</for>
@@ -215,7 +215,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Debuff" abnormalTime="20" abnormalLvl="0" abnormalType="armor_water">
+			<effect name="Debuff" abnormalTime="20" abnormalLvl="0" abnormalType="armor_water_res">
 				<sub stat="waterRes" val="50" />
 			</effect>
 		</for>
@@ -239,7 +239,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Debuff" abnormalTime="20" abnormalLvl="0" abnormalType="armor_wind">
+			<effect name="Debuff" abnormalTime="20" abnormalLvl="0" abnormalType="armor_wind_res">
 				<sub stat="windRes" val="50" />
 			</effect>
 		</for>
@@ -263,7 +263,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Debuff" abnormalTime="20" abnormalLvl="0" abnormalType="armor_earth">
+			<effect name="Debuff" abnormalTime="20" abnormalLvl="0" abnormalType="armor_earth_res">
 				<sub stat="earthRes" val="50" />
 			</effect>
 		</for>
@@ -526,7 +526,7 @@
 		<set name="skillType" val="DEBUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" abnormalLvl="2" abnormalType="armor_unholy">
+			<effect name="Debuff" abnormalTime="30" abnormalLvl="2" abnormalType="armor_unholy_res">
 				<sub stat="darkRes" val="#vuln" />
 			</effect>
 		</for>

@@ -1021,7 +1021,7 @@
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Debuff" abnormalTime="30" effectPower="80" abnormalLvl="3" abnormalType="armor_unholy">
+			<effect name="Debuff" abnormalTime="30" effectPower="80" abnormalLvl="3" abnormalType="armor_unholy_res">
 				<sub stat="darkRes" val="25" />
 			</effect>
 		</for>
