@@ -31,6 +31,8 @@ import l2r.gameserver.model.quest.QuestState;
 import l2r.gameserver.model.quest.State;
 import l2r.gameserver.util.Util;
 
+import quests.Q00117_TheOceanOfDistantStars.Q00117_TheOceanOfDistantStars;
+
 /**
  * A Broken Dream (650)
  * @author netvirus
@@ -124,7 +126,7 @@ public final class Q00650_ABrokenDream extends Quest
 				}
 				else
 				{
-					final QuestState q117 = player.getQuestState("117_OceanOfDistantStar"); // TODO: Update.
+					final QuestState q117 = player.getQuestState(Q00117_TheOceanOfDistantStars.class.getSimpleName());
 					htmltext = (q117 != null) && q117.isCompleted() ? "32054-01.htm" : "32054-04.htm";
 				}
 				break;
