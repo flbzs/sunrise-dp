@@ -115,7 +115,7 @@ public final class Q00340_SubjugationOfLizardmen extends Quest
 				{
 					giveAdena(player, 4090, true);
 					takeItems(player, TRADE_CARGO, -1);
-					qs.exitQuest(false, true);
+					qs.exitQuest(true, true);
 					htmltext = event;
 				}
 				break;
@@ -264,7 +264,7 @@ public final class Q00340_SubjugationOfLizardmen extends Quest
 					else if (memoState == 7)
 					{
 						giveAdena(player, 14700, true);
-						qs.exitQuest(false, true);
+						qs.exitQuest(true, true);
 						htmltext = "30385-13.html";
 					}
 					break;
