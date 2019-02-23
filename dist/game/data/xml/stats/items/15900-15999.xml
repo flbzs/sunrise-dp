@@ -525,7 +525,7 @@
 		</for>
 	</item>
 	<item id="15916" type="Weapon" name="Contristo Hammer {PvP}">
-		<set name="icon" val="icon.weapon_vesper_retributer_i00" />
+		<set name="icon" val="icon.weapon_pereztear_hammer_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="lrhand" />
@@ -648,7 +648,7 @@
 		</for>
 	</item>
 	<item id="15920" type="Weapon" name="Sacredium {PvP}">
-		<set name="icon" val="icon.weapon_vesper_caster_i00" />
+		<set name="icon" val="icon.weapon_sacredumors_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="weapon_type" val="BLUNT" />
 		<set name="bodypart" val="rhand" />
