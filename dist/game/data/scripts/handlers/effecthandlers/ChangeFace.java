@@ -49,7 +49,7 @@ public class ChangeFace extends L2Effect
 		}
 		
 		final L2PcInstance player = getEffector().getActingPlayer();
-		player.getAppearance().setFace((int) calc());
+		player.getAppearance().setFace((int) getValue());
 		player.broadcastUserInfo();
 		return true;
 	}

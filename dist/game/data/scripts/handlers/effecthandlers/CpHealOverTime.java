@@ -65,7 +65,7 @@ public class CpHealOverTime extends L2Effect
 			return false;
 		}
 		
-		cp += calc();
+		cp += getValue();
 		cp = Math.min(cp, maxcp);
 		
 		getEffected().setCurrentCp(cp);

@@ -48,7 +48,7 @@ public class DamOverTimePercent extends L2Effect
 			return false;
 		}
 		
-		double damage = getEffected().getCurrentHp() * calc();
+		double damage = getEffected().getCurrentHp() * getValue();
 		
 		if (damage >= (getEffected().getCurrentHp() - 1))
 		{

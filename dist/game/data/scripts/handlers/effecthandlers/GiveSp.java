@@ -47,7 +47,7 @@ public class GiveSp extends L2Effect
 			return false;
 		}
 		
-		getEffector().getActingPlayer().addExpAndSp(0, (int) calc());
+		getEffector().getActingPlayer().addExpAndSp(0, (int) getValue());
 		return true;
 	}
 }

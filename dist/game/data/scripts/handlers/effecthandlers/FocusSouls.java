@@ -54,7 +54,7 @@ public class FocusSouls extends L2Effect
 		final int maxSouls = (int) target.calcStat(Stats.MAX_SOULS, 0, null, null);
 		if (maxSouls > 0)
 		{
-			int amount = (int) calc();
+			int amount = (int) getValue();
 			if ((target.getChargedSouls() < maxSouls))
 			{
 				int count = ((target.getChargedSouls() + amount) <= maxSouls) ? amount : (maxSouls - target.getChargedSouls());

@@ -63,7 +63,7 @@ public class CpHeal extends L2Effect
 			return false;
 		}
 		
-		double amount = calc();
+		double amount = getValue();
 		
 		// Prevents overheal and negative amount
 		amount = Math.max(Math.min(amount, target.getMaxRecoverableCp() - target.getCurrentCp()), 0);

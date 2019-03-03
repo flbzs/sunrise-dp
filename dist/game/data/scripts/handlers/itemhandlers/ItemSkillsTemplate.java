@@ -20,11 +20,9 @@ package handlers.itemhandlers;
 
 import java.util.List;
 
-import l2r.gameserver.enums.CtrlIntention;
 import l2r.gameserver.handler.IItemHandler;
 import l2r.gameserver.model.actor.L2Playable;
 import l2r.gameserver.model.holders.SkillHolder;
-import l2r.gameserver.model.items.L2Item;
 import l2r.gameserver.model.items.instance.L2ItemInstance;
 import l2r.gameserver.model.items.type.ActionType;
 import l2r.gameserver.model.skills.L2Skill;
@@ -103,7 +101,7 @@ public class ItemSkillsTemplate implements IItemHandler
 					return false;
 				}
 				
-				if (!canRunSimultaneously(item.getItem(), true) && playable.isCastingNow())
+				if (!item.isPotion() && !item.isElixir() && !item.isScroll() && playable.isCastingNow())
 				{
 					return false;
 				}
@@ -116,14 +114,12 @@ public class ItemSkillsTemplate implements IItemHandler
 					playable.sendPacket(sm);
 				}
 				
-				// vGodFather: this will fix exploits with item that contains skills
-				if (itemSkill.isSimultaneousCast() || canRunSimultaneously(item.getItem(), false))
+				if (itemSkill.isSimultaneousCast() || ((item.getItem().hasImmediateEffect() || item.getItem().hasExImmediateEffect()) && itemSkill.isStatic()))
 				{
 					playable.doSimultaneousCast(itemSkill);
 				}
 				else
 				{
-					playable.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					if (!playable.useMagic(itemSkill, forceUse, false))
 					{
 						return false;
@@ -148,17 +144,6 @@ public class ItemSkillsTemplate implements IItemHandler
 		}
 		
 		return true;
-	}
-	
-	// vGodFather: this will fix exploits with item that contains skills
-	private boolean canRunSimultaneously(L2Item item, boolean checkScrollType)
-	{
-		if (checkScrollType && (item.isScroll() || item.isPotion()))
-		{
-			return true;
-		}
-		
-		return item.hasImmediateEffect() || item.hasExImmediateEffect() || item.isElixir();
 	}
 	
 	/**

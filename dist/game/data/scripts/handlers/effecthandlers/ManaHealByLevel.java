@@ -64,7 +64,7 @@ public class ManaHealByLevel extends L2Effect
 			return false;
 		}
 		
-		double amount = calc();
+		double amount = getValue();
 		
 		// recharged mp influenced by difference between target level and skill level
 		// if target is within 5 levels or lower then skill level there's no penalty.

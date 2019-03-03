@@ -76,8 +76,7 @@ public class ChameleonRest extends L2Effect
 			}
 		}
 		
-		double manaDam = calc();
-		
+		double manaDam = getValue();
 		if (manaDam > getEffected().getCurrentMp())
 		{
 			getEffected().sendPacket(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);

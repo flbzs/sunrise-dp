@@ -237,6 +237,11 @@ public final class DragonValley extends AbstractNpcAI
 		{
 			for (L2PcInstance member : player.getParty().getMembers())
 			{
+				if (!CLASS_POINTS.containsKey(member.getClassId()))
+				{
+					continue;
+				}
+				
 				if ((member.getLevel() >= MIN_LVL) && (member.getClassId().level() >= CLASS_LVL) && (Util.calculateDistance(npc, member, true, false) < MIN_DISTANCE))
 				{
 					points += CLASS_POINTS.get(member.getClassId());

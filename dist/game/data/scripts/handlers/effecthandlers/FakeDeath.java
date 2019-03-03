@@ -62,7 +62,7 @@ public class FakeDeath extends L2Effect
 			return false;
 		}
 		
-		double manaDam = calc();
+		double manaDam = getValue();
 		
 		if ((manaDam > getEffected().getCurrentMp()) && getSkill().isToggle())
 		{

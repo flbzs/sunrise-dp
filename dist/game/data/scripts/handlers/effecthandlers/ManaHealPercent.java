@@ -65,7 +65,7 @@ public class ManaHealPercent extends L2Effect
 		}
 		
 		double amount = 0;
-		double power = calc();
+		double power = getValue();
 		boolean full = (power == 100.0);
 		
 		amount = full ? target.getMaxMp() : (target.getMaxMp() * power) / 100.0;
