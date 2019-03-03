@@ -29,7 +29,7 @@ public class RefuelAirship extends L2Effect
 	public boolean onStart()
 	{
 		final L2AirShipInstance ship = getEffector().getActingPlayer().getAirShip();
-		ship.setFuel(ship.getFuel() + (int) calc());
+		ship.setFuel(ship.getFuel() + (int) getValue());
 		ship.updateAbnormalEffect();
 		return true;
 	}

@@ -69,7 +69,7 @@ public class Heal extends L2Effect
 			return false;
 		}
 		
-		double amount = calc();
+		double amount = getValue();
 		double staticShotBonus = 0;
 		int mAtkMul = 1;
 		boolean sps = getSkill().isMagic() && activeChar.isChargedShot(ShotType.SPIRITSHOTS);

@@ -43,7 +43,7 @@ public class CrystalGradeModify extends L2Effect
 			return false;
 		}
 		
-		player.setExpertisePenaltyBonus((int) calc());
+		player.setExpertisePenaltyBonus((int) getValue());
 		player.refreshExpertisePenalty();
 		return true;
 	}

@@ -41,7 +41,7 @@ public class ManaDamOverTime extends L2Effect
 		// vGodFather: herb effect must override invul check
 		if ((!getEffected().isInvul() && !getEffected().isMpBlocked()) || getSkill().isHerb())
 		{
-			double manaDam = calc();
+			double manaDam = getValue();
 			
 			if (manaDam > getEffected().getCurrentMp())
 			{

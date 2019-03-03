@@ -57,7 +57,7 @@ public class ManaHeal extends L2Effect
 			return false;
 		}
 		
-		double amount = calc();
+		double amount = getValue();
 		
 		if (!getSkill().isStatic())
 		{

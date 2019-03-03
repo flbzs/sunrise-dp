@@ -54,7 +54,7 @@ public class HealOverTime extends L2Effect
 	{
 		if (getEffected().isPlayer())
 		{
-			getEffected().sendPacket(new ExRegMax(calc(), getTotalCount() * getAbnormalTime(), getAbnormalTime()));
+			getEffected().sendPacket(new ExRegMax(getValue(), getTotalCount() * getAbnormalTime(), getAbnormalTime()));
 		}
 		return true;
 	}
@@ -79,7 +79,7 @@ public class HealOverTime extends L2Effect
 		// vGodFather: herb effect must override invul check
 		if ((!getEffected().isInvul() && !getEffected().isHpBlocked()) || getSkill().isHerb())
 		{
-			hp += calc();
+			hp += getValue();
 			hp = Math.min(hp, maxhp);
 			
 			getEffected().setCurrentHp(hp);
