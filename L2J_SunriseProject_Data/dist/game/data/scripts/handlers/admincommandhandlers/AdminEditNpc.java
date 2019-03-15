@@ -356,9 +356,9 @@ public class AdminEditNpc implements IAdminCommandHandler
 			adminReply.replace("%npcId%", String.valueOf(npc.getId()));
 			adminReply.replace("%templateId%", String.valueOf(npc.getDisplayId()));
 			adminReply.replace("%name%", npc.getName());
-			adminReply.replace("%serverSideName%", npc.isServerSideName() == true ? "1" : "0");
+			adminReply.replace("%serverSideName%", npc.isUsingServerSideName() == true ? "1" : "0");
 			adminReply.replace("%title%", npc.getTitle());
-			adminReply.replace("%serverSideTitle%", npc.isServerSideTitle() == true ? "1" : "0");
+			adminReply.replace("%serverSideTitle%", npc.isUsingServerSideTitle() == true ? "1" : "0");
 			adminReply.replace("%collisionRadius%", String.valueOf(npc.getfCollisionRadius()));
 			adminReply.replace("%collisionHeight%", String.valueOf(npc.getfCollisionHeight()));
 			adminReply.replace("%level%", String.valueOf(npc.getLevel()));
