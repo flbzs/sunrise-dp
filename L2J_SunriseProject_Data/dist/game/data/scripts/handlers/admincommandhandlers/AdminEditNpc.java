@@ -665,10 +665,12 @@ public class AdminEditNpc implements IAdminCommandHandler
 			}
 		}
 		
-		replyMSG.append("</table><table width=300 bgcolor=666666 border=0><tr>");
+		replyMSG.append("</table>");
 		
 		if (page > 1)
 		{
+			replyMSG.append("<table width=300 bgcolor=666666 border=0><tr>");
+			
 			replyMSG.append("<td width=120><a action=\"bypass -h admin_show_droplist ");
 			replyMSG.append(npcId);
 			replyMSG.append(" ");
@@ -683,6 +685,8 @@ public class AdminEditNpc implements IAdminCommandHandler
 		}
 		if (hasMore)
 		{
+			replyMSG.append("<table width=300 bgcolor=666666 border=0><tr>");
+			
 			if (page <= 1)
 			{
 				replyMSG.append("<td width=120></td>");
