@@ -57,7 +57,7 @@ import org.slf4j.LoggerFactory;
 public class AdminEditNpc implements IAdminCommandHandler
 {
 	private static Logger _log = LoggerFactory.getLogger(AdminEditNpc.class);
-	private final static int PAGE_LIMIT = 20;
+	private final static int PAGE_LIMIT = 15;
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
