@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2013 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package ai.zone.PlainsOfLizardman;
 
 import l2r.gameserver.ThreadPoolManager;
@@ -33,7 +15,7 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Plains of Lizardmen AI.
- * @author Gnacik, malyelfik, Fixed by: vGodFather
+ * @author vGodFather
  */
 public final class PlainsOfLizardman extends AbstractNpcAI
 {
@@ -121,53 +103,15 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isSummon)
 	{
-		switch (npc.getId())
-		{
-			case RAINBOW_FROG:
-				ThreadPoolManager.getInstance().scheduleEffect(new TaskAfterDead(attacker, RAINBOW_FROG_SKILL), 3000);
-				// castSkill(npc, attacker, RAINBOW_FROG_SKILL);
-				npc.doDie(attacker);
-				break;
-			case STICKY_MUSHROOM:
-				ThreadPoolManager.getInstance().scheduleEffect(new TaskAfterDead(attacker, STICKY_MUSHROOM_SKILL), 3000);
-				// castSkill(npc, attacker, STICKY_MUSHROOM_SKILL);
-				npc.doDie(attacker);
-				break;
-			case ENERGY_PLANT:
-				ThreadPoolManager.getInstance().scheduleEffect(new TaskAfterDead(attacker, ENERGY_PLANT_SKILL), 3000);
-				// castSkill(npc, attacker, ENERGY_PLANT_SKILL);
-				npc.doDie(attacker);
-				break;
-			case ABYSS_WEED:
-				npc.doDie(attacker);
-				break;
-			case FANTASY_MUSHROOM:
-				if (npc.isScriptValue(0))
-				{
-					npc.setScriptValue(1);
-					npc.setIsInvul(true);
-					for (L2Character target : npc.getKnownList().getKnownCharactersInRadius(1000))
-					{
-						if ((target != null) && target.isAttackable())
-						{
-							final L2Attackable monster = (L2Attackable) target;
-							if ((monster.getId() == TANTA_MAGICIAN) || (monster.getId() == TANTA_SCOUT))
-							{
-								target.setIsRunning(true);
-								target.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(npc.getX(), npc.getY(), npc.getZ(), 0));
-							}
-						}
-					}
-					startQuestTimer("fantasy_mushroom", 4000, npc, attacker);
-				}
-				break;
-		}
+		triggerNpcSkill(npc, attacker);
 		return super.onAttack(npc, attacker, damage, isSummon);
 	}
 	
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance killer, boolean isSummon)
 	{
+		triggerNpcSkill(npc, killer);
+		
 		// Tanta Guard
 		if (getRandom(1000) == 0)
 		{
@@ -236,6 +180,51 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 		}
 	}
 	
+	private void triggerNpcSkill(L2Npc npc, L2PcInstance attacker)
+	{
+		switch (npc.getId())
+		{
+			case RAINBOW_FROG:
+				ThreadPoolManager.getInstance().scheduleEffect(new TaskAfterDead(attacker, RAINBOW_FROG_SKILL), 3000);
+				// castSkill(npc, attacker, RAINBOW_FROG_SKILL);
+				npc.doDie(attacker);
+				break;
+			case STICKY_MUSHROOM:
+				ThreadPoolManager.getInstance().scheduleEffect(new TaskAfterDead(attacker, STICKY_MUSHROOM_SKILL), 3000);
+				// castSkill(npc, attacker, STICKY_MUSHROOM_SKILL);
+				npc.doDie(attacker);
+				break;
+			case ENERGY_PLANT:
+				ThreadPoolManager.getInstance().scheduleEffect(new TaskAfterDead(attacker, ENERGY_PLANT_SKILL), 3000);
+				// castSkill(npc, attacker, ENERGY_PLANT_SKILL);
+				npc.doDie(attacker);
+				break;
+			case ABYSS_WEED:
+				npc.doDie(attacker);
+				break;
+			case FANTASY_MUSHROOM:
+				if (npc.isScriptValue(0))
+				{
+					npc.setScriptValue(1);
+					npc.setIsInvul(true);
+					for (L2Character target : npc.getKnownList().getKnownCharactersInRadius(1000))
+					{
+						if ((target != null) && target.isAttackable())
+						{
+							final L2Attackable monster = (L2Attackable) target;
+							if ((monster.getId() == TANTA_MAGICIAN) || (monster.getId() == TANTA_SCOUT))
+							{
+								target.setIsRunning(true);
+								target.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(npc.getX(), npc.getY(), npc.getZ(), 0));
+							}
+						}
+					}
+					startQuestTimer("fantasy_mushroom", 4000, npc, attacker);
+				}
+				break;
+		}
+	}
+	
 	public static class TaskAfterDead implements Runnable
 	{
 		private final L2Character _killer;
@@ -253,7 +242,7 @@ public final class PlainsOfLizardman extends AbstractNpcAI
 			if ((_killer != null) && _killer.isPlayer() && !_killer.isDead())
 			{
 				_killer.broadcastPacket(new MagicSkillUse(_killer, _killer, _skill.getId(), _skill.getLevel(), 0, 0));
-				_skill.getEffects(_killer, _killer);
+				_skill.applyEffects(_killer, _killer);
 			}
 		}
 	}
