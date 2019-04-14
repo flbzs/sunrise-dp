@@ -57,7 +57,7 @@ import org.slf4j.LoggerFactory;
 public class AdminEditNpc implements IAdminCommandHandler
 {
 	private static Logger _log = LoggerFactory.getLogger(AdminEditNpc.class);
-	private final static int PAGE_LIMIT = 15;
+	private final static int PAGE_LIMIT = 20;
 	
 	private static final String[] ADMIN_COMMANDS =
 	{
@@ -682,6 +682,8 @@ public class AdminEditNpc implements IAdminCommandHandler
 				replyMSG.append(page);
 				replyMSG.append("</td><td width=70></td></tr>");
 			}
+			
+			replyMSG.append("</table>");
 		}
 		if (hasMore)
 		{
@@ -698,9 +700,11 @@ public class AdminEditNpc implements IAdminCommandHandler
 			replyMSG.append(" ");
 			replyMSG.append(page + 1);
 			replyMSG.append("\">Next Page</a></td></tr>");
+			
+			replyMSG.append("</table>");
 		}
 		
-		replyMSG.append("</table><center><br><button value=\"Add Drop Data\" action=\"bypass -h admin_add_drop ");
+		replyMSG.append("<center><br><button value=\"Add Drop Data\" action=\"bypass -h admin_add_drop ");
 		replyMSG.append(npcId);
 		replyMSG.append("\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"><button value=\"Close\" action=\"bypass -h admin_close_window\" width=100 height=20 back=\"L2UI_ct1.button_df\" fore=\"L2UI_ct1.button_df\"></center></body></html>");
 		
