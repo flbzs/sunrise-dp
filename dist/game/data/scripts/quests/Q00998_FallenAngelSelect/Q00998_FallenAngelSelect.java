@@ -80,14 +80,7 @@ public class Q00998_FallenAngelSelect extends Quest
 		if (q != null)
 		{
 			q.newQuestState(player);
-			try
-			{
-				q.notifyEvent("30894-01.html", null, player);
-			}
-			catch (Exception e)
-			{
-				_log.warn("Logger: notifyEvent failed (Q00998) Report this to team. ");
-			}
+			q.notifyEvent("30894-01.html", null, player);
 			player.getQuestState(getName()).setState(State.COMPLETED);
 		}
 	}
