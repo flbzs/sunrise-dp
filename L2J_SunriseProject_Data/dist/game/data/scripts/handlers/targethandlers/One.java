@@ -21,6 +21,7 @@ package handlers.targethandlers;
 import l2r.gameserver.handler.ITargetTypeHandler;
 import l2r.gameserver.model.L2Object;
 import l2r.gameserver.model.actor.L2Character;
+import l2r.gameserver.model.effects.L2EffectType;
 import l2r.gameserver.model.skills.L2Skill;
 import l2r.gameserver.model.skills.targets.L2TargetType;
 import l2r.gameserver.network.SystemMessageId;
@@ -41,7 +42,7 @@ public class One implements ITargetTypeHandler
 		}
 		
 		// vGodFather: if summon has his owner targeted and use buff both summon target must feel that effect!
-		if (activeChar.isSummon() && (activeChar.getSummon().getOwner() == target) && !skill.isBad() && !skill.isDebuff())
+		if (activeChar.isSummon() && (activeChar.getSummon().getOwner() == target) && !skill.isBad() && !skill.isDebuff() && !skill.hasEffectType(L2EffectType.HEAL))
 		{
 			return new L2Character[]
 			{

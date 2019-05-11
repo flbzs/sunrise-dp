@@ -200,14 +200,7 @@ public class Disablers implements ISkillHandler
 				{
 					if (target.isAttackable())
 					{
-						try
-						{
-							target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, activeChar, (int) ((150 * skill.getPower()) / (target.getLevel() + 7)));
-						}
-						catch (Exception e)
-						{
-							_log.warn("Logger: notifyEvent failed (Disablers 1) Report this to team. ");
-						}
+						target.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, activeChar, (int) ((150 * skill.getPower()) / (target.getLevel() + 7)));
 					}
 					skill.getEffects(activeChar, target, new Env(shld, ss, sps, bss));
 					// TODO: Remove this when lethal effect is done.
