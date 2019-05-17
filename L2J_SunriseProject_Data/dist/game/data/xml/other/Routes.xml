@@ -84,7 +84,6 @@
 	</route>
 	<route name="malign_conveyor_2_1" repeat="true" repeatStyle="conveyor">
 		<target id="22399" spawnX="28684" spawnY="244118" spawnZ="-3700" />	<!-- Greater Evil -->
-		<point X="28771" Y="244251" Z="-2496" delay="0" run="true" />
 		<point X="28495" Y="243839" Z="-3696" delay="0" run="true" />
 		<point X="28727" Y="242939" Z="-3592" delay="0" run="true" />
 		<point X="28188" Y="242512" Z="-3464" delay="0" run="true" />
