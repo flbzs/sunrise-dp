@@ -73,7 +73,7 @@ public final class SocialAction implements IPlayerActionHandler
 	
 	private boolean useSocial(L2PcInstance activeChar, int id)
 	{
-		if (activeChar.isFishing())
+		if (activeChar.getFishingEx().isFishing())
 		{
 			activeChar.sendPacket(SystemMessageId.CANNOT_DO_WHILE_FISHING_3);
 			return false;
@@ -133,7 +133,7 @@ public final class SocialAction implements IPlayerActionHandler
 			return;
 		}
 		
-		if (player.isFishing())
+		if (player.getFishingEx().isFishing())
 		{
 			player.sendPacket(SystemMessageId.CANNOT_DO_WHILE_FISHING_3);
 			return;
@@ -220,7 +220,7 @@ public final class SocialAction implements IPlayerActionHandler
 			return;
 		}
 		
-		if (partner.isFishing())
+		if (partner.getFishingEx().isFishing())
 		{
 			sm = SystemMessage.getSystemMessage(SystemMessageId.C1_IS_FISHING_AND_CANNOT_BE_REQUESTED_FOR_A_COUPLE_ACTION);
 			sm.addPcName(partner);

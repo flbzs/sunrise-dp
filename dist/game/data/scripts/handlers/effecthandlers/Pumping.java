@@ -75,7 +75,7 @@ public final class Pumping extends L2Effect
 		}
 		
 		final L2PcInstance player = activeChar.getActingPlayer();
-		final L2Fishing fish = player.getFishCombat();
+		final L2Fishing fish = player.getFishingEx().getFishCombat();
 		if (fish == null)
 		{
 			// Pumping skill is available only while fishing

@@ -185,7 +185,7 @@ public final class AirShipGludioGracia extends Quest implements Runnable
 			player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_DEAD);
 			return null;
 		}
-		else if (player.isFishing())
+		else if (player.getFishingEx().isFishing())
 		{
 			player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_FISHING);
 			return null;

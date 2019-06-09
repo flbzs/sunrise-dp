@@ -84,15 +84,15 @@ public final class Fishing extends L2Effect
 			return false;
 		}
 		
-		if (player.isFishing())
+		if (player.getFishingEx().isFishing())
 		{
-			if (player.getFishCombat() != null)
+			if (player.getFishingEx().getFishCombat() != null)
 			{
-				player.getFishCombat().doDie(false);
+				player.getFishingEx().getFishCombat().doDie(false);
 			}
 			else
 			{
-				player.endFishing(false);
+				player.getFishingEx().endFishing(false);
 			}
 			
 			player.sendPacket(SystemMessageId.FISHING_ATTEMPT_CANCELLED);
@@ -220,8 +220,8 @@ public final class Fishing extends L2Effect
 			return false;
 		}
 		
-		player.setLure(equipedLeftHand);
-		player.startFishing(baitX, baitY, baitZ);
+		player.getFishingEx().setLure(equipedLeftHand);
+		player.getFishingEx().startFishing(baitX, baitY, baitZ);
 		return true;
 	}
 	

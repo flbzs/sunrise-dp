@@ -196,7 +196,7 @@ public abstract class AirShipController extends Quest
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_DEAD);
 				return null;
 			}
-			else if (player.isFishing())
+			else if (player.getFishingEx().isFishing())
 			{
 				player.sendPacket(SystemMessageId.YOU_CANNOT_BOARD_AN_AIRSHIP_WHILE_FISHING);
 				return null;
