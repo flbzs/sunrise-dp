@@ -885,12 +885,16 @@
 		<set name="itemConsumeId" val="3031" />
 		<set name="mpConsume" val="151" />
 		<set name="operateType" val="A1" />
+		<set name="rideState" val="STRIDER" />
 		<set name="power" val="15005" />
 		<set name="reuseDelay" val="1000" />
 		<set name="skillType" val="PDAM" />
 		<set name="targetType" val="ONE" />
 		<cond msgId="113" addName="1">
-			<player SiegeZone="126" />
+			<and>
+				<player SiegeZone="126" />
+				<target op_siege_hammer="true" />
+			</and>
 		</cond>
 	</skill>
 	<skill id="326" levels="1" name="Build Advanced Headquarters">
