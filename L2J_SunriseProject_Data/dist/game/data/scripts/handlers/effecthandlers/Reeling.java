@@ -75,7 +75,7 @@ public final class Reeling extends L2Effect
 		}
 		
 		final L2PcInstance player = activeChar.getActingPlayer();
-		final L2Fishing fish = player.getFishCombat();
+		final L2Fishing fish = player.getFishingEx().getFishCombat();
 		if (fish == null)
 		{
 			// Reeling skill is available only while fishing
