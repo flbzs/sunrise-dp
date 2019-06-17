@@ -152,25 +152,22 @@ public class AdminFortSiege implements IAdminCommandHandler
 	
 	private void showFortSelectPage(L2PcInstance activeChar)
 	{
-		int i = 0;
-		NpcHtmlMessage adminReply = new NpcHtmlMessage();
+		final NpcHtmlMessage adminReply = new NpcHtmlMessage();
 		adminReply.setFile(activeChar, activeChar.getHtmlPrefix(), "data/html/admin/forts.htm");
 		
 		final List<Fort> forts = FortManager.getInstance().getForts();
 		final StringBuilder cList = new StringBuilder(forts.size() * 100);
 		
+		int i = 0;
 		for (Fort fort : forts)
 		{
 			if (fort != null)
 			{
-				StringUtil.append(cList, "<td fixwidth=90><a action=\"bypass -h admin_fortsiege ", String.valueOf(fort.getResidenceId()), "\">", fort.getName(), " id: ", String.valueOf(fort.getResidenceId()), "</a></td>");
-				i++;
+				StringUtil.append(cList, "<td fixwidth=135><a action=\"bypass -h admin_fortsiege ", String.valueOf(fort.getResidenceId()), "\">", fort.getName(), " id: ", String.valueOf(fort.getResidenceId()), "</a></td>");
 			}
-			
-			if (i > 2)
+			if ((++i % 2) == 0)
 			{
 				cList.append("</tr><tr>");
-				i = 0;
 			}
 		}
 		
