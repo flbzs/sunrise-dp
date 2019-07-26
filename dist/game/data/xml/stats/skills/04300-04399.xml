@@ -1397,8 +1397,18 @@
 		<set name="skillType" val="AGGDEBUFF" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Petrification" abnormalTime="10" abnormalLvl="2" abnormalType="turn_stone" />
-			<effect name="TargetMe" val="0" />
+			<effect name="Petrification" abnormalTime="10" abnormalLvl="2" abnormalType="turn_stone">
+				<mul stat="regHp" val="0" />
+			</effect>
+			<effect name="BlockDamage" abnormalTime="10" noicon="1">
+				<param block="HP"/>
+			</effect>
+			<effect name="BlockDamage" abnormalTime="10" noicon="1">
+				<param block="MP"/>
+			</effect>
+			<effect name="BlockBuff" abnormalTime="10" noicon="1" />
+			<effect name="BlockDebuff" abnormalTime="10" noicon="1" />
+			<effect name="TargetMe" noicon="1" />
 		</for>
 	</skill>
 	<skill id="4384" levels="1" name="Scapegoat's Grace">

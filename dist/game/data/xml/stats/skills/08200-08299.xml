@@ -897,7 +897,9 @@
 			<player active_effect_id_lvl="#effect" />
 		</cond>
 		<for>
-			<effect self="1" name="Cancel" noicon="1" effectPower="50" effectType="CANCEL" />
+			<effect self="1" name="DispelBySlot" noicon="1" >
+				<param dispel="SEED_OF_CRITICAL,9" />
+			</effect>
 			<effect name="Stun" abnormalTime="9" abnormalLvl="1" abnormalType="stun" effectPower="50" effectType="STUN" />
 		</for>
 	</skill>

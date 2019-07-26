@@ -1391,18 +1391,20 @@
 		<set name="abnormalLvl" val="1" />
 		<set name="abnormalTime" val="4200" />
 		<set name="abnormalType" val="fatal_poison" />
+		<set name="canBeDispeled" val="false" />
 		<set name="castRange" val="600" />
 		<set name="effectRange" val="1100" />
 		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
-		<set name="killByDOT" val="true" />
 		<set name="operateType" val="A2" />
 		<set name="reuseDelay" val="50" />
 		<set name="skillType" val="BUFF" />
 		<set name="targetType" val="ONE" />
 		<for>
 			<!-- 20HP * 3 during 4200 seconds -->
-			<effect count="1400" name="DamOverTime" abnormalTime="3" val="60" abnormalVisualEffect="poison" abnormalLvl="1" abnormalType="fatal_poison" />
+			<effect count="1400" name="DamOverTime" abnormalTime="3" val="60" abnormalVisualEffect="poison" abnormalLvl="1" abnormalType="fatal_poison">
+				<param canKill="true" />
+			</effect>
 			<effect name="Root" abnormalTime="4200" noicon="1" abnormalLvl="1" abnormalType="fatal_poison_two" /> <!-- TODO: This abnormalLvl="1" and abnormalType="fatal_poison_two" is a TEMP FIX, should be removed when "abnormalType and abnormalLvl" works like main skill attributes and not effect attributes -->
 		</for>
 	</skill>

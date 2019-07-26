@@ -1061,7 +1061,17 @@
 		<set name="basicProperty" val="MEN" />
 		<set name="skillType" val="PARALYZE" />
 		<for>
-			<effect name="Petrification" abnormalTime="10" abnormalLvl="1" abnormalType="turn_stone" />
+			<effect name="Petrification" abnormalTime="10" abnormalLvl="1" abnormalType="turn_stone">
+				<mul stat="regHp" val="0" />
+			</effect>
+			<effect name="BlockDamage" abnormalTime="10" noicon="1">
+				<param block="HP"/>
+			</effect>
+			<effect name="BlockDamage" abnormalTime="10" noicon="1">
+				<param block="MP"/>
+			</effect>
+			<effect name="BlockBuff" abnormalTime="10" noicon="1" />
+			<effect name="BlockDebuff" abnormalTime="10" noicon="1" />
 		</for>
 	</skill>
 	<skill id="6770" levels="1" name="Heal">
@@ -1228,7 +1238,17 @@
 			<effect count="20" name="DamOverTime" abnormalTime="1" val="200" abnormalLvl="1" abnormalType="bleeding" abnormalVisualEffect="bleed">
 				<mul stat="runSpd" val="0.8" />
 			</effect>
-			<effect name="Petrification" abnormalTime="10" abnormalLvl="1" abnormalType="turn_stone" noicon="1" />
+			<effect name="Petrification" abnormalTime="10" abnormalLvl="1" abnormalType="turn_stone" noicon="1">
+				<mul stat="regHp" val="0" />
+			</effect>
+			<effect name="BlockDamage" abnormalTime="10" noicon="1">
+				<param block="HP"/>
+			</effect>
+			<effect name="BlockDamage" abnormalTime="10" noicon="1">
+				<param block="MP"/>
+			</effect>
+			<effect name="BlockBuff" abnormalTime="10" noicon="1" />
+			<effect name="BlockDebuff" abnormalTime="10" noicon="1" />
 		</for>
 	</skill>
 	<skill id="6778" levels="1" name="Death Strike">

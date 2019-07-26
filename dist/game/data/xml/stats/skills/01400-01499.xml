@@ -320,14 +320,15 @@
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8874" />
 		<set name="magicLvl" val="78" />
-		<set name="maxNegated" val="10" />
 		<set name="mpConsume" val="46" />
 		<set name="mpInitialConsume" val="12" />
 		<set name="operateType" val="A1" />
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="CancelDebuff" noicon="1" effectPower="100" />
+			<effect name="DispelByCategory" noicon="1" >
+				<param slot="debuff" rate="100" max="10" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1410" levels="1" name="Salvation">
@@ -685,7 +686,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
 		<for>
-			<effect self="1" count="9" name="SignetMDam" abnormalTime="2" val="0" />
+			<effect self="1" count="8" name="SignetMDam" abnormalTime="2" />
 		</for>
 	</skill>
 	<skill id="1420" levels="1" name="Cyclone">
@@ -713,7 +714,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
 		<for>
-			<effect self="1" count="9" name="SignetMDam" abnormalTime="2" val="0" />
+			<effect self="1" count="8" name="SignetMDam" abnormalTime="2" />
 		</for>
 	</skill>
 	<skill id="1421" levels="1" name="Raging Waves">
@@ -741,7 +742,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
 		<for>
-			<effect self="1" count="9" name="SignetMDam" abnormalTime="2" val="0" />
+			<effect self="1" count="8" name="SignetMDam" abnormalTime="2" />
 		</for>
 	</skill>
 	<skill id="1422" levels="1" name="Day of Doom">
@@ -792,7 +793,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
 		<for>
-			<effect self="1" count="9" name="SignetMDam" abnormalTime="2" val="0" />
+			<effect self="1" count="8" name="SignetMDam" abnormalTime="2" />
 		</for>
 	</skill>
 	<skill id="1424" levels="1" name="Anti-Summoning Field">
@@ -816,7 +817,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="GROUND" />
 		<for>
-			<effect count="6" name="SignetAntiSummon" abnormalTime="5" val="0" />
+			<effect count="6" name="SignetAntiSummon" abnormalTime="5" />
 		</for>
 	</skill>
 	<skill id="1425" levels="1" name="Purification Field">
@@ -829,7 +830,6 @@
 		<set name="itemConsumeCount" val="1" />
 		<set name="itemConsumeId" val="8876" />
 		<set name="magicLvl" val="80" />
-		<set name="maxNegated" val="10" />
 		<set name="mpConsume" val="14" />
 		<set name="mpInitialConsume" val="56" />
 		<set name="operateType" val="A1" />
@@ -837,7 +837,9 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="CLAN" />
 		<for>
-			<effect name="CancelDebuff" noicon="1" effectPower="100" />
+			<effect name="DispelByCategory" noicon="1" >
+				<param slot="debuff" rate="100" max="10" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1426" levels="1" name="Miracle">
@@ -945,7 +947,7 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="Paralyze" abnormalTime="30" abnormalLvl="1" abnormalType="force_meditation">
+			<effect name="ImmobileUntilAttacked" abnormalTime="30" abnormalLvl="1" abnormalType="force_meditation">
 				<mul stat="pDef" val="0.1" />
 			</effect>
 			<!-- 27 30 34 37 42MP * 3 during 30 seconds -->
@@ -1294,7 +1296,9 @@
 		<set name="reuseDelay" val="15000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="StealAbnormal" noicon="1" effectPower="25" />
+			<effect name="StealAbnormal" noicon="1">
+				<param slot="buff" rate="5" max="#maxNegated" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1441" levels="3" name="Soul to Empower">

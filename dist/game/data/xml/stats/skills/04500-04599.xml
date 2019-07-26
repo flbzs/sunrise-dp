@@ -103,7 +103,17 @@
 		<set name="skillType" val="PARALYZE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Petrification" abnormalTime="120" abnormalLvl="99" abnormalType="turn_stone" />
+			<effect name="Petrification" abnormalTime="120" abnormalLvl="99" abnormalType="turn_stone">
+				<mul stat="regHp" val="0" />
+			</effect>
+			<effect name="BlockDamage" abnormalTime="120" noicon="1">
+				<param block="HP"/>
+			</effect>
+			<effect name="BlockDamage" abnormalTime="120" noicon="1">
+				<param block="MP"/>
+			</effect>
+			<effect name="BlockBuff" abnormalTime="120" noicon="1" />
+			<effect name="BlockDebuff" abnormalTime="120" noicon="1" />
 		</for>
 	</skill>
 	<skill id="4516" levels="1" name="Orfen Heal">
@@ -1219,7 +1229,17 @@
 		<set name="skillType" val="PARALYZE" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Petrification" abnormalTime="20" abnormalLvl="2" abnormalType="turn_stone" />
+			<effect name="Petrification" abnormalTime="20" abnormalLvl="2" abnormalType="turn_stone">
+				<mul stat="regHp" val="0" />
+			</effect>
+			<effect name="BlockDamage" abnormalTime="20" noicon="1">
+				<param block="HP"/>
+			</effect>
+			<effect name="BlockDamage" abnormalTime="20" noicon="1">
+				<param block="MP"/>
+			</effect>
+			<effect name="BlockBuff" abnormalTime="20" noicon="1" />
+			<effect name="BlockDebuff" abnormalTime="20" noicon="1" />
 		</for>
 	</skill>
 	<skill id="4579" levels="12" name="Bleed">

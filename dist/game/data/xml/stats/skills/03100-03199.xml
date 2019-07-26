@@ -1836,7 +1836,17 @@
 		<set name="staticReuse" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Petrification" abnormalTime="30" abnormalLvl="1" abnormalType="turn_stone" />
+			<effect name="Petrification" abnormalTime="30" abnormalLvl="1" abnormalType="turn_stone">
+				<mul stat="regHp" val="0" />
+			</effect>
+			<effect name="BlockDamage" abnormalTime="30" noicon="1">
+				<param block="HP"/>
+			</effect>
+			<effect name="BlockDamage" abnormalTime="30" noicon="1">
+				<param block="MP"/>
+			</effect>
+			<effect name="BlockBuff" abnormalTime="30" noicon="1" />
+			<effect name="BlockDebuff" abnormalTime="30" noicon="1" />
 		</for>
 	</skill>
 	<skill id="3194" levels="10" name="Item Skill: Fear">

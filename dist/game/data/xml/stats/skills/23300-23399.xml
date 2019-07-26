@@ -118,15 +118,15 @@
 	</skill>
 	<skill id="23312" levels="1" name="Fall of the Dragon">
 		<!-- Nevit's gift to honor those warriors who caused the evil dragon's fall. Increases Nevit's blessing by 3 hour(s). -->
+		<!-- Increases Nevit's blessing by 1 hour. -->
+		<set name="isMagic" val="2" /> <!-- Static Skill -->
 		<set name="targetType" val="ONE" />
 		<set name="skillType" val="BUFF" />
-		<set name="canBeDispeled" val="false" />
+		<set name="operateType" val="A2" />
+		<set name="canBeDispeled" val="false"/>
 		<set name="stayAfterDeath" val="true" />
-		<set name="operateType" val="A1" />
 		<for>
-			<effect name="Buff" abnormalTime="10800" abnormalLvl="26" abnormalType="vp_keep" abnormalVisualEffect="vitality">
-				<mul stat="vitalityConsumeRate" val="0" />
-			</effect>
+			<effect name="NevitHourglass" abnormalTime="10800" abnormalLvl="1" abnormalType="vp_keep" abnormalVisualEffect="vitality" />
 		</for>
 	</skill> 
 	<skill id="23313" levels="5" name="Action Prohibit Immunity">

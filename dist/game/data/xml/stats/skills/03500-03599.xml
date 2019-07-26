@@ -1074,11 +1074,11 @@
 		<!-- Infinity Spear Skill -->
 		<set name="magicLvl" val="80" />
 		<set name="operateType" val="A1" />
-		<!-- NOTE: Number of buffs canceled have been reduced to 2 in H5 -->
-		<set name="maxNegated" val="2" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" effectPower="5" />
+			<effect name="DispelByCategory" noicon="1" >
+				<param slot="buff" rate="5" max="2" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="3593" levels="1" name="Special Ability: Infinity Bow">
