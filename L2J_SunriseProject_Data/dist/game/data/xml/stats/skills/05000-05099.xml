@@ -133,10 +133,10 @@
 		<!-- Confirmed CT2.5 -->
 		<!-- Frintezza Skills -->
 		<table name="#abnormalType"> none none ultimate_buff heal_effect_down stun </table>
+		<table name="#activateRate"> 0 0 0 10 10 </table>
 		<table name="#aggroPoints"> 100 100 100 0 0 </table>
 		<table name="#attackAndSpeed"> 1 1 1.2 1 1 </table>
 		<table name="#effectname1"> Buff Buff Buff Buff Stun </table>
-		<table name="#effectname2"> Buff Buff Buff Buff Cancel </table>
 		<table name="#effectPower"> 0 0 0 0 20 </table>
 		<table name="#healEffect"> 1 1 1 0.5 1 </table>
 		<table name="#healPercent"> 3 0 0 0 0 </table>
@@ -154,7 +154,6 @@
 		<set name="isMagic" val="#isMagic" />
 		<set name="lvlBonusRate" val="#lvlDepend" />
 		<set name="magicLvl" val="85" />
-		<set name="maxNegated" val="#maxNegated" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="basicProperty" val="MEN" />
@@ -170,7 +169,9 @@
 				<add stat="runSpd" val="#attackAndSpeed" />
 				<mul stat="healEffect" val="#healEffect" />
 			</effect>
-			<effect name="#effectname2" noicon="1" effectPower="#effectPower" />
+			<effect name="DispelByCategory" noicon="1" >
+				<param slot="buff" rate="#activateRate" max="#maxNegated" />
+			</effect>
 			<effect name="HealPercent" noicon="1" val="#healPercent" />
 		</for>
 	</skill>
@@ -582,16 +583,15 @@
 		<set name="affectRange" val="150" />
 		<set name="aggroPoints" val="100" />
 		<set name="magicLvl" val="#magicLvl" />
-		<set name="maxNegated" val="20" />
 		<set name="mpConsume" val="#mpConsume" />
 		<set name="offensive" val="true" />
 		<set name="operateType" val="A1" />
 		<set name="power" val="#power" />
 		<set name="skillType" val="MDAM" />
 		<set name="targetType" val="AURA" />
-		<for>
-			<effect name="Cancel" noicon="1" effectPower="25" />
-		</for>
+		<effect name="DispelByCategory" noicon="1" >
+				<param slot="buff" rate="25" max="20" />
+			</effect>
 	</skill>
 	<skill id="5043" levels="12" name="NPC Super Sonic Blaster">
 		<!-- CT2.5 retail confirmed -->
@@ -1163,18 +1163,30 @@
 		<set name="targetType" val="NONE" />
 	</skill>
 	<skill id="5086" levels="1" name="Deadly Poison">
-		<!-- Infected with poison and gradually losing HP. If HP falls to 0, death will ensue. -->
+		<!-- Confirmed CT2.5 -->
 		<set name="abnormalLvl" val="2" />
 		<set name="abnormalTime" val="60" />
 		<set name="abnormalType" val="critical_poison" />
+		<set name="affectRange" val="200" />
+		<set name="basicProperty" val="CON" />
+		<set name="effectPoint" val="-100" />
 		<set name="hitTime" val="3300" />
+		<set name="icon" val="icon.skill5086" />
+		<set name="isDebuff" val="true" />
 		<set name="isMagic" val="1" /> <!-- Magic Skill -->
 		<set name="lvlBonusRate" val="1" />
+		<set name="magicLvl" val="-1" />
+		<set name="mpConsume" val="23" />
 		<set name="operateType" val="A2" />
-		<set name="basicProperty" val="CON" />
-		<set name="skillType" val="NOTDONE" />
-		<set name="targetType" val="NONE" />
+		<set name="rideState" val="NONE;STRIDER;WYVERN;WOLF" />
+		<set name="targetType" val="AURA" />
 		<set name="trait" val="POISON" />
+		<for>
+			<!-- 50HP * 3 during 4200 seconds -->
+			<effect count="1400" name="DamOverTime" abnormalTime="3" val="50" abnormalVisualEffect="poison" abnormalLvl="1" abnormalType="critical_poison" effectPower="50">
+				<param canKill="true" />
+			</effect>
+		</for>
 	</skill>
 	<skill id="5087" levels="2" name="Berserk">
 		<!-- CT2.5 retail confirmed -->

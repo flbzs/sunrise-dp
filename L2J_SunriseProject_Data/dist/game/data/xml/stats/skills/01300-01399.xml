@@ -1312,13 +1312,14 @@
 		<set name="magicLvl" val="77" />
 		<set name="mpConsume" val="84" />
 		<set name="mpInitialConsume" val="21" />
-		<set name="negateAbnormals" val="attack_time_down;speed_up;improve_speed_avoid_up;improve_vampiric_haste" />
 		<set name="operateType" val="A1" />
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Cancel" noicon="1" effectPower="40" />
+			<effect name="DispelBySlotProbability" noicon="1">
+				<param dispel="ATTACK_TIME_DOWN;SPEED_UP;IMPROVE_SPEED_AVOID_UP;IMPROVE_VAMPIRIC_HASTE" rate="40" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1345" levels="1" name="Mass Mage Bane">
@@ -1331,13 +1332,14 @@
 		<set name="magicLvl" val="78" />
 		<set name="mpConsume" val="85" />
 		<set name="mpInitialConsume" val="22" />
-		<set name="negateAbnormals" val="ma_up;casting_time_down;improve_ma_md_up" />
 		<set name="operateType" val="A1" />
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="8000" />
 		<set name="targetType" val="AURA" />
 		<for>
-			<effect name="Cancel" noicon="1" effectPower="40" />
+			<effect name="DispelBySlotProbability" noicon="1">
+				<param dispel="MA_UP;CASTING_TIME_DOWN;IMPROVE_MA_MD_UP" rate="40" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1346" levels="1" name="Warrior Servitor" enchantGroup1="5" enchantGroup2="5">
@@ -1559,13 +1561,14 @@
 		<set name="magicLvl" val="76" />
 		<set name="mpConsume" val="56" />
 		<set name="mpInitialConsume" val="14" />
-		<set name="negateAbnormals" val="attack_time_down;speed_up;improve_speed_avoid_up;improve_vampiric_haste" />
 		<set name="operateType" val="A1" />
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="3000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" effectPower="80" />
+			<effect name="DispelBySlotProbability" noicon="1">
+				<param dispel="ATTACK_TIME_DOWN;SPEED_UP;IMPROVE_SPEED_AVOID_UP;IMPROVE_VAMPIRIC_HASTE" rate="80" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1351" levels="1" name="Mage Bane">
@@ -1578,13 +1581,14 @@
 		<set name="magicLvl" val="77" />
 		<set name="mpConsume" val="56" />
 		<set name="mpInitialConsume" val="14" />
-		<set name="negateAbnormals" val="ma_up;casting_time_down;improve_ma_md_up" />
 		<set name="operateType" val="A1" />
 		<set name="offensive" val="true" />
 		<set name="reuseDelay" val="3000" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" effectPower="80" />
+			<effect name="DispelBySlotProbability" noicon="1">
+				<param dispel="MA_UP;CASTING_TIME_DOWN;IMPROVE_MA_MD_UP" rate="80" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="1352" levels="1" name="Elemental Protection" enchantGroup1="5" enchantGroup2="5">

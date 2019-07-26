@@ -1002,7 +1002,7 @@
 		<set name="operateType" val="P" />
 		<set name="targetType" val="SELF" />
 		<for>
-			<effect name="CubicMastery" val="0">
+			<effect name="CubicMastery">
 				<param cubicCount="#cubicCount" />
 			</effect>
 		</for>

@@ -301,6 +301,14 @@
 			<effect name="Petrification" abnormalTime="30" abnormalLvl="1" abnormalType="turn_stone" effectPower="50">
 				<mul stat="regHp" val="0" />
 			</effect>
+			<effect name="BlockDamage" abnormalTime="30" noicon="1">
+				<param block="HP"/>
+			</effect>
+			<effect name="BlockDamage" abnormalTime="30" noicon="1">
+				<param block="MP"/>
+			</effect>
+			<effect name="BlockBuff" abnormalTime="30" noicon="1" />
+			<effect name="BlockDebuff" abnormalTime="30" noicon="1" />
 		</for>
 	</skill>
 	<skill id="4112" levels="1" name="Ordinary Attack">

@@ -10,12 +10,13 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="99" />
-		<set name="maxNegated" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="offensive" val="true" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" effectPower="100" />
+			<effect name="DispelByCategory" noicon="1" >
+				<param slot="buff" rate="100" max="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="7002" levels="1" name="Dispel Debuff">
@@ -23,11 +24,12 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="99" />
-		<set name="maxNegated" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="CancelDebuff" noicon="1" effectPower="100" />
+			<effect name="DispelByCategory" noicon="1" >
+				<param slot="debuff" rate="100" max="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="7003" levels="1" name="Dispel All">
@@ -36,12 +38,15 @@
 		<set name="castRange" val="400" />
 		<set name="effectRange" val="900" />
 		<set name="magicLvl" val="99" />
-		<set name="maxNegated" val="20" />
 		<set name="operateType" val="A1" />
 		<set name="targetType" val="ONE" />
 		<for>
-			<effect name="Cancel" noicon="1" effectPower="100" />
-			<effect name="CancelDebuff" noicon="1" effectPower="100" />
+			<effect name="DispelByCategory" noicon="1" >
+				<param slot="buff" rate="100" max="20" />
+			</effect>
+			<effect name="DispelByCategory" noicon="1" >
+				<param slot="debuff" rate="100" max="20" />
+			</effect>
 		</for>
 	</skill>
 	<skill id="7004" levels="2" name="Dispel Petrification">
