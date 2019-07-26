@@ -53,6 +53,6 @@ public class Petrification extends L2Effect
 	@Override
 	public int getEffectFlags()
 	{
-		return EffectFlag.PARALYZED.getMask() | EffectFlag.INVUL.getMask();
+		return EffectFlag.PARALYZED.getMask();
 	}
 }

@@ -34,13 +34,21 @@ import l2r.gameserver.network.serverpackets.SystemMessage;
 
 /**
  * Steal Abnormal effect implementation.
- * @author Adry_85, Zoey76
+ * @author Adry_85, Zoey76, vGodFather
  */
 public class StealAbnormal extends L2Effect
 {
+	private final String _slot;
+	private final int _rate;
+	private final int _max;
+	
 	public StealAbnormal(Env env, EffectTemplate template)
 	{
 		super(env, template);
+		
+		_slot = template.getParameters().getString("slot", null);
+		_rate = template.getParameters().getInt("rate", 0);
+		_max = template.getParameters().getInt("max", 0);
 	}
 	
 	@Override
@@ -54,7 +62,7 @@ public class StealAbnormal extends L2Effect
 	{
 		if ((getEffected() != null) && getEffected().isPlayer() && (getEffector() != getEffected()))
 		{
-			final List<L2Effect> toSteal = Formulas.calcCancelStealEffects(getEffector(), getEffected(), getSkill(), getEffectPower(), false);
+			final List<L2Effect> toSteal = Formulas.calcCancelStealEffects(getEffector(), getEffected(), getSkill(), _slot, _rate, _max);
 			if (toSteal.isEmpty())
 			{
 				return false;
