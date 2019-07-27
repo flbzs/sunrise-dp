@@ -926,7 +926,7 @@
 		<set name="is_stackable" val="true" />
 		<set name="handler" val="MercTicket" />
 	</item>
-	<item id="7993" type="EtcItem" name="Greater Mercenary Posting Ticket (Sword/Mobile)">
+	<item id="7993" type="EtcItem" name="Greater Mercenary Posting Ticket (Sword/Mobale)">
 		<set name="icon" val="icon.mticket_sword_move_i00" />
 		<set name="etcitem_type" val="CASTLE_GUARD" />
 		<set name="immediate_effect" val="true" />
