@@ -371,6 +371,18 @@
 			<height normal="80" />
 		</collision>
 	</npc>
+	<npc id="9994" displayId="35657" name="Pvp Zone" usingServerSideName="true" title="www.l2jsunrise.com" usingServerSideTitle="true" type="L2Npc">
+		<collision>
+			<radius normal="46" />
+			<height normal="72" />
+		</collision>
+	</npc>
+	<npc id="9995" displayId="35657" name="Party Matcher" usingServerSideName="true" title="www.l2jsunrise.com" usingServerSideTitle="true" type="L2Npc">
+		<collision>
+			<radius normal="46" />
+			<height normal="72" />
+		</collision>
+	</npc>
 	<npc id="9996" displayId="30346" name="Sentry" usingServerSideName="true" title="Map Guard" usingServerSideTitle="true" type="L2EventMapGuard">
 		<sex>MALE</sex>
 		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">

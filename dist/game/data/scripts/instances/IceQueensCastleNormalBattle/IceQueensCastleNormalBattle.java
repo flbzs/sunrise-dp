@@ -186,6 +186,7 @@ public final class IceQueensCastleNormalBattle extends AbstractInstance
 		addTalkId(SIRRA, JINIA, SUPP_KEGOR);
 		addAttackId(FREYA_THRONE, FREYA_STAND, GLAKIAS, GLACIER, BREATH, KNIGHT);
 		addKillId(GLAKIAS, FREYA_STAND, KNIGHT, GLACIER, BREATH);
+		addSpawnId(GLAKIAS, FREYA_STAND, KNIGHT, GLACIER, BREATH);
 		addSpellFinishedId(GLACIER, BREATH);
 	}
 	
