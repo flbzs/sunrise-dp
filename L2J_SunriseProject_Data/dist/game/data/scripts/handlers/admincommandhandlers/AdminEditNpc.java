@@ -384,8 +384,8 @@ public class AdminEditNpc implements IAdminCommandHandler
 			adminReply.replace("%pAtkSpd%", String.valueOf(npc.getBasePAtkSpd()));
 			adminReply.replace("%aggro%", String.valueOf(npc.getAIDataStatic().getAggroRange()));
 			adminReply.replace("%mAtkSpd%", String.valueOf(npc.getBaseMAtkSpd()));
-			adminReply.replace("%rHand%", String.valueOf(npc.getRightHand()));
-			adminReply.replace("%lHand%", String.valueOf(npc.getLeftHand()));
+			adminReply.replace("%rHand%", String.valueOf(npc.getRHandId()));
+			adminReply.replace("%lHand%", String.valueOf(npc.getLHandId()));
 			adminReply.replace("%enchant%", String.valueOf(npc.getWeaponEnchant()));
 			adminReply.replace("%walkspd%", String.valueOf(npc.getBaseMoveSpeed(MoveType.WALK)));
 			adminReply.replace("%runspd%", String.valueOf(npc.getBaseMoveSpeed(MoveType.RUN)));
