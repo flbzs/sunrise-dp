@@ -1,21 +1,3 @@
-/*
- * Copyright (C) 2004-2015 L2J DataPack
- * 
- * This file is part of L2J DataPack.
- * 
- * L2J DataPack is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * L2J DataPack is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- */
 package custom.EchoCrystals;
 
 import java.util.HashMap;
@@ -29,7 +11,7 @@ import l2r.gameserver.util.Util;
 
 /**
  * Echo Crystals AI.
- * @author Plim
+ * @author vGodFather
  */
 public final class EchoCrystals extends Quest
 {
@@ -93,19 +75,15 @@ public final class EchoCrystals extends Quest
 		SCORES.put(4419, new ScoreData(4417, "16", "05", "06"));
 		SCORES.put(4418, new ScoreData(4416, "17", "05", "06"));
 		
-		for (int npc : NPCs)
-		{
-			addStartNpc(npc);
-			addTalkId(npc);
-		}
+		addStartNpc(NPCs);
+		addTalkId(NPCs);
 	}
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = "";
-		QuestState st = player.getQuestState(EchoCrystals.class.getSimpleName());
-		
+		final QuestState st = getQuestState(player, true);
 		if ((st != null) && Util.isDigit(event))
 		{
 			int score = Integer.parseInt(event);
@@ -138,11 +116,5 @@ public final class EchoCrystals extends Quest
 		}
 		
 		return htmltext;
-	}
-	
-	@Override
-	public String onTalk(L2Npc npc, L2PcInstance player)
-	{
-		return "1.htm";
 	}
 }
