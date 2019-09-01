@@ -32,9 +32,9 @@ public class TantaLizardmanSummoner extends AbstractNpcAI
 	{
 		if ((npc.getVariables().getInt("i_ai3", 0) == 0) && (npc.getCurrentHp() <= (npc.getMaxHp() * 0.600000)))
 		{
-			npc.getVariables().set("i_ai3", 0);
+			npc.getVariables().set("i_ai3", 1);
 			
-			npc.doCast(DEMOTIVATION_HEX.getSkill());
+			addSkillCastDesire(npc, npc, DEMOTIVATION_HEX.getSkill(), 2147483647);
 			addAttackDesire(addSpawn(TANTA_LIZARDMAN_SCOUT, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false), attacker);
 			addAttackDesire(addSpawn(TANTA_LIZARDMAN_SCOUT, npc.getX(), npc.getY(), npc.getZ(), 0, false, 0, false), attacker);
 		}
