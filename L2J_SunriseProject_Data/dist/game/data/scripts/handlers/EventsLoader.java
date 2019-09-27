@@ -3,6 +3,7 @@ package handlers;
 import gr.sr.handler.ABLoader;
 
 import events.CharacterBirthday.CharacterBirthday;
+import events.NewEra.NewEra;
 import events.SquashEvent.SquashEvent;
 
 /**
@@ -23,6 +24,7 @@ public final class EventsLoader extends ABLoader
 		// MasterOfEnchanting.class,
 		// SavingSanta.class,
 		SquashEvent.class,
+		NewEra.class,
 		// TheValentineEvent.class,
 	};
 	
