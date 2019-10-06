@@ -35,8 +35,6 @@ public final class EffectMasterHandler
 		Buff.class,
 		CallParty.class,
 		CallPc.class,
-		Cancel.class,
-		CancelDebuff.class,
 		ChameleonRest.class,
 		ChanceSkillTrigger.class,
 		ChangeFace.class,
