@@ -40,7 +40,7 @@ TAGS:
 <ingredient id="ItemID" count="amount"/> : add an ingredient for the entry.
 
 Sample:
-<list applyTaxes="true">
+<list enabled="true" applyTaxes="true">
 	<item>
 		<production id="2" count="1">
 		<production id="3" count="1">

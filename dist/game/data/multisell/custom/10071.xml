@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Non-grade items exchange, just for education -->
 
-<list maintainEnchantment="true"
+<list enabled="true" maintainEnchantment="true"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="../../xsd/multisell.xsd">
 	<!-- s84 PvP weapons -->
