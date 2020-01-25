@@ -19,6 +19,7 @@
 package handlers.bypasshandlers;
 
 import l2r.Config;
+import l2r.gameserver.enums.QuickVarType;
 import l2r.gameserver.handler.IBypassHandler;
 import l2r.gameserver.model.actor.L2Character;
 import l2r.gameserver.model.actor.L2Npc;
@@ -55,7 +56,7 @@ public class PrivateWarehouse implements IBypassHandler
 		
 		try
 		{
-			activeChar.setIsUsingAioWh(false);
+			activeChar.deleteQuickVar(QuickVarType.PORTAL_WH.getCommand());
 			if (command.toLowerCase().startsWith(COMMANDS[0])) // WithdrawP
 			{
 				if (Config.L2JMOD_ENABLE_WAREHOUSESORTING_PRIVATE)
