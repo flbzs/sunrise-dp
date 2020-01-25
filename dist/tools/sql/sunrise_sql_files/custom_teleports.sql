@@ -257,4 +257,5 @@ INSERT INTO `custom_teleports` VALUES ('338', 'CommunityBoard_BuffGiran', '84109
 INSERT INTO `custom_teleports` VALUES ('339', 'CommunityBoard_BuffAden', '148069', '26991', '-2208', 0, 57, 1000);
 INSERT INTO `custom_teleports` VALUES ('340', 'CommunityBoard_Delusion', '-114592', '-152509', '-6723', 0, 57, 1000);
 INSERT INTO `custom_teleports` VALUES ('341', 'CommunityBoard_Primeval', '11235', '-24026', '-3640', 0, 57, 1000);
-INSERT INTO `custom_teleports` VALUES ('342', 'CommunityBoard_Parnasus', '149361', '172327', '-945', 0, 57, 1000); 
+INSERT INTO `custom_teleports` VALUES ('342', 'CommunityBoard_Parnasus', '149361', '172327', '-945', 0, 57, 1000);
+INSERT INTO `custom_teleports` VALUES ('343', 'Frost Lake', '108090', '-120925', '-3628', 0, 57, 1000);
