@@ -119,9 +119,9 @@ public final class EnergyAttack extends L2Effect
 		
 		if (defence != -1)
 		{
-			// FIXME: Traits
+			// FIXME: General Traits
 			// double damageMultiplier = Formulas.calcWeaponTraitBonus(attacker, target) * Formulas.calcAttributeBonus(attacker, target, skill) * Formulas.calcGeneralTraitBonus(attacker, target, skill.getTraitType(), true);
-			double damageMultiplier = Formulas.calcValakasTrait(attacker, target, getSkill()) * Formulas.calcAttributeBonus(attacker, target, skill);
+			double damageMultiplier = Formulas.calcValakasTrait(attacker, target, getSkill()) * Formulas.calcWeaponTraitBonus(attacker, target) * Formulas.calcAttributeBonus(attacker, target, skill);
 			
 			boolean ss = getSkill().useSoulShot() && attacker.isChargedShot(ShotType.SOULSHOTS);
 			double ssBoost = ss ? 2 : 1.0;
