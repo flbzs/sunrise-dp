@@ -56,7 +56,7 @@ public final class DispelByCategory extends L2Effect
 		final List<L2Effect> canceled = Formulas.getCanceledEffects(getEffector(), getEffected(), getSkill(), _slot, _rate, _max, _randomEffects);
 		for (L2Effect can : canceled)
 		{
-			can.exit();
+			getEffected().stopSkillEffects(can.getSkill().getId());
 		}
 		return true;
 	}
