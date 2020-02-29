@@ -60,7 +60,7 @@ public class DispelOne extends L2Effect
 			
 			if (buff != null)
 			{
-				buff.exit();
+				getEffected().stopSkillEffects(buff.getSkill().getId());
 				return true;
 			}
 			
@@ -76,7 +76,7 @@ public class DispelOne extends L2Effect
 			
 			if (buff != null)
 			{
-				buff.exit();
+				getEffected().stopSkillEffects(buff.getSkill().getId());
 				return true;
 			}
 		}
@@ -88,7 +88,7 @@ public class DispelOne extends L2Effect
 				{
 					continue;
 				}
-				e.exit();
+				getEffected().stopSkillEffects(e.getSkill().getId());
 				break;
 			}
 		}
