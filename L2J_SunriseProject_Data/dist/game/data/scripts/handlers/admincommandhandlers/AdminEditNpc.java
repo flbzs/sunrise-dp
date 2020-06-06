@@ -390,7 +390,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 			adminReply.replace("%walkspd%", String.valueOf(npc.getBaseMoveSpeed(MoveType.WALK)));
 			adminReply.replace("%runspd%", String.valueOf(npc.getBaseMoveSpeed(MoveType.RUN)));
 			adminReply.replace("%factionId%", npc.getAIDataStatic().getClan() == null ? "" : npc.getAIDataStatic().getClan());
-			adminReply.replace("%factionRange%", String.valueOf(npc.getAIDataStatic().getClanRange()));
+			adminReply.replace("%factionRange%", String.valueOf(npc.getAIDataStatic().getClanHelpRange()));
 		}
 		else
 		{
