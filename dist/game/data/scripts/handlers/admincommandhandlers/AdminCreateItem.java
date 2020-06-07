@@ -300,7 +300,7 @@ public class AdminCreateItem implements IAdminCommandHandler
 			return;
 		}
 		
-		if (template.isStackable() && !Config.MULTIPLE_ITEM_DROP)
+		if (!template.isStackable() && !Config.MULTIPLE_ITEM_DROP)
 		{
 			num = 1;
 		}
