@@ -5107,138 +5107,258 @@
 		</collision>
 	</npc>
 	<npc id="1594" level="80" type="L2Npc" name="Singer &amp; Dancer Agathion" title="Singer &amp; Dancer Agathion">
-		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ai_g_aga_dancer" />
+		</parameters>
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
+			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="223.6362" magical="163.64727" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" default="0" />
 			</attribute>
 			<speed>
 				<walk ground="60" />
-				<run ground="160" />
+				<run ground="180" />
 			</speed>
 		</stats>
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
 		<skillList>
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="11" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="11" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="11" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="11" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="1" /> <!-- Weapon Type -->
 			<skill id="23235" level="1" /> <!--Singer & Dancer Agathion Special Skill - Song of Hunter -->
 		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="0" clanHelpRange="0" isAggressive="false">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="5" />
+			<height normal="3.75" />
 		</collision>
 	</npc>
 	<npc id="1595" level="80" type="L2Npc" name="Zakensword Agathion" title="Zakensword Agathion">
-		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ai_g_aga_zakensword" />
+		</parameters>
+		<race>ETC</race>
+		<sex>FEMALE</sex>
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
+			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="223.6362" magical="163.64727" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" default="0" />
 			</attribute>
 			<speed>
 				<walk ground="60" />
-				<run ground="160" />
+				<run ground="180" />
 			</speed>
 		</stats>
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
 		<skillList>
-			<skill id="23237" level="1" /> <!--Zaken's Spirit Swords Special Skill - Swords' Song -->
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="11" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="11" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="11" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="11" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="1" /> <!-- Weapon Type -->
+			<skill id="4416" level="19" /> <!-- Races -->
 		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="0" clanHelpRange="0" isAggressive="false">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="30" />
+			<height normal="20" />
 		</collision>
 	</npc>
 	<npc id="1596" level="80" type="L2Npc" name="Cow Agathion" title="Cow Agathion">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ai_g_aga_cow" />
+		</parameters>
+		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
+			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="223.6362" magical="163.64727" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" default="0" />
 			</attribute>
 			<speed>
 				<walk ground="60" />
-				<run ground="160" />
+				<run ground="180" />
 			</speed>
 		</stats>
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
 		<skillList>
+			<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="11" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="11" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="11" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="11" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="1" /> <!-- Weapon Type -->
 			<skill id="23250" level="1" /> <!--Kau Agathion Cute Trick -->
 		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="0" clanHelpRange="0" isAggressive="false">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="5" />
+			<height normal="5" />
 		</collision>
 	</npc>
 	<npc id="1597" level="80" type="L2Npc" name="Tow Agathion" title="Tow Agathion">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ai_g_aga_tow" />
+		</parameters>
+		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
+			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="223.6362" magical="163.64727" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" default="0" />
 			</attribute>
 			<speed>
 				<walk ground="60" />
-				<run ground="160" />
+				<run ground="180" />
 			</speed>
 		</stats>
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
 		<skillList>
+			<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="11" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="11" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="11" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="11" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="1" /> <!-- Weapon Type -->
 			<skill id="23251" level="1" /> <!--Tow Agathion Cute Trick -->
 		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="0" clanHelpRange="0" isAggressive="false">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="12" />
+			<height normal="9" />
 		</collision>
 	</npc>
 	<npc id="1598" level="80" type="L2Npc" name="Rudolph Agathion">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="agathion_xmas_rudolp" />
+		</parameters>
+		<race>ETC</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
+			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="5" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="223.6362" magical="163.64727" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" default="0" />
 			</attribute>
 			<speed>
 				<walk ground="60" />
-				<run ground="160" />
+				<run ground="180" />
 			</speed>
 		</stats>
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
 		<skillList>
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="11" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="11" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="11" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="11" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="1" /> <!-- Weapon Type -->
 			<skill id="23297" level="1" /> <!--Santa Claus's Blessing -->
 		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="0" clanHelpRange="0" isAggressive="false">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="2" />
+			<height normal="4.5" />
 		</collision>
 	</npc>
 	<npc id="1599" level="80" type="L2Npc" name="Zinyanzi Agathion">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ai_g_aga_tow" />
+		</parameters>
+		<race>ANIMAL</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="25">
+			<vitals hp="1673.05473" hpRegen="6.5" mp="889.8" mpRegen="2.4" />
+			<attack physical="388.11142" magical="265.02979" random="10" critical="4" accuracy="4.75" attackSpeed="253" type="FIST" range="40" distance="80" width="120" />
+			<defence physical="223.6362" magical="163.64727" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" default="0" />
 			</attribute>
 			<speed>
 				<walk ground="60" />
-				<run ground="160" />
+				<run ground="180" />
 			</speed>
 		</stats>
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4121" level="1" /> <!-- Summoned Monster Magic Protection -->
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="11" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="11" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="11" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="11" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="1" /> <!-- Weapon Type -->
+			<skill id="4416" level="4" /> <!-- Races -->
+		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="0" clanHelpRange="0" isAggressive="false">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="3" />
+			<height normal="2" />
 		</collision>
 	</npc>
 </list>

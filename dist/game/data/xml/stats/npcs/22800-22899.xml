@@ -1182,66 +1182,90 @@
 		</collision>
 	</npc>
 	<npc id="22813" level="80" type="L2Monster" name="Demon's Banquet">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="feast_boomer" />
+			<param name="IsAggressive" value="1" />
+		</parameters>
+		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="946" lhand="945" /> <!-- rhand: Skeleton Dagger lhand: Skeleton Buckler -->
+		<equipment chest="0" rhand="946" lhand="945" /> <!-- chest: N/A rhand: Skeleton Dagger lhand: Skeleton Buckler -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3289.87341" hpRegen="8.5" mp="1523.77049" mpRegen="3" />
-			<attack physical="962.52465" magical="482.95329" attackSpeed="253" range="40" />
-			<defence physical="341.42011" magical="227.47114" />
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="10" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<attack type="DARK" value="100" />
-				<defence fire="100" water="100" wind="100" earth="100" holy="60" dark="140" />
+				<attack type="DARK" value="150" />
+				<defence fire="130" water="130" wind="130" earth="130" holy="90" dark="150" default="100" />
 			</attribute>
 			<speed>
-				<walk ground="110" />
-				<run ground="180" />
+				<walk ground="60" />
+				<run ground="140" />
 			</speed>
 		</stats>
+		<status undying="false" canBeSown="true" attackable="true" noSleepMode="false" canMove="true" />
 		<skillList>
-			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!--Average P. Atk. -->
-			<skill id="4411" level="11" /> <!--Average M. Atk. -->
-			<skill id="4412" level="11" /> <!--Average P. Def. -->
-			<skill id="4414" level="2" /> <!--Standard Type -->
-			<skill id="4415" level="7" /> <!--Daggers -->
-			<skill id="4416" level="1" /> <!--Undead -->
-			<skill id="5467" level="1" /> <!--Dark Attacks -->
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="11" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="11" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="11" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="11" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="7" /> <!-- Weapon Type -->
+			<skill id="4416" level="1" /> <!-- Races -->
+			<skill id="5467" level="1" /> <!-- Dark Attacks -->
 		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+		</ai>
 		<collision>
 			<radius normal="11" />
 			<height normal="25" />
 		</collision>
 	</npc>
 	<npc id="22814" level="80" type="L2Monster" name="Demon's Banquet">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="feast_feeder" />
+			<param name="IsAggressive" value="1" />
+		</parameters>
+		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="946" lhand="945" /> <!-- rhand: Skeleton Dagger lhand: Skeleton Buckler -->
+		<equipment chest="0" rhand="946" lhand="945" /> <!-- chest: N/A rhand: Skeleton Dagger lhand: Skeleton Buckler -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="3289.87341" hpRegen="8.5" mp="1523.77049" mpRegen="3" />
-			<attack physical="962.52465" magical="482.95329" attackSpeed="253" range="40" />
-			<defence physical="341.42011" magical="227.47114" />
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="10" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<attack type="DARK" value="100" />
-				<defence fire="100" water="100" wind="100" earth="100" holy="60" dark="140" />
+				<attack type="DARK" value="150" />
+				<defence fire="130" water="130" wind="130" earth="130" holy="90" dark="150" default="100" />
 			</attribute>
 			<speed>
-				<walk ground="110" />
-				<run ground="180" />
+				<walk ground="60" />
+				<run ground="140" />
 			</speed>
 		</stats>
+		<status undying="false" canBeSown="true" attackable="true" noSleepMode="false" canMove="true" />
 		<skillList>
-			<skill id="4408" level="1" /> <!--HP Increase (1x) -->
-			<skill id="4409" level="1" /> <!--MP Increase (1x) -->
-			<skill id="4410" level="11" /> <!--Average P. Atk. -->
-			<skill id="4411" level="11" /> <!--Average M. Atk. -->
-			<skill id="4412" level="11" /> <!--Average P. Def. -->
-			<skill id="4414" level="2" /> <!--Standard Type -->
-			<skill id="4415" level="7" /> <!--Daggers -->
-			<skill id="4416" level="1" /> <!--Undead -->
-			<skill id="5467" level="1" /> <!--Dark Attacks -->
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="11" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="11" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="11" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="11" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="7" /> <!-- Weapon Type -->
+			<skill id="4416" level="1" /> <!-- Races -->
+			<skill id="5467" level="1" /> <!-- Dark Attacks -->
 		</skillList>
+		<exCrtEffect>false</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+		</ai>
 		<collision>
 			<radius normal="11" />
 			<height normal="25" />
