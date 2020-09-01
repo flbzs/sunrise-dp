@@ -135,103 +135,220 @@
 		</collision>
 	</npc>
 	<npc id="27403" level="80" type="L2Monster" name="Trainee of Rest">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="trainee_of_rest" />
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+		</parameters>
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="130" />
+				<defence fire="130" water="130" wind="130" earth="130" holy="150" dark="90" default="100" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="53" />
+				<run ground="180" />
 			</speed>
 		</stats>
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4408" level="8" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="9" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="8" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="3" /> <!-- Weapon Type -->
+			<skill id="4416" level="8" /> <!-- Races -->
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="12" />
+			<height normal="28.4" />
 		</collision>
 	</npc>
 	<npc id="27404" level="80" type="L2Monster" name="Supplicant of Rest">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="supplicant_of_rest" />
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+		</parameters>
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="130" />
+				<defence fire="130" water="130" wind="130" earth="130" holy="150" dark="90" default="100" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="40" />
+				<run ground="150" />
 			</speed>
 		</stats>
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4408" level="8" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="9" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="8" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="3" /> <!-- Weapon Type -->
+			<skill id="4416" level="8" /> <!-- Races -->
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="18" />
+			<height normal="44" />
 		</collision>
 	</npc>
 	<npc id="27405" level="80" type="L2Monster" name="Monastic Pilgrim">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ssq2_cloister_pilgrim" />
+			<param name="IsAggressive" value="1" />
+			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
+			<skill name="MagicHeal" id="4065" level="9" /> <!-- NPC Heal -->
+		</parameters>
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment chest="0" rhand="148" lhand="0" /> <!-- chest: N/A rhand: Sword of Valhalla lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="100" />
+				<defence fire="110" water="110" wind="110" earth="110" holy="130" dark="70" default="80" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="30" />
+				<run ground="170" />
 			</speed>
 		</stats>
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="9" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="8" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="3" /> <!-- Armor Type -->
+			<skill id="4415" level="3" /> <!-- Weapon Type -->
+			<skill id="4416" level="8" /> <!-- Races -->
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="1000" clanHelpRange="300" isAggressive="true">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="12" />
+			<height normal="27.8" />
 		</collision>
 	</npc>
 	<npc id="27406" level="80" type="L2Monster" name="Monastic Crusader">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ssq2_cloister_crusader" />
+			<param name="IsAggressive" value="1" />
+			<skill name="PhysicalSpecial" id="4032" level="9" /> <!-- NPC Strike -->
+		</parameters>
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment chest="0" rhand="97" lhand="0" /> <!-- chest: N/A rhand: Lance lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="0" attackSpeed="253" type="POLE" range="80" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="100" />
+				<defence fire="110" water="110" wind="110" earth="110" holy="130" dark="70" default="80" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="50" />
+				<run ground="170" />
 			</speed>
 		</stats>
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="9" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="8" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="1" /> <!-- Armor Type -->
+			<skill id="4415" level="11" /> <!-- Weapon Type -->
+			<skill id="4416" level="8" /> <!-- Races -->
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="13" />
+			<height normal="37.5" />
 		</collision>
 	</npc>
 	<npc id="27407" level="80" type="L2Monster" name="Solina Lay Brother">
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="solina_lay_brother" />
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+			<skill name="MagicSleep" id="4563" level="9" /> <!-- NPC Solar Flare - Magic -->
+			<skill name="MagicHeal" id="4613" level="1" /> <!-- NPC Clan Heal -->
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="8212" /> <!-- rhand: Monster Only (Solina Brother Mace) -->
+		<equipment chest="0" rhand="8212" lhand="0" /> <!-- chest: N/A rhand: Monster Only (Solina Brother Mace) lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1891" mp="1778.0" />
-			<attack physical="3845" magical="1124" attackSpeed="253" random="30" critical="4" accuracy="5" type="BLUNT" range="40" />
-			<defence physical="686" magical="320" />
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<attack type="HOLY" value="20" />
-				<defence fire="20" water="20" wind="20" earth="20" holy="103" dark="20" />
+				<attack type="HOLY" value="100" />
+				<defence fire="110" water="110" wind="110" earth="110" holy="130" dark="70" default="80" />
 			</attribute>
 			<speed>
-				<walk ground="27" />
-				<run ground="160" />
+				<walk ground="61" />
+				<run ground="180" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
 		<skillList>
 			<skill id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
 			<skill id="4336" level="2" /> <!-- Dark Attack Weak Point -->
@@ -248,49 +365,89 @@
 			<skill id="4417" level="17" /> <!-- Angels -->
 			<skill id="4423" level="3" /> <!-- Sacred Attacks -->
 		</skillList>
-		<ai aggroRange="400" clanHelpRange="300" isAggressive="true" />
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
+		</ai>
 		<collision>
 			<radius normal="9" />
-			<height normal="23" />
+			<height normal="23.4" />
 		</collision>
 	</npc>
 	<npc id="27408" level="80" type="L2Monster" name="Savior Solina">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ssq2_solina_father" />
+			<param name="IsAggressive" value="1" />
+			<skill name="W_LongRangeDDMagic" id="4563" level="9" /> <!-- NPC Solar Flare - Magic -->
+			<skill name="W_ShortRangeDDMagic" id="4160" level="9" /> <!-- NPC Aura Burn - Magic -->
+			<skill name="DeBuff" id="5021" level="9" /> <!-- Inspiration of Einhasad -->
+		</parameters>
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment chest="0" rhand="8213" lhand="0" /> <!-- chest: N/A rhand: Monster Only (Solina Father Mace) lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="100" />
+				<defence fire="110" water="110" wind="110" earth="110" holy="130" dark="70" default="80" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="70" />
+				<run ground="180" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4408" level="8" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="9" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="8" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="3" /> <!-- Weapon Type -->
+			<skill id="4416" level="8" /> <!-- Races -->
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="11" />
+			<height normal="25.4" />
 		</collision>
 	</npc>
 	<npc id="27409" level="80" type="L2Monster" name="Solina Knight Captain">
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="solina_knight_captain" />
+			<param name="MoveAroundSocial" value="100" />
+			<param name="MoveAroundSocial1" value="100" />
+			<param name="MoveAroundSocial2" value="100" />
+		</parameters>
 		<race>DIVINE</race>
 		<sex>MALE</sex>
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="1891" mp="1778.0" />
-			<attack physical="3845" magical="1124" attackSpeed="253" random="30" critical="4" accuracy="5" type="BLUNT" range="40" />
-			<defence physical="686" magical="320" />
+			<vitals hp="3461.77253215841" hpRegen="8.5" mp="1708.8" mpRegen="3" />
+			<attack physical="1012.32268463427" magical="691.285164307598" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="345.61127" magical="252.90333" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="130" />
+				<defence fire="130" water="130" wind="130" earth="130" holy="150" dark="90" default="100" />
 			</attribute>
 			<speed>
 				<walk ground="30" />
-				<run ground="160" />
+				<run ground="66" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
 		<skillList>
 			<skill id="4336" level="2" /> <!-- Dark Attack Weak Point -->
 			<skill id="4789" level="9" /> <!-- NPC High Level -->
@@ -306,10 +463,13 @@
 			<skill id="6312" level="1" /> <!-- Launch Sacred Sword Energy -->
 			<skill id="6313" level="1" /> <!-- Solina Bless -->
 		</skillList>
-		<ai aggroRange="400" clanHelpRange="300" isAggressive="true" />
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="false">
+		</ai>
 		<collision>
 			<radius normal="14" />
-			<height normal="32" />
+			<height normal="31.5" />
 		</collision>
 	</npc>
 	<npc id="27410" level="80" type="L2Monster" name="Solina Knights">
@@ -351,24 +511,50 @@
 		</collision>
 	</npc>
 	<npc id="27411" level="80" type="L2Monster" name="Divinity Manager">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ssq2_solina_angel1" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6309" level="1" /> <!-- Pain of the Ascetic -->
+			<skill name="Skill02_ID" id="6316" level="1" /> <!-- Accomplish of Authority -->
+		</parameters>
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment chest="0" rhand="6718" lhand="0" /> <!-- chest: N/A rhand: Monster Only(Einhasad Shaman) lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="130" />
+				<defence fire="130" water="130" wind="130" earth="130" holy="150" dark="90" default="100" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="50" />
+				<run ground="165" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="9" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="8" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="5" /> <!-- Weapon Type -->
+			<skill id="4416" level="8" /> <!-- Races -->
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="11" />
+			<height normal="38.5" />
 		</collision>
 	</npc>
 	<npc id="27412" level="80" type="L2Monster" name="Divinity Supervisor">
@@ -487,46 +673,97 @@
 		</collision>
 	</npc>
 	<npc id="27415" level="80" type="L2Monster" name="Guide Solina">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ssq2_solina_brother" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6303" level="1" /> <!-- Trial of the Coup -->
+			<skill name="Skill02_ID" id="6304" level="1" /> <!-- Shock -->
+		</parameters>
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<equipment rhand="8212" /> <!-- rhand: Monster Only (Solina Brother Mace) -->
+		<equipment chest="0" rhand="8212" lhand="0" /> <!-- chest: N/A rhand: Monster Only (Solina Brother Mace) lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="5198" mp="1859.0" />
-			<attack physical="1952" magical="905" attackSpeed="253" range="40" />
-			<defence physical="577" magical="469" />
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="50" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="100" />
+				<defence fire="110" water="110" wind="110" earth="110" holy="130" dark="70" default="80" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="61" />
+				<run ground="220" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="9" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="8" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="5" /> <!-- Weapon Type -->
+			<skill id="4416" level="8" /> <!-- Races -->
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+		</ai>
 		<collision>
 			<radius normal="9" />
 			<height normal="23.4" />
 		</collision>
 	</npc>
 	<npc id="27416" level="80" type="L2Monster" name="Relic Manager Golem">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ssq2_golem_guardian" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6515" level="13" /> <!-- NPC dark attack -->
+			<skill name="Skill02_ID" id="6710" level="1" /> <!-- Etis Haste -->
+		</parameters>
+		<race>CONSTRUCT</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="DARK" value="100" />
+				<defence fire="110" water="110" wind="110" earth="110" holy="70" dark="130" default="80" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="53" />
+				<run ground="150" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="9" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="8" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="1" /> <!-- Armor Type -->
+			<skill id="4415" level="3" /> <!-- Weapon Type -->
+			<skill id="4416" level="2" /> <!-- Races -->
+			<skill id="5467" level="1" /> <!-- Dark Attacks -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="18" />
+			<height normal="41.5" />
 		</collision>
 	</npc>
 	<npc id="27417" level="80" type="L2Monster" name="Mutant Archer">
@@ -608,127 +845,322 @@
 		</collision>
 	</npc>
 	<npc id="27419" level="80" type="L2Monster" name="Divinity Watcher">
-		<!-- TODO: Must be confirmed -->
-		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ssq2_solina_tanker" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="6262" level="1" /> <!-- EMP Power -->
+		</parameters>
+		<race>DIVINE</race>
+		<sex>FEMALE</sex>
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="130" />
+				<defence fire="130" water="130" wind="130" earth="130" holy="150" dark="90" default="100" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="50" />
+				<run ground="120" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="9" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="8" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="3" /> <!-- Armor Type -->
+			<skill id="4415" level="3" /> <!-- Weapon Type -->
+			<skill id="4416" level="8" /> <!-- Races -->
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="24" />
+			<height normal="49" />
 		</collision>
 	</npc>
 	<npc id="27420" level="80" type="L2Monster" name="Instructor Solina">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="ssq2_solina_knight2" />
+			<param name="IsAggressive" value="1" />
+			<skill name="Skill01_ID" id="4047" level="9" /> <!-- Hold -->
+		</parameters>
+		<race>DIVINE</race>
 		<sex>MALE</sex>
-		<stats str="10" int="10" dex="10" wit="10" con="10" men="10">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
+		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
+			<vitals hp="3290.11306877694" hpRegen="8.5" mp="1674.8" mpRegen="3" />
+			<attack physical="970.537548504614" magical="662.751329129412" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="341.375" magical="249.80341" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="HOLY" value="130" />
+				<defence fire="130" water="130" wind="130" earth="130" holy="150" dark="90" default="100" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="30" />
+				<run ground="66" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4408" level="1" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="9" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="8" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="3" /> <!-- Weapon Type -->
+			<skill id="4416" level="8" /> <!-- Races -->
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+		</ai>
 		<collision>
-			<radius normal="25" />
-			<height normal="35" />
+			<radius normal="14" />
+			<height normal="31.5" />
 		</collision>
 	</npc>
 	<npc id="27421" level="80" type="L2Monster" name="Creature of the Dusk">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="creature_of_the_dusk1" />
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<param name="IsAggressive" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="5975" level="3" /> <!-- Dark Attack -->
+			<skill name="Skill02_ID" id="5976" level="3" /> <!-- Dark Storm -->
+			<skill name="Skill03_ID" id="5977" level="3" /> <!-- Dark Strike -->
+		</parameters>
+		<race>UNDEAD</race>
 		<sex>MALE</sex>
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+			<vitals hp="3127.82459333517" hpRegen="8.5" mp="1641" mpRegen="3" />
+			<attack physical="929.930814318487" magical="635.022195830619" random="10" critical="8" accuracy="0" attackSpeed="253" type="DAGGER" range="40" distance="80" width="120" />
+			<defence physical="337.07008" magical="246.65326" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="DARK" value="20" />
+				<defence fire="-5" water="20" wind="20" earth="20" holy="-32" dark="53" default="0" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="80" />
+				<run ground="175" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4274" level="1" /> <!-- Blunt Attack Weak Point -->
+			<skill id="4408" level="9" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="13" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="11" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="7" /> <!-- Weapon Type -->
+			<skill id="4416" level="1" /> <!-- Races -->
+			<skill id="4789" level="7" /> <!-- NPC High Level -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>TOMB_CLAN</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="11" />
 			<height normal="28.5" />
 		</collision>
 	</npc>
 	<npc id="27422" level="79" type="L2Monster" name="Creature of the Dusk">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="creature_of_the_dusk2" />
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<param name="IsAggressive" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="5975" level="3" /> <!-- Dark Attack -->
+			<skill name="Skill02_ID" id="5976" level="3" /> <!-- Dark Storm -->
+			<skill name="Skill03_ID" id="5977" level="3" /> <!-- Dark Strike -->
+		</parameters>
+		<race>DEMONIC</race>
 		<sex>FEMALE</sex>
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="4942" hpRegen="8.5" mp="1822.0" mpRegen="3" />
-			<attack physical="1859" magical="866" attackSpeed="253" range="40" />
-			<defence physical="566" magical="460" />
+			<vitals hp="3127.82459333517" hpRegen="8.5" mp="1641" mpRegen="3" />
+			<attack physical="929.930814318487" magical="635.022195830619" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="337.07008" magical="246.65326" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="DARK" value="20" />
+				<defence fire="20" water="20" wind="20" earth="20" holy="-34" dark="184" default="0" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="80" />
+				<run ground="120" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4233" level="1" /> <!-- Vampiric Attack -->
+			<skill id="4285" level="3" /> <!-- Resist Sleep -->
+			<skill id="4408" level="9" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="12" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="11" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="3" /> <!-- Weapon Type -->
+			<skill id="4416" level="9" /> <!-- Races -->
+			<skill id="4789" level="7" /> <!-- NPC High Level -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>TOMB_CLAN</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="9" />
 			<height normal="23" />
 		</collision>
 	</npc>
 	<npc id="27423" level="80" type="L2Monster" name="Creature of the Dusk">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="creature_of_the_dusk3" />
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<param name="IsAggressive" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="5975" level="3" /> <!-- Dark Attack -->
+			<skill name="Skill02_ID" id="5976" level="3" /> <!-- Dark Storm -->
+			<skill name="Skill03_ID" id="5977" level="3" /> <!-- Dark Strike -->
+		</parameters>
+		<race>UNDEAD</race>
 		<sex>MALE</sex>
+		<equipment chest="0" rhand="0" lhand="0" /> <!-- chest: N/A rhand: N/A lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="2444" mp="2444.0" />
-			<attack physical="500" magical="500" attackSpeed="278" range="40" />
-			<defence physical="500" magical="500" />
+			<vitals hp="3127.82459333517" hpRegen="8.5" mp="1641" mpRegen="3" />
+			<attack physical="929.930814318487" magical="635.022195830619" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="337.07008" magical="246.65326" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="DARK" value="20" />
+				<defence fire="-5" water="20" wind="20" earth="20" holy="-32" dark="53" default="0" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="40" />
+				<run ground="145" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4274" level="1" /> <!-- Blunt Attack Weak Point -->
+			<skill id="4408" level="9" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="11" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="11" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="3" /> <!-- Weapon Type -->
+			<skill id="4416" level="1" /> <!-- Races -->
+			<skill id="4789" level="6" /> <!-- NPC High Level -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>TOMB_CLAN</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="10" />
 			<height normal="25" />
 		</collision>
 	</npc>
 	<npc id="27424" level="79" type="L2Monster" name="Creature of the Dusk">
-		<!-- TODO: Must be confirmed -->
+		<!-- Confirmed CT2.6 -->
+		<parameters>
+			<param name="ai" value="creature_of_the_dusk4" />
+			<param name="MoveAroundSocial" value="150" />
+			<param name="MoveAroundSocial1" value="150" />
+			<param name="MoveAroundSocial2" value="150" />
+			<param name="IsAggressive" value="1" />
+			<param name="Skill02_Target" value="3" />
+			<param name="Skill02_AttackSplash" value="1" />
+			<skill name="Skill01_ID" id="5975" level="3" /> <!-- Dark Attack -->
+			<skill name="Skill02_ID" id="5976" level="3" /> <!-- Dark Storm -->
+			<skill name="Skill03_ID" id="5977" level="3" /> <!-- Dark Strike -->
+		</parameters>
+		<race>UNDEAD</race>
 		<sex>MALE</sex>
-		<equipment rhand="304" /> <!-- rhand: Orcish Halberd -->
+		<equipment chest="0" rhand="304" lhand="0" /> <!-- chest: N/A rhand: Orcish Halberd lhand: N/A -->
+		<acquire expRate="0" sp="0" raidPoints="0" />
 		<stats str="40" int="21" dex="30" wit="20" con="43" men="20">
-			<vitals hp="4942" hpRegen="8.5" mp="1822.0" mpRegen="3" />
-			<attack physical="1859" magical="866" attackSpeed="253" range="40" />
-			<defence physical="566" magical="460" />
+			<vitals hp="3127.82459333517" hpRegen="8.5" mp="1641" mpRegen="3" />
+			<attack physical="929.930814318487" magical="635.022195830619" random="30" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
+			<defence physical="337.07008" magical="246.65326" evasion="0" />
 			<attribute>
-				<defence fire="20" water="20" wind="20" earth="20" holy="20" dark="20" />
+				<attack type="DARK" value="20" />
+				<defence fire="-5" water="20" wind="20" earth="20" holy="-32" dark="53" default="0" />
 			</attribute>
 			<speed>
-				<walk ground="60" />
-				<run ground="160" />
+				<walk ground="50" />
+				<run ground="190" />
 			</speed>
 		</stats>
-		<status undying="false" />
+		<status undying="false" canBeSown="false" attackable="true" noSleepMode="false" canMove="true" />
+		<skillList>
+			<skill id="4274" level="1" /> <!-- Blunt Attack Weak Point -->
+			<skill id="4408" level="9" /> <!-- HP Modifiers -->
+			<skill id="4409" level="1" /> <!-- MP Modifiers -->
+			<skill id="4410" level="12" /> <!-- P. Atk. Modifiers -->
+			<skill id="4411" level="11" /> <!-- M. Atk. Modifiers -->
+			<skill id="4412" level="9" /> <!-- P. Def. Modifiers -->
+			<skill id="4413" level="8" /> <!-- M. Def. Modifiers -->
+			<skill id="4414" level="2" /> <!-- Armor Type -->
+			<skill id="4415" level="3" /> <!-- Weapon Type -->
+			<skill id="4416" level="1" /> <!-- Races -->
+			<skill id="4438" level="2" /> <!-- Greater Resist Sleep -->
+			<skill id="4789" level="6" /> <!-- NPC High Level -->
+		</skillList>
+		<exCrtEffect>true</exCrtEffect>
+		<sNpcPropHpRate>0</sNpcPropHpRate>
+		<ai type="BALANCED" aggroRange="300" clanHelpRange="300" isAggressive="true">
+			<clanList>
+				<clan>TOMB_CLAN</clan>
+			</clanList>
+		</ai>
 		<collision>
 			<radius normal="10" />
 			<height normal="28" />
