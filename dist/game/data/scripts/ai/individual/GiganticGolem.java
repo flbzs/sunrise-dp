@@ -39,7 +39,8 @@ import ai.npc.AbstractNpcAI;
 
 /**
  * Gigantic Golem AI.
- * @author Kerberos, Maneco2
+ * @author Kerberos
+ * @author Maneco2
  * @version 2.6.2.0
  */
 public class GiganticGolem extends AbstractNpcAI
@@ -55,6 +56,8 @@ public class GiganticGolem extends AbstractNpcAI
 	private static final SkillHolder GOLEM_BOOM = new SkillHolder(6264);
 	private static final SkillHolder NPC_EARTH_SHOT = new SkillHolder(6608);
 	// Variables
+	private L2Npc _raidBoss;
+	private boolean _skillsAcess = false;
 	private static long _lastAttack = 0;
 	private static final int RESPAWN = 24;
 	private static final int MAX_CHASE_DIST = 3000;
@@ -247,7 +250,7 @@ public class GiganticGolem extends AbstractNpcAI
 		{
 			_lastAttack = System.currentTimeMillis();
 			
-			if (!npc.isCastingNow())
+			if ((_raidBoss != null) && (!npc.isCastingNow()))
 			{
 				if (getRandom(100) < 5)
 				{
@@ -255,10 +258,22 @@ public class GiganticGolem extends AbstractNpcAI
 				}
 				else if ((getRandom(100) < 1) && (npc.getCurrentHp() < (npc.getMaxHp() * MIN_HP_PERCENTAGE)))
 				{
-					npc.doCast(EMP_SHOCK);
+					if (_skillsAcess)
+					{
+						npc.doCast(EMP_SHOCK);
+					}
+					else
+					{
+						_skillsAcess = true;
+						_raidBoss.enableSkill(EMP_SHOCK.getSkill());
+					}
+				}
+				else if (_skillsAcess)
+				{
+					_skillsAcess = false;
+					_raidBoss.disableSkill(EMP_SHOCK.getSkill(), -1);
 				}
 			}
-			
 			if (!npc.getVariables().getBoolean(SPAWN_FLAG, false))
 			{
 				npc.getVariables().set(SPAWN_FLAG, true);
@@ -272,7 +287,6 @@ public class GiganticGolem extends AbstractNpcAI
 				addSpawn(GIGANTIC_BOOM_GOLEM, posX + getRandom(-200, 200), posY + getRandom(-200, 200), npc.getZ() + 20, 0, false, 0);
 				startQuestTimer("FLAG", 360000, npc, null);
 			}
-			
 			if (npc.calculateDistance(npc.getSpawn().getLocation(), false, false) > MAX_CHASE_DIST)
 			{
 				npc.disableCoreAI(true);
@@ -317,7 +331,9 @@ public class GiganticGolem extends AbstractNpcAI
 		}
 		else
 		{
+			_raidBoss = npc;
 			_lastAttack = System.currentTimeMillis();
+			_raidBoss.disableSkill(EMP_SHOCK.getSkill(), -1);
 			startQuestTimer("CHECK_ATTACK", 300000, npc, null);
 			broadcastNpcSay(npc, Say2.NPC_SHOUT, NpcStringId.BWAH_HA_HA_YOUR_DOOM_IS_AT_HAND_BEHOLD_THE_ULTRA_SECRET_SUPER_WEAPON);
 		}
