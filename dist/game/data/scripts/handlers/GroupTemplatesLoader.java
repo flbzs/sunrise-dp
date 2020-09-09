@@ -27,6 +27,7 @@ import ai.group_template.TurekOrcs;
 import ai.group_template.VarkaKetra;
 import ai.group_template.WarriorFishingBlock;
 import ai.group_template.extra.BrekaOrcOverlord;
+import ai.group_template.extra.Chests;
 import ai.group_template.extra.CryptsOfDisgrace;
 import ai.group_template.extra.FieldOfWhispersSilence;
 import ai.group_template.extra.KarulBugbear;
@@ -74,6 +75,7 @@ public final class GroupTemplatesLoader extends ABLoader
 		
 		// Extras
 		BrekaOrcOverlord.class,
+		Chests.class,
 		CryptsOfDisgrace.class,
 		FieldOfWhispersSilence.class,
 		KarulBugbear.class,
